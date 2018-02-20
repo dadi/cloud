@@ -1,0 +1,10 @@
+{
+  "page": {
+    "key": "knowledge"
+  },
+  "routes": [
+    {
+      "path": "/:lang/knowledge"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{>"partials/header"/}
+
+{>"partials/nav"/}
+
+<header class="header bg-tint mb">
+  <div class="cnt">
+    <img src="/assets/icons/files.svg" width="50" class="mb">
+    <h1 class="mb">Knowledge</h1>
+    <p class="medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+  </div>
+</header>
+
+<main class="mb--x2">
+  <div class="cnt">
+    <div class="grid" id="stickContainer">
+      <div class="col w-1-2">
+         <div class="hdr fm ttu mb">
+            <h3><span>Latest articles</span></h3>
+          </div>
+
+          <div class="grid">
+            {>"partials/roadmap/list" grid="1" size="1" /}
+            {>"partials/roadmap/list" grid="1" size="1" /}
+            {>"partials/roadmap/list" grid="1" size="1" /}
+            {>"partials/roadmap/list" grid="1" size="1" /}
+            {>"partials/roadmap/list" grid="1" size="1" /}
+            {>"partials/roadmap/list" grid="1" size="1" /}
+          </div>
+      </div>
+      <div class="col w-1-2">
+        <div id="stick">
+           <div class="hdr fm ttu mb">
+            <h3><span>Categories</span></h3>
+          </div>
+
+          <div class="grid">
+            {>"partials/knowledge/list" grid="2"/}
+            {>"partials/knowledge/list" grid="2"/}
+            {>"partials/knowledge/list" grid="2"/}
+            {>"partials/knowledge/list" grid="2"/}
+            {>"partials/knowledge/list" grid="2"/}
+            {>"partials/knowledge/list" grid="2"/}
+            {>"partials/knowledge/list" grid="2"/}
+            {>"partials/knowledge/list" grid="2"/}
+            {>"partials/knowledge/list" grid="2"/}
+            {>"partials/knowledge/list" grid="2"/}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{>"partials/footer"/}

@@ -1,6 +1,6 @@
 <footer class="bg-tint">
   <div class="cnt fm small">
-    <img src="/assets/img/dadi-mark-dark.png" width="35" class="mb" style="float: left;margin:-2px 20px 0 0">
+    <img src="/assets/img/dadi-logo-dark.svg" height="30" class="mb">
     <p class="mb--x2">This site is built with our own technology and is <a href="https://github.com/dadi" rel="external" title="Github" target="_blank">open source</a>. <strong>© DADI+ Ltd.</strong></p>
 
     <div class="grid">
@@ -18,26 +18,26 @@
       <div class="col w-1-4 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Sitemap</span></h3></div>
         <ul>
-          <li><a href="/{params.lang}/network/">Network</a></li>
-          <li><a href="/{params.lang}/roadmap/">Roadmap</a></li>
-          <li><a href="/{params.lang}/knowledge/">Knowledge</a></li>
-          <li><a href="/{params.lang}/about/">About</a></li>
-          <li><a href="/{params.lang}/careers/">Careers</a></li>
-          <li><a href="/{params.lang}/culture/">Culture</a></li>
-          <li><a href="/{params.lang}/team/">Team</a></li>
-          <li><a href="/{params.lang}/partners/">Partners</a></li>
-          <li><a href="/{params.lang}/contact/">Contact</a></li>
-          <li><a href="/{params.lang}/faq/">FAQ</a></li>
-          <li><a href="/{params.lang}/privacy/">Privacy</a></li>
+          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/network/">Network</a></li>
+          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/roadmap/">Roadmap</a></li>
+          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/knowledge/">Knowledge</a></li>
+          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/about/">About</a></li>
+          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/careers/">Careers</a></li>
+          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/culture/">Culture</a></li>
+          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/team/">Team</a></li>
+          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/partners/">Partners</a></li>
+          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/contact/">Contact</a></li>
+          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/faq/">FAQ</a></li>
+          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/privacy/">Privacy</a></li>
         </ul>
       </div>
       <div class="col w-1-4 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Web services</span></h3></div>
         <ul>
-          <li><a href="/{params.lang}/api/" class="fwb"><img src="/assets/products/dadi-api.png" width="15">API</a></li>
-          <li><a href="/{params.lang}/web/" class="fwb"><img src="/assets/products/dadi-web.png" width="19">Web</a></li>
-          <li><a href="/{params.lang}/publish/" class="fwb"><img src="/assets/products/dadi-publish.png" width="15">Publish</a></li>
-          <li><a href="/{params.lang}/cdn/" class="fwb"><img src="/assets/products/dadi-cdn.png" class="alignv float--right" width="15">CDN</a></li>
+          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/api/" class="fwb"><img src="/assets/products/dadi-api.png" width="15">API</a></li>
+          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/web/" class="fwb"><img src="/assets/products/dadi-web.png" width="19">Web</a></li>
+          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/publish/" class="fwb"><img src="/assets/products/dadi-publish.png" width="15">Publish</a></li>
+          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/cdn/" class="fwb"><img src="/assets/products/dadi-cdn.png" class="alignv float--right" width="15">CDN</a></li>
           <li><a href="http://docs.dadi.tech" onclick="ga('send','event','Documentation','Click','Footer');" rel="noopener"><img src="/assets/icons/pop-out.svg" class="alignv float--right" width="15">Documentation</a></li>
         </ul>
       </div>

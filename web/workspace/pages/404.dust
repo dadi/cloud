@@ -1,1 +1,18 @@
-404 not found
+{>"partials/header"/}
+
+{>"partials/nav"/}
+
+<header class="header bg-tint mb--x2">
+  <div class="cnt">
+    <img src="/assets/img/icon-error.svg" class="mb">
+    <h1>Page not found.</h1>
+  </div>
+</header>
+
+<main class="mb--x2">
+  <div class="cnt normal cf">
+    <p class="col w-1-2">Unfortunately that page does not exist. Try going to the homepage to find what you were looking for or get in touch.</p>
+  </div>
+</main>
+
+{>"partials/footer"/}

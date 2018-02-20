@@ -208,7 +208,7 @@ h2 {
   position: relative;
 }
 .hdr h3 {
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid #e5e4e4;
   padding: 0 0 10px;
   margin: 0;
   font-size: 0.9rem;
@@ -318,7 +318,7 @@ nav .docs:hover:after {
 }
 
 .intro__about {
-  margin: 0 6.25px;
+  margin: 0 15px;
   min-width: 360px;
 }
 /*@media handheld, only screen and (min-width: 800px) {*/
@@ -335,18 +335,27 @@ nav .docs:hover:after {
   height: auto;
 }
 
+.header {
+  padding: 180px 0 60px;
+  border-bottom: 1px solid #E5E4E4;
+}
+
 .box {
   box-shadow: 2px 2px 15px 0 rgba(0,0,0,0.04);
   position: relative;
   display: block;
   line-height: 1.4em;
-  height: 260px;
 }
-.box--x2 {
-  height: 330px;
-}
-.box--x3 {
-  height: 380px;
+@media handheld, only screen and (min-width: 800px) {
+  .box {
+    height: 260px;
+  }
+  .box--x2 {
+    height: 330px;
+  }
+  .box--x3 {
+    height: 380px;
+  }
 }
 .box--join:after {
   border-left: 1px solid #ededed;
@@ -458,11 +467,12 @@ a.box:hover .box__cta,
 }
 
 footer {
-  padding: 50px 0 330px;
+  padding: 60px 0 330px;
   background-image: url(/assets/img/bg-footer.png);
   background-repeat: no-repeat;
   background-size: 1000px auto;
   background-position: 50% 150%; 
+  border-top: 1px solid #E5E4E4;
 }
 @media handheld, only screen and (max-width: 800px) {
   footer {

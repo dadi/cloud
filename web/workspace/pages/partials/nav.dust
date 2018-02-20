@@ -1,11 +1,36 @@
 <nav class="color-white fm">
   <div class="cnt">
     <ul>
-      <li><a class="active" href="/{params.lang}">Overview</a></li>
-      <li><a href="/{params.lang}/roadmap">Roadmap</a></li>
-      <li><a href="/{params.lang}/knowledge">Knowledge</a></li>
-      <li><a href="/{params.lang}/network">Network</a></li>
-      <li><a href="/{params.lang}/partners">Partners</a></li>
+      <li>
+        <a 
+          {@eq key="{page.key}" value="home"}class="active"{/eq}
+          href="/{?params.lang}{params.lang}{:else}en{/params.lang}">
+          Overview
+        </a></li>
+      <li>
+        <a 
+          {@eq key="{page.key}" value="roadmap"}class="active"{/eq}
+          href="/{?params.lang}{params.lang}{:else}en{/params.lang}/roadmap">
+          Roadmap
+        </a></li>
+      <li>
+        <a 
+          {@eq key="{page.key}" value="knowledge"}class="active"{/eq}
+          href="/{?params.lang}{params.lang}{:else}en{/params.lang}/knowledge">
+          Knowledge
+        </a></li>
+      <li>
+        <a 
+          {@eq key="{page.key}" value="network"}class="active"{/eq}
+          href="/{?params.lang}{params.lang}{:else}en{/params.lang}/network">
+          Network
+        </a></li>
+      <li>
+        <a 
+          {@eq key="{page.key}" value="partners"}class="active"{/eq}
+          href="/{?params.lang}{params.lang}{:else}en{/params.lang}/partners">
+          Partners
+        </a></li>
     </ul>
 
     <ol>
@@ -17,7 +42,12 @@
         <a href="https://discord.gg/3sEvuYJ" rel="external" title="Discord" target="_blank"><img src="/assets/social/discord.svg" height="24"></a>
         <a href="https://t.me/dadichat" rel="external" title="Telegram" target="_blank"><img src="/assets/social/telegram.svg" height="24"></a>
       </li>
-      <li><a href="/{params.lang}/about">About</a></li>
+      <li>
+        <a 
+          {@eq key="{page.key}" value="about"}class="active"{/eq}
+          href="/{?params.lang}{params.lang}{:else}en{/params.lang}/about">About
+        </a>
+      </li>
       <li><a class="docs" href="https://docs.dadi.tech/" target="_blank">Documentation</a></li>
     </ol>
   </div>
