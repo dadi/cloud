@@ -1,0 +1,14 @@
+<div class="col w-1-5">
+  <a href="#" class="box bd bd-grey mb">
+    <div class="box__inner">
+      <h2>
+        <img src="/assets/icons/locked.svg" width="20" class="vam"> 
+        Security
+      </h2>
+      <p class="mb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+    </div>
+    <div class="box__footer">
+      <span class="box__cta small fm color-tint">Learn more</span>
+    </div>
+  </a>
+</div>

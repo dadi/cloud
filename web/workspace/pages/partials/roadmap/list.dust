@@ -1,19 +1,46 @@
-<article class="box bd bd-grey box--join mb">
-  <div class="box__inner">
-    <div class="badge mb fm small color-blue">
-      <div class="badge__primary bg-blue color-white">
-        Design
+<div class="col w-1-2">
+  <article class="box box--x3 box--roadmap bd bd-grey box--join mb bg-white">
+    <div class="box__inner">
+      <div class="badge mb fm small color-blue">
+        <div class="badge__primary bg-blue color-white">
+          Design
+        </div>
+        <div class="badge__secondary">
+          In progress
+        </div>
       </div>
-      <div class="badge__secondary">
-        In progress
-      </div>
+
+      <h2 class="medium"><a href="#">Preview of our network interfaces</a></h2>
+
+      <p class="mb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.</p>
     </div>
+    <div class="box__footer bdt bd-grey small">
+      <div class="box__aside tar">
+        David Longworth <img src="https://dadi.cloud/img/team/davelongworth.jpg" width="25">
+      </div>
 
-    <h2 class="medium">Preview of our network interfaces</h2>
+      <time class="color-tint">8/2/2018</time>
+    </div>
+  </article>
+</div>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.</p>
-  </div>
-  <div class="box__footer bdt bd-grey small">
-    <time class="color-tint">8/2/2018</time>
-  </div>
-</article>
+
+          {! <div class="col w-1-4">
+            <article class="box box--x3 bd bd-green bg-light-green box--join mb">
+              <div class="box__inner">
+                <div class="badge mb fm small color-green">
+                  <div class="badge__primary bg-green color-white">
+                    Design
+                  </div>
+                  <div class="badge__secondary">
+                    In progress
+                  </div>
+                </div>
+
+                <h2 class="medium color-green">Preview of our network interfaces</h2>
+              </div>
+              <div class="box__footer bdt bd-grey small">
+                <time class="color-tint">8/2/2018</time>
+              </div>
+            </article>
+          </div> !}

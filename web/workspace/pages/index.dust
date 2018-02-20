@@ -1,29 +1,6 @@
 {>"partials/header"/}
 
-<nav class="color-white fm">
-  <div class="cnt">
-    <ul>
-      <li><a class="active" href="/{params.lang}">Overview</a></li>
-      <li><a href="/{params.lang}/roadmap">Roadmap</a></li>
-      <li><a href="/{params.lang}/knowledge">Knowledge</a></li>
-      <li><a href="/{params.lang}/network">Network</a></li>
-      <li><a href="/{params.lang}/partners">Partners</a></li>
-    </ul>
-
-    <ol>
-      <li class="social">
-        <a href="https://github.com/dadi" rel="external" title="Github" target="_blank"><img src="/assets/social/github.svg" height="24"></a>
-        <a href="https://medium.com/@daditech" rel="external" title="Medium" target="_blank"><img src="/assets/social/medium.svg" height="24"></a>
-        <a href="https://twitter.com/dadi" rel="external" title="Twitter" target="_blank"><img src="/assets/social/twitter.svg" height="24"></a>
-        <a href="https://reddit.com/r/dadi" rel="external" title="Reddit" target="_blank"><img src="/assets/social/reddit.svg" height="24"></a>
-        <a href="https://discord.gg/3sEvuYJ" rel="external" title="Discord" target="_blank"><img src="/assets/social/discord.svg" height="24"></a>
-        <a href="https://t.me/dadichat" rel="external" title="Telegram" target="_blank"><img src="/assets/social/telegram.svg" height="24"></a>
-      </li>
-      <li><a href="/{params.lang}/about">About</a></li>
-      <li><a class="docs" href="https://docs.dadi.tech/" target="_blank">Documentation</a></li>
-    </ol>
-  </div>
-</nav>
+{>"partials/nav"/}
 
 <header class="intro bg-dark color-white">
 
@@ -35,164 +12,79 @@
 
 </header>
 
-<main class="cnt">
- 
-    <div class="grid">
-      <div class="col w-2-5">
-        <div class="hdr fm ttu mb">
-          <h3><span>Roadmap updates</span></h3>
+<main class="mb--x2">
+
+  <div class="bg-tint mb"> 
+    <div class="cnt pb--x2">
+      <div class="grid" id="stickContainer">
+        <div class="col w-1-2">
+          <div class="hdr fm ttu mb">
+            <h3><span>Roadmap updates</span></h3>
+          </div>
+
+          <div class="grid">
+            {>"partials/roadmap/list"/}
+            {>"partials/roadmap/list"/}
+            {>"partials/roadmap/list"/}
+            {>"partials/roadmap/list"/}
+            {>"partials/roadmap/list"/}
+            {>"partials/roadmap/list"/}
+          </div>
+
+          <a href="#" class="more tac fm small">View all updates &rarr;</a>
         </div>
-
-        {>"partials/roadmap/list"/}
-        {>"partials/roadmap/list"/}
-       
-
-        <article class="box bd bd-green bg-light-green box--join mb">
-          <div class="box__inner">
-            <div class="badge mb fm small color-green">
-              <div class="badge__primary bg-green color-white">
-                Design
-              </div>
-              <div class="badge__secondary">
-                In progress
-              </div>
+        <div class="col w-1-2">
+          <div id="stick">
+            <div class="hdr fm ttu mb">
+              <h3><span>The network</span></h3>
             </div>
+            <iframe class="network mb" frameBorder="0" src="https://maps.darksky.net/@temperature,32.220,-12.324,2?embed=true&timeControl=false&fieldControl=false&defaultField=temperature&defaultUnits=_c"></iframe>
 
-            <h2 class="medium color-green">Preview of our network interfaces</h2>
+            Some cool stats here…
           </div>
-        </article>
-
-
-        {>"partials/roadmap/list"/}
-        {>"partials/roadmap/list"/}
-        {>"partials/roadmap/list"/}
-
-
-      </div>
-      <div class="col w-1-5">
-        <div class="hdr fm ttu mb">
-          <h3><span>Knowledge</span></h3>
         </div>
-
-        <a href="#" class="box bd bd-grey mb">
-          <div class="box__inner">
-            <h2>
-              <img src="/assets/icons/locked.svg" width="20" class="vam"> 
-              Security
-            </h2>
-            <p class="mb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
-
-            <span class="box__cta small fm color-tint">Learn more</span>
-          </div>
-        </a>
-
-        <a href="#" class="box bd bd-grey mb">
-          <div class="box__inner">
-            <h2>
-              <img src="/assets/icons/globe.svg" width="20" class="vam"> 
-              Network
-            </h2>
-            <p class="mb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
-
-            <span class="box__cta small fm color-tint">Learn more</span>
-          </div>
-        </a>
-
-        <a href="#" class="box bd bd-grey mb">
-          <div class="box__inner">
-            <h2>
-              <img src="/assets/icons/record.svg" width="20" class="vam"> 
-              Token
-            </h2>
-            <p class="mb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
-
-            <span class="box__cta small fm color-tint">Learn more</span>
-          </div>
-        </a>
-
-         <a href="#" class="box bd bd-grey mb">
-          <div class="box__inner">
-            <h2>
-              <img src="/assets/icons/locked.svg" width="20" class="vam"> 
-              Security
-            </h2>
-            <p class="mb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
-
-            <span class="box__cta small fm color-tint">Learn more</span>
-          </div>
-        </a>
-
-      </div>
-      <div class="col w-2-5">
-        <div class="hdr fm ttu mb">
-          <h3><span>Web services</span></h3>
-        </div>
-
-        <div class="grid">
-          <div class="col w-1-2">
-            <div class="box bd bd-grey mb" style="border-top: 1px solid #0ba6dc">
-              <div class="box__inner">
-                <h2 class="fm fwn" style="color: #0BA6DC">
-                  api
-                </h2>
-                <p class="mb">A high-performance RESTful API layer designed in support of API-first development and the principles of COPE.</p>
-
-                <a href="#" class="box__cta small fm color-tint">Learn more</a>
-                <a href="#" class="box__cta small fm color-tint">Latest updates</a>
-                <a href="#" class="box__cta small fm color-tint">Install</span>
-              </div>
-            </div>
-          </div>
-          <div class="col w-1-2">
-            <div class="box bd bd-grey mb" style="border-top: 1px solid #e22274">
-              <div class="box__inner">
-                <h2 class="fm fwn" style="color: #e22274">
-                  cdn
-                </h2>
-                <p class="mb">A high-performance RESTful API layer designed in support of API-first development and the principles of COPE.</p>
-
-                <a href="#" class="box__cta small fm color-tint">Learn more</a>
-                <a href="#" class="box__cta small fm color-tint">Latest updates</a>
-                <a href="#" class="box__cta small fm color-tint">Install</span>
-              </div>
-            </div>
-          </div>
-          <div class="col w-1-2">
-            <div class="box bd bd-grey mb" style="border-top: 1px solid #e42917">
-              <div class="box__inner">
-                <h2 class="fm fwn" style="color: #e42917">
-                  web
-                </h2>
-                <p class="mb">A high-performance RESTful API layer designed in support of API-first development and the principles of COPE.</p>
-
-                <a href="#" class="box__cta small fm color-tint">Learn more</a>
-                <a href="#" class="box__cta small fm color-tint">Latest updates</a>
-                <a href="#" class="box__cta small fm color-tint">Install</span>
-              </div>
-            </div>
-          </div>
-          <div class="col w-1-2">
-            <div class="box bd bd-grey mb" style="border-top: 1px solid #ffbf0e">
-              <div class="box__inner">
-                <h2 class="fm fwn" style="color: #ffbf0e">
-                  publish
-                </h2>
-                <p class="mb">A high-performance RESTful API layer designed in support of API-first development and the principles of COPE.</p>
-
-                <a href="#" class="box__cta small fm color-tint">Learn more</a>
-                <a href="#" class="box__cta small fm color-tint">Latest updates</a>
-                <a href="#" class="box__cta small fm color-tint">Install</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        
-
       </div>
     </div>
+  </div>
 
+  <div class="cnt">
+    <div class="hdr fm ttu mb">
+      <h3><span>Web services</span></h3>
+    </div>
+              
+    <div class="grid">
+      {>"partials/web-services/list"/}
+      {>"partials/web-services/list"/}
+      {>"partials/web-services/list"/}
+      {>"partials/web-services/list"/}
+      {>"partials/web-services/list"/}
+      {>"partials/web-services/list"/}
+      {>"partials/web-services/list"/}
+      {>"partials/web-services/list"/}
+      {>"partials/web-services/list"/}
+      {>"partials/web-services/list"/}
+      {>"partials/web-services/list"/}
+    </div>
+
+    <div class="hdr fm ttu mb">
+      <h3><span>Knowledge</span></h3>
+    </div>
+
+    <div class="grid">
+      {>"partials/knowledge/list"/}
+      {>"partials/knowledge/list"/}
+      {>"partials/knowledge/list"/}
+      {>"partials/knowledge/list"/}
+      {>"partials/knowledge/list"/}
+      {>"partials/knowledge/list"/}
+      {>"partials/knowledge/list"/}
+      {>"partials/knowledge/list"/}
+      {>"partials/knowledge/list"/}
+      {>"partials/knowledge/list"/}
+    </div>
+
+    <a href="#" class="more tac fm small">View all knowledge &rarr;</a>
+  </div>
 </main>
-
 
 {>"partials/footer"/}
