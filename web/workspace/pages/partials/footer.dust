@@ -58,9 +58,10 @@
 
 <script type="text/javascript">
   new StickySidebar('#stick', {
-    topSpacing: 65,
+    topSpacing: 55,
     bottomSpacing: 0,
-    containerSelector: '#stickContainer'
+    containerSelector: '#stickContainer',
+    minWidth: 800
   });
 </script>
 

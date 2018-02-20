@@ -1,12 +1,10 @@
 <div class="col w-1-4">
-  <div class="box box--x2 bd bd-grey mb" style="border-top: 1px solid #0ba6dc">
+  <div class="box box--x2 bd bd-grey mb" style="border-top: 1px solid #{color}">
     <div class="box__inner">
       <div class="box__icon">
-        <img src="/assets/products/dadi-api.png" height="35">
+        <img src="/assets/products/dadi-{app}.png" height="35">
       </div>
-      <h2 class="fm fwn" style="color: #0BA6DC">
-        api
-      </h2>
+      <h2 class="fm fwn normal" style="color:#{color}">{app}</h2>
       <p class="mb">A high-performance RESTful API layer designed in support of API-first development and the principles of COPE.</p>
     </div>
     <div class="box__footer box__footer--web-service">
