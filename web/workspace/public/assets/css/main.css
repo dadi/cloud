@@ -301,7 +301,7 @@ nav .docs:hover:after {
   height: 100px;
   height: 100vh;
   position: relative;
-  background: url(/assets/img/header.jpg) no-repeat 50%;
+  background: #04111d url(/assets/img/header.jpg) no-repeat 50%;
   background-size: auto 100%;
   z-index: 2;
 }
