@@ -139,6 +139,10 @@ h2 {
   font-weight: bold;
 }
 
+.fill {
+  width: 100%;
+  height: auto;
+}
 
 .bd { border: 1px solid; }
 .bdt { border-top: 1px solid; }
@@ -408,9 +412,28 @@ a.box:hover .box__cta,
   padding: 3px 10px;
 }
 
-.network {
-  width: 100%;
-  height: 300px;
+.network  {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stat {
+  border-top: 1px solid #E5E4E4;
+  display: block;
+  margin-bottom: 15px;
+}
+.stat__metric {
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.stat__figure {
+  font-size: 2.3rem;
+  letter-spacing: -1.5px;
+}
+.stat__unit {
+  font-size: 0.8rem;
+  letter-spacing: normal;
 }
 
 footer {

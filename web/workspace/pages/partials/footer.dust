@@ -18,23 +18,26 @@
       <div class="col w-1-4 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Sitemap</span></h3></div>
         <ul>
-          <li><a href="/en/contact/">Contact</a></li>
-          <li><a href="/en/about/">About &amp; Careers</a></li>
-          <li><a href="/en/support/">Support</a></li>
-          <li><a href="/en/latest/">Latest</a></li>
-          <li><a href="/en/how-we-work/">How we work</a></li>
-          <li><a href="/en/faq/">FAQ</a></li>
-          <li><a href="/en/privacy/">Privacy</a></li>
-          <li><a href="/en/bounty/">Bug bounty</a></li>
+          <li><a href="/{params.lang}/network/">Network</a></li>
+          <li><a href="/{params.lang}/roadmap/">Roadmap</a></li>
+          <li><a href="/{params.lang}/knowledge/">Knowledge</a></li>
+          <li><a href="/{params.lang}/about/">About</a></li>
+          <li><a href="/{params.lang}/careers/">Careers</a></li>
+          <li><a href="/{params.lang}/culture/">Culture</a></li>
+          <li><a href="/{params.lang}/team/">Team</a></li>
+          <li><a href="/{params.lang}/partners/">Partners</a></li>
+          <li><a href="/{params.lang}/contact/">Contact</a></li>
+          <li><a href="/{params.lang}/faq/">FAQ</a></li>
+          <li><a href="/{params.lang}/privacy/">Privacy</a></li>
         </ul>
       </div>
       <div class="col w-1-4 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Web services</span></h3></div>
         <ul>
-          <li><a href="/en/api/" class="fwb"><img src="/assets/products/dadi-api.png" width="15">API</a></li>
-          <li><a href="/en/web/" class="fwb"><img src="/assets/products/dadi-web.png" width="19">Web</a></li>
-          <li><a href="/en/publish/" class="fwb"><img src="/assets/products/dadi-publish.png" width="15">Publish</a></li>
-          <li><a href="/en/cdn/" class="fwb"><img src="/assets/products/dadi-cdn.png" class="alignv float--right" width="15">CDN</a></li>
+          <li><a href="/{params.lang}/api/" class="fwb"><img src="/assets/products/dadi-api.png" width="15">API</a></li>
+          <li><a href="/{params.lang}/web/" class="fwb"><img src="/assets/products/dadi-web.png" width="19">Web</a></li>
+          <li><a href="/{params.lang}/publish/" class="fwb"><img src="/assets/products/dadi-publish.png" width="15">Publish</a></li>
+          <li><a href="/{params.lang}/cdn/" class="fwb"><img src="/assets/products/dadi-cdn.png" class="alignv float--right" width="15">CDN</a></li>
           <li><a href="http://docs.dadi.tech" onclick="ga('send','event','Documentation','Click','Footer');" rel="noopener"><img src="/assets/icons/pop-out.svg" class="alignv float--right" width="15">Documentation</a></li>
         </ul>
       </div>
