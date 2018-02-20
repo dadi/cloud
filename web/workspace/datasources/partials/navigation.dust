@@ -1,0 +1,52 @@
+<nav class="cf">
+  <a href="/{params.lang}/" class="inline-block">
+    <img src="/assets/img/dadi-{@select key=page.key}{@eq value="home"}colour{/eq}{@eq value="Products"}dark{/eq}{@none}light{/none}{/select}.svg" width="150" height="35" alt="DADI" class="logo">
+  </a>
+  <ol>
+    <li><a href="/{params.lang}/" {@eq key=page.key value="home"}class="on"{/eq}>{i18n.results[0].technology}</a>
+    </li>
+    <li><a href="/{params.lang}/support" onclick="ga('send','event','Support','Click','Header');" {@eq key=page.key value="Support"}class="on"{/eq}>{i18n.results[0].support}</a>
+    </li>
+    <li><a href="https://forum.dadi.tech/" onclick="ga('send','event','Forum','Click','Header');">{i18n.results[0].forum}</a>
+    </li>
+    <li class="ico-link"><a href="https://dadi.cloud/en/?hidepromo" onclick="ga('send','event','DADI ICO','Click','Header');">Crowdsale</a>
+    </li>
+  </ol>
+  <ul>
+    <li><a href="https://github.com/dadi/" onclick="ga('send','event','Github','Click','Header');">{i18n.results[0].github_find}</a>
+    </li>
+    <li><a href="http://docs.dadi.tech" class="txt--blue" onclick="ga('send','event','Documentation','Click','Header');">{i18n.results[0].documentation}</a>
+    </li>
+    <li>
+      <select id="lang">
+        <optgroup label="Languages">
+          <option value="/en{pathNoLang}" {@eq key=params.lang value="en"}selected{/eq}>English</option>
+          <option value="/de{pathNoLang}" {@eq key=params.lang value="de"}selected{/eq}>Deutsche</option>
+          <option value="/jp{pathNoLang}" {@eq key=params.lang value="jp"}selected{/eq}>日本語</option>
+          <option value="/fr{pathNoLang}" {@eq key=params.lang value="fr"}selected{/eq}>Français</option>
+          <option value="/es{pathNoLang}" {@eq key=params.lang value="es"}selected{/eq}>Español</option>
+          <option value="/ru{pathNoLang}" {@eq key=params.lang value="ru"}selected{/eq}>Pусский</option>
+          <option value="/pt{pathNoLang}" {@eq key=params.lang value="pt"}selected{/eq}>Português</option>
+          <option value="/zh_hans{pathNoLang}" {@eq key=params.lang value="zh_hans"}selected{/eq}>中文 (CN/SG)</option>
+          <option value="/zh_hant{pathNoLang}" {@eq key=params.lang value="zh_hant"}selected{/eq}>中文 (TW/HK)</option>
+        </optgroup>
+      </select>
+    </li>
+  </ul>
+</nav>
+
+{@select key=page.key}
+{@eq key=page.key value="home" /}
+{@eq key=page.key value="Products" /}
+{@none}
+  {?params.product}
+    {>"partials/pattern" primary=products.results[0].dark-color /}
+  {:else}
+    {?page.color}
+      {>"partials/pattern" primary=page.color /}
+    {:else}
+      {>"partials/pattern" primary="#21262d" /}
+    {/page.color}
+  {/params.product}
+{/none}
+{/select}

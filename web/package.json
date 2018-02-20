@@ -1,0 +1,16 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@dadi/web": "^5.0.1",
+    "@dadi/web-dustjs": "^1.1.2",
+    "html-minifier": "^3.5.9"
+  }
+}

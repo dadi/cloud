@@ -1,0 +1,19 @@
+<div class="container container--pad">
+  <h2 class="larger alignc">{i18n.results[0].successstories_header}</h2>
+  <p class="alignc normal">{i18n.results[0].successstories_overview}</p>
+
+  <div class="grid marg__top--x2">
+    {#successes.results}
+      <div class="col w-1-1 marg__bottom success__item">
+          <a href="/{params.lang}/support/{handle}/" class="cf block pad txt--white " style="background-color:{color};background-image:url(/assets/successes/{handle}.jpg);background-size:cover;background-position:50% 50%;">
+              <div class="read inline-block success__desc pad bg--black" style="background-color:{color}; color:{text-color}">
+                  <p class="hdr large">{title}</p>
+                  <p class="normal">{summary}</p>
+                  <p><span class="btn">{i18n.results[0].learn_more}</span>
+                  </p>
+              </div>
+          </a>
+      </div>
+    {/successes.results}
+  </div>
+</div>

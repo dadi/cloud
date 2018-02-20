@@ -1,0 +1,7 @@
+<div class="pad__top pad__bottom bg--dark-blue txt--white">
+  <div class="container">
+    <h2 class="larger alignc">{i18n.results[0].beautiful_header}</h2>
+    <p class="normal alignc marg__bottom--x2 bs-marg__bottom">{i18n.results[0].beautiful_body}</p>
+    <img src="/assets/illustrations/publish.png" class="fill block">
+  </div>
+</div>

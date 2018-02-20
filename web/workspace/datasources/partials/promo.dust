@@ -1,0 +1,103 @@
+<div class="csp overlay active" id="csp">
+  <div class="overlay__inner">
+    <div class="open-overlay close" onclick="closeOverlays()">×</div>
+    <p class="hdr" style="color:#0ecc5f">DADI Crowdsale:<br>Registration now open</p>
+    <p class="hdr">Public sale opens January 29th</p>
+    <div class="grid">
+      <div class="col w-1-2"><a href="https://dadi.cloud/en/?hidepromo">Learn more</a></div>
+      <div class="col w-1-2"><a class="open-overlay" onclick="closeOverlays()" href="#">No thanks</a></div>
+    </div>
+  </div>
+  <style>
+    .csp {
+      z-index: 12;
+      display: none;
+      background: rgba(0,0,0,.73);
+    }
+    .csp.active {
+      display: block;
+    }
+    .csp .close {
+      position: absolute;
+      top: 0; right: 0;
+      color: #fff !important;
+      border: 0 !important;
+      font-size: 30px;
+      background-color: none;
+      width: 40px; height: 40px;
+      line-height: 40px;
+      vertical-align: middle;
+      text-align: center;
+      text-decoration: none !important;
+      cursor: pointer;
+    }
+    .csp .hdr {
+      font-size: 37px;
+      margin-bottom: 15px;
+      margin-top: 0;
+    }
+    .csp .overlay__inner {
+      background: #000;
+      color: #fff;
+      box-shadow: none;
+    }
+    .csp .grid {
+      margin-top: 30px;
+    }
+    .csp a {
+      background: #0ecc5f;
+      text-align: center;
+      padding: 13px;
+      color: #fff;
+      display: block;
+      text-decoration: none;
+      border: 1px solid #0ecc5f;
+      color: #000;
+    }
+    .csp .grid .open-overlay {
+       background: none;
+       color: #0ecc5f;
+    }
+    .overlay {
+      overflow: hidden;
+      background: rgba(0,0,0, 0.93);
+      z-index: 101;
+      position: fixed;
+      top: 0; right: 0; bottom: 0; left: -100%;
+      width: 100%;
+      transition: all 0.5s;
+      display: flex;
+
+      overflow: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+    .overlay.active {
+      left: 0;
+      display: block;
+      display: flex;
+    }
+    .overlay__inner {
+      position: relative;
+      background: #fff;
+      padding: 30px;
+      width: 80%;
+      max-width: 770px;
+      box-shadow: 5px 5px 5px #000;
+      margin: auto;
+      flex: 1 1 auto;
+      display: block;
+    }
+  </style>
+</div>
+
+<script>
+function closeOverlays() {
+  var overlays = document.querySelectorAll('.overlay'), o;
+  
+  for (o = 0; o < overlays.length; ++o) {
+    overlays[o].classList.remove('active')
+  }
+
+  return false;
+}
+</script>

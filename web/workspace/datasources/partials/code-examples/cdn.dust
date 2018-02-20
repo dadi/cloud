@@ -1,0 +1,74 @@
+<div class="grid normal">
+  <div class="col w-1-2">
+    <h2>Recipes</h2>
+    <p>Delivery Recipes enable a predefined set of image manipulation parameters to be mapped to a URL.</p>
+    <p><a href="http://docs.dadi.tech/cdn/concepts/recipes/" class="btn btn--fill small ">Find out more</a></p>
+
+    <h2 class="pad__top">Example recipe.json</h2>
+
+    <code class="small"><pre>{~lb}{~n}
+    {~s}{~s}"recipe": "example-recipe-name",{~n}
+    {~s}{~s}"settings": {~lb}{~n}
+    {~s}{~s}{~s}{~s}"format": "jpg",{~n}
+    {~s}{~s}{~s}{~s}"quality": "80",{~n}
+    {~s}{~s}{~s}{~s}"width": "100",{~n}
+    {~s}{~s}{~s}{~s}"height": "100",{~n}
+    {~s}{~s}{~s}{~s}"resizeStyle": "entropy"{~n}
+    {~s}{~s}}{~n}
+    }</pre></code>
+
+    <p>Corresponding URL:</p>
+
+    <code class="small"><pre>http://youdomain.com{~n}
+    {~s}{~s}/example-recipe-name{~n}
+    {~s}{~s}/image-filename.png</pre></code>
+  </div>
+  <div class="col w-1-2">
+    <h2>Routes</h2>
+    <p>Routes allow DADI CDN to make a decision about which Delivery Recipe to use for the current request, based on a set of configurable conditions.</p>
+    <p>Conditions can include the type of device being used, the network type, user location and language.</p>
+    <p>Branching enables a set of conditional routing rules to be applied to a request.</p>
+    <p><a href="http://docs.dadi.tech/cdn/concepts/routes/" class="btn btn--fill small ">Find out more</a></p>
+
+    <h2 class="pad__top">Example route.json</h2>
+
+    <code class="small"><pre>{{~n}
+    {~s}{~s}"route": "sample-route",{~n}
+    {~s}{~s}"branches": [{~n}
+    {~s}{~s}{~s}{~s}{{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}"recipe": "thumbnail",{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}"condition": {{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}"device": "desktop",{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}"language": "en",{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}"country": [{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}"GB",{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}"US"{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}],{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}"network": "cable"{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}}{~n}
+    {~s}{~s}{~s}{~s}},{~n}
+    {~s}{~s}{~s}{~s}{{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}"recipe": "thumbnail-lo-res",{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}"condition": {{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}"device": [{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}"mobile",{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}"tablet"{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}],{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}"language": [{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}"en",{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}"pt"{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}],{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}"country": "GB",{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}"network": [{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}"cable",{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}"dsl"{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}{~s}{~s}]{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}}{~n}
+    {~s}{~s}{~s}{~s}},{~n}
+    {~s}{~s}{~s}{~s}{{~n}
+    {~s}{~s}{~s}{~s}{~s}{~s}"recipe": "default-recipe"{~n}
+    {~s}{~s}{~s}{~s}}{~n}
+    {~s}{~s}]{~n}
+    }</pre></code>
+  </div>
+</div>

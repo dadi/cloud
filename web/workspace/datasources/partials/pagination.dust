@@ -1,0 +1,16 @@
+<div class="pagination">
+{@paginate page=$page totalPages=$totalPages path="?page={n}"}{!
+  !}<a data-paginate="{n}" class="btn" href="{@eq key="{n}" value="1"}./{:else}{path}{/eq}">{n}</a>{!
+!}{:current}{!
+  !}<a data-paginate="{n}" class="btn on" href="{path}">{n}</a>{!
+!}{:first}{!
+  !}<a data-paginate="{n}" class="btn nextprev" href="{@eq key="{n}" value="1"}./{:else}{path}{/eq}">First</a>{!
+!}{:prev}{!
+  !}<a data-paginate="{n}" class="btn nextprev prev" href="{@eq key="{n}" value="1"}./{:else}{path}{/eq}">Prev</a>{!
+!}{:next}{!
+  !}<a data-paginate="{n}" class="btn nextprev next" title="{n}" href="{path}">Next</a>{!
+!}{:last}{!
+  !}<a data-paginate="{n}" class="btn nextprev last" title="{n}" href="{path}">Last</a>{!
+!}
+{/paginate}
+</div>
