@@ -18,14 +18,12 @@
             <h3><span>Latest articles</span></h3>
           </div>
 
-          <div class="grid">
-            {>"partials/roadmap/list" grid="1" size="1" /}
-            {>"partials/roadmap/list" grid="1" size="1" /}
-            {>"partials/roadmap/list" grid="1" size="1" /}
-            {>"partials/roadmap/list" grid="1" size="1" /}
-            {>"partials/roadmap/list" grid="1" size="1" /}
-            {>"partials/roadmap/list" grid="1" size="1" /}
-          </div>
+          {>"partials/roadmap/list" size="1" /}
+          {>"partials/roadmap/list" size="1" /}
+          {>"partials/roadmap/list" size="1" /}
+          {>"partials/roadmap/list" size="1" /}
+          {>"partials/roadmap/list" size="1" /}
+          {>"partials/roadmap/list" size="1" /}
       </div>
       <div class="col w-1-2">
         <div id="stick">

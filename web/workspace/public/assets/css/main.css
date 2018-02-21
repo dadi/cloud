@@ -260,7 +260,7 @@ h1, h2 {
 
 
 .hdr {
-  padding: 40px 0 0 0;
+  padding: 30px 0 0 0;
   font-weight: normal;
   letter-spacing: 0.84px;
   position: relative;
@@ -309,7 +309,7 @@ nav li:first-of-type a {
   padding-left: 0;
 }
 nav .active {
-  color: #0ABE57;
+  color: #0ecc5f;
   position: relative;
 }
 nav a:after {
@@ -317,17 +317,17 @@ nav a:after {
   display: block;
   margin-top: 5px;
   height: 1px;
-  background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, #0ABE57 100%);
+  background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, #0ecc5f 100%);
   width: 0;
   transition: width 0.2s ease-in-out;
 }
 nav a:hover {
-  color: #0ABE57; 
+  color: #0ecc5f; 
 }
 nav a:hover:after,
 nav .active:after {
   width: 100%;
-  background: #0ABE57;
+  background: #0ecc5f;
 }
 
 nav .nav__logo {
@@ -343,7 +343,8 @@ nav .nav__logo a {
   border-right: 1px solid rgba(255,255,255,0.1);
 }
 nav .nav__logo a:hover {
-  background-color: #0ABE57;
+  background-color: #0ecc5f;
+  border-color: #0ecc5f;
 }
 
 nav .nav__social {
@@ -406,7 +407,7 @@ nav .nav__docs a:hover:after {
 .intro__about h2:before {
   content: ' ';
   width: 33.33%;
-  border-top: 1px solid #0ABE57;
+  border-top: 1px solid #0ecc5f;
   display: block;
   margin: 20px 0;
 }
@@ -439,20 +440,9 @@ nav .nav__docs a:hover:after {
   display: block;
   line-height: 1.4em;
 }
-@media handheld, only screen and (min-width: 800px) {
-  .box {
-    height: 260px;
-  }
-  .box--x2 {
-    height: 330px;
-  }
-  .box--x3 {
-    height: 380px;
-  }
-}
 .box--join:after {
   border-left: 1px solid #ededed;
-  height: 26px;
+  height: 31px;
   content: ' ';
   display: block;
   position: absolute;
@@ -507,6 +497,24 @@ a.box:hover {
 a.box:hover .box__cta,
 .box__cta:hover {
   color: #3585fa;
+}
+
+@media handheld, only screen and (min-width: 800px) {
+  .box {
+    height: 260px;
+  }
+  .box--natural {
+    height: auto;
+  }
+  .box--natural .box__inner {
+    padding-bottom: 25px;
+  }
+  .box--x2 {
+    height: 330px;
+  }
+  .box--x3 {
+    height: 380px;
+  }
 }
 
 
@@ -802,4 +810,57 @@ form fieldset .info {
   display: block;
   margin: 0 auto;
   margin-top: 10px;
+}
+
+
+.roadmap {
+  position: relative;
+}
+.roadmap__milestones .box--join:after,
+.roadmap__articles .box--join:after {
+  left: auto; right: 25px;
+}
+.box--roadmap:before {
+  position: absolute;
+  right: -62px;
+  top: 20px;
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  border: 4px solid #eee;
+  background: #fff;
+}
+.roadmap__line {
+  border-right: 2px solid #eee;
+  position: absolute;
+  left: 55.4%; top: 20px;
+  content: ' ';
+  height: 100%;
+}
+.roadmap__date {
+  width: 13%;
+}
+.roadmap__date dl {
+  margin-bottom: 30px;
+}
+.roadmap__date dt {
+  font-weight: bold;
+  border-top: 1px solid #04111d;
+  padding: 4px 0;
+}
+.roadmap__date dd {
+  border-top: 1px solid #EDEDED;
+  padding: 4px 0;
+}
+.roadmap__date a {
+  display: block;
+}
+.roadmap__date a:hover {
+  color: #0ecc5f;
+}
+.roadmap__articles {
+  position: relative;
+  left: 60px;
 }
