@@ -4,7 +4,7 @@
 
 <header class="bg-tint mb pt--x2 pb--x2 cf bdb bd-grey">
   <div class="cnt cf">
-    <img src="/assets/icons/chat-more.svg" width="50" class="mb">
+    <img src="/assets/icons/chat-more.svg" width="60" class="mb">
     <h1>Contact</h1>
     <p class="normal col w-1-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
   </div>
