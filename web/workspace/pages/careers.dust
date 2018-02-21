@@ -2,7 +2,7 @@
 
 {>"partials/nav"/}
 
-<header class="header bg-tint mb">
+<header class="bg-tint mb pt--x2 pb--x2 cf bdb bd-grey">
   <div class="cnt cf">
     <img src="/assets/icons/star.svg" width="50" class="mb">
     <h1>Careers</h1>

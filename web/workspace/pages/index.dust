@@ -5,7 +5,7 @@
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
 {/head}
 
-{>"partials/nav"/}
+{>"partials/nav" stick="true" /}
 
 <header class="intro bg-dark color-white">
 

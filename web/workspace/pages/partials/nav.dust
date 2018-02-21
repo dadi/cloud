@@ -1,12 +1,20 @@
-<nav class="color-white fm">
+<nav class="color-white fm {?stick}stick{/stick}">
   <div class="cnt">
     <ul>
-      <li>
+      {@ne key=page.key value="home"}
+        <li class="icon">
+          <a href="/">Home</a>
+        </li>
+        {:else}
+        <li>
         <a 
           {@eq key="{page.key}" value="home"}class="active"{/eq}
           href="/{?params.lang}{params.lang}{:else}en{/params.lang}">
           Overview
         </a></li>
+        
+      {/ne}
+      
       <li>
         <a 
           {@eq key="{page.key}" value="roadmap"}class="active"{/eq}
@@ -25,16 +33,23 @@
           href="/{?params.lang}{params.lang}{:else}en{/params.lang}/network">
           Network
         </a></li>
-      <li>
+        <li>
         <a 
           {@eq key="{page.key}" value="partners"}class="active"{/eq}
           href="/{?params.lang}{params.lang}{:else}en{/params.lang}/partners">
           Partners
-        </a></li>
-    </ul>
+        </a>
+      </li>
+      <li>
+        <a 
+          {@eq key="{page.key}" value="team"}class="active"{/eq}
+          href="/{?params.lang}{params.lang}{:else}en{/params.lang}/team">Team
+        </a>
+      </li>
+      <li class="nav--right"><a class="docs" href="https://docs.dadi.tech/" target="_blank">Documentation</a></li>
+    
 
-    <ol>
-      <li class="social">
+      <li class="social nav--right">
         <a href="https://github.com/dadi" rel="external" title="Github" target="_blank"><img src="/assets/social/github.svg" height="24"></a>
         <a href="https://medium.com/@daditech" rel="external" title="Medium" target="_blank"><img src="/assets/social/medium.svg" height="24"></a>
         <a href="https://twitter.com/dadi" rel="external" title="Twitter" target="_blank"><img src="/assets/social/twitter.svg" height="24"></a>
@@ -42,13 +57,6 @@
         <a href="https://discord.gg/3sEvuYJ" rel="external" title="Discord" target="_blank"><img src="/assets/social/discord.svg" height="24"></a>
         <a href="https://t.me/dadichat" rel="external" title="Telegram" target="_blank"><img src="/assets/social/telegram.svg" height="24"></a>
       </li>
-      <li>
-        <a 
-          {@eq key="{page.key}" value="about"}class="active"{/eq}
-          href="/{?params.lang}{params.lang}{:else}en{/params.lang}/about">About
-        </a>
-      </li>
-      <li><a class="docs" href="https://docs.dadi.tech/" target="_blank">Documentation</a></li>
-    </ol>
+      
   </div>
 </nav>

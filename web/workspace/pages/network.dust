@@ -1,17 +1,155 @@
 {>"partials/header"/}
 
-{>"partials/nav"/}
+{<head}
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+{/head}
 
-<header class="header bg-tint mb">
+{>"partials/nav" /}
+
+<nav class="subnav bg-white cf fm">
   <div class="cnt">
-    <img src="/assets/icons/globe.svg" width="50" class="mb">
-    <h1>Network</h1>
-    <p class="medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+    <ul>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="#usecases">Use cases</a></li>
+      <li><a href="#miners">Become a miner</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="bg-tint mb pt--x2 cf bdb bd-grey">
+  <div class="cnt mb">
+    <div class="grid">
+      <div class="col w-1-3 mb">
+        <img src="/assets/icons/globe.svg" width="50" class="mb">
+
+        <h1>Network</h1>
+        <p class="normal mb">DADI is a global, decentralized cloud platform, focused on the provision of web services to help you build, scale and grow your digital products.</p>
+        <p><a class="btn" href="/{?params.lang}{params.lang}{:else}en{/params.lang}/knowledge/network/overview">Full platform overview</a></p>
+      </div>
+      <div class="col w-2-3">
+        {>"partials/network-map"/}
+      </div>
+    </div>
+
+    <div class="hdr fm ttu mb" style="padding-top:0">
+      <h3><span>Roadmap updates</span></h3>
+    </div>
+
+    <div class="grid">
+      {>"partials/roadmap/list" grid="4" size="3"/}
+      {>"partials/roadmap/list" grid="4" size="3"/}
+      {>"partials/roadmap/list" grid="4" size="3"/}
+      {>"partials/roadmap/list" grid="4" size="3"/}
+    </div>
   </div>
 </header>
 
 <main class="mb--x2">
   <div class="cnt">
+    <div class="hdr fm ttu mb--x2">
+      <h3><span>Platform architecture</span></h3>
+    </div>
+
+    <div class="grid mb--x2">
+      <div class="col w-1-3">
+        <img src="/assets/icons/cloud-upload.svg" height="70" class="mb">
+        <h2 class="medium">Smart contracts</h2>
+        <p class="normal">Ethereum Smart Contracts as a consensus system, ensures transparency and security for network participants.</p>
+      </div>
+      <div class="col w-1-3">
+        <img src="/assets/icons/colors.svg" height="70" class="mb">
+        <h2 class="medium">Fog computing</h2>
+        <p class="normal">Ethereum Smart Contracts as a consensus system, ensures transparency and security for network participants.</p>
+      </div>
+      <div class="col w-1-3">
+        <img src="/assets/icons/layers.svg" height="70" class="mb">
+        <h2 class="medium">Protocol Buffers</h2>
+        <p class="normal">Fast data serialisation method used to optimise the network.</p>
+      </div>
+    </div>
+    <div class="grid mb--x2">
+      <div class="col w-1-3">
+        <img src="/assets/icons/bars.svg" height="70" class="mb">
+        <h2 class="medium">Docker</h2>
+        <p class="normal">An isolated environment ensuring computing parallelism and security for Consumer app bundles.</p>
+      </div>
+      <div class="col w-1-3">
+        <img src="/assets/icons/bolt.svg" height="70" class="mb">
+        <h2 class="medium">GRPC</h2>
+        <p class="normal">A technology for distributing procedures across multiple hosts.</p>
+      </div>
+      <div class="col w-1-3">
+        <img src="/assets/icons/swap.svg" height="70" class="mb">
+        <h2 class="medium">Zookeeper</h2>
+        <p class="normal">A peer-to-peer technology for node communication and distributed synchronization.</p>
+      </div>
+    </div>
+
+    <div class="hdr fm ttu mb">
+      <h3><span>What can it be used for?</span></h3>
+    </div>
+
+    <div class="grid">
+      {>"partials/usecases/list"
+        icon="edit" 
+        use="Content & publishing platforms" 
+        desc="Combines flexible editorial interfaces with an API-first/COPE (Create Once, Publish Everywhere) philosophy."
+      /}
+      {>"partials/usecases/list"
+        icon="picture" 
+        use="Content manipulation & distribution" 
+        desc="Seamless delivery of image, audio and video assets for digital products across multiple contexts."
+      /}
+      {>"partials/usecases/list"
+        icon="smartphone" 
+        use="Apps: tablet and mobile" 
+        desc="DADI's content management technology - Publish, API and CDN - is a hand-in-glove fit for mobile app development."
+      /}
+      {>"partials/usecases/list"
+        icon="power" 
+        use="'Always-on' products" 
+        desc="The decentralized nature of DADI is uniquely performant for products such as news services which need to be 'always-on'."
+      /}
+      {>"partials/usecases/list"
+        icon="duplicate" 
+        use="Subscription services" 
+        desc="Proficient in managing user data as they are content, DADI can support subscription services as part of a wider CRM capability."
+      /}
+      {>"partials/usecases/list"
+        icon="money" 
+        use="Cost-sensitive products" 
+        desc="Its decentralized architecture means users can save over 90% compared with traditional cloud providers."
+      /}
+      {>"partials/usecases/list"
+        icon="tag" 
+        use="Content classification" 
+        desc="Automate the classification and tagging of editorial content using its unique and highly accurate taxonomic framework."
+      /}
+      {>"partials/usecases/list"
+        icon="user" 
+        use="Customer relationship management" 
+        desc="Provides a 'single customer view' for relationship management in digital products and beyond."
+      /}
+      {>"partials/usecases/list"
+        icon="cart" 
+        use="Ecommerce" 
+        desc="Brings the flexibility of content management to retail by facilitating seamless control of products and inventory."
+      /}
+      {>"partials/usecases/list"
+        icon="activity" 
+        use="User experiences with machine learning" 
+        desc="Track user activity and make real-time 'decisions' about content or commercial opportunity most relevant to users."
+      /}
+      {>"partials/usecases/list"
+        icon="server" 
+        use="Big data" 
+        desc="Capability to act as an umbrella store for user data across multiple products in a digital portfolio."
+      /}
+    </div>
+
+    <a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/knowledge/network/usecases" class="more tac fm small">Read all usecases &rarr;</a>
+  
     
   </div>
 </main>

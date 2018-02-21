@@ -1,0 +1,12 @@
+<div class="col w-1-4 pad__bottom--x2 mb">
+  <a href="#" class="box box--x2 box bd bd-grey">
+    <div class="box__inner">
+      <img src="/assets/icons/{icon}.svg" width="50" class="mb">
+      <h2 class="medium">{use}</h2>
+      <p>{desc}</p>
+    </div>
+    {! <div class="box__footer">
+      <span class="box__cta small fm color-tint">Learn more</span>
+    </div> !}
+  </a>
+</div>

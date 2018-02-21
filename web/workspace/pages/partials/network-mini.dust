@@ -2,25 +2,9 @@
   <h3><span>The network</span></h3>
 </div>
 
-<div class="network mb">
-  {! <img src="/assets/img/bg-footer.png" width="807" height="425" class="mb--x2 fill"> !}
-  <div id="map"></div>
+{>"partials/network-map"/}
 
-  <script type="text/javascript">
-  mapboxgl.accessToken = 'pk.eyJ1IjoiYWJvdmVkYXZlIiwiYSI6Ink1a2RqVHcifQ.raf_kHdx5lG7ZeBF8XFcMw';
-  var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/abovedave/cjdwwax2q1cqy2sn3d8bpmb7v',
-      zoom: 0.2,
-      renderWorldCopies: false,
-      scrollZoom: false,
-      interactive: false,
-      center: [0, 40]
-  });
-  </script>
-</div>
-
-<div class="grid">
+<div class="grid pt">
   <div class="col w-1-3">
     <div class="stat">
       <div class="stat__metric small color-tint fm">

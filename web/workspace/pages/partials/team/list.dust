@@ -1,0 +1,10 @@
+<div class="col w-1-4 bs-w-1-2">
+  <a href="./team/joseph-denne" class="box box--x3 mb bd bd-grey">
+    <img src="/assets/team/josephdenne.jpg" class="fill">
+
+    <div class="box__caption">
+      <h2 class="normal" style="margin-bottom:3px">Joseph Denne</h2>
+      <p class="color-tint">CEO &amp; Co-Founder</p>
+    </div>
+  </a>
+</div>

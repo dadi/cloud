@@ -1,10 +1,10 @@
 {
   "page": {
-    "key": "about"
+    "key": "team"
   },
   "routes": [
     {
-      "path": "/:lang/about"
+      "path": "/:lang/team"
     }
   ]
 }

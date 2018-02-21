@@ -2,7 +2,7 @@
 
 {>"partials/nav"/}
 
-<header class="header bg-tint mb--x2">
+<header class="bg-tint mb--x2 pt--x2 pb cf bdb bd-grey">
   <div class="cnt">
     <img src="/assets/img/icon-error.svg" class="mb">
     <h1>Page not found.</h1>

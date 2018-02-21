@@ -1,0 +1,17 @@
+{
+  "page": {
+    "key": "web-services"
+  },
+  "datasources": [
+    "web-services"
+  ],
+  "requiredDatasources": [
+    "web-services"
+  ],
+  "routes": [
+    {
+      "path": "/:lang/:product",
+      "fetch": "web-services"
+    }
+  ]
+} 

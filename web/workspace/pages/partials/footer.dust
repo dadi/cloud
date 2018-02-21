@@ -1,4 +1,4 @@
-<footer class="bg-tint">
+<footer class="bg-tint bdt bd-grey">
   <div class="cnt fm small">
     <img src="/assets/img/dadi-logo-dark.svg" height="30" class="mb">
     <p class="mb--x2">This site is built with our own technology and is <a href="https://github.com/dadi" rel="external" title="Github" target="_blank">open source</a>. <strong>© DADI+ Ltd.</strong></p>

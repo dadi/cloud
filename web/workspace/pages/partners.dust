@@ -2,7 +2,7 @@
 
 {>"partials/nav"/}
 
-<header class="header bg-tint mb">
+<header class="bg-tint mb pt--x2 pb--x2 cf bdb bd-grey">
   <div class="cnt">
     <img src="/assets/icons/cup.svg" width="50" class="mb">
     <h1>Partners</h1>

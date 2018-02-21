@@ -2,11 +2,11 @@
 
 {>"partials/nav"/}
 
-<header class="header bg-tint mb">
+<header class="bg-tint mb pt--x2 pb--x2 cf bdb bd-grey">
   <div class="cnt">
     <img src="/assets/icons/files.svg" width="50" class="mb">
     <h1>Knowledge</h1>
-    <p class="medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+    <p class="normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
   </div>
 </header>
 

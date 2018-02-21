@@ -136,10 +136,17 @@ a {
 
 .small { font-size: 0.85rem }
 .normal { font-size: 1.15rem; line-height: 1.8rem; }
-.medium { font-size: 1.5rem; line-height: 1.8rem; }
+.medium { font-size: 1.5rem; line-height: 1.9rem; }
 
-h2 {
+h1, h2 {
   margin-bottom: 0.6em;
+}
+
+.read {
+  line-height: 1.5em;
+}
+.read p {
+  margin-bottom: 1.2rem;
 }
 
 .tac {
@@ -159,6 +166,7 @@ h2 {
 
 .bd { border: 1px solid; }
 .bdt { border-top: 1px solid; }
+.bdb { border-bottom: 1px solid; }
 
 .bg-white             { background-color: #fff; }
 .bg-dark              { background-color: #04111d; }
@@ -184,20 +192,44 @@ h2 {
   font-weight: normal;
 }
 
-.mb {
-  margin-bottom: 30px;
-}
-.mb--x2 {
-  margin-bottom: 60px;
-}
-.pb--x2 {
-  padding-bottom: 60px;
-}
+.mb { margin-bottom: 30px; }
+.mb--x2 { margin-bottom: 60px;}
+
+.pt { padding-top: 30px; }
+.pb { padding-bottom: 30px; }
+.pb--x2 { padding-bottom: 60px; }
+.pt--x2 { padding-top: 60px; }
 
 .vam {
   position: relative;
   top: 1px;
   margin-right: 3px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: transparent;
+  color: #777;
+  border: 1px solid transparent;
+  border-bottom-color: #0ECB5F;
+  text-decoration: none;
+  padding: 15px 0;
+  transition: all 0.2s;
+  cursor: pointer;
+  line-height: 0;
+  font-family: 'Roboto Mono', monospace;
+  outline: none;
+}
+.btn:hover,
+.btn--large {
+  background-color: #fff;
+  color: #fff;
+  border-color: #0ECB5F;
+  background: #0ECB5F;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -221,12 +253,18 @@ h2 {
 
 
 nav {
-  text-align: right;
   z-index: 10;
-  position: fixed;
+  position: relative;
   top: 0; left: 0; right: 0;
-  background: rgba(4, 17, 29, 0.97);
+  background-color: rgba(4, 17, 29, 0.97);
   box-shadow: 0 0 10px rgba(4, 17, 29, 0.57);
+}
+nav.subnav {
+  box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
+  position: relative;
+}
+nav.stick {
+  position: fixed;
 }
 
 @media handheld, only screen and (max-width: 800px) {
@@ -234,14 +272,15 @@ nav {
     display: none;
   }
 }
-nav ul {
-  float: left;
+.nav--right {
+  float: right;
 }
 nav li {
   display: inline-block;
+  vertical-align: middle;
 }
 nav li a {
-  padding: 25px 20px;
+  padding: 25px 20px 20px;
   display: inline-block;
 }
 nav li:first-of-type a {
@@ -269,14 +308,28 @@ nav .active:after {
   background: #0ABE57;
 }
 
+nav .icon {
+  margin-right: 19px;
+}
+nav .icon a {
+  font-size: 0;
+  background-image: url(/assets/img/dadi-mark-white.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 40px auto;
+  padding: 32px 37px 33px !important;
+  background-color: #0ABE57;
+}
+nav .icon a:hover {
+  background-color: #0CAF51;
+}
+
 nav .social {
-  margin: 0 6.25px;
-  position: absolute;
-  left: 60%;
-  top: 13px;
+  margin-right: 20px;
+  padding: 15px 0px 0 0;
 }
 nav .social a {
-  padding: 10px 5px;
+  padding: 8px 6px;
 }
 nav img {
   vertical-align: middle;
@@ -335,14 +388,6 @@ nav .docs:hover:after {
   height: auto;
 }
 
-.header {
-  padding: 140px 0 50px;
-  border-bottom: 1px solid #E5E4E4;
-}
-.header h1 {
-  margin-bottom: 10px;
-}
-
 .box {
   box-shadow: 2px 2px 15px 0 rgba(0,0,0,0.04);
   position: relative;
@@ -377,6 +422,9 @@ nav .docs:hover:after {
   padding: 25px;
   padding-bottom: 100px;
   display: block;
+}
+.box__caption {
+  padding: 10px 25px;
 }
 .box__icon {
   position: absolute;
@@ -448,7 +496,7 @@ a.box:hover .box__cta,
 .network  {
   margin-left: auto;
   margin-right: auto;
-  padding-top: 60%;
+  padding-top: 55%;
   position: relative;
 }
 .network #map {
@@ -484,7 +532,6 @@ footer {
   background-repeat: no-repeat;
   background-size: 1000px auto;
   background-position: 50% 150%; 
-  border-top: 1px solid #E5E4E4;
 }
 @media handheld, only screen and (max-width: 800px) {
   footer {
@@ -518,3 +565,16 @@ footer ul li {
 footer ul li img {
   float: right;
 }
+
+
+.list--feat li {
+  border-bottom: none;
+  position: relative;
+  list-style: none;
+  padding: 0 0 15px 35px; }
+.list--feat svg,
+.list--feat img {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 20px; }
