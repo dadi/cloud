@@ -1,4 +1,4 @@
-{?grid}<div class="col w-1-{?grid}{grid}{:else}2{/grid}">{/grid}
+{?grid}<div class="col w-1-{grid}">{/grid}
   <article class="box box--x{?size}{size}{:else}3{/size} bd bd-grey {?join}box--join{/join} mb bg-white">
     <div class="box__inner">
       <div class="badge mb fm small color-blue">

@@ -27,13 +27,13 @@
           </div>
 
           <div class="grid">
-            {>"partials/roadmap/list"/}
-            {>"partials/roadmap/list"/}
-            {>"partials/roadmap/list"/}
-            {>"partials/roadmap/list"/}
-            {>"partials/roadmap/list"/}
-            {>"partials/roadmap/list"/}
-          </div>
+            {>"partials/roadmap/list" grid="2" /}
+            {>"partials/roadmap/list" grid="2" /}
+            {>"partials/roadmap/list" grid="2" /}
+            {>"partials/roadmap/list" grid="2" /}
+            {>"partials/roadmap/list" grid="2" /}
+            {>"partials/roadmap/list" grid="2" /}
+          </div>  
 
           <a href="/{lang}/roadmap" class="more tac fm small">View all updates &rarr;</a>
         </div>

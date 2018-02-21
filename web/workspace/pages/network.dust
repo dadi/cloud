@@ -157,7 +157,7 @@
     <p class="normal mb--x2">If you are a miner or have spare computational power, DADI is a great application of your resource, delivering real world services for individuals, businesses and governments, whilst delivering income for you.</p>
 
 
-    <div class="grid mb">
+    <div class="grid mb mb--x2">
       <div class="col w-1-3">
         <a href="/{lang}/knowledge/network/stargates" class="box bd bd-grey">
           <div class="box__inner">
