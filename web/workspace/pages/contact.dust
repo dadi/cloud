@@ -6,13 +6,73 @@
   <div class="cnt cf">
     <img src="/assets/icons/chat-more.svg" width="60" class="mb">
     <h1>Contact</h1>
-    <p class="normal col w-1-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+    <p class="normal">Have a suggestion? Want to partner with us? Looking for a job?</p>
   </div>
 </header>
 
 <main class="mb--x2">
   <div class="cnt">
-    
+    <div class="grid mb--x2">
+      <div class="col w-1-4">
+        <div class="hdr fm ttu mb">
+          <h3><span>Client engagement</span></h3>
+        </div>
+        <p class="normal read">
+          <a href="mailto:makesomething@dadi.co">makesomething@dadi.co</a>
+          <br>+44 (0) 20 7205 2902
+        </p>
+      </div>
+      <div class="col w-1-4">
+        <div class="hdr fm ttu mb">
+          <h3><span>Media enquiries</span></h3>
+        </div>
+        <p class="normal read">
+          <a href="mailto:press@dadi.co">press@dadi.co</a><br>
+          +44 (0) 20 7205 2901
+        </p>
+      </div>
+      <div class="col w-1-4">
+        <div class="hdr fm ttu mb">
+          <h3><span>Careers</span></h3>
+        </div>
+        <p class="normal read">
+          <a href="mailto:joinus@dadi.co">joinus@dadi.co</a><br>
+          +44 (0) 20 7205 2903
+        </p>
+      </div>
+      <div class="col w-1-4">
+        <div class="hdr fm ttu mb">
+          <h3><span>Everything else</span></h3>
+        </div>
+        <p class="normal read">
+          <a href="mailto:hello@dadi.tech">hello@dadi.tech</a><br>+44 (0) 20 7205 2900<br>
+          <a href="https://twitter.com/dadi">@dadi</a>
+        </p>
+      </div>
+    </div>
+
+    <form action="/{?params.lang}{params.lang}{:else}en{/params.lang}/contact/" method="post">
+      <fieldset>
+        <div class="grid">
+          <div class="col w-1-2">
+            <label class="text fm" for="name">Name</label>
+            <input autofocus="" id="name" name="name" placeholder="Your full name" type="text">
+
+            <label class="text fm" for="email">Email</label>
+            <input id="email" name="email" required="" placeholder="Your email address" type="email">
+
+            <label class="text fm" for="phone">Phone</label>
+            <input id="phone" name="phone" placeholder="Contact telephone number" type="text">
+          </div>
+          <div class="col w-1-2">
+            <label class="text fm" for="message">Message</label>
+            <textarea style="min-height:199px" rows="5" id="message" name="message" required="" placeholder="What do you want to talk about?" type="email"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn">Send message</button></form>
+      </fieldset>
+    </form>
   </div>
 </main>
 

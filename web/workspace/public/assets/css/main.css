@@ -148,6 +148,10 @@ h1, h2 {
 .read p {
   margin-bottom: 1.2rem;
 }
+.read a {
+  color: #0abf56;
+  font-weight: bold;
+}
 
 .tac {
   text-align: center;
