@@ -159,6 +159,15 @@ h1, h2 {
   font-weight: bold;
 }
 
+.hide {
+  display: none;
+}
+@media handheld, only screen and (max-width: 800px) {
+  .bs-hide {
+    display: none;
+  }
+} 
+
 .fill {
   width: 100%;
   height: auto;
@@ -200,6 +209,18 @@ h1, h2 {
 .pb { padding-bottom: 30px; }
 .pb--x2 { padding-bottom: 60px; }
 .pt--x2 { padding-top: 60px; }
+
+@media handheld, only screen and (max-width: 800px) {
+  .mb { margin-bottom: 15px; }
+  .mb--x2 { margin-bottom: 30px; }
+
+  .pa { padding: 15px; }
+  .pt { padding-top: 15px; }
+  .pb { padding-bottom: 15px; }
+  .pb--x2 { padding-bottom: 30px; }
+  .pt--x2 { padding-top: 30px; }
+
+}
 
 .vam {
   position: relative;
@@ -263,16 +284,12 @@ nav {
 nav.subnav {
   box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
   position: relative;
+  z-index: 9;
 }
 nav.stick {
   position: fixed;
 }
 
-@media handheld, only screen and (max-width: 800px) {
-  nav {
-    display: none;
-  }
-}
 .nav--right {
   float: right;
 }
@@ -309,47 +326,70 @@ nav .active:after {
   background: #0ABE57;
 }
 
-nav .icon {
-  margin-right: 19px;
+nav .nav__logo {
+  margin-right: 18px;
 }
-nav .icon a {
+nav .nav__logo a {
   font-size: 0;
   background-image: url(/assets/img/dadi-mark-white.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  background-size: 40px auto;
+  background-size: auto 25px;
   padding: 32px 37px 33px !important;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+nav .nav__logo a:hover {
   background-color: #0ABE57;
 }
-nav .icon a:hover {
-  background-color: #0CAF51;
-}
 
-nav .social {
+nav .nav__social {
   margin-right: 20px;
   padding: 15px 0px 0 0;
 }
-nav .social a {
+nav .nav__social a {
   padding: 8px 6px;
 }
-nav img {
-  vertical-align: middle;
-}
 
-nav .docs {
+nav .nav__docs a {
   color: #316FF4;
 }
-nav .docs:hover {
+nav .nav__docs a:hover {
   background: #316FF4;
   color: #fff;
 }
-nav .docs:after {
+nav .nav__docs a:after {
   background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, #316FF4 100%);
 }
-nav .docs:hover:after {
-  background-color: #fff;
+nav .nav__docs a:hover:after {
+  background: #fff;
 }
 
+@media handheld, only screen and (max-width: 800px) {
+  nav .nav__docs,
+  nav .nav__social,
+  nav .nav__logo a:after {
+    display: none;
+  }
+  nav .nav__logo,
+  nav .nav__logo a {
+    width: auto;
+    display: block;
+    border: 0;
+    margin: 0;
+  }
+  nav .nav__logo a {
+    background-image: url(/assets/img/dadi-logo-white.svg);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  nav li a {
+    font-size: 12px;
+    padding: 18px 10px 14px;
+  }
+  nav .cnt {
+    margin: 0;
+    text-align: center;
+  }
+}
 
 .intro {
   height: 100px;

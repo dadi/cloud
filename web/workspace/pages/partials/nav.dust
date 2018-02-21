@@ -2,11 +2,11 @@
   <div class="cnt">
     <ul>
       {@ne key=page.key value="home"}
-        <li class="icon">
+        <li class="nav__logo">
           <a href="/">Home</a>
         </li>
         {:else}
-        <li>
+        <li class="bs-hide">
         <a 
           {@eq key="{page.key}" value="home"}class="active"{/eq}
           href="/{?params.lang}{params.lang}{:else}en{/params.lang}">
@@ -46,10 +46,9 @@
           href="/{?params.lang}{params.lang}{:else}en{/params.lang}/team">Team
         </a>
       </li>
-      <li class="nav--right"><a class="docs" href="https://docs.dadi.tech/" target="_blank">Documentation</a></li>
-    
 
-      <li class="social nav--right">
+      <li class="nav--right nav__docs"><a href="https://docs.dadi.tech/" target="_blank">Documentation</a></li>
+      <li class="nav__social nav--right">
         <a href="https://github.com/dadi" rel="external" title="Github" target="_blank"><img src="/assets/social/github.svg" height="24"></a>
         <a href="https://medium.com/@daditech" rel="external" title="Medium" target="_blank"><img src="/assets/social/medium.svg" height="24"></a>
         <a href="https://twitter.com/dadi" rel="external" title="Twitter" target="_blank"><img src="/assets/social/twitter.svg" height="24"></a>

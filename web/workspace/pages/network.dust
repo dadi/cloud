@@ -24,10 +24,11 @@
         <img src="/assets/icons/globe.svg" width="60" class="mb">
 
         <h1>Network</h1>
+        
         <p class="normal mb">DADI is a global, decentralized cloud platform, focused on the provision of web services to help you build, scale and grow your digital products.</p>
         <p><a class="btn" href="/{?params.lang}{params.lang}{:else}en{/params.lang}/knowledge/network/overview">Full platform overview</a></p>
       </div>
-      <div class="col w-2-3">
+      <div class="col w-2-3 mb">
         {>"partials/network-map"/}
       </div>
     </div>
@@ -51,35 +52,35 @@
       <h3><span>Platform architecture</span></h3>
     </div>
 
-    <div class="grid mb--x2">
-      <div class="col w-1-3">
+    <div class="grid">
+      <div class="col w-1-3 mb--x2">
         <img src="/assets/icons/cloud-upload.svg" height="70" class="mb">
         <h2 class="medium">Smart contracts</h2>
         <p class="normal">Ethereum Smart Contracts as a consensus system, ensures transparency and security for network participants.</p>
       </div>
-      <div class="col w-1-3">
+      <div class="col w-1-3 mb--x2">
         <img src="/assets/icons/colors.svg" height="70" class="mb">
         <h2 class="medium">Fog computing</h2>
         <p class="normal">Ethereum Smart Contracts as a consensus system, ensures transparency and security for network participants.</p>
       </div>
-      <div class="col w-1-3">
+      <div class="col w-1-3 mb--x2">
         <img src="/assets/icons/layers.svg" height="70" class="mb">
         <h2 class="medium">Protocol Buffers</h2>
         <p class="normal">Fast data serialisation method used to optimise the network.</p>
       </div>
     </div>
-    <div class="grid mb--x2">
-      <div class="col w-1-3">
+    <div class="grid">
+      <div class="col w-1-3 mb--x2">
         <img src="/assets/icons/bars.svg" height="70" class="mb">
         <h2 class="medium">Docker</h2>
         <p class="normal">An isolated environment ensuring computing parallelism and security for Consumer app bundles.</p>
       </div>
-      <div class="col w-1-3">
+      <div class="col w-1-3 mb--x2">
         <img src="/assets/icons/bolt.svg" height="70" class="mb">
         <h2 class="medium">GRPC</h2>
         <p class="normal">A technology for distributing procedures across multiple hosts.</p>
       </div>
-      <div class="col w-1-3">
+      <div class="col w-1-3 mb--x2">
         <img src="/assets/icons/swap.svg" height="70" class="mb">
         <h2 class="medium">Zookeeper</h2>
         <p class="normal">A peer-to-peer technology for node communication and distributed synchronization.</p>
@@ -158,37 +159,37 @@
 
     <div class="grid mb">
       <div class="col w-1-3">
-        <div class="box bd bd-grey">
+        <a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/knowledge/network/stargates" class="box bd bd-grey">
           <div class="box__inner">
             <h2 class="medium">Stargates</h2>
             <p class="normal">Provide domain routing and negotiate rates with Consumers.</p>
             <div class="box__footer">
-              <a href="#" class="box__cta small fm color-tint">Learn more</a>
+              <span class="box__cta small fm color-tint">Learn more</span>
             </div>
           </div>
-        </div>
+        </a>
       </div>
       <div class="col w-1-3">
-        <div class="box bd bd-grey">
+        <a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/knowledge/network/gateways" class="box bd bd-grey">
           <div class="box__inner">
             <h2 class="medium">Gateways</h2>
             <p class="normal">Act as network aggregation points for Host capacity and negotiate rates with Hosts.</p>
             <div class="box__footer">
-              <a href="#" class="box__cta small fm color-tint">Learn more</a>
+              <span class="box__cta small fm color-tint">Learn more</span>
             </div>
           </div>
-        </div>
+        </a>
       </div>
       <div class="col w-1-3">
-        <div class="box bd bd-grey">
+        <a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/knowledge/network/hosts" class="box bd bd-grey">
           <div class="box__inner">
             <h2 class="medium">Hosts</h2>
             <p class="normal">Provide processing power for multiple Consumer app bundles.</p>
             <div class="box__footer">
-              <a href="#" class="box__cta small fm color-tint">Learn more</a>
+              <span class="box__cta small fm color-tint">Learn more</span>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
 
