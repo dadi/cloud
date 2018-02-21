@@ -26,7 +26,7 @@
         <h1>Network</h1>
         
         <p class="normal mb">DADI is a global, decentralized cloud platform, focused on the provision of web services to help you build, scale and grow your digital products.</p>
-        <p><a class="btn" href="/{?params.lang}{params.lang}{:else}en{/params.lang}/knowledge/network/overview">Full platform overview</a></p>
+        <p><a class="btn" href="/{lang}/knowledge/network/overview">Full platform overview</a></p>
       </div>
       <div class="col w-2-3 mb">
         {>"partials/network-map"/}
@@ -149,7 +149,7 @@
       /}
     </div>
 
-    <a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/knowledge/network/usecases" class="more tac fm small mb">Read all usecases &rarr;</a>
+    <a href="/{lang}/knowledge/network/usecases" class="more tac fm small mb">Read all usecases &rarr;</a>
 
     <div class="hdr fm ttu mb" id="miners" name="miners">
       <h3><span>Be part of the network</span></h3>
@@ -159,7 +159,7 @@
 
     <div class="grid mb">
       <div class="col w-1-3">
-        <a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/knowledge/network/stargates" class="box bd bd-grey">
+        <a href="/{lang}/knowledge/network/stargates" class="box bd bd-grey">
           <div class="box__inner">
             <h2 class="medium">Stargates</h2>
             <p class="normal">Provide domain routing and negotiate rates with Consumers.</p>
@@ -170,7 +170,7 @@
         </a>
       </div>
       <div class="col w-1-3">
-        <a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/knowledge/network/gateways" class="box bd bd-grey">
+        <a href="/{lang}/knowledge/network/gateways" class="box bd bd-grey">
           <div class="box__inner">
             <h2 class="medium">Gateways</h2>
             <p class="normal">Act as network aggregation points for Host capacity and negotiate rates with Hosts.</p>
@@ -181,7 +181,7 @@
         </a>
       </div>
       <div class="col w-1-3">
-        <a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/knowledge/network/hosts" class="box bd bd-grey">
+        <a href="/{lang}/knowledge/network/hosts" class="box bd bd-grey">
           <div class="box__inner">
             <h2 class="medium">Hosts</h2>
             <p class="normal">Provide processing power for multiple Consumer app bundles.</p>

@@ -51,25 +51,20 @@
       </div>
     </div>
 
-    <form action="/{?params.lang}{params.lang}{:else}en{/params.lang}/contact/" method="post">
-      <fieldset>
-        <div class="grid">
-          <div class="col w-1-2">
-            <label class="text fm" for="name">Name</label>
-            <input autofocus="" id="name" name="name" placeholder="Your full name" type="text">
+    <form action="/{lang}/contact/" method="post">
+      <fieldset>        
+        <label class="text fm" for="name">Name</label>
+        <input autofocus="" id="name" name="name" placeholder="Your full name" type="text">
 
-            <label class="text fm" for="email">Email</label>
-            <input id="email" name="email" required="" placeholder="Your email address" type="email">
+        <label class="text fm" for="email">Email</label>
+        <input id="email" name="email" required="" placeholder="Your email address" type="email">
 
-            <label class="text fm" for="phone">Phone</label>
-            <input id="phone" name="phone" placeholder="Contact telephone number" type="text">
-          </div>
-          <div class="col w-1-2">
-            <label class="text fm" for="message">Message</label>
-            <textarea style="min-height:199px" rows="5" id="message" name="message" required="" placeholder="What do you want to talk about?" type="email"></textarea>
-          </div>
-        </div>
-
+        <label class="text fm" for="phone">Phone</label>
+        <input id="phone" name="phone" placeholder="Contact telephone number" type="text">
+      
+        <label class="text fm" for="message">Message</label>
+        <textarea style="min-height:199px" rows="5" id="message" name="message" required="" placeholder="What do you want to talk about?" type="email"></textarea>
+     
         <button type="submit" class="btn">Send message</button></form>
       </fieldset>
     </form>

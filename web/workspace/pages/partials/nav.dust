@@ -9,7 +9,7 @@
         <li class="bs-hide">
         <a 
           {@eq key="{page.key}" value="home"}class="active"{/eq}
-          href="/{?params.lang}{params.lang}{:else}en{/params.lang}">
+          href="/{lang}">
           Overview
         </a></li>
         
@@ -18,32 +18,32 @@
       <li>
         <a 
           {@eq key="{page.key}" value="roadmap"}class="active"{/eq}
-          href="/{?params.lang}{params.lang}{:else}en{/params.lang}/roadmap">
+          href="/{lang}/roadmap">
           Roadmap
         </a></li>
       <li>
         <a 
           {@eq key="{page.key}" value="knowledge"}class="active"{/eq}
-          href="/{?params.lang}{params.lang}{:else}en{/params.lang}/knowledge">
+          href="/{lang}/knowledge">
           Knowledge
         </a></li>
       <li>
         <a 
           {@eq key="{page.key}" value="network"}class="active"{/eq}
-          href="/{?params.lang}{params.lang}{:else}en{/params.lang}/network">
+          href="/{lang}/network">
           Network
         </a></li>
         <li>
         <a 
           {@eq key="{page.key}" value="partners"}class="active"{/eq}
-          href="/{?params.lang}{params.lang}{:else}en{/params.lang}/partners">
+          href="/{lang}/partners">
           Partners
         </a>
       </li>
       <li>
         <a 
           {@eq key="{page.key}" value="team"}class="active"{/eq}
-          href="/{?params.lang}{params.lang}{:else}en{/params.lang}/team">Team
+          href="/{lang}/team">Team
         </a>
       </li>
 

@@ -8,7 +8,7 @@
     background: url(/assets/products/dadi-{product}-bg.svg) no-repeat 50% 90px;
     background-size: auto 450px;
   }
-  nav .icon a {
+  nav .nav__logo a:hover {
     background-color: {color};
   }
   .btn {

@@ -5,11 +5,8 @@ const path = require('path')
 const primaryLang = 'en'
 
 // Set what we support
-const supportedLangs = ['en']
-const bypassUrls = [
-  '/partners',
-  '/r'
-]
+const supportedLangs = [primaryLang]
+const bypassUrls = []
 
 const Event = function (req, res, data, callback) {
   // Path without trailing slash & default lang
@@ -29,6 +26,8 @@ const Event = function (req, res, data, callback) {
     res.writeHead(302, { Location: '/' + primaryLang + toPath })
     return res.end()
   }
+
+  data.lang = data.params.lang || primaryLang
   
   callback()
 }
