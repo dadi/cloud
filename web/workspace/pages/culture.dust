@@ -1,0 +1,19 @@
+{>"partials/header"/}
+
+{>"partials/nav"/}
+
+<header class="header bg-tint mb">
+  <div class="cnt cf">
+    <img src="/assets/icons/favorite.svg" width="50" class="mb">
+    <h1>How we work</h1>
+    <p class="normal col w-1-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+  </div>
+</header>
+
+<main class="mb--x2">
+  <div class="cnt">
+    
+  </div>
+</main>
+
+{>"partials/footer"/}

@@ -41,4 +41,3 @@
 \/solutions\/analytics\/? /support/analytics/ [R=302,L]
 \/solutions\/content-personalisation\/? /support/content-personalisation/ [R=302,L]
 \/solutions\/commerce\/? /support/commerce/ [R=302,L]
-\/careers\/? /about/ [R=302,L]

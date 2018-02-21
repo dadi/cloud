@@ -1,0 +1,10 @@
+{
+  "page": {
+    "key": "partners"
+  },
+  "routes": [
+    {
+      "path": "/:lang/partners"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "page": {
+    "key": "roadmap"
+  },
+  "routes": [
+    {
+      "path": "/:lang/roadmap"
+    }
+  ]
+}

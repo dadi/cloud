@@ -1,0 +1,10 @@
+{
+  "page": {
+    "key": "culture"
+  },
+  "routes": [
+    {
+      "path": "/:lang/culture"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "page": {
+    "key": "about"
+  },
+  "routes": [
+    {
+      "path": "/:lang/about"
+    }
+  ]
+}

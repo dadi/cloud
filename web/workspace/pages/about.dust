@@ -1,0 +1,19 @@
+{>"partials/header"/}
+
+{>"partials/nav"/}
+
+<header class="header bg-tint mb">
+  <div class="cnt cf">
+    <img src="/assets/icons/group.svg" width="50" class="mb">
+    <h1>About</h1>
+    <p class="normal col w-1-2">DADI has assembled a world class engineering, strategic and design team with over 300 years of collective experience. The team is 18 strong – all full time. DADI today represents the culminiation of four years of R&D by the team and $2 million of direct investment by the founders.</p>
+  </div>
+</header>
+
+<main class="mb--x2">
+  <div class="cnt">
+    
+  </div>
+</main>
+
+{>"partials/footer"/}

@@ -1,0 +1,10 @@
+{
+  "page": {
+    "key": "careers"
+  },
+  "routes": [
+    {
+      "path": "/:lang/careers"
+    }
+  ]
+}

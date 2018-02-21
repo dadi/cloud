@@ -1,0 +1,19 @@
+{>"partials/header"/}
+
+{>"partials/nav"/}
+
+<header class="header bg-tint mb">
+  <div class="cnt">
+    <img src="/assets/icons/globe.svg" width="50" class="mb">
+    <h1>Network</h1>
+    <p class="medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+  </div>
+</header>
+
+<main class="mb--x2">
+  <div class="cnt">
+    
+  </div>
+</main>
+
+{>"partials/footer"/}

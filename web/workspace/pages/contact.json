@@ -1,0 +1,10 @@
+{
+  "page": {
+    "key": "contact"
+  },
+  "routes": [
+    {
+      "path": "/:lang/contact"
+    }
+  ]
+}

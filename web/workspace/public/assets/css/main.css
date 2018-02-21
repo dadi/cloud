@@ -336,8 +336,11 @@ nav .docs:hover:after {
 }
 
 .header {
-  padding: 180px 0 60px;
+  padding: 140px 0 50px;
   border-bottom: 1px solid #E5E4E4;
+}
+.header h1 {
+  margin-bottom: 10px;
 }
 
 .box {

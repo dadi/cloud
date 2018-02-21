@@ -24,11 +24,11 @@
           <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/about/">About</a></li>
           <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/careers/">Careers</a></li>
           <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/culture/">Culture</a></li>
-          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/team/">Team</a></li>
+          {! <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/team/">Team</a></li> !}
           <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/partners/">Partners</a></li>
           <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/contact/">Contact</a></li>
-          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/faq/">FAQ</a></li>
-          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/privacy/">Privacy</a></li>
+          {! <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/faq/">FAQ</a></li>
+          <li><a href="/{?params.lang}{params.lang}{:else}en{/params.lang}/privacy/">Privacy</a></li> !}
         </ul>
       </div>
       <div class="col w-1-4 mb--x2">

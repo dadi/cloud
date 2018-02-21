@@ -1,0 +1,10 @@
+{
+  "page": {
+    "key": "network"
+  },
+  "routes": [
+    {
+      "path": "/:lang/network"
+    }
+  ]
+}
