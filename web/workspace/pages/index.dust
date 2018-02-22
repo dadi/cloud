@@ -35,7 +35,7 @@
             {>"partials/roadmap/list" grid="2" /}
           </div>  
 
-          <a href="/{lang}/roadmap" class="more tac fm small">View all updates &rarr;</a>
+          <a href="/{lang}/roadmap" class="btn-more tac fm small">View all updates &rarr;</a>
         </div>
         <div class="col w-1-2">
           <div id="stick">
@@ -82,7 +82,7 @@
       {>"partials/knowledge/list"/}
     </div>
 
-    <a href="#" class="more tac fm small">View all knowledge &rarr;</a>
+    <a href="#" class="btn-more tac fm small">View all knowledge &rarr;</a>
   </div>
 </main>
 

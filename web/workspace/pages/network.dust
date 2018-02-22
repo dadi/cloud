@@ -7,8 +7,7 @@
 
 {>"partials/nav" /}
 
-
-<header class="bg-tint mb cf">
+<header class="bg-tint mb pb cf">
   <nav class="subnav bg-white cf fm mb--x2">
     <div class="cnt">
       <ul>
@@ -150,7 +149,7 @@
       /}
     </div>
 
-    <a href="/{lang}/knowledge/network/usecases" class="more tac fm small mb">Read all usecases &rarr;</a>
+    <a href="/{lang}/knowledge/network/usecases" class="btn-more tac fm small mb">Read all usecases &rarr;</a>
 
     <div class="hdr fm ttu mb" id="miners" name="miners">
       <h3><span>Be part of the network</span></h3>

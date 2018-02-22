@@ -1,0 +1,35 @@
+{>"partials/header"/}
+
+{>"partials/nav"/}
+
+<header class="bg-tint pt--x2 pb--x2 cf ovfh">
+  <div class="cnt">
+    <h1 style="margin:0">Milestones</h1>
+  </div>
+</header>
+
+<main class="mb--x2 bg-tint">
+  <div class="cnt">
+    <div class="roadmap cf mb" id="stickContainer">
+      <div class="roadmap__date col" id="stick">
+        <dl>
+          <dt>2018</dt>
+          <dd>Q1</dd>
+        </dl>
+      </div>
+      <div class="roadmap__line"></div>
+
+      <div class="roadmap__milestones grid col--right"> 
+        {>"partials/roadmap/milestone" grid="2" size="natural" /}
+        {>"partials/roadmap/milestone" grid="2" size="natural" /}
+        {>"partials/roadmap/milestone" grid="2" size="natural" /}
+        {>"partials/roadmap/milestone" grid="2" size="natural" /}
+        {>"partials/roadmap/milestone" grid="2" size="natural" /}
+      </div>
+      
+    </div>
+
+  </div>
+</header>
+
+{>"partials/footer"/}

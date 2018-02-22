@@ -56,12 +56,16 @@
 <script type="text/javascript" src="/assets/js/sticky-sidebar.min.js"></script>
 
 <script type="text/javascript">
-  new StickySidebar('#stick', {
+var stick = document.getElementById('stick');
+
+if (stick) {
+  new StickySidebar(stick, {
     topSpacing: 65,
     bottomSpacing: 0,
     containerSelector: '#stickContainer',
     minWidth: 800
   });
+}
 </script>
 
 </body>

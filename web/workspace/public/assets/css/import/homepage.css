@@ -1,0 +1,44 @@
+.intro {
+  height: 100px;
+  height: 100vh;
+  position: relative;
+  background: #04111d /*url(/assets/img/header.jpg) no-repeat 50%*/;
+  background-size: auto 100%;
+  z-index: 2;
+}
+.intro__about h2:before {
+  content: ' ';
+  width: 33.33%;
+  border-top: 1px solid var(--green);
+  display: block;
+  margin: 20px 0;
+}
+.intro__about h2,
+.intro__about p {
+  font-size: 1.4rem;
+}
+
+.intro__about {
+  margin: 0 15px;
+  min-width: 360px;
+}
+/*@media (--bl) {*/
+  .intro__about {
+    width: 25%;
+    position: absolute;
+    left: 5%;
+    bottom: 10%;
+  }
+/*}*/
+
+@media (--bs) {
+  .intro__about {
+    min-width: auto;
+    width: auto;
+  }
+}
+.intro__about img {
+  max-width: 25%;
+  min-width: 180px;
+  height: auto;
+}

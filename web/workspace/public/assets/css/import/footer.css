@@ -1,0 +1,37 @@
+footer {
+  padding: 60px 0 330px;
+  background-image: url(/assets/img/bg-footer.png);
+  background-repeat: no-repeat;
+  background-size: 1000px auto;
+  background-position: 50% 150%; 
+  position: relative;
+  z-index: 1;
+}
+@media (--bs) {
+  footer {
+    background-size: 620px auto;
+    background-position: 50% 100%;
+  }
+}
+
+footer .hdr {
+  padding: 0;
+}
+footer ul li a {
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--grey);
+  list-style: none;
+}
+footer ul li:last-of-type a {
+  border-bottom-color: transparent;
+}
+footer ul li a:hover {
+  border-color: #0abf56;
+}
+footer ul li {
+  list-style: none;
+}
+footer ul li img {
+  float: right;
+}

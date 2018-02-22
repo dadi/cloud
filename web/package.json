@@ -1,19 +1,24 @@
 {
-  "name": "dadicloud-web",
+  "name": "dadi.cloud",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "postcss workspace/public/assets/css/main.css --no-map --verbose --use postcss-import --use postcss-cssnext --use postcss-clean --watch --output workspace/public/assets/css/main.min.css"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@dadi/web": "~5.0.1",
-    "@dadi/web-dustjs": "^1.1.2",
+    "@dadi/web-dustjs": "^1.1.3",
     "dustjs-linkedin": "^2.7.5",
     "html-minifier": "^3.5.9",
     "mailgun-js": "^0.16.0",
-    "marked": "^0.3.16"
+    "marked": "^0.3.16",
+    "postcss": "^6.0.19",
+    "postcss-clean": "^1.1.0",
+    "postcss-cli": "^5.0.0",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^11.1.0"
   }
 }

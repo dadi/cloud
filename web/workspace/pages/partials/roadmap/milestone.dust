@@ -1,5 +1,5 @@
 {?grid}<div class="col w-1-{grid}">{/grid}
-  <article class="box box--natural bd bd-grey bg-white box--join box--roadmap mb">
+  <article class="box bd bd-grey bg-white box--join box--roadmap mb {@eq key=size value="natural"}box--natural{:else}box--x2{/eq}">
     <div class="box__inner">
       <div class="badge mb fm small color-green">
         <div class="badge__primary bg-green color-white">
@@ -7,9 +7,18 @@
         </div>
       </div>
 
-      <h2 class="medium color-green">Alpha release: DADI Track</h2>
+      <h2 class="medium">Alpha release: DADI Track</h2>
 
-      <p>First release of DADI’s enterprise-strength web, mobile and event analytics platform. Private Alpha for testing and development.</p>
+      <p class="mb">First release of DADI’s enterprise-strength web, mobile and event analytics platform. Private Alpha for testing and development.</p>
+
+      {@eq key=size value="natural"}<a href="#" class="btn small fm color-tint">View updates</a>{/eq}
     </div>
+    {@ne key=size value="natural"}
+    <div class="box__footer bdt bd-grey small">
+      <time class="color-tint">Q1 2018</time>
+    </div>
+    {/ne}
   </article>
+
+
 {?grid}</div>{/grid}
