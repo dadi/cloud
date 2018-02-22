@@ -370,6 +370,11 @@ nav .nav__docs a:hover:after {
 }
 
 @media handheld, only screen and (max-width: 800px) {
+  nav {
+    white-space: nowrap;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
   nav .nav__docs,
   nav .nav__social,
   nav .nav__logo a:after {
@@ -428,6 +433,13 @@ nav .nav__docs a:hover:after {
     bottom: 10%;
   }
 /*}*/
+
+@media handheld, only screen and (max-width: 800px) {
+  .intro__about {
+    min-width: auto;
+    width: auto;
+  }
+}
 .intro__about img {
   max-width: 25%;
   min-width: 180px;
