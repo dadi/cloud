@@ -1,0 +1,29 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 80
+  },
+  "security": {
+    "csrf": true
+  },
+  "api": {
+    "enabled": false
+  },
+  "headers": {
+    "useCompression": true,
+    "cacheControl": {
+      "text/html": "no-cache"
+    }
+  },
+  "globalEvents": [
+    "i18n"
+  ],
+  "globalPostProcessors": [
+    "minify-html"
+  ],
+  "rewrites": {
+    "path": "./workspace/routes/rewrites.txt"
+  },
+  "cluster": false,
+  "allowJsonView": true
+}
