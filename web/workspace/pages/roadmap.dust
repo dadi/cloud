@@ -34,7 +34,7 @@
       {>"partials/roadmap/milestone" grid="4" /}
     </div>
 
-    <a href="#" class="more tac fm small">View all milestones &rarr;</a>
+    <a href="#" class="btn-more tac fm small">View all milestones &rarr;</a>
   </div>
 </header>
 
@@ -58,8 +58,8 @@
       </div>
 
       <div class="pagination">
-        <a href="#" class="more fm bg-white">&larr; Previous </a>
-        <a href="#" class="more tar fm bg-white">Next &rarr;</a>
+        <a href="#" class="btn-more fm bg-white">&larr; Previous </a>
+        <a href="#" class="btn-more tar fm bg-white">Next &rarr;</a>
       </div>
     </div>
   </div>

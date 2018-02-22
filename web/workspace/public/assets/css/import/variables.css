@@ -1,0 +1,10 @@
+:root {
+  --space: 30px;
+  --fm: 'Roboto Mono', 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+  
+  --green: #0ecc5f;
+  --grey: #E5E4E4;
+}
+
+@custom-media --bs (max-width: 800px);
+@custom-media --bl (min-width: 800px);

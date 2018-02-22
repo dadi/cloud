@@ -1,0 +1,59 @@
+.btn {
+  display: inline-block;
+  background-color: transparent;
+  color: #777;
+  border: 1px solid transparent;
+  border-bottom-color: var(--green);
+  text-decoration: none;
+  padding: 15px 0;
+  transition: all 0.2s;
+  cursor: pointer;
+  line-height: 0;
+  font-family: var(--fm);
+  outline: none;
+}
+.btn:hover,
+.btn--large {
+  background-color: #fff;
+  color: #fff;
+  border-color: var(--green);
+  background: var(--green);
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Full width more button */
+
+.btn-more {
+  display: block;
+  padding: 20px;
+  transition: all 0.2s;
+  color: #8F8F90;
+  border: 1px solid var(--grey);
+  box-shadow: 1px 1px 1px #eee;
+}
+.bg-tint .btn-more {
+  border: 1px solid #dddddd;
+  box-shadow: 1px 1px 1px #dddddd;
+}
+.btn-more:hover {
+  border-color: #0ac056;
+  color: #0ac056;
+}
+
+.pagination {
+  display: flex;
+  width: 100%
+}
+.pagination a {
+  flex: 1;
+}
+.pagination a:hover {
+  position: relative;
+  z-index: 1;
+}
+.pagination a:nth-child(2) {
+  margin-left: -1px;
+}

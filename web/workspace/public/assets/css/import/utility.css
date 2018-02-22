@@ -1,0 +1,85 @@
+/* Margin */
+
+.mb                         { margin-bottom: var(--space) }
+.mb--x2                     { margin-bottom: calc(var(--space) * 2) }
+
+@media (--bs) {
+  .mb                       { margin-bottom: calc(var(--space) / 2) }
+  .mb--x2                   { margin-bottom: var(--space) }
+}
+
+/* Padding */
+
+.pa                         { padding: var(--space) }
+.pt                         { padding-top: var(--space) }
+.pb                         { padding-bottom: var(--space) }
+.pb--x2                     { padding-bottom: calc(var(--space) * 2) }
+.pt--x2                     { padding-top: calc(var(--space) * 2) }
+
+@media (--bs) {
+  .pa                       { padding: calc(var(--space) / 2) }
+  .pt                       { padding-top: calc(var(--space) / 2) }
+  .pb                       { padding-bottom: calc(var(--space) / 2) }
+  .pb--x2                   { padding-bottom: var(--space) }
+  .pt--x2                   { padding-top: var(--space) }
+}
+
+/* Text */
+
+.ttu                        { text-transform: uppercase }
+.fm                         { font-family: var(--fm) }
+.fwn                        { font-weight: normal }
+
+.small                      { font-size: 0.85rem }
+.normal                     { font-size: 1.15rem; line-height: 1.8rem; }
+.medium                     { font-size: 1.5rem; line-height: 1.9rem; }
+
+.tac                        { text-align: center }
+.tar                        { text-align: right }
+
+.fwb                        { font-weight: bold }
+
+/* Borders */
+
+.bd                         { border: 1px solid }
+.bdl                        { border-left: 1px solid }
+.bdt                        { border-top: 1px solid }
+.bdb                        { border-bottom: 1px solid }
+
+/* Background colours */
+
+.bg-white                   { background-color: #fff }
+.bg-dark                    { background-color: #04111d }
+.bg-blue                    { background-color: #3585f9 }
+.bg-green                   { background-color: var(--green) }
+.bg-light-green             { background-color: #f0fcf5 }
+.bg-tint                    { background-color: #f9f9f9 }
+
+/* Border colours */
+
+.bd-grey                    { border-color: var(--grey) }
+.bd-green                   { border-color: var(--green) }
+
+/* Text colours */
+
+.color-green                { color: var(--green) }
+.color-blue                 { color: #3585f9 }
+.color-white                { color: #fff }
+.color-tint                 { color: #8F8F90 }
+
+/* Images */
+
+.fill                       { width: 100%; height: auto }
+
+/* Misc */
+
+a                           { text-decoration: none; color: inherit }
+.ovfh                       { overflow: hidden }
+.vam                        { position: relative; top: 1px; margin-right: 3px }
+.ll                         { max-width: 860px }
+
+.hide                       { display: none }
+
+@media (--bs) {
+  .bs-hide                  { display: none }
+} 
