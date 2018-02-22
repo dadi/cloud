@@ -115,6 +115,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 0.95rem;
 }
+header {
+  width: 100%;
+}
 /*body:after {
   background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
   position: fixed;
@@ -404,6 +407,12 @@ nav .nav__social a {
   padding: 8px 6px;
 }
 
+@media handheld, only screen and (max-width: 1150px) {
+  nav .nav__social {
+    display: none;
+  }
+}
+
 nav .nav__docs a {
   color: #316FF4;
 }
@@ -416,6 +425,12 @@ nav .nav__docs a:after {
 }
 nav .nav__docs a:hover:after {
   background: #fff;
+}
+
+@media handheld, only screen and (max-width: 880px) {
+  nav .nav__docs {
+    display: none;
+  }
 }
 
 @media handheld, only screen and (max-width: 800px) {
