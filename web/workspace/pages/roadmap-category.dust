@@ -1,0 +1,49 @@
+{>"partials/header"/}
+
+{>"partials/nav"/}
+
+<header class="bg-tint mb pb--x2 cf ovfh">
+  <nav class="subnav bg-white cf fm mb--x2 ">
+    <div class="cnt">
+      <ul>
+        <li><a href="/{lang}/roadmap">Everything</a></li>
+        <li><a href="/{lang}/roadmap/web-services" {@eq key=params.category value="web-services"}class="active"{/eq}>Web services</a></li>
+        <li><a href="/{lang}/roadmap/announcements" {@eq key=params.category value="announcements"}class="active"{/eq}>Announcements</a></li>
+        <li><a href="/{lang}/roadmap/mainnet" {@eq key=params.category value="mainnet"}class="active"{/eq}>Mainnet</a></li>
+        <li><a href="/{lang}/roadmap/website" {@eq key=params.category value="website"}class="active"{/eq}>Website</a></li>
+        <li><a href="/{lang}/roadmap/cloud" {@eq key=params.category value="cloud"}class="active"{/eq}>Cloud</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="cnt">
+    <img src="/assets/icons/direction.svg" width="60" class="mb bg-icon">
+    <h1 style="margin:0">Category</h1>
+  </div>
+</header>
+
+<main class="mb--x2">
+  <div class="cnt">
+    <div class="grid">
+      <div class="col w-1-2">
+        {>"partials/roadmap/milestone"  /}
+        {>"partials/roadmap/milestone"  /}
+        {>"partials/roadmap/milestone"  /}
+        {>"partials/roadmap/milestone"  /}
+      </div>
+      <div class="col w-1-2">
+        {>"partials/roadmap/list" /}
+        {>"partials/roadmap/list" /}
+        {>"partials/roadmap/list" /}
+        {>"partials/roadmap/list" /}
+        {>"partials/roadmap/list" /}
+        {>"partials/roadmap/list" /}
+        {>"partials/roadmap/list" /}
+        {>"partials/roadmap/list" /}
+        {>"partials/roadmap/list" /}
+      </div>
+    </div>
+  </div>
+</header>
+
+{>"partials/footer"/}
