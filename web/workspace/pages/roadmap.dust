@@ -2,20 +2,20 @@
 
 {>"partials/nav"/}
 
-<nav class="subnav bg-white cf fm">
-  <div class="cnt">
-    <ul>
-      <li><a href="#" class="active">Everything</a></li>
-      <li><a href="#">Web services</a></li>
-      <li><a href="#">Announcements</a></li>
-      <li><a href="#">Mainnet</a></li>
-      <li><a href="#">Website</a></li>
-      <li><a href="#">Cloud</a></li>
-    </ul>
-  </div>
-</nav>
+<header class="bg-tint mb pb--x2 cf ovfh">
+  <nav class="subnav bg-white cf fm mb--x2 ">
+    <div class="cnt">
+      <ul>
+        <li><a href="#" class="active">Everything</a></li>
+        <li><a href="#">Web services</a></li>
+        <li><a href="#">Announcements</a></li>
+        <li><a href="#">Mainnet</a></li>
+        <li><a href="#">Website</a></li>
+        <li><a href="#">Cloud</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<header class="bg-tint mb pt--x2 pb--x2 cf ovfh">
   <div class="cnt">
     <img src="/assets/icons/direction.svg" width="60" class="mb bg-icon">
   	<h1>Roadmap</h1>

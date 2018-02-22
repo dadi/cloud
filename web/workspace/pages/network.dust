@@ -7,17 +7,18 @@
 
 {>"partials/nav" /}
 
-<nav class="subnav bg-white cf fm">
-  <div class="cnt">
-    <ul>
-      <li><a href="#architecture">Architecture</a></li>
-      <li><a href="#usecases">Use cases</a></li>
-      <li><a href="#miners">Become a miner</a></li>
-    </ul>
-  </div>
-</nav>
 
-<header class="bg-tint mb pt--x2 cf">
+<header class="bg-tint mb cf">
+  <nav class="subnav bg-white cf fm mb--x2">
+    <div class="cnt">
+      <ul>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#usecases">Use cases</a></li>
+        <li><a href="#miners">Become a miner</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <div class="cnt mb">
     <div class="grid">
       <div class="col w-1-3 mb">

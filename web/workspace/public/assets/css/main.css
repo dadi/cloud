@@ -1,3 +1,12 @@
+@keyframes fadedropin {
+    from {
+        top: -100px;
+    }
+    to {
+        top: 0;
+    }
+}
+
 .grid:before,
 .grid:after,
 .cf:before,
@@ -326,6 +335,7 @@ nav.subnav {
   box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
   position: relative;
   z-index: 9;
+  animation: fadedropin 0.5s both ease-in-out;
 }
 nav.stick {
   position: fixed;
