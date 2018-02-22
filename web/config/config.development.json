@@ -9,11 +9,6 @@
   "api": {
     "enabled": false
   },
-  "engines": {
-    "dust": {
-      "whitespace": true
-    }
-  },
   "headers": {
     "useCompression": true,
     "cacheControl": {
