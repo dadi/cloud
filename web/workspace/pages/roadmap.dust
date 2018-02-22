@@ -19,7 +19,9 @@
   <div class="cnt">
     <img src="/assets/icons/direction.svg" width="60" class="mb bg-icon">
   	<h1>Roadmap</h1>
-  	<p class="normal mb">This is a high level roadmap for the twelve months post-Crowdsale. Timings are dependent on the scale of success of the Crowdsale and reflect the DADI team’s ambition: the more funds raised, the faster and further the team will be able to travel.</p>
+    <div class="cf">
+  	<p class="normal mb col w-2-3">This is a high level roadmap for the twelve months post-Crowdsale. Timings are dependent on the scale of success of the Crowdsale and reflect the DADI team’s ambition: the more funds raised, the faster and further the team will be able to travel.</p>
+    </div>
 
     <div class="hdr fm ttu mb">
       <h3 style="padding-bottom:30px">Upcoming milestones</h3>
