@@ -2,9 +2,9 @@
 
 {>"partials/nav"/}
 
-<header class="bg-tint mb pt--x2 pb--x2 cf bdb bd-grey">
+<header class="bg-tint mb pt--x2 pb--x2 cf ovfh">
   <div class="cnt cf">
-    <img src="/assets/icons/chat-more.svg" width="60" class="mb">
+    <img src="/assets/icons/mail.svg" width="60" class="mb bg-icon">
     <h1>Contact</h1>
     <p class="normal">Have a suggestion? Want to partner with us? Looking for a job?</p>
   </div>
@@ -54,7 +54,7 @@
     <form action="/{lang}/contact/" method="post">
       <fieldset>        
         <label class="text fm" for="name">Name</label>
-        <input autofocus="" id="name" name="name" placeholder="Your full name" type="text">
+        <input id="name" name="name" placeholder="Your full name" type="text">
 
         <label class="text fm" for="email">Email</label>
         <input id="email" name="email" required="" placeholder="Your email address" type="email">

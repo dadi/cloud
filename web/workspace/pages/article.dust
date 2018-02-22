@@ -2,11 +2,11 @@
 
 {>"partials/nav"/}
 
-<header class=" mb--x2 pt--x2 pb cf bdb bd-grey">
+<header class="bg-tint mb--x2 pt--x2 pb cf bdb bd-grey">
   <div class="cnt cf">
     <div class="grid">
       
-      <div class="col w-3-4">
+      <div class="col w-3-5">
         <div class="badge mb fm small color-blue">
           <div class="badge__primary bg-blue color-white">
             Design
@@ -16,7 +16,7 @@
           </div>
         </div>
         <h1>Why you should open source your website</h1>
-        <p class="normal mb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad.</p>
+        <p class="normal mb color-tint">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad.</p>
       </div>
     </div>
   </div>

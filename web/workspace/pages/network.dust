@@ -17,7 +17,7 @@
   </div>
 </nav>
 
-<header class="bg-tint mb pt--x2 cf bdb bd-grey">
+<header class="bg-tint mb pt--x2 cf">
   <div class="cnt mb">
     <div class="grid">
       <div class="col w-1-3 mb">

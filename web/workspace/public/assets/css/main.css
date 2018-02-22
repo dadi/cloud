@@ -149,10 +149,6 @@ h1, h2 {
 .read p {
   margin-bottom: 1.2rem;
 }
-.read a {
-  color: #0abf56;
-  font-weight: bold;
-}
 .read {
   margin-left: auto;
   margin-right: auto; }
@@ -172,9 +168,13 @@ h1, h2 {
   .read ol li {
     margin: 0.3em 2em; }
 .read a {
-    border-bottom: 1px solid;
-    font-weight: bold;
+    border-bottom: 1px solid #ededed;
+    transition: all 0.2s;
     color: #3585fa; }
+.read a:hover {
+  background: #EBF4FF;
+  border-color:#3585fa; 
+}
 .read.hdr a {
     font-weight: normal;
     color: inherit; }
@@ -222,6 +222,17 @@ h1, h2 {
 .color-white          { color: #fff; }
 .color-tint           { color: #8F8F90; }
 
+.bg-icon {
+  opacity: 0.04;
+  position: absolute;
+  right: 0;
+  width: 330px;
+  top: -60px;
+}
+
+.ovfh {
+  overflow: hidden;
+}
 
 .ttu                  { text-transform: uppercase; }
 
@@ -286,7 +297,7 @@ h1, h2 {
 
 
 .hdr {
-  padding: 30px 0 0 0;
+  padding-top: 30px;
   font-weight: normal;
   letter-spacing: 0.84px;
   position: relative;
@@ -631,10 +642,6 @@ footer {
   }
 }
 
-footer p a {
-  color: #0abf56;
-  text-decoration: underline;
-}
 footer .hdr {
   padding: 0;
 }
@@ -760,7 +767,8 @@ form .btn {
 }
 
 form fieldset {
-  border: 1px solid #0fcb5f;
+  border: none;
+  background: #f9f9f9;
   padding: 10px 25px 25px 25px;
   margin-top: 20px;
   border-radius: 3px;
@@ -851,26 +859,26 @@ form fieldset .info {
 }
 
 
-.roadmap {
+/*.roadmap {
   position: relative;
 }
 .roadmap__milestones .box--join:after,
 .roadmap__articles .box--join:after {
   left: auto; right: 25px;
-}
+}*/
 .box--roadmap:before {
   position: absolute;
-  right: -62px;
-  top: 20px;
+  left: -2px;
+  top: -45px;
   content: '';
   display: inline-block;
   width: 20px;
   height: 20px;
   border-radius: 20px;
-  border: 4px solid #eee;
+  border: 4px solid #EDEDED;
   background: #fff;
 }
-.roadmap__line {
+/*.roadmap__line {
   border-right: 2px solid #eee;
   position: absolute;
   left: 55.4%; top: 20px;
@@ -901,4 +909,20 @@ form fieldset .info {
 .roadmap__articles {
   position: relative;
   left: 60px;
+}*/
+
+
+.pagination {
+  display: flex;
+  width: 100%
+}
+.pagination a {
+  flex: 1;
+}
+.pagination a:hover {
+  position: relative;
+  z-index: 1;
+}
+.pagination a:nth-child(2) {
+  margin-left: -1px;
 }
