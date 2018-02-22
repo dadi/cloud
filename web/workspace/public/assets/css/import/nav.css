@@ -103,7 +103,7 @@ nav .nav__docs a:hover:after {
 }
 
 @media (--bs) {
-  nav {
+  nav ul {
     white-space: nowrap;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
