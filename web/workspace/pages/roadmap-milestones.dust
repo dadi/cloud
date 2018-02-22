@@ -20,11 +20,11 @@
       <div class="roadmap__line"></div>
 
       <div class="roadmap__milestones grid col--right"> 
-        {>"partials/roadmap/milestone" grid="2" /}
-        {>"partials/roadmap/milestone" grid="2" /}
-        {>"partials/roadmap/milestone" grid="2" /}
-        {>"partials/roadmap/milestone" grid="2" /}
-        {>"partials/roadmap/milestone" grid="2" /}
+        {>"partials/roadmap/milestone" grid="2" size="natural" /}
+        {>"partials/roadmap/milestone" grid="2" size="natural" /}
+        {>"partials/roadmap/milestone" grid="2" size="natural" /}
+        {>"partials/roadmap/milestone" grid="2" size="natural" /}
+        {>"partials/roadmap/milestone" grid="2" size="natural" /}
       </div>
       
     </div>

@@ -210,7 +210,7 @@ h1, h2 {
   .roadmap__line {
     left: 50%;
     margin-left: 104px;
-    top: -80px;
+    top: -200px;
   }
   .roadmap__milestones {
     width: 85%;
@@ -219,13 +219,15 @@ h1, h2 {
     float: left;
     clear: both;
     padding: 0 50px;
-    margin-bottom: -140px;
+    margin-bottom: -100px;
+    text-align: right;
   }
   .roadmap__milestones .col:last-of-type {
     margin-bottom: 0;
   }
   .roadmap__milestones .col:nth-child(even) {
     float: right;
+    text-align: left;
   }
   .roadmap__milestones .col .box--roadmap:before {
     right: -60px;
