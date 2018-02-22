@@ -1,0 +1,13 @@
+{
+  "page": {
+    "key": "article"
+  },
+  "routes": [
+    {
+      "path": "/:lang/knowledge/:category/:title"
+    },
+    {
+      "path": "/:lang/roadmap/:category/:title"
+    }
+  ]
+}

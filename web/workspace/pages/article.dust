@@ -1,0 +1,41 @@
+{>"partials/header"/}
+
+{>"partials/nav"/}
+
+<header class=" mb--x2 pt--x2 pb cf bdb bd-grey">
+  <div class="cnt cf">
+    <div class="grid">
+      
+      <div class="col w-3-4">
+        <div class="badge mb fm small color-blue">
+          <div class="badge__primary bg-blue color-white">
+            Design
+          </div>
+          <div class="badge__secondary">
+            In progress
+          </div>
+        </div>
+        <h1>Why you should open source your website</h1>
+        <p class="normal mb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="mb--x2">
+  <div class="cnt cf">
+    <div class="col col--right w-1-5 tar normal">
+
+      </div>
+    <div class="read normal col w-3-5">
+<p class="normal">
+        <img src="https://dadi.cloud/img/team/davelongworth.jpg" width="30" class="col" style="margin-right:15px">
+        By <strong style="margin-right:20px">David Longworth</strong>
+        <time class="color-tint">8/2/2018</time><br><br>
+        </p>
+<div id="doc" class="markdown-body container-fluid"><p>You probably already know that we are proponents of open source software at DADI - we develop the majority of our products <em>in the wild</em> on <a href="https://github.com/dadi" target="_blank">GitHub</a>. We believe in transparency and the benefit of having an extra set of eyes on our output, welcoming outside suggestions and criticism. Our enterprise clients also enjoy the advantage of not being ‘locked-in’ with proprietary products –&nbsp;most developers can work with our applications due to our committment to <a href="https://forum.dadi.tech/topic/43/maintaining-code-quality-at-dadi" target="_blank">open standards</a>.</p><p>About a year ago we decided to make the repositories for our <a href="https://dadi.tech/" target="_blank">web services site</a> and <a href="https://docs.dadi.tech/" target="_blank">our developer documentation</a> publicly available - and we and haven’t looked back since.</p><p>Here are some benefits open-sourcing your site might provide to your technology business.</p><h2 id="Provides-a-live-example-for-the-community">Provides a live example for the community</h2><p><strong>Especially relevant for us at DADI</strong>; we build all our public facing sites in our own technology. This gives developers and executives real-world, practical examples of which they can see the end result without having to download and install the product. Doing this shows that you have enough faith in your own technology to use it yourself.</p><h2 id="Crowdsource-your-copy-editing">Crowdsource your copy editing</h2><p>Dealing spelling and grammar mistakes are apart of the lifecycle of any website - stuff always seems to slip through through. We’ve been surprised a few times when internet strangers send pull requests for seemingly small errors. This is a benefit for community developers as they get the credit on their Github profile for contributing to another public repository 🏅. It is also a nice feeling knowing people are reading your content so carefully!</p><h2 id="Showcase-your-team">Showcase your team</h2><p>GitHub is great for showing &amp; discussing code edits in a nice sharable interface. Furthermore, every line of code can be traced back to a specific individual. Just like having your team speak at conferences and write articles (<em>ahem</em>) it raises the profile of your team - something which benefits the reputation of your company. It also encourages your team to write beautiful code the ‘right’ way, rather than taking shortcuts.</p><h2 id="Illustrate-your-commitment-to-transparency">Illustrate your commitment to transparency</h2><p>The age of closed and selfish business practices is over and it is now much better to run a business like a family and show we’re fellow humans on the other side of that screen. Those worried about what you are doing with their data and if you’re tracking them can now see exactly how the cogs are working when they login - and the developers in your audience can audit your site for you.</p><h2 id="A-note-about-licensing-amp-sensitive-data">A note about licensing &amp; sensitive data</h2><p>It’s worth pointing out you might want to <a href="https://choosealicense.com/" target="_blank">choose your licensing</a> carefully when you take this step and also be extremly diligent in what you commit to a public repository – remember it’s not easy to delete or change a git history and we’ve seen cases of bots trawling public repos for private API keys.</p><p><em>If you spot any errors in this post, please let me know :) and as always you can find us on <a href="https://discordapp.com/invite/3sEvuYJ" target="_blank">Discord</a>, <a href="https://t.me/dadichat" target="_blank">Telegram</a> or in the comments.</em></p></div>
+    </div>
+  </div>
+</main>
+
+{>"partials/footer"/}

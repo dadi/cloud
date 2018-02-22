@@ -144,6 +144,7 @@ h1, h2 {
 
 .read {
   line-height: 1.5em;
+  
 }
 .read p {
   margin-bottom: 1.2rem;
@@ -152,6 +153,31 @@ h1, h2 {
   color: #0abf56;
   font-weight: bold;
 }
+.read {
+  margin-left: auto;
+  margin-right: auto; }
+.read h1, .read h2, .read h3, .read h4 {
+    margin: 1.5em 0 1em;
+     }
+.read img {
+    max-width: 100%;
+    height: auto; }
+.read iframe {
+    max-width: 100%; }
+.read ul,
+  .read ol {
+    margin: 1.5em auto;
+     }
+.read ul li,
+  .read ol li {
+    margin: 0.3em 2em; }
+.read a {
+    border-bottom: 1px solid;
+    font-weight: bold;
+    color: #3585fa; }
+.read.hdr a {
+    font-weight: normal;
+    color: inherit; }
 
 .tac {
   text-align: center;
