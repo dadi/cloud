@@ -150,7 +150,7 @@
       /}
     </div>
 
-    <a href="/{lang}/knowledge/network/usecases" class="more tac fm small mb">Read all usecases &rarr;</a>
+    <a href="/{lang}/knowledge/network/usecases" class="btn-more tac fm small mb">Read all usecases &rarr;</a>
 
     <div class="hdr fm ttu mb" id="miners" name="miners">
       <h3><span>Be part of the network</span></h3>
