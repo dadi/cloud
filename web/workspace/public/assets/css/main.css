@@ -143,6 +143,10 @@ a {
   }
 }
 
+.ll {
+  max-width: 860px;
+}
+
 .small { font-size: 0.85rem }
 .normal { font-size: 1.15rem; line-height: 1.8rem; }
 .medium { font-size: 1.5rem; line-height: 1.9rem; }
@@ -158,9 +162,6 @@ h1, h2 {
 .read p {
   margin-bottom: 1.2rem;
 }
-.read {
-  margin-left: auto;
-  margin-right: auto; }
 .read h1, .read h2, .read h3, .read h4 {
     margin: 1.5em 0 1em;
      }
@@ -213,6 +214,7 @@ h1, h2 {
 }
 
 .bd { border: 1px solid; }
+.bdl { border-left: 1px solid; }
 .bdt { border-top: 1px solid; }
 .bdb { border-bottom: 1px solid; }
 
@@ -644,6 +646,8 @@ footer {
   background-repeat: no-repeat;
   background-size: 1000px auto;
   background-position: 50% 150%; 
+  position: relative;
+  z-index: 1;
 }
 @media handheld, only screen and (max-width: 800px) {
   footer {
@@ -935,4 +939,14 @@ form fieldset .info {
 }
 .pagination a:nth-child(2) {
   margin-left: -1px;
+}
+
+
+
+@media handheld, only screen and (min-width: 800px) {
+  aside {
+    float: right;
+    width: 28%;
+  }
+
 }
