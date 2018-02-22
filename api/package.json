@@ -1,0 +1,8 @@
+{
+  "name": "dadicloud-api",
+  "main": "server.js",
+  "dependencies": {
+    "@dadi/api": "3.x",
+    "@dadi/api-mongodb": "~3.5.0"
+  }
+}

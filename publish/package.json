@@ -1,5 +1,5 @@
 {
-  "name": "dadicloud-web",
+  "name": "dadicloud-publish",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,11 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@dadi/web": "~5.0.1",
-    "@dadi/web-dustjs": "^1.1.2",
-    "dustjs-linkedin": "^2.7.5",
-    "html-minifier": "^3.5.9",
-    "mailgun-js": "^0.16.0",
-    "marked": "^0.3.16"
+    "@dadi/publish": "^1.0.3-beta"
   }
 }

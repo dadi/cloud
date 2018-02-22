@@ -1,0 +1,43 @@
+{
+  "app": {
+    "name": "DADI Cloud CMS",
+    "publisher": "DADI"
+  },
+  "server": {
+    "host": "127.0.0.1",
+    "port": 3001,
+  },
+  "apis": [
+    {
+      "name": "DADI Cloud API",
+      "host": "http://127.0.0.1",
+      "port": 8081,
+      "database": "cloud",
+      "version": "1.0",
+      "credentials": {
+        "clientId" : "cloud-client",
+        "secret" : "nrq5d6jl0b"
+      },
+      "menu": [
+        {
+          "title": "Content",
+          "collections": [
+            "team"
+          ]
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "enabled": false,
+    "host": "http://127.0.0.1",
+    "port": 8081,
+    "version": "1.0",
+    "database": "cloud",
+    "collection": "users",
+    "credentials": {
+      "clientId" : "cloud-client",
+      "secret" : "nrq5d6jl0b"
+    }
+  }
+}
