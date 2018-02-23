@@ -32,16 +32,9 @@
           </div>
 
           <div class="grid">
-            {>"partials/knowledge/list" grid="2"/}
-            {>"partials/knowledge/list" grid="2"/}
-            {>"partials/knowledge/list" grid="2"/}
-            {>"partials/knowledge/list" grid="2"/}
-            {>"partials/knowledge/list" grid="2"/}
-            {>"partials/knowledge/list" grid="2"/}
-            {>"partials/knowledge/list" grid="2"/}
-            {>"partials/knowledge/list" grid="2"/}
-            {>"partials/knowledge/list" grid="2"/}
-            {>"partials/knowledge/list" grid="2"/}
+            {#knowledge-categories.results}
+              {>"partials/knowledge/list" grid="2"/}
+            {/knowledge-categories.results}
           </div>
         </div>
       </div>

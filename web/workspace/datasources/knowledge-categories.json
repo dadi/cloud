@@ -1,0 +1,14 @@
+{
+  "datasource": {
+    "key": "knowledge-categories",
+    "source": {
+      "type": "dadiapi",
+      "endpoint": "1.0/cloud/knowledge-categories"
+    },
+    "paginate": false,
+    "requestParams": [{
+      "param": "slug",
+      "field": "slug"
+    }]
+  }
+}

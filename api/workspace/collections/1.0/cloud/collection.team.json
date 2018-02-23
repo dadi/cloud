@@ -114,13 +114,6 @@
     "sort": "name",
     "sortOrder": 1,
     "storeRevisions": false,
-    "index": [
-      {
-        "keys": {
-          "authorId": 1
-        }
-      }
-    ],
     "description": "",
     "hooks": {
       "beforeCreate": ["slugify"],

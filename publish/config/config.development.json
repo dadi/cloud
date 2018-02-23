@@ -21,6 +21,12 @@
             "pages"
           ],
           "title": "Content"
+        },
+        {
+          "collections": [
+            "knowledge-categories"
+          ],
+          "title": "Taxonomy"
         }
       ]
     }

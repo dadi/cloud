@@ -8,9 +8,12 @@
   "datasources": [
     "pages"
   ],
+  "requiredDatasources": [
+    "pages"
+  ],
   "routes": [
     {
-      "path": "/:lang/:slug?",
+      "path": "/:lang/:slug",
       "params": [
         {
           "param": "slug",
