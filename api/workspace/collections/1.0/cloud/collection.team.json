@@ -13,6 +13,19 @@
         }
       }
     },
+    "slug": {
+      "type": "String",
+      "required": false,
+      "label": "Slug",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },
     "body": {
       "type": "String",
       "required": true,
@@ -108,6 +121,10 @@
         }
       }
     ],
-    "description": ""
+    "description": "",
+    "hooks": {
+      "beforeCreate": ["slugify"],
+      "beforeUpdate": ["slugify"]
+    }
   }
 }
