@@ -2,9 +2,16 @@
 
 As a demonstration of **DADI** web services, we made our website open source.
 
-## Install
+## Installation
+
+### API
 
 ```
-cd ./web
-npm install
+cd ./api && npm install
+```
+
+### Web
+
+```
+cd ./web && npm install
 ```

@@ -1,0 +1,39 @@
+{
+  "app": {
+    "name": "DADI.Cloud API"
+  },
+  "auth": {
+    "datastore": "@dadi/api-mongodb",
+    "database": "cloud"
+  },
+  "caching": {
+    "directory": {
+      "enabled": false,
+      "path": "./cache/api"
+    },
+    "redis": {
+      "enabled": false
+    }
+  },
+  "cors": true,
+  "datastore": "@dadi/api-mongodb",
+  "env": "qa",
+  "media": {
+    "storage": "disk",
+    "basePath": "workspace/media"
+  },
+  "paths": {
+    "collections": "workspace/collections",
+    "endpoints": "workspace/endpoints",
+    "hooks": "workspace/hooks"
+  },
+  "publicUrl": {
+    "host": "beta2.dadi.cloud",
+    "port": 80
+  },
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8081,
+    "protocol": "http"
+  }
+}

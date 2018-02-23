@@ -1,0 +1,130 @@
+{
+  "fields": {
+    "name": {
+      "type": "String",
+      "required": true,
+      "label": "Name",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },
+    "body": {
+      "type": "String",
+      "required": true,
+      "label": "Body",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },
+    "role": {
+      "type": "String",
+      "required": false,
+      "label": "Role",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },
+    "image": {
+      "type": "Reference",
+      "settings": {
+        "collection": "mediaStore"
+      },
+      "required": false,
+      "label": "Image",
+      "publish": {
+        "subType": "Image",
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
+    "twitter": {
+      "type": "String",
+      "required": false,
+      "label": "Twitter",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },
+    "linkedIn": {
+      "type": "String",
+      "required": false,
+      "label": "LinkedIn",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },
+    "personalSite": {
+      "type": "String",
+      "required": false,
+      "label": "Personal site",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },
+    "advisor": {
+      "type": "Boolean",
+      "required": false,
+      "default": false,
+      "label": "Is advisor?",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    }
+  },
+  "settings": {
+    "cache": false,
+    "authenticate": false,
+    "count": 40,
+    "sort": "name",
+    "sortOrder": 1,
+    "storeRevisions": true,
+    "revisionCollection": "booksHistory",
+    "index": [
+      {
+        "keys": {
+          "authorId": 1
+        }
+      }
+    ],
+    "description": ""
+  }
+}

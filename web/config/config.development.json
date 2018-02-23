@@ -1,30 +1,37 @@
 {
-  "server": {
-    "host": "127.0.0.1",
-    "port": 3000
-  },
-  "security": {
-    "csrf": true
-  },
+  "allowJsonView": true,
   "api": {
-    "enabled": false
+    "enabled": true,
+    "host": "127.0.0.1",
+    "port": 8081
   },
-  "headers": {
-    "useCompression": true,
-    "cacheControl": {
-      "text/html": "no-cache"
-    }
+  "auth": {
+    "tokenUrl": "/token",
+    "clientId": "cloud-client",
+    "secret": "nrq5d6jl0b"
   },
+  "cluster": false,
+  "debug": true,
   "globalEvents": [
     "i18n"
   ],
   "globalPostProcessors": [
     "minify-html"
   ],
+  "headers": {
+    "cacheControl": {
+      "text/html": "no-cache"
+    },
+    "useCompression": true
+  },
   "rewrites": {
     "path": "./workspace/routes/rewrites.txt"
   },
-  "cluster": false,
-  "allowJsonView": true,
-  "debug": true
+  "security": {
+    "csrf": true
+  },
+  "server": {
+    "host": "127.0.0.1",
+    "port": 3000
+  }
 }

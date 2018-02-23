@@ -1,0 +1,21 @@
+{
+  "database": "cloud",
+  "databases": {
+    "cloud": {
+      "hosts": [
+        {
+          "host": "127.0.0.1",
+          "port": 27017
+        }
+      ]
+    }
+  },
+  "hosts": [
+    {
+      "host": "127.0.0.1",
+      "port": 27017
+    }
+  ],
+  "password": "",
+  "username": ""
+}
