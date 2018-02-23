@@ -3,12 +3,19 @@
     "key": "network"
   },
   "datasources": [
+    "pages",
     "knowledge-categories",
     "web-services"
   ],
   "routes": [
     {
-      "path": "/:lang/network"
+      "path": "/:lang/:slug",
+      "params": [
+        {
+          "param": "slug",
+          "in": ["network"]
+        }
+      ]
     }
   ]
 }

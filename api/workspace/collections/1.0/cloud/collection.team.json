@@ -105,6 +105,19 @@
           "list": true
         }
       }
+    },
+    "order": {
+      "type": "Number",
+      "required": false,
+      "label": "Order",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
     }
   },
   "settings": {
