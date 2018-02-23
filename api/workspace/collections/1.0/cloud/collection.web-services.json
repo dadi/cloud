@@ -61,7 +61,7 @@
         "placement": "sidebar",
         "display": {
           "edit": true,
-          "list": true
+          "list": false
         }
       }
     },
