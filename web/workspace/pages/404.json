@@ -3,6 +3,7 @@
     "key": "404"
   },
   "datasources": [
+  	"knowledge-categories",
     "web-services"
   ]
 }

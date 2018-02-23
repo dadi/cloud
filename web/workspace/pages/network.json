@@ -3,6 +3,7 @@
     "key": "network"
   },
   "datasources": [
+    "knowledge-categories",
     "web-services"
   ],
   "routes": [

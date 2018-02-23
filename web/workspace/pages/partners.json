@@ -3,6 +3,7 @@
     "key": "partners"
   },
   "datasources": [
+    "knowledge-categories",
     "web-services"
   ],
   "routes": [

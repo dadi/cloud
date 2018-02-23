@@ -3,6 +3,8 @@
     "key": "team"
   },
   "datasources": [
+    "knowledge-categories",
+    "web-services",
     "team",
     "pages"
   ],

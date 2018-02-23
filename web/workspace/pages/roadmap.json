@@ -3,6 +3,7 @@
     "key": "roadmap"
   },
   "datasources": [
+    "knowledge-categories",
     "web-services",
     "pages"
   ],

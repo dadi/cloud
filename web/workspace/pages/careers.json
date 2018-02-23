@@ -3,6 +3,7 @@
     "key": "careers"
   },
   "datasources": [
+    "knowledge-categories",
     "web-services"
   ],
   "routes": [

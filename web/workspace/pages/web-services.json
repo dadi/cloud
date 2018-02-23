@@ -3,6 +3,7 @@
     "key": "web-services"
   },
   "datasources": [
+    "knowledge-categories",
     "web-services"
   ],
   "requiredDatasources": [

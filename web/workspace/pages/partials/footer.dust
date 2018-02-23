@@ -41,11 +41,9 @@
       <div class="col w-1-4 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Knowledge</span></h3></div>
         <ul>
-          <li><a href="/{lang}/knowledge/faq/">FAQ</a></li>
-          <li><a href="#">Security</a></li>
-          <li><a href="#">Tokens</a></li>
-          <li><a href="#">Network</a></li>
-          <li><a href="#">Something</a></li>
+          {#knowledge-categories.results}
+            <li><a href="/{lang}/knowledge/{slug}/">{name}</a></li>
+          {/knowledge-categories.results}
         </ul>
       </div>
     </div>
