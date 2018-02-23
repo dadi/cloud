@@ -32,10 +32,9 @@
       <div class="col w-1-4 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Web services</span></h3></div>
         <ul>
-          <li><a href="/{lang}/api/" class="fwb"><img src="/assets/products/dadi-api.png" width="15">API</a></li>
-          <li><a href="/{lang}/web/" class="fwb"><img src="/assets/products/dadi-web.png" width="19">Web</a></li>
-          <li><a href="/{lang}/publish/" class="fwb"><img src="/assets/products/dadi-publish.png" width="15">Publish</a></li>
-          <li><a href="/{lang}/cdn/" class="fwb"><img src="/assets/products/dadi-cdn.png" class="alignv float--right" width="15">CDN</a></li>
+          {#web-services.results}
+            <li><a href="/{lang}/{slug}/" class="fwb"><img src="/assets/products/dadi-{slug}.png" width="15">{name}</a></li>
+          {/web-services.results}
           <li><a href="http://docs.dadi.tech" onclick="ga('send','event','Documentation','Click','Footer');" rel="noopener"><img src="/assets/icons/pop-out.svg" class="alignv float--right" width="15">Documentation</a></li>
         </ul>
       </div>

@@ -5,18 +5,18 @@
 {#web-services.results[0]}
 <style type="text/css">
   header {
-    background: url(/assets/products/dadi-{product}-bg.svg) no-repeat 50% 90px;
+    background: url(/assets/products/dadi-{slug}-bg.svg) no-repeat 50% 90px;
     background-size: auto 450px;
   }
   nav .nav__logo a:hover {
-    background-color: {color};
+    background-color: #{color};
   }
   .btn {
-    border-bottom-color: {color};
+    border-bottom-color: #{color};
   }
   .btn--large, .btn:hover {
-    border-color: {color};
-    background-color: {color};
+    border-color: #{color};
+    background-color: #{color};
   }
 </style>
 
@@ -24,23 +24,23 @@
   <div class="cnt cf">
     <div class="grid">
       <div class="col w-1-2 bs-alignc">
-        <img src="/assets/products/dadi-{product}-full.png" class="mb" height="45" alt="DADI {title} logo">
+        <img src="/assets/products/dadi-{slug}-full.png" class="mb" height="45" alt="DADI {title} logo">
 
         <p class="medium mb">{@soberMarkdown}{overview}{/soberMarkdown}</p>
         
         <p>
           {^hide_docs}
-            <a href="http://docs.dadi.tech/#{product}/installation" class="btn btn--large mb {@math key="XX.5" method="abs"/}">How to install</a>
+            <a href="http://docs.dadi.tech/#{slug}/installation" class="btn btn--large mb {@math key="XX.5" method="abs"/}">How to install</a>
           {:else}
             <span class="btn btn--disabled">Install guide coming soon</span>
           {/hide_docs}
           <br>
         
-          <a class="btn" href="https://github.com/dadi/{product}" href="https://github.com/dadi/" onclick="ga('send','event','Github','Click','Product');">View source on GitHub</a><br>
+          <a class="btn" href="https://github.com/dadi/{slug}" href="https://github.com/dadi/" onclick="ga('send','event','Github','Click','Product');">View source on GitHub</a><br>
 
-          <a class="btn" href="https://www.npmjs.com/package/@dadi/{product}" onclick="ga('send','event','NPM','Click','Product');">Install with NPM</a><br>
+          <a class="btn" href="https://www.npmjs.com/package/@dadi/{slug}" onclick="ga('send','event','NPM','Click','Product');">Install with NPM</a><br>
 
-          {^hide_docs}<a class="btn" href="http://docs.dadi.tech/#{product}" onclick="ga('send','event','Documentation','Click','Product');">Documentation</a><br>{/hide_docs}
+          {^hide_docs}<a class="btn" href="http://docs.dadi.tech/#{slug}" onclick="ga('send','event','Documentation','Click','Product');">Documentation</a><br>{/hide_docs}
 
           {?demo}<a class="btn" href="{demo}">Live demo</a>{/demo}
         </p>
@@ -50,13 +50,13 @@
         <ul class="list--feat medium mb">
           {#headlines}         
             <li>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.1 19.4"><path fill="{color}" d="M7.9 19.4l-7.9-7 1.3-1.5 6.1 5.4L17.4 0l1.7 1z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.1 19.4"><path fill="#{color}" d="M7.9 19.4l-7.9-7 1.3-1.5 6.1 5.4L17.4 0l1.7 1z"/></svg>
               {@soberMarkdown}{.}{/soberMarkdown}
             </li>
           {/headlines}
         </ul>
 
-        <p><a href="#features" style="border-bottom: 1px solid {color};">More features &rarr;</a></p>
+        <p><a href="#features" style="border-bottom: 1px solid #{color};">More features &rarr;</a></p>
       </div>
     </div>
   </div>
@@ -67,10 +67,10 @@
      <div class="bdr__top bdr--bdr-grey normal pad__top">
       <div class="grid">
         <div class="col w-1-2">
-          {@markdown}{description[0]}{/markdown}
+          {@markdown}{description}{/markdown}
         </div>
         <div class="col w-1-2">
-          {@markdown}{description[1]}{/markdown}
+          {! {@markdown}{description[1]}{/markdown} !}
         </div>
       </div>
     </div>
