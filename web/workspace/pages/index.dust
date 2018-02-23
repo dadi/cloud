@@ -52,17 +52,9 @@
     </div>
               
     <div class="grid">
-      {>"partials/web-services/list" app="api" color="0ba6dc"/}
-      {>"partials/web-services/list" app="publish" color="ffbf0e"/}
-      {>"partials/web-services/list" app="cdn" color="e22274"/}
-      {>"partials/web-services/list" app="web" color="e42917"/}
-      {>"partials/web-services/list" app="track" color="2dba7a"/}
-      {>"partials/web-services/list" app="visualize" color="ef711d"/}
-      {>"partials/web-services/list" app="identity" color="5cc618"/}
-      {>"partials/web-services/list" app="match" color="71afac"/}
-      {>"partials/web-services/list" app="predict" color="27dce0"/}
-      {>"partials/web-services/list" app="queue" color="8773dd"/}
-      {>"partials/web-services/list" app="store" color="dd4343"/}
+      {#web-services.results}
+        {>"partials/web-services/list"/}
+      {/web-services.results}
     </div>
 
     <div class="hdr fm ttu mb">

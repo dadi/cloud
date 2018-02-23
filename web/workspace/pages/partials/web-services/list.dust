@@ -2,15 +2,15 @@
   <div class="box box--x2 bd bd-grey mb" style="border-top: 1px solid #{color}">
     <div class="box__inner">
       <div class="box__icon">
-        <img src="/assets/products/dadi-{app}.png" height="35">
+        <img src="/assets/products/dadi-{slug}.png" height="35">
       </div>
-      <h2 class="fm fwn normal" style="color:#{color}">{app}</h2>
-      <p class="mb">A high-performance RESTful API layer designed in support of API-first development and the principles of COPE.</p>
+      <h2 class="fm fwn normal" style="color:#{color}">{slug}</h2>
+      <p class="mb">{overview}</p>
     </div>
     <div class="box__footer box__footer--web-service">
-      <a href="#" class="box__cta small fm color-tint">Learn more</a>
-      <a href="#" class="box__cta small fm color-tint">Latest updates</a>
-      <a href="#" class="box__cta small fm color-tint">Install</span>
+      <a href="/{lang}/{slug}" class="box__cta small fm color-tint">Learn more</a>
+      <a href="/{lang}/roadmap/{slug}" class="box__cta small fm color-tint">Latest updates</a>
+      {?install}<a href="{install}" class="box__cta small fm color-tint">How to install</span>{/install}
     </div>
   </div>
 </div>

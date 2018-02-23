@@ -3,6 +3,7 @@
     "key": "home"
   },
   "datasources": [
+    "web-services",
     "knowledge-categories"
   ],
   "routes": [
