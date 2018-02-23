@@ -9,13 +9,7 @@
   ],
   "routes": [
     {
-      "path": "/:lang/:page",
-      "params": [
-        {
-          "param": "page",
-          "in": ["network"]
-        }
-      ]
+      "path": "/:lang/network"
     }
   ]
 }

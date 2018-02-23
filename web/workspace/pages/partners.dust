@@ -4,9 +4,11 @@
 
 <header class="bg-tint mb pt--x2 pb--x2 cf ovfh">
   <div class="cnt">
-    <img src="/assets/icons/cup.svg" width="60" class="mb bg-icon">
-    <h1>Partners</h1>
-    <p class="medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+    <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
+    <h1>{pages.results[0].title}</h1>
+    <div class="cf">
+    <p class="normal col w-2-3">{pages.results[0].excerpt}</p>
+    </div>
   </div>
 </header>
 
