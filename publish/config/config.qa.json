@@ -10,7 +10,7 @@
   "apis": [
     {
       "name": "DADI Cloud API",
-      "host": "http://beta2.dadi.cloud",
+      "host": "http://35.178.60.215",
       "port": 3001,
       "database": "cloud",
       "version": "1.0",
