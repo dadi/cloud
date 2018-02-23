@@ -29,7 +29,7 @@
   },
   "publicUrl": {
     "host": "beta2.dadi.cloud",
-    "port": 80
+    "port": 3001
   },
   "server": {
     "host": "0.0.0.0",
