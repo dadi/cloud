@@ -3,7 +3,14 @@
     <div class="box__inner">
       <div class="badge mb fm small color-green">
         <div class="badge__primary bg-green color-white">
-          Web services
+          {category[0].name}
+        </div>
+        <div class="badge__secondary">
+          {?complete}
+            Complete
+          {:else}
+            In-progress
+          {/complete}
         </div>
       </div>
 

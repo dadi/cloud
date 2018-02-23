@@ -36,7 +36,7 @@
         "multiline": true,
         "display": {
           "edit": true,
-          "list": true
+          "list": false
         }
       }
     },

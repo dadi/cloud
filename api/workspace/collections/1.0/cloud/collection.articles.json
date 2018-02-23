@@ -1,0 +1,231 @@
+{
+  "fields": {
+    "title": {
+      "type": "String",
+      "required": true,
+      "label": "Title",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
+    "slug": {
+      "type": "String",
+      "required": true,
+      "label": "Slug",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
+    "author": {
+      "type": "Reference",
+      "required": true,
+      "label": "Author",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      },
+      "settings": {
+        "collection": "team"
+      }
+    },
+    "publishedAt": {
+      "type": "DateTime",
+      "required": false,
+      "label": "Date & Time",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
+    "excerpt": {
+      "type": "String",
+      "required": false,
+      "label": "Excerpt",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
+    "body": {
+      "type": "String",
+      "required": true,
+      "label": "Body",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "multiline": true,
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
+    "knowledge-category": {
+      "type": "Reference",
+      "required": false,
+      "label": "Knowledge category",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      },
+      "settings": {
+        "collection": "knowledge-categories"
+      }
+    },
+    "roadmap-category": {
+      "type": "Reference",
+      "required": false,
+      "label": "Roadmap category",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      },
+      "settings": {
+        "collection": "roadmap-categories"
+      }
+    },
+    "web-service": {
+      "type": "Reference",
+      "required": false,
+      "label": "Web service",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      },
+      "settings": {
+        "collection": "web-services"
+      }
+    },
+    "published": {
+      "type": "Boolean",
+      "required": false,
+      "label": "Published",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
+    "status": {
+      "type": "Reference",
+      "required": false,
+      "label": "",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      },
+      "settings": {
+        "collection": "status"
+      }
+    },
+    "mediumUrl": {
+      "type": "String",
+      "required": false,
+      "label": "Medium URL",
+      "publish": {
+        "section": "Meta",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
+    "twitterUrl": {
+      "type": "String",
+      "required": false,
+      "label": "Twitter URL",
+      "publish": {
+        "section": "Meta",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
+    "metaTitle": {
+      "type": "String",
+      "required": false,
+      "label": "Title",
+      "publish": {
+        "section": "Meta",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
+    "metaDescription": {
+      "type": "String",
+      "required": false,
+      "label": "Description",
+      "publish": {
+        "section": "Meta",
+        "placement": "main",
+        "multiline": true,
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    }
+  },
+  "settings": {
+    "cache": false,
+    "authenticate": false,
+    "count": 40,
+    "storeRevisions": false,
+    "description": "",
+    "hooks": {
+      "beforeCreate": [
+        "slugify"
+      ],
+      "beforeUpdate": [
+        "slugify"
+      ]
+    }
+  }
+}

@@ -55,6 +55,20 @@
         }
       }
     },
+    "category": {
+      "type": "Reference",
+      "settings": {
+        "collection": "roadmap-categories"
+      },
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
     "web-service": {
       "type": "Reference",
       "settings": {
