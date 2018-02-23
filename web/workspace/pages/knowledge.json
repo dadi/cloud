@@ -3,7 +3,8 @@
     "key": "knowledge"
   },
   "datasources": [
-    "knowledge-categories"
+    "knowledge-categories",
+    "web-services"
   ],
   "routes": [
     {

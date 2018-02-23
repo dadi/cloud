@@ -2,6 +2,9 @@
   "page": {
     "key": "network"
   },
+  "datasources": [
+    "web-services"
+  ],
   "routes": [
     {
       "path": "/:lang/network"

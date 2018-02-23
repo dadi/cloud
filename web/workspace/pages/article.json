@@ -2,6 +2,9 @@
   "page": {
     "key": "article"
   },
+  "datasources": [
+    "web-services"
+  ],
   "routes": [
     {
       "path": "/:lang/knowledge/:category/:title"

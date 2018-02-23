@@ -10,6 +10,7 @@
   }
   nav .nav__logo a:hover {
     background-color: #{color};
+    border-color: #{color};
   }
   .btn {
     border-bottom-color: #{color};

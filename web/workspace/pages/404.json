@@ -1,5 +1,8 @@
 {
   "page": {
     "key": "404"
-  }
+  },
+  "datasources": [
+    "web-services"
+  ]
 }

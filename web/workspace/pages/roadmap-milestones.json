@@ -2,6 +2,9 @@
   "page": {
     "key": "roadmap"
   },
+  "datasources": [
+    "web-services"
+  ],
   "routes": [
     {
       "path": "/:lang/roadmap/milestones"
