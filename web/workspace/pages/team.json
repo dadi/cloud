@@ -10,17 +10,7 @@
   ],
   "routes": [
     {
-      "path": "/:lang/:slug/:name?",
-      "params": [
-        {
-          "param": "slug",
-          "in": ["team"]
-        },
-        {
-          "param": "name",
-          "fetch": "team"
-        }
-      ]
+      "path": "/:lang/team/:name?"
     }
   ]
 }

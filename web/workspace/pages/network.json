@@ -9,10 +9,10 @@
   ],
   "routes": [
     {
-      "path": "/:lang/:slug",
+      "path": "/:lang/:page",
       "params": [
         {
-          "param": "slug",
+          "param": "page",
           "in": ["network"]
         }
       ]

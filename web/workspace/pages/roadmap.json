@@ -3,19 +3,13 @@
     "key": "roadmap"
   },
   "datasources": [
+    "pages",
     "knowledge-categories",
-    "web-services",
-    "pages"
+    "web-services"    
   ],
   "routes": [
     {
-      "path": "/:lang/:slug",
-      "params": [
-        {
-          "param": "slug",
-          "in": ["roadmap"]
-        }
-      ]
+      "path": "/:lang/roadmap"
     }
   ]
 }
