@@ -75,7 +75,7 @@
       {/knowledge-categories.results}
     </div>
 
-    <a href="#" class="btn-more tac fm small">View all knowledge &rarr;</a>
+    <a href="/{lang}/knowledge" class="btn-more tac fm small">View all knowledge &rarr;</a>
   </div>
 </main>
 
