@@ -1,6 +1,6 @@
 <div class="col w-1-4 bs-w-1-2">
-  <a href="./team/{@slugify}{name}{/slugify}" class="box box--x3 mb bd bd-grey">
-    <img src="/assets/team/{@slugify}{name}{/slugify}.jpg" alt="Photo of {name}" class="fill">
+  <a href="./team/{slug}" class="box box--x3 mb bd bd-grey">
+    <img src="/assets/team/{slug}.jpg" alt="Photo of {name}" class="fill">
 
     <div class="box__caption">
       <h2 class="normal" style="margin-bottom:3px">{name}</h2>

@@ -2,6 +2,7 @@
 
 {>"partials/nav"/}
 
+{^params.name}
 <header class="bg-tint mb pt--x2 pb--x2 cf ovfh">
   <div class="cnt cf">
     <img src="/assets/icons/group.svg" width="60" class="mb bg-icon">
@@ -16,9 +17,9 @@
       <h3><span>The team</span></h3>
     </div>
     <div class="grid bs-grid">
-      {#team.results}
+      {#team.results}{^advisor}
         {>"partials/team/list"/}
-      {/team.results} 
+      {/advisor}{/team.results} 
     </div>
 
     <div class="hdr fm ttu mb">
@@ -26,11 +27,52 @@
     </div>
 
     <div class="grid bs-grid">
-      {#advisors.results}
+      {#advisors.results}{?advisor}
         {>"partials/team/list"/}
-      {/advisors.results} 
+      {/advisor}{/advisors.results} 
     </div>
   </div>
 </main>
+
+{:else}
+
+{#team.results}
+<header class="bdb bd-grey pb cf ovfh mb--x2">
+   <nav class="subnav bg-white cf fm mb--x2 ">
+    <div class="cnt">
+      <ul>
+        <li><a href="/{lang}/team">All team profiles</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="cnt cf">
+    <div class="grid">
+      <div class="col w-1-5">
+        <img src="/assets/team/{slug}.jpg" alt="Photo of {name}" class="fill mb">
+      </div>
+      <div class="col w-2-5">
+        <h1 style="margin:0 0 5px">{name}</h1>
+        <p class="color-tint mb">{role}</p>
+        <p>
+          {?personalSite}<a href="#" class="btn" target="_blank">Personal site</a><br>{/personalSite}
+          {?twitter}<a href="https://twitter.com/{twitter}" class="btn" target="_blank">Twitter @{twitter}</a><br>{/twitter}
+          {?linkedIn}<a href="https://www.linkedin.com/in/{linkedIn}/" class="btn" target="_blank">LinkedIn</a>{/linkedIn}
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="mb--x2">
+  <div class="cnt">
+    <div class="read normal ll">
+      {@markdown}{body|s}{/markdown}
+    </div>
+  </div>
+</main>
+{/team.results}
+
+{/params.name}
 
 {>"partials/footer"/}

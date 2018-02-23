@@ -6,9 +6,10 @@
       "endpoint": "1.0/cloud/team"
     },
     "paginate": false,
-    "filter": {
-      "advisor": { "$ne": true}
-    },
+    "requestParams": [{
+      "param": "name",
+      "field": "slug"
+    }],
     "sort": {
       "order": -1
     }

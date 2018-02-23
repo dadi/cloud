@@ -21,8 +21,8 @@
         "section": "Details",
         "placement": "sidebar",
         "display": {
-          "edit": true,
-          "list": true
+          "edit": false,
+          "list": false
         }
       }
     },

@@ -3,12 +3,11 @@
     "key": "team"
   },
   "datasources": [
-  	"team",
-  	"advisors"
+    "team"
   ],
   "routes": [
     {
-      "path": "/:lang/team"
+      "path": "/:lang/team/:name?"
     }
   ]
 }
