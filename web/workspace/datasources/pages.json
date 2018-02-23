@@ -12,7 +12,7 @@
     },
     "requestParams": [{
       "param": "slug",
-      "field": "title"
+      "field": "slug"
     }]
   }
 }

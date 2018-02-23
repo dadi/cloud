@@ -2,12 +2,15 @@
   "page": {
     "key": "pages"
   },
+  "settings": {
+    "passFilters": true
+  },
   "datasources": [
     "pages"
   ],
   "routes": [
     {
-      "path": "/:lang/:slug",
+      "path": "/:lang/:slug?",
       "params": [
         {
           "param": "slug",
