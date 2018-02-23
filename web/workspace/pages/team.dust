@@ -5,16 +5,16 @@
 {^params.name}
 <header class="bg-tint mb pt--x2 pb--x2 cf ovfh">
   <div class="cnt cf">
-    <img src="/assets/icons/group.svg" width="60" class="mb bg-icon">
-    <h1>Introducing the DADI team</h1>
-    <p class="normal col w-2-3">DADI has assembled a world class engineering, strategic and design team with over 300 years of collective experience. The team is 18 strong – all full time. DADI today represents the culminiation of four years of R&D by the team and $2 million of direct investment by the founders.</p>
+    <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
+    <h1>{pages.results[0].title}</h1>
+    <p class="normal col w-2-3">{pages.results[0].excerpt}</p>
   </div>
 </header>
 
 <main class="mb--x2">
   <div class="cnt">
     <div class="hdr fm ttu mb">
-      <h3><span>The team</span></h3>
+      <h3><span>Core team</span></h3>
     </div>
     <div class="grid bs-grid">
       {#team.results}{^advisor}

@@ -1,0 +1,21 @@
+{>"partials/header"/}
+
+{>"partials/nav"/}
+
+<header class="bg-tint mb pt--x2 pb--x2 cf bdb bd-grey">
+  <div class="cnt cf">
+    <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb">
+    <h1>{pages.results[0].title}</h1>
+    <p class="normal col w-1-2">{pages.results[0].excerpt}</p>
+  </div>
+</header>
+
+<main class="mb--x2">
+  <div class="cnt">
+    <div class="read normal ll">
+      {@markdown}{pages.results[0].body}{/markdown}
+    </div>
+  </div>
+</main>
+
+{>"partials/footer"/}

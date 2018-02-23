@@ -3,11 +3,22 @@
     "key": "team"
   },
   "datasources": [
-    "team"
+    "team",
+    "pages"
   ],
   "routes": [
     {
-      "path": "/:lang/team/:name?"
+      "path": "/:lang/:slug/:name?",
+      "params": [
+        {
+          "param": "slug",
+          "in": ["team"]
+        },
+        {
+          "param": "name",
+          "fetch": "team"
+        }
+      ]
     }
   ]
 }

@@ -7,9 +7,12 @@
     },
     "count": 1,
     "paginate": false,
+    "filter": {
+      "published": true
+    },
     "requestParams": [{
-      "param": "name",
-      "field": "slug"
+      "param": "slug",
+      "field": "title"
     }]
   }
 }

@@ -17,7 +17,7 @@
   </nav>
 
   <div class="cnt">
-    <img src="/assets/icons/direction.svg" width="60" class="mb bg-icon">
+    <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
     <h1>{pages.results[0].title}</h1>
     <div class="cf">
     <p class="normal mb col w-2-3">{pages.results[0].excerpt}</p>

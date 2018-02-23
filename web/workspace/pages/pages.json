@@ -1,0 +1,19 @@
+{
+  "page": {
+    "key": "pages"
+  },
+  "datasources": [
+    "pages"
+  ],
+  "routes": [
+    {
+      "path": "/:lang/:slug",
+      "params": [
+        {
+          "param": "slug",
+          "fetch": "pages"
+        }
+      ]
+    }
+  ]
+}
