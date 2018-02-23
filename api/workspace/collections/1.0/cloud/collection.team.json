@@ -20,6 +20,7 @@
       "publish": {
         "section": "Details",
         "placement": "main",
+        "multiline": true,
         "display": {
           "edit": true,
           "list": true
