@@ -11,7 +11,7 @@
     {
       "name": "DADI Cloud API",
       "host": "http://beta2.dadi.cloud",
-      "port": 8081,
+      "port": 3001,
       "database": "cloud",
       "version": "1.0",
       "credentials": {
@@ -45,7 +45,7 @@
   "auth": {
     "enabled": false,
     "host": "http://127.0.0.1",
-    "port": 8081,
+    "port": 3001,
     "version": "1.0",
     "database": "cloud",
     "collection": "users",
