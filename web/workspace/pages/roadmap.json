@@ -2,9 +2,18 @@
   "page": {
     "key": "roadmap"
   },
+  "datasources": [
+  	"pages"
+  ],
   "routes": [
     {
-      "path": "/:lang/roadmap"
+      "path": "/:lang/:slug",
+      "params": [
+        {
+          "param": "slug",
+          "in": ["roadmap"]
+        }
+      ]
     }
   ]
 }

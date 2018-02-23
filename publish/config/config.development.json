@@ -17,7 +17,8 @@
       "menu": [
         {
           "collections": [
-            "team"
+            "team",
+            "pages"
           ],
           "title": "Content"
         }
