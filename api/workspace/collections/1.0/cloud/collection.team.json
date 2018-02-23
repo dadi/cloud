@@ -33,27 +33,10 @@
       "label": "Role",
       "publish": {
         "section": "Details",
-        "placement": "main",
+        "placement": "sidebar",
         "display": {
           "edit": true,
           "list": true
-        }
-      }
-    },
-    "image": {
-      "type": "Reference",
-      "settings": {
-        "collection": "mediaStore"
-      },
-      "required": false,
-      "label": "Image",
-      "publish": {
-        "subType": "Image",
-        "section": "Details",
-        "placement": "main",
-        "display": {
-          "edit": true,
-          "list": false
         }
       }
     },
