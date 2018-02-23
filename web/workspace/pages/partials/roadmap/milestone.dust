@@ -3,19 +3,21 @@
     <div class="box__inner">
       <div class="badge mb fm small color-green">
         <div class="badge__primary bg-green color-white">
-          Track
+          Web services
         </div>
       </div>
 
-      <h2 class="medium">Alpha release: DADI Track</h2>
+      <h2 class="medium">{title}</h2>
 
-      <p class="mb">First release of DADI’s enterprise-strength web, mobile and event analytics platform. Private Alpha for testing and development.</p>
+      <div class="mb">
+        {@markdown}{desc|s}{/markdown}
+      </div>
 
       {@eq key=size value="natural"}<a href="#" class="btn small fm color-tint">View updates</a>{/eq}
     </div>
     {@ne key=size value="natural"}
     <div class="box__footer bdt bd-grey small">
-      <time class="color-tint">Q1 2018</time>
+      <time class="color-tint">{date}</time>
     </div>
     {/ne}
   </article>

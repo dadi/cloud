@@ -4,8 +4,10 @@
   },
   "datasources": [
     "pages",
+    "roadmap-categories",
     "knowledge-categories",
-    "web-services"    
+    "web-services",
+    "milestones" 
   ],
   "routes": [
     {

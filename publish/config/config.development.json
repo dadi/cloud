@@ -24,7 +24,8 @@
         },
         {
           "collections": [
-            "milestones"
+            "milestones",
+            "roadmap-categories"
           ],
           "title": "Roadmap"
         },

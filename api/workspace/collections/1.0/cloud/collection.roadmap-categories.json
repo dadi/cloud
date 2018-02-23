@@ -1,0 +1,57 @@
+{
+  "fields": {
+    "name": {
+      "type": "String",
+      "required": true,
+      "label": "Name",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },
+    "desc": {
+      "type": "String",
+      "required": false,
+      "label": "Description",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "multiline": true,
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
+    "slug": {
+      "type": "String",
+      "required": false,
+      "label": "Slug",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": false,
+          "list": false
+        }
+      }
+    }
+  },
+  "settings": {
+    "cache": false,
+    "authenticate": false,
+    "count": 40,
+    "sort": "date",
+    "sortOrder": 1,
+    "storeRevisions": false,
+    "description": "",
+    "hooks": {
+      "beforeCreate": ["slugify"],
+      "beforeUpdate": ["slugify"]
+    }
+  }
+}

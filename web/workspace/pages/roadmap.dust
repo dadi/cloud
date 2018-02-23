@@ -7,11 +7,9 @@
     <div class="cnt">
       <ul>
         <li><a href="/{lang}/roadmap" class="active">Everything</a></li>
-        <li><a href="/{lang}/roadmap/web-services">Web services</a></li>
-        <li><a href="/{lang}/roadmap/announcements">Announcements</a></li>
-        <li><a href="/{lang}/roadmap/mainnet">Mainnet</a></li>
-        <li><a href="/{lang}/roadmap/website">Website</a></li>
-        <li><a href="/{lang}/roadmap/cloud">Cloud</a></li>
+        {#roadmap-categories.results}
+          <li><a href="/{lang}/roadmap/{slug}">{name}</a></li>
+        {/roadmap-categories.results}
       </ul>
     </div>
   </nav>
@@ -28,10 +26,9 @@
     </div>
 
     <div class="grid">
-      {>"partials/roadmap/milestone" grid="4" /}
-      {>"partials/roadmap/milestone" grid="4" /}
-      {>"partials/roadmap/milestone" grid="4" /}
-      {>"partials/roadmap/milestone" grid="4" /}
+      {#milestones.results}
+        {>"partials/roadmap/milestone" grid="4" /}
+      {/milestones.results}
     </div>
 
     <a href="/{lang}/roadmap/milestones" class="btn-more tac fm small">View all milestones &rarr;</a>
