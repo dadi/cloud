@@ -1,0 +1,86 @@
+{
+  "fields": {
+    "title": {
+      "type": "String",
+      "required": true,
+      "label": "Title",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },
+    "desc": {
+      "type": "String",
+      "required": true,
+      "label": "Description",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "multiline": true,
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
+    "date": {
+      "type": "String",
+      "required": true,
+      "label": "Date",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "multiline": false,
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },
+    "complete": {
+      "type": "Boolean",
+      "required": false,
+      "default": false,
+      "label": "Complete?",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },
+    "web-service": {
+      "type": "Reference",
+      "settings": {
+        "collection": "web-services"
+      },
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    }
+  },
+  "settings": {
+    "cache": false,
+    "authenticate": false,
+    "count": 40,
+    "sort": "date",
+    "sortOrder": 1,
+    "storeRevisions": false,
+    "description": "",
+    "hooks": {
+      "beforeCreate": ["slugify"],
+      "beforeUpdate": ["slugify"]
+    }
+  }
+}

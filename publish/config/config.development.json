@@ -24,6 +24,12 @@
         },
         {
           "collections": [
+            "milestones"
+          ],
+          "title": "Roadmap"
+        },
+        {
+          "collections": [
             "knowledge-categories"
           ],
           "title": "Taxonomy"
