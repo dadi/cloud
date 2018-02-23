@@ -1,0 +1,16 @@
+{
+  "datasource": {
+    "key": "team",
+    "source": {
+      "type": "dadiapi",
+      "endpoint": "1.0/cloud/team"
+    },
+    "paginate": false,
+    "filter": {
+      "advisor": { "$ne": true}
+    },
+    "sort": {
+      "order": -1
+    }
+  }
+}

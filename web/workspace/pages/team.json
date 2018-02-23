@@ -2,6 +2,10 @@
   "page": {
     "key": "team"
   },
+  "datasources": [
+  	"team",
+  	"advisors"
+  ],
   "routes": [
     {
       "path": "/:lang/team"
