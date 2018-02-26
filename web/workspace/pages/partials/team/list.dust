@@ -2,9 +2,9 @@
   <a href="./team/{slug}" class="box box--natural mb bd bd-grey">
     <img src="/assets/team/{slug}.jpg" alt="Photo of {name}" class="fill block">
 
-    <div class="box__caption">
-      <h2 class="normal" style="margin-bottom:3px">{name}</h2>
-      <p class="color-tint">{role}</p>
+    <div class="box__caption bg-dark color-white">
+      <h2 class="normal truncate">{name}</h2>
+      <p class="color-tint truncate">{role}</p>
     </div>
   </a>
 </div>

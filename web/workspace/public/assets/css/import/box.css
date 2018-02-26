@@ -23,7 +23,17 @@
   display: block;
 }
 .box__caption {
-  padding: 13px 25px 15px 25px;
+  padding: 14px 25px 15px 25px;
+}
+.box__caption h1,
+.box__caption h2,
+.box__caption h3 {
+  margin: 0;
+}
+@media (--bs) {
+  .box__caption {
+    padding: 14px 3px 15px 15px;
+  }
 }
 .box__icon {
   position: absolute;

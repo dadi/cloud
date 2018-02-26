@@ -39,6 +39,12 @@
 
 .fwb                        { font-weight: bold }
 
+.truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 /* Borders */
 
 .bd                         { border: 1px solid }
@@ -49,7 +55,7 @@
 /* Background colours */
 
 .bg-white                   { background-color: #fff }
-.bg-dark                    { background-color: #04111d }
+.bg-dark                    { background-color: var(--dark) }
 .bg-blue                    { background-color: #3585f9 }
 .bg-green                   { background-color: var(--green) }
 .bg-light-green             { background-color: #f0fcf5 }

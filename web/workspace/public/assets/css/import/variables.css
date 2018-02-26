@@ -4,6 +4,7 @@
   
   --green: #0ecc5f;
   --grey: #E5E4E4;
+  --dark: #04111d;
 }
 
 @custom-media --bs (max-width: 800px);
