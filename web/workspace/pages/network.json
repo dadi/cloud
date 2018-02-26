@@ -4,6 +4,7 @@
   },
   "datasources": [
     "pages",
+    "articles",
     "knowledge-categories",
     "web-services"
   ],

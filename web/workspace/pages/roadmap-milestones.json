@@ -4,7 +4,8 @@
   },
   "datasources": [
     "knowledge-categories",
-    "web-services"
+    "web-services",
+    "milestones"
   ],
   "routes": [
     {

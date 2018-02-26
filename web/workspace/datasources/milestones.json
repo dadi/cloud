@@ -5,6 +5,6 @@
       "type": "dadiapi",
       "endpoint": "1.0/cloud/milestones"
     },
-    "paginate": false
+    "filterEvent": "filterMilestones"
   }
 }

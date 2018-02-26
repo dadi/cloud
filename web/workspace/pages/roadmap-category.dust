@@ -3,22 +3,15 @@
 {>"partials/nav"/}
 
 <header class="bg-tint mb pb--x2 cf ovfh">
-  <nav class="subnav bg-white cf fm mb--x2 ">
-    <div class="cnt">
-      <ul>
-        <li><a href="/{lang}/roadmap">Everything</a></li>
-        <li><a href="/{lang}/roadmap/web-services" {@eq key=params.category value="web-services"}class="active"{/eq}>Web services</a></li>
-        <li><a href="/{lang}/roadmap/announcements" {@eq key=params.category value="announcements"}class="active"{/eq}>Announcements</a></li>
-        <li><a href="/{lang}/roadmap/mainnet" {@eq key=params.category value="mainnet"}class="active"{/eq}>Mainnet</a></li>
-        <li><a href="/{lang}/roadmap/website" {@eq key=params.category value="website"}class="active"{/eq}>Website</a></li>
-        <li><a href="/{lang}/roadmap/cloud" {@eq key=params.category value="cloud"}class="active"{/eq}>Cloud</a></li>
-      </ul>
-    </div>
-  </nav>
+  {>"partials/roadmap/nav"/}
 
   <div class="cnt">
     <img src="/assets/icons/direction.svg" width="60" class="mb bg-icon">
-    <h1 style="margin:0">Category</h1>
+    <h1 style="margin:0">
+      {#roadmap-categories.results}
+        {@eq key=slug value=params.roadmapCategory}{name}{/eq}
+      {/roadmap-categories.results}
+    </h1>
   </div>
 </header>
 
@@ -26,21 +19,18 @@
   <div class="cnt">
     <div class="grid">
       <div class="col w-1-2">
-        {>"partials/roadmap/milestone"  /}
-        {>"partials/roadmap/milestone"  /}
-        {>"partials/roadmap/milestone"  /}
-        {>"partials/roadmap/milestone"  /}
+        {#milestones.results}
+          {>"partials/roadmap/milestone" /}
+        {/milestones.results}
       </div>
       <div class="col w-1-2">
-        {>"partials/articles/list" /}
-        {>"partials/articles/list" /}
-        {>"partials/articles/list" /}
-        {>"partials/articles/list" /}
-        {>"partials/articles/list" /}
-        {>"partials/articles/list" /}
-        {>"partials/articles/list" /}
-        {>"partials/articles/list" /}
-        {>"partials/articles/list" /}
+        {#articles.results}
+          {>"partials/articles/list"
+            section="roadmap"
+            category=roadmap-category[0].name 
+            sub-category=web-service[0].name
+          /}
+        {/articles.results}
       </div>
     </div>
   </div>

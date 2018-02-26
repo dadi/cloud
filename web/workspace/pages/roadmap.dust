@@ -3,61 +3,50 @@
 {>"partials/nav"/}
 
 {^params.page}
-<header class="bg-tint mb pb--x2 cf ovfh">
-  <nav class="subnav bg-white cf fm mb--x2 ">
+  <header class="bg-tint mb pb--x2 cf ovfh">
+    {>"partials/roadmap/nav"/}
+
     <div class="cnt">
-      <ul>
-        <li><a href="/{lang}/roadmap" class="active">Everything</a></li>
-        {#roadmap-categories.results}
-          <li><a href="/{lang}/roadmap/{slug}">{name}</a></li>
-        {/roadmap-categories.results}
-      </ul>
-    </div>
-  </nav>
+      <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
+      <h1>{pages.results[0].title}</h1>
+      <div class="cf">
+      <p class="normal mb col w-2-3">{pages.results[0].excerpt}</p>
+      </div>
 
-  <div class="cnt">
-    <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
-    <h1>{pages.results[0].title}</h1>
-    <div class="cf">
-    <p class="normal mb col w-2-3">{pages.results[0].excerpt}</p>
-    </div>
-
-    <div class="hdr fm ttu mb">
-      <h3 style="padding-bottom:30px">Upcoming milestones</h3>
-    </div>
-
-    <div class="grid">
-      {#milestones.results}
-        {>"partials/roadmap/milestone" grid="4" /}
-      {/milestones.results}
-    </div>
-
-    <a href="/{lang}/roadmap/milestones" class="btn-more tac fm small">View all milestones &rarr;</a>
-  </div>
-</header>
-{/params.page}
-
-<main class="mb--x2">
-  <div class="cnt" id="stickContainer">
-    <div class="grid">
       <div class="hdr fm ttu mb">
-        <h3><span>Roadmap updates</span></h3>
+        <h3 style="padding-bottom:30px">Upcoming milestones</h3>
       </div>
 
       <div class="grid">
-        {#roadmap-articles.results}
-          {>"partials/articles/list"
-            grid="3"
-            size="3"
-            section="roadmap"
-            category=roadmap-category[0].name 
-            sub-category=web-service[0].name
-          /}
-        {/roadmap-articles.results}
+        {#milestones.results}
+          {>"partials/roadmap/milestone" grid="4" /}
+        {/milestones.results}
       </div>
 
-      {>"partials/pagination" ds=roadmap-articles /}
+      <a href="/{lang}/roadmap/milestones" class="btn-more tac fm small">View all milestones &rarr;</a>
     </div>
+  </header>
+{/params.page}
+
+<main class="mb--x2">
+  <div class="cnt">
+    <div class="hdr fm ttu mb">
+      <h3><span>Roadmap updates</span></h3>
+    </div>
+
+    <div class="grid">
+      {#roadmap-articles.results}
+        {>"partials/articles/list"
+          grid="3"
+          size="3"
+          section="roadmap"
+          category=roadmap-category[0].name 
+          sub-category=web-service[0].name
+        /}
+      {/roadmap-articles.results}
+    </div>
+
+    {>"partials/pagination" ds=roadmap-articles /}
   </div>
 </main>
 

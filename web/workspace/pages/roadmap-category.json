@@ -3,18 +3,18 @@
     "key": "roadmap"
   },
   "datasources": [
+    "roadmap-categories",
     "knowledge-categories",
+    "milestones",
+    "articles",
     "web-services"
+  ],
+  "requiredDatasources": [
+    "articles"
   ],
   "routes": [
     {
-      "path": "/:lang/roadmap/:category",
-      "params": [
-        {
-          "param": "category",
-          "in": ["web-services", "announcements", "mainnet", "website", "cloud"]
-        }
-      ]
+      "path": "/:lang/roadmap/:roadmapCategory"
     }
   ]
 }

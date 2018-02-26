@@ -4,19 +4,8 @@ const url = require('url')
 const Event = function (req, res, data, callback) {
   let filter = {}
 
-  // article.json
-  if (data.params.title) {
-    filter = { slug: data.params.title }
-  }
-
-  // roadmap-category.json
   if (data.params.roadmapCategory) {
-    filter = { "roadmap-category.slug": data.params.roadmapCategory }
-  }
-
-  // network.json
-  if (data.page.key === 'network') {
-    filter = { "roadmap-category.slug": "mainnet" }
+    filter = { "category.slug": data.params.roadmapCategory }
   }
 
   callback(null, filter)
