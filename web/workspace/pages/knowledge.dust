@@ -4,42 +4,61 @@
 
 <header class="bg-tint mb pt--x2 pb--x2 cf ovfh">
   <div class="cnt">
-    <img src="/assets/icons/files.svg" width="60" class="mb bg-icon">
-    <h1>Knowledge</h1>
-    <p class="normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+    {^params.category}
+      <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
+      <h1>{pages.results[0].title}</h1>
+      <p class="normal">{pages.results[0].excerpt}</p>
+    {:else}
+      <img src="/assets/icons/{knowledge-categories.results[0].icon}.svg" width="60" class="mb bg-icon">
+      <h1>{knowledge-categories.results[0].name}</h1>
+      <p class="normal">{knowledge-categories.results[0].desc}</p>
+    {/params.category}
   </div>
 </header>
 
 <main class="mb--x2">
   <div class="cnt">
-    <div class="grid" id="stickContainer">
-      <div class="col w-1-2">
-        <div class="hdr fm ttu mb">
-          <h3><span>Latest articles</span></h3>
-        </div>
+    {^params.category}
+      <div class="grid" id="stickContainer">
+        <div class="col w-1-2">
+          <div class="hdr fm ttu mb">
+            <h3><span>Latest articles</span></h3>
+          </div>
 
-        {#knowledge-articles.results}
+          {#knowledge-articles.results}
+            {>"partials/articles/list" 
+              section="knowledge"
+              category=knowledge-category[0].name 
+              sub-category=web-service[0].name
+            /}
+          {/knowledge-articles.results}
+        </div>
+        <div class="col w-1-2">
+          <div id="stick">
+             <div class="hdr fm ttu mb">
+              <h3><span>Categories</span></h3>
+            </div>
+
+            <div class="grid">
+              {#knowledge-categories.results}
+                {>"partials/knowledge/list" grid="2"/}
+              {/knowledge-categories.results}
+            </div>
+          </div>
+        </div>
+      </div>
+    {:else}
+      <div class="grid pt">
+        {#articles.results}
           {>"partials/articles/list" 
             section="knowledge"
             category=knowledge-category[0].name 
             sub-category=web-service[0].name
+            grid="3"
           /}
-        {/knowledge-articles.results}
+        {/articles.results}
       </div>
-      <div class="col w-1-2">
-        <div id="stick">
-           <div class="hdr fm ttu mb">
-            <h3><span>Categories</span></h3>
-          </div>
-
-          <div class="grid">
-            {#knowledge-categories.results}
-              {>"partials/knowledge/list" grid="2"/}
-            {/knowledge-categories.results}
-          </div>
-        </div>
-      </div>
-    </div>
+    {/params.category}
   </div>
 </main>
 

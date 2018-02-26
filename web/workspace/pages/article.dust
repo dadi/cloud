@@ -23,8 +23,7 @@
 
 <main class="mb--x2 cf" id="stickContainer">
   <div class="cnt cf ll col">
-    <div class="read normal">
-    <p>
+    <p class="normal">
       <a href="/{lang}/team/{author[0].slug}" style="margin-right:15px;color:#04111d" class="fwb">
         <img style="margin-right:13px" src="/assets/team/{author[0].slug}.jpg" width="25" class="col"> {author[0].name}
       </a>
@@ -33,10 +32,10 @@
       </time><br><br>
     </p>
 
-    {@markdown highlight="true"}{body|s}{/markdown}
-
-
-</div>
+    <div class="read normal">
+      {@markdown highlight="true"}{body|s}{/markdown}
+    </div>
+  </div>
   </div>
     <aside id="stick">
     

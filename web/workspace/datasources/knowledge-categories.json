@@ -7,7 +7,7 @@
     },
     "paginate": false,
     "requestParams": [{
-      "param": "slug",
+      "param": "category",
       "field": "slug"
     }]
   }

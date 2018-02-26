@@ -3,6 +3,8 @@
     "key": "knowledge"
   },
   "datasources": [
+    "pages",
+    "articles",
     "knowledge-articles",
     "knowledge-categories",
     "web-services"
