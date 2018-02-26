@@ -91,6 +91,7 @@
     "sort": "date",
     "sortOrder": 1,
     "storeRevisions": false,
-    "description": ""
+    "description": "",
+    "compose": true
   }
 }
