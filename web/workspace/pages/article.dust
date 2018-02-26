@@ -46,18 +46,13 @@
   </div>
   </div>
     <aside id="stick">
-    
-        <div class="hdr fm ttu mb" style="padding-top: 0" >
-          <h3><span>Comments</span></h3>
-        </div>
+      <div class="hdr fm ttu mb" style="padding-top: 0" >
+        <h3><span>More from this author</span></h3>
+      </div>
 
-        <form>
-          <fieldset>
-            <textarea style="min-height:70px" rows="5" id="message" name="message" required="" placeholder="Leave a comment" type="email"></textarea>
-         
-            <button type="submit" class="btn">Submit comment</button></form>
-          </fieldset>
-        </form>
+      <div class="hdr fm ttu mb" style="padding-top: 0" >
+        <h3><span>Related</span></h3>
+      </div>
     </aside>
 </main>
 {/articles.results}

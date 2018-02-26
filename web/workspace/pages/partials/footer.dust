@@ -33,7 +33,7 @@
         <div class="hdr fm ttu mb"><h3><span>Web services</span></h3></div>
         <ul>
           {#web-services.results}
-            <li><a href="/{lang}/{slug}/" class="fwb"><img src="/assets/products/dadi-{slug}.png" width="15">{name}</a></li>
+            <li><a href="/{lang}/{slug}/" class="fwb"><img src="/assets/products/dadi-{slug}.png" height="18">{name}</a></li>
           {/web-services.results}
           <li><a href="http://docs.dadi.tech" onclick="ga('send','event','Documentation','Click','Footer');" rel="noopener"><img src="/assets/icons/pop-out.svg" class="alignv float--right" width="15">Documentation</a></li>
         </ul>
