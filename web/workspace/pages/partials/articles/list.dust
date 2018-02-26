@@ -18,21 +18,23 @@
     </div>
     <div class="box__footer bdt bd-grey small">
       {?author}
-        <a href="/{lang}/team/{author[0].slug}" class="box__aside tar">
+        <a href="/{lang}/team/{author[0].slug}" class="{?publishedAt}box__aside{/publishedAt} tar">
           {author[0].name}
           <img src="/assets/team/{author[0].slug}.jpg" width="25">
         </a>
       {:else}
-        <div class="box__aside tar fwb">The DADI Team</div>
+        <div class="{?publishedAt}box__aside tar{/publishedAt} fwb">The DADI Team</div>
       {/author}
 
-      <time class="color-tint">
-        {@eq key=dateFormat value="short"}
-          {@formatDate data=publishedAt parseFormat="YYYY-MM-DDTHH:mm:ss.SSSZZ" format="DD.MM.YY" /}
-        {:else}
-          {@formatDate data=publishedAt parseFormat="YYYY-MM-DDTHH:mm:ss.SSSZZ" format="DD MMMM YYYY" /}
-        {/eq}
-      </time>
+      {?publishedAt}
+        <time class="color-tint">     
+          {@eq key=dateFormat value="short"}
+            {@formatDate data=publishedAt parseFormat="YYYY-MM-DDTHH:mm:ss.SSSZZ" format="DD.MM.YY" /}
+          {:else}
+            {@formatDate data=publishedAt parseFormat="YYYY-MM-DDTHH:mm:ss.SSSZZ" format="DD MMMM YYYY" /}
+          {/eq}  
+        </time>
+      {/publishedAt}
     </div>
   </article>
 {?grid}</div>{/grid}

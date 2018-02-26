@@ -1,14 +1,22 @@
 {
   "page": {
-    "key": "careers"
+    "key": "pages"
   },
   "datasources": [
+    "pages",
     "knowledge-categories",
     "web-services"
   ],
+  "template": "pages.dust",
   "routes": [
     {
       "path": "/:lang/careers"
+    },
+    {
+      "path": "/:lang/privacy"
+    },
+    {
+      "path": "/:lang/culture"
     }
   ]
 }

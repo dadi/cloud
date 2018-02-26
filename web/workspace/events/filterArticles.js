@@ -19,9 +19,12 @@ const Event = function (req, res, data, callback) {
     filter = { "roadmap-category.slug": "mainnet" }
   }
 
-  // network.json
-  if (data.page.key === 'knowledge') {
+  // knowledge.json
+  if (data.page.key === 'knowledge' && data.params.category) {
     filter = { "knowledge-category.slug": data.params.category }
+  }
+  if (data.page.key === 'knowledge' && !data.params.category) {
+    filter = { "knowledge-category": { $exists: true, $ne: [] } }
   }
 
   callback(null, Object.assign({ "published": true }, filter))

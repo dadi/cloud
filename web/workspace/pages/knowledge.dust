@@ -27,13 +27,13 @@
             <h3><span>Latest articles</span></h3>
           </div>
 
-          {#knowledge-articles.results}
+          {#articles.results}
             {>"partials/articles/list" 
               section="knowledge"
               category=knowledge-category[0].name 
               sub-category=web-service[0].name
             /}
-          {/knowledge-articles.results}
+          {/articles.results}
         </div>
         <div class="col w-1-2">
           <div id="stick">

@@ -29,12 +29,15 @@
           <img style="margin-right:13px" src="/assets/team/{author[0].slug}.jpg" width="25" class="col"> {author[0].name}
         </a>
       {:else}
-        <span class="fwb">The DADI Team</span>
+        By <span class="fwb">The DADI Team</span>
       {/author}
 
-      <time class="color-tint">
-        {@formatDate data=publishedAt parseFormat="YYYY-MM-DDTHH:mm:ss.SSSZZ" format="DD MMMM YYYY" /}
-      </time><br><br>
+      {?publishedAt}
+        <time class="color-tint">
+          {@formatDate data=publishedAt parseFormat="YYYY-MM-DDTHH:mm:ss.SSSZZ" format="DD MMMM YYYY" /}
+        </time>
+      {/publishedAt}
+      <br><br>
     </p>
 
     <div class="read normal">

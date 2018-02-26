@@ -5,10 +5,6 @@
       "type": "dadiapi",
       "endpoint": "1.0/cloud/roadmap-categories"
     },
-    "paginate": false,
-    "requestParams": [{
-      "param": "slug",
-      "field": "slug"
-    }]
+    "paginate": false
   }
 }

@@ -65,16 +65,20 @@ h1, h2 {
     max-width: 100%;
     box-sizing: border-box;
     height: auto; 
-    margin: 0 -20px;
+    margin: 1em auto;
   }
 
   & iframe {
     max-width: 100%;
   }
 
-  & .read ul,
-  & .read ol {
+  & ul,
+  & ol {
     margin: 1.5em auto;
+  }
+
+  & ol li, & ul li {
+    margin: .2em 1.2em;
   }
 
   & a {
