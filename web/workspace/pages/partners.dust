@@ -14,7 +14,15 @@
 
 <main class="mb--x2">
   <div class="cnt">
-    
+    <div class="grid pt">
+      {#partners.results}
+      <div class="col w-1-3 normal">
+        <h2>{name}</h2>
+        <div class="normal mb">{@markdown}{desc|s}{/markdown}</div>
+        <a href="{website}" target="_blank" class="btn small">Visit website</a>
+      </div>
+      {/partners.results}
+    </div>
   </div>
 </main>
 

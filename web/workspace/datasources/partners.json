@@ -1,0 +1,10 @@
+{
+  "datasource": {
+    "key": "partners",
+    "source": {
+      "type": "dadiapi",
+      "endpoint": "1.0/cloud/partners"
+    },
+    "paginate": false
+  }
+}
