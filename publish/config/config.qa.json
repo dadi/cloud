@@ -21,21 +21,16 @@
       "menu": [
         {
           "collections": [
+            "pages",
             "team",
-            "pages"
+            "partners"
           ],
           "title": "Content"
         },
         {
           "collections": [
-            "milestones",
+            "knowledge-categories",
             "roadmap-categories"
-          ],
-          "title": "Roadmap"
-        },
-        {
-          "collections": [
-            "knowledge-categories"
           ],
           "title": "Taxonomy"
         }
