@@ -50,8 +50,24 @@
     "storeRevisions": false,
     "description": "",
     "hooks": {
-      "beforeCreate": ["slugify"],
-      "beforeUpdate": ["slugify"]
+      "beforeCreate": [
+        {
+          "hook": "slugify",
+          "options": {
+            "from": "name",
+            "to": "slug"
+          }
+        }
+      ],
+      "beforeUpdate": [
+        {
+          "hook": "slugify",
+          "options": {
+            "from": "name",
+            "to": "slug"
+          }
+        }
+      ]
     }
   }
 }

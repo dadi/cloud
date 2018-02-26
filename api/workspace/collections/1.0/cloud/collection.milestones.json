@@ -91,10 +91,6 @@
     "sort": "date",
     "sortOrder": 1,
     "storeRevisions": false,
-    "description": "",
-    "hooks": {
-      "beforeCreate": ["slugify"],
-      "beforeUpdate": ["slugify"]
-    }
+    "description": ""
   }
 }

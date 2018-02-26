@@ -9,6 +9,6 @@ function slugify (text) {
 }
 
 module.exports = function (obj, type, data) {
-  obj.slug = slugify(obj.name)
+  obj[data.options.to] = slugify(obj[data.options.from])
   return obj
 }
