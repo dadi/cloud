@@ -220,6 +220,7 @@
     "count": 40,
     "storeRevisions": false,
     "description": "",
+    "compose": true,
     "hooks": {
       "beforeCreate": [
         {
