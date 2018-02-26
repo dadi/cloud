@@ -66,9 +66,6 @@ a.box:hover .box__cta,
   .box {
     height: 260px;
   }
-  .box--natural {
-    height: auto;
-  }
   .box--natural .box__inner {
     padding-bottom: 25px;
   }
@@ -78,6 +75,13 @@ a.box:hover .box__cta,
   .box--x3 {
     height: 380px;
   }
+}
+
+.box--natural {
+  height: auto;
+}
+.box--natural .box__footer {
+  position: relative;
 }
 
 .box--roadmap:before {

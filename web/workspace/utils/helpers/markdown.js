@@ -1,4 +1,5 @@
 const dust = require('dustjs-linkedin')
+const hljs = require('highlight.js')
 const marked = require('marked')
 
 /*
@@ -19,9 +20,21 @@ marked.setOptions({
 dust.helpers.markdown = function(chunk, context, bodies, params) {
   if (bodies.block) {
     return chunk.capture(bodies.block, context, function(string, chunk) {
-      chunk.end(marked(string))
+      var renderer = new marked.Renderer()
+      
+      if (!params.highlight) {
+        chunk.end(marked(string))
+      } else {
+        chunk.end(marked(string, {
+          renderer: renderer,
+          highlight: (code) => {
+            return hljs.highlightAuto(code).value
+          }
+        }))
+      }
     })
   }
+
   return chunk
 }
 

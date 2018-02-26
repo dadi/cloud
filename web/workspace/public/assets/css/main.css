@@ -8,6 +8,7 @@
 @import "import/box.css";
 @import "import/badge.css";
 @import "import/homepage.css";
+@import "import/highlight.css";
 @import "import/footer.css";
 
 * {
@@ -62,7 +63,9 @@ h1, h2 {
 
   & img {
     max-width: 100%;
+    box-sizing: border-box;
     height: auto; 
+    margin: 0 -20px;
   }
 
   & iframe {

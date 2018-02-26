@@ -36,10 +36,10 @@
     </div>
 
     <div class="grid">
-      {>"partials/roadmap/list" grid="4" size="3"/}
-      {>"partials/roadmap/list" grid="4" size="3"/}
-      {>"partials/roadmap/list" grid="4" size="3"/}
-      {>"partials/roadmap/list" grid="4" size="3"/}
+      {>"partials/articles/list" grid="4" size="3"/}
+      {>"partials/articles/list" grid="4" size="3"/}
+      {>"partials/articles/list" grid="4" size="3"/}
+      {>"partials/articles/list" grid="4" size="3"/}
     </div>
   </div>
 </header>

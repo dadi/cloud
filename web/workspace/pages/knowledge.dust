@@ -14,16 +14,17 @@
   <div class="cnt">
     <div class="grid" id="stickContainer">
       <div class="col w-1-2">
-         <div class="hdr fm ttu mb">
-            <h3><span>Latest articles</span></h3>
-          </div>
+        <div class="hdr fm ttu mb">
+          <h3><span>Latest articles</span></h3>
+        </div>
 
-          {>"partials/roadmap/list" size="1" /}
-          {>"partials/roadmap/list" size="1" /}
-          {>"partials/roadmap/list" size="1" /}
-          {>"partials/roadmap/list" size="1" /}
-          {>"partials/roadmap/list" size="1" /}
-          {>"partials/roadmap/list" size="1" /}
+        {#knowledge-articles.results}
+          {>"partials/articles/list" 
+            section="knowledge"
+            category=knowledge-category[0].name 
+            sub-category=web-service[0].name
+          /}
+        {/knowledge-articles.results}
       </div>
       <div class="col w-1-2">
         <div id="stick">

@@ -27,12 +27,15 @@
           </div>
 
           <div class="grid">
-            {>"partials/roadmap/list" grid="2" /}
-            {>"partials/roadmap/list" grid="2" /}
-            {>"partials/roadmap/list" grid="2" /}
-            {>"partials/roadmap/list" grid="2" /}
-            {>"partials/roadmap/list" grid="2" /}
-            {>"partials/roadmap/list" grid="2" /}
+            {#roadmap-articles.results}
+              {>"partials/articles/list"
+                grid="2"
+                size="3"
+                dateFormat="short"
+                section="roadmap"
+                category=roadmap-category[0].name 
+                sub-category=web-service[0].name /}
+            {/roadmap-articles.results}
           </div>  
 
           <a href="/{lang}/roadmap" class="btn-more tac fm small">View all updates &rarr;</a>

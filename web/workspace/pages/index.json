@@ -4,7 +4,8 @@
   },
   "datasources": [
     "web-services",
-    "knowledge-categories"
+    "knowledge-categories",
+    "roadmap-articles"
   ],
   "routes": [
     {

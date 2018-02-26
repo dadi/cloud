@@ -32,15 +32,15 @@
         {>"partials/roadmap/milestone"  /}
       </div>
       <div class="col w-1-2">
-        {>"partials/roadmap/list" /}
-        {>"partials/roadmap/list" /}
-        {>"partials/roadmap/list" /}
-        {>"partials/roadmap/list" /}
-        {>"partials/roadmap/list" /}
-        {>"partials/roadmap/list" /}
-        {>"partials/roadmap/list" /}
-        {>"partials/roadmap/list" /}
-        {>"partials/roadmap/list" /}
+        {>"partials/articles/list" /}
+        {>"partials/articles/list" /}
+        {>"partials/articles/list" /}
+        {>"partials/articles/list" /}
+        {>"partials/articles/list" /}
+        {>"partials/articles/list" /}
+        {>"partials/articles/list" /}
+        {>"partials/articles/list" /}
+        {>"partials/articles/list" /}
       </div>
     </div>
   </div>

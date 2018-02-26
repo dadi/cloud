@@ -3,15 +3,19 @@
     "key": "article"
   },
   "datasources": [
+    "articles",
     "knowledge-categories",
     "web-services"
   ],
+  "requiredDatasources": [
+    "articles"
+  ],
   "routes": [
     {
-      "path": "/:lang/knowledge/:category/:title"
+      "path": "/:lang/knowledge/:category/:subcategory?/:title"
     },
     {
-      "path": "/:lang/roadmap/:category/:title"
+      "path": "/:lang/roadmap/:category/:subcategory?/:title"
     }
   ]
 }

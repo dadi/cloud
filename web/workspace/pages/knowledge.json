@@ -3,12 +3,13 @@
     "key": "knowledge"
   },
   "datasources": [
+    "knowledge-articles",
     "knowledge-categories",
     "web-services"
   ],
   "routes": [
     {
-      "path": "/:lang/knowledge"
+      "path": "/:lang/knowledge/:category?"
     }
   ]
 }

@@ -1,0 +1,17 @@
+{
+  "datasource": {
+    "key": "roadmap-articles",
+    "source": {
+      "type": "dadiapi",
+      "endpoint": "1.0/cloud/articles"
+    },
+    "count": 12,
+    "paginate": true,
+    "filter": {
+      "roadmap-category": { "$ne": null }
+    },
+    "sort": {
+      "publishedAt": -1
+    }
+  }
+}

@@ -2,18 +2,22 @@
 
 {>"partials/nav"/}
 
+{#articles.results}
 <header class="bg-tint mb--x2 pt--x2 pb cf bdb bd-grey">
   <div class="cnt cf ll">
     <div class="badge mb fm small color-blue">
       <div class="badge__primary bg-blue color-white">
-        Design
+        {roadmap-category[0].name}
+        {knowledge-category[0].name}
       </div>
-      <div class="badge__secondary">
-        In progress
-      </div>
+      {?sub-category}
+        <div class="badge__secondary">
+          {sub-category}
+        </div>
+      {/sub-category}
     </div>
-    <h1>Why you should open source your website</h1>
-    <p class="normal mb color-tint">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad.</p>
+    <h1>{title}</h1>
+    <p class="normal mb color-tint">{@soberMarkdown}{excerpt|s}{/soberMarkdown}</p>
   </div>
 </header>
 
@@ -21,40 +25,15 @@
   <div class="cnt cf ll col">
     <div class="read normal">
     <p>
-      <img src="https://dadi.cloud/img/team/davelongworth.jpg" width="30" class="col" style="margin-right:15px">
-      By <strong style="margin-right:20px">David Longworth</strong>
-      <time class="color-tint">8/2/2018</time><br><br>
+      <a href="/{lang}/team/{author[0].slug}" style="margin-right:15px;color:#04111d" class="fwb">
+        <img style="margin-right:13px" src="/assets/team/{author[0].slug}.jpg" width="25" class="col"> {author[0].name}
+      </a>
+      <time class="color-tint">
+        {@formatDate data=publishedAt parseFormat="YYYY-MM-DDTHH:mm:ss.SSSZZ" format="DD MMMM YYYY" /}
+      </time><br><br>
     </p>
 
-{@markdown}
-You probably already know that we are proponents of open source software at DADI - we develop the majority of our products _in the wild_ on [GitHub](https://github.com/dadi). We believe in transparency and the benefit of having an extra set of eyes on our output, welcoming outside suggestions and criticism. Our enterprise clients also enjoy the advantage of not being ‘locked-in’ with proprietary products – most developers can work with our applications due to our committment to [open standards](https://forum.dadi.tech/topic/43/maintaining-code-quality-at-dadi).
-
-About a year ago we decided to make the repositories for our [web services site](https://dadi.tech/) and [our developer documentation](https://docs.dadi.tech/) publicly available - and we and haven’t looked back since.
-
-Here are some benefits open-sourcing your site might provide to your technology business.
-
-## Provides a live example for the community 
-
-**Especially relevant for us at DADI**; we build all our public facing sites in our own technology. This gives developers and executives real-world, practical examples of which they can see the end result without having to download and install the product. Doing this shows that you have enough faith in your own technology to use it yourself.
-
-## Crowdsource your copy editing
-
-Dealing spelling and grammar mistakes are apart of the lifecycle of any website - stuff always seems to slip through through. We’ve been surprised a few times when internet strangers send pull requests for seemingly small errors. This is a benefit for community developers as they get the credit on their Github profile for contributing to another public repository 🏅. It is also a nice feeling knowing people are reading your content so carefully!
-
-## Showcase your team
-
-GitHub is great for showing & discussing code edits in a nice sharable interface. Furthermore, every line of code can be traced back to a specific individual. Just like having your team speak at conferences and write articles (_ahem_) it raises the profile of your team - something which benefits the reputation of your company. It also encourages your team to write beautiful code the ‘right’ way, rather than taking shortcuts.
-
-## Illustrate your commitment to transparency
-
-The age of closed and selfish business practices is over and it is now much better to run a business like a family and show we're fellow humans on the other side of that screen. Those worried about what you are doing with their data and if you're tracking them can now see exactly how the cogs are working when they login - and the developers in your audience can audit your site for you.
-
-## A note about licensing & sensitive data
-
-It's worth pointing out you might want to [choose your licensing](https://choosealicense.com/) carefully when you take this step and also be extremly diligent in what you commit to a public repository – remember it's not easy to delete or change a git history and we've seen cases of bots trawling public repos for private API keys. 
-
-_If you spot any errors in this post, please let me know :) and as always you can find us on [Discord](https://discordapp.com/invite/3sEvuYJ), [Telegram](https://t.me/dadichat) or in the comments._
-{/markdown}
+    {@markdown highlight="true"}{body|s}{/markdown}
 
 
 </div>
@@ -74,6 +53,6 @@ _If you spot any errors in this post, please let me know :) and as always you ca
         </form>
     </aside>
 </main>
-
+{/articles.results}
 
 {>"partials/footer"/}

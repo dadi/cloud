@@ -2,6 +2,7 @@
 
 {>"partials/nav"/}
 
+{^params.page}
 <header class="bg-tint mb pb--x2 cf ovfh">
   <nav class="subnav bg-white cf fm mb--x2 ">
     <div class="cnt">
@@ -34,6 +35,7 @@
     <a href="/{lang}/roadmap/milestones" class="btn-more tac fm small">View all milestones &rarr;</a>
   </div>
 </header>
+{/params.page}
 
 <main class="mb--x2">
   <div class="cnt" id="stickContainer">
@@ -43,21 +45,18 @@
       </div>
 
       <div class="grid">
-        {>"partials/roadmap/list" grid="3" /}
-        {>"partials/roadmap/list" grid="3" /}
-        {>"partials/roadmap/list" grid="3" /}
-        {>"partials/roadmap/list" grid="3" /}
-        {>"partials/roadmap/list" grid="3" /}
-        {>"partials/roadmap/list" grid="3" /}
-        {>"partials/roadmap/list" grid="3" /}
-        {>"partials/roadmap/list" grid="3" /}
-        {>"partials/roadmap/list" grid="3" /}
+        {#roadmap-articles.results}
+          {>"partials/articles/list"
+            grid="3"
+            size="3"
+            section="roadmap"
+            category=roadmap-category[0].name 
+            sub-category=web-service[0].name
+          /}
+        {/roadmap-articles.results}
       </div>
 
-      <div class="pagination">
-        <a href="#" class="btn-more fm bg-white">&larr; Previous </a>
-        <a href="#" class="btn-more tar fm bg-white">Next &rarr;</a>
-      </div>
+      {>"partials/pagination" ds=roadmap-articles /}
     </div>
   </div>
 </main>
