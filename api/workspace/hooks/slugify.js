@@ -9,6 +9,8 @@ function slugify (text) {
 }
 
 module.exports = function (obj, type, data) {
-  obj[data.options.to] = slugify(obj[data.options.from])
+  if (obj[data.options.from].length) {
+    obj[data.options.to] = slugify(obj[data.options.from])
+  }
   return obj
 }
