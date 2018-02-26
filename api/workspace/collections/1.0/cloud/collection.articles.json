@@ -9,7 +9,7 @@
         "placement": "main",
         "display": {
           "edit": true,
-          "list": false
+          "list": true
         }
       }
     },
@@ -35,7 +35,7 @@
         "placement": "main",
         "display": {
           "edit": true,
-          "list": false
+          "list": true
         }
       },
       "settings": {
@@ -51,7 +51,7 @@
         "placement": "sidebar",
         "display": {
           "edit": true,
-          "list": false
+          "list": true
         }
       }
     },
@@ -92,7 +92,7 @@
         "placement": "sidebar",
         "display": {
           "edit": true,
-          "list": false
+          "list": true
         }
       },
       "settings": {
@@ -108,7 +108,7 @@
         "placement": "sidebar",
         "display": {
           "edit": true,
-          "list": false
+          "list": true
         }
       },
       "settings": {
@@ -124,7 +124,7 @@
         "placement": "sidebar",
         "display": {
           "edit": true,
-          "list": false
+          "list": true
         }
       },
       "settings": {
@@ -140,7 +140,7 @@
         "placement": "sidebar",
         "display": {
           "edit": true,
-          "list": false
+          "list": true
         }
       }
     },
