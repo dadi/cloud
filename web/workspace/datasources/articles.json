@@ -5,7 +5,8 @@
       "type": "dadiapi",
       "endpoint": "1.0/cloud/articles"
     },
-    "paginate": false,
+    "count": 12,
+    "paginate": true,
     "filterEvent": "filterArticles"
   }
 }

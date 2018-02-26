@@ -2,17 +2,23 @@
 
 {>"partials/nav"/}
 
-<header class="bg-tint mb pt--x2 pb--x2 cf ovfh">
+<header class="bg-tint mb pt--x2 pb cf ovfh">
   <div class="cnt">
     {^params.category}
       <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
       <h1>{pages.results[0].title}</h1>
-      <p class="normal">{pages.results[0].excerpt}</p>
+      <p class="normal mb--x2">{pages.results[0].excerpt}</p>
+
+      <div class="grid">
+        {#knowledge-categories.results}
+          {>"partials/knowledge/list"/}
+        {/knowledge-categories.results}
+      </div>
     {:else}
       {#knowledge-categories.results}{@eq key=slug value=params.category}
         <img src="/assets/icons/{icon}.svg" width="60" class="mb bg-icon">
         <h1>{name}</h1>
-        <p class="normal">{desc}</p>
+        <p class="normal mb">{desc}</p>
       {/eq}{/knowledge-categories.results}
     {/params.category}
   </div>
@@ -20,48 +26,25 @@
 
 <main class="mb--x2">
   <div class="cnt">
-    {^params.category}
-      <div class="grid" id="stickContainer">
-        <div class="col w-1-2">
-          <div class="hdr fm ttu mb">
-            <h3><span>Latest articles</span></h3>
-          </div>
+    <div class="hdr fm ttu mb">
+      <h3><span>Latest articles</span></h3>
+    </div>
 
-          {#articles.results}
-            {>"partials/articles/list" 
-              section="knowledge"
-              category=knowledge-category[0].name 
-              sub-category=web-service[0].name
-            /}
-          {/articles.results}
-        </div>
-        <div class="col w-1-2">
-          <div id="stick">
-             <div class="hdr fm ttu mb">
-              <h3><span>Categories</span></h3>
-            </div>
+    <div class="grid">
+      {#articles.results}
+        {>"partials/articles/list" 
+          section="knowledge"
+          category=knowledge-category[0].name 
+          sub-category=web-service[0].name
+          grid="3"
+          size="3"
+        /}
+      {:else}
+        <div class="col w-1-1 tac"><p>No articles yet.</p></div>
+      {/articles.results}
+    </div>
 
-            <div class="grid">
-              {#knowledge-categories.results}
-                {>"partials/knowledge/list" grid="2"/}
-              {/knowledge-categories.results}
-            </div>
-          </div>
-        </div>
-      </div>
-    {:else}
-      <div class="grid pt">
-        {#articles.results}
-          {>"partials/articles/list" 
-            section="knowledge"
-            category=knowledge-category[0].name 
-            sub-category=web-service[0].name
-            grid="3"
-            size="3"
-          /}
-        {/articles.results}
-      </div>
-    {/params.category}
+    {>"partials/pagination" ds=articles /}
   </div>
 </main>
 
