@@ -28,7 +28,7 @@
     },
     "author": {
       "type": "Reference",
-      "required": true,
+      "required": false,
       "label": "Author",
       "publish": {
         "section": "Details",

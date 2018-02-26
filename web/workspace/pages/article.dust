@@ -24,9 +24,14 @@
 <main class="mb--x2 cf" id="stickContainer">
   <div class="cnt cf ll col">
     <p class="normal">
-      <a href="/{lang}/team/{author[0].slug}" style="margin-right:15px;color:#04111d" class="fwb">
-        <img style="margin-right:13px" src="/assets/team/{author[0].slug}.jpg" width="25" class="col"> {author[0].name}
-      </a>
+      {?author}
+        <a href="/{lang}/team/{author[0].slug}" style="margin-right:15px;color:#04111d" class="fwb">
+          <img style="margin-right:13px" src="/assets/team/{author[0].slug}.jpg" width="25" class="col"> {author[0].name}
+        </a>
+      {:else}
+        <span class="fwb">The DADI Team</span>
+      {/author}
+
       <time class="color-tint">
         {@formatDate data=publishedAt parseFormat="YYYY-MM-DDTHH:mm:ss.SSSZZ" format="DD MMMM YYYY" /}
       </time><br><br>
