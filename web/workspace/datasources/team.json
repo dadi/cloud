@@ -11,7 +11,7 @@
       "field": "slug"
     }],
     "sort": {
-      "order": -1
+      "order": 1
     }
   }
 }
