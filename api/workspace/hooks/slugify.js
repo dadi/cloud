@@ -9,7 +9,7 @@ function slugify (text) {
 }
 
 module.exports = function (obj, type, data) {
-  if (obj[data.options.from].length) {
+  if (obj[data.options.from]) {
     obj[data.options.to] = slugify(obj[data.options.from])
   }
   return obj
