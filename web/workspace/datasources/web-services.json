@@ -6,10 +6,13 @@
       "endpoint": "1.0/cloud/web-services"
     },
     "paginate": false,
-    "requestParams": [{
-      "param": "product",
-      "field": "slug"
-    }],
+    "fields": {
+      "name": 1,
+      "overview": 1,
+      "slug": 1,
+      "color": 1,
+      "install": 1
+    },
     "sort": {
       "order": -1
     }

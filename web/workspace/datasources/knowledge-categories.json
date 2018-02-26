@@ -5,10 +5,6 @@
       "type": "dadiapi",
       "endpoint": "1.0/cloud/knowledge-categories"
     },
-    "paginate": false,
-    "requestParams": [{
-      "param": "category",
-      "field": "slug"
-    }]
+    "paginate": false
   }
 }

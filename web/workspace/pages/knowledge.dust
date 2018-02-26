@@ -9,9 +9,11 @@
       <h1>{pages.results[0].title}</h1>
       <p class="normal">{pages.results[0].excerpt}</p>
     {:else}
-      <img src="/assets/icons/{knowledge-categories.results[0].icon}.svg" width="60" class="mb bg-icon">
-      <h1>{knowledge-categories.results[0].name}</h1>
-      <p class="normal">{knowledge-categories.results[0].desc}</p>
+      {#knowledge-categories.results}{@eq key=slug value=params.category}
+        <img src="/assets/icons/{icon}.svg" width="60" class="mb bg-icon">
+        <h1>{name}</h1>
+        <p class="normal">{desc}</p>
+      {/eq}{/knowledge-categories.results}
     {/params.category}
   </div>
 </header>

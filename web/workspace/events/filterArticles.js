@@ -24,7 +24,7 @@ const Event = function (req, res, data, callback) {
     filter = { "knowledge-category.slug": data.params.category }
   }
 
-  callback(null, filter)
+  callback(null, Object.assign({ "published": true }, filter))
 }
 
 module.exports = function (req, res, data, callback) {

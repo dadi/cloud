@@ -52,6 +52,20 @@
         }
       }
     },
+    "headlineFeatures": {
+      "type": "String",
+      "required": true,
+      "label": "headlineFeatures",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "multiline": true,
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
     "features": {
       "type": "String",
       "required": true,

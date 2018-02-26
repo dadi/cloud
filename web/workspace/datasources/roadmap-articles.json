@@ -8,6 +8,7 @@
     "count": 12,
     "paginate": true,
     "filter": {
+      "published": true,
       "roadmap-category": { "$ne": null }
     },
     "sort": {

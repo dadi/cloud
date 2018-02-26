@@ -2,7 +2,7 @@
 
 {>"partials/nav"/}
 
-{#web-services.results[0]}
+{#web-service.results[0]}
 <style type="text/css">
   header {
     background: url(/assets/products/dadi-{slug}-bg.svg) no-repeat 50% 90px;
@@ -78,6 +78,6 @@
   </div>
 </main>
 
-{/web-services.results[0]}
+{/web-service.results[0]}
 
 {>"partials/footer"/}

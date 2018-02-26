@@ -1,0 +1,18 @@
+{
+  "datasource": {
+    "key": "web-service",
+    "source": {
+      "type": "dadiapi",
+      "endpoint": "1.0/cloud/web-services"
+    },
+    "paginate": false,
+    "requestParams": [{
+      "param": "product",
+      "field": "slug"
+    }],
+    "filter": {
+      "published": true
+    },
+    "count": 1
+  }
+}

@@ -4,10 +4,11 @@
   },
   "datasources": [
     "knowledge-categories",
-    "web-services"
+    "web-services",
+    "web-service"
   ],
   "requiredDatasources": [
-    "web-services"
+    "web-service"
   ],
   "routes": [
     {
