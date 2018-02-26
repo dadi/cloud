@@ -24,7 +24,7 @@ const Event = function (req, res, data, callback) {
     filter = { "knowledge-category.slug": data.params.category }
   }
   if (data.page.key === 'knowledge' && !data.params.category) {
-    filter = { "knowledge-category": { $exists: true, $ne: [] } }
+    filter = { "knowledge-category": { $ne: null } }
   }
 
   callback(null, Object.assign({ "published": true }, filter))
