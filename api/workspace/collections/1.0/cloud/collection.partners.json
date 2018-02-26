@@ -39,6 +39,20 @@
           "list": false
         }
       }
+    },
+    "published": {
+      "type": "Boolean",
+      "required": false,
+      "default": false,
+      "label": "Published?",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
     }
   },
   "settings": {
