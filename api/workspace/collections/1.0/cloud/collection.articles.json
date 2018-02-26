@@ -55,6 +55,19 @@
         }
       }
     },
+    "published": {
+      "type": "Boolean",
+      "required": false,
+      "label": "Published",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },
     "excerpt": {
       "type": "String",
       "required": false,
@@ -81,6 +94,22 @@
           "edit": true,
           "list": false
         }
+      }
+    },
+    "milestone": {
+      "type": "Reference",
+      "required": false,
+      "label": "Milestone",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      },
+      "settings": {
+        "collection": "milestones"
       }
     },
     "knowledge-category": {
@@ -129,19 +158,6 @@
       },
       "settings": {
         "collection": "web-services"
-      }
-    },
-    "published": {
-      "type": "Boolean",
-      "required": false,
-      "label": "Published",
-      "publish": {
-        "section": "Details",
-        "placement": "sidebar",
-        "display": {
-          "edit": true,
-          "list": true
-        }
       }
     },
     "status": {
