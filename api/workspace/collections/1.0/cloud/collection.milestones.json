@@ -28,13 +28,12 @@
       }
     },
     "date": {
-      "type": "String",
+      "type": "DateTime",
       "required": true,
-      "label": "Date",
+      "label": "Date & Time",
       "publish": {
         "section": "Details",
         "placement": "sidebar",
-        "multiline": false,
         "display": {
           "edit": true,
           "list": true
