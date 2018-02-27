@@ -237,6 +237,13 @@
     "storeRevisions": false,
     "description": "",
     "compose": true,
+    "index": [
+      {
+        "keys": {
+          "publishedAt": 1
+        }
+      }
+    ],
     "hooks": {
       "beforeCreate": [
         {
