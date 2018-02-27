@@ -40,7 +40,7 @@
     },
     "description": {
       "type": "String",
-      "required": true,
+      "required": false,
       "label": "Description",
       "publish": {
         "section": "Details",
@@ -54,7 +54,7 @@
     },
     "headlineFeatures": {
       "type": "String",
-      "required": true,
+      "required": false,
       "label": "headlineFeatures",
       "publish": {
         "section": "Details",
@@ -68,7 +68,7 @@
     },
     "features": {
       "type": "String",
-      "required": true,
+      "required": false,
       "label": "Features",
       "publish": {
         "section": "Details",
