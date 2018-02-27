@@ -24,7 +24,7 @@
     </div>
     {@ne key=size value="natural"}
     <div class="box__footer bdt bd-grey small">
-      <time class="color-tint">{date}</time>
+      <time class="color-tint">{@dateQuarter data=date parseFormat="YYYY-MM-DDTHH:mm:ss.SSSZZ"/}</time>
     </div>
     {/ne}
   </article>
