@@ -1,12 +1,12 @@
 <div class="col w-1-4">
   <div class="box box--x2 bd bd-grey mb" style="border-top: 1px solid #{color}">
-    <div class="box__inner">
+    <a href="/{lang}/{slug}" class="box__inner">
       <div class="box__icon">
         <img src="/assets/products/dadi-{slug}.png" height="35">
       </div>
       <h2 class="fm fwn normal" style="color:#{color}">{slug}</h2>
       <p class="mb">{overview}</p>
-    </div>
+    </a>
     <div class="box__footer box__footer--web-service">
       <a href="/{lang}/{slug}" class="box__cta small fm color-tint">Learn more</a>
       <a href="/{lang}/roadmap/{slug}" class="box__cta small fm color-tint">Latest updates</a>

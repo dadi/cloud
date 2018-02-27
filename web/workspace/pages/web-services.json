@@ -5,7 +5,8 @@
   "datasources": [
     "knowledge-categories",
     "web-services",
-    "web-service"
+    "web-service",
+    "web-service-articles"
   ],
   "requiredDatasources": [
     "web-service"

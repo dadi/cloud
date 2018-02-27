@@ -39,11 +39,7 @@
 
 .fwb                        { font-weight: bold }
 
-.truncate {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
+.truncate                   { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 
 /* Borders */
 
@@ -65,6 +61,7 @@
 
 .bd-grey                    { border-color: var(--grey) }
 .bd-green                   { border-color: var(--green) }
+.bd-tint                    { border-color: rgba(255,255,255,0.1) }
 
 /* Text colours */
 

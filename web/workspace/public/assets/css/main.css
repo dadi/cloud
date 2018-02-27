@@ -37,6 +37,8 @@ body {
 
 header {
   width: 100%;
+  position: relative;
+  /*box-shadow: 0 -5px 100px rgba(0,0,0,0.04) inset;*/
 }
 .bg-icon {
   opacity: 0.04;
@@ -151,9 +153,9 @@ h1, h2 {
   border-bottom: none;
   position: relative;
   list-style: none;
-  padding: 0 0 15px 35px;
+  padding: 0 0 10px 35px;
   background: url(/assets/img/icon-tick.svg) no-repeat 0 5px;
-  background-size: 20px auto;
+  background-size: 17px auto;
 }
 
 
@@ -240,5 +242,20 @@ h1, h2 {
     left: -70px;
     right: auto;
     top: 0;
+  }
+}
+
+
+.web-service__features {
+  & h2 {
+    font-size: 1.2rem;
+    border-top: 1px solid var(--grey);
+    padding-top: 20px;
+    margin-bottom: 0.5em;
+  }
+  & h2:first-of-type {
+    border-top: 0;
+    padding-top: 0;
+    margin-top: -5px;
   }
 }

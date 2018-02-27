@@ -1,0 +1,22 @@
+{
+  "datasource": {
+    "key": "web-service-articles",
+    "source": {
+      "type": "dadiapi",
+      "endpoint": "1.0/cloud/articles"
+    },
+    "count": 12,
+    "paginate": true,
+    "requestParams": [{
+      "param": "product",
+      "field": "web-service.slug"
+    }],
+    "filter": {
+      "published": true,
+      "web-service": { "$ne": null }
+    },
+    "sort": {
+      "publishedAt": -1
+    }
+  }
+}

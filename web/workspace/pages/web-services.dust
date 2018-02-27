@@ -5,7 +5,7 @@
 {#web-service.results[0]}
 <style type="text/css">
   header {
-    background: url(/assets/products/dadi-{slug}-bg.svg) no-repeat 50% 90px;
+    background: url(/assets/products/dadi-{slug}.png) no-repeat 92% 140%;
     background-size: auto 450px;
   }
   nav .nav__logo a:hover {
@@ -19,56 +19,115 @@
     border-color: #{color};
     background-color: #{color};
   }
+  .subnav {
+    background: #{color};
+  }
+  
+{@eq key=slug value="publish"}
+  nav.subnav a:hover {
+    color: #000;
+  } 
+  nav.subnav .active:after, nav.subnav a:hover:after {
+    background: #000;
+  } 
+  nav.subnav a:after {
+    background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, #000 100%);
+  } 
+{:else}
+  nav.subnav a:hover,
+  nav.subnav a {
+    color: #fff;
+  } 
+  nav.subnav .active:after, nav.subnav a:hover:after {
+    background: #fff;
+  } 
+  nav.subnav a:after {
+    background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, #ffffff 100%);
+  }
+{/eq}
 </style>
 
-<header class="bg-tint mb--x2 pt--x2 pb--x2 cf bdb bd-grey">
-  <div class="cnt cf">
+<header class="bg-dark pb--x2 cf">
+  <nav class="subnav cf fm mb--x2 ">
+    <div class="cnt">
+      <ul>
+        {?install}<li><a href="http://docs.dadi.tech/#{slug}/installation">Install guide</a></li>{/install}
+        {?npm}<li><a href="https://www.npmjs.com/package/@dadi/{slug}" onclick="ga('send','event','NPM','Click','Product');">Install with NPM</a></li>{/npm}
+        {?github}<li><a href="https://github.com/dadi/{slug}" onclick="ga('send','event','Github','Click','Product');">View source on GitHub</a></li>{/github}
+        {?demo}<li><a href="{demo}">View demo</a></li>{/demo}
+      </ul>
+    </div>
+  </nav>
+
+  <div class="cnt cf color-white">
     <div class="grid">
-      <div class="col w-1-2 bs-alignc">
-        <img src="/assets/products/dadi-{slug}-full.png" class="mb" height="45" alt="DADI {title} logo">
+      <div class="col w-2-3 bs-alignc">
+        <div class="bdb bd-tint mb"><h1 class="fm mb">{name}</h1></div>
 
-        <p class="medium mb">{@soberMarkdown}{overview}{/soberMarkdown}</p>
-        
-        <p>
-          {^hide_docs}
-            <a href="http://docs.dadi.tech/#{slug}/installation" class="btn btn--large mb {@math key="XX.5" method="abs"/}">How to install</a>
-          {:else}
-            <span class="btn btn--disabled">Install guide coming soon</span>
-          {/hide_docs}
-          <br>
-        
-          <a class="btn" href="https://github.com/dadi/{slug}" href="https://github.com/dadi/" onclick="ga('send','event','Github','Click','Product');">View source on GitHub</a><br>
+        <p class="medium mb" style="#{color}">{@soberMarkdown}{overview}{/soberMarkdown}</p>
 
-          <a class="btn" href="https://www.npmjs.com/package/@dadi/{slug}" onclick="ga('send','event','NPM','Click','Product');">Install with NPM</a><br>
-
-          {^hide_docs}<a class="btn" href="http://docs.dadi.tech/#{slug}" onclick="ga('send','event','Documentation','Click','Product');">Documentation</a><br>{/hide_docs}
-
-          {?demo}<a class="btn" href="{demo}">Live demo</a>{/demo}
-        </p>
-      </div>
-
-      <div class="col w-1-2 product__features">
-        <ul class="list--feat medium mb">
+         <div class="product__features">
+        <ul class="list--feat normal mb">
           {@markdown}{headlineFeatures}{/markdown}
         </ul>
 
-        <p><a href="#features" style="border-bottom: 1px solid #{color};">More features &rarr;</a></p>
-      </div>
+        <p><a href="#features" class="btn">More features &rarr;</a></p>
+      </div>     
     </div>
   </div>
 </header>
 
-<main class="mb--x2">
+<main class="mb--x2 pt">
   <div class="cnt">
-     <div class="bdr__top bdr--bdr-grey normal read pad__top">
-      <div class="grid">
-        <div class="col w-1-2 ">
-          {@markdown}{description}{/markdown}
+    <div class="grid mb" id="stickContainer">
+      <div class="col w-1-2">
+        <div id="stick">
+          <div class="hdr fm ttu mb">
+            <h3><span>What is {name}?</span></h3>
+          </div>
+
+          <div class="read normal">
+            {@markdown}{description}{/markdown}
+          </div>
         </div>
-        <div class="col w-1-2">
+      </div>
+      <div class="col w-1-2">
+        <div class="hdr fm ttu mb">
+          <h3><span>Full features</span></h3>
+        </div>
+
+        <div class="read normal web-service__features">
           {@markdown}{features}{/markdown}
         </div>
       </div>
+    </div>
+
+    <div class="hdr fm ttu mb">
+      <h3><span>Latest articles</span></h3>
+    </div>
+
+    <div class="grid">
+      {#web-service-articles.results}
+        {>"partials/articles/list" 
+          section="knowledge"
+          category=knowledge-category[0].name 
+          sub-category=web-service[0].name
+          grid="3"
+          size="3"
+        /}
+      {:else}
+        <div class="col w-1-1 tac"><p>No articles yet.</p></div>
+      {/web-service-articles.results}
+    </div>
+
+    <div class="hdr fm ttu mb">
+      <h3><span>All web services</span></h3>
+    </div>
+              
+    <div class="grid">
+      {#web-services.results}
+        {>"partials/web-services/list"/}
+      {/web-services.results}
     </div>
   </div>
 </main>
