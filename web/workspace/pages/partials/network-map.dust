@@ -1,4 +1,4 @@
-<div class="network">
+<div class="network {?size}network--large{/size}">
   {! <img src="/assets/img/bg-footer.png" width="807" height="425" class="mb--x2 fill"> !}
   <div id="map"></div>
 
@@ -7,7 +7,7 @@
   var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/abovedave/cjdwwax2q1cqy2sn3d8bpmb7v',
-      zoom: 0.2,
+      zoom: {^size}0.2{:else}1.2{/size},
       renderWorldCopies: false,
       scrollZoom: false,
       interactive: false,

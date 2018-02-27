@@ -128,6 +128,23 @@ h1, h2 {
   border-radius: 4px;
   overflow: hidden;
 }
+.network--large {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
+  width: 70%;
+}
+.network--large:before {
+  content: ' ';
+  position: absolute;
+  background: linear-gradient(to left, rgba(255,255,255,0) 0%, #f9f9f9 100%);
+  width: 205px;
+  height: 100%;
+  top: 0; left: 0; bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+}
 
 .stat {
   border-top: 1px solid var(--grey);
