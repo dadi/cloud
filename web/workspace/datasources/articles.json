@@ -7,6 +7,9 @@
     },
     "count": 12,
     "paginate": true,
-    "filterEvent": "filterArticles"
+    "filterEvent": "filterArticles",
+    "sort": {
+      "publishedAt": -1
+    }
   }
 }
