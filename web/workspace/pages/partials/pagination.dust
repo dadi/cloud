@@ -1,8 +1,8 @@
 <div class="pagination">
-{?ds.metadata.nextPage}
-  <a class="btn-more fm tar bg-white" href="?page={ds.metadata.nextPage}">Next &rarr;</a>
-{/ds.metadata.nextPage}
 {?ds.metadata.prevPage}
   <a class="btn-more tal fm bg-white" href="{@gt key=ds.metadata.prevPage value="1"}?page={ds.metadata.prevPage}{:else}{pathname}{/gt}">&larr; Previous</a>
 {/ds.metadata.prevPage}
+{?ds.metadata.nextPage}
+  <a class="btn-more fm tar bg-white" href="?page={ds.metadata.nextPage}">Next &rarr;</a>
+{/ds.metadata.nextPage}
 </div>
