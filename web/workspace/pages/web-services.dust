@@ -79,7 +79,7 @@
 
 <main class="mb--x2 pt">
   <div class="cnt">
-    <div class="grid mb" id="stickContainer">
+    <div class="grid mb--x2" id="stickContainer">
       <div class="col w-1-2">
         <div id="stick">
           <div class="hdr fm ttu mb">
@@ -101,25 +101,31 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="hdr fm ttu mb">
-      <h3><span>Latest articles</span></h3>
+  <div class="bg-tint pt pb mb bt bdb bdt bd-grey">
+    <div class="cnt">
+      <div class="hdr fm ttu mb">
+        <h3><span>Latest articles</span></h3>
+      </div>
+
+      <div class="grid">
+        {#web-service-articles.results}
+          {>"partials/articles/list" 
+            section="knowledge"
+            category=knowledge-category[0].name 
+            sub-category=web-service[0].name
+            grid="3"
+            size="3"
+          /}
+        {:else}
+          <div class="col w-1-1 tac"><p>No articles yet.</p></div>
+        {/web-service-articles.results}
+      </div>
     </div>
+  </div>
 
-    <div class="grid">
-      {#web-service-articles.results}
-        {>"partials/articles/list" 
-          section="knowledge"
-          category=knowledge-category[0].name 
-          sub-category=web-service[0].name
-          grid="3"
-          size="3"
-        /}
-      {:else}
-        <div class="col w-1-1 tac"><p>No articles yet.</p></div>
-      {/web-service-articles.results}
-    </div>
-
+  <div class="cnt">
     <div class="hdr fm ttu mb">
       <h3><span>All web services</span></h3>
     </div>
