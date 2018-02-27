@@ -13,7 +13,7 @@
       {:else}
         <span class="box__cta small fm color-tint">Coming soon</span>
       {/github}
-      <a href="/{lang}/roadmap/{slug}" class="box__cta small fm color-tint">Latest updates</a>
+      <a href="/{lang}/roadmap/web-services/{slug}" class="box__cta small fm color-tint">Latest updates</a>
       {?install}<a href="{install}" class="box__cta small fm color-tint">How to install</span>{/install}
     </div>
   </div>
