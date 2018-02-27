@@ -2,6 +2,9 @@
   "page": {
     "key": "knowledge"
   },
+  "settings": {
+    "passFilters": true
+  },
   "datasources": [
     "pages",
     "articles",
