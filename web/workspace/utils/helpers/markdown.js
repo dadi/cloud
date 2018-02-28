@@ -1,6 +1,7 @@
 const dust = require('dustjs-linkedin')
 const hljs = require('highlight.js')
 const marked = require('marked')
+const slugify = require('slugify')
 
 /*
 * More info: https://github.com/chjj/marked/blob/master/README.md
@@ -22,15 +23,25 @@ dust.helpers.markdown = function(chunk, context, bodies, params) {
     return chunk.capture(bodies.block, context, function(string, chunk) {
       var renderer = new marked.Renderer()
       
-      if (!params.highlight) {
-        chunk.end(marked(string))
-      } else {
+
+      // Clickable anchor headings
+      if (params.anchors) {
+        renderer.heading = function (text, level) {
+          var escapedText = slugify(text, { lower: true })
+          return `<h${level} class="anchor"><a name="${escapedText}" class="anchor__link" href="#${escapedText}">🔗</a>${text}</h${level}>`
+        }
+      }
+
+      // Highlight code
+      if (params.highlight) {
         chunk.end(marked(string, {
           renderer: renderer,
-          highlight: (code) => {
+          highlight: code => {
             return hljs.highlightAuto(code).value
           }
         }))
+      } else {
+        chunk.end(marked(string))
       }
     })
   }

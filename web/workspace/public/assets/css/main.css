@@ -277,3 +277,23 @@ h1, h2 {
     margin-top: -5px;
   }
 }
+
+
+.anchor {
+  position: relative;
+}
+.anchor__link {
+  opacity: 0;
+  position: absolute;
+  right: 100%;
+  font-size: 15px;
+  margin-right: 6px;
+  border: 0 !important;
+  padding: 3px 0px 0 6px;
+  display: block;
+  text-align: center;
+  border-radius: 3px;
+}
+.anchor:hover .anchor__link {
+  opacity: 1;
+}

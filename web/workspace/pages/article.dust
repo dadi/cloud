@@ -33,7 +33,7 @@
     </p>
 
     <div class="read normal">
-      {@markdown highlight="true"}{body|s}{/markdown}
+      {@markdown highlight="true" anchors="true"}{body|s}{/markdown}
     </div>
   </div>
   </div>
