@@ -13,7 +13,7 @@
       <ul>
         <li><a href="#architecture">Architecture</a></li>
         <li><a href="#usecases">Use cases</a></li>
-        <li><a href="#miners">Become a miner</a></li>
+        <li><a href="#contribute">Contribute</a></li>
       </ul>
     </div>
   </nav>
@@ -152,11 +152,10 @@
 
     <a href="/{lang}/knowledge/network/usecases" class="btn-more tac fm small mb">Read all usecases &rarr;</a>
 
-    <div class="hdr fm ttu mb" id="miners" name="miners">
+    <div class="hdr fm ttu mb" id="contribute" name="contribute">
       <h3><span>Be part of the network</span></h3>
     </div>
-    <p class="normal mb--x2">If you are a miner or have spare computational power, DADI is a great application of your resource, delivering real world services for individuals, businesses and governments, whilst delivering income for you.</p>
-
+    <p class="normal mb--x2">If you have spare computational power, DADI is a great application of your resource, delivering real world services for individuals, businesses and governments, whilst delivering income for you.</p>
 
     <div class="grid mb mb--x2">
       <div class="col w-1-3">
