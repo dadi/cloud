@@ -60,7 +60,13 @@
     "authenticate": false,
     "count": 40,
     "sort": "order",
-    "sortOrder": -1,
+    "index": [
+      {
+        "keys": {
+          "order": 1
+        }
+      }
+    ],
     "storeRevisions": false,
     "description": "",
     "hooks": {
