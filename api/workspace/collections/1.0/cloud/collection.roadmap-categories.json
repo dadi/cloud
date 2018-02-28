@@ -42,6 +42,7 @@
     }
   },
   "settings": {
+    "displayName": "Roadmap categories",
     "cache": false,
     "authenticate": false,
     "count": 40,

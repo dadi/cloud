@@ -56,6 +56,7 @@
     }
   },
   "settings": {
+    "displayName": "Partners",
     "cache": false,
     "authenticate": false,
     "count": 40,

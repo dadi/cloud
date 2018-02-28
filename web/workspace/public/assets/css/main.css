@@ -107,6 +107,7 @@ h1, h2 {
   margin: 0;
   font-size: 0.9rem;
   font-weight: normal;
+  box-shadow: 1px 1px 0px rgba(255,255,255,0.7);
 }
 .hdr span {
   padding: 0 0 10px;

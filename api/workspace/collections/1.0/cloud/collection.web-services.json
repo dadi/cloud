@@ -161,6 +161,7 @@
     }
   },
   "settings": {
+    "displayName": "Web services",
     "cache": false,
     "authenticate": false,
     "count": 40,

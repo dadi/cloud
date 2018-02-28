@@ -55,6 +55,7 @@
     }
   },
   "settings": {
+    "displayName": "Knowledge categories",
     "cache": false,
     "authenticate": false,
     "count": 40,
