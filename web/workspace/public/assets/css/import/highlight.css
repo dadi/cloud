@@ -12,11 +12,18 @@ code {
 
 pre code {
   padding: 20px;
-  margin: 28px -20px;
   display: block;
+  margin: 28px 0;
 
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
+}
+
+@media (--bl) {
+  pre code {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 }
 
 .hljs {
