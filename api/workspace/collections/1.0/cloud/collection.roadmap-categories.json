@@ -39,6 +39,19 @@
           "list": false
         }
       }
+    },
+    "order": {
+      "type": "Number",
+      "required": false,
+      "label": "Order",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
     }
   },
   "settings": {
@@ -46,7 +59,7 @@
     "cache": false,
     "authenticate": false,
     "count": 40,
-    "sort": "date",
+    "sort": "order",
     "sortOrder": 1,
     "storeRevisions": false,
     "description": "",
