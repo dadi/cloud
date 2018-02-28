@@ -60,7 +60,7 @@
     "authenticate": false,
     "count": 40,
     "sort": "order",
-    "sortOrder": 1,
+    "sortOrder": -1,
     "storeRevisions": false,
     "description": "",
     "hooks": {
