@@ -33,9 +33,6 @@
     <div class="grid">
       {#articles.results}
         {>"partials/articles/list" 
-          section="knowledge"
-          category=knowledge-category[0].name 
-          sub-category=web-service[0].name
           grid="3"
           size="3"
         /}

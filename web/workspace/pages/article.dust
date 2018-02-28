@@ -5,18 +5,10 @@
 {#articles.results}
 <header class="bg-tint mb--x2 pt--x2 pb cf bdb bd-grey">
   <div class="cnt cf ll">
-    <div class="badge mb fm small color-blue">
-      <div class="badge__primary bg-blue color-white">
-        {roadmap-category[0].name}
-        {knowledge-category[0].name}
-      </div>
-      {?sub-category}
-        <div class="badge__secondary">
-          {sub-category}
-        </div>
-      {/sub-category}
-    </div>
+    {>"partials/articles/taxonomy"/}
+
     <h1>{title}</h1>
+    
     <p class="normal mb color-tint">{@soberMarkdown}{excerpt|s}{/soberMarkdown}</p>
   </div>
 </header>

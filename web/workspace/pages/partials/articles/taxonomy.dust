@@ -1,0 +1,27 @@
+<div class="badge mb fm small color-blue">
+  {?roadmap-category}
+    <div class="badge__primary bg-blue color-white">
+      <a href="/{lang}/roadmap">
+        Roadmap
+      </a>
+    </div>
+    <div class="badge__secondary">
+      {#roadmap-category}
+        <a href="/{lang}/roadmap/{slug}">{name}</a>{@sep},{/sep}
+      {/roadmap-category}  
+    </div>
+  {:else}
+    <div class="badge__primary bg-blue color-white">
+      <a href="/{lang}/knowledge/{knowledge-category[0].slug}">
+        {knowledge-category[0].name}
+      </a>
+    </div>
+    {?web-service}
+      <div class="badge__secondary">
+        {#web-service}
+          <a href="/{lang}/{slug}">{name}</a>{@sep},{/sep}
+        {/web-service}    
+      </div>
+    {/web-service}
+  {/roadmap-category}
+</div>

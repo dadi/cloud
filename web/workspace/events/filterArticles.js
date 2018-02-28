@@ -16,7 +16,7 @@ const Event = function (req, res, data, callback) {
 
   // network.json
   if (data.page.key === 'network') {
-    filter = { "roadmap-category.slug": "mainnet" }
+    filter = { "roadmap-category.slug": "network" }
   }
 
   // knowledge.json

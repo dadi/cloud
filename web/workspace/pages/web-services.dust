@@ -111,13 +111,7 @@
 
       <div class="grid">
         {#web-service-articles.results}
-          {>"partials/articles/list" 
-            section="knowledge"
-            category=knowledge-category[0].name 
-            sub-category=web-service[0].name
-            grid="3"
-            size="3"
-          /}
+          {>"partials/articles/list" grid="3" size="3" /}
         {:else}
           <div class="col w-1-1 tac"><p>No articles yet.</p></div>
         {/web-service-articles.results}
@@ -131,8 +125,8 @@
     </div>
               
     <div class="grid">
-      {#web-services.results}
-        {>"partials/web-services/list"/}
+      {#web-services.results:lang}
+        {>"partials/web-services/list":web-services/}
       {/web-services.results}
     </div>
   </div>

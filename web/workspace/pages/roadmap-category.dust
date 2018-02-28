@@ -25,11 +25,7 @@
       </div>
       <div class="col w-1-2">
         {#articles.results}
-          {>"partials/articles/list"
-            section="roadmap"
-            category=roadmap-category[0].name 
-            sub-category=web-service[0].name
-          /}
+          {>"partials/articles/list" /}
         {/articles.results}
       </div>
     </div>

@@ -39,8 +39,6 @@
         {>"partials/articles/list"
           grid="4"
           size="3"
-          section="roadmap"
-          category=roadmap-category[0].name 
         /}
       {/articles.results}
     </div>
