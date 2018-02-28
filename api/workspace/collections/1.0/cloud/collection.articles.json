@@ -202,6 +202,19 @@
         }
       }
     },
+     "redditUrl": {
+      "type": "String",
+      "required": false,
+      "label": "Reddit URL",
+      "publish": {
+        "section": "Meta",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
     "metaTitle": {
       "type": "String",
       "required": false,

@@ -1,0 +1,21 @@
+<a href="#share" class="block mb trigger-contextual">
+  <img src="/assets/icons/pop-out.svg" width="18" class="vam"> Share
+</a>
+
+<div id="share" class="hide box box--arrow bg-white box--natural bd bd-grey list--feat">
+  <div class="box__inner" style="padding-bottom:10px">
+    <div class="mb medium fwb">Building a to-do list app with DADI API</div>
+
+    <ul class="grid">
+      <li class="col w-1-2"><a class="bdb bd-grey block" target="_blank" href="https://www.facebook.com/sharer/sharer.php?text={title|uc}&amp;u=https://dadi.cloud{pathname|uc}">Facebook</a></li>
+      
+      <li class="col w-1-2"><a class="bdb bd-grey block" target="_blank" href="https://twitter.com/intent/tweet?counturl=https://dadi.cloud{pathname|uc}&amp;text={title|uc}&amp;via=DADI">Twitter</a></li>
+      
+      <li class="col w-1-2"><a class="bdb bd-grey block" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&amp;source=DADI&amp;summary={excerpt}&amp;title={title|uc}&amp;url=https://dadi.cloud{pathname|uc}">Linkedin</a></li>
+      
+      <li class="col w-1-2"><a class="bdb bd-grey block" target="_blank" href="https://reddit.com/submit?title={title|uc}&amp;url=https://dadi.cloud{pathname|uc}">Reddit</a></li>
+            
+      <li class="col w-1-2"><a class="bd-grey block" target="_blank" href="mailto:?subject={title|uc}&amp;body=https://dadi.cloud{pathname|uc}">Email</a></li>
+    </ul>
+  </div>
+</div>

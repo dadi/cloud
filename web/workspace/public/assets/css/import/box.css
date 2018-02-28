@@ -14,6 +14,20 @@
   left: 25px;
   margin-top: 1px;
 }
+.box--arrow:before {
+  bottom: 100%;
+  left: 25px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-bottom-color: var(--grey);
+  border-width: 12px;
+  margin-left: 0;
+}
 .box--join:last-of-type:after {
   display: none;
 }

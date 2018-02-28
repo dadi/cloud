@@ -14,38 +14,38 @@
 </header>
 
 <main class="mb--x2 cf" id="stickContainer">
-  <div class="cnt cf ll col">
-    <p class="normal">
+  <aside id="stick" class="mb">
+    <div class="pr--x2 bs-pr pl">
+      <div class="mb block bdb pb bd-grey read">
+        {?publishedAt}
+          <time class="color-tint" datetime="{publishedAt}">
+            {@formatDate data=publishedAt parseFormat="YYYY-MM-DDTHH:mm:ss.SSSZZ" format="DD MMMM YYYY HH:MM" /}
+          </time>
+        {/publishedAt}
+
+        {?readingTime}
+          <div class="block">{readingTime} min read</div>
+        {/readingTime}
+      </div>
+
       {?author}
-        <a href="/{lang}/team/{author[0].slug}" style="margin-right:15px" class="fwb">
-          <img style="margin-right:13px" src="/assets/team/{author[0].slug}.jpg" width="25" class="col"> {author[0].name}
-        </a>
-      {:else}
-        By <span class="fwb">The DADI Team</span>
+        <div class="cf mb pb mt normal bdb bd-grey">
+          <a href="/{lang}/team/{author[0].slug}" class="block">
+            <img style="margin-right:18px;float:left" src="/assets/team/{author[0].slug}.jpg" width="55"> 
+            <strong>{author[0].name}</strong>
+            <span class="block color-tint">{author[0].role}</span>
+          </a>
+        </div>
       {/author}
 
-      {?publishedAt}
-        <time class="color-tint">
-          {@formatDate data=publishedAt parseFormat="YYYY-MM-DDTHH:mm:ss.SSSZZ" format="DD MMMM YYYY" /}
-        </time>
-      {/publishedAt}
-      <br><br>
-    </p>
-
+      {>"partials/share"/}
+    </div>
+  </aside>
+  <div class="cnt cf ll">
     <div class="read normal">
       {@markdown highlight="true" anchors="true"}{body|s}{/markdown}
     </div>
   </div>
-  </div>
-    <aside id="stick">
-      <div class="hdr fm ttu mb" style="padding-top: 0" >
-        <h3><span>More from this author</span></h3>
-      </div>
-
-      <div class="hdr fm ttu mb" style="padding-top: 0" >
-        <h3><span>Related</span></h3>
-      </div>
-    </aside>
 </main>
 {/articles.results}
 

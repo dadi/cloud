@@ -10,6 +10,9 @@
   "requiredDatasources": [
     "articles"
   ],
+  "events": [
+    "articleMeta"
+  ],
   "routes": [
     {
       "path": "/:lang/knowledge/:category/:subcategory?/:title"

@@ -61,6 +61,10 @@ h1, h2 {
 
   & h1, & h2, & h3, & h4 {
     margin: 1.5em 0 1em;
+
+    &:first-child {
+      margin-top: 0;
+    }   
   }
 
   & img {
@@ -175,7 +179,12 @@ h1, h2 {
   background: url(/assets/img/icon-tick.svg) no-repeat 0 5px;
   background-size: 17px auto;
 }
-
+.list--feat a {
+  padding-bottom: 8px;
+}
+.list--feat a:hover {
+  text-decoration: underline;
+}
 
 @media (--bl) {
   aside {

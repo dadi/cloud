@@ -23,11 +23,10 @@ dust.helpers.markdown = function(chunk, context, bodies, params) {
     return chunk.capture(bodies.block, context, function(string, chunk) {
       var renderer = new marked.Renderer()
       
-
       // Clickable anchor headings
       if (params.anchors) {
         renderer.heading = function (text, level) {
-          var escapedText = slugify(text, { lower: true })
+          var escapedText = slugify(text.replace(/amp;/, ''), { lower: true })
           return `<h${level} class="anchor"><a name="${escapedText}" class="anchor__link" href="#${escapedText}">🔗</a>${text}</h${level}>`
         }
       }

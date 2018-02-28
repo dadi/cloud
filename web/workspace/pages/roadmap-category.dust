@@ -15,12 +15,12 @@
   </div>
 </header>
 
-<main class="mb--x2">
-  <div class="cnt">
+<main class="mb--x2 pt cf">
+  <div class="cnt pb cf">
     <div class="grid">
       <div class="col w-1-2">
         {#milestones.results}
-          {>"partials/roadmap/milestone" /}
+          {>"partials/roadmap/milestone" size="natural" /}
         {/milestones.results}
       </div>
       <div class="col w-1-2">
