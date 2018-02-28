@@ -125,8 +125,8 @@
     </div>
               
     <div class="grid">
-      {#web-services.results:lang}
-        {>"partials/web-services/list":web-services/}
+      {#web-services.results:web-services lang=lang}
+        {>"partials/web-services/list"/}
       {/web-services.results}
     </div>
   </div>
