@@ -2,7 +2,7 @@ const marked = require('marked')
 
 const Event = function (req, res, data, callback) {
   const meta = {}
-  
+
   meta.canonical = `${req.protocol}://${req.headers.host}${data.pathNoLang}`
   meta.url = `${req.protocol}://${req.headers.host}${req.url}`
   meta.image = `${req.protocol}://${req.headers.host}/assets/products/dadi-og.jpg`
@@ -23,6 +23,7 @@ const Event = function (req, res, data, callback) {
 
     meta.title = article.metaTitle ? article.metaTitle.trim() : article.title.trim()
     meta.description = article.metaDescription ? article.metaDescription.trim() : article.excerpt.trim()
+    if (article.author && article.author[0] && article.author[0].twitter) meta.authorTwitter = article.author[0].twitter
     
     // get first image
     if (article.body) {

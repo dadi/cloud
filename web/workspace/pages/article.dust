@@ -29,7 +29,7 @@
       </div>
 
       {?author}
-        <div class="cf pt normal bdt bd-grey">
+        <div class="cf pt pb normal bdt bd-grey">
           <a href="/{lang}/team/{author[0].slug}" class="block">
             <img style="margin-right:18px;float:left" src="/assets/team/{author[0].slug}.jpg" width="55"> 
             <strong>{author[0].name}</strong>

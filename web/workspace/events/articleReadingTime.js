@@ -17,7 +17,9 @@ const Event = function (req, res, data, callback) {
   const imageSeconds = imagesCount * 12
 
   // define reading time
-  data.readingTime = Math.round((readingSeconds + imageSeconds) / 60)
+  const readingTime = Math.round((readingSeconds + imageSeconds) / 60)
+
+  data.readingTime = readingTime === 0 ? '<1' : readingTime
 
   callback()
 }
