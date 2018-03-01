@@ -6,27 +6,27 @@
     <div class="grid">
       <div class="col w-1-4 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Community</span></h3></div>
-        <ul>
-          <li><a href="https://github.com/dadi" rel="external" title="Github" target="_blank">Github</a></li>
-          <li><a href="https://medium.com/@daditech" rel="external" title="Medium" target="_blank">Medium</a></li>
-          <li><a href="https://twitter.com/dadi" rel="external" title="Twitter" target="_blank">Twitter</a></li>
-          <li><a href="https://reddit.com/r/dadi" rel="external" title="Reddit" target="_blank">Reddit</a></li>
-          <li><a href="https://discord.gg/3sEvuYJ" rel="external" title="Discord" target="_blank">Discord</a></li>
-          <li><a href="https://t.me/dadichat" rel="external" title="Telegram" target="_blank">Telegram</a></li>
+        <ul class="grid bs-grid">
+          <li class="col bs-w-1-2 w-1-1"><a href="https://github.com/dadi" rel="external" title="Github" target="_blank">Github</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="https://medium.com/@daditech" rel="external" title="Medium" target="_blank">Medium</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="https://twitter.com/dadi" rel="external" title="Twitter" target="_blank">Twitter</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="https://reddit.com/r/dadi" rel="external" title="Reddit" target="_blank">Reddit</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="https://discord.gg/3sEvuYJ" rel="external" title="Discord" target="_blank">Discord</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="https://t.me/dadichat" rel="external" title="Telegram" target="_blank">Telegram</a></li>
         </ul>
       </div>
       <div class="col w-1-4 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Sitemap</span></h3></div>
-        <ul>
-          <li><a href="/{lang}/network/">Network</a></li>
-          <li><a href="/{lang}/roadmap/">Roadmap</a></li>
-          <li><a href="/{lang}/knowledge/">Knowledge</a></li>
-          <li><a href="/{lang}/careers/">Careers</a></li>
-          <li><a href="/{lang}/culture/">Culture</a></li>
-          <li><a href="/{lang}/team/">Team</a></li>
-          <li><a href="/{lang}/partners/">Partners</a></li>
-          <li><a href="/{lang}/contact/">Contact</a></li>
-          <li><a href="/{lang}/privacy/">Privacy</a></li>
+        <ul class="grid bs-grid">
+          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/network/">Network</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/roadmap/">Roadmap</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/knowledge/">Knowledge</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/careers/">Careers</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/culture/">Culture</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/team/">Team</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/partners/">Partners</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/contact/">Contact</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/privacy/">Privacy</a></li>
         </ul>
       </div>
       <div class="col w-1-4 mb--x2">
@@ -40,9 +40,9 @@
       </div>
       <div class="col w-1-4 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Knowledge</span></h3></div>
-        <ul>
+        <ul class="grid bs-grid">
           {#knowledge-categories.results}
-            <li><a href="/{lang}/knowledge/{slug}/">{name}</a></li>
+            <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/knowledge/{slug}/">{name}</a></li>
           {/knowledge-categories.results}
         </ul>
       </div>
