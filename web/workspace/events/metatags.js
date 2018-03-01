@@ -2,7 +2,10 @@ const marked = require('marked')
 
 const Event = function (req, res, data, callback) {
   const meta = {}
-  meta.image = `${req.protocol}://${data.host}/assets/products/dadi-og.jpg`
+  
+  meta.canonical = `${req.protocol}://${req.headers.host}${data.pathNoLang}`
+  meta.url = `${req.protocol}://${req.headers.host}${req.url}`
+  meta.image = `${req.protocol}://${req.headers.host}/assets/products/dadi-og.jpg`
 
   // -------------------------
   // Root pages
@@ -31,7 +34,7 @@ const Event = function (req, res, data, callback) {
 
         // Is it a local image?
         if (!image.startsWith('http')) {
-          image = `${req.protocol}://${data.host}${image}`
+          image = `${req.protocol}://${req.headers.host}${image}`
         }
 
         // Put in object
@@ -47,7 +50,7 @@ const Event = function (req, res, data, callback) {
 
     meta.title = `DADI ${app.name}`
     meta.description = app.overview.trim()
-    meta.image = `${req.protocol}://${data.host}/assets/products/dadi-${app.slug}-og.jpg`
+    meta.image = `${req.protocol}://${req.headers.host}/assets/products/dadi-${app.slug}-og.jpg`
   }
 
   // Put in page
