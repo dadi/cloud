@@ -1,9 +1,11 @@
 /* Margin */
 
 .mb                         { margin-bottom: var(--space) }
+.mt                         { margin-top: var(--space) }
 .mb--x2                     { margin-bottom: calc(var(--space) * 2) }
 
 @media (--bs) {
+  .mt                       { margin-top: calc(var(--space) / 2) }
   .mb                       { margin-bottom: calc(var(--space) / 2) }
   .mb--x2                   { margin-bottom: var(--space) }
 }

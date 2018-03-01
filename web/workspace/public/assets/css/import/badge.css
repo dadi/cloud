@@ -2,7 +2,7 @@
   border: 1px solid;
   display: inline-block;
   white-space: nowrap;
-  margin-bottom: 18px;
+  margin-bottom: 1.3rem;
 }
 .badge__primary,
 .badge__secondary {
