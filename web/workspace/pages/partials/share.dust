@@ -4,7 +4,9 @@
 
 <div id="share" class="hide box box--arrow bg-white box--natural bd bd-grey list--feat">
   <div class="box__inner" style="padding-bottom:10px">
-    <div class="mb medium fwb">Building a to-do list app with DADI API</div>
+    <div class="medium fwb">Building a to-do list app with DADI API</div>
+
+    <input type="text" class="input mb" value="{page.meta.url}" name="" style="font-size:12px;margin-top:10px">
 
     <ul class="grid">
       <li class="col w-1-2"><a class="bdb bd-grey block" target="_blank" href="https://www.facebook.com/sharer/sharer.php?text={title|uc}&amp;u={page.meta.url|uc}">Facebook</a></li>
