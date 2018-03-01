@@ -2,8 +2,8 @@
   "allowJsonView": true,
   "api": {
     "enabled": true,
-    "host": "127.0.0.1",
-    "port": 8081
+    "host": "35.178.60.215",
+    "port": 3001
   },
   "auth": {
     "tokenUrl": "/token",
@@ -33,5 +33,11 @@
   "server": {
     "host": "127.0.0.1",
     "port": 3000
+  },
+  "global": {
+    "networkMonitor": {
+      "publicUrl": "http://am.dev.dadi.technology:3004",
+      "root": "context"
+    }
   }
 }

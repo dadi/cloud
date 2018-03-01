@@ -138,17 +138,29 @@ h1, h2 {
   top: 0;
   right: 0;
   left: auto;
-  width: 70%;
+  width: 75%;
+  padding-top: 0;
+  height: 630px;
 }
 .network--large:before {
   content: ' ';
   position: absolute;
   background: linear-gradient(to left, rgba(255,255,255,0) 0%, #f9f9f9 100%);
-  width: 205px;
+  width: 245px;
   height: 100%;
   top: 0; left: 0; bottom: 0;
   z-index: 1;
   pointer-events: none;
+}
+.network .dadiNode {
+  border-radius: 10px;
+  width: 10px; height: 10px;
+  display: block;
+  background: var(--green);
+  border: 2px solid #f9f9f9;
+}
+.network .dadiNode--pulse {
+  animation: pin 2s infinite;
 }
 
 .stat {

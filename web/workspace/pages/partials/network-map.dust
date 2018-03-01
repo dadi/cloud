@@ -1,16 +1,37 @@
 <div class="network {?size}network--large{/size}">
-  <div id="map"></div>
+<div id="map"></div>
 
-  <script type="text/javascript">
+<script src="{global.networkMonitor.publicUrl}/{global.networkMonitor.root}/socket.io.js"></script>
+<script type="text/javascript" src="/assets/js/network-map.js"></script>
+
+<script type="text/javascript">
+  window.connectToSocket("{global.networkMonitor.publicUrl|s}", "{global.networkMonitor.root}");
+
+  // window.addSocketListener('queue', 'queries/second', function (data) {
+  //    document.getElementById('concurrent_requests').innerHTML = data.value;
+  // });
+  window.addSocketListener('hosts', 'hosts_changed', function (data) {
+    window.addHostsToMap(data.value.hosts);
+    //document.getElementById('host_count').innerHTML = data.value.hosts.length;
+  });
+
+  window.addSocketListener('requests', 'dequeued_requests', function (data) {
+    window.pulseNode(data);
+  });
+
+window.addMap = function () {
   mapboxgl.accessToken = 'pk.eyJ1IjoiYWJvdmVkYXZlIiwiYSI6Ink1a2RqVHcifQ.raf_kHdx5lG7ZeBF8XFcMw';
-  var map = new mapboxgl.Map({
+  window.map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/abovedave/cjdwwax2q1cqy2sn3d8bpmb7v',
-    zoom: {^size}0.2{:else}1.2{/size},
+    zoom: {^size}0.2{:else}1{/size},
     renderWorldCopies: false,
     scrollZoom: false,
     interactive: false,
-    center: [0, 40]
+    center: [15, 40]
   });
-  </script>
+}
+
+window.addMap();
+</script>
 </div>
