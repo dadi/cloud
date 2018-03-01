@@ -9,8 +9,8 @@ const Event = function (req, res, data, callback) {
   if (data.hasResults('pages')) {
     const page = data.pages.results[0]
 
-    meta.title = page.metaTitle ? page.metaTitle : page.title
-    meta.description = page.metaDescription ? page.metaDescription : page.excerpt
+    meta.title = page.metaTitle ? page.metaTitle.trim() : page.title.trim()
+    meta.description = page.metaDescription ? page.metaDescription.trim() : page.excerpt.trim()
   }
 
   // -------------------------
@@ -18,8 +18,8 @@ const Event = function (req, res, data, callback) {
   if (data.hasResults('articles') && data.page.key === 'article') {
     const article = data.articles.results[0]
 
-    meta.title = article.metaTitle ? article.metaTitle : article.title
-    meta.description = article.metaDescription ? article.metaDescription : article.excerpt
+    meta.title = article.metaTitle ? article.metaTitle.trim() : article.title.trim()
+    meta.description = article.metaDescription ? article.metaDescription.trim() : article.excerpt.trim()
     
     // get first image
     if (article.body) {
@@ -46,7 +46,7 @@ const Event = function (req, res, data, callback) {
     const app = data['web-service'].results[0]
 
     meta.title = `DADI ${app.name}`
-    meta.description = app.overview
+    meta.description = app.overview.trim()
     meta.image = `${req.protocol}://${data.host}/assets/products/dadi-${app.slug}-og.jpg`
   }
 
