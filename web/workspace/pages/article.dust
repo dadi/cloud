@@ -16,7 +16,7 @@
 <main class="mb--x2 cf" id="stickContainer">
   <aside id="stick" class="mb">
     <div class="pr--x2 bs-pr pl">
-      <div class="mb block bdb pb bd-grey read">
+      <div class="block read">
         {?publishedAt}
           <time class="color-tint" datetime="{publishedAt}">
             {@formatDate data=publishedAt parseFormat="YYYY-MM-DDTHH:mm:ss.SSSZZ" format="DD MMMM YYYY HH:MM" /}
@@ -29,7 +29,7 @@
       </div>
 
       {?author}
-        <div class="cf mb pb mt normal bdb bd-grey">
+        <div class="cf pt mt normal bdt bd-grey">
           <a href="/{lang}/team/{author[0].slug}" class="block">
             <img style="margin-right:18px;float:left" src="/assets/team/{author[0].slug}.jpg" width="55"> 
             <strong>{author[0].name}</strong>
@@ -38,7 +38,17 @@
         </div>
       {/author}
 
-      {>"partials/share"/}
+      {#web-service}
+      <div class="cf pb pt mt normal bdt bd-grey fm">
+        <a href="/{lang}/{slug}">
+        <img src="/assets/products/dadi-{slug}.png" width="22" class="vam"> {name}
+        </a>
+      </div>
+      {/web-service}
+
+      <div class="pb pt bdt bd-grey">
+        {>"partials/share"/}
+      </div>
     </div>
   </aside>
   <div class="cnt cf ll">
