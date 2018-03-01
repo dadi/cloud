@@ -3,6 +3,7 @@
     "key": "article"
   },
   "datasources": [
+    "pages",
     "articles",
     "knowledge-categories",
     "web-services"
@@ -11,7 +12,8 @@
     "articles"
   ],
   "events": [
-    "articleMeta"
+    "metatags",
+    "articleReadingTime"
   ],
   "routes": [
     {

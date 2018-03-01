@@ -8,6 +8,9 @@
     "team",
     "pages"
   ],
+  "events": [
+    "metatags"
+  ],
   "routes": [
     {
       "path": "/:lang/team/:name?"

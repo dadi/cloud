@@ -1,15 +1,15 @@
 const Event = function (req, res, data, callback) {
   // Get article body
-  const text = data.articles.results[0].body
+  const text = data.articles.results[0].body || ''
 
-  //split text by spaces to define total words
+  // Split text by spaces to define total words
   const totalWords = text.trim().split(/\s+/g).length
 
-  //define words per second based on words per minute
+  // Define words per second based on words per minute
   const wordsPerSecond = 275 / 60
 
-  //define total reading time in seconds
-  const totalReadingTimeSeconds = totalWords / wordsPerSecond
+  // Define total reading time in seconds
+  const readingSeconds = totalWords / wordsPerSecond
 
   // Add images
   const images = text.match(/!\[/gmi)
@@ -17,7 +17,7 @@ const Event = function (req, res, data, callback) {
   const imageSeconds = imagesCount * 12
 
   // define reading time
-  data.readingTime = Math.round((totalReadingTimeSeconds + imageSeconds) / 60)
+  data.readingTime = Math.round((readingSeconds + imageSeconds) / 60)
 
   callback()
 }

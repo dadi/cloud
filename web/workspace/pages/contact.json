@@ -6,6 +6,9 @@
     "knowledge-categories",
     "web-services"
   ],
+  "events": [
+    "metatags"
+  ],
   "routes": [
     {
       "path": "/:lang/contact"

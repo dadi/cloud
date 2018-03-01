@@ -3,6 +3,7 @@
     "key": "roadmap"
   },
   "datasources": [
+    "pages",
     "roadmap-categories",
     "knowledge-categories",
     "milestones",
@@ -11,6 +12,9 @@
   ],
   "requiredDatasources": [
     "articles"
+  ],
+  "events": [
+    "metatags"
   ],
   "routes": [
     {

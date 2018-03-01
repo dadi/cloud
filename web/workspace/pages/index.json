@@ -1,11 +1,15 @@
 {
   "page": {
-    "key": "home"
+    "key": "index"
   },
   "datasources": [
+    "pages",
     "web-services",
     "knowledge-categories",
     "roadmap-articles"
+  ],
+  "events": [
+    "metatags"
   ],
   "routes": [
     {

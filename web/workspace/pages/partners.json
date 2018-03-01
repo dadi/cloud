@@ -8,6 +8,9 @@
     "web-services",
     "partners"
   ],
+  "events": [
+    "metatags"
+  ],
   "routes": [
     {
       "path": "/:lang/partners"

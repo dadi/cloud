@@ -17,6 +17,9 @@
     },
     "sort": {
       "publishedAt": -1
+    },
+    "fields": {
+      "body": 0
     }
   }
 }

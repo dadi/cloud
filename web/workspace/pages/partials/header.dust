@@ -1,24 +1,25 @@
 <!doctype html>
-<html lang="{params.lang}">
+<html lang="{lang}">
 <head>
-  <title>DADI</title>
+  <title>{page.meta.title} | DADI</title>
 
   <meta charset="utf-8">
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta content="{params.lang}" http-equiv="Content-Language">
+  <meta content="{lang}" http-equiv="Content-Language">
 
-  <meta content="" property="og:title">
-  <meta content="" property="description">
-  <meta content="" property="og:description">
+  <meta property="og:title" content="{page.meta.title}">
+  <meta property="description" content="{page.meta.description}">
+  <meta property="og:description" content="{page.meta.description}">
   
-  <meta content="" property="og:image">
-  <meta content="DADI" property="og:site_name">
-  <meta content="website" property="og:type">
-  <meta content="summary_large_image" name="twitter:card">
-  <meta content="@dadi" name="twitter:site">
+  <meta property="og:image" content="{page.meta.image}">
+  <meta property="og:site_name" content="DADI">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@dadi">
 
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,700" rel="stylesheet">
+
   <link href="/assets/css/main.min.css" rel="stylesheet">
 
   {+head/}

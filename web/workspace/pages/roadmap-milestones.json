@@ -3,9 +3,13 @@
     "key": "roadmap"
   },
   "datasources": [
+    "pages",
     "knowledge-categories",
     "web-services",
     "milestones"
+  ],
+  "events": [
+    "metatags"
   ],
   "routes": [
     {

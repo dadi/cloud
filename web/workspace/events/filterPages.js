@@ -6,7 +6,7 @@ const Event = function (req, res, data, callback) {
   const parts = url.parse(req.url).pathname.split('/')
   const slug = parts[2]
 
-  const filter = { slug: slug }
+  const filter = { slug: slug || 'index' }
   callback(null, filter)
 }
 

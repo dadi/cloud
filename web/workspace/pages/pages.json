@@ -7,6 +7,9 @@
     "knowledge-categories",
     "web-services"
   ],
+  "events": [
+    "metatags"
+  ],
   "template": "pages.dust",
   "routes": [
     {

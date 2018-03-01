@@ -3,13 +3,16 @@
     "key": "web-services"
   },
   "datasources": [
-    "knowledge-categories",
+    "pages",
     "web-services",
     "web-service",
     "web-service-articles"
   ],
   "requiredDatasources": [
     "web-service"
+  ],
+  "events": [
+    "metatags"
   ],
   "routes": [
     {

@@ -3,7 +3,11 @@
     "key": "404"
   },
   "datasources": [
+  	"pages",
   	"knowledge-categories",
     "web-services"
+  ],
+  "events": [
+    "metatags"
   ]
 }
