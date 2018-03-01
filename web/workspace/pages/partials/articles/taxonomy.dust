@@ -1,4 +1,4 @@
-<div class="badge mb fm small color-blue">
+<div class="badge fm small color-blue">
   {?roadmap-category}
     <div class="badge__primary bg-blue color-white">
       <a href="/{lang}/roadmap">

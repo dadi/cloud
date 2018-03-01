@@ -1,7 +1,7 @@
 {?grid}<div class="col w-1-{grid}">{/grid}
   <article class="box bd bd-grey bg-white box--join box--roadmap mb {@eq key=size value="natural"}box--natural{:else}box--x2{/eq}">
     <div class="box__inner">
-      <div class="badge mb fm small color-green">
+      <div class="badge fm small color-green">
         <div class="badge__primary bg-green color-white">
           {category[0].name}
         </div>
