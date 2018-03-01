@@ -4,7 +4,7 @@
 
 <div id="share" class="hide box box--arrow bg-white box--natural bd bd-grey list--feat">
   <div class="box__inner" style="padding-bottom:10px">
-    <div class="medium fwb">Building a to-do list app with DADI API</div>
+    <div class="medium fwb">{title}</div>
 
     <input type="text" class="input mb" value="{page.meta.url}" name="" style="font-size:12px;margin-top:10px">
 
