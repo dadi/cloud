@@ -1,5 +1,5 @@
 <div class="col w-1-4 pad__bottom--x2 mb">
-  <a href="/{lang}/knowledge/network/usecases#{@slugify}{use}{/slugify}" class="box box--x2 box bd bd-grey">
+  <a href="/{lang}/knowledge/network/usecases#{@slugify}{use|s}{/slugify}" class="box box--x2 box bd bd-grey">
     <div class="box__inner">
       <img src="/assets/icons/{icon}.svg" width="50" class="mb">
       <h2 class="medium">{use}</h2>
