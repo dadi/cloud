@@ -2,7 +2,7 @@
   <img src="/assets/icons/pop-out.svg" width="18" class="vam"> Share
 </a>
 
-<div id="share" class="hide box box--arrow bg-white box--natural bd bd-grey list--feat">
+<div id="share" class="hide mb box box--arrow bg-white box--natural bd bd-grey list--feat">
   <div class="box__inner" style="padding-bottom:10px">
     <div class="medium fwb">{title}</div>
 
