@@ -65,6 +65,7 @@
 
 /* Border colours */
 
+.bd-white                   { border-color: #fff }
 .bd-grey                    { border-color: var(--grey) }
 .bd-green                   { border-color: var(--green) }
 .bd-tint                    { border-color: rgba(255,255,255,0.1) }
@@ -75,6 +76,7 @@
 .color-blue                 { color: #3585f9 }
 .color-white                { color: #fff }
 .color-tint                 { color: #8F8F90 }
+.color-dark                 { color: var(--dark) }
 
 /* Images */
 

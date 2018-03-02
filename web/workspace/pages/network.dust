@@ -16,6 +16,25 @@
         <li><a href="#architecture">Architecture</a></li>
         <li><a href="#usecases">Use cases</a></li>
         <li><a href="#contribute">Contribute</a></li>
+        <li class="nav--right" style="padding-top:23px">
+          <div class="badge color-white small">
+            <div class="badge__primary color-tint">
+              Concurrent requests
+            </div>
+            <div class="badge__secondary color-dark" id="network_reqs">
+              Offline
+            </div>
+          </div>
+
+          <div class="badge color-white small">
+            <div class="badge__primary color-tint">
+              Hosts online
+            </div>
+            <div class="badge__secondary color-dark" id="network_hosts">
+              Offline
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   </nav>
