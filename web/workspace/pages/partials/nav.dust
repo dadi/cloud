@@ -30,7 +30,7 @@
       </li>
       <li>
         <a 
-          class="trigger-contextual-click {@eq key="{page.key}" value="web-services"}active{/eq}" href="#web-services">Web services
+          class="trigger-contextual {@eq key="{page.key}" value="web-services"}active{/eq}" href="#web-services">Web services
         </a>
       </li>
       <li>
