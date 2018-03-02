@@ -1,10 +1,23 @@
-@keyframes fadedropin {
-  from {
-    top: -100px;
-  }
-  to {
-    top: 0;
-  }
+.animation {
+  animation-duration: .7s;
+  animation-delay: .3s;
+  animation-fill-mode: both;
+  transition: all .4s cubic-bezier(.215,.61,.355,1);
+  animation-timing-function: cubic-bezier(.215,.61,.355,1);
+}
+
+.fade-in { animation-name: fade-in; }
+.slide-in-top { animation-name: slide-in-top; }
+.slide-in-left { animation-name: slide-in-left; }
+
+.slide-toggle.hide {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+.slide-toggle {
+  opacity: 1;
+  max-height: 100px;
 }
 
 @keyframes pin {
@@ -22,3 +35,29 @@
   }
 }
 
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

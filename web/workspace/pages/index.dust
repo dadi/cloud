@@ -11,10 +11,9 @@
 
 <header class="intro bg-dark color-white">
 
-<div class="intro__about">
+<div class="intro__about animation fade-in">
   <h1><img src="/assets/img/dadi-logo-white.svg"></h1>
-  <h2>Decentralized web services.</h2>
-  <p>Enterprise-grade, deployment-ready web services stack, built around a microservices architecture.</p>
+  {@markdown}{pages.results[0].excerpt|s}{/markdown}
 </div>
 
 </header>

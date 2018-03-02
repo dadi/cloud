@@ -3,13 +3,14 @@ nav {
   position: relative;
   top: 0; left: 0; right: 0;
   background-color: rgba(4, 17, 29, 0.97);
-  box-shadow: 0 0 10px rgba(4, 17, 29, 0.57);
+  /*box-shadow: 0 0 10px rgba(4, 17, 29, 0.57);*/
+  box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
 }
 nav.subnav {
   box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
   position: relative;
   z-index: 9;
-  animation: fadedropin 0.5s both ease-in-out;
+  animation: slide-in-top 0.5s both ease-in-out;
 }
 nav.stick {
   position: fixed;
@@ -21,9 +22,10 @@ nav.stick {
 nav li {
   display: inline-block;
   vertical-align: middle;
+  position: relative;
 }
 nav li a {
-  padding: 25px 20px 20px;
+  padding: 25px 16px 20px;
   display: inline-block;
 }
 nav li:first-of-type a {
@@ -132,4 +134,18 @@ nav .nav__docs a:hover:after {
     margin: 0;
     text-align: center;
   }
+}
+
+#web-services {
+  background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+#web-services a:after {
+  display: none;
+}
+#web-services a {
+  padding: 20px;
+}
+#web-services li:first-of-type a {
+  padding-left: 0;
 }

@@ -19,7 +19,9 @@
 
       <div class="grid">
         {#milestones.results}
-          {>"partials/roadmap/milestone" grid="4" /}
+          {@lt key=$idx value=4}
+            {>"partials/roadmap/milestone" grid="4" /}
+          {/lt}
         {/milestones.results}
       </div>
 

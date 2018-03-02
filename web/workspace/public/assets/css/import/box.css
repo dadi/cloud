@@ -67,6 +67,9 @@
   padding: 20px 25px 20px 0;
   position: absolute;
   bottom: 0; left: 0; right: 0;
+  z-index: 1;
+  background: #fff;
+  box-shadow: -30px -30px 30px #fff;
 }
 .box__cta {
   border-bottom: 1px solid var(--grey);

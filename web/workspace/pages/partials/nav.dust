@@ -5,14 +5,13 @@
         <li class="nav__logo">
           <a href="/">Home</a>
         </li>
-        {:else}
+      {:else}
         <li class="bs-hide">
         <a 
           {@eq key="{page.key}" value="home"}class="active"{/eq}
           href="/{lang}">
           Overview
         </a></li>
-        
       {/ne}
       
       <li>
@@ -20,20 +19,28 @@
           {@eq key="{page.key}" value="roadmap"}class="active"{/eq}
           href="/{lang}/roadmap">
           Roadmap
-        </a></li>
-      <li>
-        <a 
-          {@eq key="{page.key}" value="knowledge"}class="active"{/eq}
-          href="/{lang}/knowledge">
-          Knowledge
-        </a></li>
+        </a>
+      </li>
       <li>
         <a 
           {@eq key="{page.key}" value="network"}class="active"{/eq}
           href="/{lang}/network">
           Network
-        </a></li>
-        <li>
+        </a>
+      </li>
+      <li>
+        <a 
+          class="trigger-contextual-click {@eq key="{page.key}" value="web-services"}active{/eq}" href="#web-services">Web services
+        </a>
+      </li>
+      <li>
+        <a 
+          {@eq key="{page.key}" value="knowledge"}class="active"{/eq}
+          href="/{lang}/knowledge">
+          Knowledge
+        </a>
+      </li>
+      <li>
         <a 
           {@eq key="{page.key}" value="partners"}class="active"{/eq}
           href="/{lang}/partners">
@@ -56,6 +63,17 @@
         <a href="https://discord.gg/3sEvuYJ" rel="external" title="Discord" target="_blank"><img src="/assets/social/discord.svg" height="24"></a>
         <a href="https://t.me/dadichat" rel="external" title="Telegram" target="_blank"><img src="/assets/social/telegram.svg" height="24"></a>
       </li>
-      
+    </ul>
+  </div>
+
+  <div class="subnav slide-toggle hide animation fm" id="web-services">
+    <div class="cnt">
+      <ul>
+        {#web-services.results}
+          {?github}
+          <li><a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}"><img src="/assets/products/dadi-{slug}.png" class="vam" height="18"> {name}</a></li>{/github}
+        {/web-services.results}
+      </ul>
+    </div>
   </div>
 </nav>

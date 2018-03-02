@@ -8,6 +8,10 @@ const Event = function (req, res, data, callback) {
     filter = { "category.slug": data.params.roadmapCategory }
   }
 
+  if (data.title === 'roadmap') {
+    filter = { "complete": { $ne: true } }
+  }
+
   callback(null, filter)
 }
 
