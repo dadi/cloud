@@ -30,7 +30,8 @@ window.addMap = function () {
     renderWorldCopies: false,
     scrollZoom: false,
     interactive: false,
-    center: [15, 40]
+    center: [15, 40],
+    attributionControl: false
   });
 }
 
