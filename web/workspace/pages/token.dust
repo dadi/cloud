@@ -16,12 +16,28 @@
         left:10
       }
     }
+
+    {! Unused gradient 
+      ...on('created', function(ctx) { chartGradient(ctx, '316ff4')})
+
+      var chartGradient = function(ctx, color) {
+      var defs = ctx.svg.elem('defs');
+      defs.elem('linearGradient', {
+        id: 'gradient_'+color, x1: 0, y1: 1, x2: 0, y2: 0
+      }).elem('stop', {
+        offset: 0,
+        'stop-color': 'rgba(255,255,2550,0)'
+      }).parent().elem('stop', {
+        offset: 0.5,
+        'stop-color': '#'+color
+      });
+    };!}
   </script>
 {/head}
 
 {>"partials/nav"/}
 
-<header class="bg-tint mb pt--x2 pb cf ovfh">
+<header class="bg-tint mb pt--x2 pb--x2 cf ovfh">
   <div class="cnt cf pb--x2">
     <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
     <h1>{pages.results[0].title}</h1>
@@ -33,7 +49,7 @@
       <div class="col w-1-2">
         <div class="stat pb">
           <div class="stat__metric small color-tint fm">
-            Token value
+            24h token value
           </div>
           <div class="stat__figure fwb">
             ${token.valueNow} USD
@@ -52,7 +68,7 @@
       <div class="col w-1-2">
         <div class="stat pb">
           <div class="stat__metric small color-tint fm">
-            Token volume
+            24h token volume
           </div>
           <div class="stat__figure fwb">
             ${token.volumeTotal} USD 

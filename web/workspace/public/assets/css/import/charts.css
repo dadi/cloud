@@ -627,6 +627,8 @@
 }
 .ct-series-a .ct-area {
   fill: var(--green);
+  /*fill: url(#gradient_0ecc5f);*/
+  fill-opacity: 0.1;
 }
 
 .token-volume .ct-series-a .ct-line {
@@ -634,5 +636,7 @@
   stroke: #316ff4;
 }
 .token-volume .ct-series-a .ct-area {
+  /*fill: url(#gradient_316ff4);*/
   fill: #316ff4;
+  fill-opacity: 0.1;
 }
