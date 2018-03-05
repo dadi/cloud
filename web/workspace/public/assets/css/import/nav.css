@@ -5,6 +5,7 @@ nav {
   background-color: rgba(4, 17, 29, 0.97);
   /*box-shadow: 0 0 10px rgba(4, 17, 29, 0.57);*/
   box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
+  font-size: 0.9rem;
 }
 nav.subnav {
   box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
@@ -71,11 +72,11 @@ nav .nav__logo a:hover {
 }
 
 nav .nav__social {
-  margin-right: 20px;
+  margin-right: 12px;
   padding: 15px 0px 0 0;
 }
 nav .nav__social a {
-  padding: 8px 6px;
+  padding: 8px 4px;
 }
 
 @media handheld, only screen and (max-width: 1150px) {

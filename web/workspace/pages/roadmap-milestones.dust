@@ -8,8 +8,8 @@
   </div>
 </header>
 
-<main class="mb--x2 bg-tint">
-  <div class="cnt">
+<main class="ovfh bg-tint">
+  <div class="cnt cf">
     <div class="roadmap cf mb" id="stickContainer">
       <div class="roadmap__date col" id="stick">
         <dl>

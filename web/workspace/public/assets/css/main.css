@@ -9,6 +9,7 @@
 @import "import/badge.css";
 @import "import/homepage.css";
 @import "import/highlight.css";
+@import "import/charts.css";
 @import "import/footer.css";
 
 * {
@@ -174,7 +175,7 @@ h1, h2 {
 }
 .stat__figure {
   font-size: 2.3rem;
-  letter-spacing: -1.5px;
+  letter-spacing: -1px;
 }
 .stat__unit {
   font-size: 0.8rem;

@@ -19,15 +19,18 @@
       <div class="mb">
         {@markdown}{desc|s}{/markdown}
       </div>
-
-      {@eq key=size value="natural"}<a href="#" class="btn small fm color-tint">View updates</a>{/eq}
     </div>
-    {@ne key=size value="natural"}
-    <div class="box__footer bdt bd-grey small box__footer--shadow">
+    
+    {@eq key=size value="natural"}
+      {?web-service}
+        <div class="box__footer bdt bd-grey small box__footer--shadow">
+          <a href="/{lang}/{web-service[0].slug}" class="small fm color-tint">About {web-service[0].name}</a>
+        </div>
+      {/web-service}
+    {:else}
+     <div class="box__footer bdt bd-grey small box__footer--shadow">
       <time class="color-tint">{@dateQuarter data=date parseFormat="YYYY-MM-DDTHH:mm:ss.SSSZZ"/}</time>
     </div>
-    {/ne}
+    {/eq}
   </article>
-
-
 {?grid}</div>{/grid}

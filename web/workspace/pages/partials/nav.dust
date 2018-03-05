@@ -42,6 +42,13 @@
       </li>
       <li>
         <a 
+          {@eq key="{page.key}" value="token"}class="active"{/eq}
+          href="/{lang}/token">
+          Token
+        </a>
+      </li>
+      <li>
+        <a 
           {@eq key="{page.key}" value="partners"}class="active"{/eq}
           href="/{lang}/partners">
           Partners
