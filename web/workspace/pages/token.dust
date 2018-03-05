@@ -2,6 +2,21 @@
 
 {<head}
   <script type="text/javascript" src="/assets/js/chartist.min.js"></script>
+  <script type="text/javascript">
+    var chartSettings = {
+      low: 0,
+      showArea: true,
+      axisX: {
+         showGrid: false,
+      },
+      chartPadding: {
+        top:20,
+        right:0,
+        bottom:0,
+        left:10
+      }
+    }
+  </script>
 {/head}
 
 {>"partials/nav"/}
@@ -31,19 +46,7 @@
           new Chartist.Line('.token-value', {
             labels: [{token.time|j}],
             series: [[{token.value|j}]]
-          }, {
-            low: 0,
-            showArea: true,
-            axisX: {
-              showGrid: false,
-            },
-            chartPadding: {
-              top:20,
-              right:0,
-              bottom:0,
-              left:0
-            }
-          });
+          }, chartSettings);
         </script>
       </div>
       <div class="col w-1-2">
@@ -52,7 +55,7 @@
             Token volume
           </div>
           <div class="stat__figure fwb">
-            ${token.volumeNow} USD 
+            ${token.volumeTotal} USD 
           </div>
         </div>
 
@@ -62,19 +65,7 @@
           new Chartist.Line('.token-volume', {
             labels: [{token.time|j}],
             series: [[{token.volume|j}]]
-          }, {
-            low: 0,
-            showArea: true,
-            axisX: {
-               showGrid: false,
-            },
-            chartPadding: {
-              top:20,
-              right:0,
-              bottom:0,
-              left:0
-            }
-          });
+          }, chartSettings);
         </script>
       </div>
     </div>

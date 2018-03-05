@@ -6,9 +6,11 @@ const Event = function (req, res, data, callback) {
   console.log(rawTokenInfo)
   delete data.token
 
-const time = rawTokenInfo.Data.map(i => moment.unix(i.time).format('H'))
-const value = rawTokenInfo.Data.map(i => i.close)
-const volume = rawTokenInfo.Data.map(i => i.volumeto)
+  const time = rawTokenInfo.Data.map(i => moment.unix(i.time).format('H'))
+  const value = rawTokenInfo.Data.map(i => i.close)
+  const volume = rawTokenInfo.Data.map(i => i.volumeto)
+
+  const volumeTotal = volume.reduce((total, value) => total + parseFloat(value))
 
   data.token = {
   	TimeFrom: rawTokenInfo.TimeFrom,
@@ -17,7 +19,7 @@ const volume = rawTokenInfo.Data.map(i => i.volumeto)
   	value,
   	valueNow: value[value.length-1],
   	volume,
-  	volumeNow: volume[volume.length-2]
+  	volumeTotal: volumeTotal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 4})
   }
 
   callback()

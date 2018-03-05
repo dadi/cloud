@@ -1,5 +1,6 @@
 const path = require('path')
 const url = require('url')
+const moment = require('moment')
 
 const Event = function (req, res, data, callback) {
   let filter = {}
@@ -10,6 +11,13 @@ const Event = function (req, res, data, callback) {
 
   if (data.title === 'roadmap') {
     filter = { "complete": { $ne: true } }
+  }
+
+  if (data.title === 'roadmap' && !data.params.roadmapCategory) {
+  	filter = { 
+  	  "complete": { $ne: true },
+  	  "date": { $gte: moment().add(-30, 'days') }, { $lte: moment().add(30, 'days') }
+  	}
   }
 
   callback(null, filter)
