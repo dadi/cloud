@@ -37,7 +37,7 @@
 
 {>"partials/nav"/}
 
-<header class="bg-tint mb pt--x2 pb--x2 cf ovfh">
+<header class="bg-tint mb pt--x2 pb cf ovfh">
   <div class="cnt cf pb--x2">
     <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
     <h1>{pages.results[0].title}</h1>
@@ -85,6 +85,8 @@
         </script>
       </div>
     </div>
+
+    <div class="pt fm small color-tint"><img src="/assets/icons/time.svg" width="10" class="vam"> Token stats updated hourly</div>
   </div>
 </header>
 
