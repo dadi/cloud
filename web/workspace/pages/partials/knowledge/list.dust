@@ -1,4 +1,4 @@
-<div class="col w-1-{?grid}{grid}{:else}6{/grid}">
+<div class="col w-1-{?grid}{grid}{:else}5{/grid}">
   <a href="/{lang}/knowledge/{slug}" class="box bd bd-grey bg-white mb">
     <div class="box__inner">
       <h2>
