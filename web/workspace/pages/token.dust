@@ -26,9 +26,7 @@
         </div>
 
         <div class="token-value ct-chart ct-major-twelfth"></div>
-        <pre>
-          {token.value|j}
-        </pre>
+    
         <script type="text/javascript">
           new Chartist.Line('.token-value', {
             labels: [{token.time|j}],
