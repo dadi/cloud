@@ -23,11 +23,6 @@ const Event = function (req, res, data, callback) {
   	}
   }
 
-  console.log('€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€')
-  console.log(filter)
-
-  //2018-02-03T18:24:41.845Z
-
   callback(null, filter)
 }
 
