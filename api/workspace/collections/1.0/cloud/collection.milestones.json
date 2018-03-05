@@ -92,6 +92,13 @@
     "sortOrder": 1,
     "storeRevisions": false,
     "description": "",
-    "compose": true
+    "compose": true,
+    "index": [
+      {
+        "keys": {
+          "date": -1
+        }
+      }
+    ]
   }
 }
