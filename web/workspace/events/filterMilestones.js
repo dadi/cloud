@@ -16,9 +16,17 @@ const Event = function (req, res, data, callback) {
   if (data.title === 'roadmap' && !data.params.roadmapCategory) {
   	filter = { 
   	  "complete": { $ne: true },
-  	  "date": { $gte: moment().add(-30, 'days') }, { $lte: moment().add(30, 'days') }
+  	  "date": { 
+  	  	$gte: moment().add(-30, 'days').toDate(),
+  	  	$lte: moment().add(30, 'days').toDate()
+  	  }
   	}
   }
+
+  console.log('€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€')
+  console.log(filter)
+
+  //2018-02-03T18:24:41.845Z
 
   callback(null, filter)
 }
