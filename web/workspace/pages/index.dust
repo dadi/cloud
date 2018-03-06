@@ -10,12 +10,16 @@
 {>"partials/nav" stick="true" /}
 
 <header class="intro bg-dark color-white">
+  <div class="intro__about animation fade-in">
+    <h1><img src="/assets/img/dadi-logo-white.svg"></h1>
+    {@markdown}{pages.results[0].excerpt|s}{/markdown}
+  </div>
 
-<div class="intro__about animation fade-in">
-  <h1><img src="/assets/img/dadi-logo-white.svg"></h1>
-  {@markdown}{pages.results[0].excerpt|s}{/markdown}
-</div>
-
+  <video class="animation fade-in" width="1920" height="1080" autoplay muted loop>
+    <source src="/assets/video/header.mp4" type="video/mp4">
+    {! <source src="movie.ogg" type="video/ogg"> !}
+    <img src="/assets/video/header.png" alt="">
+  </video>
 </header>
 
 <main class="mb--x2">

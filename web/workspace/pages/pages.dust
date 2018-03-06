@@ -3,7 +3,7 @@
 {>"partials/nav"/}
 
 {#pages.results}
-<header class="bg-tint mb pt--x2 pb--x2 cf ovfh">
+<header class="bg-tint mb--x2 pt--t pb--x2 cf ovfh">
   <div class="cnt cf">
     <img src="/assets/icons/{icon}.svg" width="60" class="mb bg-icon">
     <h1>{title}</h1>
