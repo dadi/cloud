@@ -44,6 +44,7 @@
     },
     "publishedAt": {
       "type": "DateTime",
+      "format": "unix",
       "required": false,
       "label": "Date & Time",
       "publish": {

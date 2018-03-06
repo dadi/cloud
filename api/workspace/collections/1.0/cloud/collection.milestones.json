@@ -29,6 +29,7 @@
     },
     "date": {
       "type": "DateTime",
+      "format": "unix",
       "required": true,
       "label": "Date & Time",
       "publish": {
