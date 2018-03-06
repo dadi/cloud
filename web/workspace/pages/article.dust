@@ -19,7 +19,7 @@
       <div class="block read pb">
         {?publishedAt}
           <time class="color-tint" datetime="{publishedAt}">
-            {@formatDate data=publishedAt parseFormat="YYYY-MM-DDTHH:mm:ss.SSSZZ" format="DD MMMM YYYY HH:MM" /}
+            {@formatDate unix=publishedAt format="DD MMMM YYYY HH:MM" /}
           </time>
         {/publishedAt}
 

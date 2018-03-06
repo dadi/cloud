@@ -24,9 +24,9 @@
       {?publishedAt}
         <time class="color-tint">     
           {@eq key=dateFormat value="short"}
-            {@formatDate data=publishedAt parseFormat="YYYY-MM-DDTHH:mm:ss.SSSZZ" format="DD.MM.YY" /}
+            {@formatDate unix=publishedAt format="DD.MM.YY" /}
           {:else}
-            {@formatDate data=publishedAt parseFormat="YYYY-MM-DDTHH:mm:ss.SSSZZ" format="DD MMM YYYY" /}
+            {@formatDate unix=publishedAt format="DD MMM YYYY" /}
           {/eq}  
         </time>
       {/publishedAt}
