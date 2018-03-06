@@ -38,12 +38,12 @@
         </div>
       {/author}
 
-      {#web-service}
-      <div class="cf pb pt normal bdt bd-grey fm">
-        <a href="/{lang}/{slug}">
-        <img src="/assets/products/dadi-{slug}.png" width="22" class="vam"> {name}
-        </a>
-      </div>
+      {#web-service:web-service lang=lang}
+        <div class="cf pb pt normal bdt bd-grey fm">
+          {?published}<a href="/{lang}/{slug}">{/published}
+            <img src="/assets/products/dadi-{slug}.png" width="22" class="vam"> {name}
+          {?published}</a>{/published}
+        </div>
       {/web-service}
 
       <div class="pt bdt bd-grey">
