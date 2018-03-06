@@ -49,9 +49,10 @@
 
 @media (--bs) {
   .intro__about {
+    margin: 0;
     bottom: 30px;
-    left: 0;
     transform: scale(0.85);
+    transform-origin: 0 100%;
   }
   .intro video {
     width: auto;
