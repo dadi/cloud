@@ -14,13 +14,21 @@ const Event = function (req, res, data, callback) {
   }
 
   if (data.title === 'roadmap' && !data.params.roadmapCategory) {
-  	filter = { 
-  	  "complete": { $ne: true },
-  	  "date": { 
-  	  	$gte: moment().add(-30, 'days').toDate(),
-  	  	$lte: moment().add(30, 'days').toDate()
-  	  }
-  	}
+    filter = { 
+      "complete": { $ne: true },
+      "date": { 
+        $gte: moment().add(-30, 'days').valueOf(),
+        $lte: moment().add(30, 'days').valueOf()
+      }
+    }
+  }
+
+  if (data.title === 'roadmap-milestones' && data.params.status) {
+    const status = data.params.status === 'complete' ? true : { $ne: true }
+
+    filter = { 
+      "complete": status
+    }
   }
 
   callback(null, filter)

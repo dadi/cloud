@@ -9,11 +9,12 @@
     "milestones"
   ],
   "events": [
-    "metatags"
+    "metatags",
+    "roadmapNav"
   ],
   "routes": [
     {
-      "path": "/:lang/roadmap/milestones"
+      "path": "/:lang/roadmap/milestones/:status?"
     }
   ]
 }

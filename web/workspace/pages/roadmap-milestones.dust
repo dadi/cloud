@@ -12,10 +12,14 @@
   <div class="cnt cf">
     <div class="roadmap cf mb" id="stickContainer">
       <div class="roadmap__date col" id="stick">
-        <dl>
-          <dt>2018</dt>
-          <dd>Q1</dd>
-        </dl>
+        {#roadmapNav}
+          <dl>
+            <dt>{year}</dt>
+            {#months}
+              <dd><a href="#{@formatDate unix=. format="MMYY"/}">{@formatDate unix=. format="MMMM" /}</a></dd>
+            {/months}
+          </dl>
+        {/roadmapNav}
       </div>
       <div class="roadmap__line"></div>
 
@@ -25,7 +29,6 @@
         {/milestones.results}
       </div>
     </div>
-
   </div>
 </header>
 
