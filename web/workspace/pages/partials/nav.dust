@@ -1,19 +1,9 @@
 <nav class="color-white fm {?stick}stick{/stick}">
   <div class="cnt">
     <ul>
-      {@ne key=page.key value="home"}
-        <li class="nav__logo">
-          <a href="/">Home</a>
-        </li>
-      {:else}
-        <li class="bs-hide">
-        <a 
-          {@eq key="{page.key}" value="home"}class="active"{/eq}
-          href="/{lang}">
-          Overview
-        </a></li>
-      {/ne}
-      
+      <li class="nav__logo bs-hide">
+        <a href="/">Home</a>
+      </li>
       <li>
         <a 
           {@eq key="{page.key}" value="roadmap"}class="active"{/eq}
