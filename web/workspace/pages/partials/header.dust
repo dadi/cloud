@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=0.8">
   <meta content="{lang}" http-equiv="Content-Language">
 
   <meta property="og:title" content="{?page.meta.title}{page.meta.title}{:else}DADI{/page.meta.title}">

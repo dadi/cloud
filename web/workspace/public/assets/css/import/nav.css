@@ -110,6 +110,7 @@ nav .nav__docs a:hover:after {
     white-space: nowrap;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
+    padding: 0 10px;
   }
   nav .nav__docs,
   nav .nav__social,
