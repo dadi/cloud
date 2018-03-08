@@ -80,6 +80,10 @@ nav .nav__logo a:hover {
   border-color: var(--green);
 }
 @media (--bs) {
+  nav .nav__logo {
+    float: none;
+    margin: 0;
+  }
   nav .nav__logo a {
     background-position: 20px 50%;
   }
