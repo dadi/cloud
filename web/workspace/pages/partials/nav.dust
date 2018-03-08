@@ -1,4 +1,4 @@
-<nav class="color-white fm {?stick}stick{/stick}">
+<nav class="color-white fm" {?stick}id="nav"{/stick}>
   <div class="cnt">
     <ul>
       {@ne key=page.key value="index"}
@@ -47,13 +47,13 @@
           Token
         </a>
       </li>
-      <li>
+      {! <li>
         <a 
           {@eq key="{page.key}" value="partners"}class="active"{/eq}
           href="/{lang}/partners">
           Partners
         </a>
-      </li>
+      </li> !}
       <li>
         <a 
           {@eq key="{page.key}" value="team"}class="active"{/eq}

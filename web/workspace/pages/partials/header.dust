@@ -16,7 +16,9 @@
   <meta property="og:site_name" content="DADI">
   <meta property="og:type" content="website">
 
-  {?page.meta.authorTwitter}<meta name="twitter:creator" content="@{page.meta.authorTwitter}">{/page.meta.authorTwitter}
+  {?page.meta.authorTwitter}
+    <meta name="twitter:creator" content="@{page.meta.authorTwitter}">
+  {/page.meta.authorTwitter}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@dadi">
 
@@ -27,6 +29,12 @@
 
   <link href="/assets/css/main.min.css" rel="stylesheet">
 
+  {^debug}<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TV7NC89');</script>{/debug}
+
   {+head/}
 </head>
+  
+</head>
 <body>
+
+{^debug}<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TV7NC89" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>{/debug}

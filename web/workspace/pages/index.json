@@ -6,7 +6,8 @@
     "pages",
     "web-services",
     "knowledge-categories",
-    "roadmap-articles"
+    "roadmap-articles",
+    "knowledge-articles"
   ],
   "events": [
     "metatags"

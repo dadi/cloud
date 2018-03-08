@@ -1,0 +1,18 @@
+{
+  "datasource": {
+    "key": "knowledge-articles",
+    "source": {
+      "type": "dadiapi",
+      "endpoint": "1.0/cloud/articles"
+    },
+    "count": 4,
+    "paginate": false,
+    "filter": {
+      "published": true,
+      "knowledge-category": { "$ne": null }
+    },
+    "sort": {
+      "publishedAt": -1
+    }
+  }
+}

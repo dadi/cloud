@@ -25,7 +25,7 @@
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/careers/">Careers</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/culture/">Culture</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/team/">Team</a></li>
-          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/partners/">Partners</a></li>
+          {! <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/partners/">Partners</a></li> !}
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/contact/">Contact</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/privacy/">Privacy</a></li>
         </ul>
@@ -61,6 +61,17 @@ if (stick) {
     topSpacing: 65,
     bottomSpacing: 0,
     containerSelector: '#stickContainer',
+    minWidth: 800
+  });
+}
+
+var sticknav = document.getElementById('nav');
+
+if (sticknav) {
+  new StickySidebar(sticknav, {
+    topSpacing: 0,
+    bottomSpacing: 0,
+    containerSelector: '#homeMain',
     minWidth: 800
   });
 }

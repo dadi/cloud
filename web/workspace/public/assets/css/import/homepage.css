@@ -1,6 +1,6 @@
 .intro {
   height: 100px;
-  height: 100vh;
+  height: calc(100vh-70px);
   position: relative;
   background: var(--dark);
   background-size: auto 100%;
@@ -10,13 +10,14 @@
 .intro__about h2:before {
   content: ' ';
   width: 33.33%;
-  border-top: 1px solid var(--green);
   display: block;
   margin: 20px 0;
+  border-top: 1px solid var(--green);
 }
 .intro__about h2,
 .intro__about p {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  font-weight: normal;
 }
 
 .intro__about {
@@ -28,7 +29,7 @@
     width: 25%;
     position: absolute;
     left: 5%;
-    bottom: 10%;
+    bottom: 5%;
     z-index: 1;
   }
 /*}*/
@@ -46,6 +47,15 @@
   width: 100%;
   height: auto;
 }
+
+/*@media (--bl) {
+  .intro nav {
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    background: none;
+  }
+}*/
 
 @media (--bs) {
   .intro__about {
@@ -70,4 +80,21 @@
   height: auto;
   position: relative;
   z-index: 1;
+}
+
+
+.intro__credit {
+  position: absolute;
+  top: 55%;
+  right: 5%;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.2);
+  padding: 0 30px 4px;
+}
+.intro__credit a {
+  color: rgba(255,255,255,0.4);
+  transition: color 0.3s;
+}
+.intro__credit a:hover {
+  color: #fff;
 }

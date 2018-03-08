@@ -7,11 +7,9 @@
   <script type="text/javascript" src="/assets/js/network-map.js"></script>
 {/head}
 
-{>"partials/nav" stick="true" /}
-
-<header class="intro bg-dark color-white">
+<header class="intro bg-dark color-white cf">
   <div class="intro__about animation fade-in">
-    <h1><img src="/assets/img/dadi-logo-white.svg"></h1>
+    <h1><img src="/assets/img/dadi-logo-white.svg" alt="DADI"></h1>
     {@markdown}{pages.results[0].excerpt|s}{/markdown}
   </div>
 
@@ -19,13 +17,18 @@
     <source src="/assets/video/header.webm">
     <source src="/assets/video/header.mp4">
     <source src="/assets/video/header.ogv">
-    {! <source src="movie.ogg" type="video/ogg"> !}
-    <img src="/assets/video/header.png" alt="">
+    <img src="/assets/video/header.png">
   </video>
+
+  <div class="intro__credit">
+    Illustration by <a href="https://somethingsavage.com">Daniel Savage</a>
+  </div>
 </header>
 
-<main class="mb--x2">
-  <div class="bg-tint mb"> 
+<main class="mb--x2" id="homeMain">
+  {>"partials/nav" stick="true" /}
+
+  <div class="bg-tint mb pt"> 
     <div class="cnt pb--x2">
       <div class="grid" id="stickContainer">
         <div class="col w-1-2">
@@ -66,7 +69,21 @@
     </div>
 
     <div class="hdr fm ttu mb">
-      <h3><span>Knowledge</span></h3>
+      <h3><span>Latest knowledge articles</span></h3>
+    </div>
+
+    <div class="grid">
+      {#knowledge-articles.results}
+        {>"partials/articles/list"
+          grid="4"
+          size="3"
+          dateFormat="short"
+        /}
+      {/knowledge-articles.results}
+    </div>
+
+    <div class="hdr fm ttu mb">
+      <h3><span>Knowledge categories</span></h3>
     </div>
 
     <div class="grid">

@@ -4,18 +4,18 @@
 <script type="text/javascript">
   window.connectToSocket("{global.networkMonitor.publicUrl|s}", "{global.networkMonitor.root}");
 
-  
   window.addSocketListener('queue', 'queries/second', function (data) {
      document.getElementById('network_reqs').innerHTML = data.value;
   });
   
   window.addSocketListener('hosts', 'hosts_changed', function (data) {
     window.addHostsToMap(data.value.hosts);
-    
-    
-      document.getElementById('network_hosts').innerHTML = data.value.hosts.length;
-    
+    document.getElementById('network_hosts').innerHTML = data.value.hosts.length;
   });
+
+  window.addSocketListener('requests', 'average_response', function (data) {
+     document.getElementById('average_response').innerHTML = data.value + ' <span class="stat__unit">ms</span>';
+   });
 
   window.addSocketListener('requests', 'dequeued_requests', function (data) {
     window.pulseNode(data);

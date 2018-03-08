@@ -18,17 +18,19 @@
 <main class="mb--x2 pt cf">
   <div class="cnt pb cf">
     <div class="grid">
-      <div class="col w-1-2">
+     {!  <div class="col w-1-2">
         {#milestones.results}
           {>"partials/roadmap/milestone" size="natural" /}
         {/milestones.results}
       </div>
-      <div class="col w-1-2">
+      <div class="col w-1-2"> !}
         {#articles.results}
-          {>"partials/articles/list" /}
+          {>"partials/articles/list" grid="3" size="3" /}
         {/articles.results}
-      </div>
+      {! </div> !}
     </div>
+
+    {>"partials/pagination" ds=articles /}
   </div>
 </header>
 
