@@ -25,7 +25,8 @@
     "useCompression": true
   },
   "rewrites": {
-    "path": "./workspace/routes/rewrites.txt"
+    "path": "./workspace/routes/rewrites.txt",
+    "forceTrailingSlash": true
   },
   "security": {
     "csrf": true

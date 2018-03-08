@@ -24,16 +24,12 @@
 .intro__about {
   margin: 0 15px;
   min-width: 350px;
+  width: 36%;
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  z-index: 1;
 }
-/*@media (--bl) {*/
-  .intro__about {
-    width: 36%;
-    position: absolute;
-    left: 5%;
-    bottom: 5%;
-    z-index: 1;
-  }
-/*}*/
 
 .intro video {
   width: 100%;
@@ -49,14 +45,6 @@
   height: auto;
 }
 
-/*@media (--bl) {
-  .intro nav {
-    position: absolute;
-    bottom: 0;
-    top: auto;
-    background: none;
-  }
-}*/
 
 @media (--bs) {
   .intro__about {
@@ -75,6 +63,7 @@
     width: auto;
   }
 }
+
 .intro__about img {
   max-width: 25%;
   min-width: 180px;
@@ -83,6 +72,7 @@
   z-index: 1;
 }
 
+/* Illustrator credit */
 
 .intro__credit {
   position: absolute;
@@ -101,7 +91,9 @@
 }
 
 @media (--bs) {
-.intro__credit {
-  top: 65%;
-}
+  .intro__credit {
+    top: 44%;
+    width: 110px;
+    text-align: right;
+  }
 }

@@ -39,7 +39,6 @@ body {
 header {
   width: 100%;
   position: relative;
-  /*box-shadow: 0 -5px 100px rgba(0,0,0,0.04) inset;*/
 }
 .bg-icon {
   opacity: 0.04;
@@ -135,23 +134,28 @@ h1, h2 {
   overflow: hidden;
 }
 .network--large {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: auto;
-  width: 75%;
   padding-top: 0;
-  height: 630px;
+  height: 430px;
 }
-.network--large:before {
-  content: ' ';
-  position: absolute;
-  background: linear-gradient(to left, rgba(255,255,255,0) 0%, #f9f9f9 100%);
-  width: 245px;
-  height: 100%;
-  top: 0; left: 0; bottom: 0;
-  z-index: 1;
-  pointer-events: none;
+@media (--bl) {
+  .network--large {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+    width: 75%;
+    height: 630px;
+  }
+  .network--large:before {
+    content: ' ';
+    position: absolute;
+    background: linear-gradient(to left, rgba(255,255,255,0) 0%, #f9f9f9 100%);
+    width: 245px;
+    height: 100%;
+    top: 0; left: 0; bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
 }
 .network .dadiNode {
   border-radius: 10px;
