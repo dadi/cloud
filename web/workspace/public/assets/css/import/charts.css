@@ -615,7 +615,7 @@
 /* DADI styles */
 
 .ct-grid {
-  stroke: var(--grey);
+  stroke: #eee;
   stroke-dasharray: 0;
 }
 .ct-series-a .ct-line {

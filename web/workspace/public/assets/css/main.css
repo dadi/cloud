@@ -323,3 +323,23 @@ h1, h2 {
 .anchor:hover .anchor__link {
   opacity: 1;
 }
+
+/*.token-value,
+.token-volume {
+  margin-left: -40px;
+}*/
+.token-volume {
+  margin-bottom: 20px;
+}
+.token-value:before,
+.token-volume:before {
+  display: block;
+  float: left;
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 18%;
+}
+.token-volume:before {
+  padding-bottom: 9%;
+}

@@ -7,13 +7,13 @@
       low: 0,
       showArea: true,
       axisX: {
-         showGrid: false,
+        showGrid: false
       },
       chartPadding: {
         top:20,
         right:0,
         bottom:0,
-        left:10
+        left:0
       }
     }
 
@@ -37,17 +37,111 @@
 
 {>"partials/nav"/}
 
-<header class="bg-tint mb pt--x2 pb cf ovfh">
+<header class="bg-tint mb pt--x2 cf ovfh">
   <div class="cnt cf pb--x2">
     <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
     <h1>{pages.results[0].title}</h1>
     <p class="normal col w-2-3">{pages.results[0].excerpt}</p>
   </div>
 
+  {! Current Price in USD
+Current Price in BTC
+Current Price in ETH
+Market cap in USD
+Market cap in BTC
+Market cap in ETH
+24 hour volume in USD
+24 hour volume in BTC
+24 hour volume in ETH
+Total supply in DADI (100m)
+Circulating supply in DADI !}
+
   <div class="cnt">
+    <div class="token-value ct-chart ct-square"></div>    
+    <script type="text/javascript">
+      chartSettings.axisX.showLabel = false;
+      new Chartist.Line('.token-value', {
+        labels: [{token.time|j}],
+        series: [[{token.value|j}]]
+      }, chartSettings);
+    </script>
+
+    <div class="token-volume ct-chart ct-square"></div>
+    <script type="text/javascript">
+      chartSettings.axisX.showLabel = true;
+      new Chartist.Line('.token-volume', {
+        labels: [{token.time|j}],
+        series: [[{token.volume|j}]]
+      }, chartSettings);
+    </script>
+
+    <div class="grid">
+      <div class="col w-1-4">
+        <div class="stat pb">
+          <div class="stat__metric color-tint fm">
+            Token value
+          </div>
+          <div class="stat__figure">
+            $<strong>0.348496</strong> USD
+          </div>
+          <div class="stat__metric color-tint fm">
+            0.00003516 BTC<br>
+            0.00046343 ETH
+          </div>
+        </div>
+      </div>
+
+      <div class="col w-1-4">
+        <div class="stat pb">
+          <div class="stat__metric color-tint fm">
+            Market cap
+          </div>
+          <div class="stat__figure">
+            $<strong>25,895,202</strong> USD
+          </div>
+          <div class="stat__metric color-tint fm">
+            2,612 BTC<br>
+            34,435 ETH
+          </div>
+        </div>
+      </div>
+
+      <div class="col w-1-4">
+        <div class="stat pb">
+          <div class="stat__metric color-tint fm">
+            24 hour volume
+          </div>
+          <div class="stat__figure">
+            $<strong>1,062,030</strong> USD
+          </div>
+          <div class="stat__metric color-tint fm">
+            107.19 BTC<br>
+            1,413 ETH
+          </div>
+        </div>
+      </div>
+
+      <div class="col w-1-4">
+        <div class="stat pb">
+          <div class="stat__metric color-tint fm">
+            Supply
+          </div>
+          <div class="stat__figure fwb">
+            74,305,593
+          </div>
+          <div class="stat__metric color-tint fm">
+            100,000,000
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  {!<div class="cnt">
     <div class="grid">
       <div class="col w-1-2">
-        <div class="stat pb">
+        <div class="stat pb pt">
           <div class="stat__metric small color-tint fm">
             24h token value
           </div>
@@ -86,7 +180,7 @@
       </div>
     </div>
 
-    <div class="pt fm small color-tint"><img src="/assets/icons/time.svg" width="10" class="vam"> Token stats updated hourly</div>
+    <div class="pt fm small color-tint"><img src="/assets/icons/time.svg" width="10" class="vam"> Token stats updated hourly</div>!}
   </div>
 </header>
 
