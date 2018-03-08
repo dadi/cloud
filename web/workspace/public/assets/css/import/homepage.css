@@ -9,24 +9,25 @@
 }
 .intro__about h2:before {
   content: ' ';
-  width: 33.33%;
+  width: 120px;
   display: block;
   margin: 20px 0;
-  border-top: 1px solid var(--green);
+  border-top: 1px solid rgba(255,255,255,.1);
 }
 .intro__about h2,
 .intro__about p {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: normal;
+  color: #8A939D;
 }
 
 .intro__about {
   margin: 0 15px;
-  min-width: 360px;
+  min-width: 350px;
 }
 /*@media (--bl) {*/
   .intro__about {
-    width: 25%;
+    width: 36%;
     position: absolute;
     left: 5%;
     bottom: 5%;
@@ -97,4 +98,10 @@
 }
 .intro__credit a:hover {
   color: #fff;
+}
+
+@media (--bs) {
+.intro__credit {
+  top: 65%;
+}
 }

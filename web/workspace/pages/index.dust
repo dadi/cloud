@@ -8,7 +8,7 @@
 {/head}
 
 <header class="intro bg-dark color-white cf">
-  <div class="intro__about animation fade-in">
+  <div class="intro__about animation fade-in fm">
     <h1><img src="/assets/img/dadi-logo-white.svg" alt="DADI"></h1>
     {@markdown}{pages.results[0].excerpt|s}{/markdown}
   </div>
