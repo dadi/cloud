@@ -9,9 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@dadi/web": "~5.0.1",
+    "@dadi/web": "github:dadi/web#feature/range-requests",
     "@dadi/web-dustjs": "^1.1.3",
     "dustjs-linkedin": "^2.7.5",
+    "hashly": "^0.5.0",
     "highlight.js": "^9.12.0",
     "html-minifier": "^3.5.9",
     "lodash.groupby": "^4.6.0",
