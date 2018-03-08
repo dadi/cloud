@@ -43,7 +43,7 @@ nav a:hover {
   color: var(--green); 
 }
 @media (--bl) {
-  nav a:after {
+  nav li a:after {
     content: ' ';
     display: block;
     margin-top: 5px;
@@ -52,7 +52,7 @@ nav a:hover {
     width: 0;
     transition: width 0.2s ease-in-out;
   }
-  nav a:hover:after,
+  nav li a:hover:after,
   nav .active:after {
     width: 100%;
     background: var(--green);
@@ -60,7 +60,9 @@ nav a:hover {
 }
 
 nav .nav__logo {
-  margin-right: 10px;
+  margin-right: 32px;
+  float: left;
+  display: block;
 }
 nav .nav__logo a {
   font-size: 0;
@@ -68,8 +70,10 @@ nav .nav__logo a {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: auto 25px;
-  padding: 32px 37px 33px !important;
+  padding: 35px 37px !important;
   border-right: 1px solid rgba(255,255,255,0.1);
+  vertical-align: middle;
+  display: block;
 }
 nav .nav__logo a:hover {
   background-color: var(--green);
