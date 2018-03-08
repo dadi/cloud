@@ -8,6 +8,12 @@
     background: url(/assets/products/dadi-{slug}.png) no-repeat 92% 140%;
     background-size: auto 450px;
   }
+  @media (max-width: 800px) {
+    header {
+      background-size: auto 248px;
+    }
+  }
+
   nav .nav__logo a:hover {
     background-color: #{color};
     border-color: #{color};
