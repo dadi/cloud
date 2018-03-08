@@ -51,6 +51,8 @@
       </div>
     </div>
 
+    {?mailResult}<p class="info pa bg-light-green fwb">{mailResult}</p>{/mailResult}
+
     <form action="/{lang}/contact/" method="post">
       <fieldset>        
         <label class="text fm" for="name">Name</label>
