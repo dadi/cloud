@@ -75,6 +75,11 @@ nav .nav__logo a:hover {
   background-color: var(--green);
   border-color: var(--green);
 }
+@media (--bs) {
+  nav .nav__logo a {
+    background-position: 20px 50%;
+  }
+}
 
 nav .nav__social {
   margin-right: 12px;
