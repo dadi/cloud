@@ -3,7 +3,6 @@ nav {
   position: relative;
   top: 0; left: 0; right: 0;
   background-color: var(--dark);
-  /*box-shadow: 0 0 10px rgba(4, 17, 29, 0.57);*/
   box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
   font-size: 0.9rem;
 }
@@ -40,22 +39,24 @@ nav .active {
   color: var(--green);
   position: relative;
 }
-nav a:after {
-  content: ' ';
-  display: block;
-  margin-top: 5px;
-  height: 1px;
-  background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, var(--green) 100%);
-  width: 0;
-  transition: width 0.2s ease-in-out;
-}
 nav a:hover {
   color: var(--green); 
 }
-nav a:hover:after,
-nav .active:after {
-  width: 100%;
-  background: var(--green);
+@media (--bl) {
+  nav a:after {
+    content: ' ';
+    display: block;
+    margin-top: 5px;
+    height: 1px;
+    background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, var(--green) 100%);
+    width: 0;
+    transition: width 0.2s ease-in-out;
+  }
+  nav a:hover:after,
+  nav .active:after {
+    width: 100%;
+    background: var(--green);
+  }
 }
 
 nav .nav__logo {
