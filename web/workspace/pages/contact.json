@@ -3,6 +3,7 @@
     "key": "contact"
   },
   "datasources": [
+    "pages",
     "knowledge-categories",
     "web-services"
   ],
