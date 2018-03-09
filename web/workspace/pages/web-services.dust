@@ -97,7 +97,7 @@
           </div>
         </div>
       </div>
-      <div class="col w-1-2">
+      <div class="col w-1-2" id="features" name="features">
         <div class="hdr fm ttu mb">
           <h3><span>Full features</span></h3>
         </div>
