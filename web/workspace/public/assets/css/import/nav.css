@@ -2,13 +2,15 @@ nav {
   z-index: 10;
   position: relative;
   top: 0; left: 0; right: 0;
-  background-color: var(--dark);
+  background-color: #070f1b;
   box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
   font-size: 0.9rem;
 }
 nav .inner-wrapper-sticky {
-  background-color: rgba(4, 17, 29, 0.97);
   box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
+}
+nav.is-affixed .inner-wrapper-sticky {
+  background-color: rgba(4, 17, 29, 0.97);
 }
 nav.subnav {
   box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
