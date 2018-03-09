@@ -617,8 +617,8 @@
 .ct-title {
   position: absolute;
   right: 0;
-  top: 25px;
-  font-size: 0.9rem;
+  top: -3px;
+  font-size: 0.8rem;
   z-index: 1;
 }
 .ct-grid {

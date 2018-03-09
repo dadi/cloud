@@ -117,15 +117,6 @@
       }, chartSettings).on('created', function(ctx) { chartGradient(ctx, '0ecc5f')});
     </script>
 
-    {! <div class="token-price ct-chart ct-square"></div>    
-    <script type="text/javascript">
-      chartSettings.axisX.showLabel = false;
-      new Chartist.Line('.token-price', {
-        labels: [{token.time|j}],
-        series: [[{token.priceETH|j}]]
-      }, chartSettings);
-    </script> !}
-
     <div class="token-volume ct-chart ct-square">
       <span class="ct-title fm">Token volume</span>
     </div>
@@ -137,7 +128,7 @@
       }, chartSettings).on('created', function(ctx) { chartGradient(ctx, '316ff4')});
     </script>
     
-    <div class="fm small color-tint"><img src="/assets/icons/time.svg" width="10" class="vam"> Token stats updated hourly</div>
+    <div class="fm small color-tint"><img src="/assets/icons/time.svg" width="10" class="vam"> Stats updated hourly</div>
   </div>
 </header>
 
