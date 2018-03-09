@@ -10,6 +10,8 @@ const Event = function (req, res, data, callback) {
   const priceBTC = rawTokenInfo.map(i => i.priceBTC)
   const priceETH = rawTokenInfo.map(i => i.priceETH)
   const priceUSD = rawTokenInfo.map(i => i.priceUSD)
+  
+  const marketCapETH = rawTokenInfo.map(i => i.marketCapETH)
   const marketCapUSD = rawTokenInfo.map(i => i.marketCapUSD)
  
   const volume24HourBTC = rawTokenInfo.map(i => i.volume24HourBTC)
@@ -42,6 +44,7 @@ const Event = function (req, res, data, callback) {
     marketCapETHNow: rawTokenInfo[lastIndex].marketCapETH,
     marketCapUSDNow: rawTokenInfo[lastIndex].marketCapUSD,
     marketCapUSD,
+    marketCapETH,
     supplyAvailable: rawTokenInfo[lastIndex].supplyAvailable,
     supplyTotal: rawTokenInfo[lastIndex].supplyTotal,
     updatedAt: rawTokenInfo[lastIndex].updatedAt

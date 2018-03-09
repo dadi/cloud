@@ -123,11 +123,10 @@
     </div>
 
     <script type="text/javascript">
-
       chartSettings.axisX.showLabel = false;
       new Chartist.Line('.token-marketcap', {
         labels: [{token.time|j}],
-        series: [[{token.marketCapUSD|j}]]
+        series: [[{token.marketCapETH|j}]]
       }, chartSettings).on('created', function(ctx) { chartGradient(ctx, '0ecc5f')});
 
       chartSettings.axisX.showLabel = true;
@@ -135,7 +134,6 @@
         labels: [{token.time|j}],
         series: [[{token.volume24HourUSD|j}]]
       }, chartSettings).on('created', function(ctx) { chartGradient(ctx, '316ff4')});
-
 
       {! chartSettings.axisX.showLabel = false;
       chartSettings.axisX.showGrid = false;
