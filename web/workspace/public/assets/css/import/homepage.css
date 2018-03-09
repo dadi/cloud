@@ -37,8 +37,9 @@
   pointer-events: none;
   background: transparent;
   left: 50%;
-  position: relative;
+  position: absolute;
   transform: translateX(-50%);
+  bottom: -20px;
 }
 .intro video img {
   width: 100%;
@@ -47,6 +48,9 @@
 
 
 @media (--bs) {
+  .intro {
+    height: calc(100vh-46px);
+  }
   .intro__about {
     margin: 0;
     bottom: 30px;
@@ -55,7 +59,9 @@
   }
   .intro video {
     width: auto;
-    height: 70%;    
+    height: 70%;   
+    top: 3%;
+    bottom: auto; 
   }
 
   .intro__about {
@@ -76,8 +82,8 @@
 
 .intro__credit {
   position: absolute;
-  top: 55%;
-  right: 5%;
+  top: 10%;
+  right: 0%;
   font-size: 0.8rem;
   color: rgba(255,255,255,0.2);
   padding: 0 30px 4px;
