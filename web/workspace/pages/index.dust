@@ -14,9 +14,9 @@
   </div>
 
   <video class="animation fade-in" width="1920" height="1080" autoplay muted loop playsinline>
-    <source src="/assets/video/header.webm">
-    <source src="/assets/video/header.mp4">
-    <source src="/assets/video/header.ogv">
+    <source src="/assets/video/header.webm?v=2">
+    <source src="/assets/video/header.mp4?v=2">
+    <source src="/assets/video/header.ogv?v=2">
     <img src="/assets/video/header.png">
   </video>
 
