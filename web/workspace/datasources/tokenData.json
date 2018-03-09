@@ -1,0 +1,21 @@
+{
+  "datasource": {
+    "key": "tokenData",
+    "auth": false,
+    "source": {
+      "endpoint": "1.0/cloud/tokenData"
+    },
+    "filterEvent": "filterTokenStats",
+    "paginate": false,
+    "count": 0,
+    "sort": {
+      "updatedAt": 1
+    },
+    "caching": {
+      "ttl": 3600,
+      "directory": {
+        "enabled": true
+      }
+    }  
+  }
+}

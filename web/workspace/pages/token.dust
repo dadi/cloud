@@ -62,7 +62,7 @@ Circulating supply in DADI !}
       chartSettings.axisX.showLabel = false;
       new Chartist.Line('.token-value', {
         labels: [{token.time|j}],
-        series: [[{token.value|j}]]
+        series: [[{token.priceUSD|j}]]
       }, chartSettings);
     </script>
 
@@ -82,11 +82,11 @@ Circulating supply in DADI !}
             Token value
           </div>
           <div class="stat__figure">
-            $<strong>0.348496</strong> USD
+            $<strong>{token.priceUSDNow}</strong> USD
           </div>
           <div class="stat__metric color-tint fm">
-            0.00003516 BTC<br>
-            0.00046343 ETH
+            {token.priceBTCNow} BTC<br>
+            {token.priceETHNow} ETH
           </div>
         </div>
       </div>
@@ -97,11 +97,11 @@ Circulating supply in DADI !}
             Market cap
           </div>
           <div class="stat__figure">
-            $<strong>25,895,202</strong> USD
+            $<strong>{token.marketCapUSD}</strong> USD
           </div>
           <div class="stat__metric color-tint fm">
-            2,612 BTC<br>
-            34,435 ETH
+            {token.marketCapBTC} BTC<br>
+            {token.marketCapETH} ETH
           </div>
         </div>
       </div>
@@ -127,7 +127,7 @@ Circulating supply in DADI !}
             Supply
           </div>
           <div class="stat__figure fwb">
-            74,305,593
+            {token.supplyAvailable}
           </div>
           <div class="stat__metric color-tint fm">
             100,000,000

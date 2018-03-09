@@ -1,0 +1,57 @@
+{
+  "fields": {
+    "priceBTC": {
+      "type": "Number"
+    },
+    "priceETH": {
+      "type": "Number"
+    },
+    "priceUSD": {
+      "type": "Number"
+    },
+    "marketCapBTC": {
+      "type": "Number"
+    },
+    "marketCapETH": {
+      "type": "Number"
+    },
+    "marketCapUSD": {
+      "type": "Number"
+    },
+    "volume24HourBTC": {
+      "type": "Number"
+    },
+    "volume24HourETH": {
+      "type": "Number"
+    },
+    "volume24HourUSD": {
+      "type": "Number"
+    },
+    "supplyAvailable": {
+      "type": "Number"
+    },
+    "supplyTotal": {
+      "type": "Number"
+    },
+    "updatedAt": {
+      "type": "Number"
+    }
+  },
+  "settings": {
+    "cache": false,
+    "authenticate": false,
+    "fieldLimiters": {
+      "_apiVersion": 0,
+      "_createdAt": 0,
+      "_history": 0,
+      "_version": 0
+    },
+    "index": [
+      {
+        "keys": {
+          "updatedAt": 1
+        }
+      }
+    ]
+  }
+}
