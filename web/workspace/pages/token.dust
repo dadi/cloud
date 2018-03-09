@@ -106,26 +106,46 @@
       </div>
     </div>
 
-    <div class="token-marketcap ct-chart ct-square">
-      <span class="ct-title fm">Market cap</span>
-    </div>    
+
+    <div class="token-charts">
+      <div class="token-marketcap ct-chart ct-square">
+        <span class="ct-title fm" style="color:#0ecc5f;top:115px">Market cap</span>
+      </div>
+      <div class="token-price ct-chart ct-square">
+        <span class="ct-title fm" style="color:#ffbf0e">Price in ETH</span>
+      </div> 
+    </div>
+
+
+
+    <div class="token-volume ct-chart ct-square">
+      <span class="ct-title fm" style="color:#316ff4">Token volume</span>
+    </div>
+
     <script type="text/javascript">
+
       chartSettings.axisX.showLabel = false;
       new Chartist.Line('.token-marketcap', {
         labels: [{token.time|j}],
         series: [[{token.marketCapUSD|j}]]
       }, chartSettings).on('created', function(ctx) { chartGradient(ctx, '0ecc5f')});
-    </script>
 
-    <div class="token-volume ct-chart ct-square">
-      <span class="ct-title fm">Token volume</span>
-    </div>
-    <script type="text/javascript">
       chartSettings.axisX.showLabel = true;
       new Chartist.Line('.token-volume', {
         labels: [{token.time|j}],
         series: [[{token.volume24HourUSD|j}]]
       }, chartSettings).on('created', function(ctx) { chartGradient(ctx, '316ff4')});
+
+
+      chartSettings.axisX.showLabel = false;
+      chartSettings.axisX.showGrid = false;
+      chartSettings.axisY = {};
+      chartSettings.axisY.showLabel = false;
+      chartSettings.axisY.showGrid = false;
+      new Chartist.Line('.token-price', {
+        labels: [{token.time|j}],
+        series: [[{token.priceETH|j}]]
+      }, chartSettings);
     </script>
     
     <div class="fm small color-tint"><img src="/assets/icons/time.svg" width="10" class="vam"> Stats updated hourly</div>

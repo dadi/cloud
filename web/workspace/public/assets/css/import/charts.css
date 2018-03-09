@@ -625,12 +625,13 @@
   stroke: #eee;
   stroke-dasharray: 0;
 }
+.ct-point {
+  stroke-width: 0;
+}
+
 .ct-series-a .ct-line {
   stroke-width: 2px;
   stroke: var(--green);
-}
-.ct-point {
-  stroke-width: 0;
 }
 .ct-series-a .ct-area {
   fill: var(--green);
@@ -645,5 +646,14 @@
 .token-volume .ct-series-a .ct-area {
   fill: #316ff4;
   fill: url(#gradient_316ff4);
+  fill-opacity: 0.1;
+}
+
+.token-price .ct-series-a .ct-line {
+  stroke-width: 2px;
+  stroke: #ffbf0e;
+}
+.token-price .ct-series-a .ct-area {
+  fill: transparent;
   fill-opacity: 0.1;
 }

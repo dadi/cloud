@@ -324,10 +324,13 @@ h1, h2 {
   opacity: 1;
 }
 
-/*.token-value,
-.token-volume {
-  margin-left: -40px;
-}*/
+.token-charts {
+  position: relative;
+}
+.token-price {
+  position: absolute;
+  top: 0;
+}
 .token-volume {
   margin-bottom: 20px;
 }
