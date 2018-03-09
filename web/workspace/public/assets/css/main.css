@@ -331,8 +331,9 @@ h1, h2 {
 .token-volume {
   margin-bottom: 20px;
 }
-.token-value:before,
-.token-volume:before {
+.token-marketcap:before,
+.token-volume:before,
+.token-price:before {
   display: block;
   float: left;
   content: "";

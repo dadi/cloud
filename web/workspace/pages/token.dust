@@ -7,20 +7,20 @@
       low: 0,
       showArea: true,
       axisX: {
-        showGrid: false
+        showGrid: true,
+        labelOffset: {
+          x: -6
+        }
       },
       chartPadding: {
         top:20,
         right:0,
         bottom:0,
-        left:0
+        left:40
       }
     }
 
-    {! Unused gradient 
-      ...on('created', function(ctx) { chartGradient(ctx, '316ff4')})
-
-      var chartGradient = function(ctx, color) {
+    var chartGradient = function(ctx, color) {
       var defs = ctx.svg.elem('defs');
       defs.elem('linearGradient', {
         id: 'gradient_'+color, x1: 0, y1: 1, x2: 0, y2: 0
@@ -31,7 +31,7 @@
         offset: 0.5,
         'stop-color': '#'+color
       });
-    };!}
+    };
   </script>
 {/head}
 
@@ -44,37 +44,7 @@
     <p class="normal col w-2-3">{pages.results[0].excerpt}</p>
   </div>
 
-  {! Current Price in USD
-Current Price in BTC
-Current Price in ETH
-Market cap in USD
-Market cap in BTC
-Market cap in ETH
-24 hour volume in USD
-24 hour volume in BTC
-24 hour volume in ETH
-Total supply in DADI (100m)
-Circulating supply in DADI !}
-
-  <div class="cnt">
-    <div class="token-value ct-chart ct-square"></div>    
-    <script type="text/javascript">
-      chartSettings.axisX.showLabel = false;
-      new Chartist.Line('.token-value', {
-        labels: [{token.time|j}],
-        series: [[{token.priceUSD|j}]]
-      }, chartSettings);
-    </script>
-
-    <div class="token-volume ct-chart ct-square"></div>
-    <script type="text/javascript">
-      chartSettings.axisX.showLabel = true;
-      new Chartist.Line('.token-volume', {
-        labels: [{token.time|j}],
-        series: [[{token.volume|j}]]
-      }, chartSettings);
-    </script>
-
+  <div class="cnt pb">
     <div class="grid">
       <div class="col w-1-4">
         <div class="stat pb">
@@ -82,7 +52,7 @@ Circulating supply in DADI !}
             Token value
           </div>
           <div class="stat__figure">
-            $<strong>{token.priceUSDNow}</strong> USD
+            <strong>${token.priceUSDNow}</strong> USD
           </div>
           <div class="stat__metric color-tint fm">
             {token.priceBTCNow} BTC<br>
@@ -97,11 +67,11 @@ Circulating supply in DADI !}
             Market cap
           </div>
           <div class="stat__figure">
-            $<strong>{token.marketCapUSD}</strong> USD
+            <strong>${token.marketCapUSDNow|n}</strong> USD
           </div>
           <div class="stat__metric color-tint fm">
-            {token.marketCapBTC} BTC<br>
-            {token.marketCapETH} ETH
+            {token.marketCapBTCNow} BTC<br>
+            {token.marketCapETHNow} ETH
           </div>
         </div>
       </div>
@@ -112,11 +82,11 @@ Circulating supply in DADI !}
             24 hour volume
           </div>
           <div class="stat__figure">
-            $<strong>1,062,030</strong> USD
+            <strong>${token.volumeTotalUSD|n}</strong> USD
           </div>
           <div class="stat__metric color-tint fm">
-            107.19 BTC<br>
-            1,413 ETH
+            {token.volumeTotalBTC} BTC<br>
+            {token.volumeTotalETH} ETH
           </div>
         </div>
       </div>
@@ -127,60 +97,47 @@ Circulating supply in DADI !}
             Supply
           </div>
           <div class="stat__figure fwb">
-            {token.supplyAvailable}
+            {token.supplyAvailable|n}
           </div>
           <div class="stat__metric color-tint fm">
-            100,000,000
+            of 100,000,000
           </div>
         </div>
       </div>
     </div>
-    
-  </div>
 
-  {!<div class="cnt">
-    <div class="grid">
-      <div class="col w-1-2">
-        <div class="stat pb pt">
-          <div class="stat__metric small color-tint fm">
-            24h token value
-          </div>
-          <div class="stat__figure fwb">
-            ${token.valueNow} USD
-          </div>
-        </div>
+    <div class="token-marketcap ct-chart ct-square">
+      <span class="ct-title fm">Market cap</span>
+    </div>    
+    <script type="text/javascript">
+      chartSettings.axisX.showLabel = false;
+      new Chartist.Line('.token-marketcap', {
+        labels: [{token.time|j}],
+        series: [[{token.marketCapUSD|j}]]
+      }, chartSettings).on('created', function(ctx) { chartGradient(ctx, '0ecc5f')});
+    </script>
 
-        <div class="token-value ct-chart ct-major-twelfth"></div>
-    
-        <script type="text/javascript">
-          new Chartist.Line('.token-value', {
-            labels: [{token.time|j}],
-            series: [[{token.value|j}]]
-          }, chartSettings);
-        </script>
-      </div>
-      <div class="col w-1-2">
-        <div class="stat pb">
-          <div class="stat__metric small color-tint fm">
-            24h token volume
-          </div>
-          <div class="stat__figure fwb">
-            ${token.volumeTotal} USD 
-          </div>
-        </div>
+    {! <div class="token-price ct-chart ct-square"></div>    
+    <script type="text/javascript">
+      chartSettings.axisX.showLabel = false;
+      new Chartist.Line('.token-price', {
+        labels: [{token.time|j}],
+        series: [[{token.priceETH|j}]]
+      }, chartSettings);
+    </script> !}
 
-        <div class="token-volume ct-chart ct-major-twelfth"></div>
-
-        <script type="text/javascript">
-          new Chartist.Line('.token-volume', {
-            labels: [{token.time|j}],
-            series: [[{token.volume|j}]]
-          }, chartSettings);
-        </script>
-      </div>
+    <div class="token-volume ct-chart ct-square">
+      <span class="ct-title fm">Token volume</span>
     </div>
-
-    <div class="pt fm small color-tint"><img src="/assets/icons/time.svg" width="10" class="vam"> Token stats updated hourly</div>!}
+    <script type="text/javascript">
+      chartSettings.axisX.showLabel = true;
+      new Chartist.Line('.token-volume', {
+        labels: [{token.time|j}],
+        series: [[{token.volume24HourUSD|j}]]
+      }, chartSettings).on('created', function(ctx) { chartGradient(ctx, '316ff4')});
+    </script>
+    
+    <div class="fm small color-tint"><img src="/assets/icons/time.svg" width="10" class="vam"> Token stats updated hourly</div>
   </div>
 </header>
 

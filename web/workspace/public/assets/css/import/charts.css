@@ -614,6 +614,13 @@
 
 /* DADI styles */
 
+.ct-title {
+  position: absolute;
+  right: 0;
+  top: 25px;
+  font-size: 0.9rem;
+  z-index: 1;
+}
 .ct-grid {
   stroke: #eee;
   stroke-dasharray: 0;
@@ -627,7 +634,7 @@
 }
 .ct-series-a .ct-area {
   fill: var(--green);
-  /*fill: url(#gradient_0ecc5f);*/
+  fill: url(#gradient_0ecc5f);
   fill-opacity: 0.1;
 }
 
@@ -636,7 +643,7 @@
   stroke: #316ff4;
 }
 .token-volume .ct-series-a .ct-area {
-  /*fill: url(#gradient_316ff4);*/
   fill: #316ff4;
+  fill: url(#gradient_316ff4);
   fill-opacity: 0.1;
 }
