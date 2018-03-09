@@ -109,11 +109,11 @@
 
     <div class="token-charts">
       <div class="token-marketcap ct-chart ct-square">
-        <span class="ct-title fm" style="color:#0ecc5f;top:115px">Market cap</span>
+        <span class="ct-title fm" style="color:#0ecc5f">Market cap</span>
       </div>
-      <div class="token-price ct-chart ct-square">
+      {! <div class="token-price ct-chart ct-square">
         <span class="ct-title fm" style="color:#ffbf0e">Price in ETH</span>
-      </div> 
+      </div>  !}
     </div>
 
 
@@ -137,7 +137,7 @@
       }, chartSettings).on('created', function(ctx) { chartGradient(ctx, '316ff4')});
 
 
-      chartSettings.axisX.showLabel = false;
+      {! chartSettings.axisX.showLabel = false;
       chartSettings.axisX.showGrid = false;
       chartSettings.axisY = {};
       chartSettings.axisY.showLabel = false;
@@ -145,7 +145,7 @@
       new Chartist.Line('.token-price', {
         labels: [{token.time|j}],
         series: [[{token.priceETH|j}]]
-      }, chartSettings);
+      }, chartSettings); !}
     </script>
     
     <div class="fm small color-tint"><img src="/assets/icons/time.svg" width="10" class="vam"> Stats updated hourly</div>
