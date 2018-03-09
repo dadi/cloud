@@ -13,11 +13,11 @@
     {@markdown}{pages.results[0].excerpt|s}{/markdown}
   </div>
 
-  <video class="animation fade-in" width="1920" height="1080" autoplay muted loop playsinline>
+  <video class="animation fade-in" width="1920" height="1080" autoplay muted loop playsinline poster="/assets/video/header.jpg">
     <source src="/assets/video/header.webm?v=2">
     <source src="/assets/video/header.mp4?v=2">
     <source src="/assets/video/header.ogv?v=2">
-    <img src="/assets/video/header.png" alt="Illustration of DADI web services">
+    <img src="/assets/video/header.jpg" alt="Illustration of DADI web services">
   </video>
 
   <div class="intro__credit">
