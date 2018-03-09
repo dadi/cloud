@@ -17,7 +17,7 @@
     <source src="/assets/video/header.webm?v=2">
     <source src="/assets/video/header.mp4?v=2">
     <source src="/assets/video/header.ogv?v=2">
-    <img src="/assets/video/header.png">
+    <img src="/assets/video/header.png" alt="Illustration of DADI web services">
   </video>
 
   <div class="intro__credit">

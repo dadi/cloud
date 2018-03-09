@@ -55,9 +55,9 @@
         <h1 style="margin:0 0 5px">{name}</h1>
         <p class="color-tint mb">{role}</p>
         <p>
-          {?personalSite}<a href="{personalSite}" class="btn" target="_blank">Personal site</a><br>{/personalSite}
-          {?twitter}<a href="https://twitter.com/{twitter}" class="btn" target="_blank">Twitter @{twitter}</a><br>{/twitter}
-          {?linkedIn}<a href="https://www.linkedin.com/in/{linkedIn}/" class="btn" target="_blank">LinkedIn</a>{/linkedIn}
+          {?personalSite}<a href="{personalSite}" class="btn" target="_blank" rel="noopener">Personal site</a><br>{/personalSite}
+          {?twitter}<a href="https://twitter.com/{twitter}" class="btn" target="_blank" rel="noopener">Twitter @{twitter}</a><br>{/twitter}
+          {?linkedIn}<a href="https://www.linkedin.com/in/{linkedIn}/" class="btn" target="_blank" rel="noopener">LinkedIn</a>{/linkedIn}
         </p>
       </div>
     </div>

@@ -158,28 +158,28 @@
 
     <div class="grid">
       <div class="col w-1-4">
-        <a style="height: 100px;" href="https://okex.com" target="_blank" class="box box--natural tac bd bd-grey mb">
+        <a style="height: 100px;" href="https://okex.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
           <div class="box__inner">
             <img style="margin-top:5px" width="120" class="vam" src="/assets/logos/okex.png" alt="OKEx">
           </div>
         </a>
       </div>
       <div class="col w-1-4">
-        <a style="height: 100px;" href="https://kucoin.com" target="_blank" class="box box--natural tac bd bd-grey mb">
+        <a style="height: 100px;" href="https://kucoin.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
           <div class="box__inner">
             <img style="margin-top:10px" width="120" class="vam" src="/assets/logos/kucoin.svg" alt="KuCoin">
           </div>
         </a>
       </div>
       <div class="col w-1-4">
-        <a style="height: 100px;" href="https://hitbtc.com" target="_blank" class="box box--natural tac bd bd-grey mb">
+        <a style="height: 100px;" href="https://hitbtc.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
           <div class="box__inner">
             <img width="120" class="vam" src="/assets/logos/hitbtc.png" alt="HitBTC">
           </div>
         </a>
       </div>
       <div class="col w-1-4">
-        <a style="height: 100px;" href="https://www.bancor.network" target="_blank" class="box box--natural tac bd bd-grey mb">
+        <a style="height: 100px;" href="https://www.bancor.network" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
           <div class="box__inner">
             <img style="margin-top:8px" width="130" class="vam" src="/assets/logos/bancor.png" alt="Bancor">
           </div>

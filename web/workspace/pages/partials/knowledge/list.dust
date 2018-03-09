@@ -2,7 +2,7 @@
   <a href="/{lang}/knowledge/{slug}" class="box bd bd-grey bg-white mb">
     <div class="box__inner">
       <h2>
-        <img src="/assets/icons/{icon}.svg" width="20" class="vam"> 
+        <img src="/assets/icons/{icon}.svg" width="20" class="vam" alt="Icon for the category {name}"> 
         {name}
       </h2>
       <p class="mb">{desc}</p>

@@ -1,18 +1,18 @@
 <footer class="bg-tint bdt bd-grey">
   <div class="cnt fm small">
     <img src="/assets/img/dadi-logo-dark.svg" height="30" class="mb">
-    <p class="mb--x2 read">This site is built with our own technology and is <a href="https://github.com/dadi" rel="external" title="Github" target="_blank">open source</a>. <strong>© DADI+ Ltd.</strong></p>
+    <p class="mb--x2 read">This site is built with our own technology and is <a href="https://github.com/dadi" title="Github" target="_blank" rel="noopener">open source</a>. <strong>© DADI+ Ltd.</strong></p>
 
     <div class="grid">
       <div class="col w-1-4 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Community</span></h3></div>
         <ul class="grid bs-grid">
-          <li class="col bs-w-1-2 w-1-1"><a href="https://github.com/dadi" rel="external" title="Github" target="_blank">Github</a></li>
-          <li class="col bs-w-1-2 w-1-1"><a href="https://medium.com/@daditech" rel="external" title="Medium" target="_blank">Medium</a></li>
-          <li class="col bs-w-1-2 w-1-1"><a href="https://twitter.com/dadi" rel="external" title="Twitter" target="_blank">Twitter</a></li>
-          <li class="col bs-w-1-2 w-1-1"><a href="https://reddit.com/r/dadi" rel="external" title="Reddit" target="_blank">Reddit</a></li>
-          <li class="col bs-w-1-2 w-1-1"><a href="https://discord.gg/3sEvuYJ" rel="external" title="Discord" target="_blank">Discord</a></li>
-          <li class="col bs-w-1-2 w-1-1"><a href="https://t.me/dadichat" rel="external" title="Telegram" target="_blank">Telegram</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="https://github.com/dadi" rel="noopener" title="Github" target="_blank">Github</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="https://medium.com/@daditech" rel="noopener" title="Medium" target="_blank">Medium</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="https://twitter.com/dadi" rel="noopener" title="Twitter" target="_blank">Twitter</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="https://reddit.com/r/dadi" rel="noopener" title="Reddit" target="_blank">Reddit</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="https://discord.gg/3sEvuYJ" rel="noopener" title="Discord" target="_blank">Discord</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="https://t.me/dadichat" rel="noopener" title="Telegram" target="_blank">Telegram</a></li>
         </ul>
       </div>
       <div class="col w-1-4 mb--x2">
