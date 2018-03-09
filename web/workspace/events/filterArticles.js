@@ -27,6 +27,11 @@ const Event = function (req, res, data, callback) {
     filter = { "knowledge-category": { $ne: null } }
   }
 
+  // team.json
+  if (data.page.key === 'team' && data.params.name) {
+    filter = { "author.slug": data.params.name }
+  }
+
   callback(null, Object.assign({ "published": true }, filter))
 }
 

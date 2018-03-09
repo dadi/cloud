@@ -5,6 +5,7 @@
   "datasources": [
     "knowledge-categories",
     "web-services",
+    "articles",
     "team",
     "pages"
   ],

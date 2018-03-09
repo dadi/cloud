@@ -65,12 +65,27 @@
   </div>
 </header>
 
-<main class="mb--x2">
+<main>
   <div class="cnt">
-    <div class="read normal ll">
+    <div class="read normal ll mb--x2">
       {@markdown}{body|s}{/markdown}
     </div>
   </div>
+
+  {?articles.results}
+    <div class="bg-tint pt pb bdt bd-grey">
+      <div class="cnt">
+        <div class="hdr fm ttu mb">
+        <h3><span>Article from {name}</span></h3>
+      </div>
+        <div class="grid">
+          {#articles.results}
+            {>"partials/articles/list" grid="4" size="3" /}
+          {/articles.results}
+        </div>
+      </div>
+    </div>
+  {/articles.results}
 </main>
 {/team.results}
 
