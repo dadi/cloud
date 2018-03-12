@@ -13,10 +13,10 @@
         }
       },
       chartPadding: {
-        top:20,
-        right:0,
-        bottom:0,
-        left:40
+        top: 20,
+        right: 0,
+        bottom: 0,
+        left: 40
       }
     }
 
@@ -52,7 +52,7 @@
             Token value
           </div>
           <div class="stat__figure">
-            <strong>${token.priceUSDNow}</strong> USD
+            $<strong>{token.priceUSDNow}</strong>
           </div>
           <div class="stat__metric color-tint fm">
             {token.priceBTCNow} BTC<br>
@@ -67,11 +67,11 @@
             Market cap
           </div>
           <div class="stat__figure">
-            <strong>${token.marketCapUSDNow|n}</strong> USD
+            $<strong>{token.marketCapUSDNow|n}</strong>
           </div>
           <div class="stat__metric color-tint fm">
-            {token.marketCapBTCNow} BTC<br>
-            {token.marketCapETHNow} ETH
+            {token.marketCapBTCNow|n} BTC<br>
+            {token.marketCapETHNow|n} ETH
           </div>
         </div>
       </div>
@@ -82,11 +82,11 @@
             24 hour volume
           </div>
           <div class="stat__figure">
-            <strong>${token.volumeTotalUSD|n}</strong> USD
+            $<strong>{token.volumeTotalUSD|n}</strong>
           </div>
           <div class="stat__metric color-tint fm">
-            {token.volumeTotalBTC} BTC<br>
-            {token.volumeTotalETH} ETH
+            {token.volumeTotalBTC|n} BTC<br>
+            {token.volumeTotalETH|n} ETH
           </div>
         </div>
       </div>
@@ -94,13 +94,13 @@
       <div class="col w-1-4">
         <div class="stat pb">
           <div class="stat__metric color-tint fm">
-            Supply
+            Circulating supply
           </div>
           <div class="stat__figure fwb">
             {token.supplyAvailable|n}
           </div>
           <div class="stat__metric color-tint fm">
-            of 100,000,000
+            Total supply<br>100,000,000
           </div>
         </div>
       </div>
@@ -126,7 +126,7 @@
       chartSettings.axisX.showLabel = false;
       new Chartist.Line('.token-marketcap', {
         labels: [{token.time|j}],
-        series: [[{token.marketCapETH|j}]]
+        series: [[{token.marketCapUSD|j}]]
       }, chartSettings).on('created', function(ctx) { chartGradient(ctx, '0ecc5f')});
 
       chartSettings.axisX.showLabel = true;

@@ -2,7 +2,7 @@
   height: 100px;
   height: calc(100vh-70px);
   position: relative;
-  background: var(--dark);
+  background: #070f1b;
   background-size: auto 100%;
   z-index: 2;
   overflow: hidden;

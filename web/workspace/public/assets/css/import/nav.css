@@ -5,12 +5,19 @@ nav {
   background-color: #070f1b;
   box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
   font-size: 0.9rem;
+  height: 70px;
 }
 nav .inner-wrapper-sticky {
   box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
+  position: absolute !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 nav.is-affixed .inner-wrapper-sticky {
+  position: fixed !important;
   background-color: rgba(4, 17, 29, 0.97);
+  bottom: auto;
 }
 nav.subnav {
   box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
@@ -21,6 +28,15 @@ nav.subnav {
 nav.stick {
   position: fixed;
 }
+
+/*#homeMain {
+  padding-top: 60px;
+}
+#nav {
+  position: absolute;
+  bottom: 0;
+  top: auto;
+}*/
 
 .nav--right {
   float: right;
