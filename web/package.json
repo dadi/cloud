@@ -6,7 +6,7 @@
   "scripts": {
     "build": "postcss workspace/public/assets/css/main.css --no-map --verbose --use postcss-import --use postcss-cssnext --use postcss-clean --watch --output workspace/public/assets/css/main.min.css"
   },
-  "author": "",
+  "author": "David Longworth <dl@dadi.co>",
   "license": "ISC",
   "dependencies": {
     "@dadi/web": "github:dadi/web#develop",
