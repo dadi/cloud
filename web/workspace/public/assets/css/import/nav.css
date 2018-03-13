@@ -5,7 +5,6 @@ nav {
   background-color: #070f1b;
   box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
   font-size: 0.9rem;
-  height: 70px;
 }
 nav .inner-wrapper-sticky {
   box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
@@ -29,14 +28,9 @@ nav.stick {
   position: fixed;
 }
 
-/*#homeMain {
-  padding-top: 60px;
-}
 #nav {
-  position: absolute;
-  bottom: 0;
-  top: auto;
-}*/
+  height: 70px;
+}
 
 .nav--right {
   float: right;
