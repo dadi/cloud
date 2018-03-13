@@ -61,12 +61,12 @@
         {?npm}<li><a href="https://www.npmjs.com/package/@dadi/{slug}" onclick="ga('send','event','NPM','Click','Product');">Install with NPM</a></li>{/npm}
         {?github}<li><a href="https://github.com/dadi/{slug}" onclick="ga('send','event','Github','Click','Product');">View source on GitHub</a></li>{/github}
         {?demo}<li><a href="{demo}">View demo</a></li>{/demo}
-        <li class="nav--right" style="padding-top:21px">
+        {! <li class="nav--right" style="padding-top:21px">
           <div class="badge color-white">
             <div class="badge__primary bg-white " style="color:#{color}">Latest release</div>
             <div class="badge__secondary">Version 2.0.3</div>
           </div>
-        </li>
+        </li> !}
       </ul>
     </div>
   </nav>
