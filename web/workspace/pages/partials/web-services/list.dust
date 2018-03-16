@@ -14,7 +14,7 @@
         <span class="box__cta small fm color-tint">Coming soon</span>
       {/github}
       <a href="/{lang}/roadmap/web-services" class="box__cta small fm color-tint">Latest updates</a>
-      {?install}<a href="{install}" class="box__cta small fm color-tint">How to install</span>{/install}
+      {?install}<a href="{install}" class="box__cta small fm color-tint">How to install</a>{/install}
     </div>
   </div>
 </div>
