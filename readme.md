@@ -15,3 +15,9 @@ cd ./api && npm install
 ```
 cd ./web && npm install
 ```
+
+### Scripts
+
+```
+cd ./scripts && npm install
+```
