@@ -1,3 +1,3 @@
 #!/bin/bash
 
-NODE_ENV=qa node /dadi/cloud/scripts/getTokenData.js
+NODE_ENV=qa /usr/local/bin/node /dadi/cloud/scripts/getTokenData.js
