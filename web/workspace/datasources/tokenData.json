@@ -7,7 +7,7 @@
     },
     "filterEvent": "filterTokenStats",
     "paginate": false,
-    "count": 0,
+    "count": 24,
     "sort": {
       "updatedAt": 1
     },
