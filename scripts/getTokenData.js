@@ -4,19 +4,22 @@ const https = require('https')
 const promiseQueue = require('js-promise-queue')
 const SECURE_PROTOCOL = 'https:'
 
+const webConfigPath = `../web/config/config.${process.env['NODE_ENV']}.json`
+const webConfig = require(webConfigPath)
+
 const symbols = [
   'BTC',
   'ETH'
 ]
 
 const apiCredentials = {
-  clientId: "cloud-client",
-  secret: "nrq5d6jl0b"
+  clientId: webConfig.auth.clientId,
+  secret: webConfig.auth.secret
 }
 
 let apiOptions = {
-  hostname: '127.0.0.1',
-  port: '8081',
+  hostname: webConfig.api.host,
+  port: webConfig.api.port,
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'

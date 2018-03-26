@@ -15,3 +15,20 @@ cd ./api && npm install
 ```
 cd ./web && npm install
 ```
+
+### Scripts
+
+```
+cd ./scripts && npm install
+```
+
+**/etc/cron.d/update-token-data**
+
+Run at 0 minutes past every hour 
+```
+0 */1 * * *   ubuntu    /dadi/cloud/scripts/qa/update_token_data.sh 2>&1 | logger -t dadi-cloud
+```
+```
+sudo chmod 644 /etc/cron.d/update-token-data
+sudo chown root:root /etc/cron.d/update-token-data
+```
