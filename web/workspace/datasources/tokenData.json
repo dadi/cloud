@@ -9,7 +9,7 @@
     "paginate": false,
     "count": 24,
     "sort": {
-      "updatedAt": 1
+      "updatedAt": -1
     },
     "caching": {
       "ttl": 3600,
