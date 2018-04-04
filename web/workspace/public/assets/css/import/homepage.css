@@ -46,10 +46,17 @@
   height: auto;
 }
 
+#nav {
+  height: 70px;
+}
 
 @media (--bs) {
   .intro {
+    height: 500px;
     height: calc(100vh-46px);
+  }
+  #nav {
+    height: 46px;
   }
   .intro__about {
     margin: 0;

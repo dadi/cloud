@@ -28,10 +28,6 @@ nav.stick {
   position: fixed;
 }
 
-#nav {
-  height: 70px;
-}
-
 .nav--right {
   float: right;
 }
