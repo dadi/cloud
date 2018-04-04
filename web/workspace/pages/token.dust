@@ -6,17 +6,32 @@
     var chartSettings = {
       low: 0,
       showArea: true,
+      scaleMinSpace: 80,
       axisX: {
         showGrid: true,
         labelOffset: {
           x: -6
         }
       },
+      axisY: {
+        labelInterpolationFnc: function(num) {
+           if (num >= 1000000000) {
+              return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'G';
+           }
+           if (num >= 1000000) {
+              return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+           }
+           if (num >= 1000) {
+              return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+           }
+           return num;
+        }
+      },
       chartPadding: {
         top: 20,
-        right: 0,
+        right: 10,
         bottom: 0,
-        left: 40
+        left: 10
       }
     }
 
