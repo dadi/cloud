@@ -91,7 +91,7 @@
       </div>
       <div class="col w-1-3 mb--x2">
         <img src="/assets/icons/layers.svg" height="70" class="mb">
-        <h2 class="medium">Protocol Buffers</h2>
+        <h2 class="medium">Protocol buffers</h2>
         <p class="normal">Fast data serialisation method used to optimise the network.</p>
       </div>
     </div>
@@ -175,7 +175,7 @@
       /}
     </div>
 
-    <a href="/{lang}/knowledge/network/usecases" class="btn-more tac fm small mb">Read all usecases &rarr;</a>
+    <a href="/{lang}/knowledge/network/usecases" class="btn-more tac fm small mb">Read all use cases &rarr;</a>
 
     <div class="hdr fm ttu mb" id="contribute" name="contribute">
       <h3><span>Be part of the network</span></h3>
