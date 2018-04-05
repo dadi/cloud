@@ -25,7 +25,11 @@
 
       <div class="roadmap__milestones grid col--right"> 
         {#milestones.results}
-          {>"partials/roadmap/milestone" grid="2" size="natural" /}
+        <div class="col w-1-2"> 
+          {>"partials/roadmap/milestone"
+            size="small"
+          /}
+        </div>
         {/milestones.results}
       </div>
     </div>

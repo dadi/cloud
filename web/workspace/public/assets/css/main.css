@@ -263,7 +263,7 @@ h1, h2 {
   .roadmap__milestones {
     width: 85%;
   }
-  .roadmap__milestones .col {
+  .roadmap__milestones > .col {
     float: left;
     clear: both;
     padding: 0 50px;

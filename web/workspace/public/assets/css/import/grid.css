@@ -48,7 +48,7 @@
 .w-5-12                   { width: 41.66%; }
 .w-7-12                   { width: 58.33%; }
 
-@media handheld, only screen and (max-width: 800px) {
+@media (--bs) {
 
   .grid {
     margin-left: 0;
@@ -90,4 +90,38 @@
   .bs-w-9-12, .bs-w-3-4 { float: left; width: 75%; }
   .bs-w-5-12        { float: left; width: 41.66%; }
   .bs-w-7-12        { float: left; width: 58.33%; }
+}
+
+
+/* flex box grid */
+
+.grid--flex {
+  flex-wrap: wrap;
+  display: flex;
+}
+.grid--flex > .col {
+  float: none;
+  padding: 0;
+  margin: 0 calc(var(--space) / 2) var(--space);
+}
+
+.grid--2 > .col { width: calc(50% - var(--space)) }
+.grid--3 > .col { width: calc(33.333% - var(--space)) }
+.grid--4 > .col { width: calc(25% - var(--space)) }
+.grid--5 > .col { width: calc(20% - var(--space)) }
+
+@media handheld, only screen and (max-width: 1000px) {
+  .grid--2 > .col { width: 100%; }
+
+  .grid--4 > .col { width: calc(50% - var(--space)) }
+
+  .grid--5 > .col { width: calc(50% - var(--space)) }
+}
+
+@media (--bs) {
+  .grid--flex > .col {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
 }

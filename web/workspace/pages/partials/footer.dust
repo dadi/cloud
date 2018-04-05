@@ -61,7 +61,7 @@ if (stick) {
     topSpacing: 65,
     bottomSpacing: 0,
     containerSelector: '#stickContainer',
-    minWidth: 800
+    minWidth: 1000
   });
 }
 
@@ -72,7 +72,7 @@ if (sticknav) {
     topSpacing: 0,
     bottomSpacing: 0,
     containerSelector: '#homeMain',
-    minWidth: 800
+    minWidth: 1000
   });
 }
 

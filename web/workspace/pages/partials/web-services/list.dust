@@ -1,20 +1,17 @@
-<div class="col w-1-4">
-  <div class="box box--x2 bd bd-grey mb" style="border-top: 1px solid #{color}">
-    <{?github}a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}"{:else}div{/github} class="box__inner">
-      <div class="box__icon">
-        <img src="/assets/products/dadi-{slug}.png" height="35" alt="Icon for DADI {name}">
-      </div>
-      <h2 class="fm fwn normal" style="color:#{color}">{slug}</h2>
-      <p class="mb">{overview}</p>
-    </{?github}a{:else}div{/github}>
-    <div class="box__footer box__footer--web-service">
-      {?github}
-        <a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}" class="box__cta small fm color-tint">Learn more</a>
-      {:else}
-        <span class="box__cta small fm color-tint">Coming soon</span>
-      {/github}
-      <a href="/{lang}/roadmap/web-services" class="box__cta small fm color-tint">Latest updates</a>
-      {?install}<a href="{install}" class="box__cta small fm color-tint">How to install</a>{/install}
+<div class="box box--small col bd bd-grey mb" style="border-top: 1px solid #{color}">
+  <{?github}a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}"{:else}div{/github} class="box__inner">
+    <div class="mb">
+      <img src="/assets/products/dadi-{slug}.png" height="40" alt="Icon for DADI {name}">
     </div>
+    <h2 class="fm fwn normal" style="color:#{color}">{slug}</h2>
+    <p class="mb">{overview}</p>
+  </{?github}a{:else}div{/github}>
+  <div class="box__footer">
+    {?github}
+      <a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}" class="box__cta small fm color-tint">Learn more</a>
+    {:else}
+      <span class="box__cta small fm color-tint">Coming soon…</span>
+    {/github}
+    {?install}<a href="{install}" class="box__cta small fm color-tint">Documentation</a>{/install}
   </div>
 </div>
