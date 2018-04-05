@@ -12,8 +12,7 @@
       "field": "web-service.slug"
     }],
     "filter": {
-      "published": true,
-      "web-service": { "$ne": null }
+      "published": true
     },
     "sort": {
       "publishedAt": -1
