@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DADI</title>
+    <link>{url.protocol}//{url.host}/</link>
+    <atom:link href="{url.href}" rel="self" type="application/rss+xml" />
+    <description>RSS Feed for DADI.cloud</description>
+    <language>en-gb</language>
+    <pubDate>{@formatDate unix=timestamp /}</pubDate>
+    <lastBuildDate>{@formatDate unix=timestamp /}</lastBuildDate>
+    {#rss-articles.results}
+      <item>
+        <title>{title}</title>
+        <link>{url.protocol}//{url.host}/{lang}/{?roadmap-category}roadmap/{roadmap-category[0].slug}{:else}knowledge/{knowledge-category[0].slug}{/roadmap-category}/{slug}</link>
+        <pubDate>{@formatDate unix=publishedAt /}</pubDate>
+        {?author}<author>{author[0].name}</author>{/author}
+        <guid>{_id}</guid>
+        <description><![CDATA[
+          {@markdown}{body|s}{/markdown}
+        ]]></description>
+      </item>
+    {/rss-articles.results}
+  </channel>
+</rss>

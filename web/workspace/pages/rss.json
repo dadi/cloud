@@ -1,0 +1,17 @@
+{
+  "page": {
+    "key": "rss"
+  },
+  "contentType": "application/rss+xml",
+  "datasources": [
+    "rss-articles"
+  ],
+  "requiredDatasources": [
+    "rss-articles"
+  ],
+  "routes": [
+    {
+      "path": "/:lang/rss"
+    }
+  ]
+}
