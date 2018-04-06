@@ -22,6 +22,10 @@
   });
 
 window.addMap = function () {
+  if (!mapboxgl.supported()) {
+    document.getElementById('map').innerHTML = 'Your browser does not support our network map.'
+  }
+
   mapboxgl.accessToken = 'pk.eyJ1IjoiYWJvdmVkYXZlIiwiYSI6Ink1a2RqVHcifQ.raf_kHdx5lG7ZeBF8XFcMw';
   window.map = new mapboxgl.Map({
     container: 'map',
