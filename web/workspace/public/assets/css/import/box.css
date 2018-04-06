@@ -118,6 +118,13 @@ a.box:hover .box__cta,
   background: #fff;
 }
 
+@media (--bs) {
+  .box--roadmap:before {
+    left: auto;
+    right: 25px;
+    top: 25px;
+  }
+}
 
 .box.bg-light-green:before {
   border-color: var(--green);
