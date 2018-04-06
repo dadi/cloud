@@ -36,7 +36,7 @@
             <h3><span>Roadmap updates</span></h3>
           </div>
 
-          <div class="grid grid--flex grid--2">
+          <div class="cols cols--2">
             {#roadmap-articles.results}
               {>"partials/articles/list"
                 dateFormat="short"
@@ -62,7 +62,7 @@
       <h3><span>Web services</span></h3>
     </div>
               
-    <div class="grid grid--flex grid--4">
+    <div class="cols cols--4">
       {#web-services.results}
         {>"partials/web-services/list"/}
       {/web-services.results}
@@ -72,7 +72,7 @@
       <h3><span>Latest knowledge articles</span></h3>
     </div>
 
-    <div class="grid grid--flex grid--4">
+    <div class="cols cols--4">
       {#knowledge-articles.results}
         {>"partials/articles/list"
           dateFormat="short"
@@ -84,7 +84,7 @@
       <h3><span>Knowledge categories</span></h3>
     </div>
 
-    <div class="grid grid--flex grid--5">
+    <div class="cols cols--5">
       {#knowledge-categories.results}
         {>"partials/knowledge/list"
           size="small"

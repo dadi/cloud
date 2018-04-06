@@ -77,6 +77,10 @@
   padding-bottom: 4px;
 }
 
+.box__link:hover h2 {
+  color: #3585fa;
+}
+
 .box__aside {
   float: right;
 }

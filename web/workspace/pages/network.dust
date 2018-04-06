@@ -61,7 +61,7 @@
       <h3><span>Roadmap updates</span></h3>
     </div>
 
-    <div class="grid grid--flex grid--4">
+    <div class="cols cols--4">
       {#articles.results}
         {>"partials/articles/list" /}
       {/articles.results}
@@ -114,7 +114,7 @@
       <h3><span>What can it be used for?</span></h3>
     </div>
 
-    <div class="grid grid--flex grid--4">
+    <div class="cols cols--4">
       {>"partials/usecases/list"
         icon="edit" 
         use="Content & publishing platforms" 
@@ -179,7 +179,7 @@
     </div>
     <p class="normal mb--x2">If you have spare computational power, DADI is a great application of your resource, delivering real world services for individuals, businesses and governments, whilst delivering income for you.</p>
 
-    <div class="grid grid--flex grid--3 mb">
+    <div class="cols cols--3 mb">
       <a href="/{lang}/knowledge/network/stargates" class="col box--small box bd bd-grey">
         <div class="box__inner">
           <h2 class="medium">Stargates</h2>

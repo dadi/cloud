@@ -17,7 +17,7 @@
         <h3 style="padding-bottom:30px">Upcoming milestones</h3>
       </div>
 
-      <div class="grid grid--flex grid--4">
+      <div class="cols cols--4">
         {#milestones.results}
           {@lt key=$idx value=4}
             {>"partials/roadmap/milestone" /}
@@ -36,10 +36,10 @@
       <h3><span>Roadmap updates</span></h3>
     </div>
 
-    <div class="grid grid--flex grid--3">
+    <div class="cols cols--3">
       {#roadmap-articles.results}
         {>"partials/articles/list"
-          size="medium"
+          size="normal"
           section="roadmap"
           category=roadmap-category[0].name 
           sub-category=web-service[0].name

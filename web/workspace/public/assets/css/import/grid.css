@@ -95,31 +95,37 @@
 
 /* flex box grid */
 
-.grid--flex {
+.cols {
   flex-wrap: wrap;
   display: flex;
+  margin-left: calc(- var(--space) / 2);
+  margin-right: calc(- var(--space) / 2);
 }
-.grid--flex > .col {
+.cols > .col {
   float: none;
   padding: 0;
   margin: 0 calc(var(--space) / 2) var(--space);
 }
 
-.grid--2 > .col { width: calc(50% - var(--space)) }
-.grid--3 > .col { width: calc(33.333% - var(--space)) }
-.grid--4 > .col { width: calc(25% - var(--space)) }
-.grid--5 > .col { width: calc(20% - var(--space)) }
+.cols--2 > .col { width: calc(50% - var(--space)) }
+.cols--3 > .col { width: calc(33.3% - var(--space)) }
+.cols--4 > .col { width: calc(25% - var(--space)) }
+.cols--5 > .col { width: calc(20% - var(--space)) }
 
 @media handheld, only screen and (max-width: 1000px) {
-  .grid--2 > .col { width: 100%; }
+  .cols--2 > .col { width: 100%; }
 
-  .grid--4 > .col { width: calc(50% - var(--space)) }
+  .cols--4 > .col { width: calc(50% - var(--space)) }
 
-  .grid--5 > .col { width: calc(50% - var(--space)) }
+  .cols--5 > .col { width: calc(50% - var(--space)) }
 }
 
 @media (--bs) {
-  .grid--flex > .col {
+  .cols {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .cols > .col {
     margin-left: 0;
     margin-right: 0;
     width: 100%;

@@ -17,9 +17,9 @@
 
 <main class="mb--x2 pt cf">
   <div class="cnt pb cf">
-    <div class="grid grid--flex grid--3">
+    <div class="cols cols--3">
       {#articles.results}
-        {>"partials/articles/list" /}
+        {>"partials/articles/list" size="normal" /}
       {/articles.results}
     </div>
 

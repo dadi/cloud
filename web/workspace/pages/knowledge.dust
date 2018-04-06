@@ -9,7 +9,7 @@
       <h1>{pages.results[0].title}</h1>
       <p class="normal mb--x2">{pages.results[0].excerpt}</p>
 
-      <div class="grid grid--flex grid--5">
+      <div class="cols cols--5">
         {#knowledge-categories.results}
           {>"partials/knowledge/list"
             size="small"
@@ -32,9 +32,9 @@
       <h3><span>Latest articles</span></h3>
     </div>
 
-    <div class="grid grid--flex grid--3">
+    <div class="cols cols--3">
       {#articles.results}
-        {>"partials/articles/list" /}
+        {>"partials/articles/list" size="normal" /}
       {:else}
         <div class="col w-1-1 tac"><p>No articles yet.</p></div>
       {/articles.results}

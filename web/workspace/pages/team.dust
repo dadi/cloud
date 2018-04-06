@@ -78,7 +78,7 @@
         <div class="hdr fm ttu mb">
         <h3><span>Articles from {name}</span></h3>
       </div>
-        <div class="grid grid--flex grid--4">
+        <div class="cols cols--4">
           {#articles.results}
             {>"partials/articles/list" /}
           {/articles.results}
