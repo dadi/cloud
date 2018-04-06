@@ -61,7 +61,7 @@ if (stick) {
     topSpacing: 65,
     bottomSpacing: 0,
     containerSelector: '#stickContainer',
-    minWidth: 1000
+    minWidth: 890
   });
 }
 
