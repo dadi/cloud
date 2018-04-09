@@ -1,24 +1,34 @@
-<?xml version="1.0"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>DADI</title>
-    <link>{url.protocol}//{url.host}/</link>
-    <atom:link href="{url.href}" rel="self" type="application/rss+xml" />
-    <description>RSS Feed for DADI.cloud</description>
-    <language>en-gb</language>
-    <pubDate>{@formatDate unix=timestamp /}</pubDate>
-    <lastBuildDate>{@formatDate unix=timestamp /}</lastBuildDate>
-    {#rss-articles.results}
-      <item>
-        <title>{title}</title>
-        <link>{url.protocol}//{url.host}/{lang}/{?roadmap-category}roadmap/{roadmap-category[0].slug}{:else}knowledge/{knowledge-category[0].slug}{/roadmap-category}/{slug}</link>
-        <pubDate>{@formatDate unix=publishedAt /}</pubDate>
-        {?author}<author>{author[0].name}</author>{/author}
-        <guid>{_id}</guid>
-        <description><![CDATA[
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{lang}">
+  <title>DADI</title>
+  <subtitle>Articles feed</subtitle>
+  <link href="{url.href}" rel="self" />
+  <id>{url.protocol}//{url.host}/</id>
+  <link href="{url.protocol}//{url.host}/" />
+  <updated>{@formatDate unix=timestamp /}</updated>
+  {#rss-articles.results}
+    <entry>
+      <title>{title}</title>
+      <published>{@formatDate unix=publishedAt /}</published>
+      <updated>{@formatDate unix=updatedAt /}</updated>
+      <id>{url.protocol}//{url.host}/{lang}/{?roadmap-category}roadmap/{roadmap-category[0].slug}{:else}knowledge/{knowledge-category[0].slug}{/roadmap-category}/{slug}</id>
+      <link href="{url.protocol}//{url.host}/{?roadmap-category}roadmap/{roadmap-category[0].slug}{:else}knowledge/{knowledge-category[0].slug}{/roadmap-category}/{slug}" rel="alternate" />     
+      {?author}
+        <author>
+          <name>{author[0].name}</name>
+          <uri>{url.protocol}//{url.host}/{lang}/team/{author[0].slug}</uri>
+        </author>
+      {/author}        
+      <summary type="html">
+        <div>
+          {@markdown}{excerpt|s}{/markdown}
+        </div>
+      </summary>
+      <content type="html">
+        <div>
           {@markdown}{body|s}{/markdown}
-        ]]></description>
-      </item>
-    {/rss-articles.results}
-  </channel>
-</rss>
+        </div>
+      </content>
+    </entry>
+  {/rss-articles.results}
+</feed>

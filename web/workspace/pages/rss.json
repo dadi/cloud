@@ -2,7 +2,10 @@
   "page": {
     "key": "rss"
   },
-  "contentType": "application/rss+xml",
+  "settings": {
+    "postProcessors": false
+  },
+  "contentType": "application/atom+xml",
   "datasources": [
     "rss-articles"
   ],
