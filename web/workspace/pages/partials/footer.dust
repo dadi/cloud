@@ -25,9 +25,9 @@
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/careers/">Careers</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/culture/">Culture</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/team/">Team</a></li>
-          {! <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/partners/">Partners</a></li> !}
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/contact/">Contact</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/privacy/">Privacy</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/rss/">RSS Feed</a></li>
         </ul>
       </div>
       <div class="col w-1-4 mb--x2">
