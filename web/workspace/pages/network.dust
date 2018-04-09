@@ -182,6 +182,7 @@
     <div class="cols cols--3 mb">
       <a href="/{lang}/knowledge/network/stargates" class="col box--small box bd bd-grey">
         <div class="box__inner">
+          <img src="/assets/network/dadi-network_stargate-black.svg" width="95">
           <h2 class="medium">Stargates</h2>
           <p class="normal">Provide domain routing and negotiate rates with Consumers.</p>
           <div class="box__footer">
@@ -191,6 +192,7 @@
       </a>
       <a href="/{lang}/knowledge/network/gateways" class="col box--small box bd bd-grey">
         <div class="box__inner">
+          <img src="/assets/network/dadi-network_gateway-black.svg" width="95">
           <h2 class="medium">Gateways</h2>
           <p class="normal">Act as network aggregation points for Host capacity and negotiate rates with Hosts.</p>
           <div class="box__footer">
@@ -200,6 +202,7 @@
       </a>
       <a href="/{lang}/knowledge/network/hosts" class="col box--small box bd bd-grey">
         <div class="box__inner">
+          <img src="/assets/network/dadi-network_host-black.svg" width="95">
           <h2 class="medium">Hosts</h2>
           <p class="normal">Provide processing power for multiple Consumer app bundles.</p>
           <div class="box__footer">
