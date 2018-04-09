@@ -20,12 +20,12 @@
         </author>
       {/author}        
       <summary type="html">
-        <div>
+        <div xmlns="http://www.w3.org/1999/xhtml">
           {@markdown}{excerpt|s}{/markdown}
         </div>
       </summary>
       <content type="html">
-        <div>
+        <div xmlns="http://www.w3.org/1999/xhtml">
           {@markdown}{body|s}{/markdown}
         </div>
       </content>
