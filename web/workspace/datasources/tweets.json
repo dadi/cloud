@@ -1,0 +1,14 @@
+{
+  "datasource": {
+    "key": "tweets",
+    "source": {
+      "api": "twitter",
+      "endpoint": "statuses/user_timeline"
+    },
+    "query": {
+      "screen_name": "dadi",
+      "exclude_replies": true
+    },
+    "count": 4
+  }
+}

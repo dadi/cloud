@@ -19,12 +19,12 @@
           <uri>{url.protocol}//{url.host}/{lang}/team/{author[0].slug}</uri>
         </author>
       {/author}        
-      <summary type="html">
+      <summary type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           {@markdown}{excerpt|s}{/markdown}
         </div>
       </summary>
-      <content type="html">
+      <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           {@markdown}{body|s}{/markdown}
         </div>

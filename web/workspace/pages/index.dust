@@ -29,8 +29,8 @@
   {>"partials/nav" stick="true" /}
 
   <div class="bg-tint mb pt"> 
-    <div class="cnt pb--x2">
-      <div class="grid" id="stickContainer">
+    <div class="cnt pb">
+      <div class="grid mb" id="stickContainer">
         <div class="col w-1-2">
           <div class="hdr fm ttu mb">
             <h3><span>Roadmap updates</span></h3>
@@ -40,6 +40,7 @@
             {#roadmap-articles.results}
               {>"partials/articles/list"
                 dateFormat="short"
+                size="normal"
               /}
             {/roadmap-articles.results}
           </div>  
@@ -53,6 +54,15 @@
             <a href="/{lang}/network" class="mt btn-more tac fm small">About the network &rarr;</a>
           </div>
         </div>
+      </div>
+
+      <div class="hdr fm ttu mb">
+        <h3><span><a href="https://twitter.com/">Follow us on Twitter @DADI</a></span></h3>
+      </div>
+      <div class="cols cols--4">
+        {#tweets}
+          {>"partials/tweet" /}
+        {/tweets}
       </div>
     </div>
   </div>

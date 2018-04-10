@@ -1,17 +1,7 @@
 {
-  "allowJsonView": true,
-  "api": {
-    "enabled": true,
-    "host": "35.178.60.215",
-    "port": 3001
-  },
-  "auth": {
-    "tokenUrl": "/token",
-    "clientId": "cloud-client",
-    "secret": "nrq5d6jl0b"
-  },
   "cluster": false,
   "debug": true,
+  "allowDebugView": true,
   "globalEvents": [
     "i18n"
   ],
@@ -34,6 +24,28 @@
   "server": {
     "host": "127.0.0.1",
     "port": 3000
+  },
+  "api": {
+    "main": {
+      "host": "35.178.60.215",
+      "port": 3001,
+      "auth": {
+        "clientId": "cloud-client",
+        "secret": "nrq5d6jl0b"
+      }
+    },
+    "twitter": {
+      "type": "restapi",
+      "provider": "twitter",
+      "auth": {
+        "oauth": {
+          "consumer_key": "",
+          "consumer_secret": "",
+          "token": "",
+          "token_secret": ""
+        }
+      }
+    }
   },
   "global": {
     "networkMonitor": {

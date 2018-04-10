@@ -1,0 +1,9 @@
+<div class="col box box--small bd bd-grey mb bg-white">
+  <div class="box__inner">
+    <a href="https://twitter.com/{user.screen_name}/status/{id_str}" target="_blank"><img src="/assets/social/twitter-blue.svg" width="35"></a>
+    <p class="normal read">{text|tweet|s}</p>
+  </div>
+  <div class="box__footer bdt bd-grey small color-tint">
+    <a href="https://twitter.com/{user.screen_name}/status/{id_str}" target="_blank">{@formatDate data=created_at format="DD MMM YYYY HH:mm" parseFormat="ddd MMM DD HH:mm:ss ZZ YYYY" /}</a>
+  </div>
+</div>
