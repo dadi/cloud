@@ -12,8 +12,6 @@
   {/retweeted_status}
 
   <div class="box__inner">
-    <a href="https://twitter.com/{user.screen_name}/status/{id_str}" target="_blank"></a>
-
     {#retweeted_status}
       <p class="normal read">
         {@tweet urls=entities.urls}{full_text|s}{/tweet}
@@ -38,9 +36,9 @@
         <img src="/assets/icons/favorite.svg" height="17" class="vam tweet__actions">
       </a>
       
-      <div class="box__aside">
+      <a href="https://twitter.com/{user.screen_name}/status/{id_str}" target="_blank" class="box__aside">
         {@formatDate data=created_at format="DD MMM YYYY" parseFormat="ddd MMM DD HH:mm:ss ZZ YYYY" /}
-      </div>
+      </a>
     </a>
   </div>
 </div>
