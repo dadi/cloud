@@ -1,9 +1,46 @@
 <div class="col box box--small bd bd-grey mb bg-white">
+  {#extended_entities.media[0]}
+    <img src="{media_url_https}" alt="Tweet media" class="fill">
+  {/extended_entities.media[0]}
+
+  {#retweeted_status}
+    <a style="padding:18px 25px 15px;" class="block color-tint bg-tint" href="https://twitter.com/{user.screen_name}" target="_blannk">
+      {! <img src="{profile_image_url_https}" width="30" class="box__aside vam" alt="Profile picture of {user.screen_name}"> !}
+      <img src="/assets/social/retweet.svg" class="vam" alt="Retweet icon" width="25">
+      {user.screen_name}
+    </a>
+  {/retweeted_status}
+
   <div class="box__inner">
-    <a href="https://twitter.com/{user.screen_name}/status/{id_str}" target="_blank"><img src="/assets/social/twitter-blue.svg" width="35"></a>
-    <p class="normal read">{text|tweet|s}</p>
+    <a href="https://twitter.com/{user.screen_name}/status/{id_str}" target="_blank"></a>
+
+    {#retweeted_status}
+      <p class="normal read">
+        {@tweet urls=entities.urls}{full_text|s}{/tweet}
+      </p>
+    {:else}
+      <p class="normal read">
+        {@tweet urls=entities.urls}{full_text|s}{/tweet}
+      </p>
+    {/retweeted_status}
   </div>
+
   <div class="box__footer bdt bd-grey small color-tint">
-    <a href="https://twitter.com/{user.screen_name}/status/{id_str}" target="_blank">{@formatDate data=created_at format="DD MMM YYYY HH:mm" parseFormat="ddd MMM DD HH:mm:ss ZZ YYYY" /}</a>
+    <a href="https://twitter.com/{user.screen_name}/status/{id_str}" target="_blank">
+      
+      <a href="https://twitter.com/intent/tweet?in_reply_to={id_str}" target="_blank" title="Reply">
+        <img src="/assets/icons/mail-reply.svg" height="17" class="vam tweet__actions">
+      </a>
+      <a href="https://twitter.com/intent/retweet?tweet_id={id_str}" target="_blank" title="Retweet">
+        <img src="/assets/icons/duplicate.svg" height="17" class="vam tweet__actions">
+      </a>
+      <a href="https://twitter.com/intent/like?tweet_id={id_str}" target="_blank" title="Like">
+        <img src="/assets/icons/favorite.svg" height="17" class="vam tweet__actions">
+      </a>
+      
+      <div class="box__aside">
+        {@formatDate data=created_at format="DD MMM YYYY" parseFormat="ddd MMM DD HH:mm:ss ZZ YYYY" /}
+      </div>
+    </a>
   </div>
 </div>

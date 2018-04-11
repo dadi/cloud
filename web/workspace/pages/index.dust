@@ -57,7 +57,7 @@
       </div>
 
       <div class="hdr fm ttu mb">
-        <h3><span><a href="https://twitter.com/">Follow us on Twitter @DADI</a></span></h3>
+        <h3><span><a href="https://twitter.com/dadi" target="_blank">Follow us on Twitter @DADI</a></span></h3>
       </div>
       <div class="cols cols--4">
         {#tweets}

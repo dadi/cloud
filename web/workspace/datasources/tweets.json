@@ -7,7 +7,8 @@
     },
     "query": {
       "screen_name": "dadi",
-      "exclude_replies": true
+      "exclude_replies": true,
+      "tweet_mode": "extended"
     },
     "count": 4
   }
