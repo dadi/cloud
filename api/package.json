@@ -4,6 +4,7 @@
   "dependencies": {
     "@dadi/api": "3.x",
     "@dadi/api-mongodb": "~3.5.0",
+    "@dadi/apidoc": "1.5.2",
     "slugify": "^1.2.9"
   }
 }
