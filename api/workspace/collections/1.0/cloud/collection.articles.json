@@ -247,7 +247,6 @@
   "settings": {
     "displayName": "Articles",
     "cache": false,
-    "authenticate": false,
     "count": 40,
     "storeRevisions": false,
     "description": "",

@@ -57,7 +57,6 @@
   "settings": {
     "displayName": "Roadmap",
     "cache": false,
-    "authenticate": false,
     "count": 40,
     "sort": "order",
     "index": [

@@ -87,7 +87,6 @@
   "settings": {
     "displayName": "Milestones",
     "cache": false,
-    "authenticate": false,
     "count": 40,
     "sort": "date",
     "sortOrder": 1,

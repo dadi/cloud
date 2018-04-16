@@ -112,7 +112,6 @@
   "settings": {
     "displayName": "Pages",
     "cache": false,
-    "authenticate": false,
     "count": 40,
     "sort": "name",
     "sortOrder": 1,
