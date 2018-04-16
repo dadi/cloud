@@ -123,7 +123,7 @@
   "settings": {
     "displayName": "Team",
     "cache": false,
-    "authenticate": true,
+    "authenticate": false,
     "count": 40,
     "sort": "order",
     "sortOrder": 1,
