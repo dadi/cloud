@@ -58,7 +58,7 @@
   "settings": {
     "displayName": "Partners",
     "cache": false,
-    "authenticate": false,
+    "authenticate": true,
     "count": 40,
     "sort": "date",
     "sortOrder": 1,

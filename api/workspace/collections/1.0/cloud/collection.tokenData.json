@@ -39,7 +39,7 @@
   },
   "settings": {
     "cache": false,
-    "authenticate": false,
+    "authenticate": true,
     "fieldLimiters": {
       "_apiVersion": 0,
       "_createdAt": 0,

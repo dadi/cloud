@@ -57,7 +57,7 @@
   "settings": {
     "displayName": "Knowledge",
     "cache": false,
-    "authenticate": false,
+    "authenticate": true,
     "count": 40,
     "sort": "name",
     "sortOrder": 1,
