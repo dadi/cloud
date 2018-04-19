@@ -116,6 +116,26 @@
     "sort": "name",
     "sortOrder": 1,
     "storeRevisions": false,
-    "description": ""
+    "description": "",
+    "hooks": {
+      "beforeCreate": [
+        {
+          "hook": "slugify",
+          "options": {
+            "from": "title",
+            "to": "slug"
+          }
+        }
+      ],
+      "beforeUpdate": [
+        {
+          "hook": "slugify",
+          "options": {
+            "from": "title",
+            "to": "slug"
+          }
+        }
+      ]
+    }
   }
 }
