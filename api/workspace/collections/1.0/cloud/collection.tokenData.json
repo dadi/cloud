@@ -1,40 +1,52 @@
 {
   "fields": {
     "priceBTC": {
-      "type": "Number"
+      "type": "Number",
+      "required": true
     },
     "priceETH": {
-      "type": "Number"
+      "type": "Number",
+      "required": true
     },
     "priceUSD": {
-      "type": "Number"
+      "type": "Number",
+      "required": true
     },
     "marketCapBTC": {
-      "type": "Number"
+      "type": "Number",
+      "required": true
     },
     "marketCapETH": {
-      "type": "Number"
+      "type": "Number",
+      "required": true
     },
     "marketCapUSD": {
-      "type": "Number"
+      "type": "Number",
+      "required": true
     },
     "volume24HourBTC": {
-      "type": "Number"
+      "type": "Number",
+      "required": true
     },
     "volume24HourETH": {
-      "type": "Number"
+      "type": "Number",
+      "required": true
     },
     "volume24HourUSD": {
-      "type": "Number"
+      "type": "Number",
+      "required": true
     },
     "supplyAvailable": {
-      "type": "Number"
+      "type": "Number",
+      "required": true
     },
     "supplyTotal": {
-      "type": "Number"
+      "type": "Number",
+      "required": true
     },
     "updatedAt": {
-      "type": "Number"
+      "type": "Number",
+      "required": true
     }
   },
   "settings": {
