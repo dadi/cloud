@@ -62,12 +62,22 @@
         {
           "hook": "rejectDuplicateTokenData"
         }
+      ],
+      "afterCreate": [
+        {
+          "hook": "removeOldTokenData"
+        }
       ]
     },
     "index": [
       {
         "keys": {
           "updatedAt": 1
+        }
+      },
+      {
+        "keys": {
+          "updatedAt": -1
         }
       }
     ]
