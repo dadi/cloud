@@ -13,13 +13,13 @@ const symbols = [
 ]
 
 const apiCredentials = {
-  clientId: webConfig.auth.clientId,
-  secret: webConfig.auth.secret
+  clientId: webConfig.api.main.auth.clientId,
+  secret: webConfig.api.main.auth.secret
 }
 
 let apiOptions = {
-  hostname: webConfig.api.host,
-  port: webConfig.api.port,
+  hostname: webConfig.api.main.host,
+  port: webConfig.api.main.port,
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
