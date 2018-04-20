@@ -3,8 +3,8 @@ const moment = require('moment')
 const Event = function (req, res, data, callback) {
   const filter = {
     updatedAt: {
-      // $gt: parseFloat((moment().add(-24, 'hours').valueOf() / 1000).toFixed(0))
-      $gt: 1520495567
+      $gt: parseFloat((moment().add(-24, 'hours').valueOf() / 1000).toFixed(0))
+    // $gt: 1520495567
     }
   }
 
