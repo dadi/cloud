@@ -2,18 +2,18 @@
 const moment = require('moment')
 
 const Event = function (req, res, data, callback) {
-  const rawTokenInfo = data.tokenData.results
+  const rawTokenInfo = data.tokenData.results.reverse()
   delete data.token
 
   const time = rawTokenInfo.map(i => moment.unix(i.updatedAt).format('H'))
- 
+
   const priceBTC = rawTokenInfo.map(i => i.priceBTC)
   const priceETH = rawTokenInfo.map(i => i.priceETH)
   const priceUSD = rawTokenInfo.map(i => i.priceUSD)
-  
+
   const marketCapETH = rawTokenInfo.map(i => i.marketCapETH)
   const marketCapUSD = rawTokenInfo.map(i => i.marketCapUSD)
- 
+
   const volume24HourBTC = rawTokenInfo.map(i => i.volume24HourBTC)
   const volume24HourETH = rawTokenInfo.map(i => i.volume24HourETH)
   const volume24HourUSD = rawTokenInfo.map(i => i.volume24HourUSD)
