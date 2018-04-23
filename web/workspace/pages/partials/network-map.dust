@@ -1,44 +1,107 @@
-<div class="network {?size}network--large{/size}">
-<div id="map"></div>
-
 <script type="text/javascript">
-  window.connectToSocket("{global.networkMonitor.publicUrl|s}", "{global.networkMonitor.root}");
+var map = new L.Map("map", {
+  center: new L.LatLng(40,0),
+  zoom: {?size}2{:else}1{/size},
+  zoomControl: false,
+  detectRetina: true,
+  attributionControl: false,
+  scale: 2,
+  dragging: false,
+  doubleClickZoom: false,
+  boxZoom: false,
+  scrollWheelZoom: false
+});
 
-  window.addSocketListener('queue', 'queries/second', function (data) {
-     document.getElementById('network_reqs').innerHTML = data.value;
+var layer = L.tileLayer('https://api.tiles.mapbox.com/v4/{~lb}id{~rb}/{~lb}z{~rb}/{~lb}x{~rb}/{~lb}y{~rb}.png?access_token=pk.eyJ1IjoiYWJvdmVkYXZlIiwiYSI6Ink1a2RqVHcifQ.raf_kHdx5lG7ZeBF8XFcMw', {
+  detectRetina: true,
+  id: 'abovedave.a9xr3nj8',
+  noWrap: true,
+}).addTo(map);
+
+window.connectToSocket = function (host, path) {
+  window.connection = io(host, {
+    path: '/' + path,
+    forceNew: false
   });
-  
+
+  window.connection.on('connect', function() {
+    console.log('Connected');
+  });
+}
+
+window.onMapLoaded = function (callback) {
+  layer.on('load', function () {
+    callback();
+  });
+}
+
+window.addSocketListener = function (context, event, callback) {
+  var listener = window.connection.emit('join', context);
+
+  listener.on(event, function(data) {
+    callback(data);
+  });
+}
+
+window.pulseNode = function (data) {
+  if (window.hosts) {
+    var identity = data.value.node.split('.');
+    var serial = identity[1];
+
+    var existingLayer = document.getElementById(serial);
+
+    if (existingLayer) {
+      window.animateMarker(existingLayer);
+    }
+  }
+}
+
+window.addHostsToMap = function (hosts) {
+  window.hosts = hosts;
+
+  window.hosts.forEach(function (host) {
+    window.addHostToMap(host);
+  })
+}
+
+window.addHostToMap = function (host) {
+  // Do nothing if it already exists
+  if (document.getElementById(host.serial) || !host.geo) return;
+
+  L.marker([host.geo.latitude, host.geo.longitude], {
+    icon: L.divIcon({
+      className: '',
+      html: '<div id="' + host.serial + '" class="dadiNode"></div>'
+    }),
+  }).addTo(map);
+}
+
+window.animateMarker = function (geo) {
+  if (!geo.classList.contains('dadiNode--pulse')) {
+    geo.classList.add('dadiNode--pulse');
+    setTimeout(function () {
+      geo.classList.remove('dadiNode--pulse');
+    }, 2000);
+  }
+}
+
+window.connectToSocket('{global.networkMonitor.publicUrl|s}', '{global.networkMonitor.root}');
+
+window.onMapLoaded(function () {
+  window.addSocketListener('queue', 'queries/second', function (data) {
+     document.getElementById('concurrent_requests').innerHTML = data.value;
+  });
   window.addSocketListener('hosts', 'hosts_changed', function (data) {
     window.addHostsToMap(data.value.hosts);
-    document.getElementById('network_hosts').innerHTML = data.value.hosts.length;
+    document.getElementById('host_count').innerHTML = data.value.hosts.length;
   });
-
-  window.addSocketListener('requests', 'average_response', function (data) {
-     document.getElementById('average_response').innerHTML = data.value + ' <span class="stat__unit">ms</span>';
-   });
 
   window.addSocketListener('requests', 'dequeued_requests', function (data) {
     window.pulseNode(data);
   });
 
-window.addMap = function () {
-  if (!mapboxgl.supported()) {
-    document.getElementById('map').innerHTML = 'Your browser does not support our network map.'
-  }
-
-  mapboxgl.accessToken = 'pk.eyJ1IjoiYWJvdmVkYXZlIiwiYSI6Ink1a2RqVHcifQ.raf_kHdx5lG7ZeBF8XFcMw';
-  window.map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/abovedave/cjdwwax2q1cqy2sn3d8bpmb7v',
-    zoom: {^size}0.2{:else}1{/size},
-    renderWorldCopies: false,
-    scrollZoom: false,
-    interactive: false,
-    center: [15, 40],
-    attributionControl: false
+  window.addSocketListener('requests', 'average_response', function (data) {
+    document.getElementById('average_response').innerHTML = data.value + ' <span class="stat__unit">ms</span>';
   });
-}
-
-window.addMap();
+});
 </script>
-</div>
