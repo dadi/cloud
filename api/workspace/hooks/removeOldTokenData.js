@@ -6,11 +6,11 @@
 const Model = require('@dadi/api').Model
 
 module.exports = function (obj, type, data) {
-  return deleteTokenData(obj, data).then(results => {
-    return obj
-  }).catch(err => {
-    return Promise.reject(err)
-  })
+  // return deleteTokenData(obj, data).then(results => {
+  return obj
+  // }).catch(err => {
+  //   return Promise.reject(err)
+  // })
 }
 
 /**
