@@ -6,3 +6,5 @@ cache
 /npm-debug.log
 /web/workspace/public/robots.txt
 /web/.wallet
+/web/config/config.qa.json
+/web/config/config.production.json
