@@ -1,10 +1,9 @@
 {>"partials/header"/}
 
 {<head}
-  <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js"></script>
-  <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css" rel="stylesheet" />
   <script type="text/javascript" src="/assets/js/socket.io.js"></script>
-  <script type="text/javascript" src="/assets/js/network-map.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
 {/head}
 
 <header class="intro bg-dark color-white cf">

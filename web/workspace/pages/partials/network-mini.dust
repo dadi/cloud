@@ -2,7 +2,9 @@
   <h3><span>The Testnet</span></h3>
 </div>
 
-{>"partials/network-map"/}
+<div class="network">
+  <div id="map"></div>
+</div>
 
 <div class="grid pt">
   <div class="col w-1-3">
@@ -20,7 +22,7 @@
       <div class="stat__metric small color-tint fm">
         Concurrent requests
       </div>
-      <div class="stat__figure fwb" id="network_reqs">
+      <div class="stat__figure fwb" id="concurrent_requests">
         Offline
       </div>
     </div>
@@ -30,9 +32,11 @@
       <div class="stat__metric small color-tint fm">
         Hosts
       </div>
-      <div class="stat__figure fwb" id="network_hosts">
+      <div class="stat__figure fwb" id="host_count">
         Offline
       </div>
     </div>
   </div>
 </div>
+
+{>"partials/network-map"/}

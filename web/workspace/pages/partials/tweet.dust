@@ -1,6 +1,6 @@
 <div class="col box box--small bd bd-grey mb bg-white">
   {#extended_entities.media[0]}
-    <img src="{media_url_https}" alt="Tweet media" class="fill">
+    <img src="{media_url_https}" alt="Tweet media" class="fill block">
   {/extended_entities.media[0]}
 
   {#retweeted_status}
