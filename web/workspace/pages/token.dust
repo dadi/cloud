@@ -121,18 +121,6 @@
       </div>
     </div>
 
-
-    <div class="token-charts">
-      <div class="token-marketcap ct-chart ct-square">
-        <span class="ct-title fm" style="color:#0ecc5f">Market cap</span>
-      </div>
-      {! <div class="token-price ct-chart ct-square">
-        <span class="ct-title fm" style="color:#ffbf0e">Price in ETH</span>
-      </div>  !}
-    </div>
-
-
-
     <div class="token-volume ct-chart ct-square">
       <span class="ct-title fm" style="color:#316ff4">Token volume</span>
     </div>
