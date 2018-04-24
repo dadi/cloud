@@ -256,6 +256,11 @@
         "keys": {
           "publishedAt": 1
         }
+      },
+      {
+        "keys": {
+          "publishedAt": -1
+        }
       }
     ],
     "hooks": {

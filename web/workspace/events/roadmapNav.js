@@ -1,12 +1,12 @@
 const moment = require('moment')
-const groupBy = require('lodash.groupby');
+const groupBy = require('lodash.groupby')
 
 const Event = function (req, res, data, callback) {
   if (!data.hasResults('milestones')) callback()
 
   // Fist and last date from the datasource
-  const startDate = moment(data.milestones.results[0].date);
-  const endDate = moment(data.milestones.results[data.milestones.results.length-1].date);
+  const startDate = moment(data.milestones.results[0].date)
+  const endDate = moment(data.milestones.results[data.milestones.results.length - 1].date)
 
   // Stop if end if before start
   if (endDate.isBefore(startDate)) callback()
