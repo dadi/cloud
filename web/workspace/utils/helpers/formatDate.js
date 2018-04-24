@@ -16,8 +16,10 @@ dust.helpers.formatDate = function (chunk, context, bodies, params) {
   } else if (params.unix) {
     var unix = context.resolve(params.unix)
     return chunk.write(moment.unix(unix / 1000).format(format))
-  } else {
+  } else if (params.data) {
     var data = context.resolve(params.data)
     return chunk.write(moment(data, parseFormat || format).format(format))
   }
+
+  return chunk.write('')
 }
