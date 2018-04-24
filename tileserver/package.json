@@ -1,0 +1,15 @@
+{
+  "name": "mbtile-server",
+  "description": "A crazy simple mbtiles server in node",
+  "version": "0.0.1",
+  "private": false,
+  "author": "Chris Helm",
+  "dependencies": {
+    "@mapbox/mbtiles": "latest",
+    "body-parser": "^1.18.2",
+    "express": "latest"
+  },
+  "scripts": {
+    "start": "node server.js data/dadi_2cb479.mbtiles 9999"
+  }
+}
