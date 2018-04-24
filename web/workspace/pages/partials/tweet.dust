@@ -1,14 +1,18 @@
 <div class="col box box--small bd bd-grey mb bg-white">
-  {#extended_entities.media[0]}
-    <img src="{media_url_https}" alt="Tweet media" class="fill block">
-  {/extended_entities.media[0]}
-
   {#retweeted_status}
+    {#extended_entities.media[0]}
+      <img src="{media_url_https}" alt="Tweet media" class="fill block">
+    {/extended_entities.media[0]}
+
     <a style="padding:18px 25px 15px;" class="block color-tint bg-tint" href="https://twitter.com/{user.screen_name}" target="_blannk">
       {! <img src="{profile_image_url_https}" width="30" class="box__aside vam" alt="Profile picture of {user.screen_name}"> !}
       <img src="/assets/social/retweet.svg" class="vam" alt="Retweet icon" width="25">
       {user.screen_name}
     </a>
+  {:else}
+    {#extended_entities.media[0]}
+      <img src="{media_url_https}" alt="Tweet media" class="fill block">
+    {/extended_entities.media[0]}
   {/retweeted_status}
 
   <div class="box__inner">
