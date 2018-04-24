@@ -164,10 +164,17 @@
     "displayName": "Web services",
     "cache": false,
     "count": 40,
-    "sort": "name",
+    "sort": "order",
     "sortOrder": 1,
     "storeRevisions": false,
     "description": "",
+    "index": [
+      {
+        "keys": {
+          "order": -1
+        }
+      }
+    ],
     "hooks": {
       "beforeCreate": [
         {

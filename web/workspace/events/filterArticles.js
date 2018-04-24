@@ -11,28 +11,28 @@ const Event = function (req, res, data, callback) {
 
   // roadmap-category.json
   if (data.params.roadmapCategory) {
-    filter = { "roadmap-category.slug": data.params.roadmapCategory }
+    filter = { 'roadmap-category.slug': data.params.roadmapCategory }
   }
 
   // network.json
   if (data.page.key === 'network') {
-    filter = { "roadmap-category.slug": "network" }
+    filter = { 'roadmap-category.slug': 'network' }
   }
 
   // knowledge.json
   if (data.page.key === 'knowledge' && data.params.category) {
-    filter = { "knowledge-category.slug": data.params.category }
+    filter = { 'knowledge-category.slug': data.params.category }
   }
   if (data.page.key === 'knowledge' && !data.params.category) {
-    filter = { "knowledge-category": { $ne: null } }
+    filter = { 'knowledge-category': { $ne: null } }
   }
 
   // team.json
   if (data.page.key === 'team' && data.params.name) {
-    filter = { "author.slug": data.params.name }
+    filter = { 'author.slug': data.params.name }
   }
 
-  callback(null, Object.assign({ "published": true }, filter))
+  callback(null, Object.assign({ 'published': true }, filter))
 }
 
 module.exports = function (req, res, data, callback) {

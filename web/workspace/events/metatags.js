@@ -24,7 +24,7 @@ const Event = function (req, res, data, callback) {
     meta.title = article.metaTitle ? article.metaTitle.trim() : article.title.trim()
     meta.description = article.metaDescription ? article.metaDescription.trim() : article.excerpt.trim()
     if (article.author && article.author[0] && article.author[0].twitter) meta.authorTwitter = article.author[0].twitter
-    
+
     // get first image
     if (article.body) {
       const images = article.body.match(/!\[[^\]]+\]\([^)]+\)/)
@@ -44,7 +44,7 @@ const Event = function (req, res, data, callback) {
     }
   }
 
-  // -------------------------  
+  // -------------------------
   // Web services
   if (data.hasResults('web-service') && data.page.key === 'web-services') {
     const app = data['web-service'].results[0]
