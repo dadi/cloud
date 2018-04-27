@@ -5,7 +5,7 @@ pipeline {
           stage('API tests') {
             steps {
               sh "pwd"
-              sh "newman run collection.json -e environment.json -r cli,junit,html"
+              sh "newman run test/collection.json -e test/environment.json -r cli,junit,html"
             }
       }
   }
