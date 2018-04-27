@@ -1,0 +1,12 @@
+pipeline {
+  agent any
+
+    stages {
+          stage('API tests') {
+            steps {
+              sh "pwd"
+              sh "newman run collection.json -e environment.json -r cli,junit,html"
+            }
+      }
+  }
+}
