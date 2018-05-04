@@ -91,6 +91,7 @@ h1, h2 {
     border-bottom: 1px solid var(--grey);
     transition: all 0.2s;
     color: #3585fa;
+    word-break: break-word;
   }
   & a:hover {
     background: #EBF4FF;

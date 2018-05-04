@@ -1,0 +1,3 @@
+{#extended_entities.media[0]}
+  <img src="{media_url_https}" alt="Tweet media" class="fill block">
+{/extended_entities.media[0]}
