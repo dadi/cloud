@@ -2,8 +2,8 @@
   "name": "dadicloud-api",
   "main": "server.js",
   "dependencies": {
-    "@dadi/api": "~3.0.0",
-    "@dadi/api-mongodb": "~3.5.0",
+    "@dadi/api": "^3.1.1",
+    "@dadi/api-mongodb": "^4.1.0",
     "@dadi/apidoc": "1.5.2",
     "slugify": "^1.2.9"
   }
