@@ -10,6 +10,10 @@
   <div class="intro__about animation fade-in fm">
     <h1><img src="/assets/img/dadi-logo-white.svg" alt="DADI"></h1>
     {@markdown}{pages.results[0].excerpt|s}{/markdown}
+
+    <a href="#video" class="btn intro__video">
+      ► Watch the introduction
+    </a>
   </div>
 
   <video class="animation fade-in" width="1920" height="1080" autoplay muted loop playsinline poster="/assets/video/header.jpg">
@@ -21,7 +25,7 @@
 
   <div class="intro__credit">
     Illustration by <a href="https://somethingsavage.com">Daniel Savage</a>
-  </div>
+  </div>  
 </header>
 
 <main class="mb--x2" id="homeMain">
@@ -104,5 +108,7 @@
     <a href="/{lang}/knowledge" class="btn-more tac fm small">View all knowledge &rarr;</a>
   </div>
 </main>
+
+{>"partials/video"/}
 
 {>"partials/footer"/}

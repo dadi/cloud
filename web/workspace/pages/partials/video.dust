@@ -1,0 +1,55 @@
+<div id="video" class="overlay">
+  <a href="#" id="close-video" class="overlay__close">×</a>
+  <div id="video-player"></div>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script>
+    var elmVid = document.getElementById('video');
+
+    window.addEventListener('hashchange', function (event) {
+      var videoIsActive = elmVid.classList.contains('active');
+
+      if (location.hash === '#video') {
+        if (!videoIsActive) {
+          toggleVideo(true);
+        }
+      } else if (videoIsActive) {
+        toggleVideo(false);
+      }
+    }, false);
+
+    var options = {
+      id: 236424713,
+      loop: false,
+      color: '0ECB5F',
+      title: false,
+      byline: false,
+      autoplay: false
+    };
+
+    var toggleVideo = function(active) {
+      var player = new Vimeo.Player('video-player', options);
+
+      if (active) {
+        elmVid.classList.add('active');
+      } else {
+        elmVid.classList.remove('active');
+      }
+
+      document.getElementsByTagName('body')[0].classList.toggle('overflow-hidden');
+
+      if (active) {
+        if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+          setTimeout(function() {
+            player.play();
+          }, 700)
+        }
+      } else {
+        player.unload();
+      }
+    };
+
+    if (location.hash === '#video') {
+      toggleVideo(true);
+    }
+  </script>
+</div>

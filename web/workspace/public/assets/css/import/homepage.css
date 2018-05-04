@@ -31,6 +31,11 @@
   z-index: 1;
 }
 
+.intro__about .btn {
+  color: #fff;
+  margin-top: 10px;
+}
+
 .intro video {
   width: 100%;
   height: auto;

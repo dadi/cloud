@@ -10,6 +10,7 @@
 @import "import/homepage.css";
 @import "import/highlight.css";
 @import "import/charts.css";
+@import "import/overlay.css";
 @import "import/footer.css";
 
 * {
