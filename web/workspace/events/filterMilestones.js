@@ -9,11 +9,11 @@ const Event = function (req, res, data, callback) {
     filter = { 'category.slug': data.params.roadmapCategory }
   }
 
-  if (data.title === 'roadmap') {
+  if (data.page.name === 'roadmap') {
     filter = { 'complete': { $ne: true } }
   }
 
-  if (data.title === 'roadmap' && !data.params.roadmapCategory) {
+  if (data.page.name === 'roadmap' && !data.params.roadmapCategory) {
     filter = {
       'complete': { $ne: true },
       'date': {
@@ -21,9 +21,11 @@ const Event = function (req, res, data, callback) {
         $lte: moment().add(30, 'days').valueOf()
       }
     }
+
+    console.log(filter)
   }
 
-  if (data.title === 'roadmap-milestones' && data.params.status) {
+  if (data.page.name === 'roadmap-milestones' && data.params.status) {
     const status = data.params.status === 'complete' ? true : { $ne: true }
 
     filter = {
