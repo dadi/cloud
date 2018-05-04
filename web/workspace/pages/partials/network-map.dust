@@ -12,9 +12,8 @@ var map = new L.Map("map", {
   scrollWheelZoom: false
 });
 
-var layer = L.tileLayer('https://api.tiles.mapbox.com/v4/{~lb}id{~rb}/{~lb}z{~rb}/{~lb}x{~rb}/{~lb}y{~rb}.png?access_token=pk.eyJ1IjoiYWJvdmVkYXZlIiwiYSI6Ink1a2RqVHcifQ.raf_kHdx5lG7ZeBF8XFcMw', {
+var layer = L.tileLayer('{url.protocol}//{url.hostname}:9999/{~lb}z{~rb}/{~lb}x{~rb}/{~lb}y{~rb}.png', {
   detectRetina: true,
-  id: 'abovedave.a9xr3nj8',
   noWrap: true,
 }).addTo(map);
 
