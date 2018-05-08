@@ -7,8 +7,8 @@ if (process.argv.length < 3) {
   process.exit(1)
 }
 
-let host = 'localhost'
-let port = 3000
+let host = '0.0.0.0'
+let port = 3004
 
 if (process.argv.length === 4) {
   port = parseInt(process.argv[3])
