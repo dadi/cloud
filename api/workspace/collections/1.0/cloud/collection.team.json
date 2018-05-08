@@ -106,6 +106,24 @@
         }
       }
     },
+    "image": {
+      "type": "Reference",
+      "label": "Image (500 x 265)",
+      "message": "jpg or png",
+      "required": false,
+      "settings": {
+        "collection": "mediaStore"
+      },
+      "publish": {
+        "section": "Details",
+        "subType": "Image",
+        "placement": "sidebar",
+        "display": {
+          "list": false,
+          "edit": true
+        }
+      }
+    },
     "order": {
       "type": "Number",
       "required": false,
