@@ -53,6 +53,6 @@
   "publicUrl": {
     "host": "35.178.60.215",
     "port": 3002,
-    "protocol": "http"
+    "protocol": "http:"
   }
 }
