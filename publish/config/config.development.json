@@ -3,6 +3,10 @@
     "name": "DADI Cloud CMS",
     "publisher": "DADI"
   },
+  "server": {
+    "host": "127.0.0.1",
+    "port": 3001
+  },
   "apis": [
     {
       "name": "DADI Cloud API",
@@ -17,21 +21,17 @@
       "menu": [
         {
           "collections": [
+            "pages",
             "team",
-            "pages"
+            "partners"
           ],
           "title": "Content"
         },
         {
           "collections": [
             "milestones",
+            "knowledge-categories",
             "roadmap-categories"
-          ],
-          "title": "Roadmap"
-        },
-        {
-          "collections": [
-            "knowledge-categories"
           ],
           "title": "Taxonomy"
         }
@@ -39,19 +39,20 @@
     }
   ],
   "auth": {
-    "enabled": false,
+    "enabled": true,
     "host": "http://127.0.0.1",
     "port": 8081,
     "version": "1.0",
-    "database": "cloud",
+    "database": "auth",
     "collection": "users",
     "credentials": {
       "clientId": "cloud-client",
       "secret": "nrq5d6jl0b"
     }
   },
-  "server": {
+  "publicUrl": {
     "host": "127.0.0.1",
-    "port": 3001
+    "port": 3001,
+    "protocol": "http"
   }
 }
