@@ -3,14 +3,19 @@ const app = express()
 const MBTiles = require('@mapbox/mbtiles')
 
 if (process.argv.length < 3) {
-  console.log('Error! Missing TILES filename.\nUsage: node server.js TILES [PORT]')
+  console.log('Error! Missing TILES filename.\nUsage: node server.js TILES [PORT] [HOST]')
   process.exit(1)
 }
 
+let host = 'localhost'
 let port = 3000
 
 if (process.argv.length === 4) {
   port = parseInt(process.argv[3])
+}
+
+if (process.argv.length === 5) {
+  host = parseInt(process.argv[4])
 }
 
 var mbtilesLocation = String(process.argv[2]).replace(/\.mbtiles/, '') + '.mbtiles'
@@ -49,4 +54,4 @@ new MBTiles(mbtilesLocation, (err, mbtiles) => {
 })
 
 // actually create the server
-app.listen(port)
+app.listen(port, host)
