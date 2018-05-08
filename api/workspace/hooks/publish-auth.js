@@ -196,7 +196,6 @@ const getUser = (email, data) => {
   let usernameField = data.options.usernameField
 
   let query = {
-    apiVersion: '1.0',
     [usernameField]: email
   }
 
@@ -266,9 +265,9 @@ const compare = (plaintext, hash) => {
  */
 const hash = plaintext => {
   return bcrypt.genSalt(SALT_LENGTH)
-     .then((salt, err) => {
-       if (err) return err
+    .then((salt, err) => {
+      if (err) return err
 
-       return bcrypt.hash(plaintext, salt)
-     })
+      return bcrypt.hash(plaintext, salt)
+    })
 }

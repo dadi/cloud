@@ -12,11 +12,11 @@
       "name": "DADI Cloud API",
       "host": "http://35.178.60.215",
       "port": 3001,
-      "database": "cloud",
       "version": "1.0",
+      "database": "cloud",
       "credentials": {
-        "clientId" : "cloud-client",
-        "secret" : "nrq5d6jl0b"
+        "clientId": "cloud-client",
+        "secret": "nrq5d6jl0b"
       },
       "menu": [
         {
@@ -29,6 +29,7 @@
         },
         {
           "collections": [
+            "milestones",
             "knowledge-categories",
             "roadmap-categories"
           ],
@@ -38,15 +39,20 @@
     }
   ],
   "auth": {
-    "enabled": false,
+    "enabled": true,
     "host": "http://127.0.0.1",
     "port": 3001,
     "version": "1.0",
-    "database": "cloud",
+    "database": "auth",
     "collection": "users",
     "credentials": {
-      "clientId" : "cloud-client",
-      "secret" : "nrq5d6jl0b"
+      "clientId": "cloud-client",
+      "secret": "nrq5d6jl0b"
     }
+  },
+  "publicUrl": {
+    "host": "35.178.60.215",
+    "port": 3002,
+    "protocol": "http:"
   }
 }
