@@ -24,6 +24,13 @@
   z-index: 1;
 }
 
+.btn--full {
+  background: var(--green);
+  width: 100%;
+  color: #fff;
+  padding: 20px 15px;
+}
+
 /* Full width more button */
 
 .btn-more {

@@ -31,6 +31,8 @@
 <main class="mb--x2" id="homeMain">
   {>"partials/nav" stick="true" /}
 
+  {>"partials/mailing-list" /}
+
   <div class="bg-tint mb pt"> 
     <div class="cnt pb">
       <div class="grid mb" id="stickContainer">
@@ -57,15 +59,6 @@
             <a href="/{lang}/network" class="mt btn-more tac fm small">About the network &rarr;</a>
           </div>
         </div>
-      </div>
-
-      <div class="hdr fm ttu mb">
-        <h3><span><a href="https://twitter.com/dadi" target="_blank">Follow us on Twitter @DADI</a></span></h3>
-      </div>
-      <div class="cols cols--4">
-        {#tweets}
-          {>"partials/tweet" /}
-        {/tweets}
       </div>
     </div>
   </div>
@@ -105,7 +98,16 @@
       {/knowledge-categories.results}
     </div>
 
-    <a href="/{lang}/knowledge" class="btn-more tac fm small">View all knowledge &rarr;</a>
+    <a href="/{lang}/knowledge" class="btn-more tac fm mb small">View all knowledge &rarr;</a>
+
+    <div class="hdr fm ttu mb">
+        <h3><span><a href="https://twitter.com/dadi" target="_blank">Follow us on Twitter @DADI</a></span></h3>
+      </div>
+      <div class="cols cols--4">
+        {#tweets}
+          {>"partials/tweet" /}
+        {/tweets}
+      </div>
   </div>
 </main>
 

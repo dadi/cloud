@@ -82,6 +82,8 @@
 </header>
 
 <main class="mb--x2">
+  {>"partials/mailing-list" /}
+  
   <div class="cnt">
     <div class="hdr fm ttu mb--x2" id="architecture" name="architecture">
       <h3><span>Platform architecture</span></h3>
@@ -222,19 +224,6 @@
           </div>
         </div>
       </a>
-    </div>
-
-    <div class="bg-light-green pa fm read">
-      <div class="grid">
-        <div class="col w-1-2">
-          <p><strong>Interested in becoming a Host or a Gateway?</strong> Register your interest and be the first to know when DADI starts accepting contributors to the network.</p>
-
-          <p><strong>Want to run a Stargate?</strong> Email the team for more information stargates@dadi.co.</p>
-        </div>
-        <div class="col w-1-2">
-          <form action="https://daditech.createsend.com/t/i/s/alrdrt/" method="post"><input name="cm-name" id="fname" placeholder="Your name"><br><input name="cm-alrdrt-alrdrt" type="email" placeholder="Your email address"><br><button class="btn" type="submit">Submit</button></form>
-        </div>
-      </div>
     </div>
   </div>
 </main>

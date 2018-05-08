@@ -33,7 +33,7 @@ select {
   background-position: calc(100% - 10px) 50%;
   display: inline-block;
   color: rgba(0,0,0,.5);
-  background-color: #fff;
+  background-color: transparent;
   padding: 5px 35px 5px 5px;
   appearance: none;
   outline: 0;
@@ -41,9 +41,18 @@ select {
   border-radius: 4px;
   box-sizing: border-box;
   transition: box-shadow .3s;
+
+  width: 100%;
+  font-size: 15px;
+  font-family: 'Roboto Mono',monospace;
+  border-radius: 0;
+  border: 0;
+  padding: 10px 0;
+  margin-top: 0;
+  border-bottom: 1px solid #ddd;
 }
 form button {
-  margin-top: 30px;
+  margin-top: 20px;
   width: auto;
 }
 form label {
@@ -175,4 +184,19 @@ form fieldset .info {
   display: block;
   margin: 0 auto;
   margin-top: 10px;
+}
+
+
+/* Mailchimp */
+
+.mc-field-group {
+  position: relative;
+}
+div.mce_inline_error {
+  position: absolute;
+  font-size: 14px;
+  z-index: 10;
+  bottom: 11px;
+  right: 0;
+  color: #888;
 }
