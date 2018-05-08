@@ -327,26 +327,12 @@ h1, h2 {
   opacity: 1;
 }
 
-.token-charts {
+.graph {
+  height: 300px;
   position: relative;
-}
-.token-price {
-  position: absolute;
-  top: 0;
-}
-.token-volume {
-  margin-bottom: 20px;
-}
-.token-marketcap:before,
-.token-volume:before,
-.token-price:before {
   display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 18%;
 }
-.token-volume:before {
-  padding-bottom: 9%;
+.graph canvas {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
 }
