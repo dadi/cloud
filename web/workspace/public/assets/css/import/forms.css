@@ -200,3 +200,9 @@ div.mce_inline_error {
   right: 0;
   color: #888;
 }
+.mce-responses {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: -10px;
+  background: #f0fcf5;
+}

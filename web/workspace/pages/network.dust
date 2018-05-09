@@ -8,7 +8,7 @@
 
 {>"partials/nav" /}
 
-<header class="bg-tint mb pb cf">
+<header class="bg-tint pb cf">
   <nav class="subnav bg-white cf fm">
     <div class="cnt">
       <ul>
@@ -84,7 +84,7 @@
 <main class="mb--x2">
   {>"partials/mailing-list" /}
   
-  <div class="cnt">
+  <div class="cnt pt">
     <div class="hdr fm ttu mb--x2" id="architecture" name="architecture">
       <h3><span>Platform architecture</span></h3>
     </div>

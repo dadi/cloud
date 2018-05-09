@@ -52,6 +52,8 @@
 .bdt                        { border-top: 1px solid }
 .bdb                        { border-bottom: 1px solid }
 
+.bds                        { box-shadow: 2px 2px 15px 0 rgba(0,0,0,.04); position: relative; }
+
 /* Background colours */
 
 .bg-white                   { background-color: #fff }
