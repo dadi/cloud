@@ -1,6 +1,6 @@
 const dust = require('dustjs-linkedin')
 
-const username = /@(\w+)/gmi
+const username = /\s@(\w+)/gmi
 const links = /(https?:\/\/[^\s]+)/gmi
 const hashtags = /(^|\s)#([\w/]*)/gmi
 const newlines = /(\r\n|\r|\n)/gmi
