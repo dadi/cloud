@@ -49,16 +49,6 @@
       <div class="pt bdt bd-grey">
         {>"partials/share"/}
       </div>
-
-      {! <div class="box box--natural bd bd-grey">
-        <div class="box__inner normal">
-
-          <h3 class="medium"> Feedback?</h3>
-          <p class="read mb--x2"><a href="#">Sign in to submit feedback</a></p>
-
-          <img src="/assets/icons/chat-alt.svg" class="vam">
-        </div>
-      </div> !}
     </div>
   </aside>
   <div class="cnt cf ll">

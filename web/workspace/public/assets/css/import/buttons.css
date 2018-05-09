@@ -25,10 +25,8 @@
 }
 
 .btn--full {
-  background: var(--green);
+  box-sizing: border-box;
   width: 100%;
-  color: #fff;
-  padding: 20px 15px;
 }
 
 /* Full width more button */
@@ -48,6 +46,24 @@
 .btn-more:hover {
   border-color: #0ac056;
   color: #0ac056;
+}
+
+
+.btn--alt {
+  padding: 20px 15px !important;
+  display: inline-block;
+  background: #f9f9f9;
+  border: 0;
+  font-size: 14px;
+}
+.btn--icon {
+  position: relative;
+}
+.btn--icon img {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 .pagination {
