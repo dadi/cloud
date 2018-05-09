@@ -19,8 +19,8 @@
   "datastore": "@dadi/api-mongodb",
   "env": "qa",
   "media": {
-    "storage": "disk",
-    "basePath": "workspace/media"
+    "basePath": "../web/workspace/public",
+    "storage": "disk"
   },
   "paths": {
     "collections": "workspace/collections",
