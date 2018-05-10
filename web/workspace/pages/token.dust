@@ -84,6 +84,9 @@
 
     <script type="text/javascript">
       var ctx = document.getElementById('token').getContext('2d');
+
+      Chart.defaults.global.defaultFontFamily = 'Roboto Mono';
+
       var chart = new Chart(ctx, {
         type: 'line',
         data: {
