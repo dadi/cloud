@@ -19,7 +19,7 @@
   "datastore": "@dadi/api-mongodb",
   "env": "qa",
   "media": {
-    "basePath": "../web/workspace/public",
+    "basePath": "/dadi/uploads",
     "storage": "disk"
   },
   "paths": {
