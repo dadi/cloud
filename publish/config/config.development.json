@@ -54,5 +54,12 @@
     "host": "127.0.0.1",
     "port": 3001,
     "protocol": "http"
+  },
+  "cdn": {
+    "publicUrl": {
+      "host": "127.0.0.1",
+      "port": 3003,
+      "protocol": "http:"
+    }
   }
 }

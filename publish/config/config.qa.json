@@ -54,5 +54,12 @@
     "host": "35.178.60.215",
     "port": 3002,
     "protocol": "http:"
+  },
+  "cdn": {
+    "publicUrl": {
+      "host": "35.178.60.215",
+      "port": 3003,
+      "protocol": "http:"
+    }
   }
 }

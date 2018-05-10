@@ -49,7 +49,11 @@
   <div class="cnt cf">
     <div class="grid pt--x2">
       <div class="col col--right w-1-3">
+        {?image}
+          <img src="{global.cdn.publicUrl}{image[0].path}?q=85&sat=0" alt="Photo of {name}" class="fill mb" style="z-index:1;position:relative;">
+        {:else}
         <img src="/assets/team/{slug}.jpg" alt="Photo of {name}" class="fill mb" style="z-index:1;position:relative;">
+        {/image}
       </div>
       <div class="col w-2-3 mb">
         <h1 style="margin:0 0 5px">{name}</h1>
