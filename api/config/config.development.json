@@ -19,7 +19,7 @@
   "datastore": "@dadi/api-mongodb",
   "env": "development",
   "media": {
-    "basePath": "workspace/media",
+    "basePath": "../web/workspace/public",
     "storage": "disk"
   },
   "paths": {
@@ -35,17 +35,5 @@
     "host": "127.0.0.1",
     "port": 8081,
     "protocol": "http"
-  },
-  "apidoc": {
-    "title": "DADI Cloud API",
-    "description": "This is the _Content API_ for [dadi.cloud](https://dadi.cloud).",
-    "markdown": false,
-    "path": "docs",
-    "generateCodeSnippets": false,
-    "themeVariables": "default",
-    "themeTemplate": "triple",
-    "themeStyle": "default",
-    "themeCondenseNav": true,
-    "themeFullWidth": false
   }
 }

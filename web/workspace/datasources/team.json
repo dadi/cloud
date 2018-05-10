@@ -3,7 +3,7 @@
     "key": "team",
     "source": {
       "type": "dadiapi",
-      "endpoint": "1.0/cloud/team"
+      "endpoint": "1.0/cloud/team?compose=true"
     },
     "paginate": false,
     "requestParams": [{
