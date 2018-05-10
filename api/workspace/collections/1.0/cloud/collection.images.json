@@ -1,0 +1,69 @@
+{
+  "fields": {
+    "image": {
+      "type": "Reference",
+      "label": "Image",
+      "message": "jpg or png",
+      "required": false,
+      "settings": {
+        "collection": "mediaStore"
+      },
+      "publish": {
+        "section": "Details",
+        "subType": "Image",
+        "placement": "main",
+        "display": {
+          "list": false,
+          "edit": true
+        }
+      }
+    },
+    "filename": {
+      "type": "String",
+      "required": false,
+      "label": "Filename",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
+    "path": {
+      "type": "String",
+      "required": false,
+      "label": "Path",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    }
+  },
+  "settings": {
+    "displayName": "Images",
+    "cache": false,
+    "count": 40,
+    "index": [
+      {
+        "keys": {
+          "filename": 1
+        }
+      }
+    ],
+    "storeRevisions": false,
+    "description": "",
+    "hooks": {
+      "beforeCreate": [
+        {
+          "hook": "generatePath"
+        }
+      ]
+    }
+  }
+}
