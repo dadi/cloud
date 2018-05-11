@@ -50,6 +50,9 @@
     }
   },
   "settings": {
+    "publish": {
+      "hidden": true
+    },
     "cache": false,
     "fieldLimiters": {
       "_apiVersion": 0,
