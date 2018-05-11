@@ -1,6 +1,6 @@
 {
   "page": {
-    "key": "knowledge"
+    "key": "community"
   },
   "settings": {
     "passFilters": true
@@ -8,7 +8,6 @@
   "datasources": [
     "pages",
     "articles",
-    "knowledge-categories",
     "web-services"
   ],
   "events": [
@@ -16,7 +15,7 @@
   ],
   "routes": [
     {
-      "path": "/:lang/knowledge/:category?"
+      "path": "/:lang/community"
     }
   ]
 }
