@@ -1,0 +1,17 @@
+{
+  "datasource": {
+    "key": "updates-articles",
+    "source": {
+      "type": "dadiapi",
+      "endpoint": "1.0/cloud/articles"
+    },
+    "count": 4,
+    "paginate": true,
+    "filter": {
+      "category.slug": "updates"
+    },
+    "sort": {
+      "publishedAt": -1
+    }
+  }
+}

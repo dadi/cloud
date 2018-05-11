@@ -2,19 +2,53 @@
 
 {>"partials/nav"/}
 
-<header class="bg-tint mb pt--x2 pb cf ovfh">
+<header class="bg-tint pt--x2 bdb bd-grey pb cf ovfh">
   <div class="cnt">
     {^params.category}
       <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
       <h1>{pages.results[0].title}</h1>
-      <p class="normal mb--x2">{pages.results[0].excerpt}</p>
+      <p class="normal">{pages.results[0].excerpt}</p>
 
-      <div class="cols cols--5">
-        {#knowledge-categories.results}
-          {>"partials/knowledge/list"
-            size="small"
-          /}
-        {/knowledge-categories.results}
+      <div class="cols cols--3 pt--x2">
+        <a href="#" class="box col bd bd-grey mb bg-white">
+          <div class="box__inner">
+            <img src="/assets/social/twitter-dark.svg" width="30" class="box__aside">
+
+            <p class="medium fwb mb">Twitter</p>
+
+            <p class="normal">Keep across broader updates across the entire operation.</p>
+
+            <div class="box__footer">
+              <span class="box__cta small fm color-tint">Follow us on Twitter</span>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="box col bd bd-grey mb bg-white">
+          <div class="box__inner">
+            <img src="/assets/social/telegram-dark.svg" width="30" class="box__aside">
+
+            <p class="medium fwb mb">Telegram</p>
+
+            <p class="normal">Talk to other memebers of our crypto-currency community.</p>
+
+            <div class="box__footer">
+              <span class="box__cta small fm color-tint">Join us on Telegram</span>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="box col bd bd-grey mb bg-white">
+          <div class="box__inner">
+            <img src="/assets/social/discord-dark.svg" width="30" class="box__aside">
+
+            <p class="medium fwb mb">Discord</p>
+
+            <p class="normal">More technical talk about using and contributing to the web services.</p>
+
+            <div class="box__footer">
+              <span class="box__cta small fm color-tint">Chat with us on Discord</span>
+            </div>
+          </div>
+        </a>
       </div>
     {:else}
       {#knowledge-categories.results}{@eq key=slug value=params.category}
@@ -26,21 +60,39 @@
   </div>
 </header>
 
-<main class="mb--x2">
-  <div class="cnt">
-    <div class="hdr fm ttu mb">
-      <h3><span>Latest articles</span></h3>
-    </div>
+<main class="mb">
+  <div class="pt--x2 pb bdb bd-grey">
+    <div class="cnt">
+      <h2 class="normal mb color-tint fwn fm">Tutorials</h2>
 
-    <div class="cols cols--3">
-      {#articles.results}
-        {>"partials/articles/list" size="normal" /}
-      {:else}
-        <div class="col w-1-1 tac"><p>No articles yet.</p></div>
-      {/articles.results}
+      <div class="cols cols--4">
+        {#tutorials-articles.results}
+          {>"partials/articles/list" size="normal" /}
+        {/tutorials-articles.results}
+      </div>
     </div>
+  </div>
+  <div class="pt--x2 pb bdb bd-grey">
+    <div class="cnt">
+      <h2 class="normal mb color-tint fwn fm">Updates</h2>
 
-    {>"partials/pagination" ds=articles /}
+      <div class="cols cols--4">
+        {#updates-articles.results}
+          {>"partials/articles/list" size="normal" /}
+        {/updates-articles.results}
+      </div>
+    </div>
+  </div>
+  <div class="pt--x2 pb">
+    <div class="cnt">
+      <h2 class="normal mb color-tint fwn fm">Knowledge</h2>
+    
+      <div class="cols cols--4">
+        {#knowledge-articles.results}
+          {>"partials/articles/list" size="normal" /}
+        {/knowledge-articles.results}
+      </div>
+    </div>
   </div>
 </main>
 

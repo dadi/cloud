@@ -2,7 +2,7 @@
   <div class="box__inner">
     {>"partials/articles/taxonomy"/}
 
-    <a href="/{lang}/{?roadmap-category}roadmap/{roadmap-category[0].slug}{:else}knowledge/{knowledge-category[0].slug}{/roadmap-category}/{slug}" class="box__link mb">
+    <a href="/{lang}/community/{?category}{category[0].slug}/{/category}{?sub-category}{sub-category[0].slug}/{/sub-category}{slug}" class="box__link mb">
       <h2 class="medium">{title}</h2>
       {@markdown}{excerpt|s}{/markdown}
     </a>

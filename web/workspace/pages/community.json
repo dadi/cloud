@@ -7,8 +7,10 @@
   },
   "datasources": [
     "pages",
-    "articles",
-    "web-services"
+    "web-services",
+    "tutorials-articles",
+    "updates-articles",
+    "knowledge-articles"
   ],
   "events": [
     "metatags"
