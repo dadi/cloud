@@ -344,6 +344,7 @@ h1, h2 {
   overflow: hidden;
 }
 .img--16-10 { padding-top: 62.5%; }
+.img--16-9 { padding-top: 56.25%; }
 
 .img img {
   position: absolute;
