@@ -34,6 +34,13 @@
 .intro__about .btn {
   color: #fff;
   margin-top: 10px;
+  background: #0D1C32;
+  padding: 18px 17px;
+  border: 0;
+  color: #fff;
+}
+.intro__about .btn:hover {
+  background: var(--green);
 }
 
 .intro video {
