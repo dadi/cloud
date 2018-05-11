@@ -12,7 +12,7 @@ var map = new L.Map("map", {
   scrollWheelZoom: false
 });
 
-var layer = L.tileLayer('{url.protocol}//{url.hostname}:3004/{~lb}z{~rb}/{~lb}x{~rb}/{~lb}y{~rb}.png', {
+var layer = L.tileLayer('{url.protocol}//35.178.60.215:3004/{~lb}z{~rb}/{~lb}x{~rb}/{~lb}y{~rb}.png', {
   detectRetina: true,
   noWrap: true,
 }).addTo(map);

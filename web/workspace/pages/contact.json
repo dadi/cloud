@@ -4,7 +4,6 @@
   },
   "datasources": [
     "pages",
-    "knowledge-categories",
     "web-services"
   ],
   "events": [

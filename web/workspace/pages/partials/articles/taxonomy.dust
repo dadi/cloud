@@ -1,27 +1,22 @@
-<div class="badge fm small color-blue">
-  {?roadmap-category}
+{#category}
+  <div class="badge fm small color-blue">
     <div class="badge__primary bg-blue color-white">
-      <a href="/{lang}/roadmap">
-        Roadmap
-      </a>
-    </div>
-    <div class="badge__secondary">
-      {#roadmap-category}
-        <a href="/{lang}/roadmap/{slug}">{name}</a>{@sep},{/sep}
-      {/roadmap-category}  
-    </div>
-  {:else}
-    <div class="badge__primary bg-blue color-white">
-      <a href="/{lang}/knowledge/{knowledge-category[0].slug}">
-        {knowledge-category[0].name}
+      <a href="/{lang}/{slug}">
+        {name}
       </a>
     </div>
     {?web-service}
       <div class="badge__secondary">
         {#web-service}
           <a href="/{lang}/{slug}">{name}</a>{@sep},{/sep}
-        {/web-service}    
+        {/web-service}
+      </div>
+    {:else}
+      <div class="badge__secondary">
+        {#sub-service primary=slug}
+          <a href="/{lang}/{primary}/{slug}">{name}</a>{@sep},{/sep}
+        {/sub-service}
       </div>
     {/web-service}
-  {/roadmap-category}
-</div>
+  </div>
+{/category}

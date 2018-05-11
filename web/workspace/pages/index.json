@@ -3,11 +3,9 @@
     "key": "index"
   },
   "datasources": [
+    "articles",
     "pages",
     "web-services",
-    "knowledge-categories",
-    "roadmap-articles",
-    "knowledge-articles",
     "tweets",
     "countries"
   ],

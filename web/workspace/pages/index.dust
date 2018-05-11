@@ -58,16 +58,16 @@
       <div class="grid mb" id="stickContainer">
         <div class="col w-1-2">
           <div class="hdr fm ttu mb">
-            <h3><span>Roadmap updates</span></h3>
+            <h3><span>Latest from DADI</span></h3>
           </div>
 
           <div class="cols cols--2">
-            {#roadmap-articles.results}
+            {#articles.results}
               {>"partials/articles/list"
                 dateFormat="short"
                 size="normal"
               /}
-            {/roadmap-articles.results}
+            {/articles.results}
           </div>  
 
           <a href="/{lang}/roadmap" class="btn-more tac fm small">View all updates &rarr;</a>
@@ -95,32 +95,6 @@
         {>"partials/web-services/list"/}
       {/web-services.results}
     </div>
-
-    <div class="hdr fm ttu mb">
-      <h3><span>Latest knowledge articles</span></h3>
-    </div>
-
-    <div class="cols cols--4">
-      {#knowledge-articles.results}
-        {>"partials/articles/list"
-          dateFormat="short"
-        /}
-      {/knowledge-articles.results}
-    </div>
-
-    <div class="hdr fm ttu mb">
-      <h3><span>Knowledge categories</span></h3>
-    </div>
-
-    <div class="cols cols--5">
-      {#knowledge-categories.results}
-        {>"partials/knowledge/list"
-          size="small"
-        /}
-      {/knowledge-categories.results}
-    </div>
-
-    <a href="/{lang}/knowledge" class="btn-more tac fm mb small">View all knowledge &rarr;</a>
 
     <div class="hdr fm ttu mb">
         <h3><span><a href="https://twitter.com/dadi" target="_blank">Follow us on Twitter @DADI</a></span></h3>

@@ -4,18 +4,16 @@
   },
   "datasources": [
     "pages",
-    "roadmap-categories",
-    "roadmap-articles",
-    "knowledge-categories",
     "web-services",
-    "milestones" 
+    "milestones"
   ],
   "events": [
-    "metatags"
+    "metatags",
+    "roadmapNav"
   ],
   "routes": [
     {
-      "path": "/:lang/roadmap"
+      "path": "/:lang/roadmap/:status?"
     }
   ]
 }

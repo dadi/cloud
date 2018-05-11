@@ -1,9 +1,9 @@
 {
   "datasource": {
-    "key": "knowledge-categories",
+    "key": "sub-categories",
     "source": {
       "type": "dadiapi",
-      "endpoint": "1.0/cloud/knowledge-categories"
+      "endpoint": "1.0/cloud/sub-categories"
     },
     "paginate": false
   }

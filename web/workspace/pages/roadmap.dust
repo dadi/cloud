@@ -2,53 +2,38 @@
 
 {>"partials/nav"/}
 
-{^params.page}
-  <header class="bg-tint mb pb--x2 cf ovfh">
-    {>"partials/roadmap/nav"/}
+<header class="bg-tint pt--x2 pb--x2 cf ovfh">
+  <div class="cnt">
+    <h1 style="margin:0">Milestones</h1>
+  </div>
+</header>
 
-    <div class="cnt">
-      <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
-      <h1>{pages.results[0].title}</h1>
-      <div class="cf">
-      <p class="normal mb col w-2-3">{pages.results[0].excerpt}</p>
+<main class="ovfh bg-tint">
+  <div class="cnt cf">
+    <div class="roadmap cf mb" id="stickContainer">
+      <div class="roadmap__date col" id="stick">
+        {#roadmapNav}
+          <dl>
+            <dt>{year}</dt>
+            {#months}
+              <dd><a href="#{@formatDate unix=. format="MMYY"/}">{@formatDate unix=. format="MMMM" /}</a></dd>
+            {/months}
+          </dl>
+        {/roadmapNav}
       </div>
+      <div class="roadmap__line"></div>
 
-      <div class="hdr fm ttu mb">
-        <h3 style="padding-bottom:30px">Upcoming milestones</h3>
-      </div>
-
-      <div class="cols cols--4">
+      <div class="roadmap__milestones grid col--right"> 
         {#milestones.results}
-          {@lt key=$idx value=4}
-            {>"partials/roadmap/milestone" /}
-          {/lt}
+        <div class="col w-1-2"> 
+          {>"partials/roadmap/milestone"
+            size="small"
+          /}
+        </div>
         {/milestones.results}
       </div>
-
-      <a href="/{lang}/roadmap/milestones" class="btn-more tac fm small">View all milestones &rarr;</a>
     </div>
-  </header>
-{/params.page}
-
-<main class="mb--x2">
-  <div class="cnt">
-    <div class="hdr fm ttu mb">
-      <h3><span>Roadmap updates</span></h3>
-    </div>
-
-    <div class="cols cols--3">
-      {#roadmap-articles.results}
-        {>"partials/articles/list"
-          size="normal"
-          section="roadmap"
-          category=roadmap-category[0].name 
-          sub-category=web-service[0].name
-        /}
-      {/roadmap-articles.results}
-    </div>
-
-    {>"partials/pagination" ds=roadmap-articles /}
   </div>
-</main>
+</header>
 
 {>"partials/footer"/}

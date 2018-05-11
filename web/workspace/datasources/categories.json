@@ -1,9 +1,9 @@
 {
   "datasource": {
-    "key": "roadmap-categories",
+    "key": "categories",
     "source": {
       "type": "dadiapi",
-      "endpoint": "1.0/cloud/roadmap-categories"
+      "endpoint": "1.0/cloud/categories"
     },
     "paginate": false
   }

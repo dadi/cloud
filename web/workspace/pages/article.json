@@ -5,7 +5,8 @@
   "datasources": [
     "pages",
     "articles",
-    "knowledge-categories",
+    "categories",
+    "sub-categories",
     "web-services"
   ],
   "requiredDatasources": [
@@ -18,9 +19,6 @@
   "routes": [
     {
       "path": "/:lang/knowledge/:category/:subcategory?/:title"
-    },
-    {
-      "path": "/:lang/roadmap/:category/:subcategory?/:title"
     }
   ]
 }

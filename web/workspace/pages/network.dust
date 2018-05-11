@@ -186,8 +186,6 @@
       /}
     </div>
 
-    <a href="/{lang}/knowledge/network/usecases" class="btn-more tac fm small mb">Read all use cases &rarr;</a>
-
     <div class="hdr fm ttu mb" id="contribute" name="contribute">
       <h3><span>Be part of the network</span></h3>
     </div>
