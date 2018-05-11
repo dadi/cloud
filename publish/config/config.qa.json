@@ -21,6 +21,7 @@
       "menu": [
         {
           "collections": [
+            "images",
             "pages",
             "team",
             "partners"

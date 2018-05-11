@@ -27,7 +27,7 @@
   "images": {
     "directory": {
       "enabled": true,
-      "path": "../web/workspace/public"
+      "path": "/dadi/uploads"
     },
     "s3": {
       "enabled": false,
