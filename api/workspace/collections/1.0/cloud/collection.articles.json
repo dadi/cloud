@@ -97,10 +97,10 @@
         }
       }
     },
-    "milestone": {
+    "category": {
       "type": "Reference",
       "required": false,
-      "label": "Milestone",
+      "label": "Category",
       "publish": {
         "section": "Details",
         "placement": "sidebar",
@@ -110,13 +110,13 @@
         }
       },
       "settings": {
-        "collection": "milestones"
+        "collection": "categories"
       }
     },
-    "knowledge-category": {
+    "sub-category": {
       "type": "Reference",
       "required": false,
-      "label": "Knowledge category",
+      "label": "Sub category",
       "publish": {
         "section": "Details",
         "placement": "sidebar",
@@ -126,23 +126,7 @@
         }
       },
       "settings": {
-        "collection": "knowledge-categories"
-      }
-    },
-    "roadmap-category": {
-      "type": "Reference",
-      "required": false,
-      "label": "Roadmap category",
-      "publish": {
-        "section": "Details",
-        "placement": "sidebar",
-        "display": {
-          "edit": true,
-          "list": false
-        }
-      },
-      "settings": {
-        "collection": "roadmap-categories"
+        "collection": "sub-categories"
       }
     },
     "web-service": {
@@ -159,6 +143,22 @@
       },
       "settings": {
         "collection": "web-services"
+      }
+    },
+    "network-service": {
+      "type": "Reference",
+      "required": false,
+      "label": "Network service",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      },
+      "settings": {
+        "collection": "network-services"
       }
     },
     "status": {

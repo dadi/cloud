@@ -30,9 +30,9 @@
         },
         {
           "collections": [
-            "milestones",
-            "knowledge-categories",
-            "roadmap-categories"
+            "categories",
+            "sub-categories",
+            "milestones"
           ],
           "title": "Taxonomy"
         }
