@@ -65,13 +65,13 @@
         <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb">
         <h1>{pages.results[0].title}</h1>
         <p class="normal mb">{pages.results[0].excerpt}</p>
-        <p><a class="btn" href="/{lang}/knowledge/network/overview">platform introduction</a></p>
+        <p><a class="btn" href="/{lang}/knowledge/network/overview">Platform introduction</a></p>
       </div>
     </div>
   </div>
 </header>
 
-<main class="mb">
+<main class="mb--x2">
   <div class="cnt pt">
     <div class="hdr fm ttu mb" id="contribute" name="contribute">
       <h3><span>Be part of the network</span></h3>
