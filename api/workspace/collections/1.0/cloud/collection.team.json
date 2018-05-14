@@ -108,7 +108,7 @@
     },
     "image": {
       "type": "Reference",
-      "label": "Image (500 x 265)",
+      "label": "Image",
       "message": "jpg or png",
       "required": false,
       "settings": {
