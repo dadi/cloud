@@ -1,0 +1,6283 @@
+{
+	"info": {
+		"_postman_id": "ec916180-56f4-4ce1-87c1-9ca57ca61177",
+		"name": "dadi.cloud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "679605e7-d9e0-43c1-89bd-a4352823c53b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6cec12a6-c005-49bf-a118-224af04b171c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"clientId\": \"cloud-client\",\n  \"secret\": \"nrq5d6jl0b\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/token",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"token"
+					]
+				},
+				"description": "POST Request to get an authentication token for dadi.cloud"
+			},
+			"response": []
+		},
+		{
+			"name": "Post an Empty Article",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "78166dd7-78d9-47b1-bd13-ff260b8ccc53",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Title field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"title\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Body field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[1].field;",
+							"    var message = pm.response.json().errors[1].message;",
+							"    pm.expect(field).to.eql(\"body\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "57f749c8-9178-4d64-a77f-229a1b8f4837",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"author\": {},\n  \"body\": \"\",\n  \"excerpt\": \"\",\n  \"knowledge-category\": {},\n  \"mediumUrl\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"milestone\": {},\n  \"published\": false,\n  \"publishedAt\": {},\n  \"redditUrl\": \"\",\n  \"roadmap-category\": {},\n  \"slug\": \"\",\n  \"status\": {},\n  \"title\": \"\",\n  \"twitterUrl\": \"\",\n  \"web-service\": {}\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/articles/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"articles",
+						""
+					]
+				},
+				"description": "Posting an empty article gets a 400 error and request for mandatory fields \"title\" and \"body\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post an Article With Body Only",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6e2cdbb0-d825-4ebb-9721-a168ac36046c",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Body field is populated as per POST request\", function () {",
+							"    var field = pm.response.json().data[0].body;",
+							"    pm.expect(field).to.eql(\"This is text\");",
+							"});",
+							"",
+							"pm.test(\"Title field is mandatory\", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"title\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f2e08498-737f-441d-b3b0-4a8653d0106b",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"author\": {},\n  \"body\": \"This is text\",\n  \"excerpt\": \"\",\n  \"knowledge-category\": {},\n  \"mediumUrl\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"milestone\": {},\n  \"published\": false,\n  \"publishedAt\": {},\n  \"redditUrl\": \"\",\n  \"roadmap-category\": {},\n  \"slug\": \"\",\n  \"status\": {},\n  \"title\": \"\",\n  \"twitterUrl\": \"\",\n  \"web-service\": {}\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/articles/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"articles",
+						""
+					]
+				},
+				"description": "Posting an article with Body only gets a 400 error and request for mandatory field \"title\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post an Article With Title Only",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a6b18a9-48fc-436b-b51d-936fc299963f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Title field is populated as per POST request\", function () {",
+							"    var field = pm.response.json().data[0].title;",
+							"    pm.expect(field).to.eql(\"Test\");",
+							"});",
+							"",
+							"pm.test(\"Body field is mandatory\", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"body\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7f555ff6-22aa-4184-a328-4c95a503ac6b",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"author\": {},\n  \"body\": \"\",\n  \"excerpt\": \"\",\n  \"knowledge-category\": {},\n  \"mediumUrl\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"milestone\": {},\n  \"published\": false,\n  \"publishedAt\": {},\n  \"redditUrl\": \"\",\n  \"roadmap-category\": {},\n  \"slug\": \"\",\n  \"status\": {},\n  \"title\": \"Test\",\n  \"twitterUrl\": \"\",\n  \"web-service\": {}\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/articles/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"articles",
+						""
+					]
+				},
+				"description": "Posting an article with Title only gets a 400 error and request for mandatory field \"body\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a New Article",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e254af0a-1738-405d-9b7c-b0145d0783c7",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Capture article Id and store as variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"article_id\", jsonData.results[0]._id);",
+							"",
+							"pm.test(\"Author's name is James Lambie\", function () {",
+							"    var authName = jsonData.results[0].author[0].name;",
+							"    pm.expect(authName).to.eql(\"James Lambie\");",
+							"});",
+							"",
+							"pm.test(\"Knowledge Category is FAQ\", function () {",
+							"    var kcName = jsonData.results[0]['knowledge-category'][0].name;",
+							"    pm.expect(kcName).to.eql(\"FAQ\");",
+							"});",
+							"",
+							"pm.test(\"Roadmap Category is Cloud\", function () {",
+							"    var rcName = jsonData.results[0]['roadmap-category'][0].name;",
+							"    pm.expect(rcName).to.eql(\"Cloud\");",
+							"});",
+							"",
+							"pm.test(\"Web Service is Web\", function () {",
+							"    var wsName = jsonData.results[0]['web-service'][0].name;",
+							"    pm.expect(wsName).to.eql(\"Web\");",
+							"});",
+							"",
+							"pm.test(\"The title is loaded correctly\", function () {",
+							"    var title = jsonData.results[0].title;",
+							"    pm.expect(title).to.eql(\"This is the title\");",
+							"});",
+							"",
+							"pm.test(\"The publishedAt time has today's date\", function () {",
+							"    var unixTS = formatDate(new Date(jsonData.results[0].publishedAt));",
+							"    var todaysDate = formatDate(new Date());",
+							"    pm.expect(unixTS).to.eql(todaysDate);",
+							"});",
+							"",
+							"function formatDate (date) {",
+							"  return (\"0\" + date.getDate()).slice(-2) + \".\" + (\"0\"+(date.getMonth()+1)).slice(-2) + \".\" +",
+							"    date.getFullYear();",
+							"}",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "13febf52-d113-45d2-af75-d6034cab0bfb",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							"",
+							"pm.environment.set(\"timeNow\", Date.now());"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"author\": [\"5a945063e1c2ec5c70bccb47\"],\n  \"body\": \"This is a test\",\n  \"excerpt\": \"This is a test excerpt\",\n  \"knowledge-category\": [\"5a901af7c0501464cd1251ae\"],\n  \"mediumUrl\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"milestone\": \"\",\n  \"published\": true,\n  \"publishedAt\": {{timeNow}},\n  \"redditUrl\": \"\",\n  \"roadmap-category\": [\"5a9043df76dbd27a42698571\"],\n  \"slug\": \"\",\n  \"status\": \"\",\n  \"title\": \"This is the title\",\n  \"twitterUrl\": \"\",\n  \"web-service\": [\"5a9016e4da7f1660873c5e85\"]\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/articles/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"articles",
+						""
+					]
+				},
+				"description": "Posting a valid article will generate a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Get New Article",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f274e9b0-ce00-46e1-bcfc-ee95ba95b538",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "9d01deca-3d2a-4e4f-8a3c-c1c86de31e5f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"var existingId = pm.environment.get(\"article_id\");",
+							"",
+							"pm.test(\"The 'New Article' record exists\" , function () {",
+							"    var id = jsonData.results[0]._id;",
+							"    pm.expect(id).to.eql(existingId);",
+							"});",
+							"",
+							"pm.test(\"Only 1 record is returned\" , function () {",
+							"    var count = jsonData.metadata.totalCount;",
+							"    pm.expect(count).to.eql(1);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/articles/?filter={\"title\":\"This is the title\"}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"articles",
+						""
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "{\"title\":\"This is the title\"}"
+						}
+					]
+				},
+				"description": "Ensure New Article can be fetched"
+			},
+			"response": []
+		},
+		{
+			"name": "Update an Article",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9b24fb34-57d2-4754-927d-41dbec218752",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Capture article Id and store as variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"article_id\", jsonData.results[0]._id);",
+							"",
+							"pm.test(\"Author's name is Eduardo Bouças\", function () {",
+							"    var authName = jsonData.results[0].author[0].name;",
+							"    pm.expect(authName).to.eql(\"Eduardo Bouças\");",
+							"});",
+							"",
+							"pm.test(\"Knowledge Category is Network\", function () {",
+							"    var kcName = jsonData.results[0]['knowledge-category'][0].name;",
+							"    pm.expect(kcName).to.eql(\"Network\");",
+							"});",
+							"",
+							"pm.test(\"Roadmap Category is Announcements\", function () {",
+							"    var rcName = jsonData.results[0]['roadmap-category'][0].name;",
+							"    pm.expect(rcName).to.eql(\"Announcements\");",
+							"});",
+							"",
+							"pm.test(\"Web Service is Web\", function () {",
+							"    var wsName = jsonData.results[0]['web-service'][0].name;",
+							"    pm.expect(wsName).to.eql(\"Web\");",
+							"});",
+							"",
+							"pm.test(\"The title is updated correctly\", function () {",
+							"    var title = jsonData.results[0].title;",
+							"    pm.expect(title).to.eql(\"This is the updated title\");",
+							"});",
+							"",
+							"pm.test(\"The publishedAt time has today's date\", function () {",
+							"    var unixTS = formatDate(new Date(jsonData.results[0].publishedAt));",
+							"    var todaysDate = formatDate(new Date());",
+							"    pm.expect(unixTS).to.eql(todaysDate);",
+							"});",
+							"",
+							"pm.test(\"Version is updated to 2\", function () {",
+							"    var version = jsonData.results[0]._version;",
+							"    pm.expect(version).to.eql(2);",
+							"});",
+							"",
+							"function formatDate (date) {",
+							"  return (\"0\" + date.getDate()).slice(-2) + \".\" + (\"0\"+(date.getMonth()+1)).slice(-2) + \".\" +",
+							"    date.getFullYear();",
+							"}",
+							"",
+							"pm.test(\"There is a _lastModifiedBy field\", function () {",
+							"    var modifiedBy = jsonData.results[0]._lastModifiedBy;",
+							"    pm.expect(modifiedBy).to.eql(\"cloud-client\");",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "13febf52-d113-45d2-af75-d6034cab0bfb",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							"",
+							"pm.environment.set(\"timeNow\", Date.now());"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"author\": [\"5a8fe8c64d5d813e422e18ed\"],\n  \"body\": \"This is a test\",\n  \"excerpt\": \"This is a test excerpt\",\n  \"knowledge-category\": [\"5a9692d9b7fcfe794d87bd61\"],\n  \"mediumUrl\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"milestone\": \"\",\n  \"published\": true,\n  \"publishedAt\": {{timeNow}},\n  \"redditUrl\": \"\",\n  \"roadmap-category\": [\"5a9043be76dbd27a4269856e\"],\n  \"slug\": \"\",\n  \"status\": \"\",\n  \"title\": \"This is the updated title\",\n  \"twitterUrl\": \"\",\n  \"web-service\": [\"5a9016e4da7f1660873c5e85\"]\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/articles/{{article_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"articles",
+						"{{article_id}}"
+					]
+				},
+				"description": "Updating an existing article will generate a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an Article",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a32010e2-ca23-43ea-86da-1c8460a556e6",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6e5a5e17-de15-4edd-8329-b7dbd237bd78",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/articles/{{article_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"articles",
+						"{{article_id}}"
+					]
+				},
+				"description": "Delete an article that has been published."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Number of Knowledge Categories",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "add3e89c-b8e4-4620-a490-5a447731a4b4",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Expect number of Knowledge Categories to equal 5\", function () {",
+							"    let total = pm.response.json().metadata.totalCount;",
+							"    pm.expect(total).to.equal(5); ",
+							"});",
+							"",
+							"pm.test(\"There is a Category for Concepts\", function () {",
+							"    var name = pm.response.json().results[0].name;",
+							"    pm.expect(name).to.eql(\"Concepts\");",
+							"});",
+							"",
+							"pm.test(\"There is a Category for FAQ\", function () {",
+							"    var name = pm.response.json().results[1].name;",
+							"    pm.expect(name).to.eql(\"FAQ\");",
+							"});",
+							"",
+							"pm.test(\"There is a Category for Network\", function () {",
+							"    var name = pm.response.json().results[2].name;",
+							"    pm.expect(name).to.eql(\"Network\");",
+							"});",
+							"",
+							"pm.test(\"There is a Category for Security\", function () {",
+							"    var name = pm.response.json().results[3].name;",
+							"    pm.expect(name).to.eql(\"Security\");",
+							"});",
+							"",
+							"pm.test(\"There is a Category for Tutorials\", function () {",
+							"    var name = pm.response.json().results[4].name;",
+							"    pm.expect(name).to.eql(\"Tutorials\");",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3dea9940-f607-4e4f-a8d1-4103a2fdd16f",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/knowledge-categories/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"knowledge-categories",
+						""
+					]
+				},
+				"description": "Ensure number of Knowledge Categories equals 5"
+			},
+			"response": []
+		},
+		{
+			"name": "Post an Empty Knowledge Category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a0ec38bb-2fca-4c85-a152-76096ca73e8e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Name field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"name\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Desc field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[1].field;",
+							"    var message = pm.response.json().errors[1].message;",
+							"    pm.expect(field).to.eql(\"desc\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a4a9098d-f909-4f24-823a-e0997e109128",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"desc\": \"\",\n  \"icon\": \"\",\n  \"name\": \"\",\n  \"slug\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/knowledge-categories/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"knowledge-categories",
+						""
+					]
+				},
+				"description": "Posting an empty knowledge category gets a 400 error and request for mandatory fields \"name\" and \"desc\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Knowledge Category With Desc Only",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "08cad613-a72e-4af8-a8f6-6cc4d14e902e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Desc field is populated as per POST request\", function () {",
+							"    var field = pm.response.json().data[0].desc;",
+							"    pm.expect(field).to.eql(\"This is a description\");",
+							"});",
+							"",
+							"pm.test(\"Name field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"name\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0dfc0cc5-4dc9-44c2-9975-16a54eac60e5",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"desc\": \"This is a description\",\n  \"icon\": \"\",\n  \"name\": \"\",\n  \"slug\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/knowledge-categories/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"knowledge-categories",
+						""
+					]
+				},
+				"description": "Posting a knowledge category with Desc only gets a 400 error and request for mandatory field \"name\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Knowledge Category With Name Only",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0cf0d5c3-7080-4b3d-a06d-98812005bf28",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Name field is populated as per POST request\", function () {",
+							"    var field = pm.response.json().data[0].name;",
+							"    pm.expect(field).to.eql(\"Test\");",
+							"});",
+							"",
+							"pm.test(\"Desc field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"desc\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "fbabc4c5-c298-4bcd-b7e5-c52624130d4a",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"desc\": \"\",\n  \"icon\": \"\",\n  \"name\": \"Test\",\n  \"slug\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/knowledge-categories/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"knowledge-categories",
+						""
+					]
+				},
+				"description": "Posting a knowledge category with Name only gets a 400 error and request for mandatory field \"desc\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a New Knowledge Category",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "de87c913-c067-4c61-af88-0c6a02a4568c",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							"",
+							"pm.environment.set(\"timeNow\", Date.now());"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "13feea71-65d8-4fc6-a761-f63fbb119ada",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Capture knowledge Id and store as variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"knowledge_id\", jsonData.results[0]._id);",
+							"",
+							"pm.test(\"Description is loaded correctly\", function () {",
+							"    var desc = jsonData.results[0].desc;",
+							"    pm.expect(desc).to.eql(\"This is a description\");",
+							"});",
+							"",
+							"pm.test(\"Name is loaded correctly\", function () {",
+							"    var name = jsonData.results[0].name;",
+							"    pm.expect(name).to.eql(\"Knowledge Category\");",
+							"});",
+							"",
+							"pm.test(\"Name has been slugified correctly\", function () {",
+							"    var slug = jsonData.results[0].slug;",
+							"    pm.expect(slug).to.eql(\"knowledge-category\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"desc\": \"This is a description\",\n  \"icon\": \"\",\n  \"name\": \"Knowledge Category\",\n  \"slug\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/knowledge-categories/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"knowledge-categories",
+						""
+					]
+				},
+				"description": "Posting a valid knowledge category will generate a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Get New Knowledge Category",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "23241666-c169-4868-af4a-17e9dcce31f8",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3c742f1d-fc93-4002-a2dc-beef069d752d",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"var existingId = pm.environment.get(\"knowledge_id\");",
+							"",
+							"pm.test(\"The 'New Knowledge Category' record exists\" , function () {",
+							"    var id = jsonData.results[0]._id;",
+							"    pm.expect(id).to.eql(existingId);",
+							"});",
+							"",
+							"pm.test(\"Only 1 record is returned\" , function () {",
+							"    var count = jsonData.metadata.totalCount;",
+							"    pm.expect(count).to.eql(1);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/knowledge-categories/?filter={\"name\":\"Knowledge Category\"}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"knowledge-categories",
+						""
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "{\"name\":\"Knowledge Category\"}"
+						}
+					]
+				},
+				"description": "Ensure New Knowledge Category can be fetched"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Knowledge Category",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "fffe9958-f738-408c-85b7-659ace884c04",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0e355592-05eb-47a6-b6e6-5e0070804683",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Capture knowledge Id and store as variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"knowledge_id\", jsonData.results[0]._id);",
+							"",
+							"pm.test(\"Description is updated successfully\", function () {",
+							"    var desc = jsonData.results[0].desc;",
+							"    pm.expect(desc).to.eql(\"This description has changed\");",
+							"});",
+							"",
+							"pm.test(\"Name is updated successfully\", function () {",
+							"    var name = jsonData.results[0].name;",
+							"    pm.expect(name).to.eql(\"Update Category\");",
+							"});",
+							"",
+							"pm.test(\"Slug name has been updated correctly\", function () {",
+							"    var slug = jsonData.results[0].slug;",
+							"    pm.expect(slug).to.eql(\"update-category\");",
+							"});",
+							"",
+							"pm.test(\"There is a _lastModifiedBy field\", function () {",
+							"    var modifiedBy = jsonData.results[0]._lastModifiedBy;",
+							"    pm.expect(modifiedBy).to.eql(\"cloud-client\");",
+							"});",
+							"",
+							"pm.test(\"Version is updated to 2\", function () {",
+							"    var version = jsonData.results[0]._version;",
+							"    pm.expect(version).to.eql(2);",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"desc\": \"This description has changed\",\n  \"icon\": \"\",\n  \"name\": \"Update Category\",\n  \"slug\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/knowledge-categories/{{knowledge_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"knowledge-categories",
+						"{{knowledge_id}}"
+					]
+				},
+				"description": "Updating an existing knowledge category will generate a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Knowledge Category",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e88cca5e-c000-46d4-a7d7-ff003d36eecd",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "29ead4bf-1b1d-43ad-8f29-44e88e445841",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/knowledge-categories/{{knowledge_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"knowledge-categories",
+						"{{knowledge_id}}"
+					]
+				},
+				"description": "Delete a knowledge category that has been published"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Number of Roadmap Categories",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0c92b5c5-c90a-4f48-8b79-ab6296fdd8c2",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Expect number of Roadmap Categories to equal 5\", function () {",
+							"    let total = pm.response.json().metadata.totalCount;",
+							"    pm.expect(total).to.equal(5); ",
+							"});",
+							"",
+							"pm.test(\"There is a Category for Announcements\", function () {",
+							"    var name = pm.response.json().results[0].name;",
+							"    pm.expect(name).to.eql(\"Announcements\");",
+							"});",
+							"",
+							"pm.test(\"There is a Category for Web Services\", function () {",
+							"    var name = pm.response.json().results[1].name;",
+							"    pm.expect(name).to.eql(\"Web Services\");",
+							"});",
+							"",
+							"pm.test(\"There is a Category for Network\", function () {",
+							"    var name = pm.response.json().results[2].name;",
+							"    pm.expect(name).to.eql(\"Network\");",
+							"});",
+							"",
+							"pm.test(\"There is a Category for Cloud\", function () {",
+							"    var name = pm.response.json().results[3].name;",
+							"    pm.expect(name).to.eql(\"Cloud\");",
+							"});",
+							"",
+							"pm.test(\"There is a Category for Website\", function () {",
+							"    var name = pm.response.json().results[4].name;",
+							"    pm.expect(name).to.eql(\"Website\");",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e5ac7b0d-faf4-400a-93fc-1bda086e43aa",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/roadmap-categories/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"roadmap-categories",
+						""
+					]
+				},
+				"description": "Ensure number of Roadmap Categories equals 5"
+			},
+			"response": []
+		},
+		{
+			"name": "Post an Empty Roadmap Category",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "49292c99-160d-45f5-ab5a-749dc2d2f312",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "18556228-a56b-4275-b9ed-964eb2a11858",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Name field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"name\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"desc\": \"\",\n  \"name\": \"\",\n  \"order\": 1,\n  \"slug\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/roadmap-categories/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"roadmap-categories",
+						""
+					]
+				},
+				"description": "Posting an empty roadmap category gets a 400 error and request for mandatory field \"name\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a New Roadmap Category",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6cbfd6a0-6ff9-4ea2-a8d9-b7f7132be8c2",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "844cefd3-7609-4068-b809-965104832ad7",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Capture roadmap Id and store as variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"roadmap_id\", jsonData.results[0]._id);",
+							"",
+							"pm.test(\"Description is loaded correctly\", function () {",
+							"    var desc = jsonData.results[0].desc;",
+							"    pm.expect(desc).to.eql(\"This is a New Roadmap description\");",
+							"});",
+							"",
+							"pm.test(\"Name is loaded correctly\", function () {",
+							"    var name = jsonData.results[0].name;",
+							"    pm.expect(name).to.eql(\"New Roadmap\");",
+							"});",
+							"",
+							"pm.test(\"Name has been slugified correctly\", function () {",
+							"    var slug = jsonData.results[0].slug;",
+							"    pm.expect(slug).to.eql(\"new-roadmap\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"desc\": \"This is a New Roadmap description\",\n  \"name\": \"New Roadmap\",\n  \"order\": 6,\n  \"slug\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/roadmap-categories/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"roadmap-categories",
+						""
+					]
+				},
+				"description": "Posting a valid roadmap category gets a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Get New Roadmap Category",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "88a4b40e-cc60-4be7-a5de-ba554e7d1be3",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6f76e2d7-2098-46d7-aa58-f24a30c6146d",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"var existingId = pm.environment.get(\"roadmap_id\");",
+							"",
+							"pm.test(\"The 'New Roadmap Category' record exists\" , function () {",
+							"    var id = jsonData.results[0]._id;",
+							"    pm.expect(id).to.eql(existingId);",
+							"});",
+							"",
+							"pm.test(\"Only 1 record is returned\" , function () {",
+							"    var count = jsonData.metadata.totalCount;",
+							"    pm.expect(count).to.eql(1);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/roadmap-categories/?filter={\"name\":\"New Roadmap\"}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"roadmap-categories",
+						""
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "{\"name\":\"New Roadmap\"}"
+						}
+					]
+				},
+				"description": "Ensure New Roadmap Category can be fetched"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Roadmap Category",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "973eed3c-55a5-447a-ab99-a0229d8f968a",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "9b239080-2112-41d1-a3d4-3279785d2df1",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Capture roadmap Id and store as variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"roadmap_id\", jsonData.results[0]._id);",
+							"",
+							"pm.test(\"Description is updated correctly\", function () {",
+							"    var desc = jsonData.results[0].desc;",
+							"    pm.expect(desc).to.eql(\"This is an Updated Roadmap description\");",
+							"});",
+							"",
+							"pm.test(\"Name is updated correctly\", function () {",
+							"    var name = jsonData.results[0].name;",
+							"    pm.expect(name).to.eql(\"Updated Roadmap\");",
+							"});",
+							"",
+							"pm.test(\"Slug has been updated correctly\", function () {",
+							"    var slug = jsonData.results[0].slug;",
+							"    pm.expect(slug).to.eql(\"updated-roadmap\");",
+							"});",
+							"",
+							"pm.test(\"Version is updated to 2\", function () {",
+							"    var version = jsonData.results[0]._version;",
+							"    pm.expect(version).to.eql(2);",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"desc\": \"This is an Updated Roadmap description\",\n  \"name\": \"Updated Roadmap\",\n  \"order\": 6,\n  \"slug\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/roadmap-categories/{{roadmap_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"roadmap-categories",
+						"{{roadmap_id}}"
+					]
+				},
+				"description": "Updating an existing roadmap category will generate a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Roadmap Category",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e8253906-cbbf-4c6b-b6fd-987d106d2240",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "20bdebfb-8c14-4f93-be3a-7c432b252fd3",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/roadmap-categories/{{roadmap_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"roadmap-categories",
+						"{{roadmap_id}}"
+					]
+				},
+				"description": "Delete a roadmap category that has been published"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Number of Web Services",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cc48df45-b8d4-412d-98fc-413e837d8a8e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Expect number of Web Services to equal 11\", function () {",
+							"    let total = pm.response.json().metadata.totalCount;",
+							"    pm.expect(total).to.equal(11); ",
+							"});",
+							"",
+							"pm.test(\"There is a Web Service for Predict\", function () {",
+							"    var name = pm.response.json().results[0].name;",
+							"    pm.expect(name).to.eql(\"Predict\");",
+							"});",
+							"",
+							"pm.test(\"There is a Web Service for Match\", function () {",
+							"    var name = pm.response.json().results[1].name;",
+							"    pm.expect(name).to.eql(\"Match\");",
+							"});",
+							"",
+							"pm.test(\"There is a Web Service for Identity\", function () {",
+							"    var name = pm.response.json().results[2].name;",
+							"    pm.expect(name).to.eql(\"Identity\");",
+							"});",
+							"",
+							"pm.test(\"There is a Web Service for Visualize\", function () {",
+							"    var name = pm.response.json().results[3].name;",
+							"    pm.expect(name).to.eql(\"Visualize\");",
+							"});",
+							"",
+							"pm.test(\"There is a Web Service for Track\", function () {",
+							"    var name = pm.response.json().results[4].name;",
+							"    pm.expect(name).to.eql(\"Track\");",
+							"});",
+							"",
+							"pm.test(\"There is a Web Service for Store\", function () {",
+							"    var name = pm.response.json().results[5].name;",
+							"    pm.expect(name).to.eql(\"Store\");",
+							"});",
+							"",
+							"pm.test(\"There is a Web Service for Queue\", function () {",
+							"    var name = pm.response.json().results[6].name;",
+							"    pm.expect(name).to.eql(\"Queue\");",
+							"});",
+							"",
+							"pm.test(\"There is a Web Service for CDN\", function () {",
+							"    var name = pm.response.json().results[7].name;",
+							"    pm.expect(name).to.eql(\"CDN\");",
+							"});",
+							"",
+							"pm.test(\"There is a Web Service for API\", function () {",
+							"    var name = pm.response.json().results[8].name;",
+							"    pm.expect(name).to.eql(\"API\");",
+							"});",
+							"",
+							"pm.test(\"There is a Web Service for Publish\", function () {",
+							"    var name = pm.response.json().results[9].name;",
+							"    pm.expect(name).to.eql(\"Publish\");",
+							"});",
+							"",
+							"pm.test(\"There is a Web Service for Web\", function () {",
+							"    var name = pm.response.json().results[10].name;",
+							"    pm.expect(name).to.eql(\"Web\");",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "683766e4-282e-428c-8cf0-1749cd24434d",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/web-services/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"web-services",
+						""
+					]
+				},
+				"description": "Ensure number of Web Services equals 11"
+			},
+			"response": []
+		},
+		{
+			"name": "Post an Empty Web Service",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "aa3870cd-22cb-47c8-a3c2-f6277b3bf752",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ec0c01b-950a-47f8-87ae-a16d57b02e92",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Name field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"name\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Overview field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[1].field;",
+							"    var message = pm.response.json().errors[1].message;",
+							"    pm.expect(field).to.eql(\"overview\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"color\": \"\",\n  \"demo\": \"\",\n  \"description\": \"\",\n  \"features\": \"\",\n  \"github\": \"\",\n  \"headlineFeatures\": \"\",\n  \"install\": \"\",\n  \"name\": \"\",\n  \"npm\": \"\",\n  \"overview\": \"\",\n  \"published\": false,\n  \"slug\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/web-services/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"web-services",
+						""
+					]
+				},
+				"description": "Posting an empty web serivce gets a 400 error and request for mandatory fields \"name\" and \"overview\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Web Service With Name Only",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "aa3870cd-22cb-47c8-a3c2-f6277b3bf752",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf3d72e5-b354-48a4-a1ad-d48d46ba7c2f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Name field is populated as per POST request\", function () {",
+							"    var field = pm.response.json().data[0].name;",
+							"    pm.expect(field).to.eql(\"Name\");",
+							"});",
+							"",
+							"pm.test(\"Overview field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"overview\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"color\": \"\",\n  \"demo\": \"\",\n  \"description\": \"\",\n  \"features\": \"\",\n  \"github\": \"\",\n  \"headlineFeatures\": \"\",\n  \"install\": \"\",\n  \"name\": \"Name\",\n  \"npm\": \"\",\n  \"overview\": \"\",\n  \"published\": false,\n  \"slug\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/web-services/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"web-services",
+						""
+					]
+				},
+				"description": "Posting a web serivce with \"name' only gets a 400 error and request for mandatory field \"overview\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Web Service With Overview Only",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "aa3870cd-22cb-47c8-a3c2-f6277b3bf752",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "08766d37-e29d-4db4-8c7b-eeb935a0676b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Overview field is populated as per POST request\", function () {",
+							"    var field = pm.response.json().data[0].overview;",
+							"    pm.expect(field).to.eql(\"This is an overview\");",
+							"});",
+							"",
+							"pm.test(\"Name field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"name\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"color\": \"\",\n  \"demo\": \"\",\n  \"description\": \"\",\n  \"features\": \"\",\n  \"github\": \"\",\n  \"headlineFeatures\": \"\",\n  \"install\": \"\",\n  \"name\": \"\",\n  \"npm\": \"\",\n  \"overview\": \"This is an overview\",\n  \"published\": false,\n  \"slug\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/web-services/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"web-services",
+						""
+					]
+				},
+				"description": "Posting a web serivce with \"overview\" only gets a 400 error and request for mandatory field \"name\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a New Web Service",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4023e7a0-1c7f-41f2-ab7c-77ccd883a930",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cb8e81ba-1a38-4fbd-9d14-25a8f4ad5c74",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Capture web service Id and store as variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"webservice_id\", jsonData.results[0]._id);",
+							"",
+							"pm.test(\"Description is loaded correctly\", function () {",
+							"    var desc = jsonData.results[0].description;",
+							"    pm.expect(desc).to.eql(\"New Web Service Description\");",
+							"});",
+							"",
+							"pm.test(\"Features are loaded correctly\", function () {",
+							"    var name = jsonData.results[0].features;",
+							"    pm.expect(name).to.eql(\"New Web Service Features\");",
+							"});",
+							"",
+							"pm.test(\"Name is loaded correctly\", function () {",
+							"    var name = jsonData.results[0].name;",
+							"    pm.expect(name).to.eql(\"New Web Service\");",
+							"});",
+							"",
+							"pm.test(\"Overview is loaded correctly\", function () {",
+							"    var overview = jsonData.results[0].overview;",
+							"    pm.expect(overview).to.eql(\"New Web Service Overview\");",
+							"});",
+							"",
+							"pm.test(\"Name has been slugified correctly\", function () {",
+							"    var slug = jsonData.results[0].slug;",
+							"    pm.expect(slug).to.eql(\"new-web-service\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"color\": \"0aa6dd\",\n  \"demo\": \"\",\n  \"description\": \"New Web Service Description\",\n  \"features\": \"New Web Service Features\",\n  \"github\": \"\",\n  \"headlineFeatures\": \"\",\n  \"install\": \"\",\n  \"name\": \"New Web Service\",\n  \"npm\": \"\",\n  \"overview\": \"New Web Service Overview\",\n  \"published\": true,\n  \"slug\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/web-services/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"web-services",
+						""
+					]
+				},
+				"description": "Posting a valid web service gets a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Get New Web Service",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a4067286-40c2-464b-8642-c514c2b07be5",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "2ba476d5-2bc9-483a-be54-c130426e2dba",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"var existingId = pm.environment.get(\"webservice_id\");",
+							"",
+							"pm.test(\"The 'New Web Service' record exists\" , function () {",
+							"    var id = jsonData.results[0]._id;",
+							"    pm.expect(id).to.eql(existingId);",
+							"});",
+							"",
+							"pm.test(\"Only 1 record is returned\" , function () {",
+							"    var count = jsonData.metadata.totalCount;",
+							"    pm.expect(count).to.eql(1);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/web-services/?filter={\"name\":\"New Web Service\"}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"web-services",
+						""
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "{\"name\":\"New Web Service\"}"
+						}
+					]
+				},
+				"description": "Ensure the New Web Service can be fetched"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Web Service",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3b98c222-61a7-4eb0-abe5-8378024b7f71",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "401b8547-60a6-4d18-8534-853aa362dca4",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Capture roadmap Id and store as variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"webservice_id\", jsonData.results[0]._id);",
+							"",
+							"pm.test(\"Description is updated correctly\", function () {",
+							"    var desc = jsonData.results[0].description;",
+							"    pm.expect(desc).to.eql(\"Updated Web Service Description\");",
+							"});",
+							"",
+							"pm.test(\"Features are updated correctly\", function () {",
+							"    var name = jsonData.results[0].features;",
+							"    pm.expect(name).to.eql(\"Updated Web Service Features\");",
+							"});",
+							"",
+							"pm.test(\"Name is updated correctly\", function () {",
+							"    var name = jsonData.results[0].name;",
+							"    pm.expect(name).to.eql(\"Updated Web Service\");",
+							"});",
+							"",
+							"pm.test(\"Overview is updated correctly\", function () {",
+							"    var overview = jsonData.results[0].overview;",
+							"    pm.expect(overview).to.eql(\"Updated Web Service Overview\");",
+							"});",
+							"",
+							"pm.test(\"Colour is updated correctly\", function () {",
+							"    var colour = jsonData.results[0].color;",
+							"    pm.expect(colour).to.eql(\"71afac\");",
+							"});",
+							"",
+							"pm.test(\"Slug has been updated correctly\", function () {",
+							"    var slug = jsonData.results[0].slug;",
+							"    pm.expect(slug).to.eql(\"updated-web-service\");",
+							"});",
+							"",
+							"pm.test(\"Version is updated to 2\", function () {",
+							"    var version = jsonData.results[0]._version;",
+							"    pm.expect(version).to.eql(2);",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"color\": \"71afac\",\n  \"demo\": \"\",\n  \"description\": \"Updated Web Service Description\",\n  \"features\": \"Updated Web Service Features\",\n  \"github\": \"\",\n  \"headlineFeatures\": \"\",\n  \"install\": \"\",\n  \"name\": \"Updated Web Service\",\n  \"npm\": \"\",\n  \"overview\": \"Updated Web Service Overview\",\n  \"published\": true,\n  \"slug\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/web-services/{{webservice_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"web-services",
+						"{{webservice_id}}"
+					]
+				},
+				"description": "Updating an existing web service will generate a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Web Service",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "13e9e338-4580-40e0-b5e8-54f33d14b3f3",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b59de513-bcb7-4237-848f-496dc80f5550",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/web-services/{{webservice_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"web-services",
+						"{{webservice_id}}"
+					]
+				},
+				"description": "Delete a web service that has been published"
+			},
+			"response": []
+		},
+		{
+			"name": "Post an Empty Milestone",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "922fa785-e370-4bc6-99ef-33e81d1b0c6d",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e484d6bd-a05c-44e0-82d0-d9d66e4cf99f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Title field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"title\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Desc field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[1].field;",
+							"    var message = pm.response.json().errors[1].message;",
+							"    pm.expect(field).to.eql(\"desc\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Date field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[2].field;",
+							"    var message = pm.response.json().errors[2].message;",
+							"    pm.expect(field).to.eql(\"date\");",
+							"    pm.expect(message).to.eql(\"must be specified\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"category\": {},\n  \"complete\": false,\n  \"desc\": \"\",\n  \"title\": \"\",\n  \"web-service\": {}\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/milestones/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"milestones",
+						""
+					]
+				},
+				"description": "Posting an empty milestone gets a 400 error and request for mandatory fields \"title\", \"desc\" and \"date\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Milestone With Desc Only",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "922fa785-e370-4bc6-99ef-33e81d1b0c6d",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "46bfbb8e-a568-426d-8458-193653f33b3b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Title field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"title\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Date field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[1].field;",
+							"    var message = pm.response.json().errors[1].message;",
+							"    pm.expect(field).to.eql(\"date\");",
+							"    pm.expect(message).to.eql(\"must be specified\");",
+							"});",
+							"",
+							"pm.test(\"Description field is populated as per POST request\", function () {",
+							"    var field = pm.response.json().data[0].desc;",
+							"    pm.expect(field).to.eql(\"Milestone Description\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"category\": {},\n  \"complete\": false,\n  \"desc\": \"Milestone Description\",\n  \"title\": \"\",\n  \"web-service\": {}\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/milestones/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"milestones",
+						""
+					]
+				},
+				"description": "Posting a milestone with \"desc' only gets a 400 error and request for mandatory fields \"title\" and \"date\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Milestone With Date Only",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b909e4b0-bd51-40af-b042-1b805c3170d7",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							"",
+							"pm.environment.set(\"timeNow\", Date.now());"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "51ded9e4-373a-4bf2-a34d-d014a4262d8b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Title field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"title\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Desc field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[1].field;",
+							"    var message = pm.response.json().errors[1].message;",
+							"    pm.expect(field).to.eql(\"desc\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"The Date has today's date\", function () {",
+							"    var unixTS = formatDate(new Date(pm.response.json().data[0].date));",
+							"    var todaysDate = formatDate(new Date());",
+							"    pm.expect(unixTS).to.eql(todaysDate);",
+							"});",
+							"",
+							"function formatDate (date) {",
+							"  return (\"0\" + date.getDate()).slice(-2) + \".\" + (\"0\"+(date.getMonth()+1)).slice(-2) + \".\" +",
+							"    date.getFullYear();",
+							"}",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"category\": {},\n  \"complete\": false,\n  \"date\": {{timeNow}},\n  \"desc\": \"\",\n  \"title\": \"\",\n  \"web-service\": {}\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/milestones/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"milestones",
+						""
+					]
+				},
+				"description": "Posting a milestone with \"date' only gets a 400 error and request for mandatory fields \"title\" and \"overview\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Milestone With Title Only",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2c552d19-077d-4dfd-aa7b-fe3f3ca16c99",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							"",
+							"pm.environment.set(\"timeNow\", Date.now());"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b706022d-b8d7-442a-8989-b2a9559a1de2",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Desc field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"desc\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Date field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[1].field;",
+							"    var message = pm.response.json().errors[1].message;",
+							"    pm.expect(field).to.eql(\"date\");",
+							"    pm.expect(message).to.eql(\"must be specified\");",
+							"});",
+							"",
+							"pm.test(\"Title field is populated as per POST request\", function () {",
+							"    var field = pm.response.json().data[0].title;",
+							"    pm.expect(field).to.eql(\"Milestone Title\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"category\": {},\n  \"complete\": false,\n  \"desc\": \"\",\n  \"title\": \"Milestone Title\",\n  \"web-service\": {}\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/milestones/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"milestones",
+						""
+					]
+				},
+				"description": "Posting a milestone with \"title' only gets a 400 error and request for mandatory fields \"overview\" and \"date\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a New Milestone",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "30299191-5a05-40fb-9157-3bf46be0a4a6",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							"",
+							"pm.environment.set(\"timeNow\", Date.now());"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "41c13076-ffd1-40ae-88b3-e7e7b64812e2",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Capture milestone Id and store as variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"milestone_id\", jsonData.results[0]._id);",
+							"",
+							"pm.test(\"The description is loaded correctly\", function () {",
+							"    var desc = jsonData.results[0].desc;",
+							"    pm.expect(desc).to.eql(\"This is a new milestone\");",
+							"});",
+							"",
+							"pm.test(\"Category is Website\", function () {",
+							"    var kcName = jsonData.results[0].category[0].name;",
+							"    pm.expect(kcName).to.eql(\"Website\");",
+							"});",
+							"",
+							"pm.test(\"Web Service is Web\", function () {",
+							"    var wsName = jsonData.results[0]['web-service'][0].name;",
+							"    pm.expect(wsName).to.eql(\"Web\");",
+							"});",
+							"",
+							"pm.test(\"The title is loaded correctly\", function () {",
+							"    var title = jsonData.results[0].title;",
+							"    pm.expect(title).to.eql(\"New Milestone\");",
+							"});",
+							"",
+							"pm.test(\"The milestone is marked as In-Progress\", function () {",
+							"    var complete = jsonData.results[0].complete;",
+							"    pm.expect(complete).to.eql(false);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"category\": [\"5a9043d576dbd27a42698570\"],\n  \"complete\": false,\n  \"date\": {{timeNow}},\n  \"desc\": \"This is a new milestone\",\n  \"title\": \"New Milestone\",\n  \"web-service\": [\"5a9016e4da7f1660873c5e85\"]\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/milestones/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"milestones",
+						""
+					]
+				},
+				"description": "Posting a valid milestone gets a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Get New Milestone",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "29f171c5-58ae-4a08-8090-0453c150ed33",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cd749ad6-2d46-4153-a5de-264c7141b007",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"var existingId = pm.environment.get(\"milestone_id\");",
+							"",
+							"pm.test(\"The 'New Milestone' record exists\" , function () {",
+							"    var id = jsonData.results[0]._id;",
+							"    pm.expect(id).to.eql(existingId);",
+							"});",
+							"",
+							"pm.test(\"Only 1 record is returned\" , function () {",
+							"    var count = jsonData.metadata.totalCount;",
+							"    pm.expect(count).to.eql(1);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/milestones/?filter={\"title\":\"New Milestone\"}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"milestones",
+						""
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "{\"title\":\"New Milestone\"}"
+						}
+					]
+				},
+				"description": "Ensure New Milestone record can be fetched"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Milestone",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "eee00d8d-aba3-4163-b9fd-55ebaf77f84f",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							"",
+							"pm.environment.set(\"timeNow\", Date.now());"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "909d6683-116b-4b26-868b-d139db24a924",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Capture milestone Id and store as variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"milestone_id\", jsonData.results[0]._id);",
+							"",
+							"pm.test(\"The description is loaded correctly\", function () {",
+							"    var desc = jsonData.results[0].desc;",
+							"    pm.expect(desc).to.eql(\"This is an updated milestone\");",
+							"});",
+							"",
+							"pm.test(\"Category is Website\", function () {",
+							"    var kcName = jsonData.results[0].category[0].name;",
+							"    pm.expect(kcName).to.eql(\"Website\");",
+							"});",
+							"",
+							"pm.test(\"Web Service is Web\", function () {",
+							"    var wsName = jsonData.results[0]['web-service'][0].name;",
+							"    pm.expect(wsName).to.eql(\"Web\");",
+							"});",
+							"",
+							"pm.test(\"The title is loaded correctly\", function () {",
+							"    var title = jsonData.results[0].title;",
+							"    pm.expect(title).to.eql(\"Closed Milestone\");",
+							"});",
+							"",
+							"pm.test(\"The milestone is marked as Complete\", function () {",
+							"    var complete = jsonData.results[0].complete;",
+							"    pm.expect(complete).to.eql(true);",
+							"});",
+							"",
+							"pm.test(\"Version is updated to 2\", function () {",
+							"    var version = jsonData.results[0]._version;",
+							"    pm.expect(version).to.eql(2);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"category\": [\"5a9043d576dbd27a42698570\"],\n  \"complete\": true,\n  \"date\": {{timeNow}},\n  \"desc\": \"This is an updated milestone\",\n  \"title\": \"Closed Milestone\",\n  \"web-service\": [\"5a9016e4da7f1660873c5e85\"]\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/milestones/{{milestone_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"milestones",
+						"{{milestone_id}}"
+					]
+				},
+				"description": "Updating an existing milestone will generate a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Milestone",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d19c7ec6-49a0-4df2-9baa-ece6433be15c",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "1aee3035-179b-424e-81bd-c9fdd9345467",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/milestones/{{milestone_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"milestones",
+						"{{milestone_id}}"
+					]
+				},
+				"description": "Delete a milestone that has been published"
+			},
+			"response": []
+		},
+		{
+			"name": "Post an Empty Page",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c9df585f-3959-4e0e-b7fb-230531621e11",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e332a594-88e5-40dd-9bdc-52d6f199e8d9",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Title field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"title\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Excerpt field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[1].field;",
+							"    var message = pm.response.json().errors[1].message;",
+							"    pm.expect(field).to.eql(\"excerpt\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"body\": \"\",\n  \"excerpt\": \"\",\n  \"icon\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"published\": true,\n  \"slug\": \"\",\n  \"title\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/pages/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"pages",
+						""
+					]
+				},
+				"description": "Posting an empty page gets a 400 error and request for mandatory fields \"title\" and \"excerpt\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Page With Excerpt Only",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2d2882c4-0799-4290-a41b-5b0bbb4464eb",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "9744a0c5-55fc-4821-83e8-bfd216ce2f5b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Title field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"title\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Excerpt field is populated as per POST request\", function () {",
+							"    var field = pm.response.json().data[0].excerpt;",
+							"    pm.expect(field).to.eql(\"This is an excerpt\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"body\": \"\",\n  \"excerpt\": \"This is an excerpt\",\n  \"icon\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"published\": true,\n  \"slug\": \"\",\n  \"title\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/pages/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"pages",
+						""
+					]
+				},
+				"description": "Posting a page with \"excerpt' only gets a 400 error and request for mandatory field \"title\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Page With Title Only",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c58ce2c4-824d-438f-bd9f-9d6671195d32",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "79d4476f-fdce-4366-bb7b-5568457f2d68",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Excerpt field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"excerpt\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Title field is populated as per POST request\", function () {",
+							"    var field = pm.response.json().data[0].title;",
+							"    pm.expect(field).to.eql(\"Page Title\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"body\": \"\",\n  \"excerpt\": \"\",\n  \"icon\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"published\": true,\n  \"slug\": \"\",\n  \"title\": \"Page Title\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/pages/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"pages",
+						""
+					]
+				},
+				"description": "Posting a page with \"title' only gets a 400 error and request for mandatory field \"excerpt\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a New Page",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9f063fca-f68d-4b1f-8894-f573f77ce588",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b6f7936b-a958-48bf-b06d-be7a3cbb8d1d",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Capture page Id and store as variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"page_id\", jsonData.results[0]._id);",
+							"",
+							"pm.test(\"The title is loaded correctly\", function () {",
+							"    var desc = jsonData.results[0].title;",
+							"    pm.expect(desc).to.eql(\"Page Title\");",
+							"});",
+							"",
+							"pm.test(\"The body is loaded correctly\", function () {",
+							"    var desc = jsonData.results[0].body;",
+							"    pm.expect(desc).to.eql(\"This is the body of the page\");",
+							"});",
+							"",
+							"pm.test(\"The excerpt is loaded correctly\", function () {",
+							"    var desc = jsonData.results[0].excerpt;",
+							"    pm.expect(desc).to.eql(\"This is an excerpt\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"body\": \"This is the body of the page\",\n  \"excerpt\": \"This is an excerpt\",\n  \"icon\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"published\": true,\n  \"slug\": \"\",\n  \"title\": \"Page Title\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/pages/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"pages",
+						""
+					]
+				},
+				"description": "Posting a valid page gets a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Get New Page",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2c79b79a-5c5f-4b0d-8608-2c29a4b91a34",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "30be77df-c120-420c-8a71-4e75f2a4501b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"var existingId = pm.environment.get(\"page_id\");",
+							"",
+							"pm.test(\"The 'New Page' record exists\" , function () {",
+							"    var id = jsonData.results[0]._id;",
+							"    pm.expect(id).to.eql(existingId);",
+							"});",
+							"",
+							"pm.test(\"Only 1 record is returned\" , function () {",
+							"    var count = jsonData.metadata.totalCount;",
+							"    pm.expect(count).to.eql(1);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/pages/?filter={\"title\":\"Page Title\"}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"pages",
+						""
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "{\"title\":\"Page Title\"}"
+						}
+					]
+				},
+				"description": "Ensure New Page record can be fetched"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Page",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "50052980-7444-45d4-9659-6ee7c2d57968",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							"",
+							"pm.environment.set(\"timeNow\", Date.now());"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "174ca016-68ea-418a-949e-04eaa2ef5055",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Capture page Id and store as variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"page_id\", jsonData.results[0]._id);",
+							"",
+							"pm.test(\"The title is updated correctly\", function () {",
+							"    var desc = jsonData.results[0].title;",
+							"    pm.expect(desc).to.eql(\"Updated Page Title\");",
+							"});",
+							"",
+							"pm.test(\"The body is updated correctly\", function () {",
+							"    var desc = jsonData.results[0].body;",
+							"    pm.expect(desc).to.eql(\"This is the updated body of the page\");",
+							"});",
+							"",
+							"pm.test(\"The excerpt is updated correctly\", function () {",
+							"    var desc = jsonData.results[0].excerpt;",
+							"    pm.expect(desc).to.eql(\"This is an updated excerpt\");",
+							"});",
+							"",
+							"pm.test(\"Version is updated to 2\", function () {",
+							"    var version = jsonData.results[0]._version;",
+							"    pm.expect(version).to.eql(2);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"body\": \"This is the updated body of the page\",\n  \"excerpt\": \"This is an updated excerpt\",\n  \"icon\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"published\": true,\n  \"slug\": \"\",\n  \"title\": \"Updated Page Title\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/pages/{{page_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"pages",
+						"{{page_id}}"
+					]
+				},
+				"description": "Updating an existing page will generate a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Page",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "acf8922e-be4d-4212-9b2a-45a63f9ee30c",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							"",
+							"pm.environment.set(\"timeNow\", Date.now());"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "598e8b04-155b-42e0-a7c3-aa0b3f68e1be",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/pages/{{page_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"pages",
+						"{{page_id}}"
+					]
+				},
+				"description": "Delete a page that has been published"
+			},
+			"response": []
+		},
+		{
+			"name": "Post an Empty Team",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d27da49c-edc0-46fb-929e-d913ef66671a",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "841eb5f1-21dd-47ce-8b0b-2dc5e5ccea32",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Name field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"name\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Body field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[1].field;",
+							"    var message = pm.response.json().errors[1].message;",
+							"    pm.expect(field).to.eql(\"body\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"advisor\": false,\n  \"body\": \"\",\n  \"linkedIn\": \"\",\n  \"name\": \"\",\n  \"order\": 1,\n  \"personalSite\": \"\",\n  \"role\": \"\",\n  \"slug\": \"\",\n  \"twitter\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/team/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"team",
+						""
+					]
+				},
+				"description": "Posting an empty team gets a 400 error and request for mandatory fields \"name\" and \"body\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Team With Body Only",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "bc3c4307-a407-450c-9200-789c14f116af",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "63057e31-b5b2-4f79-a284-cf65e1c05d53",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Name field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"name\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Body field is populated as per POST request\", function () {",
+							"    var field = pm.response.json().data[0].body;",
+							"    pm.expect(field).to.eql(\"This is the team body\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"advisor\": false,\n  \"body\": \"This is the team body\",\n  \"linkedIn\": \"\",\n  \"name\": \"\",\n  \"order\": 1,\n  \"personalSite\": \"\",\n  \"role\": \"\",\n  \"slug\": \"\",\n  \"twitter\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/team/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"team",
+						""
+					]
+				},
+				"description": "Posting a page with \"body' only gets a 400 error and request for mandatory field \"name\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Team With Name Only",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7f0d020d-63e8-4ed6-88da-fa693eb04419",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ac4f5082-3742-4314-8bb4-125d29f4d71b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Body field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"body\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Name field is populated as per POST request\", function () {",
+							"    var field = pm.response.json().data[0].name;",
+							"    pm.expect(field).to.eql(\"Team Name\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"advisor\": false,\n  \"body\": \"\",\n  \"linkedIn\": \"\",\n  \"name\": \"Team Name\",\n  \"order\": 1,\n  \"personalSite\": \"\",\n  \"role\": \"\",\n  \"slug\": \"\",\n  \"twitter\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/team/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"team",
+						""
+					]
+				},
+				"description": "Posting a page with \"name' only gets a 400 error and request for mandatory field \"body\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a New Team",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "17b9b56a-230b-4f6f-bc08-f6c514aa91d9",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "8c079767-048d-4f0a-a627-041b90fc45a5",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Capture team Id and store as variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"team_id\", jsonData.results[0]._id);",
+							"",
+							"pm.test(\"The body is loaded correctly\", function () {",
+							"    var body = jsonData.results[0].body;",
+							"    pm.expect(body).to.eql(\"This is a team advisor\");",
+							"});",
+							"",
+							"pm.test(\"The name is loaded correctly\", function () {",
+							"    var name = jsonData.results[0].name;",
+							"    pm.expect(name).to.eql(\"Team Advisor Name\");",
+							"});",
+							"",
+							"pm.test(\"The linkedIn link is loaded correctly\", function () {",
+							"    var link = jsonData.results[0].linkedIn;",
+							"    pm.expect(link).to.eql(\"teamadvisor\");",
+							"});",
+							"",
+							"pm.test(\"The personal site is loaded correctly\", function () {",
+							"    var site = jsonData.results[0].personalSite;",
+							"    pm.expect(site).to.eql(\"https://about.me/teamadvisor\");",
+							"});",
+							"",
+							"pm.test(\"The role is loaded correctly\", function () {",
+							"    var role = jsonData.results[0].role;",
+							"    pm.expect(role).to.eql(\"Advisor\");",
+							"});",
+							"",
+							"pm.test(\"The twitter link is loaded correctly\", function () {",
+							"    var twitter = jsonData.results[0].twitter;",
+							"    pm.expect(twitter).to.eql(\"teamadvisor\");",
+							"});",
+							"",
+							"pm.test(\"The advisor field is set to true\", function () {",
+							"    var advisor = jsonData.results[0].advisor;",
+							"    pm.expect(advisor).to.eql(true);",
+							"});",
+							"",
+							"pm.test(\"Name has been slugified correctly\", function () {",
+							"    var slug = jsonData.results[0].slug;",
+							"    pm.expect(slug).to.eql(\"team-advisor-name\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"advisor\": true,\n  \"body\": \"This is a team advisor\",\n  \"linkedIn\": \"teamadvisor\",\n  \"name\": \"Team Advisor Name\",\n  \"order\": 1,\n  \"personalSite\": \"https://about.me/teamadvisor\",\n  \"role\": \"Advisor\",\n  \"slug\": \"\",\n  \"twitter\": \"teamadvisor\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/team/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"team",
+						""
+					]
+				},
+				"description": "Posting a valid team gets a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Get New Team",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "996fe575-13ab-4736-9c5e-454de99e2dd9",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "5b271b2a-7e4a-46a6-9470-385fbd8c81c9",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"var existingId = pm.environment.get(\"team_id\");",
+							"",
+							"pm.test(\"The 'New Team' record exists\" , function () {",
+							"    var id = jsonData.results[0]._id;",
+							"    pm.expect(id).to.eql(existingId);",
+							"});",
+							"",
+							"pm.test(\"Only 1 record is returned\" , function () {",
+							"    var count = jsonData.metadata.totalCount;",
+							"    pm.expect(count).to.eql(1);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/team/?filter={\"name\":\"Team Advisor Name\"}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"team",
+						""
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "{\"name\":\"Team Advisor Name\"}"
+						}
+					]
+				},
+				"description": "Ensure New Team record can be fetched"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Team",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "eaea4e96-b5ee-48cc-abd9-a348f8032cd7",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e4f95c9a-a81d-4277-8da0-9d0afc511664",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Capture team Id and store as variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"team_id\", jsonData.results[0]._id);",
+							"",
+							"pm.test(\"The body is updated correctly\", function () {",
+							"    var body = jsonData.results[0].body;",
+							"    pm.expect(body).to.eql(\"This is an updated team name\");",
+							"});",
+							"",
+							"pm.test(\"The name is updated correctly\", function () {",
+							"    var name = jsonData.results[0].name;",
+							"    pm.expect(name).to.eql(\"Team Name Updated\");",
+							"});",
+							"",
+							"pm.test(\"The linkedIn link is updated correctly\", function () {",
+							"    var link = jsonData.results[0].linkedIn;",
+							"    pm.expect(link).to.eql(\"teamname\");",
+							"});",
+							"",
+							"pm.test(\"The personal site is updated correctly\", function () {",
+							"    var site = jsonData.results[0].personalSite;",
+							"    pm.expect(site).to.eql(\"https://about.me/teamname\");",
+							"});",
+							"",
+							"pm.test(\"The role is updated correctly\", function () {",
+							"    var role = jsonData.results[0].role;",
+							"    pm.expect(role).to.eql(\"Team Member\");",
+							"});",
+							"",
+							"pm.test(\"The twitter link is updated correctly\", function () {",
+							"    var twitter = jsonData.results[0].twitter;",
+							"    pm.expect(twitter).to.eql(\"teamname\");",
+							"});",
+							"",
+							"pm.test(\"The advisor field is set to false\", function () {",
+							"    var advisor = jsonData.results[0].advisor;",
+							"    pm.expect(advisor).to.eql(false);",
+							"});",
+							"",
+							"pm.test(\"Slug has been updated correctly\", function () {",
+							"    var slug = jsonData.results[0].slug;",
+							"    pm.expect(slug).to.eql(\"team-name-updated\");",
+							"});",
+							"",
+							"pm.test(\"Version is updated to 2\", function () {",
+							"    var version = jsonData.results[0]._version;",
+							"    pm.expect(version).to.eql(2);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"advisor\": false,\n  \"body\": \"This is an updated team name\",\n  \"linkedIn\": \"teamname\",\n  \"name\": \"Team Name Updated\",\n  \"order\": 1,\n  \"personalSite\": \"https://about.me/teamname\",\n  \"role\": \"Team Member\",\n  \"slug\": \"\",\n  \"twitter\": \"teamname\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/team/{{team_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"team",
+						"{{team_id}}"
+					]
+				},
+				"description": "Updating an existing team will generate a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Team",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "98436985-cdab-4505-936e-13ee1ff8e6d6",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a5fbfd31-d73c-4c2f-979a-b5f2da6f7b67",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							"",
+							"pm.environment.set(\"timeNow\", Date.now());"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/team/{{team_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"team",
+						"{{team_id}}"
+					]
+				},
+				"description": "Delete a team that has been published"
+			},
+			"response": []
+		},
+		{
+			"name": "Post an Empty Partner",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8ccd4e21-7db6-402c-bcd3-28ca731f0b3f",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3f84e1f9-94d4-4551-987e-94f1c6bbc271",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Name field is invalid \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"name\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Desc field is invalid \", function () {",
+							"    var field = pm.response.json().errors[1].field;",
+							"    var message = pm.response.json().errors[1].message;",
+							"    pm.expect(field).to.eql(\"desc\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Website field is invalid \", function () {",
+							"    var field = pm.response.json().errors[2].field;",
+							"    var message = pm.response.json().errors[2].message;",
+							"    pm.expect(field).to.eql(\"website\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"desc\": \"\",\n  \"name\": \"\",\n  \"published\": true,\n  \"website\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/partners/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"partners",
+						""
+					]
+				},
+				"description": "Posting an empty partner gets a 400 error and request for mandatory fields \"name\", \"desc\" and \"website\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Partner With Name Only",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8ccd4e21-7db6-402c-bcd3-28ca731f0b3f",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "5b124555-925f-4ad0-9c55-d37845b60ab5",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Desc field is invalid \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"desc\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Website field is invalid \", function () {",
+							"    var field = pm.response.json().errors[1].field;",
+							"    var message = pm.response.json().errors[1].message;",
+							"    pm.expect(field).to.eql(\"website\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Name field is populated as per POST request\", function () {",
+							"    var field = pm.response.json().data[0].name;",
+							"    pm.expect(field).to.eql(\"Partner Name\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"desc\": \"\",\n  \"name\": \"Partner Name\",\n  \"published\": true,\n  \"website\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/partners/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"partners",
+						""
+					]
+				},
+				"description": "Posting a partner with \"name\" only gets a 400 error and request for mandatory fields \"desc\" and \"website\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Partner With Desc Only",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8ccd4e21-7db6-402c-bcd3-28ca731f0b3f",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "21bdfb66-7325-4087-a071-f62a898cf8ea",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Name field is invalid \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"name\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Website field is invalid \", function () {",
+							"    var field = pm.response.json().errors[1].field;",
+							"    var message = pm.response.json().errors[1].message;",
+							"    pm.expect(field).to.eql(\"website\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Desc field is populated as per POST request\", function () {",
+							"    var field = pm.response.json().data[0].desc;",
+							"    pm.expect(field).to.eql(\"Partner Description\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"desc\": \"Partner Description\",\n  \"name\": \"\",\n  \"published\": true,\n  \"website\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/partners/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"partners",
+						""
+					]
+				},
+				"description": "Posting a partner with \"desc\" only gets a 400 error and request for mandatory fields \"name\" and \"website\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Partner With Website Only",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8ccd4e21-7db6-402c-bcd3-28ca731f0b3f",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d6f49f51-bbde-4fe2-9e77-3e188a4c8c35",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Name field is invalid \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"name\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Desc field is invalid \", function () {",
+							"    var field = pm.response.json().errors[1].field;",
+							"    var message = pm.response.json().errors[1].message;",
+							"    pm.expect(field).to.eql(\"desc\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							"",
+							"pm.test(\"Website field is populated as per POST request\", function () {",
+							"    var field = pm.response.json().data[0].website;",
+							"    pm.expect(field).to.eql(\"https://www.partner.co.uk/\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"desc\": \"\",\n  \"name\": \"\",\n  \"published\": true,\n  \"website\": \"https://www.partner.co.uk/\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/partners/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"partners",
+						""
+					]
+				},
+				"description": "Posting a partner with \"website\" only gets a 400 error and request for mandatory fields \"name\" and \"desc\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a New Partner",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8ccd4e21-7db6-402c-bcd3-28ca731f0b3f",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e521541e-d75a-489e-8763-573e8d8d7ca1",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Capture partner Id and store as variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"partner_id\", jsonData.results[0]._id);",
+							"",
+							"pm.test(\"The desc is loaded correctly\", function () {",
+							"    var desc = jsonData.results[0].desc;",
+							"    pm.expect(desc).to.eql(\"This is a new Partner Description\");",
+							"});",
+							"",
+							"pm.test(\"The name is loaded correctly\", function () {",
+							"    var name = jsonData.results[0].name;",
+							"    pm.expect(name).to.eql(\"New Partner\");",
+							"});",
+							"",
+							"pm.test(\"The website field is loaded correctly\", function () {",
+							"    var website = jsonData.results[0].website;",
+							"    pm.expect(website).to.eql(\"https://www.partner.co.uk/\");",
+							"});",
+							"",
+							"pm.test(\"The published field is set to true\", function () {",
+							"    var publish = jsonData.results[0].published;",
+							"    pm.expect(publish).to.eql(true);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"desc\": \"This is a new Partner Description\",\n  \"name\": \"New Partner\",\n  \"published\": true,\n  \"website\": \"https://www.partner.co.uk/\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/partners/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"partners",
+						""
+					]
+				},
+				"description": "Posting a valid partner gets a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Get New Partner",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "cff885dc-36d2-4ca6-907a-89cf077175a4",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a707232d-6342-4c0f-86c7-2a064826350d",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"var existingId = pm.environment.get(\"partner_id\");",
+							"",
+							"pm.test(\"The 'New Partner' record exists\" , function () {",
+							"    var id = jsonData.results[0]._id;",
+							"    pm.expect(id).to.eql(existingId);",
+							"});",
+							"",
+							"pm.test(\"Only 1 record is returned\" , function () {",
+							"    var count = jsonData.metadata.totalCount;",
+							"    pm.expect(count).to.eql(1);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/partners/?filter={\"name\":\"New Partner\"}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"partners",
+						""
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "{\"name\":\"New Partner\"}"
+						}
+					]
+				},
+				"description": "Ensure New Partner can be fetched"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Partner",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8ccd4e21-7db6-402c-bcd3-28ca731f0b3f",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "27e58841-4450-4e63-a86c-3456f0d3b938",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Capture partner Id and store as variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"partner_id\", jsonData.results[0]._id);",
+							"",
+							"pm.test(\"The desc is updated correctly\", function () {",
+							"    var desc = jsonData.results[0].desc;",
+							"    pm.expect(desc).to.eql(\"This is an updated Partner Description\");",
+							"});",
+							"",
+							"pm.test(\"The name is updated correctly\", function () {",
+							"    var name = jsonData.results[0].name;",
+							"    pm.expect(name).to.eql(\"Updated Partner\");",
+							"});",
+							"",
+							"pm.test(\"The website field is updated correctly\", function () {",
+							"    var website = jsonData.results[0].website;",
+							"    pm.expect(website).to.eql(\"https://www.updatedpartner.co.uk/\");",
+							"});",
+							"",
+							"pm.test(\"The published field is set to true\", function () {",
+							"    var publish = jsonData.results[0].published;",
+							"    pm.expect(publish).to.eql(true);",
+							"});",
+							"",
+							"pm.test(\"Version is updated to 2\", function () {",
+							"    var version = jsonData.results[0]._version;",
+							"    pm.expect(version).to.eql(2);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"desc\": \"This is an updated Partner Description\",\n  \"name\": \"Updated Partner\",\n  \"published\": true,\n  \"website\": \"https://www.updatedpartner.co.uk/\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/partners/{{partner_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"partners",
+						"{{partner_id}}"
+					]
+				},
+				"description": "Updating an existing partner will generate a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Partner",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8e52bad0-075c-4557-9200-13f503ef1f30",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "27f428b6-8ce4-4e11-8aa8-138008ec5563",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/partners/{{partner_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"partners",
+						"{{partner_id}}"
+					]
+				},
+				"description": "Delete a partner that has been published"
+			},
+			"response": []
+		},
+		{
+			"name": "Post an Empty TokenData",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f808baed-0390-4752-913b-d22b935fac6e",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "587fbdb2-fd21-4b9a-a76d-8af3caf2d733",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"priceBTC field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"priceBTC\");",
+							"    pm.expect(message).to.eql(\"must be specified\");",
+							"});",
+							"",
+							"pm.test(\"priceETH field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[1].field;",
+							"    var message = pm.response.json().errors[1].message;",
+							"    pm.expect(field).to.eql(\"priceETH\");",
+							"    pm.expect(message).to.eql(\"must be specified\");",
+							"});",
+							"",
+							"pm.test(\"priceUSD field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[2].field;",
+							"    var message = pm.response.json().errors[2].message;",
+							"    pm.expect(field).to.eql(\"priceUSD\");",
+							"    pm.expect(message).to.eql(\"must be specified\");",
+							"});",
+							"",
+							"pm.test(\"marketCapBTC field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[3].field;",
+							"    var message = pm.response.json().errors[3].message;",
+							"    pm.expect(field).to.eql(\"marketCapBTC\");",
+							"    pm.expect(message).to.eql(\"must be specified\");",
+							"});",
+							"",
+							"pm.test(\"marketCapETH field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[4].field;",
+							"    var message = pm.response.json().errors[4].message;",
+							"    pm.expect(field).to.eql(\"marketCapETH\");",
+							"    pm.expect(message).to.eql(\"must be specified\");",
+							"});",
+							"",
+							"pm.test(\"marketCapUSD field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[5].field;",
+							"    var message = pm.response.json().errors[5].message;",
+							"    pm.expect(field).to.eql(\"marketCapUSD\");",
+							"    pm.expect(message).to.eql(\"must be specified\");",
+							"});",
+							"",
+							"pm.test(\"volume24HourBTC field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[6].field;",
+							"    var message = pm.response.json().errors[6].message;",
+							"    pm.expect(field).to.eql(\"volume24HourBTC\");",
+							"    pm.expect(message).to.eql(\"must be specified\");",
+							"});",
+							"",
+							"pm.test(\"volume24HourETH field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[7].field;",
+							"    var message = pm.response.json().errors[7].message;",
+							"    pm.expect(field).to.eql(\"volume24HourETH\");",
+							"    pm.expect(message).to.eql(\"must be specified\");",
+							"});",
+							"",
+							"pm.test(\"volume24HourUSD field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[8].field;",
+							"    var message = pm.response.json().errors[8].message;",
+							"    pm.expect(field).to.eql(\"volume24HourUSD\");",
+							"    pm.expect(message).to.eql(\"must be specified\");",
+							"});",
+							"",
+							"pm.test(\"supplyAvailable field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[9].field;",
+							"    var message = pm.response.json().errors[9].message;",
+							"    pm.expect(field).to.eql(\"supplyAvailable\");",
+							"    pm.expect(message).to.eql(\"must be specified\");",
+							"});",
+							"",
+							"pm.test(\"supplyTotal field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[10].field;",
+							"    var message = pm.response.json().errors[10].message;",
+							"    pm.expect(field).to.eql(\"supplyTotal\");",
+							"    pm.expect(message).to.eql(\"must be specified\");",
+							"});",
+							"",
+							"pm.test(\"updatedAt field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[11].field;",
+							"    var message = pm.response.json().errors[11].message;",
+							"    pm.expect(field).to.eql(\"updatedAt\");",
+							"    pm.expect(message).to.eql(\"must be specified\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/tokenData/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"tokenData",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post an Invalid TokenData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8516c7ac-41ea-42f3-a640-1e398c6b9851",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"marketCapBTC field is invalid \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"marketCapBTC\");",
+							"    pm.expect(message).to.eql(\"is wrong type\");",
+							"});",
+							"",
+							"pm.test(\"marketCapETH field is invalid \", function () {",
+							"    var field = pm.response.json().errors[1].field;",
+							"    var message = pm.response.json().errors[1].message;",
+							"    pm.expect(field).to.eql(\"marketCapETH\");",
+							"    pm.expect(message).to.eql(\"is wrong type\");",
+							"});",
+							"",
+							"pm.test(\"marketCapUSD field is invalid \", function () {",
+							"    var field = pm.response.json().errors[2].field;",
+							"    var message = pm.response.json().errors[2].message;",
+							"    pm.expect(field).to.eql(\"marketCapUSD\");",
+							"    pm.expect(message).to.eql(\"is wrong type\");",
+							"});",
+							"",
+							"pm.test(\"priceBTC field is invalid \", function () {",
+							"    var field = pm.response.json().errors[3].field;",
+							"    var message = pm.response.json().errors[3].message;",
+							"    pm.expect(field).to.eql(\"priceBTC\");",
+							"    pm.expect(message).to.eql(\"is wrong type\");",
+							"});",
+							"",
+							"pm.test(\"priceETH field is invalid \", function () {",
+							"    var field = pm.response.json().errors[4].field;",
+							"    var message = pm.response.json().errors[4].message;",
+							"    pm.expect(field).to.eql(\"priceETH\");",
+							"    pm.expect(message).to.eql(\"is wrong type\");",
+							"});",
+							"",
+							"pm.test(\"priceUSD field is invalid \", function () {",
+							"    var field = pm.response.json().errors[5].field;",
+							"    var message = pm.response.json().errors[5].message;",
+							"    pm.expect(field).to.eql(\"priceUSD\");",
+							"    pm.expect(message).to.eql(\"is wrong type\");",
+							"});",
+							"",
+							"pm.test(\"supplyAvailable field is invalid \", function () {",
+							"    var field = pm.response.json().errors[6].field;",
+							"    var message = pm.response.json().errors[6].message;",
+							"    pm.expect(field).to.eql(\"supplyAvailable\");",
+							"    pm.expect(message).to.eql(\"is wrong type\");",
+							"});",
+							"",
+							"pm.test(\"supplyTotal field is invalid \", function () {",
+							"    var field = pm.response.json().errors[7].field;",
+							"    var message = pm.response.json().errors[7].message;",
+							"    pm.expect(field).to.eql(\"supplyTotal\");",
+							"    pm.expect(message).to.eql(\"is wrong type\");",
+							"});",
+							"",
+							"pm.test(\"updatedAt field is invalid \", function () {",
+							"    var field = pm.response.json().errors[8].field;",
+							"    var message = pm.response.json().errors[8].message;",
+							"    pm.expect(field).to.eql(\"updatedAt\");",
+							"    pm.expect(message).to.eql(\"is wrong type\");",
+							"});",
+							"",
+							"pm.test(\"volume24HourBTC field is invalid \", function () {",
+							"    var field = pm.response.json().errors[9].field;",
+							"    var message = pm.response.json().errors[9].message;",
+							"    pm.expect(field).to.eql(\"volume24HourBTC\");",
+							"    pm.expect(message).to.eql(\"is wrong type\");",
+							"});",
+							"",
+							"pm.test(\"volume24HourETH field is invalid \", function () {",
+							"    var field = pm.response.json().errors[10].field;",
+							"    var message = pm.response.json().errors[10].message;",
+							"    pm.expect(field).to.eql(\"volume24HourETH\");",
+							"    pm.expect(message).to.eql(\"is wrong type\");",
+							"});",
+							"",
+							"pm.test(\"volume24HourUSD field is invalid \", function () {",
+							"    var field = pm.response.json().errors[11].field;",
+							"    var message = pm.response.json().errors[11].message;",
+							"    pm.expect(field).to.eql(\"volume24HourUSD\");",
+							"    pm.expect(message).to.eql(\"is wrong type\");",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "10125c12-d8c5-42cf-b812-8094ff0d6320",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"marketCapBTC\": \"1\",\n  \"marketCapETH\": \"1\",\n  \"marketCapUSD\": \"1\",\n  \"priceBTC\": \"@\",\n  \"priceETH\": \"@\",\n  \"priceUSD\": \"@\",\n  \"supplyAvailable\": \"2\",\n  \"supplyTotal\": \"100000000\",\n  \"updatedAt\": \"@\",\n  \"volume24HourBTC\": \"@\",\n  \"volume24HourETH\": \"@\",\n  \"volume24HourUSD\": \"@\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/tokenData/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"tokenData",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post a New TokenData",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4d5264ea-c717-4733-80d0-1b99362adb8c",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							"",
+							"pm.environment.set(\"tokenTime\", Math.floor(Date.now()/1000));"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ba10d30-c3e7-4595-b812-b051cfd75f9e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Capture tokendata Id and store as variable",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"tokendata_id\", jsonData.results[0]._id);",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"marketCapBTC\": 2029,\n\t\"marketCapETH\": 29830,\n\t\"marketCapUSD\": 20043790,\n\t\"priceBTC\": 0.00002624,\n\t\"priceETH\": 0.0003857813,\n\t\"priceUSD\": 100,\n\t\"supplyAvailable\": 99999999,\n\t\"supplyTotal\": 100000000,\n\t\"updatedAt\": {{tokenTime}},\n\t\"volume24HourBTC\": 346.732495733,\n\t\"volume24HourETH\": 5097.26986187,\n\t\"volume24HourUSD\": 2861110\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/tokenData/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"tokenData",
+						""
+					]
+				},
+				"description": "Posting a valid tokendata gets a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Get New TokenData",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1ec9af68-87cb-476a-9efe-0ec0f724547f",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4dd409fb-d1ef-4a23-97d8-8a14253feedc",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"var existingId = pm.environment.get(\"tokendata_id\");",
+							"",
+							"pm.test(\"The 'New TokenData' record exists\" , function () {",
+							"    var id = jsonData.results[0]._id;",
+							"    pm.expect(id).to.eql(existingId);",
+							"});",
+							"",
+							"pm.test(\"Only 1 record is returned\" , function () {",
+							"    var count = jsonData.metadata.totalCount;",
+							"    pm.expect(count).to.eql(1);",
+							"});",
+							"",
+							"pm.test(\"supplyAvailable is loaded as 99999999\" , function () {",
+							"    var supply = jsonData.results[0].supplyAvailable;",
+							"    pm.expect(supply).to.eql(99999999);",
+							"});",
+							"",
+							"pm.test(\"priceUSD is loaded as 100\" , function () {",
+							"    var usd = jsonData.results[0].priceUSD;",
+							"    pm.expect(usd).to.eql(100);",
+							"});",
+							"",
+							"var timeUpdated = jsonData.results[0].updatedAt;",
+							"",
+							"pm.environment.set(\"tokenCreated\", timeUpdated);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/tokenData/?filter={\"_id\":\"{{tokendata_id}}\"}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"tokenData",
+						""
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "{\"_id\":\"{{tokendata_id}}\"}"
+						}
+					]
+				},
+				"description": "Ensure New TokenData record can be fetched"
+			},
+			"response": []
+		},
+		{
+			"name": "Post Duplicate TokenData",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b20e49bb-fdb6-440f-baea-06324179d533",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "38f5d1e2-5bd5-439d-823d-bc7401e45214",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {",
+							"    pm.response.to.have.status(500);",
+							"});",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"pm.test(\"Hook error code 'API-0002' is returned\", function () {",
+							"    var code = jsonData[0].code;",
+							"    pm.expect(code).to.eql(\"API-0002\");",
+							"});",
+							"",
+							"pm.test(\"Title 'Hook Error' is returned\", function () {",
+							"    var title = jsonData[0].title;",
+							"    pm.expect(title).to.eql(\"Hook Error\");",
+							"});",
+							"",
+							"pm.test(\"Hookname 'rejectDuplicateTokenData' is returned\", function () {",
+							"    var name = jsonData[0].hookName;",
+							"    pm.expect(name).to.eql(\"rejectDuplicateTokenData\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"marketCapBTC\": 2029,\n\t\"marketCapETH\": 29830,\n\t\"marketCapUSD\": 20043790,\n\t\"priceBTC\": 0.00002624,\n\t\"priceETH\": 0.0003857813,\n\t\"priceUSD\": 100,\n\t\"supplyAvailable\": 99999999,\n\t\"supplyTotal\": 100000000,\n\t\"updatedAt\": {{tokenCreated}},\n\t\"volume24HourBTC\": 346.732495733,\n\t\"volume24HourETH\": 5097.26986187,\n\t\"volume24HourUSD\": 2861110\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/tokenData/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"tokenData",
+						""
+					]
+				},
+				"description": "Ensure a tokenData record with duplicate timestamp cannot be loaded"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a TokenData",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f8ca05f7-00cd-4a40-bb19-ccca607fdf30",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							"",
+							"pm.environment.set(\"updateTokenTime\", Math.floor(Date.now()/1000));"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "9eba9fae-696c-4078-8949-ad9e67f3b0b0",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"pm.test(\"supplyAvailable is loaded as 88888888\" , function () {",
+							"    var supply = jsonData.results[0].supplyAvailable;",
+							"    pm.expect(supply).to.eql(88888888);",
+							"});",
+							"",
+							"pm.test(\"priceUSD is loaded as 200\" , function () {",
+							"    var usd = jsonData.results[0].priceUSD;",
+							"    pm.expect(usd).to.eql(200);",
+							"});",
+							"",
+							"pm.test(\"Version is updated to 2\", function () {",
+							"    var version = jsonData.results[0]._version;",
+							"    pm.expect(version).to.eql(2);",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"marketCapBTC\": 2029,\n\t\"marketCapETH\": 29830,\n\t\"marketCapUSD\": 20043790,\n\t\"priceBTC\": 0.00002624,\n\t\"priceETH\": 0.0003857813,\n\t\"priceUSD\": 200,\n\t\"supplyAvailable\": 88888888,\n\t\"supplyTotal\": 100000000,\n\t\"updatedAt\": {{updateTokenTime}},\n\t\"volume24HourBTC\": 346.732495733,\n\t\"volume24HourETH\": 5097.26986187,\n\t\"volume24HourUSD\": 2861110\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/tokenData/{{tokendata_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"tokenData",
+						"{{tokendata_id}}"
+					]
+				},
+				"description": "Updating an existing tokendata will generate a success message"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a TokenData",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ba690bf6-e945-4541-9df0-a13d400a10bc",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});",
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ab29f061-e468-4631-84cf-b46010eb4c54",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/tokenData/{{tokendata_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"tokenData",
+						"{{tokendata_id}}"
+					]
+				},
+				"description": "Delete a tokendata that has been published"
+			},
+			"response": []
+		}
+	]
+}
