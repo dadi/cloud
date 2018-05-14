@@ -1,6 +1,8 @@
 <div class="col w-1-4 bs-w-1-2">
   <a href="/{lang}/team/{slug}" class="box box--natural mb bd bd-grey">
-    <img src="/assets/team/{slug}.jpg" alt="Photo of {name}" class="fill block">
+    {?image}
+      <img src="{global.cdn.publicUrl}{image[0].path}?q=60&w=585" alt="Photo of {name}" class="fill block">
+    {/image}
 
     <div class="box__caption bg-dark color-white">
       <h2 class="normal truncate">{name}</h2>
