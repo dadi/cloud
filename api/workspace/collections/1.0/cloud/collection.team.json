@@ -142,6 +142,7 @@
     "displayName": "Team",
     "cache": false,
     "count": 40,
+    "compose": true,
     "sort": "order",
     "sortOrder": 1,
     "index": [

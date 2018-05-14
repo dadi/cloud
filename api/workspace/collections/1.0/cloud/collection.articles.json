@@ -250,7 +250,7 @@
     "count": 40,
     "storeRevisions": false,
     "description": "",
-    "compose": "all",
+    "compose": true,
     "index": [
       {
         "keys": {
