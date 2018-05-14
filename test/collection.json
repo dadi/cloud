@@ -124,7 +124,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"author\": {},\n  \"body\": \"\",\n  \"excerpt\": \"\",\n  \"knowledge-category\": {},\n  \"mediumUrl\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"milestone\": {},\n  \"published\": false,\n  \"publishedAt\": {},\n  \"redditUrl\": \"\",\n  \"roadmap-category\": {},\n  \"slug\": \"\",\n  \"status\": {},\n  \"title\": \"\",\n  \"twitterUrl\": \"\",\n  \"web-service\": {}\n}"
+					"raw": "{\n  \"author\": {},\n  \"body\": \"\",\n  \"excerpt\": \"\",\n  \"sub-category\": {},\n  \"mediumUrl\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"published\": false,\n  \"publishedAt\": {},\n  \"redditUrl\": \"\",\n  \"category\": {},\n  \"slug\": \"\",\n  \"status\": {},\n  \"title\": \"\",\n  \"twitterUrl\": \"\",\n  \"web-service\": {}\n}"
 				},
 				"url": {
 					"raw": "{{url}}/1.0/cloud/articles/",
@@ -213,7 +213,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"author\": {},\n  \"body\": \"This is text\",\n  \"excerpt\": \"\",\n  \"knowledge-category\": {},\n  \"mediumUrl\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"milestone\": {},\n  \"published\": false,\n  \"publishedAt\": {},\n  \"redditUrl\": \"\",\n  \"roadmap-category\": {},\n  \"slug\": \"\",\n  \"status\": {},\n  \"title\": \"\",\n  \"twitterUrl\": \"\",\n  \"web-service\": {}\n}"
+					"raw": "{\n  \"author\": {},\n  \"body\": \"This is text\",\n  \"excerpt\": \"\",\n  \"sub-category\": {},\n  \"mediumUrl\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"published\": false,\n  \"publishedAt\": {},\n  \"redditUrl\": \"\",\n  \"category\": {},\n  \"slug\": \"\",\n  \"status\": {},\n  \"title\": \"\",\n  \"twitterUrl\": \"\",\n  \"web-service\": {}\n}"
 				},
 				"url": {
 					"raw": "{{url}}/1.0/cloud/articles/",
@@ -302,7 +302,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"author\": {},\n  \"body\": \"\",\n  \"excerpt\": \"\",\n  \"knowledge-category\": {},\n  \"mediumUrl\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"milestone\": {},\n  \"published\": false,\n  \"publishedAt\": {},\n  \"redditUrl\": \"\",\n  \"roadmap-category\": {},\n  \"slug\": \"\",\n  \"status\": {},\n  \"title\": \"Test\",\n  \"twitterUrl\": \"\",\n  \"web-service\": {}\n}"
+					"raw": "{\n  \"author\": {},\n  \"body\": \"\",\n  \"excerpt\": \"\",\n  \"sub-category\": {},\n  \"mediumUrl\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"published\": false,\n  \"publishedAt\": {},\n  \"redditUrl\": \"\",\n  \"category\": {},\n  \"slug\": \"\",\n  \"status\": {},\n  \"title\": \"Test\",\n  \"twitterUrl\": \"\",\n  \"web-service\": {}\n}"
 				},
 				"url": {
 					"raw": "{{url}}/1.0/cloud/articles/",
@@ -326,7 +326,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e254af0a-1738-405d-9b7c-b0145d0783c7",
+						"id": "c3b61b02-6e59-4935-82b4-a0102042dda3",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
@@ -342,14 +342,14 @@
 							"    pm.expect(authName).to.eql(\"James Lambie\");",
 							"});",
 							"",
-							"pm.test(\"Knowledge Category is FAQ\", function () {",
-							"    var kcName = jsonData.results[0]['knowledge-category'][0].name;",
-							"    pm.expect(kcName).to.eql(\"FAQ\");",
+							"pm.test(\"Sub Category is Network\", function () {",
+							"    var kcName = jsonData.results[0]['sub-category'][0].name;",
+							"    pm.expect(kcName).to.eql(\"Network\");",
 							"});",
 							"",
-							"pm.test(\"Roadmap Category is Cloud\", function () {",
-							"    var rcName = jsonData.results[0]['roadmap-category'][0].name;",
-							"    pm.expect(rcName).to.eql(\"Cloud\");",
+							"pm.test(\"Category is Updates\", function () {",
+							"    var rcName = jsonData.results[0]['category'][0].name;",
+							"    pm.expect(rcName).to.eql(\"Updates\");",
 							"});",
 							"",
 							"pm.test(\"Web Service is Web\", function () {",
@@ -417,7 +417,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"author\": [\"5a945063e1c2ec5c70bccb47\"],\n  \"body\": \"This is a test\",\n  \"excerpt\": \"This is a test excerpt\",\n  \"knowledge-category\": [\"5a901af7c0501464cd1251ae\"],\n  \"mediumUrl\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"milestone\": \"\",\n  \"published\": true,\n  \"publishedAt\": {{timeNow}},\n  \"redditUrl\": \"\",\n  \"roadmap-category\": [\"5a9043df76dbd27a42698571\"],\n  \"slug\": \"\",\n  \"status\": \"\",\n  \"title\": \"This is the title\",\n  \"twitterUrl\": \"\",\n  \"web-service\": [\"5a9016e4da7f1660873c5e85\"]\n}"
+					"raw": "{\n  \"author\": [\"5a945063e1c2ec5c70bccb47\"],\n  \"body\": \"This is a test\",\n  \"excerpt\": \"This is a test excerpt\",\n  \"sub-category\": [\"5a9043cb76dbd27a4269856f\"],\n  \"mediumUrl\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"published\": true,\n  \"publishedAt\": {{timeNow}},\n  \"redditUrl\": \"\",\n  \"category\": [\"5a9692d9b7fcfe794d87bd61\"],\n  \"slug\": \"\",\n  \"status\": \"\",\n  \"title\": \"This is the title\",\n  \"twitterUrl\": \"\",\n  \"web-service\": [\"5a9016e4da7f1660873c5e85\"]\n}"
 				},
 				"url": {
 					"raw": "{{url}}/1.0/cloud/articles/",
@@ -530,7 +530,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9b24fb34-57d2-4754-927d-41dbec218752",
+						"id": "19416399-129e-459d-b4db-4b6aca8af1f2",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
@@ -546,19 +546,19 @@
 							"    pm.expect(authName).to.eql(\"Eduardo Bouças\");",
 							"});",
 							"",
-							"pm.test(\"Knowledge Category is Network\", function () {",
-							"    var kcName = jsonData.results[0]['knowledge-category'][0].name;",
-							"    pm.expect(kcName).to.eql(\"Network\");",
+							"pm.test(\"Sub Category is Website\", function () {",
+							"    var kcName = jsonData.results[0]['sub-category'][0].name;",
+							"    pm.expect(kcName).to.eql(\"Website\");",
 							"});",
 							"",
-							"pm.test(\"Roadmap Category is Announcements\", function () {",
-							"    var rcName = jsonData.results[0]['roadmap-category'][0].name;",
-							"    pm.expect(rcName).to.eql(\"Announcements\");",
+							"pm.test(\"Category is Knowledge\", function () {",
+							"    var rcName = jsonData.results[0]['category'][0].name;",
+							"    pm.expect(rcName).to.eql(\"Knowledge\");",
 							"});",
 							"",
-							"pm.test(\"Web Service is Web\", function () {",
+							"pm.test(\"Web Service is CDN\", function () {",
 							"    var wsName = jsonData.results[0]['web-service'][0].name;",
-							"    pm.expect(wsName).to.eql(\"Web\");",
+							"    pm.expect(wsName).to.eql(\"CDN\");",
 							"});",
 							"",
 							"pm.test(\"The title is updated correctly\", function () {",
@@ -630,7 +630,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"author\": [\"5a8fe8c64d5d813e422e18ed\"],\n  \"body\": \"This is a test\",\n  \"excerpt\": \"This is a test excerpt\",\n  \"knowledge-category\": [\"5a9692d9b7fcfe794d87bd61\"],\n  \"mediumUrl\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"milestone\": \"\",\n  \"published\": true,\n  \"publishedAt\": {{timeNow}},\n  \"redditUrl\": \"\",\n  \"roadmap-category\": [\"5a9043be76dbd27a4269856e\"],\n  \"slug\": \"\",\n  \"status\": \"\",\n  \"title\": \"This is the updated title\",\n  \"twitterUrl\": \"\",\n  \"web-service\": [\"5a9016e4da7f1660873c5e85\"]\n}"
+					"raw": "{\n  \"author\": [\"5a8fe8c64d5d813e422e18ed\"],\n  \"body\": \"This is a test\",\n  \"excerpt\": \"This is a test excerpt\",\n  \"sub-category\": [\"5a9043d576dbd27a42698570\"],\n  \"mediumUrl\": \"\",\n  \"metaDescription\": \"\",\n  \"metaTitle\": \"\",\n  \"published\": true,\n  \"publishedAt\": {{timeNow}},\n  \"redditUrl\": \"\",\n  \"category\": [\"5a900bc5d282ad58f12e02c5\"],\n  \"slug\": \"\",\n  \"status\": \"\",\n  \"title\": \"This is the updated title\",\n  \"twitterUrl\": \"\",\n  \"web-service\": [\"5a942307b6bb735509d59129\"]\n}"
 				},
 				"url": {
 					"raw": "{{url}}/1.0/cloud/articles/{{article_id}}",
@@ -718,47 +718,43 @@
 			"response": []
 		},
 		{
-			"name": "Get Number of Knowledge Categories",
+			"name": "Get Number of Sub Categories",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "add3e89c-b8e4-4620-a490-5a447731a4b4",
+						"id": "8b94f8f2-61df-4b97-8b60-58777d8bae3e",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
 							"",
-							"pm.test(\"Expect number of Knowledge Categories to equal 5\", function () {",
+							"pm.test(\"Expect number of Sub Categories to equal 4\", function () {",
 							"    let total = pm.response.json().metadata.totalCount;",
-							"    pm.expect(total).to.equal(5); ",
+							"    pm.expect(total).to.equal(4); ",
 							"});",
 							"",
-							"pm.test(\"There is a Category for Concepts\", function () {",
+							"pm.test(\"There is a Sub Category for Announcements\", function () {",
 							"    var name = pm.response.json().results[0].name;",
-							"    pm.expect(name).to.eql(\"Concepts\");",
+							"    pm.expect(name).to.eql(\"Announcements\");",
 							"});",
 							"",
-							"pm.test(\"There is a Category for FAQ\", function () {",
+							"pm.test(\"There is a Sub Category for Web Services\", function () {",
 							"    var name = pm.response.json().results[1].name;",
-							"    pm.expect(name).to.eql(\"FAQ\");",
+							"    pm.expect(name).to.eql(\"Web Services\");",
 							"});",
 							"",
-							"pm.test(\"There is a Category for Network\", function () {",
+							"pm.test(\"There is a Sub Category for Network\", function () {",
 							"    var name = pm.response.json().results[2].name;",
 							"    pm.expect(name).to.eql(\"Network\");",
 							"});",
 							"",
-							"pm.test(\"There is a Category for Security\", function () {",
+							"pm.test(\"There is a Sub Category for Website\", function () {",
 							"    var name = pm.response.json().results[3].name;",
-							"    pm.expect(name).to.eql(\"Security\");",
+							"    pm.expect(name).to.eql(\"Website\");",
 							"});",
-							"",
-							"pm.test(\"There is a Category for Tutorials\", function () {",
-							"    var name = pm.response.json().results[4].name;",
-							"    pm.expect(name).to.eql(\"Tutorials\");",
-							"});"
+							""
 						]
 					}
 				},
@@ -801,28 +797,28 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{url}}/1.0/cloud/knowledge-categories/",
+					"raw": "{{url}}/1.0/cloud/sub-categories/",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"1.0",
 						"cloud",
-						"knowledge-categories",
+						"sub-categories",
 						""
 					]
 				},
-				"description": "Ensure number of Knowledge Categories equals 5"
+				"description": "Ensure number of Sub Categories equals 4"
 			},
 			"response": []
 		},
 		{
-			"name": "Post an Empty Knowledge Category",
+			"name": "Post an Empty Sub Category",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "a0ec38bb-2fca-4c85-a152-76096ca73e8e",
+						"id": "608354bc-3d49-4538-b500-f7cea92af99d",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
@@ -837,13 +833,6 @@
 							"    var field = pm.response.json().errors[0].field;",
 							"    var message = pm.response.json().errors[0].message;",
 							"    pm.expect(field).to.eql(\"name\");",
-							"    pm.expect(message).to.eql(\"can't be blank\");",
-							"});",
-							"",
-							"pm.test(\"Desc field is mandatory \", function () {",
-							"    var field = pm.response.json().errors[1].field;",
-							"    var message = pm.response.json().errors[1].message;",
-							"    pm.expect(field).to.eql(\"desc\");",
 							"    pm.expect(message).to.eql(\"can't be blank\");",
 							"});",
 							""
@@ -889,26 +878,26 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"desc\": \"\",\n  \"icon\": \"\",\n  \"name\": \"\",\n  \"slug\": \"\"\n}"
+					"raw": "{\n  \"desc\": \"\",\n  \"name\": \"\",\n  \"slug\": \"\"\n}"
 				},
 				"url": {
-					"raw": "{{url}}/1.0/cloud/knowledge-categories/",
+					"raw": "{{url}}/1.0/cloud/sub-categories/",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"1.0",
 						"cloud",
-						"knowledge-categories",
+						"sub-categories",
 						""
 					]
 				},
-				"description": "Posting an empty knowledge category gets a 400 error and request for mandatory fields \"name\" and \"desc\""
+				"description": "Posting an empty sub category gets a 400 error and request for mandatory fields \"name\""
 			},
 			"response": []
 		},
 		{
-			"name": "Post a Knowledge Category With Desc Only",
+			"name": "Post a Sub Category With Desc Only",
 			"event": [
 				{
 					"listen": "test",
@@ -978,115 +967,26 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"desc\": \"This is a description\",\n  \"icon\": \"\",\n  \"name\": \"\",\n  \"slug\": \"\"\n}"
+					"raw": "{\n  \"desc\": \"This is a description\",\n  \"name\": \"\",\n  \"slug\": \"\"\n}"
 				},
 				"url": {
-					"raw": "{{url}}/1.0/cloud/knowledge-categories/",
+					"raw": "{{url}}/1.0/cloud/sub-categories/",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"1.0",
 						"cloud",
-						"knowledge-categories",
+						"sub-categories",
 						""
 					]
 				},
-				"description": "Posting a knowledge category with Desc only gets a 400 error and request for mandatory field \"name\""
+				"description": "Posting a sub category with Desc only gets a 400 error and request for mandatory field \"name\""
 			},
 			"response": []
 		},
 		{
-			"name": "Post a Knowledge Category With Name Only",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "0cf0d5c3-7080-4b3d-a06d-98812005bf28",
-						"type": "text/javascript",
-						"exec": [
-							"pm.test(\"Status code is 400\", function () {",
-							"    pm.response.to.have.status(400);",
-							"});",
-							"",
-							"pm.test(\"Response should have errors\", function () { ",
-							"    pm.response.to.have.jsonBody(\"errors\");",
-							"});",
-							"",
-							"pm.test(\"Name field is populated as per POST request\", function () {",
-							"    var field = pm.response.json().data[0].name;",
-							"    pm.expect(field).to.eql(\"Test\");",
-							"});",
-							"",
-							"pm.test(\"Desc field is mandatory \", function () {",
-							"    var field = pm.response.json().errors[0].field;",
-							"    var message = pm.response.json().errors[0].message;",
-							"    pm.expect(field).to.eql(\"desc\");",
-							"    pm.expect(message).to.eql(\"can't be blank\");",
-							"});",
-							""
-						]
-					}
-				},
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "fbabc4c5-c298-4bcd-b7e5-c52624130d4a",
-						"type": "text/javascript",
-						"exec": [
-							"const baseUrl = pm.environment.get('url')",
-							"",
-							"pm.sendRequest({",
-							"  url:  baseUrl + '/token', ",
-							"  method: 'POST',",
-							"  header: {",
-							"    'Accept': 'application/json',",
-							"    'Content-Type': 'application/json'",
-							"  },",
-							"  body: {",
-							"    mode: 'raw',",
-							"    raw: JSON.stringify({",
-							"      clientId: pm.environment.get('clientId'),",
-							"      secret: pm.environment.get('secret')",
-							"    })",
-							"  }",
-							"}, (err, res) => {",
-							"  pm.globals.set('bearer', res.json().accessToken);",
-							"});"
-						]
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearer}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"desc\": \"\",\n  \"icon\": \"\",\n  \"name\": \"Test\",\n  \"slug\": \"\"\n}"
-				},
-				"url": {
-					"raw": "{{url}}/1.0/cloud/knowledge-categories/",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"1.0",
-						"cloud",
-						"knowledge-categories",
-						""
-					]
-				},
-				"description": "Posting a knowledge category with Name only gets a 400 error and request for mandatory field \"desc\""
-			},
-			"response": []
-		},
-		{
-			"name": "Post a New Knowledge Category",
+			"name": "Post a New Sub Category",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -1121,7 +1021,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "13feea71-65d8-4fc6-a761-f63fbb119ada",
+						"id": "94488d5c-517b-483b-8344-6fda24ee9c31",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
@@ -1139,12 +1039,12 @@
 							"",
 							"pm.test(\"Name is loaded correctly\", function () {",
 							"    var name = jsonData.results[0].name;",
-							"    pm.expect(name).to.eql(\"Knowledge Category\");",
+							"    pm.expect(name).to.eql(\"Sub Category\");",
 							"});",
 							"",
 							"pm.test(\"Name has been slugified correctly\", function () {",
 							"    var slug = jsonData.results[0].slug;",
-							"    pm.expect(slug).to.eql(\"knowledge-category\");",
+							"    pm.expect(slug).to.eql(\"sub-category\");",
 							"});",
 							""
 						]
@@ -1161,26 +1061,26 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"desc\": \"This is a description\",\n  \"icon\": \"\",\n  \"name\": \"Knowledge Category\",\n  \"slug\": \"\"\n}"
+					"raw": "{\n  \"desc\": \"This is a description\",\n  \"name\": \"Sub Category\",\n  \"slug\": \"\"\n}"
 				},
 				"url": {
-					"raw": "{{url}}/1.0/cloud/knowledge-categories/",
+					"raw": "{{url}}/1.0/cloud/sub-categories/",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"1.0",
 						"cloud",
-						"knowledge-categories",
+						"sub-categories",
 						""
 					]
 				},
-				"description": "Posting a valid knowledge category will generate a success message"
+				"description": "Posting a valid sub category will generate a success message"
 			},
 			"response": []
 		},
 		{
-			"name": "Get New Knowledge Category",
+			"name": "Get New Sub Category",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -1214,7 +1114,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "3c742f1d-fc93-4002-a2dc-beef069d752d",
+						"id": "f7e3b05a-0f27-44e7-ab60-86d0c822adc8",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
@@ -1224,7 +1124,7 @@
 							"var jsonData = JSON.parse(responseBody);",
 							"var existingId = pm.environment.get(\"knowledge_id\");",
 							"",
-							"pm.test(\"The 'New Knowledge Category' record exists\" , function () {",
+							"pm.test(\"The 'New Sub Category' record exists\" , function () {",
 							"    var id = jsonData.results[0]._id;",
 							"    pm.expect(id).to.eql(existingId);",
 							"});",
@@ -1247,29 +1147,29 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{url}}/1.0/cloud/knowledge-categories/?filter={\"name\":\"Knowledge Category\"}",
+					"raw": "{{url}}/1.0/cloud/sub-categories/?filter={\"name\":\"Sub Category\"}",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"1.0",
 						"cloud",
-						"knowledge-categories",
+						"sub-categories",
 						""
 					],
 					"query": [
 						{
 							"key": "filter",
-							"value": "{\"name\":\"Knowledge Category\"}"
+							"value": "{\"name\":\"Sub Category\"}"
 						}
 					]
 				},
-				"description": "Ensure New Knowledge Category can be fetched"
+				"description": "Ensure New Sub Category can be fetched"
 			},
 			"response": []
 		},
 		{
-			"name": "Update a Knowledge Category",
+			"name": "Update a Sub Category",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -1354,26 +1254,26 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"desc\": \"This description has changed\",\n  \"icon\": \"\",\n  \"name\": \"Update Category\",\n  \"slug\": \"\"\n}"
+					"raw": "{\n  \"desc\": \"This description has changed\",\n  \"name\": \"Update Category\",\n  \"slug\": \"\"\n}"
 				},
 				"url": {
-					"raw": "{{url}}/1.0/cloud/knowledge-categories/{{knowledge_id}}",
+					"raw": "{{url}}/1.0/cloud/sub-categories/{{knowledge_id}}",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"1.0",
 						"cloud",
-						"knowledge-categories",
+						"sub-categories",
 						"{{knowledge_id}}"
 					]
 				},
-				"description": "Updating an existing knowledge category will generate a success message"
+				"description": "Updating an existing sub category will generate a success message"
 			},
 			"response": []
 		},
 		{
-			"name": "Delete a Knowledge Category",
+			"name": "Delete a Sub Category",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -1427,63 +1327,54 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{url}}/1.0/cloud/knowledge-categories/{{knowledge_id}}",
+					"raw": "{{url}}/1.0/cloud/sub-categories/{{knowledge_id}}",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"1.0",
 						"cloud",
-						"knowledge-categories",
+						"sub-categories",
 						"{{knowledge_id}}"
 					]
 				},
-				"description": "Delete a knowledge category that has been published"
+				"description": "Delete a sub category that has been published"
 			},
 			"response": []
 		},
 		{
-			"name": "Get Number of Roadmap Categories",
+			"name": "Get Number of Categories",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "0c92b5c5-c90a-4f48-8b79-ab6296fdd8c2",
+						"id": "8d408ab7-085b-4bef-88d9-fdc26dcb9362",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
 							"",
-							"pm.test(\"Expect number of Roadmap Categories to equal 5\", function () {",
+							"pm.test(\"Expect number of Categories to equal 3\", function () {",
 							"    let total = pm.response.json().metadata.totalCount;",
-							"    pm.expect(total).to.equal(5); ",
+							"    pm.expect(total).to.equal(3); ",
 							"});",
 							"",
-							"pm.test(\"There is a Category for Announcements\", function () {",
+							"pm.test(\"There is a Category for Knowledge\", function () {",
 							"    var name = pm.response.json().results[0].name;",
-							"    pm.expect(name).to.eql(\"Announcements\");",
+							"    pm.expect(name).to.eql(\"Knowledge\");",
 							"});",
 							"",
-							"pm.test(\"There is a Category for Web Services\", function () {",
+							"pm.test(\"There is a Category for Tutorials\", function () {",
 							"    var name = pm.response.json().results[1].name;",
-							"    pm.expect(name).to.eql(\"Web Services\");",
+							"    pm.expect(name).to.eql(\"Tutorials\");",
 							"});",
 							"",
-							"pm.test(\"There is a Category for Network\", function () {",
+							"pm.test(\"There is a Category for Updates\", function () {",
 							"    var name = pm.response.json().results[2].name;",
-							"    pm.expect(name).to.eql(\"Network\");",
+							"    pm.expect(name).to.eql(\"Updates\");",
 							"});",
-							"",
-							"pm.test(\"There is a Category for Cloud\", function () {",
-							"    var name = pm.response.json().results[3].name;",
-							"    pm.expect(name).to.eql(\"Cloud\");",
-							"});",
-							"",
-							"pm.test(\"There is a Category for Website\", function () {",
-							"    var name = pm.response.json().results[4].name;",
-							"    pm.expect(name).to.eql(\"Website\");",
-							"});"
+							""
 						]
 					}
 				},
@@ -1526,23 +1417,23 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{url}}/1.0/cloud/roadmap-categories/",
+					"raw": "{{url}}/1.0/cloud/categories/",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"1.0",
 						"cloud",
-						"roadmap-categories",
+						"categories",
 						""
 					]
 				},
-				"description": "Ensure number of Roadmap Categories equals 5"
+				"description": "Ensure number of Categories equals 3"
 			},
 			"response": []
 		},
 		{
-			"name": "Post an Empty Roadmap Category",
+			"name": "Post an Empty Category",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -1575,7 +1466,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "18556228-a56b-4275-b9ed-964eb2a11858",
+						"id": "a9d1dee8-f246-48ce-bbd5-6faa8e620cfc",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
@@ -1593,6 +1484,95 @@
 							"    pm.expect(message).to.eql(\"can't be blank\");",
 							"});",
 							"",
+							"pm.test(\"Desc field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[1].field;",
+							"    var message = pm.response.json().errors[1].message;",
+							"    pm.expect(field).to.eql(\"desc\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"desc\": \"\",\n  \"icon\": \"\",\n  \"name\": \"\",\n  \"slug\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/categories/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"categories",
+						""
+					]
+				},
+				"description": "Posting an empty category gets a 400 error and request for mandatory fields \"name\" and \"desc\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Category With Desc Only",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "876e4cf8-03bc-4e1e-87d9-45e544bffebf",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "af517d64-3b47-4d8c-be3a-de33c713cadc",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Name field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"name\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
 							""
 						]
 					}
@@ -1608,26 +1588,110 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"desc\": \"\",\n  \"name\": \"\",\n  \"order\": 1,\n  \"slug\": \"\"\n}"
+					"raw": "{\n  \"desc\": \"This is a description\",\n  \"icon\": \"\",\n  \"name\": \"\",\n  \"slug\": \"\"\n}"
 				},
 				"url": {
-					"raw": "{{url}}/1.0/cloud/roadmap-categories/",
+					"raw": "{{url}}/1.0/cloud/categories/",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"1.0",
 						"cloud",
-						"roadmap-categories",
+						"categories",
 						""
 					]
 				},
-				"description": "Posting an empty roadmap category gets a 400 error and request for mandatory field \"name\""
+				"description": "Posting a category with \"desc\" only gets a 400 error and request for mandatory field \"name\""
 			},
 			"response": []
 		},
 		{
-			"name": "Post a New Roadmap Category",
+			"name": "Post a Category With Name Only",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a2689fc7-f512-4283-a62f-55c6593d0d70",
+						"type": "text/javascript",
+						"exec": [
+							"const baseUrl = pm.environment.get('url')",
+							"",
+							"pm.sendRequest({",
+							"  url:  baseUrl + '/token', ",
+							"  method: 'POST',",
+							"  header: {",
+							"    'Accept': 'application/json',",
+							"    'Content-Type': 'application/json'",
+							"  },",
+							"  body: {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify({",
+							"      clientId: pm.environment.get('clientId'),",
+							"      secret: pm.environment.get('secret')",
+							"    })",
+							"  }",
+							"}, (err, res) => {",
+							"  pm.globals.set('bearer', res.json().accessToken);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "47fedbff-cb9a-4f9f-9233-11ea60e015ea",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response should have errors\", function () { ",
+							"    pm.response.to.have.jsonBody(\"errors\");",
+							"});",
+							"",
+							"pm.test(\"Desc field is mandatory \", function () {",
+							"    var field = pm.response.json().errors[0].field;",
+							"    var message = pm.response.json().errors[0].message;",
+							"    pm.expect(field).to.eql(\"desc\");",
+							"    pm.expect(message).to.eql(\"can't be blank\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"desc\": \"\",\n  \"icon\": \"\",\n  \"name\": \"Category Name\",\n  \"slug\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/1.0/cloud/categories/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"1.0",
+						"cloud",
+						"categories",
+						""
+					]
+				},
+				"description": "Posting a category with \"name\" only gets a 400 error and request for mandatory field \"desc\""
+			},
+			"response": []
+		},
+		{
+			"name": "Post a New Category",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -1660,7 +1724,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "844cefd3-7609-4068-b809-965104832ad7",
+						"id": "b68b373d-7396-4bb1-92a0-063a7de8f69b",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
@@ -1669,21 +1733,21 @@
 							"",
 							"// Capture roadmap Id and store as variable",
 							"var jsonData = JSON.parse(responseBody);",
-							"pm.environment.set(\"roadmap_id\", jsonData.results[0]._id);",
+							"pm.environment.set(\"category_id\", jsonData.results[0]._id);",
 							"",
 							"pm.test(\"Description is loaded correctly\", function () {",
 							"    var desc = jsonData.results[0].desc;",
-							"    pm.expect(desc).to.eql(\"This is a New Roadmap description\");",
+							"    pm.expect(desc).to.eql(\"This is a New Category description\");",
 							"});",
 							"",
 							"pm.test(\"Name is loaded correctly\", function () {",
 							"    var name = jsonData.results[0].name;",
-							"    pm.expect(name).to.eql(\"New Roadmap\");",
+							"    pm.expect(name).to.eql(\"New Category Name\");",
 							"});",
 							"",
 							"pm.test(\"Name has been slugified correctly\", function () {",
 							"    var slug = jsonData.results[0].slug;",
-							"    pm.expect(slug).to.eql(\"new-roadmap\");",
+							"    pm.expect(slug).to.eql(\"new-category-name\");",
 							"});",
 							""
 						]
@@ -1700,26 +1764,26 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"desc\": \"This is a New Roadmap description\",\n  \"name\": \"New Roadmap\",\n  \"order\": 6,\n  \"slug\": \"\"\n}"
+					"raw": "{\n  \"desc\": \"This is a New Category description\",\n  \"icon\": \"\",\n  \"name\": \"New Category Name\",\n  \"slug\": \"\"\n}"
 				},
 				"url": {
-					"raw": "{{url}}/1.0/cloud/roadmap-categories/",
+					"raw": "{{url}}/1.0/cloud/categories/",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"1.0",
 						"cloud",
-						"roadmap-categories",
+						"categories",
 						""
 					]
 				},
-				"description": "Posting a valid roadmap category gets a success message"
+				"description": "Posting a valid category gets a success message"
 			},
 			"response": []
 		},
 		{
-			"name": "Get New Roadmap Category",
+			"name": "Get New Category",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -1752,7 +1816,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6f76e2d7-2098-46d7-aa58-f24a30c6146d",
+						"id": "d5b5841f-1fab-4ee5-bdd7-0f0f5f1bb6d4",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
@@ -1760,9 +1824,9 @@
 							"});",
 							"",
 							"var jsonData = JSON.parse(responseBody);",
-							"var existingId = pm.environment.get(\"roadmap_id\");",
+							"var existingId = pm.environment.get(\"category_id\");",
 							"",
-							"pm.test(\"The 'New Roadmap Category' record exists\" , function () {",
+							"pm.test(\"The 'New Category Name' record exists\" , function () {",
 							"    var id = jsonData.results[0]._id;",
 							"    pm.expect(id).to.eql(existingId);",
 							"});",
@@ -1785,29 +1849,29 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{url}}/1.0/cloud/roadmap-categories/?filter={\"name\":\"New Roadmap\"}",
+					"raw": "{{url}}/1.0/cloud/categories/?filter={\"name\":\"New Category Name\"}",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"1.0",
 						"cloud",
-						"roadmap-categories",
+						"categories",
 						""
 					],
 					"query": [
 						{
 							"key": "filter",
-							"value": "{\"name\":\"New Roadmap\"}"
+							"value": "{\"name\":\"New Category Name\"}"
 						}
 					]
 				},
-				"description": "Ensure New Roadmap Category can be fetched"
+				"description": "Ensure New Category can be fetched"
 			},
 			"response": []
 		},
 		{
-			"name": "Update a Roadmap Category",
+			"name": "Update a Category",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -1840,7 +1904,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9b239080-2112-41d1-a3d4-3279785d2df1",
+						"id": "f589af0a-408a-4214-9efc-ad98d77b53b8",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
@@ -1849,21 +1913,26 @@
 							"",
 							"// Capture roadmap Id and store as variable",
 							"var jsonData = JSON.parse(responseBody);",
-							"pm.environment.set(\"roadmap_id\", jsonData.results[0]._id);",
+							"pm.environment.set(\"category_id\", jsonData.results[0]._id);",
 							"",
 							"pm.test(\"Description is updated correctly\", function () {",
 							"    var desc = jsonData.results[0].desc;",
-							"    pm.expect(desc).to.eql(\"This is an Updated Roadmap description\");",
+							"    pm.expect(desc).to.eql(\"This is an Updated Category description\");",
 							"});",
 							"",
 							"pm.test(\"Name is updated correctly\", function () {",
 							"    var name = jsonData.results[0].name;",
-							"    pm.expect(name).to.eql(\"Updated Roadmap\");",
+							"    pm.expect(name).to.eql(\"Updated Category Name\");",
 							"});",
 							"",
 							"pm.test(\"Slug has been updated correctly\", function () {",
 							"    var slug = jsonData.results[0].slug;",
-							"    pm.expect(slug).to.eql(\"updated-roadmap\");",
+							"    pm.expect(slug).to.eql(\"updated-category-name\");",
+							"});",
+							"",
+							"pm.test(\"There is a _lastModifiedBy field\", function () {",
+							"    var modifiedBy = jsonData.results[0]._lastModifiedBy;",
+							"    pm.expect(modifiedBy).to.eql(\"cloud-client\");",
 							"});",
 							"",
 							"pm.test(\"Version is updated to 2\", function () {",
@@ -1885,26 +1954,26 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"desc\": \"This is an Updated Roadmap description\",\n  \"name\": \"Updated Roadmap\",\n  \"order\": 6,\n  \"slug\": \"\"\n}"
+					"raw": "{\n  \"desc\": \"This is an Updated Category description\",\n  \"icon\": \"\",\n  \"name\": \"Updated Category Name\",\n  \"slug\": \"updated-category-name\"\n}"
 				},
 				"url": {
-					"raw": "{{url}}/1.0/cloud/roadmap-categories/{{roadmap_id}}",
+					"raw": "{{url}}/1.0/cloud/categories/{{category_id}}",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"1.0",
 						"cloud",
-						"roadmap-categories",
-						"{{roadmap_id}}"
+						"categories",
+						"{{category_id}}"
 					]
 				},
-				"description": "Updating an existing roadmap category will generate a success message"
+				"description": "Updating an existing category will generate a success message"
 			},
 			"response": []
 		},
 		{
-			"name": "Delete a Roadmap Category",
+			"name": "Delete a Category",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -1957,18 +2026,18 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{url}}/1.0/cloud/roadmap-categories/{{roadmap_id}}",
+					"raw": "{{url}}/1.0/cloud/categories/{{category_id}}",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"1.0",
 						"cloud",
-						"roadmap-categories",
-						"{{roadmap_id}}"
+						"categories",
+						"{{category_id}}"
 					]
 				},
-				"description": "Delete a roadmap category that has been published"
+				"description": "Delete a category that has been published"
 			},
 			"response": []
 		},
@@ -3170,7 +3239,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "41c13076-ffd1-40ae-88b3-e7e7b64812e2",
+						"id": "dbd35ac0-fb02-4f2c-bf5d-b42a91b8df81",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
@@ -3184,11 +3253,6 @@
 							"pm.test(\"The description is loaded correctly\", function () {",
 							"    var desc = jsonData.results[0].desc;",
 							"    pm.expect(desc).to.eql(\"This is a new milestone\");",
-							"});",
-							"",
-							"pm.test(\"Category is Website\", function () {",
-							"    var kcName = jsonData.results[0].category[0].name;",
-							"    pm.expect(kcName).to.eql(\"Website\");",
 							"});",
 							"",
 							"pm.test(\"Web Service is Web\", function () {",
@@ -3219,7 +3283,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"category\": [\"5a9043d576dbd27a42698570\"],\n  \"complete\": false,\n  \"date\": {{timeNow}},\n  \"desc\": \"This is a new milestone\",\n  \"title\": \"New Milestone\",\n  \"web-service\": [\"5a9016e4da7f1660873c5e85\"]\n}"
+					"raw": "{\n  \"complete\": false,\n  \"date\": {{timeNow}},\n  \"desc\": \"This is a new milestone\",\n  \"title\": \"New Milestone\",\n  \"web-service\": [\"5a9016e4da7f1660873c5e85\"]\n}"
 				},
 				"url": {
 					"raw": "{{url}}/1.0/cloud/milestones/",
@@ -3362,7 +3426,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "909d6683-116b-4b26-868b-d139db24a924",
+						"id": "8a1ae97a-c934-4100-8bd9-82bb3c3c6613",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
@@ -3378,14 +3442,9 @@
 							"    pm.expect(desc).to.eql(\"This is an updated milestone\");",
 							"});",
 							"",
-							"pm.test(\"Category is Website\", function () {",
-							"    var kcName = jsonData.results[0].category[0].name;",
-							"    pm.expect(kcName).to.eql(\"Website\");",
-							"});",
-							"",
-							"pm.test(\"Web Service is Web\", function () {",
+							"pm.test(\"Web Service is CDN\", function () {",
 							"    var wsName = jsonData.results[0]['web-service'][0].name;",
-							"    pm.expect(wsName).to.eql(\"Web\");",
+							"    pm.expect(wsName).to.eql(\"CDN\");",
 							"});",
 							"",
 							"pm.test(\"The title is loaded correctly\", function () {",
@@ -3396,6 +3455,11 @@
 							"pm.test(\"The milestone is marked as Complete\", function () {",
 							"    var complete = jsonData.results[0].complete;",
 							"    pm.expect(complete).to.eql(true);",
+							"});",
+							"",
+							"pm.test(\"There is a _lastModifiedBy field\", function () {",
+							"    var modifiedBy = jsonData.results[0]._lastModifiedBy;",
+							"    pm.expect(modifiedBy).to.eql(\"cloud-client\");",
 							"});",
 							"",
 							"pm.test(\"Version is updated to 2\", function () {",
@@ -3416,7 +3480,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"category\": [\"5a9043d576dbd27a42698570\"],\n  \"complete\": true,\n  \"date\": {{timeNow}},\n  \"desc\": \"This is an updated milestone\",\n  \"title\": \"Closed Milestone\",\n  \"web-service\": [\"5a9016e4da7f1660873c5e85\"]\n}"
+					"raw": "{\n  \"complete\": true,\n  \"date\": {{timeNow}},\n  \"desc\": \"This is an updated milestone\",\n  \"title\": \"Closed Milestone\",\n  \"web-service\": [\"5a942307b6bb735509d59129\"]\n}"
 				},
 				"url": {
 					"raw": "{{url}}/1.0/cloud/milestones/{{milestone_id}}",

@@ -22,25 +22,19 @@
     },
     {
       "key": "timeNow",
-      "value": 1524197173756,
+      "value": 1526262322187,
       "enabled": true,
       "type": "text"
     },
     {
       "key": "article_id",
-      "value": "5ad9671bcad8262f5a97a2f2",
+      "value": "5af8e2641db22306763246c5",
       "enabled": true,
       "type": "text"
     },
     {
       "key": "knowledge_id",
-      "value": "5ad93e16cad8262f5a97a1f7",
-      "enabled": true,
-      "type": "text"
-    },
-    {
-      "key": "roadmap_id",
-      "value": "5ad93f6acad8262f5a97a1fd",
+      "value": "5af8d09c1db223067632468a",
       "enabled": true,
       "type": "text"
     },
@@ -58,7 +52,7 @@
     },
     {
       "key": "milestone_id",
-      "value": "5ad94179cad8262f5a97a208",
+      "value": "5af8ea1f1db2230676324737",
       "enabled": true,
       "type": "text"
     },
@@ -103,9 +97,15 @@
       "value": 1524534014,
       "enabled": true,
       "type": "text"
+    },
+    {
+      "key": "category_id",
+      "value": "5af8d88d1db22306763246ae",
+      "enabled": true,
+      "type": "text"
     }
   ],
   "_postman_variable_scope": "environment",
-  "_postman_exported_at": "2018-04-24T23:54:14.290Z",
+  "_postman_exported_at": "2018-05-14T02:06:52.093Z",
   "_postman_exported_using": "Postman/6.0.10"
 }
