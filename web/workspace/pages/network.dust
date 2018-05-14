@@ -16,11 +16,11 @@
         <li><a href="#usecases">Use cases</a></li>
         <li><a href="#contribute">Contribute</a></li>
         <li class="nav--right" style="padding-top:23px">
-          <div class="badge color-white small" style="margin-right:10px">
-           {!  <div class="badge__primary bg-dark">
+          {!  <div class="badge color-white small" style="margin-right:10px">
+           <div class="badge__primary bg-dark">
               TESTNET STATUS
-            </div> !}
-          </div>
+            </div> 
+          </div>!}
 
           <div class="badge color-white small">
             <div class="badge__primary color-tint">
