@@ -11,7 +11,10 @@
     {?author}
       <a href="/{lang}/team/{author[0].slug}" class="tar fwb box__aside">
         {author[0].name}
-        <img src="/assets/team/{author[0].slug}.jpg" class="box__author" width="25" alt="Photo of the author, {author[0].name}">
+
+        {?author[0].image[0]}
+          <img src="{global.cdn.publicUrl}{author[0].image[0].path}?q=80&w=50" alt="Photo of {name}" width="25" class="box__author">
+        {/author[0].image[0]}
       </a>
     {:else}
       <div class="{?publishedAt}box__aside tar{/publishedAt} fwb">The DADI Team</div>

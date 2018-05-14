@@ -31,7 +31,10 @@
       {?author}
         <div class="cf pt pb normal bdt bd-grey">
           <a href="/{lang}/team/{author[0].slug}" class="block">
-            <img style="margin-right:18px;float:left" src="/assets/team/{author[0].slug}.jpg" width="55"> 
+            {?author[0].image[0]}
+              <img src="{global.cdn.publicUrl}{author[0].image[0].path}?q=80&w=100" alt="Photo of {name}" class="fill mb" style="margin-right:18px;float:left">
+            {/author[0].image[0]}
+
             <strong>{author[0].name}</strong>
             <span class="block color-tint">{author[0].role}</span>
           </a>
