@@ -22,13 +22,13 @@
     "csrf": true
   },
   "server": {
-    "host": "127.0.0.1",
+    "host": "0.0.0.0",
     "port": 3000
   },
   "api": {
     "main": {
-      "host": "127.0.0.1",
-      "port": 8081,
+      "host": "35.178.60.215",
+      "port": 3001,
       "auth": {
         "clientId": "cloud-client",
         "secret": "nrq5d6jl0b"
@@ -49,8 +49,7 @@
   },
   "global": {
     "networkMonitor": {
-      "publicUrl": "http://virginlimitededition.media:3004",
-      "root": "context"
+      "publicUrl": "ws://185.17.172.170:8001/ws"
     },
     "cdn": {
       "publicUrl": "http://127.0.0.1:3003"
