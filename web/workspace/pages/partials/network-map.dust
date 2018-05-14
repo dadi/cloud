@@ -17,60 +17,39 @@ var layer = L.tileLayer('{url.protocol}//35.178.60.215:3004/{~lb}z{~rb}/{~lb}x{~
   noWrap: true,
 }).addTo(map);
 
-window.connectToSocket = function (host, path) {
-  window.connection = io(host, {
-    path: '/' + path,
-    forceNew: false
-  });
-
-  window.connection.on('connect', function() {
-    console.log('Connected');
-  });
-}
-
 window.onMapLoaded = function (callback) {
   layer.on('load', function () {
     callback();
   });
 }
 
-window.addSocketListener = function (context, event, callback) {
-  var listener = window.connection.emit('join', context);
+window.addSocketListener = function (event, callback) {
+  var connection = new WebSocket('{global.networkMonitor.publicUrl|s}/' + event);
 
-  listener.on(event, function(data) {
-    callback(data);
-  });
+  connection.onopen = function () {
+    
+  };
+
+  connection.onmessage = function (e) {
+    callback(e.data);
+  };
 }
 
 window.pulseNode = function (data) {
-  if (window.hosts) {
-    var identity = data.value.node.split('.');
-    var serial = identity[1];
+  var existingLayer = document.getElementById(data);
 
-    var existingLayer = document.getElementById(serial);
-
-    if (existingLayer) {
-      window.animateMarker(existingLayer);
-    }
+  if (existingLayer) {
+    window.animateMarker(existingLayer);
   }
 }
 
-window.addHostsToMap = function (hosts) {
-  window.hosts = hosts;
-
-  window.hosts.forEach(function (host) {
-    window.addHostToMap(host);
-  })
-}
-
 window.addHostToMap = function (host) {
-  // Do nothing if it already exists
-  if (document.getElementById(host.serial) || !host.geo) return;
+  if (!host.geo) return;
 
   L.marker([host.geo.latitude, host.geo.longitude], {
     icon: L.divIcon({
       className: '',
-      html: '<div id="' + host.serial + '" class="dadiNode"></div>'
+      html: '<div id="' + host.id + '" class="dadiNode"></div>'
     }),
   }).addTo(map);
 }
@@ -84,23 +63,34 @@ window.animateMarker = function (geo) {
   }
 }
 
-window.connectToSocket('{global.networkMonitor.publicUrl|s}', '{global.networkMonitor.root}');
+window.clearHosts = function () {
+  document.querySelectorAll('.dadiNode').forEach(function(node) {
+    node.parentNode.removeChild(node);
+  });
+}
 
 window.onMapLoaded(function () {
-  window.addSocketListener('queue', 'queries/second', function (data) {
-     document.getElementById('concurrent_requests').innerHTML = data.value;
-  });
-  window.addSocketListener('hosts', 'hosts_changed', function (data) {
-    window.addHostsToMap(data.value.hosts);
-    document.getElementById('host_count').innerHTML = data.value.hosts.length;
+  window.addSocketListener('monitor.hosts', function (data) {
+    var hosts = JSON.parse(data);
+    document.getElementById('host_count').innerHTML = hosts.length;
+
+    window.clearHosts();
+
+    hosts.forEach(function (host) {
+      window.addHostToMap(host);
+    })
   });
 
-  window.addSocketListener('requests', 'dequeued_requests', function (data) {
+  window.addSocketListener('gateway.queue.size', function (data) {
+    document.getElementById('concurrent_requests').innerHTML = data.toString();
+  });
+
+  window.addSocketListener('monitor.average_response_time', function (data) {
+    document.getElementById('average_response').innerHTML = data.toString();
+  });
+
+  window.addSocketListener('gateway.grpc.write_payload.dequeue', function (data) {
     window.pulseNode(data);
-  });
-
-  window.addSocketListener('requests', 'average_response', function (data) {
-    document.getElementById('average_response').innerHTML = data.value + ' <span class="stat__unit">ms</span>';
   });
 });
 </script>
