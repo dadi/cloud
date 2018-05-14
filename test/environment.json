@@ -1,0 +1,111 @@
+{
+  "id": "9a7f34bb-27a1-4c15-a652-aa6d2e1b18ef",
+  "name": "Beta2.dadi.cloud",
+  "values": [
+    {
+      "key": "url",
+      "value": "35.178.60.215:3001",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "clientId",
+      "value": "cloud-client",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "secret",
+      "value": "nrq5d6jl0b",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "timeNow",
+      "value": 1526262322187,
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "article_id",
+      "value": "5af8e2641db22306763246c5",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "knowledge_id",
+      "value": "5af8d09c1db223067632468a",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "webservice_id",
+      "value": "5ad94065cad8262f5a97a202",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "milestoneTime",
+      "value": 1524046810198,
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "milestone_id",
+      "value": "5af8ea1f1db2230676324737",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "page_id",
+      "value": "5ad94248cad8262f5a97a212",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "team_id",
+      "value": "5ad942e4cad8262f5a97a217",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "partner_id",
+      "value": "5ad93db2cad8262f5a97a1f2",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "tokenTime",
+      "value": 1524534662,
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "tokendata_id",
+      "value": "5ade8d87ef6d8a5cb51308b5",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "tokenCreated",
+      "value": 1524534662,
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "updateTokenTime",
+      "value": 1524534014,
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "category_id",
+      "value": "5af8d88d1db22306763246ae",
+      "enabled": true,
+      "type": "text"
+    }
+  ],
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2018-05-14T02:06:52.093Z",
+  "_postman_exported_using": "Postman/6.0.10"
+}
