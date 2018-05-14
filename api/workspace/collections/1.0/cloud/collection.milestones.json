@@ -70,9 +70,25 @@
       }
     },
     "web-service": {
+      "label": "Web service",
       "type": "Reference",
       "settings": {
         "collection": "web-services"
+      },
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
+    "network-service": {
+      "label": "Network service",
+      "type": "Reference",
+      "settings": {
+        "collection": "network-services"
       },
       "publish": {
         "section": "Details",
