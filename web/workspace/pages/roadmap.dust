@@ -6,7 +6,7 @@
   <div class="cnt">
     <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
     <h1>{pages.results[0].title}</h1>
-    <p class="normal">{pages.results[0].excerpt}</p>
+    <p class="normal header__intro">{pages.results[0].excerpt}</p>
   </div>
 </header>
 

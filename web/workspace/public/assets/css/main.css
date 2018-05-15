@@ -41,6 +41,9 @@ header {
   width: 100%;
   position: relative;
 }
+.header__intro {
+  max-width: 590px;
+}
 .bg-icon {
   opacity: 0.04;
   position: absolute;
@@ -260,7 +263,7 @@ h1, h2 {
   }
   .roadmap__line {
     left: 50%;
-    margin-left: 104px;
+    margin-left: 107px;
     top: -200px;
   }
   .roadmap__milestones {
@@ -270,10 +273,10 @@ h1, h2 {
     float: left;
     clear: both;
     padding: 0 50px;
-    margin-bottom: -100px;
+    margin-bottom: -110px;
     text-align: right;
   }
-  .roadmap__milestones .col:last-of-type {
+  .roadmap__milestones>.col:last-of-type {
     margin-bottom: 0;
   }
   .roadmap__milestones .col:nth-child(even) {
@@ -281,12 +284,12 @@ h1, h2 {
     text-align: left;
   }
   .roadmap__milestones .col .box--roadmap:before {
-    right: -60px;
+    right: -64px;
     top: 0;
     left: auto;
   }
   .roadmap__milestones .col:nth-child(even) .box--roadmap:before {
-    left: -70px;
+    left: -66px;
     right: auto;
     top: 0;
   }
