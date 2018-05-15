@@ -1,5 +1,5 @@
 <nav class="color-white fm" {?stick}id="nav"{/stick}>
-  <div class="cnt">
+  <div class="cnt bg-dark bds">
     {@ne key=page.key value="index"}
       <div class="nav__logo"><a href="/">Home</a></div>
     {/ne}
@@ -13,13 +13,6 @@
             Overview
           </a></li>
       {/eq}
-      <li>
-        <a 
-          {@eq key="{page.key}" value="roadmap"}class="active"{/eq}
-          href="/{lang}/roadmap">
-          Roadmap
-        </a>
-      </li>
       <li>
         <a 
           {@eq key="{page.key}" value="network"}class="active"{/eq}
@@ -37,26 +30,6 @@
           {@eq key="{page.key}" value="community"}class="active"{/eq}
           href="/{lang}/community">
           Community
-        </a>
-      </li>
-      <li>
-        <a 
-          {@eq key="{page.key}" value="token"}class="active"{/eq}
-          href="/{lang}/token">
-          Token
-        </a>
-      </li>
-      {! <li>
-        <a 
-          {@eq key="{page.key}" value="partners"}class="active"{/eq}
-          href="/{lang}/partners">
-          Partners
-        </a>
-      </li> !}
-      <li>
-        <a 
-          {@eq key="{page.key}" value="team"}class="active"{/eq}
-          href="/{lang}/team">Team
         </a>
       </li>
 
