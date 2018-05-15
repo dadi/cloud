@@ -20,10 +20,6 @@
   "routes": [
     {
       "path": "/:lang/community"
-    },
-    {
-      "path": "/:lang/:category",
-      "fetch": "category-articles"
     }
   ]
 }

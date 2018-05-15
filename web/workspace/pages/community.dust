@@ -9,7 +9,7 @@
     <p class="normal header__intro">{pages.results[0].excerpt}</p>
 
     <div class="cols cols--3 pt--x2">
-      <a href="#" class="box col bd bd-grey mb bg-white">
+      <a href="https://twitter.com/dadi" class="box col bd bd-grey mb bg-white">
         <div class="box__inner">
           <img src="/assets/social/twitter-dark.svg" width="30" class="box__aside">
 
@@ -22,7 +22,7 @@
           </div>
         </div>
       </a>
-      <a href="#" class="box col bd bd-grey mb bg-white">
+      <a href="https://t.me/dadichat" class="box col bd bd-grey mb bg-white">
         <div class="box__inner">
           <img src="/assets/social/telegram-dark.svg" width="30" class="box__aside">
 
@@ -35,7 +35,7 @@
           </div>
         </div>
       </a>
-      <a href="#" class="box col bd bd-grey mb bg-white">
+      <a href="https://discord.gg/3sEvuYJ" class="box col bd bd-grey mb bg-white">
         <div class="box__inner">
           <img src="/assets/social/discord-dark.svg" width="30" class="box__aside">
 
