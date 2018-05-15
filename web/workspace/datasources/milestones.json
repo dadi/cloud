@@ -3,7 +3,7 @@
     "key": "milestones",
     "source": {
       "type": "dadiapi",
-      "endpoint": "1.0/cloud/milestones"
+      "endpoint": "1.0/cloud/milestones?compose=all"
     },
     "filterEvent": "filterMilestones"
   }
