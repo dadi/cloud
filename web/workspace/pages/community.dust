@@ -4,64 +4,56 @@
 
 <header class="bg-tint pt--x2 bdb bd-grey pb cf ovfh">
   <div class="cnt">
-    {^params.category}
-      <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
-      <h1>{pages.results[0].title}</h1>
-      <p class="normal">{pages.results[0].excerpt}</p>
+    <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
+    <h1>{pages.results[0].title}</h1>
+    <p class="normal header__intro">{pages.results[0].excerpt}</p>
 
-      <div class="cols cols--3 pt--x2">
-        <a href="#" class="box col bd bd-grey mb bg-white">
-          <div class="box__inner">
-            <img src="/assets/social/twitter-dark.svg" width="30" class="box__aside">
+    <div class="cols cols--3 pt--x2">
+      <a href="#" class="box col bd bd-grey mb bg-white">
+        <div class="box__inner">
+          <img src="/assets/social/twitter-dark.svg" width="30" class="box__aside">
 
-            <p class="medium fwb mb">Twitter</p>
+          <p class="medium fwb mb">Twitter</p>
 
-            <p class="normal">Keep across broader updates across the entire operation.</p>
+          <p class="normal">Keep across broader updates across the entire operation.</p>
 
-            <div class="box__footer">
-              <span class="box__cta small fm color-tint">Follow us on Twitter</span>
-            </div>
+          <div class="box__footer">
+            <span class="box__cta small fm color-tint">Follow us on Twitter</span>
           </div>
-        </a>
-        <a href="#" class="box col bd bd-grey mb bg-white">
-          <div class="box__inner">
-            <img src="/assets/social/telegram-dark.svg" width="30" class="box__aside">
+        </div>
+      </a>
+      <a href="#" class="box col bd bd-grey mb bg-white">
+        <div class="box__inner">
+          <img src="/assets/social/telegram-dark.svg" width="30" class="box__aside">
 
-            <p class="medium fwb mb">Telegram</p>
+          <p class="medium fwb mb">Telegram</p>
 
-            <p class="normal">Talk to other members of our crypto-currency community.</p>
+          <p class="normal">Talk to other members of our crypto-currency community.</p>
 
-            <div class="box__footer">
-              <span class="box__cta small fm color-tint">Join us on Telegram</span>
-            </div>
+          <div class="box__footer">
+            <span class="box__cta small fm color-tint">Join us on Telegram</span>
           </div>
-        </a>
-        <a href="#" class="box col bd bd-grey mb bg-white">
-          <div class="box__inner">
-            <img src="/assets/social/discord-dark.svg" width="30" class="box__aside">
+        </div>
+      </a>
+      <a href="#" class="box col bd bd-grey mb bg-white">
+        <div class="box__inner">
+          <img src="/assets/social/discord-dark.svg" width="30" class="box__aside">
 
-            <p class="medium fwb mb">Discord</p>
+          <p class="medium fwb mb">Discord</p>
 
-            <p class="normal">More technical talk about using and contributing to the web services.</p>
+          <p class="normal">More technical talk about using and contributing to the web services.</p>
 
-            <div class="box__footer">
-              <span class="box__cta small fm color-tint">Chat with us on Discord</span>
-            </div>
+          <div class="box__footer">
+            <span class="box__cta small fm color-tint">Chat with us on Discord</span>
           </div>
-        </a>
-      </div>
-    {:else}
-      {#knowledge-categories.results}{@eq key=slug value=params.category}
-        <img src="/assets/icons/{icon}.svg" width="60" class="mb bg-icon">
-        <h1>{name}</h1>
-        <p class="normal mb">{desc}</p>
-      {/eq}{/knowledge-categories.results}
-    {/params.category}
+        </div>
+      </a>
+    </div>
   </div>
 </header>
 
 <main class="mb">
-  <div class="pt--x2 pb bdb bd-grey">
+  <div class="pt--x2 pb--x2 bdb bd-grey">
     <div class="cnt">
       <h2 class="normal mb color-tint fwn fm">Tutorials</h2>
 
@@ -70,9 +62,11 @@
           {>"partials/articles/list" size="normal" /}
         {/tutorials-articles.results}
       </div>
+
+      <a href="/{lang}/tutorials" class="btn-more tac fm small">All tutorials &rarr;</a>
     </div>
   </div>
-  <div class="pt--x2 pb bdb bd-grey">
+  <div class="pt--x2 pb--x2 bdb bd-grey">
     <div class="cnt">
       <h2 class="normal mb color-tint fwn fm">Updates</h2>
 
@@ -81,9 +75,11 @@
           {>"partials/articles/list" size="normal" /}
         {/updates-articles.results}
       </div>
+
+      <a href="/{lang}/updates" class="btn-more tac fm small">All updates &rarr;</a>
     </div>
   </div>
-  <div class="pt--x2 pb">
+  <div class="pt--x2 pb--x2">
     <div class="cnt">
       <h2 class="normal mb color-tint fwn fm">Knowledge</h2>
     
@@ -92,6 +88,8 @@
           {>"partials/articles/list" size="normal" /}
         {/knowledge-articles.results}
       </div>
+
+      <a href="/{lang}/knowledge" class="btn-more tac fm small">All knowledge &rarr;</a>
     </div>
   </div>
 </main>

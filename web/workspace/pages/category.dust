@@ -1,0 +1,27 @@
+{>"partials/header"/}
+
+{>"partials/nav"/}
+
+<header class="bg-tint pt--x2 bdb bd-grey pb cf ovfh">
+  <div class="cnt">
+    {#categories.results}{@eq key=slug value=params.category}
+      <img src="/assets/icons/{icon}.svg" width="60" class="mb bg-icon">
+      <h1>{name}</h1>
+      <p class="normal mb">{desc}</p>
+    {/eq}{/categories.results}
+  </div>
+</header>
+
+<main class="mb"> 
+  <div class="cnt pt--x2">
+    <div class="cols cols--4">
+      {#category-articles.results}
+        {>"partials/articles/list" size="normal" /}
+      {/category-articles.results}
+    </div>
+
+    {>"partials/pagination" ds=category-articles /}
+  </div>
+</main>
+
+{>"partials/footer"/}

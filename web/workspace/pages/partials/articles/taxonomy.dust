@@ -1,7 +1,7 @@
 {#category}
   <div class="badge fm small color-blue">
     <div class="badge__primary bg-blue color-white">
-      <a href="/{lang}/community/{slug}">
+      <a href="/{lang}/{slug}">
         {name}
       </a>
     </div>
@@ -15,7 +15,7 @@
       {?sub-category}
       <div class="badge__secondary">
         {#sub-category primary=slug}
-          <a href="/{lang}/community/{primary}/{slug}">{name}</a>{@sep},{/sep}
+          <a href="/{lang}/{primary}/{slug}">{name}</a>{@sep},{/sep}
         {/sub-category}
       </div>
       {/sub-category}

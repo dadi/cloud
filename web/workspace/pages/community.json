@@ -8,6 +8,8 @@
   "datasources": [
     "pages",
     "web-services",
+    "categories",
+    "category-articles",
     "tutorials-articles",
     "updates-articles",
     "knowledge-articles"
@@ -18,6 +20,10 @@
   "routes": [
     {
       "path": "/:lang/community"
+    },
+    {
+      "path": "/:lang/:category",
+      "fetch": "category-articles"
     }
   ]
 }

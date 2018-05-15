@@ -1,0 +1,21 @@
+{
+  "datasource": {
+    "key": "category-articles",
+    "source": {
+      "type": "dadiapi",
+      "endpoint": "1.0/cloud/articles"
+    },
+    "count": 12,
+    "paginate": true,
+    "requestParams": [{
+      "param": "category",
+      "field": "category.slug"
+    }],
+    "filter": {
+      "published": true
+    },
+    "sort": {
+      "publishedAt": -1
+    }
+  }
+}

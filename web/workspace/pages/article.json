@@ -16,7 +16,7 @@
   ],
   "routes": [
     {
-      "path": "/:lang/community/:category/:subcategory?/:title"
+      "path": "/:lang/:category/:subcategory?/:title"
     }
   ]
 }

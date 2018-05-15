@@ -1,0 +1,26 @@
+{
+  "page": {
+    "key": "category"
+  },
+  "settings": {
+    "passFilters": true
+  },
+  "datasources": [
+    "pages",
+    "web-services",
+    "categories",
+    "category-articles"
+  ],
+  "requiredDatasources": [
+    "categories",
+    "category-articles"
+  ],
+  "events": [
+    "metatags"
+  ],
+  "routes": [
+    {
+      "path": "/:lang/:category"
+    }
+  ]
+}

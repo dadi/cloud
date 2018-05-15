@@ -1,33 +1,22 @@
-<article id="{@formatDate unix=date format="MMYY" /}" name="{@formatDate unix=date format="MMYY" /}" class="box {?size}box--{size} box--join{/size} col bd bd-grey bg-white box--roadmap mb {?complete}bd-green bg-light-green{/complete}">
-  <div class="box__inner">
-    <div class="badge fm small color-green">
-      {?complete}
-        <div class="badge__primary bg-green color-white">
-          Complete
-        </div>
-      {:else}
-        <div class="badge__secondary">
-          In-progress
-        </div>
-      {/complete}
+<article id="{@formatDate unix=date format="MMYY" /}" name="{@formatDate unix=date format="MMYY" /}" class="box {?size}box--{size} box--join{/size} box--natural col bd bd-grey bg-white box--roadmap mb {?complete}bd-green bg-light-green{/complete}">
+  <div class="box__inner" {^articles[0]}style="padding-bottom:25px"{/articles[0]}>
+    <div class="badge fm small color-green">      
+      <div class="badge__primary bg-green color-white">
+        Q{@formatDate unix=date format="Q YYYY" /}
+      </div>
+      <div class="badge__secondary">
+        {?complete}Complete{:else}In-progress{/complete}
+      </div>      
     </div>
 
     <h2 class="medium">{title}</h2>
-
-    <div class="mb">
-      {@markdown}{desc|s}{/markdown}
-    </div>
+    <div class="mb">{@markdown}{desc|s}{/markdown}</div>
   </div>
   
-  {@eq key=size value="natural"}
-    {?web-service}
-      <div class="box__footer bdt bd-grey small">
-        <a href="/{lang}/{web-service[0].slug}" class="small fm color-tint">About {web-service[0].name}</a>
-      </div>
-    {/web-service}
-  {:else}
-   <div class="box__footer bdt bd-grey small">
-    <time class="color-tint">Q{@formatDate unix=date format="Q YYYY" /}</time>
-  </div>
-  {/eq}
+  {#articles[0]}
+    <a href="/{lang}/{category}/{sub-category}/{slug}" class="box__footer bdt bd-grey small">
+      {title}
+      <div class="box__aside color-tint">{@formatDate unix=publishedAt format="DD MMM YYYY" /}</div>
+    </a>
+  {/articles[0]}
 </article>
