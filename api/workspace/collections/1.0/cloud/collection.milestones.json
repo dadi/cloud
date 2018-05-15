@@ -55,6 +55,21 @@
         }
       }
     },
+    "articles": {
+      "label": "Articles",
+      "type": "Reference",
+      "settings": {
+        "collection": "articles"
+      },
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
     "web-service": {
       "label": "Web service",
       "type": "Reference",

@@ -1,16 +1,15 @@
 <article id="{@formatDate unix=date format="MMYY" /}" name="{@formatDate unix=date format="MMYY" /}" class="box {?size}box--{size} box--join{/size} col bd bd-grey bg-white box--roadmap mb {?complete}bd-green bg-light-green{/complete}">
   <div class="box__inner">
     <div class="badge fm small color-green">
-      <div class="badge__primary bg-green color-white">
-        {category[0].name}
-      </div>
-      <div class="badge__secondary">
-        {?complete}
+      {?complete}
+        <div class="badge__primary bg-green color-white">
           Complete
-        {:else}
+        </div>
+      {:else}
+        <div class="badge__secondary">
           In-progress
-        {/complete}
-      </div>
+        </div>
+      {/complete}
     </div>
 
     <h2 class="medium">{title}</h2>

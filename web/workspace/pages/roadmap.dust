@@ -4,7 +4,9 @@
 
 <header class="bg-tint pt--x2 pb--x2 cf ovfh">
   <div class="cnt">
-    <h1 style="margin:0">Milestones</h1>
+    <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
+    <h1>{pages.results[0].title}</h1>
+    <p class="normal">{pages.results[0].excerpt}</p>
   </div>
 </header>
 
