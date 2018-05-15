@@ -75,7 +75,7 @@ h1, h2 {
     max-width: 100%;
     box-sizing: border-box;
     height: auto; 
-    margin: 1em auto;
+    margin: 2em auto;
   }
 
   & iframe {
