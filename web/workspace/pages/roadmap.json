@@ -13,7 +13,7 @@
   ],
   "routes": [
     {
-      "path": "/:lang/roadmap/:status?"
+      "path": "/:lang/roadmap/:view?"
     }
   ]
 }

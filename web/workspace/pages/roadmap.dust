@@ -2,15 +2,18 @@
 
 {>"partials/nav"/}
 
-<header class="bg-tint pt--x2 pb--x2 cf ovfh">
-  <div class="cnt">
-    <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
-    <h1>{pages.results[0].title}</h1>
-    <p class="normal header__intro">{pages.results[0].excerpt}</p>
-  </div>
-</header>
+{^params.view}
+  <header class="bg-tint pt--x2 cf ovfh">
+    <div class="cnt">
+      <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
+      <h1>{pages.results[0].title}</h1>
+      <p class="normal header__intro mb">{pages.results[0].excerpt}</p>
+      <p><a class="btn" href="/{lang}/roadmap/all">Show roadmap archive</a></p>
+    </div>
+  </header>
+{/params.view}
 
-<main class="ovfh bg-tint">
+<main class="ovfh bg-tint pt--x2">
   <div class="cnt cf">
     <div class="roadmap cf mb" id="stickContainer">
       <div class="roadmap__date col" id="stick">

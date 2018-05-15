@@ -13,15 +13,13 @@ const Event = function (req, res, data, callback) {
   //   filter = { 'complete': { $ne: true } }
   // }
 
-  // if (data.page.name === 'roadmap' && !data.params.roadmapCategory) {
-  //   filter = {
-  //     'complete': { $ne: true },
-  //     'date': {
-  //       $gte: moment().add(-30, 'days').valueOf(),
-  //       $lte: moment().add(30, 'days').valueOf()
-  //     }
-  //   }
-  // }
+  if (data.page.name === 'roadmap' && !data.params.view) {
+    filter = {
+      'date': {
+        $gte: moment().add(-30, 'days').valueOf()
+      }
+    }
+  }
 
   // if (data.page.name === 'roadmap-milestones' && data.params.status) {
   //   const status = data.params.status === 'complete' ? true : { $ne: true }
