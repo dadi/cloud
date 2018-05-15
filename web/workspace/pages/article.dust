@@ -32,7 +32,7 @@
         <div class="cf pt pb normal bdt bd-grey">
           <a href="/{lang}/team/{author[0].slug}" class="block">
             {?author[0].image[0]}
-              <img src="{global.cdn.publicUrl}{author[0].image[0].path}?q=80&w=100" alt="Photo of {name}" class="fill mb" style="margin-right:18px;float:left">
+              <img src="{global.cdn.publicUrl}{author[0].image[0].path}?q=80&w=100" alt="Photo of {name}" style="margin-right:18px;float:left" width="55">
             {/author[0].image[0]}
 
             <strong>{author[0].name}</strong>
