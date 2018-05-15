@@ -59,6 +59,7 @@
     "cache": false,
     "count": 40,
     "sort": "order",
+    "compose": true,
     "index": [
       {
         "keys": {

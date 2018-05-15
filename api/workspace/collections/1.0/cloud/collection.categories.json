@@ -62,6 +62,7 @@
     "sortOrder": 1,
     "storeRevisions": false,
     "description": "",
+    "compose": true,
     "hooks": {
       "beforeCreate": [
         {
