@@ -4,7 +4,7 @@
     <p class="mb--x2 read">This site is built with our own technology and is <a href="https://github.com/dadi" title="Github" target="_blank" rel="noopener">open source</a>. <strong>© DADI+ Ltd</strong>. Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors.</p>
 
     <div class="grid">
-      <div class="col w-1-3 mb--x2">
+      <div class="col w-1-4 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Elsewhere</span></h3></div>
         <ul class="grid bs-grid">
           <li class="col bs-w-1-2 w-1-1"><a href="https://github.com/dadi" rel="noopener" title="Github" target="_blank">Github</a></li>
@@ -15,7 +15,7 @@
           <li class="col bs-w-1-2 w-1-1"><a href="https://t.me/dadichat" rel="noopener" title="Telegram" target="_blank">Telegram</a></li>
         </ul>
       </div>
-      <div class="col w-1-3 mb--x2">
+      <div class="col w-1-4 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Sitemap</span></h3></div>
         <ul class="grid bs-grid">
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/network/">Network</a></li>
@@ -30,7 +30,7 @@
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/rss/">RSS Feed</a></li>
         </ul>
       </div>
-      <div class="col w-1-3 mb--x2">
+      <div class="col w-1-4 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Web services</span></h3></div>
         <ul>
           {#web-services.results}
@@ -39,14 +39,15 @@
           <li><a href="http://docs.dadi.tech" onclick="ga('send','event','Documentation','Click','Footer');" rel="noopener"><img src="/assets/icons/pop-out.svg" width="15">Documentation</a></li>
         </ul>
       </div>
-      {! <div class="col w-1-4 mb--x2">
-        <div class="hdr fm ttu mb"><h3><span>Knowledge</span></h3></div>
+      <div class="col w-1-4 mb--x2">
+        <div class="hdr fm ttu mb"><h3><span>Community</span></h3></div>
         <ul class="grid bs-grid">
-          {#knowledge-categories.results}
-            <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/knowledge/{slug}/">{name}</a></li>
-          {/knowledge-categories.results}
+          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/community/">Overview</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/updates/">Updates</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/tutorials/">Tutorials</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/knowledge/">Knowledge</a></li>
         </ul>
-      </div> !}
+      </div>
     </div>
   </div>
 </footer>
