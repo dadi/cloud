@@ -14,7 +14,7 @@
   </div>
   
   {#articles[0]}
-    <a href="/{lang}/{category}/{sub-category}/{slug}" class="box__footer bdt bd-grey small">
+    <a href="/{lang}/{category[0].slug}/{sub-category[0].slug}/{slug}" class="box__footer bdt bd-grey small">
       {title}
       <div class="box__aside color-tint">{@formatDate unix=publishedAt format="DD MMM YYYY" /}</div>
     </a>
