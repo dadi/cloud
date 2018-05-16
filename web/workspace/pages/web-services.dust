@@ -89,8 +89,8 @@
   </div>
 </header>
 
-<main class="mb--x2 pt">
-  <div class="bdb bdt bd-grey">
+<main class="mb--x2 mt">
+  <div class="bdb bd-grey">
     <div class="cnt">
       <div class="grid mb--x2" id="stickContainer">
         <div class="col w-1-2">
