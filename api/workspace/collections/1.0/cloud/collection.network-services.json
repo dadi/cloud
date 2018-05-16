@@ -163,6 +163,19 @@
         }
       }
     },
+    "image-caption": {
+      "type": "String",
+      "required": false,
+      "label": "Image caption",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
     "published": {
       "type": "Boolean",
       "required": false,
