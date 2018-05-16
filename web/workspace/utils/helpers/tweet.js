@@ -1,6 +1,6 @@
 const dust = require('dustjs-linkedin')
 
-const username = /\s@(\w+)/gmi
+const username = /(^|\s)@(\w+)/gmi
 const links = /(https?:\/\/[^\s]+)/gmi
 const hashtags = /(^|\s)#([\w/]*)/gmi
 const newlines = /(\r\n|\r|\n)/gmi
@@ -26,10 +26,10 @@ dust.helpers.tweet = function(chunk, context, bodies, params) {
       string = string.replace(tco, '')
 
       // Hashtags
-      string = string.replace(hashtags, `<a href="${url}/hashtag/$2" target="_blank">#$2</a>`)
+      string = string.replace(hashtags, ` <a href="${url}/hashtag/$2" target="_blank">#$2</a>`)
 
       // Usernames
-      string = string.replace(username, `<a href="${url}/$1" target="_blank">$&</a>`)
+      string = string.replace(username, ` <a href="${url}/$2" target="_blank">@$2</a>`)
 
       // Line breaks
       string = string.replace(newlines, `<br>`)
