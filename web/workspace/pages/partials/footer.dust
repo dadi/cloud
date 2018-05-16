@@ -59,7 +59,7 @@ var stick = document.getElementById('stick');
 
 if (stick) {
   new StickySidebar(stick, {
-    topSpacing: 65,
+    topSpacing: {@eq key=page.name value="index"}65{:else}5{/eq},
     bottomSpacing: 0,
     containerSelector: '#stickContainer',
     minWidth: 890

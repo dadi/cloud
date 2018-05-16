@@ -102,6 +102,12 @@
             <div class="read normal">
               {@markdown}{description}{/markdown}
             </div>
+
+             {#image}
+              <div class="mt">
+                <img src="{global.cdn.publicUrl}{path}?w=1024&q=50" class="fill block" alt="Screenshot of product">
+              </div>
+            {/image}
           </div>
         </div>
         <div class="col w-1-2" id="features" name="features">
