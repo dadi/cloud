@@ -26,25 +26,34 @@
             </div>
           </div>    
       
-          <div class="mc-field-group">
-            <select name="MMERGE5">
-              <option value="null" hidden selected disabled>Country</option>
+          <div class="grid">
+            <div class="col w-1-2">
+              <div class="mc-field-group">
+                <input placeholder="City" type="text" value="" name="MMERGE6" class="" id="mce-MMERGE6">
+              </div>
+            </div>
+            <div class="col w-1-2">
+              <div class="mc-field-group">
+                <select name="MMERGE5">
+                  <option value="null" hidden selected disabled>Country</option>
 
-              <optgroup label="Popular">
-                <option value="United Kingdom">United Kingdom</option>
-                <option value="United States">United States</option>
-                <option value="Canada">Canada</option>
-                <option value="France">France</option>
-                <option value="Japan">Japan</option>
-              </optgroup>
+                  <optgroup label="Popular">
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="United States">United States</option>
+                    <option value="Canada">Canada</option>
+                    <option value="France">France</option>
+                    <option value="Japan">Japan</option>
+                  </optgroup>
 
-              <optgroup label="All countries">
-                {#countries.results}
-                  <option value="{name}">{name}</option>
-                {/countries.results}
-              </optgroup>
-            </select>
-          </div>
+                  <optgroup label="All countries">
+                    {#countries.results}
+                      <option value="{name}">{name}</option>
+                    {/countries.results}
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+          </div>          
 
           <div class="mc-field-group">
             <select name="MMERGE13">
