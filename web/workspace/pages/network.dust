@@ -8,7 +8,7 @@
 
 {>"partials/nav" /}
 
-<header class="bg-tint pb cf bdb bd-grey">
+<header class="bg-tint cf bdb bd-grey">
   <nav class="subnav bg-white cf fm">
     <div class="cnt">
       <ul>
