@@ -103,10 +103,12 @@
               {@markdown}{description}{/markdown}
             </div>
 
-             {#image}
-              <div class="mt">
-                <img src="{global.cdn.publicUrl}{path}?w=1024&q=50" class="fill block" alt="Screenshot of product">
+            {#image}
+              <div class="mt img img--16-10">
+                <img src="{global.cdn.publicUrl}{path}?ratio=16-10&resize=fill&w=1024&q=50" class="fill block" alt="Screenshot of product">
               </div>
+
+              <p class="color-tint small tac" style="margin-top:10px">{image-caption}</p>
             {/image}
           </div>
         </div>
