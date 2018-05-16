@@ -31,20 +31,20 @@
 <main class="mb--x2" id="homeMain">
   {>"partials/nav" stick="true" /}
 
-  <div class="bds pt pt--x2 pb"> 
+  <div class="bds pt pt--x2"> 
     <div class="cnt">
-      <div class="grid cf mb">
-        <div class="col w-1-3">
+      <div class="grid cf pb">
+        <div class="col w-1-3 pb">
           <img src="/assets/icons/favorite.svg" height="60" class="mb">
           <h2 class="medium">A fairer internet</h2>
           <p class="normal">DADI is a peer-to-peer network owned by the people, shifting the balance of computational power away from large corporations</p>
         </div>
-        <div class="col w-1-3">
+        <div class="col w-1-3 pb">
           <img src="/assets/icons/bolt.svg" height="60" class="mb">
           <h2 class="medium">Faster and cheaper</h2>
           <p class="normal">The DADI network offers improved efficiency and performance, saving up to 90% compared with traditional cloud services</p>
         </div>
-        <div class="col w-1-3">
+        <div class="col w-1-3 pb">
           <img src="/assets/icons/coins.svg" height="60" class="mb">
           <h2 class="medium">Earn DADI tokens</h2>
           <p class="normal">Anyone with a laptop, games console or any connected device can earn income by providing spare computation capacity for rent</p>
