@@ -56,22 +56,22 @@
   <div class="pt pb">
     <div class="cnt">
       <div class="cf">
-        <div class="col w-1-6">
+        <div class="col w-1-6 bs-w-1-1">
           <h3 class="mb fm fwn pt vam color-tint">Trusted by…</h3>
         </div>
-        <div class="col w-1-6">
+        <div class="col w-1-6 bs-w-1-5">
           <img class="fill" src="/assets/clients/logo-whatcar.png">
         </div>
-        <div class="col w-1-6">
+        <div class="col w-1-6 bs-w-1-5">
           <img class="fill" src="/assets/clients/logo-vle.png">
         </div>
-        <div class="col w-1-6">
+        <div class="col w-1-6 bs-w-1-5">
           <img class="fill" src="/assets/clients/logo-empire.png">
         </div>
-        <div class="col w-1-6">
+        <div class="col w-1-6 bs-w-1-5">
           <img class="fill" src="/assets/clients/logo-monocle.png">
         </div>        
-        <div class="col w-1-6">
+        <div class="col w-1-6 bs-w-1-5">
           <img class="fill" src="/assets/clients/logo-lifestyleone.png">
         </div>
       </div>
