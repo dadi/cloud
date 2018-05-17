@@ -50,7 +50,7 @@
       <ul>
         {#web-services.results}
           {?github}
-          <li><a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}"><img src="/assets/products/dadi-{slug}.png" class="vam" height="18"> {name}</a></li>{/github}
+          <li><a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}"><img src="{global.cdn.publicUrl}{icon[0].path}?h=36" alt="Icon for DADI {name}" height="18" class="vam"> {name}</a></li>{/github}
         {/web-services.results}
       </ul>
     </div>

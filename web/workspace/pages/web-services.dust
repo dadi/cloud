@@ -5,7 +5,7 @@
 {#web-service.results[0]}
 <style type="text/css">
   header {
-    background: url(/assets/products/dadi-{slug}.png) no-repeat 92% 140%;
+    background: url({global.cdn.publicUrl}{icon[0].path}?h=900) no-repeat 92% 140%;
     background-size: auto 450px;
   }
   @media (max-width: 800px) {
@@ -149,7 +149,7 @@
     </div>
               
     <div class="cols cols--4">
-      {#web-services.results:web-services lang=lang}
+      {#web-services.results:web-services lang=lang global=global}
         {>"partials/web-services/list"/}
       {/web-services.results}
     </div>

@@ -34,7 +34,7 @@
         <div class="hdr fm ttu mb"><h3><span>Web services</span></h3></div>
         <ul>
           {#web-services.results}
-            {?github}<li><a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}" class="fwb"><img src="/assets/products/dadi-{slug}.png" height="18" alt="DADI {name} logo">{name}</a></li>{/github}
+            {?github}<li><a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}" class="fwb"><img src="{global.cdn.publicUrl}{icon[0].path}?h=36" alt="Icon for DADI {name}" height="18">{name}</a></li>{/github}
           {/web-services.results}
           <li><a href="http://docs.dadi.tech" onclick="ga('send','event','Documentation','Click','Footer');" rel="noopener"><img src="/assets/icons/pop-out.svg" width="15" alt="External link">Documentation</a></li>
         </ul>
