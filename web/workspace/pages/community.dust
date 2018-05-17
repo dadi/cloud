@@ -16,7 +16,7 @@
 
           <p class="normal fwb" style="padding-bottom:10px">Twitter</p>
 
-          <p class="normal">Keep across broader updates across the entire operation.</p>
+          <p class="normal">Follow us on Twitter.</p>
 
           {! <div class="box__footer">
             <span class="box__cta small fm color-tint">Follow us on Twitter</span>
@@ -29,7 +29,7 @@
 
           <p class="normal fwb" style="padding-bottom:10px">Telegram</p>
 
-          <p class="normal">Talk to other members of our crypto-currency community.</p>
+          <p class="normal">Talk to the team on Telegram.</p>
 
          {!  <div class="box__footer">
             <span class="box__cta small fm color-tint">Join us on Telegram</span>
@@ -42,7 +42,7 @@
 
           <p class="normal fwb" style="padding-bottom:10px">Discord</p>
 
-          <p class="normal">More technical talk about using and contributing to the web services.</p>
+          <p class="normal">Find us on Discord.</p>
 
           {! <div class="box__footer">
             <span class="box__cta small fm color-tint">Chat with us on Discord</span>
