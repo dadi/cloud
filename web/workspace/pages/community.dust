@@ -64,7 +64,7 @@
         {/tutorials-articles.results}
       </div>
 
-      <a href="/{lang}/tutorials" class="btn-more tac fm small">All tutorials &rarr;</a>
+      <a href="/{lang}/tutorials" class="btn-more tac fm small">All tutorials</a>
     </div>
   </div>
   <div class="pt--x2 pb--x2 bdb bd-grey">
@@ -77,7 +77,7 @@
         {/updates-articles.results}
       </div>
 
-      <a href="/{lang}/updates" class="btn-more tac fm small">All updates &rarr;</a>
+      <a href="/{lang}/updates" class="btn-more tac fm small">All updates</a>
     </div>
   </div>
   <div class="pt--x2 pb--x2">
@@ -90,7 +90,7 @@
         {/knowledge-articles.results}
       </div>
 
-      <a href="/{lang}/knowledge" class="btn-more tac fm small">All knowledge &rarr;</a>
+      <a href="/{lang}/knowledge" class="btn-more tac fm small">All knowledge</a>
     </div>
   </div>
 </main>

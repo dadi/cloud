@@ -95,13 +95,13 @@
             {/articles.results}
           </div>  
 
-          <a href="/{lang}/community" class="btn-more tac fm small">See more latest articles &rarr;</a>
+          <a href="/{lang}/community" class="btn-more tac fm small">More articles</a>
         </div>
         <div class="col w-1-2">
           <div id="stick">
             {>"partials/network-mini"/}
 
-            <a href="/{lang}/network" class="mt btn-more tac fm small">About the network &rarr;</a>
+            <a href="/{lang}/network" class="mt btn-more tac fm small">About the network</a>
           </div>
         </div>
       </div>

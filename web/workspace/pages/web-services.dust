@@ -83,7 +83,7 @@
           {@markdown}{headlineFeatures}{/markdown}
         </ul>
 
-        <p><a href="#features" class="btn">More features &rarr;</a></p>
+        <p><a href="#features" class="btn">More features</a></p>
       </div>     
     </div>
   </div>
