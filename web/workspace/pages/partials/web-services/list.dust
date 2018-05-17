@@ -1,14 +1,14 @@
 <div class="box box--small col bd bd-grey mb" style="border-top: 1px solid #{color}">
   <{?github}a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}"{:else}div{/github} class="box__inner">
     <div class="mb">
-      <img src="{global.cdn.publicUrl}{icon[0].path}?h=80" alt="Icon for DADI {name}" height="40">
+      <img class="js-lazy-image" src="{global.cdn.publicUrl}{icon[0].path}?h=40&q=10" data-src="{global.cdn.publicUrl}{icon[0].path}?h=80" alt="Icon for DADI {name}" height="40">
     </div>
     <h2 class="fm fwn normal" style="color:#{color}">{slug}</h2>
     <p class="mb">{overview}</p>
   </{?github}a{:else}div{/github}>
   <div class="box__footer">
     {?github}
-      <a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}" class="box__cta small fm color-tint">Learn more</a>
+      <a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}" class="box__cta small fm color-tint">About {name}</a>
     {:else}
       <span class="box__cta small fm color-tint">Coming soon…</span>
     {/github}
