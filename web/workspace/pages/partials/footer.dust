@@ -56,10 +56,11 @@
 
 <script type="text/javascript">
 var stick = document.getElementById('stick');
+var topSpace = stick.getAttribute('data-topspace');
 
 if (stick) {
   new StickySidebar(stick, {
-    topSpacing: {@eq key=page.name value="index"}65{:else}5{/eq},
+    topSpacing: (topSpace || 65),
     bottomSpacing: 0,
     containerSelector: '#stickContainer',
     minWidth: 890
@@ -87,11 +88,6 @@ function toggleContextual(e) {
   e.preventDefault();
   document.getElementById(this.href.split('#')[1]).classList.toggle('hide');
 }
-
-
-/* Overlays */
-
-
 </script>
 
 </body>

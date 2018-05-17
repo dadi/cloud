@@ -78,6 +78,10 @@ h1, h2 {
     margin: 2em auto;
   }
 
+  & > p:first-of-type > img {
+    margin-top: 0;
+  }
+
   & iframe {
     max-width: 100%;
   }

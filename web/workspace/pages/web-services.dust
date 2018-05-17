@@ -94,7 +94,7 @@
     <div class="cnt">
       <div class="grid mb--x2" id="stickContainer">
         <div class="col w-1-2">
-          <div id="stick">
+          <div id="stick" data-topspace="10">
             <div class="hdr fm ttu mb">
               <h3><span>What is {name}?</span></h3>
             </div>
