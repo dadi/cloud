@@ -56,9 +56,10 @@
 
 <script type="text/javascript">
 var stick = document.getElementById('stick');
-var topSpace = stick.getAttribute('data-topspace');
 
 if (stick) {
+  var topSpace = stick.getAttribute('data-topspace');
+
   new StickySidebar(stick, {
     topSpacing: (topSpace || 65),
     bottomSpacing: 0,
