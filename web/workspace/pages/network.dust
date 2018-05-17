@@ -170,7 +170,7 @@
       {>"partials/usecases/list"
         icon="server" 
         use="Decentralize your products" 
-        desc="Building your digital product using DADI technology immediately decentralizes your product."
+        desc="Using DADI technology immediately brings cost and performance benefits of decentralization to your digital product."
       /}
       {>"partials/usecases/list"
         icon="duplicate" 
