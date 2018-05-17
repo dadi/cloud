@@ -155,12 +155,12 @@
       {>"partials/usecases/list"
         icon="edit" 
         use="Content & publishing platforms" 
-        desc="Combines flexible editorial interfaces with an API-first/COPE (Create Once, Publish Everywhere) philosophy."
+        desc="DADI web services combine flexible editorial interfaces with an API-first/COPE (Create Once, Publish Everywhere) philosophy."
       /}
       {>"partials/usecases/list"
         icon="picture" 
         use="Content manipulation & distribution" 
-        desc="Seamless delivery of image, audio and video assets for digital products across multiple contexts."
+        desc="DADI CDN delivers of image, audio and video assets for digital products across multiple contexts at a much reduced cost."
       /}
       {>"partials/usecases/list"
         icon="smartphone" 
@@ -169,23 +169,23 @@
       /}
       {>"partials/usecases/list"
         icon="power" 
-        use="'Always-on' products" 
+        use="Power 'always-on' products" 
         desc="The decentralized nature of DADI is uniquely performant for products such as news services which need to be 'always-on'."
       /}
       {>"partials/usecases/list"
         icon="duplicate" 
-        use="Subscription services" 
-        desc="Proficient in managing user data as they are content, DADI can support subscription services as part of a wider CRM capability."
+        use="Paid subscription services" 
+        desc="As proficient in managing user data as content, DADI web services can support subscription services as part of a wider CRM capability."
       /}
       {>"partials/usecases/list"
         icon="money" 
         use="Cost-sensitive products" 
-        desc="Its decentralized architecture means users can save over 90% compared with traditional cloud providers."
+        desc="DADI's decentralized architecture means users can save over 90% compared with traditional cloud service providers."
       /}
       {>"partials/usecases/list"
         icon="tag" 
-        use="Content classification" 
-        desc="Automate the classification and tagging of editorial content using its unique and highly accurate taxonomic framework."
+        use="Intelligent content classification" 
+        desc="Automate the classification and tagging of editorial content using DADI's unique and highly accurate taxonomic framework."
       /}
       {>"partials/usecases/list"
         icon="user" 
@@ -194,8 +194,8 @@
       /}
       {>"partials/usecases/list"
         icon="cart" 
-        use="Ecommerce" 
-        desc="Brings the flexibility of content management to retail by facilitating seamless control of products and inventory."
+        use="Targeted ecommerce" 
+        desc="Brings the flexibility of API-first content management to retail and facilitates improved conversion through personalization."
       /}
       {>"partials/usecases/list"
         icon="activity" 
@@ -206,6 +206,11 @@
         icon="server" 
         use="Big data" 
         desc="Capability to act as an umbrella store for user data across multiple products in a digital portfolio."
+      /}
+      {>"partials/usecases/list"
+        icon="server" 
+        use="Decentralize your products" 
+        desc="Building your digital product using DADI technology immediately decentralizes your product."
       /}
     </div>
 
