@@ -204,7 +204,7 @@
       /}
       {>"partials/usecases/list"
         icon="server" 
-        use="Big data" 
+        use="Seamless big data management" 
         desc="Capability to act as an umbrella store for user data across multiple products in a digital portfolio."
       /}
       {>"partials/usecases/list"
