@@ -52,6 +52,7 @@
   </div>
 </footer>
 
+<script type="text/javascript" src="/assets/js/lazy-load.js"></script>
 <script type="text/javascript" src="/assets/js/sticky-sidebar.min.js"></script>
 
 <script type="text/javascript">

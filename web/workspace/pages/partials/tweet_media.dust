@@ -1,5 +1,10 @@
 {#extended_entities.media[0]}
   <div class="img img--16-9">
-    <img src="{global.cdn.publicUrl}/http/{media_url_https}?w=400" alt="Tweet media" class="fill block">
+    <img 
+      src="{global.cdn.publicUrl}/http/{media_url_https}?w=100&ratio=16-9&blur=10&q=20"
+      data-src="{global.cdn.publicUrl}/http/{media_url_https}?w=400&ratio=16-9&q=80"
+      alt="Tweet media"
+      class="fill block js-lazy-image
+    ">
   </div>
 {/extended_entities.media[0]}
