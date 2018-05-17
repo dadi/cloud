@@ -35,7 +35,7 @@
 
       <li class="nav--right nav__docs"><a href="https://docs.dadi.tech/" target="_blank" rel="noopener">Documentation</a></li>
       <li class="nav__social nav--right">
-        <a href="https://github.com/dadi" title="Github" target="_blank" rel="noopener"><img src="/assets/social/github.svg" height="24"></a>
+        <a href="https://github.com/dadi" title="GitHub" target="_blank" rel="noopener"><img src="/assets/social/github.svg" height="24"></a>
         <a href="https://medium.com/dadi" title="Medium" target="_blank" rel="noopener"><img src="/assets/social/medium.svg" height="24"></a>
         <a href="https://twitter.com/dadi" title="Twitter" target="_blank" rel="noopener"><img src="/assets/social/twitter.svg" height="24"></a>
         <a href="https://reddit.com/r/dadi" title="Reddit" target="_blank" rel="noopener"><img src="/assets/social/reddit.svg" height="24"></a>

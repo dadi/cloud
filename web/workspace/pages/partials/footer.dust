@@ -1,13 +1,13 @@
 <footer class="bg-tint bdt bd-grey">
   <div class="cnt fm small">
     <img src="/assets/img/dadi-logo-dark.svg" height="30" class="mb">
-    <p class="mb--x2 read">This site is built with our own technology and is <a href="https://github.com/dadi" title="Github" target="_blank" rel="noopener">open source</a>. <strong>© DADI+ Ltd</strong>. Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors.</p>
+    <p class="mb--x2 read">This site is built with our own technology and is <a href="https://github.com/dadi" title="GitHub" target="_blank" rel="noopener">open source</a>. <strong>© DADI+ Ltd</strong>. Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors.</p>
 
     <div class="grid">
       <div class="col w-1-4 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Elsewhere</span></h3></div>
         <ul class="grid bs-grid">
-          <li class="col bs-w-1-2 w-1-1"><a href="https://github.com/dadi" rel="noopener" title="Github" target="_blank">Github</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="https://github.com/dadi" rel="noopener" title="GitHub" target="_blank">GitHub</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="https://medium.com/dadi" rel="noopener" title="Medium" target="_blank">Medium</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="https://twitter.com/dadi" rel="noopener" title="Twitter" target="_blank">Twitter</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="https://reddit.com/r/dadi" rel="noopener" title="Reddit" target="_blank">Reddit</a></li>
