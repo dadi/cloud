@@ -6,7 +6,7 @@
       {>"partials/tweet_media" /}
     {/quoted_status}
 
-    <a style="padding:18px 25px 15px;" class="block color-tint bg-tint" href="https://twitter.com/{user.screen_name}" target="_blannk">
+    <a style="padding:18px 25px 15px;" class="block color-tint bg-tint" href="https://twitter.com/{user.screen_name}" target="_blank" title="Visit {user.screen_name}'s profile on Twitter.com">
       {! <img src="{user.profile_image_url_https}" width="30" class="box__aside vam" alt="Profile picture of {user.screen_name}"> !}
       <img src="/assets/social/retweet.svg" class="vam" alt="Retweet icon" width="25">
       {user.screen_name}
@@ -31,13 +31,13 @@
     <a href="https://twitter.com/{user.screen_name}/status/{id_str}" target="_blank">
       
       <a href="https://twitter.com/intent/tweet?in_reply_to={id_str}" target="_blank" title="Reply">
-        <img src="/assets/icons/mail-reply.svg" height="17" class="vam tweet__actions">
+        <img src="/assets/icons/mail-reply.svg" height="17" class="vam tweet__actions" alt="Reply icon">
       </a>
       <a href="https://twitter.com/intent/retweet?tweet_id={id_str}" target="_blank" title="Retweet">
-        <img src="/assets/icons/duplicate.svg" height="17" class="vam tweet__actions">
+        <img src="/assets/icons/duplicate.svg" height="17" class="vam tweet__actions" alt="Retweet icon">
       </a>
       <a href="https://twitter.com/intent/like?tweet_id={id_str}" target="_blank" title="Like">
-        <img src="/assets/icons/favorite.svg" height="17" class="vam tweet__actions">
+        <img src="/assets/icons/favorite.svg" height="17" class="vam tweet__actions" alt="Favourite icon">
       </a>
       
       <a href="https://twitter.com/{user.screen_name}/status/{id_str}" target="_blank" class="box__aside">

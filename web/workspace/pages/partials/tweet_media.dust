@@ -1,5 +1,5 @@
 {#extended_entities.media[0]}
   <div class="img img--16-9">
-    <img src="{media_url_https}" alt="Tweet media" class="fill block">
+    <img src="{global.cdn.publicUrl}/http/{media_url_https}?w=400" alt="Tweet media" class="fill block">
   </div>
 {/extended_entities.media[0]}

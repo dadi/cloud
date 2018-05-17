@@ -35,17 +35,17 @@
     <div class="cnt">
       <div class="grid cf pb">
         <div class="col w-1-3 pb">
-          <img src="/assets/icons/favorite.svg" height="60" class="mb">
+          <img src="/assets/icons/favorite.svg" height="60" class="mb" alt="Favoutite icon">
           <h2 class="medium">A fairer internet</h2>
           <p class="normal">DADI is a peer-to-peer network owned by the people, shifting the balance of computational power away from large corporations</p>
         </div>
         <div class="col w-1-3 pb">
-          <img src="/assets/icons/bolt.svg" height="60" class="mb">
+          <img src="/assets/icons/bolt.svg" height="60" class="mb" alt="Bolt icon">
           <h2 class="medium">Faster and cheaper</h2>
           <p class="normal">The DADI network offers improved efficiency and performance, saving up to 90% compared with traditional cloud services</p>
         </div>
         <div class="col w-1-3 pb">
-          <img src="/assets/icons/coins.svg" height="60" class="mb">
+          <img src="/assets/icons/coins.svg" height="60" class="mb" alt="Token icon">
           <h2 class="medium">Earn DADI tokens</h2>
           <p class="normal">Anyone with a laptop, games console or any connected device can earn income by providing spare computation capacity for rent</p>
         </div>
@@ -60,19 +60,19 @@
           <h3 class="mb fm fwn pt vam color-tint">Trusted by…</h3>
         </div>
         <div class="col w-1-6 bs-w-1-5">
-          <img class="fill" src="/assets/clients/logo-whatcar.png">
+          <img class="fill" src="/assets/clients/logo-whatcar.png" alt="WhatCar?">
         </div>
         <div class="col w-1-6 bs-w-1-5">
-          <img class="fill" src="/assets/clients/logo-vle.png">
+          <img class="fill" src="/assets/clients/logo-vle.png" alt="Virgin Limited Edition">
         </div>
         <div class="col w-1-6 bs-w-1-5">
-          <img class="fill" src="/assets/clients/logo-empire.png">
+          <img class="fill" src="/assets/clients/logo-empire.png" alt="Empire Magazine">
         </div>
         <div class="col w-1-6 bs-w-1-5">
-          <img class="fill" src="/assets/clients/logo-monocle.png">
+          <img class="fill" src="/assets/clients/logo-monocle.png" alt="Monocle">
         </div>        
         <div class="col w-1-6 bs-w-1-5">
-          <img class="fill" src="/assets/clients/logo-lifestyleone.png">
+          <img class="fill" src="/assets/clients/logo-lifestyleone.png" alt="Lifestyle.one">
         </div>
       </div>
     </div>
