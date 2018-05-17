@@ -165,7 +165,7 @@
       {>"partials/usecases/list"
         icon="smartphone" 
         use="Apps: tablet and mobile" 
-        desc="DADI's content management technology - Publish, API and CDN - is a hand-in-glove fit for development of mobile applications."
+        desc="DADI's content management technology - Publish, API and CDN - is a hand-in-glove fit for development of mobile apps."
       /}
       {>"partials/usecases/list"
         icon="server" 
