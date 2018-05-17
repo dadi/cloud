@@ -7,46 +7,25 @@
     <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
      
     <h1>{pages.results[0].title}</h1>
-    <p class="normal header__intro mb--x2">{pages.results[0].excerpt}</p>
+    <p class="normal header__intro mb">{pages.results[0].excerpt}</p>
     
     <div class="cols cols--3">
       <a href="https://twitter.com/dadi" target="_blank" class="box col bd bd-grey mb bg-white">
-        <div class="box__inner" style="padding-bottom:25px">
-          <img src="/assets/social/twitter-dark.svg" width="40" class="box__aside">
-
-          <p class="normal fwb" style="padding-bottom:10px">Twitter</p>
-
-          <p class="normal">Follow us on Twitter.</p>
-
-          {! <div class="box__footer">
-            <span class="box__cta small fm color-tint">Follow us on Twitter</span>
-          </div> !}
+        <div class="box__inner" style="padding-bottom:23px">
+          <img src="/assets/social/twitter-dark.svg" width="30" class="box__aside">
+          <p class="normal">Follow us on <strong>Twitter</strong></p>
         </div>
       </a>
       <a href="https://t.me/dadichat" target="_blank" class="box col bd bd-grey mb bg-white">
-        <div class="box__inner" style="padding-bottom:25px">
-          <img src="/assets/social/telegram-dark.svg" width="40" class="box__aside">
-
-          <p class="normal fwb" style="padding-bottom:10px">Telegram</p>
-
-          <p class="normal">Talk to the team on Telegram.</p>
-
-         {!  <div class="box__footer">
-            <span class="box__cta small fm color-tint">Join us on Telegram</span>
-          </div> !}
+        <div class="box__inner" style="padding-bottom:23px">
+          <img src="/assets/social/telegram-dark.svg" width="30" class="box__aside">
+          <p class="normal">Talk to us on <strong>Telegram</strong></p>
         </div>
       </a>
       <a href="https://discord.gg/3sEvuYJ" target="_blank" class="box col bd bd-grey mb bg-white">
-        <div class="box__inner" style="padding-bottom:25px">
-          <img src="/assets/social/discord-dark.svg" width="40" class="box__aside">
-
-          <p class="normal fwb" style="padding-bottom:10px">Discord</p>
-
-          <p class="normal">Find us on Discord.</p>
-
-          {! <div class="box__footer">
-            <span class="box__cta small fm color-tint">Chat with us on Discord</span>
-          </div> !}
+        <div class="box__inner" style="padding-bottom:23px">
+          <img src="/assets/social/discord-dark.svg" width="30" class="box__aside">
+          <p class="normal">Find us on <strong>Discord</strong></p> 
         </div>
       </a>
     </div>
