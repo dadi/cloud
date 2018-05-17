@@ -10,7 +10,7 @@
     <entry>
       <title>{title}</title>
       <published>{@formatDate unix=publishedAt /}</published>
-      <updated>{@formatDate unix=updatedAt /}</updated>
+      <updated>{?updatedAt}{@formatDate unix=updatedAt /}{:else}{@formatDate unix=publishedAt /}{/updatedAt}</updated>
       <id>{url.protocol}//{url.host}/{category[0].slug}/{sub-category[0].slug}/{slug}</id>
       <link href="{url.protocol}//{url.host}/{category[0].slug}/{sub-category[0].slug}/{slug}" rel="alternate" />     
       {?author}
