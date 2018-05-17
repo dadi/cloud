@@ -41,10 +41,10 @@
         </div>
       {/author}
 
-      {#web-service:web-service lang=lang}
+      {#web-service:web-service lang=lang global=global}
         <div class="cf pb pt normal bdt bd-grey fm">
           {?published}<a href="/{lang}/{slug}">{/published}
-            <img src="/assets/products/dadi-{slug}.png" width="22" class="vam"> {name}
+            <img class="vam" src="{global.cdn.publicUrl}{icon[0].path}?w=50&q=10" alt="Icon for DADI {name}" width="25"> {name}
           {?published}</a>{/published}
         </div>
       {/web-service}
