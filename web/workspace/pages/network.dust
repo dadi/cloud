@@ -12,7 +12,7 @@
   <nav class="subnav bg-white cf fm">
     <div class="cnt">
       <ul>
-        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#how">How it works</a></li>
         <li><a href="#usecases">Use cases</a></li>
         <li><a href="#contribute">Contribute</a></li>
         <li class="nav--right" style="padding-top:23px">
@@ -108,44 +108,11 @@
   {>"partials/mailing-list" /}
   
   <div class="cnt pt">
-    <div class="hdr fm ttu mb--x2" id="architecture" name="architecture">
-      <h3><span>Platform architecture</span></h3>
+    <div class="hdr fm ttu mb" id="how" name="how">
+      <h3><span>How it works</span></h3>
     </div>
 
-    <div class="grid">
-      <div class="col w-1-3 mb--x2">
-        <img src="/assets/icons/cloud-upload.svg" height="70" class="mb">
-        <h2 class="medium">Smart contracts</h2>
-        <p class="normal">Ethereum Smart Contracts as a consensus system, ensures transparency and security for network participants.</p>
-      </div>
-      <div class="col w-1-3 mb--x2">
-        <img src="/assets/icons/colors.svg" height="70" class="mb">
-        <h2 class="medium">Fog computing</h2>
-        <p class="normal">A decentralized and more efficient computing model compared to traditional cloud platforms.</p>
-      </div>
-      <div class="col w-1-3 mb--x2">
-        <img src="/assets/icons/layers.svg" height="70" class="mb">
-        <h2 class="medium">Protocol buffers</h2>
-        <p class="normal">Fast data serialisation method used to optimise the network.</p>
-      </div>
-    </div>
-    <div class="grid">
-      <div class="col w-1-3 mb--x2">
-        <img src="/assets/icons/bars.svg" height="70" class="mb">
-        <h2 class="medium">Docker</h2>
-        <p class="normal">An isolated environment ensuring computing parallelism and security for Consumer app bundles.</p>
-      </div>
-      <div class="col w-1-3 mb--x2">
-        <img src="/assets/icons/bolt.svg" height="70" class="mb">
-        <h2 class="medium">GRPC</h2>
-        <p class="normal">A technology for distributing procedures across multiple hosts.</p>
-      </div>
-      <div class="col w-1-3 mb--x2">
-        <img src="/assets/icons/swap.svg" height="70" class="mb">
-        <h2 class="medium">ZooKeeper</h2>
-        <p class="normal">A peer-to-peer technology for node communication and distributed synchronization.</p>
-      </div>
-    </div>
+    <div><img src="/assets/img/illo-network.png" class="fill block" alt="Network diagram"></div>
 
     <div class="hdr fm ttu mb" id="usecases" name="usecases">
       <h3><span>What can it be used for?</span></h3>
@@ -168,7 +135,7 @@
         desc="DADI's content management technology - Publish, API and CDN - is a hand-in-glove fit for development of mobile apps."
       /}
       {>"partials/usecases/list"
-        icon="server" 
+        icon="expand" 
         use="Decentralize your products" 
         desc="Using DADI technology immediately brings cost and performance benefits of decentralization to your digital product."
       /}
@@ -223,6 +190,8 @@
         {>"partials/articles/list" /}
       {/articles.results}
     </div>
+
+    <a href="/{lang}/updates" class="btn-more tac fm small">All updates</a>
   </div>
 </main>
 
