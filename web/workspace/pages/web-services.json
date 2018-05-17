@@ -12,6 +12,7 @@
     "web-service"
   ],
   "events": [
+    "i18n",
     "metatags"
   ],
   "routes": [

@@ -2,9 +2,6 @@
   "cluster": false,
   "debug": true,
   "allowDebugView": true,
-  "globalEvents": [
-    "i18n"
-  ],
   "globalPostProcessors": [
     "minify-html"
   ],

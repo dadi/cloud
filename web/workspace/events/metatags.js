@@ -3,7 +3,7 @@ const marked = require('marked')
 const Event = function (req, res, data, callback) {
   const meta = {}
 
-  meta.canonical = `${req.protocol}://${req.headers.host}${data.pathNoLang}`
+  meta.canonical = `${req.protocol}://${req.headers.host}${data.pathNoLang || ''}`
   meta.url = `${req.protocol}://${req.headers.host}${req.url}`
   meta.image = `${req.protocol}://${req.headers.host}/assets/products/dadi-og.jpg`
 

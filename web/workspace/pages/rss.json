@@ -12,6 +12,9 @@
   "requiredDatasources": [
     "rss-articles"
   ],
+  "events": [
+    "i18n"
+  ],
   "routes": [
     {
       "path": "/:lang/rss"

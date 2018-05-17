@@ -9,6 +9,7 @@
     "pages"
   ],
   "events": [
+    "i18n",
     "metatags"
   ],
   "routes": [

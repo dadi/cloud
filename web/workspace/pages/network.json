@@ -8,6 +8,7 @@
     "web-services"
   ],
   "events": [
+    "i18n",
     "metatags"
   ],
   "routes": [

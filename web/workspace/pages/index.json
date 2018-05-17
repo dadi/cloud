@@ -10,6 +10,7 @@
     "countries"
   ],
   "events": [
+    "i18n",
     "metatags"
   ],
   "routes": [

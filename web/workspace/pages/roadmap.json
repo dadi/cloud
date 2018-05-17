@@ -8,6 +8,7 @@
     "milestones"
   ],
   "events": [
+    "i18n",
     "metatags",
     "roadmapNav"
   ],

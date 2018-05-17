@@ -11,6 +11,7 @@
     "articles"
   ],
   "events": [
+    "i18n",
     "metatags",
     "articleReadingTime"
   ],

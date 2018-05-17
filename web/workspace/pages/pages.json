@@ -7,6 +7,7 @@
     "web-services"
   ],
   "events": [
+    "i18n",
     "metatags"
   ],
   "template": "pages.dust",

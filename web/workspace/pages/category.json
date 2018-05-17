@@ -16,6 +16,7 @@
     "category-articles"
   ],
   "events": [
+    "i18n",
     "metatags"
   ],
   "routes": [
