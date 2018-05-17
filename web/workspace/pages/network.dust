@@ -165,7 +165,7 @@
       {>"partials/usecases/list"
         icon="smartphone" 
         use="Apps: tablet and mobile" 
-        desc="DADI's content management technology - Publish, API and CDN - is a hand-in-glove fit for mobile app development."
+        desc="DADI's content management technology - Publish, API and CDN - is a hand-in-glove fit for development of mobile applications."
       /}
       {>"partials/usecases/list"
         icon="server" 
@@ -190,11 +190,11 @@
       {>"partials/usecases/list"
         icon="user" 
         use="Customer relationship management" 
-        desc="Provides a 'single customer view' for relationship management in digital products and beyond."
+        desc="DADI technology provides a 'single customer view' for optimal relationship management in digital products and beyond."
       /}
       {>"partials/usecases/list"
         icon="cart" 
-        use="Targeted ecommerce" 
+        use="Smarter, targeted ecommerce" 
         desc="Brings the flexibility of API-first content management to retail and facilitates improved conversion through personalization."
       /}
       {>"partials/usecases/list"
@@ -204,8 +204,8 @@
       /}
       {>"partials/usecases/list"
         icon="server" 
-        use="Seamless big data management" 
-        desc="Capability to act as an umbrella store for user data across multiple products in a digital portfolio."
+        use="Seamless big data capability" 
+        desc="DADI can act as an umbrella store for user data across multiple products, bringing more power to machine learning."
       /}
       {>"partials/usecases/list"
         icon="power" 
