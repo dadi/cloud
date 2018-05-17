@@ -1,4 +1,4 @@
-<div id="join" class="pt pb--x2 bds">
+<div id="join" class="pt pb bds">
   <div class="cnt">
     <form action="https://cloud.us17.list-manage.com/subscribe/post?u=95970b2518f8f361909d213f0&amp;id=654b920cfb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
       <div class="grid">
@@ -6,8 +6,6 @@
           <img src="/assets/img/mailing.svg" width="280">
 
           <p><strong>Like what you are reading?</strong> Want to earn tokens by becoming a DADI Node? Save money on cloud computing services? Build amazing digital product with DADI Web Services? Register with DADI now.</p>
-
-          <div class="fm small color-tint mt">* We can better we can target our emails if you provide all fields.</div>
         </div>
         <div class="col w-1-2 mt">
           <div class="grid">
@@ -65,7 +63,7 @@
               <option value="cloudservices">Cloud services</option>
               <option value="webservices">Web services</option>
               <option value="both">Everything</option>
-            </script>
+            </select>
           </div>
 
           <div id="mce-responses" class="clear">
@@ -76,6 +74,9 @@
           <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_95970b2518f8f361909d213f0_654b920cfb" tabindex="-1" value=""></div>
       
           <button value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn">Pre-register now</button>
+
+          <div class="fm small color-tint pt cf" style="padding-bottom:20px">* We can better we can target our emails if you provide all fields.</div>
+        </div>
       </div>
     </form>
   </div>

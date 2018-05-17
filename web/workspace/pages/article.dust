@@ -13,7 +13,7 @@
   </div>
 </header>
 
-<main class="mb--x2 cf" id="stickContainer">
+<main class="pb--x2 bdb bd-grey cf" id="stickContainer">
   <aside id="stick" class="mb">
     <div class="pr--x2 bs-pr pl">
       <div class="block read pb">
@@ -49,7 +49,7 @@
         </div>
       {/web-service}
 
-      <div class="pt bdt bd-grey">
+      <div class="pt bdt bd-grey pb">
         {>"partials/share"/}
       </div>
     </div>
@@ -61,5 +61,8 @@
   </div>
 </main>
 {/articles.results}
+
+{>"partials/mailing-list" /}
+
 
 {>"partials/footer"/}
