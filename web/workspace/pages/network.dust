@@ -168,9 +168,9 @@
         desc="DADI's content management technology - Publish, API and CDN - is a hand-in-glove fit for mobile app development."
       /}
       {>"partials/usecases/list"
-        icon="power" 
-        use="Power 'always-on' products" 
-        desc="The decentralized nature of DADI is uniquely performant for products such as news services which need to be 'always-on'."
+        icon="server" 
+        use="Decentralize your products" 
+        desc="Building your digital product using DADI technology immediately decentralizes your product."
       /}
       {>"partials/usecases/list"
         icon="duplicate" 
@@ -208,9 +208,9 @@
         desc="Capability to act as an umbrella store for user data across multiple products in a digital portfolio."
       /}
       {>"partials/usecases/list"
-        icon="server" 
-        use="Decentralize your products" 
-        desc="Building your digital product using DADI technology immediately decentralizes your product."
+        icon="power" 
+        use="Power 'always-on' products" 
+        desc="The decentralized nature of DADI is uniquely performant for products such as news services which need to be 'always-on'."
       /}
     </div>
 
