@@ -87,6 +87,11 @@ nav .nav__logo a:hover {
   background-color: var(--green);
   border-color: var(--green);
 }
+@media (--bl) {
+  nav .nav__logo a {
+    margin-left: -18px;
+  }
+}
 @media (--bs) {
   nav .nav__logo {
     float: none;
