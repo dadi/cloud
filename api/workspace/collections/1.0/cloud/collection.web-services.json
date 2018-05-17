@@ -80,6 +80,23 @@
         }
       }
     },
+    "icon": {
+      "type": "Reference",
+      "label": "Icon",
+      "required": false,
+      "settings": {
+        "collection": "mediaStore"
+      },
+      "publish": {
+        "section": "Details",
+        "subType": "Image",
+        "placement": "sidebar",
+        "display": {
+          "list": false,
+          "edit": true
+        }
+      }
+    },
     "color": {
       "type": "String",
       "required": false,
