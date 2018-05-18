@@ -68,7 +68,7 @@
         <h1>{pages.results[0].title}</h1>
         <p class="normal mb">{pages.results[0].excerpt}</p>
         <p><a class="btn" href="/{lang}/knowledge/network/overview">Platform introduction</a></p>
-        <p><a class="btn" href="/{lang}/roadmap">View roadmap</a></p>
+        <p><a class="btn" href="/{lang}/roadmap">Technology roadmap</a></p>
       </div>
     </div>
   </div>
