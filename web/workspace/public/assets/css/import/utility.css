@@ -93,5 +93,6 @@ a                           { text-decoration: none; color: inherit }
 .hide                       { opacity: 0; pointer-events: none; visibility: hidden; overflow: hidden; }
 
 @media (--bs) {
+  .hide                     { display: none !important; }
   .bs-hide                  { opacity: 0; pointer-events: none; visibility: hidden; overflow: hidden; }
 } 

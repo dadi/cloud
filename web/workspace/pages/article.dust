@@ -13,56 +13,59 @@
   </div>
 </header>
 
-<main class="pb--x2 bdb bd-grey cf" id="stickContainer">
-  <aside id="stick" class="mb">
-    <div class="pr--x2 bs-pr pl">
-      <div class="block read pb">
-        {?publishedAt}
-          <time class="color-tint" datetime="{publishedAt}">
-            {@formatDate unix=publishedAt format="DD MMMM YYYY HH:MM" /}
-          </time>
-        {/publishedAt}
+<main class="pb--x2 cf cnt">
+  <div class="grid" id="stickContainer">
+    <aside id="stick" class="mb col col--nopad col--right w-1-4">
+      <div class="">
+        <div class="block read pb">
+          {?publishedAt}
+            <time class="color-tint" datetime="{publishedAt}">
+              {@formatDate unix=publishedAt format="DD MMMM YYYY HH:MM" /}
+            </time>
+          {/publishedAt}
 
-        {?readingTime}
-          <div class="block">{readingTime} min read</div>
-        {/readingTime}
-      </div>
-
-      {?author}
-        <div class="cf pt pb normal bdt bd-grey">
-          <a href="/{lang}/team/{author[0].slug}" class="block">
-            {?author[0].image[0]}
-              <img src="{global.cdn.publicUrl}{author[0].image[0].path}?q=80&w=100" alt="Photo of {name}" style="margin-right:18px;float:left" width="55">
-            {/author[0].image[0]}
-
-            <strong>{author[0].name}</strong>
-            <span class="block color-tint">{author[0].role}</span>
-          </a>
+          {?readingTime}
+            <div class="block">{readingTime} min read</div>
+          {/readingTime}
         </div>
-      {/author}
 
-      {#web-service:web-service lang=lang global=global}
-        <div class="cf pb pt normal bdt bd-grey fm">
-          {?published}<a href="/{lang}/{slug}">{/published}
-            <img class="vam" src="{global.cdn.publicUrl}{icon[0].path}?w=50&q=10" alt="Icon for DADI {name}" width="25"> {name}
-          {?published}</a>{/published}
+        {?author}
+          <div class="cf pt pb normal bdt bd-grey">
+            <a href="/{lang}/team/{author[0].slug}" class="block">
+              {?author[0].image[0]}
+                <img src="{global.cdn.publicUrl}{author[0].image[0].path}?q=80&w=100" alt="Photo of {name}" style="margin-right:18px;float:left" width="55">
+              {/author[0].image[0]}
+
+              <strong>{author[0].name}</strong>
+              <span class="block color-tint">{author[0].role}</span>
+            </a>
+          </div>
+        {/author}
+
+        {#web-service:web-service lang=lang global=global}
+          <div class="cf pb pt normal bdt bd-grey fm">
+            {?published}<a href="/{lang}/{slug}">{/published}
+              <img class="vam" src="{global.cdn.publicUrl}{icon[0].path}?w=50&q=10" alt="Icon for DADI {name}" width="25"> {name}
+            {?published}</a>{/published}
+          </div>
+        {/web-service}
+
+        <div class="pt bdt bd-grey pb">
+          {>"partials/share"/}
         </div>
-      {/web-service}
-
-      <div class="pt bdt bd-grey pb">
-        {>"partials/share"/}
       </div>
-    </div>
-  </aside>
-  <div class="cnt cf ll">
-    <div class="read normal">
-      {@markdown highlight="true" anchors="true"}{body|s}{/markdown}
+    </aside>
+    <div class="col w-2-3">
+      <div class="read normal">
+        {@markdown highlight="true" anchors="true"}{body|s}{/markdown}
+      </div>
     </div>
   </div>
 </main>
 {/articles.results}
 
-{>"partials/mailing-list" /}
-
+<div class="bdt bd-grey">
+  {>"partials/mailing-list" /}
+</div>
 
 {>"partials/footer"/}

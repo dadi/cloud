@@ -22,7 +22,11 @@
   padding-right: calc(var(--space) / 2);
   padding-left: calc(var(--space) / 2);
 }
-  
+.grid > .col--nopad {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .col          { float: left; position: relative; }
 .col--right   { float: right; }
 
