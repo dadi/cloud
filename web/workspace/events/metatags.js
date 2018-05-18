@@ -1,11 +1,13 @@
 const marked = require('marked')
+const config = require('@dadi/web').Config
+const publicUrl = config.get('global.publicUrl')
 
 const Event = function (req, res, data, callback) {
   const meta = {}
 
-  meta.canonical = `${req.protocol}://${req.headers.host}${data.pathNoLang || ''}`
-  meta.url = `${req.protocol}://${req.headers.host}${req.url}`
-  meta.image = `${req.protocol}://${req.headers.host}/assets/products/dadi-og.jpg`
+  meta.canonical = `${publicUrl}${data.pathNoLang || ''}`
+  meta.url = `${publicUrl}${req.url}`
+  meta.image = `${publicUrl}/assets/products/dadi-og.jpg`
 
   // -------------------------
   // Root pages
