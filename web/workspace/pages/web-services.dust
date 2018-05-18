@@ -57,6 +57,7 @@
   <nav class="subnav cf fm mb--x2 ">
     <div class="cnt">
       <ul>
+        <li><a href="/{lang}/roadmap">Roadmap</a></li>
         {?install}<li><a href="http://docs.dadi.tech/#{slug}/installation">Install guide</a></li>{/install}
         {?npm}<li><a href="https://www.npmjs.com/package/@dadi/{slug}" onclick="ga('send','event','NPM','Click','Product');">Install with NPM</a></li>{/npm}
         {?github}<li><a href="https://github.com/dadi/{slug}" onclick="ga('send','event','Github','Click','Product');">View source on GitHub</a></li>{/github}
@@ -79,12 +80,13 @@
         <p class="medium mb" style="#{color}">{@soberMarkdown}{overview}{/soberMarkdown}</p>
 
          <div class="product__features">
-        <ul class="list--feat normal mb">
-          {@markdown}{headlineFeatures}{/markdown}
-        </ul>
+          <ul class="list--feat normal mb">
+            {@markdown}{headlineFeatures}{/markdown}
+          </ul>
 
-        <p><a href="#features" class="btn">More features</a></p>
-      </div>     
+          <p><a href="#features" class="btn">More features</a></p>
+        </div>
+      </div>
     </div>
   </div>
 </header>
