@@ -31,8 +31,8 @@ dust.helpers.markdown = function(chunk, context, bodies, params) {
         if (href.startsWith('/media/')) {
           var img = ''
           img += `<picture>`
-          img += `<source srcset="${dadicdn}${href}?w=800&format=jpg&q=70, ${dadicdn}${href}?w=900&format=jpg&q=70 2x" media="(min-width: 800px)">`
-          img += `<img src="${dadicdn}${href}?w=640&format=jpg&q=70 1x" alt="${title ? title : 'Image'}" class="fill block">`
+          img += `<source srcset="${dadicdn}${href}?w=800&q=70, ${dadicdn}${href}?w=1670&q=70 2x" media="(min-width: 800px)">`
+          img += `<img src="${dadicdn}${href}?w=640&q=70 1x" alt="${title ? title : 'Image'}" class="fill block">`
           img += `</picture>`
 
           return img
