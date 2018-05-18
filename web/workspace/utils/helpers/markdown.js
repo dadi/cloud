@@ -32,12 +32,13 @@ dust.helpers.markdown = function(chunk, context, bodies, params) {
           var img = ''
           img += `<picture>`
           img += `<source srcset="${dadicdn}${href}?w=800&q=70, ${dadicdn}${href}?w=1670&q=70 2x" media="(min-width: 800px)">`
-          img += `<img src="${dadicdn}${href}?w=640&q=70 1x" alt="${title ? title : 'Image'}" class="fill block">`
+          img += `<img src="${dadicdn}${href}?w=640&q=70 1x" alt="${text ? text : 'Image'}" class="fill block">`
           img += `</picture>`
+          img += `<span class="color-tint tac block mb small fm">${text ? text : 'Image'}</span>`
 
           return img
         } else {
-          return `<img src="${href}" alt="${title ? title : 'Image'}" class="fill block">`
+          return `<img src="${href}" alt="${text ? text : 'Image'}" class="fill block">`
         }
       }
       
