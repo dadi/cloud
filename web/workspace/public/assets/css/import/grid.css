@@ -118,9 +118,7 @@
 
 @media handheld, only screen and (max-width: 1000px) {
   .cols--2 > .col { width: 100%; }
-
   .cols--4 > .col { width: calc(50% - var(--space)) }
-
   .cols--5 > .col { width: calc(50% - var(--space)) }
 }
 
@@ -133,5 +131,15 @@
     margin-left: 0;
     margin-right: 0;
     width: 100%;
+  }
+
+  .bs-cols--2 {
+    margin-left: calc(- var(--space) / 2);
+    margin-right: calc(- var(--space) / 2);
+  }
+  .bs-cols--2 > .col { 
+    width: calc(50% - var(--space));
+    margin-left: calc(var(--space) / 2);
+    margin-right: calc(var(--space) / 2);
   }
 }

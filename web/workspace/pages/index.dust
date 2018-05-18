@@ -115,7 +115,7 @@
       <h3><span>Web services</span></h3>
     </div>
               
-    <div class="cols cols--4">
+    <div class="cols cols--4 bs-cols--2">
       {#web-services.results}
         {>"partials/web-services/list"/}
       {/web-services.results}
@@ -125,7 +125,7 @@
       <h3><span><a href="https://twitter.com/dadi" target="_blank">Follow us on Twitter @DADI</a></span></h3>
     </div>
 
-    <div class="cols cols--4">
+    <div class="cols cols--4 vs-">
       {#tweets}
         {>"partials/tweet" /}
       {/tweets}
