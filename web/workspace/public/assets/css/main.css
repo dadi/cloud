@@ -155,6 +155,8 @@ h1, h2 {
     left: auto;
     width: 78%;
     height: 573px;
+    z-index: 0;
+    border-bottom: 0px;
   }
   .network--large:before {
     content: ' ';
@@ -176,6 +178,21 @@ h1, h2 {
 }
 .network .dadiNode--pulse {
   animation: pin 2s infinite;
+}
+
+@media (--bl) {
+  .network-stats {
+    position: absolute;
+    top: -47px;
+    right: 0;
+    z-index: 10;
+  }
+}
+@media (--bs) {
+  .network-stats .badge,
+  .network-stats .badge__primary {
+    display: block;
+  }
 }
 
 .stat {
