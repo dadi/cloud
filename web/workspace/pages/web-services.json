@@ -6,7 +6,8 @@
     "pages",
     "web-services",
     "web-service",
-    "web-service-articles"
+    "web-service-articles",
+    "countries"
   ],
   "requiredDatasources": [
     "web-service"
