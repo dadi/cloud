@@ -16,14 +16,13 @@
         <li><a href="#usecases">Use cases</a></li>
         <li><a href="#contribute">Contribute</a></li>
         <li class="nav--right" style="padding-top:23px">
-          {!  <div class="badge color-white small" style="margin-right:10px">
+          <div class="badge color-white small" style="margin-right:10px">
            <div class="badge__primary bg-dark">
               TESTNET STATUS
             </div> 
-          </div>!}
+          </div>
 
-          <div class="grid">
-          <div class="badge color-white col small">
+          <div class="badge color-white small">
             <div class="badge__primary color-tint">
               Av. response time
             </div>
@@ -32,7 +31,7 @@
             </div>
           </div>
 
-          <div class="badge color-white col small">
+          <div class="badge color-white small">
             <div class="badge__primary color-tint">
               Concurrent requests
             </div>
@@ -41,14 +40,13 @@
             </div>
           </div>
 
-          <div class="badge color-white col small">
+          <div class="badge color-white small">
             <div class="badge__primary color-tint">
               Hosts online
             </div>
             <div class="badge__secondary color-dark" id="host_count">
               -
             </div>
-          </div>
           </div>
         </li>
       </ul>
