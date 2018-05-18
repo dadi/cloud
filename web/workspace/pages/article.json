@@ -5,7 +5,8 @@
   "datasources": [
     "pages",
     "articles",
-    "web-services"
+    "web-services",
+    "countries"
   ],
   "requiredDatasources": [
     "articles"
