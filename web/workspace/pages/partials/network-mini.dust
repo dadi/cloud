@@ -21,7 +21,7 @@
         Av. response time
       </div>
       <div class="stat__figure fwb" id="average_response">
-        Offline
+        0
       </div>
     </div>
   </div>
@@ -41,7 +41,7 @@
         Hosts
       </div>
       <div class="stat__figure fwb" id="host_count">
-        Offline
+        0
       </div>
     </div>
   </div>
