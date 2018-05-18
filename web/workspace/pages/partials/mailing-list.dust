@@ -75,7 +75,7 @@
       
           <button value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn">Register now</button>
 
-          <div class="fm small color-tint pt cf" style="padding-bottom:20px">* We can better we can target our emails if you provide all fields.</div>
+          <div class="fm small color-tint pt cf" style="padding-bottom:20px">* We can better target our emails if you provide all fields.</div>
         </div>
       </div>
     </form>
