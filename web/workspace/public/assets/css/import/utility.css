@@ -90,9 +90,7 @@ a                           { text-decoration: none; color: inherit }
 .vam                        { vertical-align: middle; margin-right: 4px; margin-top: -3px; }
 .ll                         { max-width: 860px }
 
-.hide                       { opacity: 0; pointer-events: none; visibility: hidden; overflow: hidden; }
+.hide                       { display: none; }
 
-@media (--bs) {
-  .hide                     { display: none !important; }
-  .bs-hide                  { opacity: 0; pointer-events: none; visibility: hidden; overflow: hidden; }
-} 
+@media (--bl) { .bl-hide { display: none } }
+@media (--bs) { .bs-hide { display: none } } 

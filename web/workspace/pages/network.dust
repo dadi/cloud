@@ -114,7 +114,11 @@
       <h3><span>How it works</span></h3>
     </div>
 
-    <div><img src="/assets/img/illo-network.png" class="fill block" alt="Network diagram"></div>
+    <div>
+      <img src="/assets/img/illo-network-hor.png" class="fill block bs-hide" alt="Network diagram">
+
+      <img src="/assets/img/illo-network-ver.png" class="fill block bl-hide" alt="Network diagram">
+    </div>
 
     <div class="hdr fm ttu mb" id="usecases" name="usecases">
       <h3><span>What can it be used for?</span></h3>

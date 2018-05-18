@@ -78,7 +78,7 @@ h1, h2 {
     margin: 2em auto;
   }
 
-  & > p:first-of-type > img {
+  & > p:first-of-type img {
     margin-top: 0;
   }
 
