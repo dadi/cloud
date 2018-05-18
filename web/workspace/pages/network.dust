@@ -57,7 +57,7 @@
           Concurrent requests
         </div>
         <div class="badge__secondary color-dark" id="concurrent_requests">
-          -
+          0
         </div>
       </div>
 

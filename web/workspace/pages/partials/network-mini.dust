@@ -31,7 +31,7 @@
         Concurrent requests
       </div>
       <div class="stat__figure fwb" id="concurrent_requests">
-        Offline
+        0
       </div>
     </div>
   </div>
