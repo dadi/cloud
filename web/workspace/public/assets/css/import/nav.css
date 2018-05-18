@@ -110,7 +110,7 @@ nav .nav__social a {
   padding: 8px 4px;
 }
 
-@media handheld, only screen and (max-width: 1270px) {
+@media (--bs) {
   nav .nav__social {
     display: none;
   }
