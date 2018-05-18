@@ -84,22 +84,22 @@
       <div class="col box--small box bd bd-grey">
         <div class="box__inner" style="padding-bottom:30px">
           <img src="/assets/network/dadi-network_stargate-black.svg" width="95">
-          <h2 class="medium">Stargates</h2>
-          <p class="normal">Provide domain routing and negotiate rates with Consumers.</p>
+          <h2 class="medium">Stargate</h2>
+          <p class="normal">DADI Stargate provides intelligent routing for dapps, as well securing the network and providing the interface for DADI's smart contract layer, handling rate negotiation and payouts.</p>
         </div>
       </div>
       <div class="col box--small box bd bd-grey">
         <div class="box__inner" style="padding-bottom:30px">
           <img src="/assets/network/dadi-network_gateway-black.svg" width="95">
-          <h2 class="medium">Gateways</h2>
-          <p class="normal">Act as network aggregation points for Host capacity and negotiate rates with Hosts.</p>         
+          <h2 class="medium">Gateway</h2>
+          <p class="normal">DADI Gateway is the entry point to the DADI network. It bridges end users and task response through the maintenance of a job queue for Hosts and handles caching at object level.</p>         
         </div>
       </div>
       <div class="col box--small box bd bd-grey">
         <div class="box__inner" style="padding-bottom:30px">
           <img src="/assets/network/dadi-network_host-black.svg" width="95">
-          <h2 class="medium">Hosts</h2>
-          <p class="normal">Provide processing power for multiple Consumer app bundles.</p>          
+          <h2 class="medium">Host</h2>
+          <p class="normal">DADI Host is the workhorse of the DADI network. It runs individual DADI web services in secure containers and connects in to the job queue that is maintained by DADI Gateway, requesting and responding to tasks.</p>          
         </div>
       </div>
     </div>
