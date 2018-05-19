@@ -32,7 +32,7 @@ const Event = function (req, res, data, callback) {
     priceETH,
     priceUSD,
     volume24HourBTC: rawTokenInfo[lastIndex].volume24HourBTC,
-    volume24HourETH: rawTokenInfo[lastIndex].volume24HourBETH,
+    volume24HourETH: rawTokenInfo[lastIndex].volume24HourETH,
     volume24HourUSD: rawTokenInfo[lastIndex].volume24HourUSD,
     volumeTotalBTC,
     volumeTotalETH,
