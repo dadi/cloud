@@ -6,7 +6,7 @@ const primaryLang = 'en'
 
 // Set what we support
 const supportedLangs = [primaryLang]
-const bypassUrls = []
+const bypassUrls = ['/join']
 
 const Event = function (req, res, data, callback) {
   // Path without trailing slash & default lang
