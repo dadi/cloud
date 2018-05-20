@@ -1,0 +1,21 @@
+{
+  "page": {
+    "key": "join"
+  },
+  "datasources": [
+    "articles",
+    "pages",
+    "web-services",
+    "tweets",
+    "countries"
+  ],
+  "events": [
+    "i18n",
+    "metatags"
+  ],
+  "routes": [
+    {
+      "path": "/:lang/join"
+    }
+  ]
+}

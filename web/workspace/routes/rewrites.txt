@@ -1,2 +1,1 @@
 \/(.*)$ https://dadi.tech/$1 [H=www\.dadi\.tech, R=302,NC,L]
-\/join$ / [R=302,NC,L]

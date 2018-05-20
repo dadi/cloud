@@ -1,0 +1,7 @@
+{>"partials/header"/}
+
+{>"partials/nav"/}
+
+{>"partials/mailing-list" /}
+
+{>"partials/footer"/}
