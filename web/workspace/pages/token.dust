@@ -51,11 +51,11 @@
             24 hour volume
           </div>
           <div class="stat__figure">
-            $<strong>{token.volumeTotalUSD|n}</strong>
+            $<strong>{token.volume24HourUSD|n}</strong>
           </div>
           <div class="stat__metric color-tint fm">
-            {token.volumeTotalBTC|n} BTC<br>
-            {token.volumeTotalETH|n} ETH
+            {token.volume24HourBTC|n} BTC<br>
+            {token.volume24HourETH|n} ETH
           </div>
         </div>
       </div>
