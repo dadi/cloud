@@ -242,6 +242,22 @@
           "list": false
         }
       }
+    },
+    "metaImage": {
+      "type": "Reference",
+      "settings": {
+        "collection": "mediaStore"
+      },
+      "required": false,
+      "label": "Image",
+      "publish": {
+        "section": "Meta",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
     }
   },
   "settings": {
