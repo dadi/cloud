@@ -41,7 +41,7 @@ const Event = function (req, res, data, callback) {
         if (image.startsWith('/media/')) {
           image = `${dadicdn}${image}?w=1200&h=675&q=70&resize=aspectfill&gravity=center`
         }
-        
+
         // Is it a local image?
         if (!image.startsWith('http')) {
           image = `${publicUrl}${image}`
@@ -61,6 +61,18 @@ const Event = function (req, res, data, callback) {
     meta.title = `DADI ${app.name}`
     meta.description = app.overview.trim()
     meta.image = `${publicUrl}/assets/products/dadi-${app.slug}-og.jpg`
+  }
+
+  // -------------------------
+  // Team
+  if (data.hasResults('team') && data.params.name) {
+    const person = data.team.results[0]
+
+    meta.title = person.name
+    meta.description = person.body.trim()
+    meta.image = `${dadicdn}${person.image[0].path}?w=1200&q=70`
+    
+    if (person.twitter) meta.authorTwitter = person.twitter
   }
 
   // Put in page
