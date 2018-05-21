@@ -253,6 +253,7 @@
       "publish": {
         "section": "Meta",
         "placement": "sidebar",
+        "subType": "Image",
         "display": {
           "edit": true,
           "list": false
