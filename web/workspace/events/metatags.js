@@ -37,7 +37,7 @@ const Event = function (req, res, data, callback) {
 
         // Is it a local image?
         if (!image.startsWith('http')) {
-          image = `${req.protocol}://${req.headers.host}${image}`
+          image = `${publicUrl}${image}`
         }
 
         // Put in object
@@ -53,7 +53,7 @@ const Event = function (req, res, data, callback) {
 
     meta.title = `DADI ${app.name}`
     meta.description = app.overview.trim()
-    meta.image = `${req.protocol}://${req.headers.host}/assets/products/dadi-${app.slug}-og.jpg`
+    meta.image = `${publicUrl}/assets/products/dadi-${app.slug}-og.jpg`
   }
 
   // Put in page
