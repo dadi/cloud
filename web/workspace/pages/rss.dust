@@ -1,34 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{lang}">
-  <title>DADI</title>
-  <subtitle>Articles feed</subtitle>
-  <link href="{url.href}" rel="self" />
-  <id>{url.protocol}//{url.host}/</id>
-  <link href="{url.protocol}//{url.host}/" />
-  <updated>{@formatDate unix=timestamp /}</updated>
-  {#rss-articles.results}
-    <entry>
+<rss xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>DADI</title>
+    <link href="{global.publicUrl}{url.pathname}" rel="self" />
+    <description>Latest article from the team</description>
+    <language>{lang}</language>
+    <copyright>{@formatDate unix=timestamp format="YYYY" /} DADI+ Limited. All rights reserved.</copyright>
+    <pubDate>{@formatDate unix=timestamp format="ddd, DD MMM YYYY HH:mm:ss ZZ" /}</pubDate>
+    <dc:date>{@formatDate unix=timestamp /}</dc:date>
+    <dc:language>{lang}</dc:language>
+    <dc:rights>{@formatDate unix=timestamp format="YYYY" /} DADI+ Limited. All rights reserved.</dc:rights>
+    <image>
+      <title>DADI</title>
+      <url>{global.publicUrl}/assets/img/dadi-logo-colour.png</url>
+      <link>{global.publicUrl}</link>
+    </image>
+    {#rss-articles.results}
+    <item>
       <title>{title}</title>
-      <published>{@formatDate unix=publishedAt /}</published>
-      <updated>{?updatedAt}{@formatDate unix=updatedAt /}{:else}{@formatDate unix=publishedAt /}{/updatedAt}</updated>
-      <id>{url.protocol}//{url.host}/{category[0].slug}/{sub-category[0].slug}/{slug}</id>
-      <link href="{url.protocol}//{url.host}/{category[0].slug}/{sub-category[0].slug}/{slug}" rel="alternate" />     
-      {?author}
-        <author>
-          <name>{author[0].name}</name>
-          <uri>{url.protocol}//{url.host}/{lang}/team/{author[0].slug}</uri>
-        </author>
-      {/author}        
-      <summary type="xhtml">
-        <div xmlns="http://www.w3.org/1999/xhtml">
-          {@markdown}{excerpt|s}{/markdown}
-        </div>
-      </summary>
-      <content type="xhtml">
-        <div xmlns="http://www.w3.org/1999/xhtml">
-          {@markdown}{body|s}{/markdown}
-        </div>
-      </content>
-    </entry>
-  {/rss-articles.results}
-</feed>
+      <link>{global.publicUrl}/{category[0].slug}/{sub-category[0].slug}/{slug}</link>
+      <description><![CDATA[ {@markdown}{body}{/markdown} ]]></description>
+      <pubDate>{@formatDate unix=publishedAt format="ddd, DD MMM YYYY HH:mm:ss ZZ" /}</pubDate>
+      <guid>{_id}</guid>
+      <dc:creator>{author[0].name}</dc:creator>
+      <dc:date>{@formatDate unix=publishedAt /}</dc:date>
+    </item>
+    {/rss-articles.results}
+  </channel>
+</rss>

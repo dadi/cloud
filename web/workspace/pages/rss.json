@@ -5,7 +5,7 @@
   "settings": {
     "postProcessors": false
   },
-  "contentType": "application/atom+xml",
+  "contentType": "application/rss+xml",
   "datasources": [
     "rss-articles"
   ],
