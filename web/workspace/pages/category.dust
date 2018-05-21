@@ -12,7 +12,7 @@
   </div>
 </header>
 
-<main class="mb"> 
+<main class="mb--x2"> 
   <div class="cnt pt--x2">
     <div class="cols cols--4">
       {#category-articles.results}
