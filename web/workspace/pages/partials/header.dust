@@ -20,7 +20,6 @@
   <meta charset="utf-8">
 
   <meta name="viewport" content="width=device-width,initial-scale=0.8">
-  <meta content="{lang}" http-equiv="Content-Language">
 
   <meta property="og:title" content="{?page.meta.title}{page.meta.title}{:else}DADI{/page.meta.title}">
   <meta name="description" content="{page.meta.description}">
@@ -41,9 +40,9 @@
 
   <link rel="alternate" type="application/atom+xml" title="DADI" href="{url.protocol}//{url.host}/rss/">
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700%7CRoboto:400,700" rel="stylesheet">
 
-  <meta name="google-site-verification" content="JvI-qAmwU3qaFjwuEXEX2T0x15FT5cLTbllc9Fs6D-k" />
+  <meta name="google-site-verification" content="JvI-qAmwU3qaFjwuEXEX2T0x15FT5cLTbllc9Fs6D-k">
 
   <link href="/assets/css/main.min.css?v=10" rel="stylesheet">
 

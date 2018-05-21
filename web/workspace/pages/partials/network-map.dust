@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
 var map = new L.Map("map", {
   center: new L.LatLng(40,0),
   zoom: {?size}2{:else}1{/size},

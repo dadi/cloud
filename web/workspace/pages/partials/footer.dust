@@ -53,13 +53,13 @@
 </footer>
 
 {@eq key=page.key value="article"}
-<script type="text/javascript" src="https://cdn.rawgit.com/scottjehl/picturefill/3.0.2/dist/picturefill.min.js"></script>
+<script src="https://cdn.rawgit.com/scottjehl/picturefill/3.0.2/dist/picturefill.min.js"></script>
 {/eq}
 
-<script type="text/javascript" src="/assets/js/lazy-load.js"></script>
-<script type="text/javascript" src="/assets/js/sticky-sidebar.min.js"></script>
+<script src="/assets/js/lazy-load.js"></script>
+<script src="/assets/js/sticky-sidebar.min.js"></script>
 
-<script type="text/javascript">
+<script>
 var stick = document.getElementById('stick');
 
 if (stick) {

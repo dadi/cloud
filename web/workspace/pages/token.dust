@@ -82,7 +82,7 @@
       <canvas id="token"></canvas>
     </div>
 
-    <script type="text/javascript">
+    <script>
       var ctx = document.getElementById('token').getContext('2d');
 
       Chart.defaults.global.defaultFontFamily = 'Roboto Mono';
