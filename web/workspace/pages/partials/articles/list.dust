@@ -4,7 +4,7 @@
 
     <a href="/{lang}/{?category}{category[0].slug}/{/category}{?sub-category}{sub-category[0].slug}/{/sub-category}{slug}" class="box__link mb">
       <h2 class="medium">{title}</h2>
-      {@markdown}{excerpt|s}{/markdown}
+      <p>{@striptags}{@markdown}{excerpt|s}{/markdown}{/striptags}</p>
     </a>
   </div>
   <div class="box__footer bdt bd-grey small">

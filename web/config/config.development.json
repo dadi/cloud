@@ -24,11 +24,11 @@
   },
   "api": {
     "main": {
-      "host": "127.0.0.1",
-      "port": 8081,
+      "host": "45.77.109.180",
+      "port": 3001,
       "auth": {
-        "clientId": "cloud-client",
-        "secret": "nrq5d6jl0b"
+        "clientId": "cloudlive",
+        "secret": "r[f2^Se@YAvU5+3P"
       }
     },
     "twitter": {
@@ -36,20 +36,24 @@
       "provider": "twitter",
       "auth": {
         "oauth": {
-          "consumer_key": "",
-          "consumer_secret": "",
-          "token": "",
-          "token_secret": ""
+          //"consumer_key": "kzdMznOR2xmz2IRaTG3VMvR5D",
+          //"consumer_secret": "wsxyTi3j5cf4P1JSJHudS2huOU2Ry0jp1VJmEt2hPxtRTooLWI",
+          //"token": "2444229696-wAg8AiIzasB3IMDmSPzSYjj1YcwvO8ZRioQrcfT",
+          //"token_secret": "7NMaMlhNh7WyO1GjQKM4BwkUlj3A5LlAVpbFDoGbMib3f"
         }
       }
     }
   },
   "global": {
+    "publicUrl": "https://dadi.cloud",
     "networkMonitor": {
       "publicUrl": "ws://185.17.172.170:8001/ws"
     },
     "cdn": {
-      "publicUrl": "http://127.0.0.1:3003"
+      "publicUrl": "https://cdn.dadi.cloud"
+    },
+    "tileserver": {
+      "publicUrl": "https://maps.dadi.cloud"
     }
   }
 }
