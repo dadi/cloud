@@ -1,6 +1,8 @@
 const marked = require('marked')
+
 const config = require('@dadi/web').Config
 const publicUrl = config.get('global.publicUrl')
+const dadicdn = config.get('global.cdn.publicUrl')
 
 const Event = function (req, res, data, callback) {
   const meta = {}
@@ -29,15 +31,20 @@ const Event = function (req, res, data, callback) {
 
     // get first image
     if (article.body) {
-      const images = article.body.match(/!\[[^\]]+\]\([^)]+\)/)
+      const images = article.body.match(/!\[(.*?)\]\((.*?)\)/)
 
-      if (images && images[0]) {
+      if (images && images[0]) {   
         let image = marked(images[0])
         image = image.match(/src="(.+?)"/)[1]
 
         // Is it a local image?
         if (!image.startsWith('http')) {
           image = `${publicUrl}${image}`
+        }
+
+        // Is it a CDN image?
+        if (!image.startsWith('/media/')) {
+          image = `${dadicdn}${image}?w=1200&h=675&q=70`
         }
 
         // Put in object
