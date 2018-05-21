@@ -19,7 +19,7 @@
     <item>
       <title>{title}</title>
       <link>{global.publicUrl}/{category[0].slug}/{sub-category[0].slug}/{slug}</link>
-      <description><![CDATA[ {@markdown}{body}{/markdown} ]]></description>
+      <description><![CDATA[ {@markdown}{body|s}{/markdown} ]]></description>
       <pubDate>{@formatDate unix=publishedAt format="ddd, DD MMM YYYY HH:mm:ss ZZ" /}</pubDate>
       <guid>{_id}</guid>
       <dc:creator>{author[0].name}</dc:creator>
