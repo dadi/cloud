@@ -39,7 +39,7 @@ const Event = function (req, res, data, callback) {
 
          // Is it a CDN image?
         if (image.startsWith('/media/')) {
-          image = `${dadicdn}${image}?w=1200&h=675&q=70`
+          image = `${dadicdn}${image}?w=1200&h=675&q=70&resize=aspectfill&gravity=center`
         }
         
         // Is it a local image?
