@@ -59,7 +59,7 @@ dust.helpers.markdown = function(chunk, context, bodies, params) {
           }
         }))
       } else {
-        chunk.end(marked(string))
+        chunk.end(marked(string, { renderer: renderer }))
       }
     })
   }
