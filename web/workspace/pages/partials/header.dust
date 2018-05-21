@@ -38,7 +38,7 @@
   <meta property="og:url" content="{page.meta.url}">
   <link rel="canonical" href="{page.meta.canonical}">
 
-  <link rel="alternate" type="application/atom+xml" title="DADI" href="{url.protocol}//{url.host}/rss/">
+  <link rel="alternate" type="application/atom+xml" title="DADI" href="{global.publicUrl}/rss/">
 
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700%7CRoboto:400,700" rel="stylesheet">
 
