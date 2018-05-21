@@ -37,14 +37,14 @@ const Event = function (req, res, data, callback) {
         let image = marked(images[0])
         image = image.match(/src="(.+?)"/)[1]
 
+         // Is it a CDN image?
+        if (image.startsWith('/media/')) {
+          image = `${dadicdn}${image}?w=1200&h=675&q=70`
+        }
+        
         // Is it a local image?
         if (!image.startsWith('http')) {
           image = `${publicUrl}${image}`
-        }
-
-        // Is it a CDN image?
-        if (!image.startsWith('/media/')) {
-          image = `${dadicdn}${image}?w=1200&h=675&q=70`
         }
 
         // Put in object
