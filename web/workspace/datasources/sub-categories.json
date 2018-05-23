@@ -5,6 +5,10 @@
       "type": "dadiapi",
       "endpoint": "1.0/cloud/sub-categories"
     },
+    "requestParams": [{
+      "param": "subCategory",
+      "field": "slug"
+    }],
     "paginate": false
   }
 }

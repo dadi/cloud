@@ -1,0 +1,33 @@
+{
+  "page": {
+    "key": "sub-category"
+  },
+  "settings": {
+    "passFilters": true
+  },
+  "template": "category.dust",
+  "datasources": [
+    "pages",
+    "web-services",
+    "sub-categories",
+    "category-articles"
+  ],
+  "requiredDatasources": [
+    "sub-categories"
+  ],
+  "events": [
+    "i18n",
+    "metatags"
+  ],
+  "routes": [
+    {
+      "path": "/:lang/:category/:subCategory",
+      "params": [
+        {
+          "param": "subCategory",
+          "fetch": "sub-categories"
+        }
+      ]
+    }
+  ]
+}
