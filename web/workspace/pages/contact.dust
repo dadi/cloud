@@ -51,6 +51,8 @@
     {?mailResult}<p class="info pa bg-light-green fwb">{mailResult}</p>{/mailResult}
 
     <form action="/{lang}/contact/" method="post">
+      <input type="hidden" name="_csrf" value="{csrfToken}">
+      
       <fieldset>        
         <label class="text fm" for="name">Name</label>
         <input id="name" name="name" placeholder="Your full name" type="text">

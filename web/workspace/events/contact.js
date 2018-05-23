@@ -6,9 +6,8 @@ const mailgun = require('mailgun-js')({
 })
 
 const Event = function (req, res, data, callback) {
-
   // On form post
- if (req.method.toLowerCase() === 'post') {
+  if (req.method.toLowerCase() === 'post') {
 
     // Validate out inputs
     if (!req.body.email && !isEmail(req.body.email) && !req.body.message) {
@@ -16,13 +15,17 @@ const Event = function (req, res, data, callback) {
       return callback()
     }
 
-    const message = "Name: "+req.body.name+"\n\nEmail: "+req.body.email+"\n\nPhone: "+req.body.phone+"\n\nMessage:\n\n"+req.body.message
-
     mailgun.messages().send({
-      from: 'DADI <hello@dadi.tech>',
-      to: 'support@dadi.co',
-      subject: '[dadi.tech] Contact form message',
-      text: message
+      from: 'DADI <hello@dadi.cloud>',
+      to: 'hello@dadi.cloud',
+      subject: '[dadi.cloud] Contact form message',
+      text: `
+Name: ${sanitize(req.body.name)}
+Email: ${req.body.email}
+Phone: ${sanitize(req.body.phone)}
+Message:
+
+${sanitize(req.body.message)}`
     }, (err, body) => {
       if (err) {
         data.mailResult = 'There was a problem sending the email.'
@@ -30,7 +33,7 @@ const Event = function (req, res, data, callback) {
         data.mailResult = 'Thank you for your message, you will hear back from us soon.'
       }
 
-      callback()
+      return callback()
     })
 
   } else {
@@ -39,9 +42,13 @@ const Event = function (req, res, data, callback) {
 }
 
 // Taken from: http://stackoverflow.com/a/46181/306059
-function isEmail(email) {
+function isEmail (email) {
   const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   return re.test(email)
+}
+
+function sanitize (value) {
+  return value.replace(/<(?:.|\n)*?>/gm, '').replace(/\/$/gm, '')
 }
 
 module.exports = function (req, res, data, callback) {
