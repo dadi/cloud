@@ -33,7 +33,7 @@
         </a>
       </li>
 
-      <li class="nav--right nav__docs"><a href="https://docs.dadi.tech/" target="_blank" rel="noopener">Documentation</a></li>
+      <li class="nav--right nav__docs"><a href="https://docs.dadi.cloud/" target="_blank" rel="noopener">Documentation</a></li>
       <li class="nav__social nav--right">
         <a href="https://github.com/dadi" title="GitHub" target="_blank" rel="noopener"><img alt="GitHub logo" src="/assets/social/github.svg" height="24"></a>
         <a href="https://medium.com/dadi" title="Medium" target="_blank" rel="noopener"><img alt="Medium logo" src="/assets/social/medium.svg" height="24"></a>
