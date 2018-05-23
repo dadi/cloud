@@ -2,6 +2,9 @@
   "page": {
     "key": "contact"
   },
+  "settings": {
+    "cache": false
+  },
   "datasources": [
     "pages",
     "web-services"
