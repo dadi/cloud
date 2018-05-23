@@ -11,7 +11,8 @@
   ],
   "events": [
     "i18n",
-    "metatags"
+    "metatags",
+    "contact"
   ],
   "routes": [
     {
