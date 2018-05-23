@@ -58,7 +58,7 @@
     <div class="cnt">
       <ul>
         <li><a href="/{lang}/roadmap">Roadmap</a></li>
-        {?install}<li><a href="http://docs.dadi.tech/#{slug}/installation">Install guide</a></li>{/install}
+        {?install}<li><a href="{install}">Install guide</a></li>{/install}
         {?npm}<li><a href="https://www.npmjs.com/package/@dadi/{slug}" onclick="ga('send','event','NPM','Click','Product');">Install with NPM</a></li>{/npm}
         {?github}<li><a href="https://github.com/dadi/{slug}" onclick="ga('send','event','Github','Click','Product');">View source on GitHub</a></li>{/github}
         {?demo}<li><a href="{demo}">View demo</a></li>{/demo}
