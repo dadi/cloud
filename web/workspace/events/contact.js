@@ -2,7 +2,7 @@
 // For this script to work DADI Web should be started with an ENV variable for the Mailgun API key
 const mailgun = require('mailgun-js')({
   apiKey: process.env['MAILGUN_API'], 
-  domain: 'mg.dadi.tech'
+  domain: 'mg.dadi.cloud'
 })
 
 const Event = function (req, res, data, callback) {
