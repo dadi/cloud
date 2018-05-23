@@ -7,47 +7,12 @@
     <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
     <h1>{pages.results[0].title}</h1>
     <p class="normal">{pages.results[0].excerpt}</p>
+    <p class="normal read">Email us at <a href="mailto:hello@dadi.tech">hello@dadi.cloud</a></p>
   </div>
 </header>
 
 <main class="mb--x2">
-  <div class="cnt">
-    <div class="grid mb--x2">
-      <div class="col w-1-4">
-        <div class="hdr fm ttu mb">
-          <h3><span>Client engagement</span></h3>
-        </div>
-        <p class="normal read">
-          <a href="mailto:makesomething@dadi.co">makesomething@dadi.co</a>
-        </p>
-      </div>
-      <div class="col w-1-4">
-        <div class="hdr fm ttu mb">
-          <h3><span>Media enquiries</span></h3>
-        </div>
-        <p class="normal read">
-          <a href="mailto:press@dadi.co">press@dadi.co</a><br>
-        </p>
-      </div>
-      <div class="col w-1-4">
-        <div class="hdr fm ttu mb">
-          <h3><span>Careers</span></h3>
-        </div>
-        <p class="normal read">
-          <a href="mailto:joinus@dadi.co">joinus@dadi.co</a><br>
-        </p>
-      </div>
-      <div class="col w-1-4">
-        <div class="hdr fm ttu mb">
-          <h3><span>Everything else</span></h3>
-        </div>
-        <p class="normal read">
-          <a href="mailto:hello@dadi.tech">hello@dadi.tech</a><br>
-          <a href="https://twitter.com/dadi">@dadi</a>
-        </p>
-      </div>
-    </div>
-
+  <div class="cnt pt">
     {?mailResult}<p class="info pa bg-light-green fwb">{mailResult}</p>{/mailResult}
 
     <form action="/{lang}/contact/" method="post">
