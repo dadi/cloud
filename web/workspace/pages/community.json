@@ -8,7 +8,6 @@
   "datasources": [
     "pages",
     "web-services",
-    "categories",
     "category-articles",
     "tutorials-articles",
     "updates-articles",

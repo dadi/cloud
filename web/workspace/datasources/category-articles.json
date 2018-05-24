@@ -10,6 +10,9 @@
     "requestParams": [{
       "param": "category",
       "field": "category.slug"
+    }, {
+      "param": "subCategory",
+      "field": "sub-category.slug"
     }],
     "filter": {
       "published": true
