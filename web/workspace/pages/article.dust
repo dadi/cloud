@@ -33,6 +33,7 @@
       <aside id="stick" class="mb col col--nopad col--right w-1-4">
         <div class="block read pb">
           {?publishedAt}
+            <meta itemprop="dateModified" content="{@formatDate unix=_lastModifiedAt /}"></meta>
             <time itemprop="datePublished" class="color-tint" datetime="{@formatDate unix=publishedAt /}">
               {@formatDate unix=publishedAt format="DD MMMM YYYY HH:MM" /}
             </time>
