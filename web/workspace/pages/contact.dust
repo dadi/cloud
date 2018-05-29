@@ -11,8 +11,8 @@
   </div>
 </header>
 
-<main class="mb--x2">
-  <div class="cnt pt">
+<main class="mb">
+  <div class="cnt">
     {?mailResult}<p class="info pa bg-light-green fwb">{mailResult}</p>{/mailResult}
 
     <form action="/{lang}/contact/" method="post">
