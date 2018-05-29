@@ -48,6 +48,29 @@
 
   <link href="/assets/css/main.min.css?v=10" rel="stylesheet">
 
+  <script type='application/ld+json'>
+  {
+    "@context" : "http://www.schema.org",
+    "@type" : "Organization",
+    "name" : "DADI",
+    "url": "https://dadi.cloud",
+    "sameAs" : [
+      "https://github.com/dadi",
+      "https://medium.com/dadi",
+      "https://twitter.com/dadi",
+      "https://reddit.com/r/dadi",
+      "https://discord.gg/3sEvuYJ",
+      "https://t.me/dadichat"
+    ],
+    "logo" : "{global.publicUrl}/assets/img/dadi-logo-colour.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Contact",
+      "email": "hello@dadi.cloud"
+    }
+  }
+  </script>
+
   {^debug}<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TV7NC89');</script>{/debug}
 
   {+head/}

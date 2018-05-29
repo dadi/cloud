@@ -1,15 +1,15 @@
-<article class="box {?size}box--{size}{/size} col bd bd-grey mb bg-white">
+<article itemscope itemtype="http://schema.org/{@eq key=category[0].slug value="tutorials"}TechArticle{:else}Article{/eq}" class="box {?size}box--{size}{/size} col bd bd-grey mb bg-white">
   <div class="box__inner">
     {>"partials/articles/taxonomy"/}
 
-    <a href="/{lang}/{?category}{category[0].slug}/{/category}{?sub-category}{sub-category[0].slug}/{/sub-category}{slug}" class="box__link mb">
-      <h2 class="medium">{title}</h2>
-      <p>{@striptags}{@markdown}{excerpt|s}{/markdown}{/striptags}</p>
+    <a itemprop="url" href="/{lang}/{?category}{category[0].slug}/{/category}{?sub-category}{sub-category[0].slug}/{/sub-category}{slug}" class="box__link mb">
+      <h2 itemprop="name" class="medium">{title}</h2>
+      <p itemprop="description">{@striptags}{@markdown}{excerpt|s}{/markdown}{/striptags}</p>
     </a>
   </div>
   <div class="box__footer bdt bd-grey small">
     {?author}
-      <a href="/{lang}/team/{author[0].slug}" class="tar fwb box__aside">
+      <a href="/{lang}/team/{author[0].slug}" class="tar fwb box__aside" itemprop="author">
         {author[0].name}
 
         {?author[0].image[0]}
@@ -17,11 +17,11 @@
         {/author[0].image[0]}
       </a>
     {:else}
-      <div class="{?publishedAt}box__aside tar{/publishedAt} fwb">The DADI Team</div>
+      <div itemprop="author" class="{?publishedAt}box__aside tar{/publishedAt} fwb">The DADI Team</div>
     {/author}
     
     {?publishedAt}
-      <time datetime="{@formatDate unix=publishedAt /}" class="color-tint truncate block">     
+      <time itemprop="datePublished" datetime="{@formatDate unix=publishedAt /}" class="color-tint truncate block">     
         {@eq key=dateFormat value="short"}
           {@formatDate unix=publishedAt format="DD.MM.YY" /}
         {:else}
