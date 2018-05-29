@@ -5,11 +5,26 @@
 {#articles.results}
 
 <div itemscope itemtype="http://schema.org/{@eq key=category[0].slug value="tutorials"}TechArticle{:else}Article{/eq}">
+
+  <meta itemprop="mainEntityOfPage" content="{page.meta.canonical}"></meta>
+
+  {?page.meta.image}<meta itemprop="image" content="{page.meta.image}"></meta>{/page.meta.image}
+
+  <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <div itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DADI"></meta>
+      <meta itemprop="url" content="{global.publicUrl}"></meta>
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="{global.publicUrl}/assets/img/dadi-logo-colour.png"></meta>
+      </div>
+    </div>
+  </div>
+
   <header class="bg-tint mb--x2 pt--x2 pb cf bdb bd-grey">
     <div class="cnt cf ll">
       {>"partials/articles/taxonomy"/}
 
-      <h1 itemprop="name">{title}</h1>
+      <h1 itemprop="headline">{title}</h1>
       
       <p class="normal mb color-tint" itemprop="description">{@soberMarkdown}{excerpt|s}{/soberMarkdown}</p>
     </div>
