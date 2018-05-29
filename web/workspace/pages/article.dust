@@ -11,12 +11,10 @@
   {?page.meta.image}<meta itemprop="image" content="{page.meta.image}"></meta>{/page.meta.image}
 
   <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <div itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DADI"></meta>
-      <meta itemprop="url" content="{global.publicUrl}"></meta>
-      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-        <meta itemprop="url" content="{global.publicUrl}/assets/img/dadi-logo-colour.png"></meta>
-      </div>
+    <meta itemprop="name" content="DADI"></meta>
+    <meta itemprop="url" content="{global.publicUrl}"></meta>
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="{global.publicUrl}/assets/img/dadi-logo-colour.png"></meta>
     </div>
   </div>
 
