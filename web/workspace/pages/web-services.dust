@@ -80,9 +80,9 @@
         <p class="medium mb" style="#{color}">{@soberMarkdown}{overview}{/soberMarkdown}</p>
 
          <div class="product__features">
-          <ul class="list--feat normal mb">
+          <div class="list--feat normal mb">
             {@markdown}{headlineFeatures}{/markdown}
-          </ul>
+          </div>
 
           <p><a href="#features" class="btn">More features</a></p>
         </div>
