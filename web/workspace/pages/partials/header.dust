@@ -53,7 +53,7 @@
     "@context" : "http://www.schema.org",
     "@type" : "Organization",
     "name" : "DADI",
-    "url": "https://dadi.cloud",
+    "url": "{global.publicUrl}",
     "sameAs" : [
       "https://github.com/dadi",
       "https://medium.com/dadi",
@@ -65,8 +65,9 @@
     "logo" : "{global.publicUrl}/assets/img/dadi-logo-colour.png",
     "contactPoint": {
       "@type": "ContactPoint",
-      "contactType": "Contact",
-      "email": "hello@dadi.cloud"
+      "contactType": "customer support",
+      "email": "hello@dadi.cloud",
+      "url": "{global.publicUrl}/contact"
     }
   }
   </script>

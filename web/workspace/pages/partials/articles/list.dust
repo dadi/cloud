@@ -3,7 +3,7 @@
     {>"partials/articles/taxonomy"/}
 
     <a itemprop="url" href="/{lang}/{?category}{category[0].slug}/{/category}{?sub-category}{sub-category[0].slug}/{/sub-category}{slug}" class="box__link mb">
-      <h2 itemprop="name" class="medium">{title}</h2>
+      <h2 itemprop="headline" class="medium">{title}</h2>
       <p itemprop="description">{@striptags}{@markdown}{excerpt|s}{/markdown}{/striptags}</p>
     </a>
   </div>
