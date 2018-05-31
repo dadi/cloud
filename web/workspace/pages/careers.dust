@@ -1,0 +1,83 @@
+{>"partials/header"/}
+
+{>"partials/nav"/}
+
+{#pages.results}
+<header class="bg-tint mb pt--x2 pb--x2 cf ovfh bdb bd-grey">
+  <div class="cnt cf">
+    <img src="/assets/icons/{icon}.svg" width="60" class="mb bg-icon">
+    <h1>{title}</h1>
+
+    <div class="grid">
+      <div class="col w-1-2 read normal">
+        <p>To attract the best people we have to be flexible – and trust our people to work however suits them.<p>
+        <p class="fwb">We think it makes DADI a pretty special place to work.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="mb--x2">
+  <div class="bdb bd-grey pb--x2 mb--x2">
+    <div class="cnt">
+      <div class="grid">
+        <div class="col w-1-3">
+          <div class="hdr fm ttu mb"><h3><span>Philosophy</span></h3></div>
+
+          <blockquote class="cf normal read fm"><p>“We don't do 'hack' or 'innovation' days because everyday, engineers get to personally innovate.</p><p>We don't piggy-back off old technology or patch and hack our way to delivering something we aren't proud of.</p><p>We research and experiment with bleeding edge technologies and collaborate to build out the perfect set of platform services.</p><p>We peer review and share vital engineering knowledge, encouraging each other to step up and embrace the most challenging of technical tasks.</p>All of those things are awesome.”</blockquote>
+
+          <div class="block cf bdt bd-grey pt mt normal">
+            <a href="/en/team/arthur-mingard" class="block"><img src="https://cdn.dadi.cloud/media/2018/05/14/_All_0016_Arthur%202.jpg?q=80&amp;w=100" alt="Photo of " style="margin-right:18px;float:left" width="55"> <strong itemprop="author">Arthur Mingard</strong> <span class="block color-tint">Principal Engineer</span></a>
+          </div>
+        </div>
+        <div class="col w-1-3">
+          <div class="hdr fm ttu mb"><h3><span>Principles</span></h3></div>
+
+          <div class="read normal web-service__features">
+            <h2>Work asynchronously.</h2>
+            <p>Individual team members more or less works at their own pace, with collaboration and agreement being handled by asynchronous mechanisms.</p>
+
+            <h2>No 9 to 5.</h2>
+            <p>Get the job done on time (and don't upset the client) and you can work the hours you want.</p>
+
+            <h2>Work at your own pace.</h2>
+            <p>We handle things like collaboration and sign off through the best tools for the job, all in support of asynchronous working.</p>
+
+            <h2>Minimal meetings.</h2>
+            <p>Unless we really need to powwow in person, we keep in touch using cloud-based tools like Slack (much more efficient, believe us).</p>
+
+            <h2>Work where you want.</h2>
+            <p>Yes, be diligent, stick to deadlines and do great work. But where and how you do it is up to you.</p>
+          </div>
+        </div>
+        <div class="col w-1-3">
+          <div class="hdr fm ttu mb"><h3><span>Perks</span></h3></div>
+          <style type="text/css">
+            .list--feat ul li {
+              background: url(/assets/img/icon-tick-dark.svg) no-repeat 0 5px;
+              background-size: 17px auto;
+            }
+          </style>
+          <div class="list--feat normal mb">
+            <ul>
+              <li>A job that works around your life (not the other way round)</li>
+              <li>Work with some of the most talented people in the world</li>
+              <li>No need to commute</li>
+              <li>No need to be tied to a desk</li>
+              <li>Plenty of excuses to meet up with the rest of the team</li>
+              <li>Work on things you'll love</li>
+              <li>Get paid for giving a shit</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cnt ll read normal">
+    {@markdown}{body}{/markdown}
+  </div>
+</main>
+{/pages.results}
+
+{>"partials/footer"/}

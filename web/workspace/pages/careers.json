@@ -1,6 +1,6 @@
 {
   "page": {
-    "key": "pages"
+    "key": "careers"
   },
   "datasources": [
     "pages",
@@ -10,13 +10,9 @@
     "i18n",
     "metatags"
   ],
-  "template": "pages.dust",
   "routes": [
     {
-      "path": "/:lang/privacy"
-    },
-    {
-      "path": "/:lang/culture"
+      "path": "/:lang/careers"
     }
   ]
 }
