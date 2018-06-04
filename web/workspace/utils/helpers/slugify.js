@@ -1,5 +1,6 @@
 const dust = require('dustjs-linkedin')
 const slugify = require('slugify')
+slugify.extend({':': ' '})
 
 dust.helpers.slugify = function(chunk, context, bodies, params) {
   if (bodies.block) {
