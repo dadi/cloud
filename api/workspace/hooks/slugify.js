@@ -1,4 +1,5 @@
 const slugify = require('slugify')
+slugify.extend({':': ' '})
 
 module.exports = function (obj, type, data) {
   if (obj[data.options.from]) {
