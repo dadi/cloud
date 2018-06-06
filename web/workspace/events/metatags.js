@@ -51,6 +51,11 @@ const Event = function (req, res, data, callback) {
         meta.image = image
       }
     }
+
+    if (article.metaImage) {
+      // Override article image
+      meta.image = `${dadicdn}${article.metaImage[0].path}?w=1200&h=675&q=70`
+    }
   }
 
   // -------------------------
