@@ -9,9 +9,13 @@
     <h1>{title}</h1>
 
     <div class="grid">
-      <div class="col w-1-2 read normal">
-        <p>To attract the best people we have to be flexible – and trust our people to work however suits them.<p>
-        <p class="fwb">We think it makes DADI a pretty special place to work.</p>
+      <div class="col w-1-2 normal">
+        <div class="read">
+          <p>To attract the best people we have to be flexible – and trust our people to work however suits them.<p>
+          <p class="fwb">We think it makes DADI a pretty special place to work.</p>
+        </div>
+
+        <p><a class="btn" href="/culture">Read how we work</a></p>
       </div>
     </div>
   </div>
