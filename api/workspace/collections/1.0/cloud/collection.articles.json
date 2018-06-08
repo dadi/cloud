@@ -268,6 +268,8 @@
     "storeRevisions": false,
     "description": "",
     "compose": true,
+    "sort": "publishedAt",
+    "sortOrder": -1,
     "index": [
       {
         "keys": {
