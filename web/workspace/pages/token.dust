@@ -206,6 +206,16 @@
           <img width="180" class="vam" src="/assets/logos/coingecko.png" alt="CoinGecko">
         </a>
       </div>
+      <div class="col w-1-4">
+        <a style="height: 100px;line-height: 100px;" href="https://www.ethfinex.com/" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+          <img width="180" class="vam" src="/assets/logos/ethfinex.png" alt="Ethfinex">
+        </a>
+      </div>
+      <div class="col w-1-4">
+        <a style="height: 100px;line-height: 100px;" href="https://www.bitfinex.com/" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+          <img width="180" class="vam" src="/assets/logos/bitfinex.png" alt="Bitfinex">
+        </a>
+      </div>
     </div>
    
   </div>
