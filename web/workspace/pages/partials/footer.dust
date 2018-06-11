@@ -3,7 +3,7 @@
     <div class="grid mb--x2">
       <div class="col">
         <div class="badge fm small">
-          <div class="bg-dark badge__primary color-white">Version</div>
+          <div class="bg-dark badge__primary color-white">Last deployment</div>
           <div class="badge__secondary">11.06.18</div>
         </div>
       </div>
