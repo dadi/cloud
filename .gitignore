@@ -8,3 +8,4 @@ cache
 /web/.wallet
 /web/config/config.qa.json
 /web/config/config.production.json
+/web/config/config.development.json
