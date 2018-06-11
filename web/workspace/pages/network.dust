@@ -32,6 +32,7 @@
         <p class="normal mb">{pages.results[0].excerpt}</p>
         <p><a class="btn" href="/{lang}/knowledge/network/overview">Platform introduction</a></p>
         <p><a class="btn" href="/{lang}/roadmap">Technology roadmap</a></p>
+        <p><a class="btn" href="http://dadi.link/mC" target="_blank">Masternode system</a></p>
       </div>
     </div>
 
