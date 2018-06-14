@@ -1,0 +1,166 @@
+{>"partials/header"/}
+
+{<head}
+  <style type="text/css">
+  header {
+    background: url(/assets/network/dadi-network_host-colour.svg) no-repeat 95% 70%;
+    background-size: auto 480px;
+  }
+  @media (max-width: 800px) {
+    header {
+      background-size: auto 248px;
+      background-position: 180% 10%;
+    }
+  }
+  nav.subnav a:hover,
+  nav.subnav a.active {
+    color: #000;
+  } 
+  nav.subnav .active:after, nav.subnav a:hover:after {
+    color: #000;
+    background: #000;
+  } 
+  nav.subnav a:after {
+    background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, #000 100%);
+  } 
+  </style>
+{/head}
+
+{>"partials/nav" /}
+
+<header class="bg-dark pb--x2 cf">
+  <nav class="subnav bg-green cf fm">
+    <div class="cnt">
+      <ul>
+        <li><a href="/{lang}/network/#how">How it works</a></li>
+        <li><a href="/{lang}/network/#usecases">Use cases</a></li>
+        <li><a href="/{lang}/network/#contribute">Contribute</a></li>
+        <li><a class="active" href="/{lang}/network/masternodes">Masternodes</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="cnt cf color-white pt--x2">
+    <div class="grid">
+      <div class="col w-2-3 bs-alignc">
+        <div class="bdb bd-tint mb pb">
+          <h1 style="margin:0">Masternode System</h1>
+          <p class="medium">Registration now open</p>
+        </div>
+
+        <p class="medium mb">
+          A DADI Host returns 10% on Proof of Stake per annum. Monotise your space computaional power and help take back control of the Internet.
+        </p>
+
+        <div class="list--feat normal mb--x2">
+          <ul>
+            <li>Registration now open</li>
+            <li>Hosting release phased over June-August 2018</li>
+          </ul>
+        </div>
+
+        <p class="normal mb">Proof of stake ammount: <span style="display:inline-block;margin:-3px 10px 0 15px;font-size:40px" class="color-green fwb vam inline-block">5,000</span> <span class="color-tint">DADI</span></p>        
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="pt bds mb--x2">
+  <div class="cnt">
+    <div class="grid">
+      <div class="col w-1-4">
+        <a style="height: 100px;line-height: 100px;" href="https://okex.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+          <img width="120" class="vam" src="/assets/logos/okex.png" alt="OKEx">
+        </a>
+      </div>
+      <div class="col w-1-4">
+        <a style="height: 100px;line-height: 100px;" href="https://kucoin.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+          <img width="120" class="vam" src="/assets/logos/kucoin.svg" alt="KuCoin">
+        </a>
+      </div>
+      <div class="col w-1-4">
+        <a style="height: 100px;line-height: 100px;" href="https://hitbtc.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+          <img width="120" class="vam" src="/assets/logos/hitbtc.png" alt="HitBTC">
+        </a>
+      </div>
+      <div class="col w-1-4">
+        <a style="height: 100px;line-height: 100px;" href="https://www.bitfinex.com/" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+          <img width="180" class="vam" src="/assets/logos/bitfinex.png" alt="Bitfinex">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="mb--x2">
+  <div class="cnt">
+    <h2 class="mb">Registration</h2>
+    <div class="grid">
+      <div class="col col--right w-1-4 mb--x2">
+        <h3>Information</h3>
+        <br>
+        
+        <p class="normal pb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+
+        <p><a class="btn" href="http://dadi.link/mC" target="_blank">Token economics</a></p>
+      </div>
+      <div class="col w-2-3">
+        <h3>Personal details</h3>
+        <br>
+
+        <form>
+          <div class="grid">
+            <div class="col w-1-2">
+              <div class="mc-field-group">
+                <input placeholder="First name" type="text" value="" name="FNAME" class="" id="mce-FNAME">
+              </div>
+            </div>
+            <div class="col w-1-2">
+              <div class="mc-field-group">
+                <input placeholder="Last name" type="text" value="" name="LNAME" class="" id="mce-LNAME">
+              </div>
+            </div>
+            <div class="col w-1-1">
+              <div class="mc-field-group">
+                <input placeholder="Your email address" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+              </div>
+            </div>
+          </div>
+      
+          <div class="grid">
+            <div class="col w-1-2">
+              <div class="mc-field-group">
+                <input placeholder="City" type="text" value="" name="MMERGE6" class="" id="mce-MMERGE6">
+              </div>
+            </div>
+            <div class="col w-1-2">
+              <div class="mc-field-group">
+                <select name="MMERGE5">
+                  <option value="null" hidden selected disabled>Country</option>
+
+                  <optgroup label="Popular">
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="United States">United States</option>
+                    <option value="Canada">Canada</option>
+                    <option value="France">France</option>
+                    <option value="Japan">Japan</option>
+                  </optgroup>
+
+                  <optgroup label="All countries">
+                    {#countries.results}
+                      <option value="{name}">{name}</option>
+                    {/countries.results}
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <button value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn">Register now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+{>"partials/footer"/}

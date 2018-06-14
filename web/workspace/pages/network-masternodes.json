@@ -1,0 +1,19 @@
+{
+  "page": {
+    "key": "network-masternodes"
+  },
+  "datasources": [
+    "pages",
+    "web-services",
+    "countries"
+  ],
+  "events": [
+    "i18n",
+    "metatags"
+  ],
+  "routes": [
+    {
+      "path": "/:lang/network/masternodes"
+    }
+  ]
+}

@@ -26,7 +26,7 @@
                 <input placeholder="Your email address" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
               </div>
             </div>
-          </div>    
+          </div>
       
           <div class="grid">
             <div class="col w-1-2">

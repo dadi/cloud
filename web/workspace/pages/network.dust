@@ -14,6 +14,7 @@
         <li><a href="#how">How it works</a></li>
         <li><a href="#usecases">Use cases</a></li>
         <li><a href="#contribute">Contribute</a></li>
+        <li><a href="/{lang}/network/masternodes">Masternodes</a></li>
       </ul>
     </div>
   </nav>
@@ -54,7 +55,7 @@
 
       <div class="bg-white badge color-white small">
         <div class="badge__primary color-tint">
-          Concurrent requests
+          Concurrent reqs.
         </div>
         <div class="badge__secondary color-dark" id="concurrent_requests">
           0
@@ -63,7 +64,7 @@
 
       <div class="bg-white badge color-white small">
         <div class="badge__primary color-tint">
-          Hosts online
+          Hosts
         </div>
         <div class="badge__secondary color-dark" id="host_count">
           0
@@ -81,7 +82,7 @@
 
     <p class="normal mb--x2">If you have spare computational power, DADI is a great application of your resource, delivering real world services for individuals, businesses and governments, whilst delivering income for you.</p>
 
-    <div class="cols cols--3 mb">
+    <div class="cols cols--3">
       <div class="col box--small box bd bd-grey">
         <div class="box__inner" style="padding-bottom:30px">
           <img src="/assets/network/dadi-network_stargate-black.svg" width="95">
@@ -104,9 +105,11 @@
         </div>
       </div>
     </div>
+
+    <a href="/{lang}/network/masternodes" class="btn-more tac fm small">Be part of the network</a>
   </div>
 
-  {>"partials/mailing-list" /}
+  {! {>"partials/mailing-list" /} !}
   
   <div class="cnt pt">
     <div class="hdr fm ttu mb" id="how" name="how">
