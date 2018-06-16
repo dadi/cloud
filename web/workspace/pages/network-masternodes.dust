@@ -102,13 +102,15 @@
         
         <p class="normal pb">Hosts will be onboarded from July 2018. Proof of stake amount required is 5000 DADI.</p>
 
-        <p><a class="btn" href="http://dadi.link/mC" target="_blank">Token economics</a></p>
+        <p><a class="btn" href="http://dadi.link/mC" target="_blank">More about Tokenomics</a></p>
       </div>
       <div class="col w-2-3">
-        <h3>Personal details</h3>
-        <br>
+        <form action="https://cloud.us17.list-manage.com/subscribe/post?u=95970b2518f8f361909d213f0&amp;id=654b920cfb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <input type="hidden" name="INTEREST" value="prehosts">
 
-        <form>
+          <h3>Personal details</h3>
+          <br>
+
           <div class="grid">
             <div class="col w-1-2">
               <div class="mc-field-group">
@@ -130,12 +132,12 @@
           <div class="grid">
             <div class="col w-1-2">
               <div class="mc-field-group">
-                <input placeholder="City" type="text" value="" name="MMERGE6" class="" id="mce-MMERGE6">
+                <input placeholder="City" type="text" value="" name="CITY" class="" id="mce-CITY">
               </div>
             </div>
             <div class="col w-1-2">
               <div class="mc-field-group">
-                <select name="MMERGE5">
+                <select name="COUNTRY">
                   <option value="null" hidden selected disabled>Country</option>
 
                   <optgroup label="Popular">
@@ -156,7 +158,40 @@
             </div>
           </div>
 
+          <h3 class="mt">Existing community member?</h3>
+          <br>
+
+          <div class="grid">
+            <div class="col w-1-2">
+              <div class="mc-field-group">
+                <select name="COMMUNITY" class="" id="mce-COMMUNITY">
+                  <option value="" disabled selected>What is your primary social platform?</option>
+                  <option value="Telegram">Telegram</option>
+                  <option value="Reddit">Reddit</option>
+                  <option value="Discord">Discord</option>
+                  <option value="Twitter">Twitter</option>
+                </select>
+              </div>
+            </div>
+            <div class="col w-1-2">
+              <div class="mc-field-group">
+                <input placeholder="Handle" type="text" value="" name="HANDLE" class="" id="mce-HANDLE">
+              </div>
+            </div>
+          </div>
+
+          <div id="mce-responses" class="clear">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+          </div> 
+
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_95970b2518f8f361909d213f0_654b920cfb" tabindex="-1" value=""></div>
+      
           <button value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn">Register now</button>
+
+          <div class="fm small color-tint pt cf" style="padding-bottom:20px">*  You can unsubscribe at any time by emailing us at <strong>data@dadi.cloud</strong> or by clicking on the unsubscribe link which can be found in our emails to you. Read our <a href="/privacy/">Privacy Policy</a>.</div>
+
+          <script src="/assets/js/mc-validate.js"></script><script>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='COUNTRY';ftypes[5]='text';fnames[6]='CITY';ftypes[6]='text';fnames[7]='MMERGE7';ftypes[7]='text';fnames[8]='MMERGE8';ftypes[8]='text';fnames[9]='MMERGE9';ftypes[9]='text';fnames[10]='MMERGE10';ftypes[10]='text';fnames[11]='MMERGE11';ftypes[11]='text';fnames[12]='MMERGE12';ftypes[12]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
         </form>
       </div>
     </div>
