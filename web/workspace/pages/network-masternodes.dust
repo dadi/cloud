@@ -34,8 +34,7 @@
       <ul>
         <li><a href="/{lang}/network/#how">How it works</a></li>
         <li><a href="/{lang}/network/#usecases">Use cases</a></li>
-        <li><a href="/{lang}/network/#contribute">Contribute</a></li>
-        <li><a class="active" href="/{lang}/network/masternodes">Masternodes</a></li>
+        <li><a class="active" href="/{lang}/network/masternodes">Contribute</a></li>
       </ul>
     </div>
   </nav>

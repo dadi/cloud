@@ -13,8 +13,7 @@
       <ul>
         <li><a href="#how">How it works</a></li>
         <li><a href="#usecases">Use cases</a></li>
-        <li><a href="#contribute">Contribute</a></li>
-        <li><a href="/{lang}/network/masternodes">Masternodes</a></li>
+        <li><a href="/{lang}/network/masternodes">Contribute</a></li>
       </ul>
     </div>
   </nav>
