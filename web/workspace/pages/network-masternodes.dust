@@ -161,6 +161,10 @@
                   <option value="Reddit">Reddit</option>
                   <option value="Discord">Discord</option>
                   <option value="Twitter">Twitter</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="Bitcointalk">Bitcointalk</option>
+                  <option value="LinkedIn">LinkedIn</option>
+                  <option value="Steemit">Steemit</option>
                 </select>
               </div>
             </div>
