@@ -3,13 +3,27 @@
 {<head}
   <style type="text/css">
   header {
-    background: url(/assets/network/dadi-network_host-colour.svg) no-repeat 95% 70%;
+    background: url(/assets/network/dadi-network_host-colour.svg) no-repeat 95% 90px;
     background-size: auto 480px;
+    min-height: auto;
+    min-height: calc(100vh - 230px);
+  }
+  .token-partners {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+  }
+  @media (min-width: 800px) {
+     header {
+      padding-bottom: 160px;
+    }
   }
   @media (max-width: 800px) {
     header {
       background-size: auto 248px;
       background-position: 180% 10%;
+    }
+    .token-partners {
+      position: relative;
     }
   }
   nav.subnav a:hover,
@@ -28,7 +42,7 @@
 
 {>"partials/nav" /}
 
-<header class="bg-dark pb--x2 cf">
+<header class="bg-dark mb--x2 cf">
   <nav class="subnav bg-green cf fm">
     <div class="cnt">
       <ul>
@@ -58,38 +72,16 @@
           </ul>
         </div>
 
-        <p class="normal mb">Proof of stake ammount: <span style="display:inline-block;margin:-3px 10px 0 15px;font-size:40px" class="color-green fwb vam inline-block">5,000</span> <span class="color-tint">DADI</span></p>        
+        <p class="normal mb">Proof of stake amount: <span style="display:inline-block;margin:-3px 10px 0 15px;font-size:40px" class="color-green fwb vam inline-block">5,000</span> <span class="color-tint">$DADI</span> per Host</p>        
       </div>
+    </div>
+  </div>
+  <div class="bg-white pt bds token-partners">
+    <div class="cnt">
+      {>"partials/token-partners"/}
     </div>
   </div>
 </header>
-
-<div class="pt bds mb--x2">
-  <div class="cnt">
-    <div class="grid">
-      <div class="col w-1-4">
-        <a style="height: 100px;line-height: 100px;" href="https://okex.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
-          <img width="120" class="vam" src="/assets/logos/okex.png" alt="OKEx">
-        </a>
-      </div>
-      <div class="col w-1-4">
-        <a style="height: 100px;line-height: 100px;" href="https://kucoin.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
-          <img width="120" class="vam" src="/assets/logos/kucoin.svg" alt="KuCoin">
-        </a>
-      </div>
-      <div class="col w-1-4">
-        <a style="height: 100px;line-height: 100px;" href="https://hitbtc.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
-          <img width="120" class="vam" src="/assets/logos/hitbtc.png" alt="HitBTC">
-        </a>
-      </div>
-      <div class="col w-1-4">
-        <a style="height: 100px;line-height: 100px;" href="https://www.bitfinex.com/" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
-          <img width="180" class="vam" src="/assets/logos/bitfinex.png" alt="Bitfinex">
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
 
 <main class="mb--x2">
   <div class="cnt">
@@ -99,7 +91,7 @@
         <h3>Information</h3>
         <br>
         
-        <p class="normal pb">Hosts will be onboarded from July 2018. Proof of stake amount required is 5000 DADI.</p>
+        <p class="normal pb">Hosts will be onboarded from July 2018. Proof of stake amount required is 5,000 $DADI per Host.</p>
 
         <p><a class="btn" href="http://dadi.link/mC" target="_blank">More about Tokenomics</a></p>
       </div>
