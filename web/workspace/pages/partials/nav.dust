@@ -15,14 +15,9 @@
       {/eq}
       <li>
         <a 
-          {@eq key="{page.key}" value="network"}class="active"{/eq}
-          href="/{lang}/network">
-          Network
-        </a>
-      </li>
-      <li>
-        <a 
-          class="trigger-contextual {@eq key="{page.key}" value="web-services"}active{/eq}" href="#web-services">Web services
+          {@eq key="{page.key}" value="marketplace"}class="active"{/eq}
+          href="/marketplace">
+          Marketplace
         </a>
       </li>
       <li>
@@ -33,7 +28,7 @@
         </a>
       </li>
 
-      <li class="nav--right nav__docs"><a href="https://docs.dadi.cloud/" target="_blank" rel="noopener">Documentation</a></li>
+      <li class="nav--right nav__docs"><a href="https://develop.dadi.cloud/" target="_blank" rel="noopener">Developers</a></li>
       <li class="nav__social nav--right">
         <a href="https://github.com/dadi" title="GitHub" target="_blank" rel="noopener"><img alt="GitHub logo" src="/assets/social/github.svg" height="24"></a>
         <a href="https://medium.com/dadi" title="Medium" target="_blank" rel="noopener"><img alt="Medium logo" src="/assets/social/medium.svg" height="24"></a>
@@ -43,16 +38,5 @@
         <a href="https://t.me/dadichat" title="Telegram" target="_blank" rel="noopener"><img alt="Telegram logo" src="/assets/social/telegram.svg" height="24"></a>
       </li>
     </ul>
-  </div>
-
-  <div class="subnav slide-toggle hide animation fm" id="web-services">
-    <div class="cnt">
-      <ul>
-        {#web-services.results}
-          {?github}
-          <li><a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}"><img src="{global.cdn.publicUrl}{icon[0].path}?h=36" alt="Icon for DADI {name}" height="18" class="vam"> {name}</a></li>{/github}
-        {/web-services.results}
-      </ul>
-    </div>
   </div>
 </nav>

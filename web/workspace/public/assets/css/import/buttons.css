@@ -66,6 +66,15 @@
   transform: translate(0, -50%);
 }
 
+
+.btn--cdn {
+  border-bottom-color: #e02975;
+}
+.btn--cdn:hover {
+  background: #e02975;
+  border-color: #e02975;
+}
+
 .pagination {
   display: flex;
   width: 100%

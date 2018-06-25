@@ -1,0 +1,15 @@
+<div class="bg-tint bds pb pt--x2 bdt bdb bd-grey" style="background-image: url(https://cdn.dadi.cloud/media/2018/05/17/dadi-cdn.png?h=900);background-repeat: no-repeat; background-position: 92% 140%;background-size: auto 450px;">
+
+  <div class="cnt cf">
+    <div class="col w-2-3">
+      <div class="bdb bd-grey mb pb">
+        <img src="/assets/products/dadi-cdn-full.png" width="180">
+      </div>
+     
+      <h2 class="medium">First app to run on the network!</h2>
+      <p class="medium mb">A just-in-time asset manipulation and delivery layer designed as a modern, global content distribution solution.</p>
+
+      <a href="/{lang}/cdn" class="btn btn--cdn mb">More about CDN</a>
+    </div>
+  </div>
+</div>
