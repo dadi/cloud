@@ -5,7 +5,7 @@
 <header class="pt--x2 pb--x2 cf ovfh">
   <div class="cnt cf">
     <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
-    <h1 class="color-green">{pages.results[0].title}</h1>
+    <h1>{pages.results[0].title}</h1>
     <p class="normal ll">{pages.results[0].excerpt}</p>
   </div>
 </header>
