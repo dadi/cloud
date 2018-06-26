@@ -30,14 +30,8 @@ var caption = document.getElementById('mapcaption');
 var messages = [
   "Image served",
   "DADI earned",
-  "Web page served",
-  "API requested",
-  "Content created",
   "JS served",
-  "CSS served",
-  "Automated task performed",
-  "File stored",
-  "File retrieved"
+  "CSS served"
 ];
 
 setInterval(function() {
