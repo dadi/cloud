@@ -145,8 +145,10 @@
       <h3><span>Exchange partners</span></h3>
     </div>
 
-    {>"partials/token-partners"/}
-       
+    <div class="grid">
+      {>"partials/token-partners" col="4" /}
+    </div>
+    
     <div class="hdr fm ttu mb">
       <h3><span>Find us on</span></h3>
     </div>
