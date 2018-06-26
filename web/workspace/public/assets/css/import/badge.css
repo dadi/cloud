@@ -3,6 +3,9 @@
   display: inline-block;
   white-space: nowrap;
   margin-bottom: 1.3rem;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .badge__primary,
 .badge__secondary {
