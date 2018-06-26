@@ -5,6 +5,9 @@
       "type": "dadiapi",
       "endpoint": "1.0/cloud/partners"
     },
+    "filter": {
+      "published": true
+    },
     "paginate": false
   }
 }
