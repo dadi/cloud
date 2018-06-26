@@ -1,6 +1,6 @@
 {
   "page": {
-    "key": "network-masternodes"
+    "key": "contribute"
   },
   "datasources": [
     "pages",
@@ -13,7 +13,7 @@
   ],
   "routes": [
     {
-      "path": "/:lang/network/masternodes"
+      "path": "/:lang/contribute"
     }
   ]
 }

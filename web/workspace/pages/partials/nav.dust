@@ -17,7 +17,7 @@
         <a 
           {@eq key="{page.key}" value="marketplace"}class="active"{/eq}
           href="/marketplace">
-          Marketplace
+          Dapp Marketplace
         </a>
       </li>
       <li>
@@ -25,6 +25,13 @@
           {@eq key="{page.key}" value="community"}class="active"{/eq}
           href="/{lang}/community">
           Community
+        </a>
+      </li>
+      <li>
+        <a 
+          {@eq key="{page.key}" value="contribute"}class="active"{/eq}
+          href="/{lang}/contribute">
+          Contribute
         </a>
       </li>
 
