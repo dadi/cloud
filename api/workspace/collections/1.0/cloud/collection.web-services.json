@@ -80,6 +80,19 @@
         }
       }
     },
+    "launch": {
+      "type": "String",
+      "required": false,
+      "label": "Launch date",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
     "icon": {
       "type": "Reference",
       "label": "Icon",
