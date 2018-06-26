@@ -15,6 +15,16 @@
 
   <div class="cnt mb pt pb">
     <div class="hdr fm ttu mb">
+      <h3><span>Decentralized apps</span></h3>
+    </div>
+              
+    <div class="cols cols--4 bs-cols--2">
+      {#web-services.results}
+        {>"partials/web-services/list"/}
+      {/web-services.results}
+    </div>
+
+    <div class="hdr fm ttu mb">
       <h3><span>Third-party apps</span></h3>
     </div>
 
@@ -22,7 +32,7 @@
       <div class="box box--small col bd bd-grey mb" style="border-top:1px solid #2a87dd">
         <a href="https://www.agorai.ai/" class="box__inner">
           <div class="mb">
-            <img src="/assets/logos/agorai.png" alt="Icon for Agorai" height="60">
+            <img src="/assets/logos/agorai.png" alt="Icon for Agorai" width="160">
           </div>
 
           {! <h2 class="fm fwn normal" style="color:#2a87dd">agorai</h2> !}
@@ -37,7 +47,7 @@
 
       <div class="box--small col bd bd-white bg-tint mb">
         <a href="https://www.agorai.ai/" class="box__inner">
-          <h2 class="fm fwn normal mb">Want to host on our network?</h2>
+          <h2 class="fm fwn normal">Want to host on our network?</h2>
 
           <p class="mb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.</p>
         </a>
@@ -47,17 +57,6 @@
         </div>
       </div>
     </div>
-
-    <div class="hdr fm ttu mb">
-      <h3><span>Decentralized apps</span></h3>
-    </div>
-              
-    <div class="cols cols--4 bs-cols--2">
-      {#web-services.results}
-        {>"partials/web-services/list"/}
-      {/web-services.results}
-    </div>
-
   </div>
 </main>
 
