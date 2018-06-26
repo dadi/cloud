@@ -33,25 +33,6 @@
 </header>
 
 <main class="mb">
-  <div class="pt--x2 pb bdb bd-grey bds">
-    <div class="cnt">
-      <h2 class="normal mb color-tint fwn fm">Our partners</h2>
-
-      <div class="cols cols--4">
-        {#partners.results}
-          <div class="col" style="line-height:1.4em">
-            <a href="{website}" target="_blank" class="block" style="padding-bottom:10px">
-              <img src="/assets/logos/{@slugify}{name}{/slugify}.png" alt="Icon for Agorai" width="230" alt="{name} logo">
-            </a>
-        
-            {@markdown}{desc}{/markdown}
-
-            {! <p class="small" style="padding-top:10px"><a href="{website}" target="_blank" class="btn">Visit website</a></p> !}
-          </div>
-        {/partners.results}
-      </div>
-    </div>
-  </div>
   <div class="pt--x2 pb--x2 bdb bd-grey">
     <div class="cnt">
       <h2 class="normal mb color-tint fwn fm">Tutorials</h2>
@@ -78,7 +59,7 @@
       <a href="/{lang}/updates" class="btn-more tac fm small">All updates</a>
     </div>
   </div>
-  <div class="pt--x2 pb--x2">
+  <div class="pt--x2 pb--x2 bdb bd-grey">
     <div class="cnt">
       <h2 class="normal mb color-tint fwn fm">Knowledge</h2>
     
@@ -89,6 +70,36 @@
       </div>
 
       <a href="/{lang}/knowledge" class="btn-more tac fm small">All knowledge</a>
+    </div>
+  </div>
+  <div class="pt--x2 pb">
+    <div class="cnt">
+      <h2 class="normal mb color-tint fwn fm">Our partners</h2>
+
+      {>"partials/token-partners" /}
+
+      <div class="grid">
+        <div class="col w-1-4">
+          <a style="height: 100px;line-height:99px" href="https://www.agorai.ai/" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+            <img width="180" class="vam" src="/assets/logos/agorai.png" alt="Agorai">
+          </a>
+        </div>
+        <div class="col w-1-4">
+          <a style="height: 100px;line-height:98px" href="https://netwise.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+            <img width="180" class="vam" src="/assets/logos/netwise.png" alt="Netwise">
+          </a>
+        </div>
+        <div class="col w-1-4">
+          <a style="height: 100px;line-height:99px" href="https://verasity.io/" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+            <img width="180" class="vam" src="/assets/logos/verasity.png" alt="Verasity">
+          </a>
+        </div>
+        <div class="col w-1-4">
+          <a style="height: 100px;line-height:101px" href="https://wirehive.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+            <img width="180" class="vam" src="/assets/logos/wirehive.png" alt="Wirehive">
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </main>

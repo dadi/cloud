@@ -337,3 +337,22 @@ h1, h2 {
   content: '';
 }
 }
+
+
+.stat {
+  border-top: 1px solid var(--grey);
+  display: block;
+  margin-bottom: 15px;
+}
+.stat__metric {
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.stat__figure {
+  font-size: 2.3rem;
+  letter-spacing: -1px;
+}
+.stat__unit {
+  font-size: 0.8rem;
+  letter-spacing: normal;
+}
