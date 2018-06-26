@@ -40,11 +40,13 @@
       <div class="cols cols--4">
         {#partners.results}
           <div class="col" style="line-height:1.4em">
-            <div class="mb bdb bd-grey" style="padding-bottom:10px">
+            <a href="{website}" target="_blank" class="block" style="padding-bottom:10px">
               <img src="/assets/logos/{@slugify}{name}{/slugify}.png" alt="Icon for Agorai" width="230" alt="{name} logo">
-            </div>
+            </a>
         
             {@markdown}{desc}{/markdown}
+
+            {! <p class="small" style="padding-top:10px"><a href="{website}" target="_blank" class="btn">Visit website</a></p> !}
           </div>
         {/partners.results}
       </div>
