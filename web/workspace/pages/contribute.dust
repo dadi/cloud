@@ -78,7 +78,9 @@
   </div>
   <div class="bg-white pt bds token-partners">
     <div class="cnt">
-      {>"partials/token-partners"/}
+      <div class="grid">
+        {>"partials/token-partners" col="4" /}
+      </div>
     </div>
   </div>
 </header>
