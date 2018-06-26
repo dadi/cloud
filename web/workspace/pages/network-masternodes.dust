@@ -1,0 +1,196 @@
+{>"partials/header"/}
+
+{<head}
+  <style type="text/css">
+  header {
+    background: url(/assets/network/dadi-network_host-colour.svg) no-repeat 95% 90px;
+    background-size: auto 480px;
+    min-height: auto;
+    min-height: calc(100vh - 230px);
+  }
+  .token-partners {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+  }
+  @media (min-width: 800px) {
+     header {
+      padding-bottom: 160px;
+    }
+  }
+  @media (max-width: 800px) {
+    header {
+      background-size: auto 248px;
+      background-position: 180% 10%;
+    }
+    .token-partners {
+      position: relative;
+    }
+  }
+  nav.subnav a:hover,
+  nav.subnav a.active {
+    color: #000;
+  } 
+  nav.subnav .active:after, nav.subnav a:hover:after {
+    color: #000;
+    background: #000;
+  } 
+  nav.subnav a:after {
+    background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, #000 100%);
+  } 
+  </style>
+{/head}
+
+{>"partials/nav" /}
+
+<header class="bg-dark mb--x2 cf">
+  <nav class="subnav bg-green cf fm">
+    <div class="cnt">
+      <ul>
+        <li><a href="/{lang}/network/#how">How it works</a></li>
+        <li><a href="/{lang}/network/#usecases">Use cases</a></li>
+        <li><a class="active" href="/{lang}/network/masternodes">Contribute</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="cnt cf color-white pt--x2">
+    <div class="grid">
+      <div class="col w-2-3 bs-alignc">
+        <div class="bdb bd-tint mb pb">
+          <h1 style="margin:0">Masternode System</h1>
+          <p class="medium">Registration now open</p>
+        </div>
+
+        <p class="medium mb">
+          If you have spare computational power you can earn residual income by being a DADI Host. Pre-register now to be a part of our network.
+        </p>
+
+        <div class="list--feat normal mb--x2">
+          <ul>
+            <li>Registration now open</li>
+            <li>Host onboarding begins July 2018</li>
+          </ul>
+        </div>
+
+        <p class="normal mb">Proof of stake amount: <span style="display:inline-block;margin:-3px 10px 0 15px;font-size:40px" class="color-green fwb vam inline-block">5,000</span> <span class="color-tint">$DADI</span> per Host</p>        
+      </div>
+    </div>
+  </div>
+  <div class="bg-white pt bds token-partners">
+    <div class="cnt">
+      {>"partials/token-partners"/}
+    </div>
+  </div>
+</header>
+
+<main class="mb--x2">
+  <div class="cnt">
+    <h2 class="mb">Registration</h2>
+    <div class="grid">
+      <div class="col col--right w-1-4 mb--x2">
+        <h3>Information</h3>
+        <br>
+        
+        <p class="normal pb">Hosts will be onboarded from July 2018. Proof of stake amount required is 5,000 $DADI per Host.</p>
+
+        <p><a class="btn" href="http://dadi.link/mC" target="_blank">More about Tokenomics</a></p>
+      </div>
+      <div class="col w-2-3">
+        <form action="https://cloud.us17.list-manage.com/subscribe/post?u=95970b2518f8f361909d213f0&amp;id=654b920cfb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <input type="hidden" name="INTEREST" value="prehosts">
+
+          <h3>Personal details</h3>
+          <br>
+
+          <div class="grid">
+            <div class="col w-1-2">
+              <div class="mc-field-group">
+                <input placeholder="First name" type="text" value="" name="FNAME" class="" id="mce-FNAME">
+              </div>
+            </div>
+            <div class="col w-1-2">
+              <div class="mc-field-group">
+                <input placeholder="Last name" type="text" value="" name="LNAME" class="" id="mce-LNAME">
+              </div>
+            </div>
+            <div class="col w-1-1">
+              <div class="mc-field-group">
+                <input placeholder="Your email address" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+              </div>
+            </div>
+          </div>
+      
+          <div class="grid">
+            <div class="col w-1-2">
+              <div class="mc-field-group">
+                <input placeholder="City" type="text" value="" name="CITY" class="" id="mce-CITY">
+              </div>
+            </div>
+            <div class="col w-1-2">
+              <div class="mc-field-group">
+                <select name="COUNTRY">
+                  <option value="null" hidden selected disabled>Country</option>
+
+                  <optgroup label="Popular">
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="United States">United States</option>
+                    <option value="Canada">Canada</option>
+                    <option value="France">France</option>
+                    <option value="Japan">Japan</option>
+                  </optgroup>
+
+                  <optgroup label="All countries">
+                    {#countries.results}
+                      <option value="{name}">{name}</option>
+                    {/countries.results}
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="mt">Existing community member?</h3>
+          <br>
+
+          <div class="grid">
+            <div class="col w-1-2">
+              <div class="mc-field-group">
+                <select name="COMMUNITY" class="" id="mce-COMMUNITY">
+                  <option value="" disabled selected>What is your primary social platform?</option>
+                  <option value="Telegram">Telegram</option>
+                  <option value="Reddit">Reddit</option>
+                  <option value="Discord">Discord</option>
+                  <option value="Twitter">Twitter</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="Bitcointalk">Bitcointalk</option>
+                  <option value="LinkedIn">LinkedIn</option>
+                  <option value="Steemit">Steemit</option>
+                </select>
+              </div>
+            </div>
+            <div class="col w-1-2">
+              <div class="mc-field-group">
+                <input placeholder="Handle" type="text" value="" name="HANDLE" class="" id="mce-HANDLE">
+              </div>
+            </div>
+          </div>
+
+          <div id="mce-responses" class="clear">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+          </div> 
+
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_95970b2518f8f361909d213f0_654b920cfb" tabindex="-1" value=""></div>
+      
+          <button value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn">Register now</button>
+
+          <div class="fm small color-tint pt cf" style="padding-bottom:20px">*  You can unsubscribe at any time by emailing us at <strong>data@dadi.cloud</strong> or by clicking on the unsubscribe link which can be found in our emails to you. Read our <a href="/privacy/">Privacy Policy</a>.</div>
+
+          <script src="/assets/js/mc-validate.js"></script><script>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='COUNTRY';ftypes[5]='text';fnames[6]='CITY';ftypes[6]='text';fnames[7]='MMERGE7';ftypes[7]='text';fnames[8]='MMERGE8';ftypes[8]='text';fnames[9]='MMERGE9';ftypes[9]='text';fnames[10]='MMERGE10';ftypes[10]='text';fnames[11]='MMERGE11';ftypes[11]='text';fnames[12]='MMERGE12';ftypes[12]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+{>"partials/footer"/}
