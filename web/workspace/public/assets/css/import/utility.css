@@ -37,6 +37,7 @@
 .small                      { font-size: 0.85rem }
 .normal                     { font-size: 1.15rem; line-height: 1.8rem; }
 .medium                     { font-size: 1.5rem; line-height: 1.9rem; }
+.large                      { font-size: 1.8rem; line-height: 2.6rem; }
 
 .tac                        { text-align: center }
 .tar                        { text-align: right }
@@ -82,6 +83,7 @@
 
 .fill                       { width: 100%; height: auto }
 .block                      { display: block; }
+.inline-block               { display: inline-block; }
 
 /* Misc */
 

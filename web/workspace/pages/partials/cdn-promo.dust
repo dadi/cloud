@@ -1,4 +1,4 @@
-<div class="bg-tint bds pb pt--x2 bdt bdb bd-grey" style="background-image: url(https://cdn.dadi.cloud/media/2018/05/17/dadi-cdn.png?h=900);background-repeat: no-repeat; background-position: 92% 140%;background-size: auto 450px;">
+<div class="bg-tint bds pb pt--x2 {^isHeader}bdt{/isHeader} bdb bd-grey" style="background-image: url(https://cdn.dadi.cloud/media/2018/05/17/dadi-cdn.png?h=900);background-repeat: no-repeat; background-position: 92% 140%;background-size: auto 450px;">
 
   <div class="cnt cf">
     <div class="col w-2-3">

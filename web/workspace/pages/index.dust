@@ -4,6 +4,7 @@
 
 <header class="intro color-white cf">
   <div class="network animation fade-in">
+    <div class="stats">Mainnet status: Online<br>Av. response time0Concurrent requests0Hosts online0</div>
     {>"partials/network-map"/}
   </div>
   <div class="intro__about animation fade-in fm">

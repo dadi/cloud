@@ -157,8 +157,13 @@ h1, h2 {
   position: relative;
   list-style: none;
   padding: 0 0 10px 35px;
-  background: url(/assets/img/icon-tick.svg) no-repeat 0 5px;
+  background-image: url(/assets/img/icon-tick.svg);
+  background-repeat: no-repeat;
+  background-position: 0 5px;
   background-size: 17px auto;
+}
+.list--feat-dark ul li {
+  background-image: url(/assets/img/icon-tick-dark.svg);
 }
 .list--feat a {
   padding-bottom: 8px;
