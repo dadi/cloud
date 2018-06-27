@@ -4,7 +4,6 @@
 
 <header class="intro color-white cf">
   <div class="network animation fade-in">
-    <div class="stats">Mainnet status: Online<br>Av. response time0Concurrent requests0Hosts online0</div>
     {>"partials/network-map"/}
   </div>
   <div class="intro__about animation fade-in fm">
@@ -16,6 +15,7 @@
       ► Watch the introduction
     </a>
   </div>
+  <div class="network-stats fm"><div style="margin-right:20px" class="bg-white badge small"><div class="badge__primary bg-white">MAINNET STATUS</div></div><div class="bg-white badge color-white small"><div class="badge__primary color-tint">Response</div><div class="badge__secondary color-dark" id="average_response">0</div></div><div class="bg-white badge color-white small"><div class="badge__primary color-tint">Requests</div><div class="badge__secondary color-dark" id="concurrent_requests">0</div></div></div>
 </header>
 
 <main class="mb--x2" id="homeMain">
