@@ -43,6 +43,24 @@
           <p class="normal">Anyone with a laptop, games console or any connected device can earn income by providing spare computation capacity for rent</p>
         </div>
       </div>
+
+
+      <div class="pt pb bdt bd-grey">
+        <div class="grid tac mb">
+          <div class="col w-1-2">
+            <img src="/assets/img/explainer-part1.svg" alt="Traditional services">
+            
+            <h2 style="margin-bottom:5px" class="medium">Centralized Cloud Services</h2>
+            <p class="color-tint fm small">The old way</p>
+          </div>
+          <div class="col w-1-2">
+            <img src="/assets/img/explainer-part2.svg" alt="The DADI Network">
+
+            <h2 style="margin-bottom:5px" class="medium color-blue">Decentralized Cloud</h2>
+            <p class="color-tint fm small">The new way</p>
+          </div>
+        </div>        
+      </div>
     </div>
   </div>
 
