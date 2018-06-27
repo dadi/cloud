@@ -80,6 +80,33 @@
         }
       }
     },
+    "launch": {
+      "type": "String",
+      "required": false,
+      "label": "Launch date (display)",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
+    "launchOrder": {
+      "type": "DateTime",
+      "format": "unix",
+      "required": false,
+      "label": "Launch date (order)",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
     "icon": {
       "type": "Reference",
       "label": "Icon",
