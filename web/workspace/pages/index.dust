@@ -1,12 +1,15 @@
 {>"partials/header"/}
 
-<header class="intro bg-dark color-white cf">
+{>"partials/nav" /}
+
+<header class="intro color-white cf">
   <div class="network animation fade-in">
     {>"partials/network-map"/}
   </div>
-  <div class="intro__about animation fade-in">
-    <h1><img src="/assets/img/dadi-logo-white.svg" alt="DADI"></h1>
-    {@markdown}{pages.results[0].excerpt|s}{/markdown}
+  <div class="intro__about animation fade-in fm">
+    <h1><img src="/assets/img/dadi-logo-dark.svg" alt="DADI"></h1>
+    <h2 style="color:#8a939d">Fast, scalable, secure and inexpensive web services.</h2>
+    <p>This is the cloud, decentralized.</p>
 
     <a href="#video" class="btn intro__video">
       ► Watch the introduction
@@ -15,9 +18,7 @@
 </header>
 
 <main class="mb--x2" id="homeMain">
-  {>"partials/nav" stick="true" /}
-
-  <div class="bds pt pt--x2"> 
+  <div class="bds pt"> 
     <div class="cnt">
       <div class="grid cf pb">
         <div class="col w-1-4 pb">

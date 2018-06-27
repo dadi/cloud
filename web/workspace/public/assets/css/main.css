@@ -145,11 +145,11 @@ h1, h2 {
 }
 .network #map {
   position: absolute;
-  top: 0; right: 3%;
+  top: 0; right: 10px;
   width: 90%; height: 100%;
   -webkit-transform: translate3d(0, 0, 0);
-  overflow: hidden;
   background: none;
+  overflow: auto;
 }
 
 .list--feat ul li {

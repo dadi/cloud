@@ -17,7 +17,7 @@
         <a 
           {@eq key="{page.key}" value="marketplace"}class="active"{/eq}
           href="/marketplace">
-          Dapp Marketplace
+          dApp Marketplace
         </a>
       </li>
       <li>
