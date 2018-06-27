@@ -57,12 +57,12 @@
         {?npm}<li><a href="https://www.npmjs.com/package/@dadi/{slug}" onclick="ga('send','event','NPM','Click','Product');">Install with NPM</a></li>{/npm}
         {?github}<li><a href="https://github.com/dadi/{slug}" onclick="ga('send','event','Github','Click','Product');">View source on GitHub</a></li>{/github}
         {?demo}<li><a href="{demo}">View demo</a></li>{/demo}
-        {! <li class="nav--right" style="padding-top:21px">
-          <div class="badge color-white">
-            <div class="badge__primary bg-white " style="color:#{color}">Latest release</div>
-            <div class="badge__secondary">Version 2.0.3</div>
+        <li class="nav--right bs-hide">
+          <div class="badge badge--dapp-header fm small inline-block vam">
+            <div class="bg-white badge__primary" style="color:#{color}">Network ready</div>
+            <div class="badge__secondary color-white">{launch}</div>
           </div>
-        </li> !}
+        </li>
       </ul>
     </div>
   </nav>
@@ -73,6 +73,13 @@
         <div class="bdb bd-tint mb"><h1 class="fm mb">{name}</h1></div>
 
         <p class="medium mb" style="#{color}">{@soberMarkdown}{overview}{/soberMarkdown}</p>
+
+        <div class="mb--x2 bl-hide">
+          <div class="badge fm small inline-block vam">
+            <div class="bg-white color-dark badge__primary">Network ready</div>
+            <div class="badge__secondary">{launch}</div>
+          </div>
+        </div>
 
         <div class="product__features">
           <div class="list--feat normal mb">

@@ -12,55 +12,146 @@
   nav.subnav a:after {
     background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, #ffffff 100%);
   }
-</style>
+
+  @media (max-width: 800px) {
+    .inline-files {
+      display: inline-block;
+      width: 45%;
+      margin-top: 30px;
+    }
+  }
+  @media (min-width: 800px) {
+    .logo {
+      margin: 0 60px;
+    }
+  }
 </style>
 
 <nav class="subnav cf fm">
   <div class="cnt">
-    <ul class="col w-2-3">
+    <ul>
       <li><a href="/{lang}/roadmap">Roadmap</a></li>
-      {?install}<li><a href="{install}">Install guide</a></li>{/install}
-      {?npm}<li><a href="https://www.npmjs.com/package/@dadi/{slug}" onclick="ga('send','event','NPM','Click','Product');">Install with NPM</a></li>{/npm}
       {?github}<li><a href="https://github.com/dadi/{slug}" onclick="ga('send','event','Github','Click','Product');">View source on GitHub</a></li>{/github}
       {?demo}<li><a href="{demo}">View demo</a></li>{/demo}
-      {! <li class="nav--right" style="padding-top:21px">
-        <div class="badge color-white">
-          <div class="badge__primary bg-white " style="color:#{color}">Latest release</div>
-          <div class="badge__secondary">Version 2.0.3</div>
+      <li class="nav--right bs-hide">
+        <div class="badge badge--dapp-header fm small inline-block vam">
+          <div class="bg-white badge__primary" style="color:#{color}">Network ready</div>
+          <div class="badge__secondary color-white">Now</div>
         </div>
-      </li> !}
+      </li>
     </ul>
-    <div class="col w-1-3 tar">
-      <div class="badge fm small inline-block vam" style="border-color:#fff;margin:23px 0 0 0">
-        <div class="bg-white badge__primary" style="color:#{color}">Network ready</div>
-        <div class="badge__secondary color-white">Now</div>
-      </div>
-    </div> 
   </div>
 </nav>
 
-<div class="bds pb pt--x2" style="background:url(/assets/img/bg-dapp.png) no-repeat 50% 0;background-size: 1000px auto;">
-  <div class="mb mt--x2 pt pb--x2 tac bdb bd-grey">
-    <img src="/assets/products/dadi-cdn-full.png" width="260">
+<main class="mb">
+  <div class="bds pb pt--x2" style="background:url(/assets/img/bg-dapp.png) no-repeat 50% 0;background-size: 1000px auto;">  
+      <div class="cnt cf">
+        <div class="mb--x2 mt--x2 pt tac ">
+          <div class="cf">
+            <img src="/assets/img/cdn-illo-1.svg" width="210" class="bs-hide">
+        
+            <img src="/assets/products/dadi-cdn-full.png" width="290" alt="DADI CDN" class="logo">
+       
+            <img src="/assets/img/cdn-illo-1.svg" width="210" class="bl-hide inline-files" style="margin-right: 30px">
+
+            <img src="/assets/img/cdn-illo-2.svg" class="inline-files" width="210">
+          </div> 
+          <div class="pt--x2" style="max-width:600px;margin:0 auto">
+            <div class="bl-hide">
+              <div class="badge fm small vam mt">
+                <div class="bg-dark color-white badge__primary">Network ready</div>
+                <div class="badge__secondary">Now</div>
+              </div>
+            </div>
+
+            <h1 class="mt--x2">Fast and cost-efficient content delivery powered by the new internet.</h1>
+            <p class="normal color-tint">A just-in-time asset manipulation and delivery layer designed as a modern, global content distribution solution.</p> 
+          </div>
+       </div>
+    </div>
   </div>
 
-  {! style="background-image: url(https://cdn.dadi.cloud/media/2018/05/17/dadi-cdn.png?h=900);background-repeat: no-repeat; background-position: 92% 140%;background-size: auto 450px;" !}
-
-  <div class="cnt cf">
-    <div class="grid">
-      <div class="col w-1-2">       
-        <h1 class="mb">Fast and cost-efficient content delivery powered by the new internet.</h1>
-        <p class="medium mb--x2">A just-in-time asset manipulation and delivery layer designed as a modern, global content distribution solution.</p> 
-      </div>
-      <div class="col w-1-2">
-        <div class="list--feat list--feat-dark medium mb">
-          <ul>
-            <li>Dynamically generate images for responsive design and mobile devices</li>
-            <li>Extensive set of image enhancement and transformation tools</li>
-            <li>Image format conversion</li>
-          </ul>
+  <div class="bg-tint">
+    <div class="cnt cf pt--x2 pb">
+      <div class="grid tac">
+        <div class="col w-1-3 mb">
+          <img src="/assets/icons/tabs.svg" class="mb" width="45" alt="Scale">
+          <p class="medium">Generate images for responsive layouts and different devices</p>
+        </div>
+        <div class="col w-1-3 mb">
+          <img src="/assets/icons/crop.svg" class="mb" width="45" alt="Crop">
+          <p class="medium">Extensive set of image enhancement and transformation tools</p>
+        </div>
+        <div class="col w-1-3 mb">
+          <img src="/assets/icons/swap.svg" class="mb" width="45" alt="Convert">
+          <p class="medium">Easily convert between image formats on the fly</p>
         </div>
       </div>
     </div>
   </div>
-</div>
+
+  <div class="bdb bd-grey pt">
+    <div class="cnt">
+      <div class="grid mb--x2" id="stickContainer">
+        <div class="col w-1-2">
+          <div id="stick" data-topspace="10">
+            <div class="hdr fm ttu mb">
+              <h3><span>What is {name}?</span></h3>
+            </div>
+
+            <div class="read normal">
+              {@markdown}{description}{/markdown}
+            </div>
+
+            {#image}
+              <div class="mt img img--16-10">
+                <img src="{global.cdn.publicUrl}{path}?ratio=16-10&resize=fill&w=1024&q=50" class="fill block" alt="Screenshot of product">
+              </div>
+
+              <p class="color-tint small tac" style="margin-top:10px">{image-caption}</p>
+            {/image}
+          </div>
+        </div>
+        <div class="col w-1-2" id="features" name="features">
+          <div class="hdr fm ttu mb">
+            <h3><span>Full features</span></h3>
+          </div>
+
+          <div class="read normal web-service__features">
+            {@markdown}{features}{/markdown}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {>"partials/mailing-list" /}
+
+  <div class="bg-tint pt pb mb bt bdb bdt bd-grey">
+    <div class="cnt">
+      <div class="hdr fm ttu mb">
+        <h3><span>Latest articles</span></h3>
+      </div>
+
+      <div class="cols cols--4">
+        {#web-service-articles.results}
+          {>"partials/articles/list" size="normal" /}
+        {:else}
+          <div class="col w-1-1 tac"><p>No articles yet.</p></div>
+        {/web-service-articles.results}
+      </div>
+    </div>
+  </div>
+
+  <div class="cnt">
+    <div class="hdr fm ttu mb">
+      <h3><span>All web services</span></h3>
+    </div>
+              
+    <div class="cols cols--4">
+      {#web-services.results:web-services lang=lang global=global}
+        {>"partials/web-services/list"/}
+      {/web-services.results}
+    </div>
+  </div>
+</main>

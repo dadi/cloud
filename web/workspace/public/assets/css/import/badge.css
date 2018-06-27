@@ -18,3 +18,14 @@
   position: absolute;
   top: 30px; right: 0;
 }
+
+.badge--dapp-header {
+  border-color: #fff;
+  margin: 0 auto;
+}
+
+@media (--bl) {
+  .badge--dapp-header {
+    margin: 23px 0 0 0;
+  }
+}
