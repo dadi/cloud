@@ -81,7 +81,8 @@
       }
     },
     "launch": {
-      "type": "String",
+      "type": "DateTime",
+      "format": "unix",
       "required": false,
       "label": "Launch date",
       "publish": {
