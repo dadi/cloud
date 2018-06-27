@@ -14,10 +14,11 @@
       "install": 1,
       "github": 1,
       "published": 1,
-      "icon": 1
+      "icon": 1,
+      "launch": 1
     },
     "sort": {
-      "launch": -1
+      "launchOrder": 1
     }
   }
 }

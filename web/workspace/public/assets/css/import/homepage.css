@@ -85,7 +85,7 @@
 
   .intro__about {
     min-width: auto;
-    width: auto;
+    width: auto !important;
   }
 }
 
