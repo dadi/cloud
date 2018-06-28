@@ -170,9 +170,9 @@
 
       <div class="box box--small col bd bd-white bg-tint mb">
         <a href="/{lang}/contact" class="box__inner">
-          <h2 class="fm fwn normal">Want to host on our network?</h2>
+          <h2 class="fm fwn normal">Want to build a dApp for the DADI network?</h2>
 
-          <p class="mb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.</p>
+          <p class="mb">We're building out our marketplace with many more DADI dApps but will in time open up to applications from other organisations. If you have an idea for a dApp, get in touch.</p>
         </a>
 
         <div class="box__footer">
