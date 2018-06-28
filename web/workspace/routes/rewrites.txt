@@ -1,1 +1,1 @@
-\/network/? / [R=302,L]
+\/network\/?$ / [R=302,L]
