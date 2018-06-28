@@ -61,3 +61,25 @@
     opacity: 1;
   }
 }
+
+@keyframes blink {
+  50% {
+    opacity: 0.2
+  }
+}
+
+@keyframes pulse {
+  0% {
+    stroke: rgba(14,204,95,0.5);
+    stroke-width: 0;
+  }
+  70% {
+    stroke: rgba(14,204,95,0);
+    stroke-width: 30;
+  }
+  100% {
+    stroke: rgba(14,204,95,0);
+    stroke-width: 0;
+  }
+}
+

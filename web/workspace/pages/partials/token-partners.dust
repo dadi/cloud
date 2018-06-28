@@ -1,22 +1,20 @@
-<div class="grid">
-  <div class="col w-1-4">
-    <a style="height: 100px;line-height:99px" href="https://www.bitfinex.com/" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
-      <img width="180" class="vam" src="/assets/logos/bitfinex.png" alt="Bitfinex">
-    </a>
-  </div>
-  <div class="col w-1-4">
-    <a style="height: 100px;line-height:100px" href="https://okex.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
-      <img width="120" class="vam" src="/assets/logos/okex.png" alt="OKEx">
-    </a>
-  </div>
-  <div class="col w-1-4">
-    <a style="height: 100px;line-height:100px" href="https://kucoin.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
-      <img width="120" class="vam" src="/assets/logos/kucoin.svg" alt="KuCoin">
-    </a>
-  </div>
-  <div class="col w-1-4">
-    <a style="height: 100px;line-height:92px" href="https://hitbtc.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
-      <img width="120" class="vam" src="/assets/logos/hitbtc.png" alt="HitBTC">
-    </a>
-  </div>
+<div class="col w-1-{col}">
+  <a style="height: 100px;line-height:99px" href="https://www.bitfinex.com/" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+    <img width="180" class="vam" src="/assets/logos/bitfinex.png" alt="Bitfinex">
+  </a>
+</div>
+<div class="col w-1-{col}">
+  <a style="height: 100px;line-height:100px" href="https://okex.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+    <img width="120" class="vam" src="/assets/logos/okex.png" alt="OKEx">
+  </a>
+</div>
+<div class="col w-1-{col}">
+  <a style="height: 100px;line-height:100px" href="https://kucoin.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+    <img width="120" class="vam" src="/assets/logos/kucoin.svg" alt="KuCoin">
+  </a>
+</div>
+<div class="col w-1-{col}">
+  <a style="height: 100px;line-height:92px" href="https://hitbtc.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+    <img width="120" class="vam" src="/assets/logos/hitbtc.png" alt="HitBTC">
+  </a>
 </div>

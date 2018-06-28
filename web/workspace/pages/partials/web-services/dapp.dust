@@ -1,0 +1,184 @@
+<style type="text/css">
+  .subnav {
+    background: #{color};
+  }
+  nav.subnav a:hover,
+  nav.subnav a {
+    color: #fff;
+  } 
+  nav.subnav .active:after, nav.subnav a:hover:after {
+    background: #fff;
+  } 
+  nav.subnav a:after {
+    background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, #ffffff 100%);
+  }
+
+  @media (max-width: 800px) {
+    .inline-files {
+      display: inline-block;
+      width: 45%;
+      margin-top: 30px;
+    }
+  }
+  @media (min-width: 800px) {
+    .logo {
+      margin: 0 60px;
+    }
+  }
+</style>
+
+<nav class="subnav cf fm">
+  <div class="cnt">
+    <ul>
+      <li><a href="/{lang}/roadmap">Roadmap</a></li>
+      {?github}<li><a href="https://github.com/dadi/{slug}" onclick="ga('send','event','Github','Click','Product');">View source on GitHub</a></li>{/github}
+      {?demo}<li><a href="{demo}">View demo</a></li>{/demo}
+      <li class="nav--right bs-hide">
+        <div class="badge badge--dapp-header fm small inline-block vam">
+          <div class="bg-white badge__primary" style="color:#{color}">Network ready</div>
+          <div class="badge__secondary color-white">Now</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main class="mb">
+  <div class="bds pb pt--x2" style="background:url(/assets/img/bg-dapp.png) no-repeat 50% 0;background-size: 1000px auto;">  
+      <div class="cnt cf">
+        <div class="pt tac" style="margin: 7% 0">
+          <div class="cf">
+            <img src="/assets/img/cdn-illo-1.svg" width="210" class="bs-hide">
+        
+            <img src="/assets/products/dadi-cdn-full.png" width="290" alt="DADI CDN" class="logo">
+       
+            <img src="/assets/img/cdn-illo-1.svg" width="210" class="bl-hide inline-files" style="margin-right: 30px">
+
+            <img src="/assets/img/cdn-illo-2.svg" class="inline-files" width="210">
+          </div> 
+          <div class="pt--x2" style="max-width:600px;margin:0 auto">
+            <div class="bl-hide">
+              <div class="badge fm small vam mt">
+                <div class="bg-dark color-white badge__primary">Network ready</div>
+                <div class="badge__secondary">Now</div>
+              </div>
+            </div>
+
+            <h1 class="mt--x2">Fast and cost-efficient content delivery powered by the new internet.</h1>
+            <p class="normal color-tint">A just-in-time asset manipulation and delivery layer designed as a modern, global content distribution solution.</p> 
+          </div>
+       </div>
+    </div>
+  </div>
+
+  <div class="bg-tint">
+    <div class="cnt tac pt pb--x2">
+      <div class="grid bdb bd-grey">
+        <div class="col w-1-2 pt--x2">
+          <p class="large fwb" style="margin-top:20%;margin-bottom:10px">Cache anything at the edge</p>
+          <p class="normal colour-tint">Converted images are cached, providing faster delivery on subsequent requests.</p>
+        </div>
+        <div class="col w-1-2">
+          <img src="/assets/img/cdn-illo-cache.svg" class="fill">
+        </div>
+      </div>
+
+      <div class="grid bdb bd-grey">
+        <div class="col col--right w-1-2 pt--x2">
+          <p class="large fwb" style="margin-top:20%;margin-bottom:10px">Deliver at scale</p>
+          <p class="normal colour-tint">Let CDN choose the best transformations based on device, network, location or language.</p>
+        </div>
+        <div class="col w-1-2">
+          <img src="/assets/img/cdn-illo-scale.svg" class="fill">
+        </div>
+      </div>
+
+      <div class="grid bdb bd-grey">
+        <div class="col w-1-2 pt--x2">
+          <p class="large fwb" style="margin-top:20%;margin-bottom:10px">Enhance performance</p>
+          <p class="normal colour-tint">No need to maintain multiple sizes of each image you upload into an article - CDN generates new variations from a single master image.</p>
+        </div>
+        <div class="col w-1-2">
+          <img src="/assets/img/cdn-illo-performance.svg" class="fill">
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="col col--right w-1-2 pt--x2">
+          <p class="large fwb" style="margin-top:20%;margin-bottom:10px">Lower costs</p>
+          <p class="normal colour-tint">No need to maintain multiple sizes of each image you upload into an article - CDN generates new variations from a single master image.</p>
+        </div>
+        <div class="col w-1-2">
+          <img src="/assets/img/cdn-illo-costs.svg" class="fill">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bdb bd-grey pt">
+    <div class="cnt">
+      <div class="grid mb--x2">
+        <div class="col w-1-2">
+          <div id="stick" data-topspace="10">
+            <div class="hdr fm ttu mb">
+              <h3><span>What is {name}?</span></h3>
+            </div>
+
+            <div class="read normal">
+              {@markdown}{description}{/markdown}
+            </div>
+          </div>
+        </div>
+        <div class="col w-1-2">
+          {#image}
+            <div class="mt img img--16-10">
+              <img src="{global.cdn.publicUrl}{path}?ratio=16-10&resize=fill&w=1024&q=50" class="fill block" alt="Screenshot of product">
+            </div>
+
+            <p class="color-tint small tac" style="margin-top:10px">{image-caption}</p>
+          {/image}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-tint pt pb mb bdb bd-grey">
+    <div class="cnt">
+      <div class="hdr fm ttu mb">
+        <h3><span>Latest articles</span></h3>
+      </div>
+
+      <div class="cols cols--4">
+        {#web-service-articles.results}
+          {>"partials/articles/list" size="normal" /}
+        {:else}
+          <div class="col w-1-1 tac"><p>No articles yet.</p></div>
+        {/web-service-articles.results}
+      </div>
+    </div>
+  </div>
+
+  <div class="cnt">
+    <div class="hdr fm ttu mb">
+      <h3><span>All dapps</span></h3>
+    </div>
+              
+    <div class="cols cols--4">
+      {#web-services.results:web-services lang=lang global=global}
+        {>"partials/web-services/list"/}
+      {/web-services.results}
+
+      <div class="box box--small col bd bd-white bg-tint mb">
+        <a href="/{lang}/contact" class="box__inner">
+          <h2 class="fm fwn normal">Want to build a dApp for the DADI network?</h2>
+
+          <p class="mb">We're building out our marketplace with many more DADI dApps but will in time open up to applications from other organisations. If you have an idea for a dApp, get in touch.</p>
+        </a>
+
+        <div class="box__footer">
+          <a href="/{lang}/contact" class="box__cta small fm color-tint">Contact us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -27,7 +27,7 @@
       <div class="col w-1-4 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Sitemap</span></h3></div>
         <ul class="grid bs-grid">
-          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/network/">Network</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/marketplace/">Marketplace</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/roadmap/">Roadmap</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/community/">Community</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/token/">Token</a></li>

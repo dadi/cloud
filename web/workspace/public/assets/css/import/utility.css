@@ -17,6 +17,7 @@
 .pb                         { padding-bottom: var(--space) }
 .pb--x2                     { padding-bottom: calc(var(--space) * 2) }
 .pr--x2                     { padding-right: calc(var(--space) * 2) }
+.pl--x2                     { padding-left: calc(var(--space) * 2) }
 .pt--x2                     { padding-top: calc(var(--space) * 2) }
 
 @media (--bs) {
@@ -37,6 +38,7 @@
 .small                      { font-size: 0.85rem }
 .normal                     { font-size: 1.15rem; line-height: 1.8rem; }
 .medium                     { font-size: 1.5rem; line-height: 1.9rem; }
+.large                      { font-size: 1.8rem; line-height: 2.6rem; }
 
 .tac                        { text-align: center }
 .tar                        { text-align: right }
@@ -82,6 +84,7 @@
 
 .fill                       { width: 100%; height: auto }
 .block                      { display: block; }
+.inline-block               { display: inline-block; }
 
 /* Misc */
 

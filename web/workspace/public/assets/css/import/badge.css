@@ -3,9 +3,29 @@
   display: inline-block;
   white-space: nowrap;
   margin-bottom: 1.3rem;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .badge__primary,
 .badge__secondary {
   display: inline-block;
   padding: 3px 10px;
+}
+
+.badge--dapp {
+  border: none;
+  position: absolute;
+  top: 30px; right: 0;
+}
+
+.badge--dapp-header {
+  border-color: #fff;
+  margin: 0 auto;
+}
+
+@media (--bl) {
+  .badge--dapp-header {
+    margin: 23px 0 0 0;
+  }
 }

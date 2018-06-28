@@ -3,7 +3,7 @@
 {<head}
   <style type="text/css">
   header {
-    background: url(/assets/network/dadi-network_host-colour.svg) no-repeat 95% 90px;
+    background: url(/assets/network/dadi-network_host-colour.svg) no-repeat 95% 20px;
     background-size: auto 480px;
     min-height: auto;
     min-height: calc(100vh - 230px);
@@ -42,8 +42,8 @@
 
 {>"partials/nav" /}
 
-<header class="bg-dark mb--x2 cf">
-  <nav class="subnav bg-green cf fm">
+<header class="bg-dark mb--x2 cf bdt bd-tint">
+ {!  <nav class="subnav bg-green cf fm">
     <div class="cnt">
       <ul>
         <li><a href="/{lang}/network/#how">How it works</a></li>
@@ -51,7 +51,7 @@
         <li><a class="active" href="/{lang}/network/masternodes">Contribute</a></li>
       </ul>
     </div>
-  </nav>
+  </nav> !}
 
   <div class="cnt cf color-white pt--x2">
     <div class="grid">
@@ -78,7 +78,9 @@
   </div>
   <div class="bg-white pt bds token-partners">
     <div class="cnt">
-      {>"partials/token-partners"/}
+      <div class="grid">
+        {>"partials/token-partners" col="4" /}
+      </div>
     </div>
   </div>
 </header>

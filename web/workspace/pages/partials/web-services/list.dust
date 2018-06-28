@@ -1,5 +1,8 @@
 <div class="box box--small col bd bd-grey mb" style="border-top: 1px solid #{color}">
   <{?github}a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}"{:else}div{/github} class="box__inner">
+    <div class="badge badge--dapp fm small bg-tint color-tint">
+      <div class="badge__secondary">{?launch}{launch}{:else}Network ready{/launch}</div>
+    </div>
     <div class="mb">
       <img src="{global.cdn.publicUrl}{icon[0].path}?h=80" alt="Icon for DADI {name}" height="40">
     </div>
