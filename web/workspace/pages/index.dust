@@ -20,7 +20,7 @@
   {>"partials/network-stats"/}
 </header>
 
-<main class="mb--x2" id="homeMain">
+<main id="homeMain">
   <div class="bds pt"> 
     <div class="cnt">
       <div class="grid cf pb">
@@ -74,7 +74,7 @@
     <div class="cnt">
       <div class="cf">
         <div class="col w-1-6 bs-w-1-1">
-          <h3 class="mb fm fwn pt vam color-tint">Trusted by…</h3>
+          <h3 class="mb fm fwn vam color-tint" style="padding-top: 18px">Our technology is used by…</h3>
         </div>
         <div class="col w-1-6 bs-w-1-5">
           <img class="fill" src="/assets/clients/logo-whatcar.png" alt="WhatCar?">
@@ -129,17 +129,17 @@
       <h3><span><a href="https://twitter.com/dadi" target="_blank">Follow us on Twitter @DADI</a></span></h3>
     </div>
 
-    <div class="cols cols--4 vs-">
+    <div class="cols cols--4 mb">
       {#tweets}
         {>"partials/tweet" /}
       {/tweets}
     </div>
   </div>
-</main>
 
-<div class="bdt bd-grey">
-  {>"partials/mailing-list" /}
-</div>
+  <div class="bdt bd-grey">
+    {>"partials/mailing-list" /}
+  </div>
+</main>
 
 {>"partials/video"/}
 
