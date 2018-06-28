@@ -31,7 +31,7 @@
         <a 
           {@eq key="{page.key}" value="contribute"}class="active"{/eq}
           href="/{lang}/contribute">
-          Contribute to network
+          Contribute to the network
         </a>
       </li>
 
