@@ -6,6 +6,7 @@
   <div class="network animation fade-in">
     {>"partials/network-map"/}
   </div>
+  
   <div class="intro__about animation fade-in fm">
     <h1><img src="/assets/img/dadi-logo-dark.svg" alt="DADI"></h1>
     <h2 style="color:#8a939d">Fast, scalable, secure and inexpensive web services.</h2>
@@ -15,7 +16,8 @@
       ► Watch the introduction
     </a>
   </div>
-  <div class="network-stats fm"><div style="margin-right:20px" class="bg-white badge small"><div class="badge__primary bg-white">MAINNET STATUS</div></div><div class="bg-white badge color-white small"><div class="badge__primary color-tint">Response</div><div class="badge__secondary color-dark" id="average_response">0</div></div><div class="bg-white badge color-white small"><div class="badge__primary color-tint">Requests</div><div class="badge__secondary color-dark" id="concurrent_requests">0</div></div></div>
+  
+  {>"partials/network-stats"/}
 </header>
 
 <main class="mb--x2" id="homeMain">
@@ -44,16 +46,20 @@
         </div>
       </div>
 
-
-      <div class="pt pb bdt bd-grey">
-        <div class="grid tac">
-          <div class="col w-1-2 mb">
+      <div class="ptpb bdt bd-grey pb">
+        <div class="grid">
+          <div class="col w-1-3 pt--x2">
+            <h2 class="medium">What makes DADI different?</h2>
+            <p class="normal">74% of the cloud computing market is now controlled by just four tech companies: Microsoft, Amazon, IBM and Google.</p>
+            <p class="normal">In contrast, DADI is owned and run by everyone. It’s a fundamentally different proposition.</p>
+          </div>
+          <div class="col w-1-3 mb tac">
             <img src="/assets/img/explainer-part1.svg" alt="Traditional services">
             
-            <h2 style="margin-bottom:5px" class="medium">Centralized Cloud Services</h2>
+            <h2 style="margin-bottom:5px" class="mt medium">Centralized Cloud Services</h2>
             <p class="color-tint fm small">The old way</p>
           </div>
-          <div class="col w-1-2 mb">
+          <div class="col w-1-3 mb tac pt">
             <img src="/assets/img/explainer-part2.svg" alt="The DADI Network">
 
             <h2 style="margin-bottom:5px" class="medium color-blue">Decentralized Cloud</h2>
@@ -114,7 +120,7 @@
 
   <div class="cnt pt">
     <div class="hdr fm ttu mb">
-      <h3><span>Decentralized apps</span></h3>
+      <h3><span>aApp Marketplace</span></h3>
     </div>
               
     <div class="cols cols--4 bs-cols--2">
