@@ -19,7 +19,7 @@
   "routes": [
     {
       "path": "/:lang/:product",
-      "fetch": "web-services"
+      "fetch": "web-service"
     }
   ]
 } 

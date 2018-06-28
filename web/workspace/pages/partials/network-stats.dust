@@ -1,0 +1,97 @@
+<div class="network-stats fm">
+  <div class="bg-white badge color-white small">
+    <div class="badge__primary color-tint">
+      Hosts
+    </div>
+    <div class="badge__secondary color-dark" id="host_count">
+      0
+    </div>
+  </div>
+  <div class="bg-white badge color-white small">
+    <div class="badge__primary color-tint">
+      Response time
+    </div>
+    <div class="badge__secondary color-dark" id="average_response">
+      0
+    </div>
+  </div>
+  <div class="color-white pl badge small">
+    <div class="badge__secondary bg-tint color-dark">
+      MAINNET
+    </div>
+    <div class="bg-green badge__primary bg-white">
+      Online <span class="blink animation dot"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+window.addSocketListener = function (event, callback) {
+  var connection = new WebSocket('{global.networkMonitor.publicUrl|s}/' + event);
+
+  connection.onopen = function () {
+    
+  };
+
+  connection.onmessage = function (e) {
+    callback(e.data);
+  };
+}
+
+window.pulseNode = function (data) {
+  var existingLayer = document.getElementById(data);
+
+  if (existingLayer) {
+    window.animateMarker(existingLayer);
+  }
+}
+
+window.addHostToMap = function (host) {
+  if (!host.geo) return;
+
+  L.marker([host.geo.latitude, host.geo.longitude], {
+    icon: L.divIcon({
+      className: '',
+      html: '<div id="' + host.id + '" class="dadiNode"></div>'
+    }),
+  }).addTo(map);
+}
+
+window.animateMarker = function (geo) {
+  if (!geo.classList.contains('dadiNode--pulse')) {
+    geo.classList.add('dadiNode--pulse');
+    setTimeout(function () {
+      geo.classList.remove('dadiNode--pulse');
+    }, 2000);
+  }
+}
+
+window.clearHosts = function () {
+  document.querySelectorAll('.dadiNode').forEach(function(node) {
+    node.parentNode.removeChild(node);
+  });
+}
+
+window.addSocketListener('monitor.hosts', function (data) {
+  var hosts = JSON.parse(data);
+  document.getElementById('host_count').innerHTML = hosts.length;
+
+  window.clearHosts();
+
+  hosts.forEach(function (host) {
+    window.addHostToMap(host);
+  })
+});
+
+window.addSocketListener('gateway.queue.size', function (data) {
+  document.getElementById('concurrent_requests').innerHTML = data.toString();
+});
+
+window.addSocketListener('monitor.average_response_time', function (data) {
+  document.getElementById('average_response').innerHTML = data.toString();
+});
+
+window.addSocketListener('gateway.grpc.write_payload.dequeue', function (data) {
+  window.pulseNode(data);
+});
+</script>

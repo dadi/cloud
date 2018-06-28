@@ -1,11 +1,11 @@
 {
   "page": {
-    "key": "partners"
+    "key": "contribute"
   },
   "datasources": [
     "pages",
     "web-services",
-    "partners"
+    "countries"
   ],
   "events": [
     "i18n",
@@ -13,7 +13,7 @@
   ],
   "routes": [
     {
-      "path": "/:lang/partners"
+      "path": "/:lang/contribute"
     }
   ]
 }

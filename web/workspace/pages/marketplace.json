@@ -1,10 +1,10 @@
 {
   "page": {
-    "key": "network"
+    "key": "marketplace"
   },
   "datasources": [
-    "pages",
     "articles",
+    "pages",
     "web-services",
     "countries"
   ],
@@ -14,7 +14,7 @@
   ],
   "routes": [
     {
-      "path": "/:lang/network"
+      "path": "/:lang/marketplace"
     }
   ]
 }
