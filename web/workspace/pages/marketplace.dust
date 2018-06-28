@@ -2,16 +2,16 @@
 
 {>"partials/nav"/}
 
-<header class="pt--x2 pb--x2 cf ovfh">
+<header class="bg-dark color-white pt--x2 pb--x2 cf ovfh bdt bd-tint">
   <div class="cnt cf">
-    <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
+    <img src="/assets/icons/white/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
     <h1>{pages.results[0].title}</h1>
     <p class="normal ll">{pages.results[0].excerpt}</p>
   </div>
 </header>
 
 <main>
-  {>"partials/cdn-promo" /}
+  {>"partials/cdn-promo" isHeader="false" /}
 
   <div class="cnt mb pt pb">
     <div class="hdr fm ttu mb">
@@ -24,7 +24,7 @@
       {/web-services.results}
 
       <div class="box box--small col bd bd-white bg-tint mb">
-        <a href="https://www.agorai.ai/" class="box__inner">
+        <a href="/{lang}/contact" class="box__inner">
           <h2 class="fm fwn normal">Want to host on our network?</h2>
 
           <p class="mb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.</p>

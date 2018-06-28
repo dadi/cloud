@@ -123,6 +123,18 @@
       {#web-services.results}
         {>"partials/web-services/list"/}
       {/web-services.results}
+
+      <div class="box box--small col bd bd-white bg-tint mb">
+        <a href="/{lang}/contact" class="box__inner">
+          <h2 class="fm fwn normal">Want to host on our network?</h2>
+
+          <p class="mb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.</p>
+        </a>
+
+        <div class="box__footer">
+          <a href="/{lang}/contact" class="box__cta small fm color-tint">Contact us</a>
+        </div>
+      </div>
     </div>
 
     <div class="hdr fm ttu mb">
