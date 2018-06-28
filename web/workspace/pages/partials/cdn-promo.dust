@@ -1,0 +1,14 @@
+<div class="cdn-promo bg-tint bds pb pt--x2 {^isHeader}bdt{/isHeader} bdb bd-grey">
+  <div class="cnt cf">
+    <div class="col w-2-3">
+      <div class="bdb bd-grey mb pb">
+        <img src="/assets/products/dadi-cdn-full.png" width="180">
+      </div>
+     
+      <h2 class="medium">Introducing our first network-ready app</h2>
+      <p class="medium mb">A decentralized application that makes websites, APIs, ecommerce stores, mobile applications and SaaS platforms faster and more secure</p>
+
+      <a href="/{lang}/cdn" class="btn btn--cdn mb">More about CDN</a>
+    </div>
+  </div>
+</div>

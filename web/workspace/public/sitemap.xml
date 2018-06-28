@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">      
+<url>
+  <loc>https://dadi.cloud/</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://dadi.cloud/en"/>
+</url>
+<url>
+  <loc>https://dadi.cloud/api</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://dadi.cloud/en/api"/>
+</url>
+<url>
+  <loc>https://dadi.cloud/web</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://dadi.cloud/en/web"/>
+</url>
+<url>
+  <loc>https://dadi.cloud/cdn</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://dadi.cloud/en/cdn"/>
+</url>
+<url>
+  <loc>https://dadi.cloud/publish</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://dadi.cloud/en/publish"/>
+</url>
+<url>
+  <loc>https://dadi.cloud/network</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://dadi.cloud/en/network"/>
+</url>
+<url>
+  <loc>https://dadi.cloud/roadmap</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://dadi.cloud/en/roadmap"/>
+</url>
+<url>
+  <loc>https://dadi.cloud/community</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://dadi.cloud/en/community"/>
+</url>
+<url>
+  <loc>https://dadi.cloud/community</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://dadi.cloud/en/community"/>
+</url>
+<url>
+  <loc>https://dadi.cloud/tutorials</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://dadi.cloud/en/tutorials"/>
+</url>
+<url>
+  <loc>https://dadi.cloud/knowledge</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://dadi.cloud/en/knowledge"/>
+</url>
+<url>
+  <loc>https://dadi.cloud/token</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://dadi.cloud/en/token"/>
+</url>
+<url>
+  <loc>https://dadi.cloud/careers</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://dadi.cloud/en/careers"/>
+</url>
+<url>
+  <loc>https://dadi.cloud/culture</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://dadi.cloud/en/culture"/>
+</url>
+<url>
+  <loc>https://dadi.cloud/team</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://dadi.cloud/en/team"/>
+</url>
+<url>
+  <loc>https://dadi.cloud/contact</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://dadi.cloud/en/contact"/>
+</url>
+<url>
+  <loc>https://dadi.cloud/privacy</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://dadi.cloud/en/privacy"/>
+</url>
+</urlset>    

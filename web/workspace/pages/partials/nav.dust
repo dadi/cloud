@@ -15,14 +15,9 @@
       {/eq}
       <li>
         <a 
-          {@eq key="{page.key}" value="network"}class="active"{/eq}
-          href="/{lang}/network">
-          Network
-        </a>
-      </li>
-      <li>
-        <a 
-          class="trigger-contextual {@eq key="{page.key}" value="web-services"}active{/eq}" href="#web-services">Web services
+          {@eq key="{page.key}" value="marketplace"}class="active"{/eq}
+          href="/marketplace">
+          dApp Marketplace
         </a>
       </li>
       <li>
@@ -30,6 +25,13 @@
           {@eq key="{page.key}" value="community"}class="active"{/eq}
           href="/{lang}/community">
           Community
+        </a>
+      </li>
+      <li>
+        <a 
+          {@eq key="{page.key}" value="contribute"}class="active"{/eq}
+          href="/{lang}/contribute">
+          Contribute to the network
         </a>
       </li>
 
@@ -43,16 +45,5 @@
         <a href="https://t.me/dadichat" title="Telegram" target="_blank" rel="noopener"><img alt="Telegram logo" src="/assets/social/telegram.svg" height="24"></a>
       </li>
     </ul>
-  </div>
-
-  <div class="subnav slide-toggle hide animation fm" id="web-services">
-    <div class="cnt">
-      <ul>
-        {#web-services.results}
-          {?github}
-          <li><a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}"><img src="{global.cdn.publicUrl}{icon[0].path}?h=36" alt="Icon for DADI {name}" height="18" class="vam"> {name}</a></li>{/github}
-        {/web-services.results}
-      </ul>
-    </div>
   </div>
 </nav>

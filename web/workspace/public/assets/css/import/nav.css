@@ -3,7 +3,7 @@ nav {
   position: relative;
   top: 0; left: 0; right: 0;
   background-color: #070f1b;
-  box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
+  box-shadow: 0 0 10px rgba(4, 17, 29, 0.35);
   font-size: 0.9rem;
 }
 nav .inner-wrapper-sticky {
@@ -130,8 +130,14 @@ nav .nav__docs a:hover:after {
   background: #fff;
 }
 
-@media handheld, only screen and (max-width: 1030px) {
+@media handheld, only screen and (max-width: 1110px) {
   nav .nav__docs {
+    display: none;
+  }
+}
+
+@media handheld, only screen and (max-width: 930px) {
+  nav .nav__social {
     display: none;
   }
 }

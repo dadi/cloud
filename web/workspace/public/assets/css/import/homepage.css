@@ -2,10 +2,10 @@
   height: 100px;
   height: calc(100vh-70px);
   position: relative;
-  background: #070f1b;
   background-size: auto 100%;
   z-index: 2;
   overflow: hidden;
+  background-color: #fff;
 }
 .intro__about h2:before {
   content: ' ';
@@ -19,7 +19,6 @@
   font-size: 1.5rem;
   line-height: 1.9rem;
   font-weight: normal;
-  color: #8A939D;
 }
 
 .intro__about {
@@ -33,15 +32,15 @@
 }
 
 .intro__about .btn {
-  color: #fff;
-  margin-top: 10px;
-  background: #0D1C32;
+  color: #04111d;
+  margin-top: 15px;
+  background: #f2f2f2;
   padding: 18px 17px;
   border: 0;
-  color: #fff;
 }
 .intro__about .btn:hover {
   background: var(--green);
+  color: #fff;
 }
 
 .intro video {
@@ -67,6 +66,9 @@
   .intro {
     height: 0px;
     padding-top: 56%;
+    background-image: url(/assets/img/bg-map-mobile.png);
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
   }
   #nav {
     height: 46px;
@@ -86,7 +88,7 @@
 
   .intro__about {
     min-width: auto;
-    width: auto;
+    width: auto !important;
   }
 }
 
@@ -127,5 +129,128 @@
     top: 44%;
     width: 110px;
     text-align: right;
+  }
+}
+
+
+/* White map overrides */
+
+#map path,
+#map circle {
+  fill: #ddd;
+  transition: fill .4s ease;
+}
+#map path.active {
+  fill: #0ecc5f;
+}
+#map path.pulse {
+  fill: #0ecc5f;
+  stroke: 0px;
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-direction: both;
+}
+#mapcaptionWrap {
+  position: relative;
+}
+#mapcaption {
+  position: absolute;
+  display: block;
+  color: #fff;
+  width: auto;
+  white-space: nowrap;
+  font-weight: bold;
+  background: #0ecc5f;
+  padding: 3px 6px;
+  font-size: 8px;
+  z-index: 1;
+  bottom: 100%; left: 2px;
+  margin-bottom: 8px;
+  box-shadow: 0 7px 7px rgba(0,0,0,0.2);
+  transform-origin: 0 100%;
+}
+#mapcaptionWrap.active {
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-direction: both;
+}
+#mapcaption:after {
+  width: 0; height: 0;
+  position: absolute;
+  top: 100%; left: 0;
+  display: block;
+  content: ' ';
+  z-index: -1;
+  margin-top: -5px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #0ecc5f;
+}
+.intro__about {
+  bottom: 8%;
+  width: 24%;
+}
+.intro__about h2:before {
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+.network #map {
+  height: 93% !important;
+  width: 86% !important;
+}
+
+.intro__about h2,
+.intro__about p {
+  font-size: 1rem;
+  line-height: 1.3rem;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 800px) {
+  .network-stats {
+    position:absolute;
+    top: 4%;
+    right: 30px;
+    z-index: 10
+  }
+  .network-stats .badge {
+    margin: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .network-stats .badge,.network-stats .badge__primary {
+    display:block
+  }
+}
+
+.network-notice {
+  position: absolute;
+  right: 30px;
+  top: 59%;
+  font-size: 0.7rem;
+  color: #8a939c;
+  transform: rotate(90deg);
+  transform-origin: 100% 100%;
+}
+
+@media (--bs) {
+  .network-notice {
+    display: none;
+  }
+}
+
+
+.cdn-promo {
+  background-image: url(https://cdn.dadi.cloud/media/2018/05/17/dadi-cdn.png?h=900);
+  background-repeat: no-repeat;
+  background-position: 92% 50px;
+  background-size: auto 450px;
+}
+
+@media (--bs) {
+  .cdn-promo {
+    padding-bottom: 170px;
+    background-position: 50% 420px;
   }
 }

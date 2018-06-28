@@ -3,23 +3,38 @@
 {>"partials/nav"/}
 
 {#articles.results}
-<header class="bg-tint mb--x2 pt--x2 pb cf bdb bd-grey">
-  <div class="cnt cf ll">
-    {>"partials/articles/taxonomy"/}
 
-    <h1>{title}</h1>
-    
-    <p class="normal mb color-tint">{@soberMarkdown}{excerpt|s}{/soberMarkdown}</p>
+<div itemscope itemtype="http://schema.org/{@eq key=category[0].slug value="tutorials"}TechArticle{:else}Article{/eq}">
+
+  <meta itemprop="mainEntityOfPage" content="{page.meta.canonical}"></meta>
+
+  {?page.meta.image}<meta itemprop="image" content="{page.meta.image}"></meta>{/page.meta.image}
+
+  <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="DADI"></meta>
+    <meta itemprop="url" content="{global.publicUrl}"></meta>
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="{global.publicUrl}/assets/img/dadi-logo-colour.png"></meta>
+    </div>
   </div>
-</header>
 
-<main class="pb--x2 cf cnt">
-  <div class="grid" id="stickContainer">
-    <aside id="stick" class="mb col col--nopad col--right w-1-4">
-      <div class="">
+  <header class="bg-tint mb--x2 pt--x2 pb cf bdb bd-grey">
+    <div class="cnt cf ll">
+      {>"partials/articles/taxonomy"/}
+
+      <h1 itemprop="headline">{title}</h1>
+      
+      <p class="normal mb color-tint" itemprop="description">{@soberMarkdown}{excerpt|s}{/soberMarkdown}</p>
+    </div>
+  </header>
+
+  <main class="pb--x2 cf cnt">
+    <div class="grid" id="stickContainer">
+      <aside id="stick" class="mb col col--nopad col--right w-1-4">
         <div class="block read pb">
           {?publishedAt}
-            <time class="color-tint" datetime="{@formatDate unix=publishedAt /}">
+            <meta itemprop="dateModified" content="{@formatDate unix=_lastModifiedAt /}"></meta>
+            <time itemprop="datePublished" class="color-tint" datetime="{@formatDate unix=publishedAt /}">
               {@formatDate unix=publishedAt format="DD MMMM YYYY HH:MM" /}
             </time>
           {/publishedAt}
@@ -36,7 +51,7 @@
                 <img src="{global.cdn.publicUrl}{author[0].image[0].path|u}?q=80&w=100" alt="Photo of {name}" style="margin-right:18px;float:left" width="55">
               {/author[0].image[0]}
 
-              <strong>{author[0].name}</strong>
+              <strong itemprop="author">{author[0].name}</strong>
               <span class="block color-tint">{author[0].role}</span>
             </a>
           </div>
@@ -53,16 +68,16 @@
         <div class="pt bdt bd-grey pb">
           {>"partials/share"/}
         </div>
-      </div>
-    </aside>
-    <div class="col w-2-3">
-      <div class="read normal">
-        {@markdown highlight="true" anchors="true"}{body|s}{/markdown}
+      </aside>
+      <div class="col w-2-3">
+        <div class="read normal" itemprop="articleBody">
+          {@markdown highlight="true" anchors="true"}{body|s}{/markdown}
+        </div>
       </div>
     </div>
-  </div>
-</main>
-{/articles.results}
+  </main>
+  {/articles.results}
+</div>
 
 <div class="bdt bd-grey">
   {>"partials/mailing-list" /}

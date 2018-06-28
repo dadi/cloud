@@ -1,11 +1,10 @@
 {
   "page": {
-    "key": "partners"
+    "key": "careers"
   },
   "datasources": [
     "pages",
-    "web-services",
-    "partners"
+    "web-services"
   ],
   "events": [
     "i18n",
@@ -13,7 +12,7 @@
   ],
   "routes": [
     {
-      "path": "/:lang/partners"
+      "path": "/:lang/careers"
     }
   ]
 }

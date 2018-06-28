@@ -2,29 +2,29 @@
 
 {>"partials/nav"/}
 
-<header class="bg-tint pt--x2 bdb bd-grey pb cf ovfh">
+<header class="pt--x2 bg-dark color-white pb cf ovfh bdt bd-tint">
   <div class="cnt">
-    <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
+    <img src="/assets/icons/white/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
      
-    <h1>{pages.results[0].title}</h1>
+    <h1 class="color-green">{pages.results[0].title}</h1>
     <p class="normal header__intro mb">{pages.results[0].excerpt}</p>
     
-    <div class="cols cols--3">
-      <a href="https://twitter.com/dadi" target="_blank" class="box col bd bd-grey mb bg-white">
+    <div class="cols cols--3 ">
+      <a href="https://twitter.com/dadi" target="_blank" class="box col bd bd-tint mb">
         <div class="box__inner" style="padding-bottom:23px">
-          <img src="/assets/social/twitter-dark.svg" width="30" class="box__aside">
+          <img src="/assets/social/twitter.svg" width="30" class="box__aside">
           <p class="normal">Follow us on <strong>Twitter</strong></p>
         </div>
       </a>
-      <a href="https://t.me/dadichat" target="_blank" class="box col bd bd-grey mb bg-white">
+      <a href="https://t.me/dadichat" target="_blank" class="box col bd bd-tint mb">
         <div class="box__inner" style="padding-bottom:23px">
-          <img src="/assets/social/telegram-dark.svg" width="30" class="box__aside">
+          <img src="/assets/social/telegram.svg" width="30" class="box__aside">
           <p class="normal">Talk to us on <strong>Telegram</strong></p>
         </div>
       </a>
-      <a href="https://discord.gg/3sEvuYJ" target="_blank" class="box col bd bd-grey mb bg-white">
+      <a href="https://discord.gg/3sEvuYJ" target="_blank" class="box col bd bd-tint mb">
         <div class="box__inner" style="padding-bottom:23px">
-          <img src="/assets/social/discord-dark.svg" width="30" class="box__aside">
+          <img src="/assets/social/discord.svg" width="30" class="box__aside">
           <p class="normal">Find us on <strong>Discord</strong></p> 
         </div>
       </a>
@@ -59,7 +59,7 @@
       <a href="/{lang}/updates" class="btn-more tac fm small">All updates</a>
     </div>
   </div>
-  <div class="pt--x2 pb--x2">
+  <div class="pt--x2 pb--x2 bdb bd-grey">
     <div class="cnt">
       <h2 class="normal mb color-tint fwn fm">Knowledge</h2>
     
@@ -70,6 +70,40 @@
       </div>
 
       <a href="/{lang}/knowledge" class="btn-more tac fm small">All knowledge</a>
+    </div>
+  </div>
+  <div class="pt--x2 pb">
+    <div class="cnt">
+      <h2 class="normal mb color-tint fwn fm">Our partners</h2>
+
+      <div class="grid">
+        {>"partials/token-partners" col="3" /}
+        <div class="col w-1-3">
+          <a style="height: 100px;line-height:99px" href="https://www.agorai.ai/" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+            <img width="180" class="vam" src="/assets/logos/agorai.png" alt="Agorai">
+          </a>
+        </div>
+        <div class="col w-1-3">
+          <a style="height: 100px;line-height:98px" href="https://netwise.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+            <img width="180" class="vam" src="/assets/logos/netwise.png" alt="Netwise">
+          </a>
+        </div>
+        <div class="col w-1-3">
+          <a style="height: 100px;line-height:99px" href="https://verasity.io/" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+            <img width="180" class="vam" src="/assets/logos/verasity.png" alt="Verasity">
+          </a>
+        </div>
+        <div class="col w-1-3">
+          <a style="height: 100px;line-height:101px" href="https://wirehive.com" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+            <img width="180" class="vam" src="/assets/logos/wirehive.png" alt="Wirehive">
+          </a>
+        </div>
+        <div class="col w-1-3">
+          <a style="height: 100px;line-height:99px" href="https://indx.capital/" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+            <img width="180" class="vam" src="/assets/logos/indx.png" alt="INDX">
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </main>

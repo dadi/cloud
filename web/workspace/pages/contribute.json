@@ -1,0 +1,19 @@
+{
+  "page": {
+    "key": "contribute"
+  },
+  "datasources": [
+    "pages",
+    "web-services",
+    "countries"
+  ],
+  "events": [
+    "i18n",
+    "metatags"
+  ],
+  "routes": [
+    {
+      "path": "/:lang/contribute"
+    }
+  ]
+}

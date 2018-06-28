@@ -1,21 +1,21 @@
 {#category}
   <div class="badge fm small color-blue">
     <div class="badge__primary bg-blue color-white">
-      <a href="/{lang}/{slug}">
+      <a href="/{lang}/{slug}" itemprop="about">
         {name}
       </a>
     </div>
     {?web-service}
       <div class="badge__secondary">
         {#web-service}
-          <a href="/{lang}/{slug}">{name}</a>{@sep},{/sep}
+          <a href="/{lang}/{slug}" itemprop="about">{name}</a>{@sep},{/sep}
         {/web-service}
       </div>
     {:else}
       {?sub-category}
       <div class="badge__secondary">
         {#sub-category primary=slug}
-          <a href="/{lang}/{primary}/{slug}">{name}</a>{@sep},{/sep}
+          <a href="/{lang}/{primary}/{slug}" itemprop="about">{name}</a>{@sep},{/sep}
         {/sub-category}
       </div>
       {/sub-category}

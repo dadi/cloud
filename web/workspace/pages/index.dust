@@ -1,53 +1,71 @@
 {>"partials/header"/}
 
-{<head}
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css">
-  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
-{/head}
-
-<header class="intro bg-dark color-white cf">
-  <div class="intro__about animation fade-in">
-    <h1><img src="/assets/img/dadi-logo-white.svg" alt="DADI"></h1>
-    {@markdown}{pages.results[0].excerpt|s}{/markdown}
+<header class="intro cf">
+  <div class="network animation fade-in bs-hide">
+    {>"partials/network-map"/}
+  </div>
+  
+  <div class="intro__about animation fade-in fm">
+    <h1><img src="/assets/img/dadi-logo-dark.svg" alt="DADI"></h1>
+    <h2 style="color:#8a939d">Fast, scalable, secure and inexpensive web services.</h2>
+    <p>This is the cloud, decentralized.</p>
 
     <a href="#video" class="btn intro__video">
       ► Watch the introduction
     </a>
   </div>
-
-  <video class="animation fade-in" width="1920" height="1080" autoplay muted loop playsinline poster="/assets/video/header.jpg">
-    <source src="/assets/video/header.webm?v=2">
-    <source src="/assets/video/header.mp4?v=2">
-    <source src="/assets/video/header.ogv?v=2">
-    <img src="/assets/video/header.jpg" alt="Illustration of DADI web services">
-  </video>
-
-  <div class="intro__credit">
-    Illustration by <a href="https://somethingsavage.com">Daniel Savage</a>
-  </div>  
+  
+  {>"partials/network-stats"/}
 </header>
 
-<main class="mb--x2" id="homeMain">
+<main id="homeMain">
   {>"partials/nav" stick="true" /}
 
-  <div class="bds pt pt--x2"> 
+  <div class="bds pt--x2"> 
     <div class="cnt">
       <div class="grid cf pb">
-        <div class="col w-1-3 pb">
-          <img src="/assets/icons/favorite.svg" height="60" class="mb" alt="Favoutite icon">
+        <div class="col w-1-4 pb">
+          <img src="/assets/img/fair.png" height="60" class="mb" alt="Favoutite icon">
           <h2 class="medium">A fairer internet</h2>
           <p class="normal">DADI is a peer-to-peer network owned by the people, shifting the balance of computational power away from large corporations</p>
-        </div>
-        <div class="col w-1-3 pb">
-          <img src="/assets/icons/bolt.svg" height="60" class="mb" alt="Bolt icon">
+        </div> 
+        <div class="col w-1-4 pb">
+          <img src="/assets/img/fast.png" height="60" class="mb" alt="Bolt icon">
           <h2 class="medium">Faster and cheaper</h2>
           <p class="normal">The DADI network offers improved efficiency and performance, saving up to 90% compared with traditional cloud services</p>
         </div>
-        <div class="col w-1-3 pb">
-          <img src="/assets/icons/coins.svg" height="60" class="mb" alt="Token icon">
+        <div class="col w-1-4 pb">
+          <img src="/assets/img/green.png" height="60" class="mb" alt="Environment icon">
+          <h2 class="medium">Environment friendly</h2>
+          <p class="normal">Makes use of spare capacity from devices already in the home &amp; office and is better for the environment than large server farms</p>
+        </div>
+        <div class="col w-1-4 pb">
+          <img src="/assets/img/earn.png" height="60" class="mb" alt="Token icon">
           <h2 class="medium">Earn DADI tokens</h2>
           <p class="normal">Anyone with a laptop, games console or any connected device can earn income by providing spare computation capacity for rent</p>
         </div>
+      </div>
+
+      <div class="ptpb bdt bd-grey pb">
+        <div class="grid">
+          <div class="col w-1-3 pt--x2">
+            <h2 class="medium mb">What makes DADI different?</h2>
+            <p class="normal mb">74% of the cloud computing market is now controlled by just four tech companies: Microsoft, Amazon, IBM and Google.</p>
+            <p class="normal">DADI is owned and run by <strong>everyone</strong>, sharing its revenue to help build a fairer internet</p>
+          </div>
+          <div class="col w-1-3 mb tac">
+            <img src="/assets/img/explainer-part1.svg" alt="Traditional services">
+            
+            <h2 style="margin-bottom:5px" class="mt medium">Centralized Cloud Services</h2>
+            <p class="color-tint fm small">The old way</p>
+          </div>
+          <div class="col w-1-3 mb tac pt">
+            <img src="/assets/img/explainer-part2.svg" alt="The DADI Network">
+
+            <h2 style="margin-bottom:5px" class="medium color-blue">Decentralized Cloud</h2>
+            <p class="color-tint fm small">The new way</p>
+          </div>
+        </div>        
       </div>
     </div>
   </div>
@@ -56,7 +74,7 @@
     <div class="cnt">
       <div class="cf">
         <div class="col w-1-6 bs-w-1-1">
-          <h3 class="mb fm fwn pt vam color-tint">Trusted by…</h3>
+          <h3 class="mb fm fwn vam color-tint" style="padding-top: 18px">Our technology is used by…</h3>
         </div>
         <div class="col w-1-6 bs-w-1-5">
           <img class="fill" src="/assets/clients/logo-whatcar.png" alt="WhatCar?">
@@ -77,58 +95,61 @@
     </div>
   </div>
 
-  <div class="bg-tint pt bdb bdt bd-grey"> 
-    <div class="cnt pb">
-      <div class="grid mb" id="stickContainer">
-        <div class="col w-1-2">
-          <div class="hdr fm ttu mb">
-            <h3><span>Latest from DADI</span></h3>
-          </div>
-
-          <div class="cols cols--2">
-            {#articles.results}
-              {>"partials/articles/list"
-                dateFormat="short"
-                size="normal"
-              /}
-            {/articles.results}
-          </div>  
-
-          <a href="/{lang}/community" class="btn-more tac fm small">More articles</a>
-        </div>
-        <div class="col w-1-2">
-          <div id="stick">
-            {>"partials/network-mini"/}
-
-            <a href="/{lang}/network" class="mt btn-more tac fm small">About the network</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {>"partials/mailing-list" /}
+  {>"partials/cdn-promo" /}
 
   <div class="cnt pt">
     <div class="hdr fm ttu mb">
-      <h3><span>Web services</span></h3>
+      <h3><span>Latest from DADI</span></h3>
+    </div>
+
+    <div class="cols cols--4">
+      {#articles.results}
+        {>"partials/articles/list"
+          dateFormat="short"
+          size="normal"
+        /}
+      {/articles.results}
+    </div>  
+
+    <a href="/{lang}/community" class="btn-more tac fm small">More articles</a>
+  </div>
+
+  <div class="cnt pt">
+    <div class="hdr fm ttu mb">
+      <h3><span>dApp Marketplace</span></h3>
     </div>
               
     <div class="cols cols--4 bs-cols--2">
       {#web-services.results}
         {>"partials/web-services/list"/}
       {/web-services.results}
+
+      <div class="box box--small col bd bd-white bg-tint mb">
+        <a href="/{lang}/contact" class="box__inner">
+          <h2 class="fm fwn normal mb">Want to build a dApp for the DADI network?</h2>
+
+          <p class="mb">We're building out our marketplace with many more DADI dApps but will open up to applications from other organisations. If you have an idea for a dApp, get in touch.</p>
+        </a>
+
+        <div class="box__footer">
+          <a href="/{lang}/contact" class="box__cta small fm color-tint">Contact us</a>
+        </div>
+      </div>
     </div>
 
     <div class="hdr fm ttu mb">
       <h3><span><a href="https://twitter.com/dadi" target="_blank">Follow us on Twitter @DADI</a></span></h3>
     </div>
 
-    <div class="cols cols--4 vs-">
+    <div class="cols cols--4 mb">
       {#tweets}
         {>"partials/tweet" /}
       {/tweets}
     </div>
+  </div>
+
+  <div class="bdt bd-grey">
+    {>"partials/mailing-list" /}
   </div>
 </main>
 
