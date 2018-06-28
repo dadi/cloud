@@ -145,6 +145,37 @@
     </div>
   </div>
 
+  <div class="pt--x2 pb--x2 bdb bd-grey">
+    <div class="cnt">
+      <form action="/{lang}/contact/" method="post">
+        <input type="hidden" name="_csrf" value="{csrfToken}">
+
+        <div class="grid">
+          <div class="col w-1-1 read normal">
+            <p class="medium"><strong>Want to run <span style="color:#{color}">DADI CDN</span> with your digital product?</strong><br>Get in touch today</p>
+          </div>
+          <div class="col w-1-2 mt">
+            <label class="text fm" for="name">Name</label>
+            <input id="name" name="name" placeholder="Your full name" type="text">
+
+            <label class="text fm" for="email">Email</label>
+            <input id="email" name="email" required="" placeholder="Your email address" type="email">
+
+            <label class="text fm" for="phone">Phone</label>
+            <input id="phone" name="phone" placeholder="Contact telephone number" type="text">
+          </div>
+
+          <div class="col w-1-2 mt">
+            <label class="text fm" for="message">Message</label>
+            <textarea style="min-height:199px" rows="5" id="message" name="message" required="" placeholder="What do you want to talk about?" type="email"></textarea>
+
+            <button type="submit" class="btn">Send message</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <div class="bg-tint pt pb mb bdb bd-grey">
     <div class="cnt">
       <div class="hdr fm ttu mb">
