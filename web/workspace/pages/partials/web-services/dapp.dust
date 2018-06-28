@@ -13,15 +13,18 @@
     background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, #ffffff 100%);
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 980px) {
     .inline-files {
       display: inline-block;
       width: 45%;
       margin-top: 30px;
     }
+    .header__illo1 {
+      display: none;
+    }
   }
   @media (min-width: 800px) {
-    .logo {
+    .header__logo {
       margin: 0 60px;
     }
   }
@@ -48,13 +51,13 @@
       <div class="cnt cf">
         <div class="pt tac" style="margin: 7% 0">
           <div class="cf">
-            <img src="/assets/img/cdn-illo-1.svg" width="210" class="bs-hide">
+            <img src="/assets/img/cdn-illo-1.svg" width="210" class="header__illo1">
         
-            <img src="/assets/products/dadi-cdn-full.png" width="290" alt="DADI CDN" class="logo">
+            <img src="/assets/products/dadi-cdn-full.png" width="290" alt="DADI CDN" class="header__logo">
        
             <img src="/assets/img/cdn-illo-1.svg" width="210" class="bl-hide inline-files" style="margin-right: 30px">
 
-            <img src="/assets/img/cdn-illo-2.svg" class="inline-files" width="210">
+            <img src="/assets/img/cdn-illo-2.svg" class="inline-files" width="210" class="header__illo2">
           </div> 
           <div class="pt--x2" style="max-width:600px;margin:0 auto">
             <div class="bl-hide">
