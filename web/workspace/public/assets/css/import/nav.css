@@ -130,8 +130,14 @@ nav .nav__docs a:hover:after {
   background: #fff;
 }
 
-@media handheld, only screen and (max-width: 1030px) {
+@media handheld, only screen and (max-width: 1110px) {
   nav .nav__docs {
+    display: none;
+  }
+}
+
+@media handheld, only screen and (max-width: 930px) {
+  nav .nav__social {
     display: none;
   }
 }
