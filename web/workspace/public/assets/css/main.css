@@ -44,12 +44,16 @@ header {
 .header__intro {
   max-width: 590px;
 }
+
 .bg-icon {
   opacity: 0.04;
   position: absolute;
   right: 0;
   width: 330px;
   top: -60px;
+}
+.bg-dark .bg-icon {
+  opacity: 0.1;
 }
 
 h1, h2 {

@@ -77,19 +77,9 @@
   <div class="bg-tint">
     <div class="cnt tac pt pb--x2">
       <div class="grid bdb bd-grey">
-        <div class="col w-1-2 pt--x2">
-          <p class="large fwb" style="margin-top:20%;margin-bottom:10px">Cache anything at the edge</p>
-          <p class="normal colour-tint">Converted images are cached, providing faster delivery on subsequent requests.</p>
-        </div>
-        <div class="col w-1-2">
-          <img src="/assets/img/cdn-illo-cache.svg" class="fill">
-        </div>
-      </div>
-
-      <div class="grid bdb bd-grey">
         <div class="col col--right w-1-2 pt--x2">
           <p class="large fwb" style="margin-top:20%;margin-bottom:10px">Deliver at scale</p>
-          <p class="normal colour-tint">Let CDN choose the best transformations based on device, network, location or language.</p>
+          <p class="normal colour-tint">DADI's network comprises hundreds of edge nodes covering every content and pretty much every country and major city on Earth.</p>
         </div>
         <div class="col w-1-2">
           <img src="/assets/img/cdn-illo-scale.svg" class="fill">
@@ -98,8 +88,18 @@
 
       <div class="grid bdb bd-grey">
         <div class="col w-1-2 pt--x2">
+          <p class="large fwb" style="margin-top:20%;margin-bottom:10px">Cache anything at the edge</p>
+          <p class="normal colour-tint">CDN enables the caching of all content types at the edge, getting you as close to your customers as possible.</p>
+        </div>
+        <div class="col w-1-2">
+          <img src="/assets/img/cdn-illo-cache.svg" class="fill">
+        </div>
+      </div>
+
+      <div class="grid bdb bd-grey">
+        <div class="col w-1-2 pt--x2">
           <p class="large fwb" style="margin-top:20%;margin-bottom:10px">Enhance performance</p>
-          <p class="normal colour-tint">No need to maintain multiple sizes of each image you upload into an article - CDN generates new variations from a single master image.</p>
+          <p class="normal colour-tint">Closer delivery means faster delivery, improving user experience, retention and conversion.</p>
         </div>
         <div class="col w-1-2">
           <img src="/assets/img/cdn-illo-performance.svg" class="fill">
@@ -109,7 +109,7 @@
       <div class="grid">
         <div class="col col--right w-1-2 pt--x2">
           <p class="large fwb" style="margin-top:20%;margin-bottom:10px">Lower costs</p>
-          <p class="normal colour-tint">No need to maintain multiple sizes of each image you upload into an article - CDN generates new variations from a single master image.</p>
+          <p class="normal colour-tint">DADI's decentralized architecture reduces prices by removing many of the costs associated with traditional cloud environments. These savings are passed on to you.</p>
         </div>
         <div class="col w-1-2">
           <img src="/assets/img/cdn-illo-costs.svg" class="fill">

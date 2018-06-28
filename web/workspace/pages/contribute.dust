@@ -57,7 +57,7 @@
     <div class="grid">
       <div class="col w-2-3 bs-alignc">
         <div class="bdb bd-tint mb pb">
-          <h1 style="margin:0">Masternode System</h1>
+          <h1 style="margin:0" class="color-green">Masternode System</h1>
           <p class="medium">Registration now open</p>
         </div>
 
