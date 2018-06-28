@@ -2,10 +2,10 @@
   height: 100px;
   height: calc(100vh-70px);
   position: relative;
-  background: #070f1b;
   background-size: auto 100%;
   z-index: 2;
   overflow: hidden;
+  background-color: #fff;
 }
 .intro__about h2:before {
   content: ' ';
@@ -32,15 +32,15 @@
 }
 
 .intro__about .btn {
-  color: #fff;
-  margin-top: 10px;
-  background: #0D1C32;
+  color: #04111d;
+  margin-top: 15px;
+  background: #f2f2f2;
   padding: 18px 17px;
   border: 0;
-  color: #fff;
 }
 .intro__about .btn:hover {
   background: var(--green);
+  color: #fff;
 }
 
 .intro video {
@@ -66,6 +66,9 @@
   .intro {
     height: 0px;
     padding-top: 56%;
+    background-image: url(/assets/img/bg-map-mobile.png);
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
   }
   #nav {
     height: 46px;
@@ -209,11 +212,6 @@
   line-height: 1.3rem;
   font-weight: normal;
   margin-bottom: 20px;
-}
-
-.intro {
-  background: #fff;
-  color: #070f1b;
 }
 
 @media (min-width: 800px) {
