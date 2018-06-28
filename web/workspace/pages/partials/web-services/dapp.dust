@@ -72,19 +72,44 @@
   </div>
 
   <div class="bg-tint">
-    <div class="cnt cf pt--x2 pb">
-      <div class="grid tac">
-        <div class="col w-1-3 mb">
-          <img src="/assets/icons/tabs.svg" class="mb" width="45" alt="Scale">
-          <p class="medium">Generate images for responsive layouts and different devices</p>
+    <div class="cnt tac pt pb--x2">
+      <div class="grid bdb bd-grey">
+        <div class="col w-1-2 pt--x2">
+          <p class="large fwb" style="margin-top:20%;margin-bottom:10px">Cache anything at the edge</p>
+          <p class="normal colour-tint">Converted images are cached, providing faster delivery on subsequent requests.</p>
         </div>
-        <div class="col w-1-3 mb">
-          <img src="/assets/icons/crop.svg" class="mb" width="45" alt="Crop">
-          <p class="medium">Extensive set of image enhancement and transformation tools</p>
+        <div class="col w-1-2">
+          <img src="/assets/img/cdn-illo-cache.svg" class="fill">
         </div>
-        <div class="col w-1-3 mb">
-          <img src="/assets/icons/swap.svg" class="mb" width="45" alt="Convert">
-          <p class="medium">Easily convert between image formats on the fly</p>
+      </div>
+
+      <div class="grid bdb bd-grey">
+        <div class="col col--right w-1-2 pt--x2">
+          <p class="large fwb" style="margin-top:20%;margin-bottom:10px">Deliver at scale</p>
+          <p class="normal colour-tint">Let CDN choose the best transformations based on device, network, location or language.</p>
+        </div>
+        <div class="col w-1-2">
+          <img src="/assets/img/cdn-illo-scale.svg" class="fill">
+        </div>
+      </div>
+
+      <div class="grid bdb bd-grey">
+        <div class="col w-1-2 pt--x2">
+          <p class="large fwb" style="margin-top:20%;margin-bottom:10px">Enhance performance</p>
+          <p class="normal colour-tint">No need to maintain multiple sizes of each image you upload into an article - CDN generates new variations from a single master image.</p>
+        </div>
+        <div class="col w-1-2">
+          <img src="/assets/img/cdn-illo-performance.svg" class="fill">
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="col col--right w-1-2 pt--x2">
+          <p class="large fwb" style="margin-top:20%;margin-bottom:10px">Lower costs</p>
+          <p class="normal colour-tint">No need to maintain multiple sizes of each image you upload into an article - CDN generates new variations from a single master image.</p>
+        </div>
+        <div class="col w-1-2">
+          <img src="/assets/img/cdn-illo-costs.svg" class="fill">
         </div>
       </div>
     </div>
@@ -92,7 +117,7 @@
 
   <div class="bdb bd-grey pt">
     <div class="cnt">
-      <div class="grid mb--x2" id="stickContainer">
+      <div class="grid mb--x2">
         <div class="col w-1-2">
           <div id="stick" data-topspace="10">
             <div class="hdr fm ttu mb">
@@ -102,32 +127,22 @@
             <div class="read normal">
               {@markdown}{description}{/markdown}
             </div>
-
-            {#image}
-              <div class="mt img img--16-10">
-                <img src="{global.cdn.publicUrl}{path}?ratio=16-10&resize=fill&w=1024&q=50" class="fill block" alt="Screenshot of product">
-              </div>
-
-              <p class="color-tint small tac" style="margin-top:10px">{image-caption}</p>
-            {/image}
           </div>
         </div>
-        <div class="col w-1-2" id="features" name="features">
-          <div class="hdr fm ttu mb">
-            <h3><span>Additional features</span></h3>
-          </div>
+        <div class="col w-1-2">
+          {#image}
+            <div class="mt img img--16-10">
+              <img src="{global.cdn.publicUrl}{path}?ratio=16-10&resize=fill&w=1024&q=50" class="fill block" alt="Screenshot of product">
+            </div>
 
-          <div class="read normal web-service__features">
-            {@markdown}{features}{/markdown}
-          </div>
+            <p class="color-tint small tac" style="margin-top:10px">{image-caption}</p>
+          {/image}
         </div>
       </div>
     </div>
   </div>
 
-  {>"partials/mailing-list" /}
-
-  <div class="bg-tint pt pb mb bt bdb bdt bd-grey">
+  <div class="bg-tint pt pb mb bdb bd-grey">
     <div class="cnt">
       <div class="hdr fm ttu mb">
         <h3><span>Latest articles</span></h3>
@@ -152,6 +167,18 @@
       {#web-services.results:web-services lang=lang global=global}
         {>"partials/web-services/list"/}
       {/web-services.results}
+
+      <div class="box box--small col bd bd-white bg-tint mb">
+        <a href="/{lang}/contact" class="box__inner">
+          <h2 class="fm fwn normal">Want to host on our network?</h2>
+
+          <p class="mb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.</p>
+        </a>
+
+        <div class="box__footer">
+          <a href="/{lang}/contact" class="box__cta small fm color-tint">Contact us</a>
+        </div>
+      </div>
     </div>
   </div>
 </main>
