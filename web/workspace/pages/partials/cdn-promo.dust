@@ -7,7 +7,7 @@
       </div>
      
       <h2 class="medium">Introducing our first network-ready app</h2>
-      <p class="medium mb">A just-in-time asset manipulation and delivery layer designed as a modern, global content distribution solution</p>
+      <p class="medium mb">A decentralized application that makes websites, APIs, ecommerce stores, mobile applications and SaaS platforms faster and more secure</p>
 
       <a href="/{lang}/cdn" class="btn btn--cdn mb">More about CDN</a>
     </div>
