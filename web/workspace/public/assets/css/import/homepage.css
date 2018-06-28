@@ -233,3 +233,19 @@
     display:block
   }
 }
+
+.network-notice {
+  position: absolute;
+  right: 30px;
+  top: 59%;
+  font-size: 0.7rem;
+  color: #8a939c;
+  transform: rotate(90deg);
+  transform-origin: 100% 100%;
+}
+
+@media (--bs) {
+  .network-notice {
+    display: none;
+  }
+}

@@ -134,7 +134,7 @@
   <div class="bg-tint pt pb mb bt bdb bdt bd-grey">
     <div class="cnt">
       <div class="hdr fm ttu mb">
-        <h3><span>Latest articles</span></h3>
+        <h3><span>Latest {name} articles</span></h3>
       </div>
 
       <div class="cols cols--4">
