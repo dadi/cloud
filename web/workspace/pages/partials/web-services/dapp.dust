@@ -51,13 +51,13 @@
       <div class="cnt cf">
         <div class="pt tac" style="margin: 7% 0">
           <div class="cf">
-            <img src="/assets/img/cdn-illo-1.svg" width="210" class="header__illo1">
+            <img src="/assets/img/cdn-illo-1.svg" height="90" class="header__illo1">
         
             <img src="/assets/products/dadi-cdn-full.png" width="290" alt="DADI CDN" class="header__logo">
        
-            <img src="/assets/img/cdn-illo-1.svg" width="210" class="bl-hide inline-files" style="margin-right: 30px">
+            <img src="/assets/img/cdn-illo-1.svg" height="90" class="bl-hide inline-files" style="margin-right: 30px">
 
-            <img src="/assets/img/cdn-illo-2.svg" class="inline-files" width="210" class="header__illo2">
+            <img src="/assets/img/cdn-illo-2.svg" class="inline-files" height="90" class="header__illo2">
           </div> 
           <div class="pt--x2" style="max-width:600px;margin:0 auto">
             <div class="bl-hide">
