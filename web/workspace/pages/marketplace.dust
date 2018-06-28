@@ -23,41 +23,7 @@
         {>"partials/web-services/list"/}
       {/web-services.results}
 
-      <div class="box box--small col bd bd-white bg-tint mb" style="box-shadow:none">
-        <a href="https://www.agorai.ai/" class="box__inner">
-          <h2 class="fm fwn normal">Checkout our roadmap for more info</h2>
-
-          <p class="mb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.</p>
-        </a>
-
-        <div class="box__footer">
-          <a href="/{lang}/roadmap" class="box__cta small fm color-tint">Explore Roadmap</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="hdr fm ttu mb">
-      <h3><span>Third-party apps</span></h3>
-    </div>
-
-    <div class="cols cols--4 bs-cols--2">
-      <div class="box box--small col bd bd-grey mb" style="border-top:1px solid #2a87dd">
-        <a href="https://www.agorai.ai/" class="box__inner">
-          <div class="mb">
-            <img src="/assets/logos/agorai.png" alt="Icon for Agorai" width="160">
-          </div>
-
-          {! <h2 class="fm fwn normal" style="color:#2a87dd">agorai</h2> !}
-
-          <p class="mb">Agorai is a marketplace for both artificial intelligence (AI) software and data assets. Think of us as an "App Store" that allows corporations to access the tools that they need to compete in today's world</p>
-        </a>
-
-        <div class="box__footer">
-          <a href="https://www.agorai.ai/" class="box__cta small fm color-tint">About Agorai</a>
-        </div>
-      </div>
-
-      <div class="box--small col bd bd-white bg-tint mb">
+      <div class="box box--small col bd bd-white bg-tint mb">
         <a href="https://www.agorai.ai/" class="box__inner">
           <h2 class="fm fwn normal">Want to host on our network?</h2>
 

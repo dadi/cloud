@@ -361,3 +361,17 @@ h1, h2 {
   font-size: 0.8rem;
   letter-spacing: normal;
 }
+
+
+.dot {
+  width: 8px; height: 8px;
+  border-radius: 5px;
+  background: #fff;
+  display: inline-block;
+  margin-left: 0px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+.dot.blink {
+  animation: blink 1s linear infinite;
+}

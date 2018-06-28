@@ -1,12 +1,4 @@
 <div class="network-stats fm">
-  <div style="margin-right:20px" class="badge small">
-    <div class="bg-dark color-white badge__primary bg-white">
-      MAINNET
-    </div>
-    <div class="badge__secondary color-dark">
-      Online
-    </div>
-  </div>
   <div class="bg-white badge color-white small">
     <div class="badge__primary color-tint">
       Hosts
@@ -21,6 +13,14 @@
     </div>
     <div class="badge__secondary color-dark" id="average_response">
       0
+    </div>
+  </div>
+  <div class="color-white pl badge small">
+    <div class="badge__secondary bg-tint color-dark">
+      MAINNET
+    </div>
+    <div class="bg-green badge__primary bg-white">
+      Online <span class="blink animation dot"></span>
     </div>
   </div>
 </div>

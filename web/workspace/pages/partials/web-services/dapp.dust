@@ -46,7 +46,7 @@
 <main class="mb">
   <div class="bds pb pt--x2" style="background:url(/assets/img/bg-dapp.png) no-repeat 50% 0;background-size: 1000px auto;">  
       <div class="cnt cf">
-        <div class="mb--x2 mt--x2 pt tac ">
+        <div class="pt tac" style="margin: 7% 0">
           <div class="cf">
             <img src="/assets/img/cdn-illo-1.svg" width="210" class="bs-hide">
         

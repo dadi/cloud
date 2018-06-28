@@ -21,6 +21,7 @@ var messages = [
   "CSS served"
 ];
 
+/* A labeled map event */
 function pointEvent() {
   var point = dots[Math.floor(Math.random()*dots.length)];
   var elRect = point.getBBox();
@@ -30,16 +31,15 @@ function pointEvent() {
 
   captionText.innerHTML = messages[Math.floor(Math.random()*messages.length)];
 
-  point.classList.add('active');
-  caption.classList.add('active');
-
+  point.classList.add('pulse');
+  
   setTimeout(function() {
     caption.classList.remove('active');
   }, 1000);
 
   setTimeout(function() {
-    point.classList.remove('active');
-  }, 20000);
+    point.classList.remove('pulse');
+  }, 3000);
 }
 
 pointEvent();
@@ -48,6 +48,7 @@ setInterval(function() {
   pointEvent();
 }, 2000);
 
+/* Background points */
 setInterval(function() {
   var point = dots[Math.floor(Math.random()*dots.length)];
 
@@ -55,7 +56,18 @@ setInterval(function() {
 
   setTimeout(function() {
     point.classList.remove('active');
-  }, 4000);
+  }, 250);
 
-}, 600);
+}, 250);
+
+/* Populate the map on load */
+for (i = 0; i < 50; i++) {
+  var point = dots[Math.floor(Math.random()*dots.length)];
+  
+  point.classList.add('active');
+
+  setTimeout(function() {
+    point.classList.remove('active');
+  }, 250);
+}
 </script>
