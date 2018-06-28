@@ -7,7 +7,7 @@
     <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
     <h1>{pages.results[0].title}</h1>
     <p class="normal">{pages.results[0].excerpt}</p>
-    <p class="normal read">Email us at <a href="mailto:hello@dadi.tech">hello@dadi.cloud</a></p>
+    <p class="normal read">Email us at <a href="mailto:hello@dadi.cloud">hello@dadi.cloud</a></p>
   </div>
 </header>
 
