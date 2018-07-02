@@ -5,7 +5,7 @@
 <header class="bg-dark color-white pt--x2 pb--x2 cf ovfh bdt bd-tint">
   <div class="cnt cf">
     <img src="/assets/icons/white/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
-    <h1>{pages.results[0].title}</h1>
+    <h1 class="color-green">{pages.results[0].title}</h1>
     <p class="normal header__intro">{pages.results[0].excerpt}</p>
   </div>
 </header>
@@ -25,9 +25,9 @@
 
       <div class="box box--small col bd bd-white bg-tint mb">
         <a href="/{lang}/contact" class="box__inner">
-          <h2 class="fm fwn normal">Want to build a dApp for the DADI network?</h2>
+          <h2 class="fm fwn normal mb">Want to build a dApp for the DADI network?</h2>
 
-          <p class="mb">We're building out our marketplace with many more DADI dApps but will in time open up to applications from other organisations. If you have an idea for a dApp, get in touch.</p>
+          <p class="mb">We're building out our marketplace with many more DADI dApps but will open up to applications from other organisations. If you have an idea for a dApp, get in touch.</p>
         </a>
 
         <div class="box__footer">

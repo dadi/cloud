@@ -2,10 +2,10 @@
   height: 100px;
   height: calc(100vh-70px);
   position: relative;
-  background: #070f1b;
   background-size: auto 100%;
   z-index: 2;
   overflow: hidden;
+  background-color: #fff;
 }
 .intro__about h2:before {
   content: ' ';
@@ -32,15 +32,15 @@
 }
 
 .intro__about .btn {
-  color: #fff;
-  margin-top: 10px;
-  background: #0D1C32;
+  color: #04111d;
+  margin-top: 15px;
+  background: #f2f2f2;
   padding: 18px 17px;
   border: 0;
-  color: #fff;
 }
 .intro__about .btn:hover {
   background: var(--green);
+  color: #fff;
 }
 
 .intro video {
@@ -66,6 +66,9 @@
   .intro {
     height: 0px;
     padding-top: 56%;
+    background-image: url(/assets/img/bg-map-mobile.png);
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
   }
   #nav {
     height: 46px;
@@ -183,14 +186,6 @@
   border-bottom: 5px solid transparent;
   border-left: 5px solid #0ecc5f;
 }
-
-#map .alpha, #map path.active.alpha { background: #222; fill: #222; }
-#map .beta, #map path.active.beta { background: #888; fill: #888; }
-#map .gamma, #map path.active.gamma { background: #666; fill: #666; }
-#map .delta, #map path.active.delta { background: #ccc; fill: #ccc; }
-#map .epsilon, #map path.active.epsilon { background: #ddd; fill: #ddd; }
-#map .zeta, #map path.active.zeta { background: #444; fill: #444; }
-
 .intro__about {
   bottom: 8%;
   width: 24%;
@@ -211,11 +206,6 @@
   margin-bottom: 20px;
 }
 
-.intro {
-  background: #fff;
-  color: #070f1b;
-}
-
 @media (min-width: 800px) {
   .network-stats {
     position:absolute;
@@ -231,5 +221,36 @@
 @media (max-width: 800px) {
   .network-stats .badge,.network-stats .badge__primary {
     display:block
+  }
+}
+
+.network-notice {
+  position: absolute;
+  right: 30px;
+  top: 59%;
+  font-size: 0.7rem;
+  color: #8a939c;
+  transform: rotate(90deg);
+  transform-origin: 100% 100%;
+}
+
+@media (--bs) {
+  .network-notice {
+    display: none;
+  }
+}
+
+
+.cdn-promo {
+  background-image: url(https://cdn.dadi.cloud/media/2018/05/17/dadi-cdn.png?h=900);
+  background-repeat: no-repeat;
+  background-position: 92% 50px;
+  background-size: auto 450px;
+}
+
+@media (--bs) {
+  .cdn-promo {
+    padding-bottom: 170px;
+    background-position: 50% 420px;
   }
 }

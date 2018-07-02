@@ -1,9 +1,7 @@
 {>"partials/header"/}
 
-{>"partials/nav" /}
-
-<header class="intro color-white cf">
-  <div class="network animation fade-in">
+<header class="intro cf">
+  <div class="network animation fade-in bs-hide">
     {>"partials/network-map"/}
   </div>
   
@@ -21,7 +19,9 @@
 </header>
 
 <main id="homeMain">
-  <div class="bds pt"> 
+  {>"partials/nav" stick="true" /}
+
+  <div class="bds pt--x2"> 
     <div class="cnt">
       <div class="grid cf pb">
         <div class="col w-1-4 pb">
@@ -49,9 +49,9 @@
       <div class="ptpb bdt bd-grey pb">
         <div class="grid">
           <div class="col w-1-3 pt--x2">
-            <h2 class="medium">What makes DADI different?</h2>
-            <p class="normal">74% of the cloud computing market is now controlled by just four tech companies: Microsoft, Amazon, IBM and Google.</p>
-            <p class="normal">In contrast, DADI is owned and run by everyone. It’s a fundamentally different proposition.</p>
+            <h2 class="medium mb">What makes DADI different?</h2>
+            <p class="normal mb">74% of the cloud computing market is now controlled by just four tech companies: Microsoft, Amazon, IBM and Google.</p>
+            <p class="normal">DADI is owned and run by <strong>everyone</strong>, sharing its revenue to help build a fairer internet</p>
           </div>
           <div class="col w-1-3 mb tac">
             <img src="/assets/img/explainer-part1.svg" alt="Traditional services">
@@ -116,7 +116,7 @@
 
   <div class="cnt pt">
     <div class="hdr fm ttu mb">
-      <h3><span>aApp Marketplace</span></h3>
+      <h3><span>dApp Marketplace</span></h3>
     </div>
               
     <div class="cols cols--4 bs-cols--2">
@@ -126,9 +126,9 @@
 
       <div class="box box--small col bd bd-white bg-tint mb">
         <a href="/{lang}/contact" class="box__inner">
-          <h2 class="fm fwn normal">Want to build a dApp for the DADI network?</h2>
+          <h2 class="fm fwn normal mb">Want to build a dApp for the DADI network?</h2>
 
-          <p class="mb">We're building out our marketplace with many more DADI dApps but will in time open up to applications from other organisations. If you have an idea for a dApp, get in touch.</p>
+          <p class="mb">We're building out our marketplace with many more DADI dApps but will open up to applications from other organisations. If you have an idea for a dApp, get in touch.</p>
         </a>
 
         <div class="box__footer">
