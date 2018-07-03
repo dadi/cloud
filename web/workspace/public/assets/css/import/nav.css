@@ -6,17 +6,19 @@ nav {
   box-shadow: 0 0 10px rgba(4, 17, 29, 0.35);
   font-size: 0.9rem;
 }
-nav .inner-wrapper-sticky {
-  box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
-  position: absolute !important;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-nav.is-affixed .inner-wrapper-sticky {
-  position: fixed !important;
-  background-color: rgba(4, 17, 29, 0.97);
-  bottom: auto;
+@media (--bl) {
+  nav .inner-wrapper-sticky {
+    box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
+    position: absolute !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  nav.is-affixed .inner-wrapper-sticky {
+    position: fixed !important;
+    background-color: rgba(4, 17, 29, 0.97);
+    bottom: auto;
+  }
 }
 nav.subnav {
   box-shadow: 0 0 10px rgba(4, 17, 29, 0.17);
@@ -36,12 +38,19 @@ nav li {
   vertical-align: middle;
   position: relative;
 }
+@media (--bs) {
+  nav li {
+    display: block;
+  }
+}
 nav li a {
   padding: 25px 16px 20px;
   display: inline-block;
 }
-nav li:first-of-type a {
-  padding-left: 0;
+@media (--bl) {
+  nav li:first-of-type a {
+    padding-left: 0;
+  }
 }
 nav .active {
   color: var(--green);
@@ -144,15 +153,21 @@ nav .nav__docs a:hover:after {
 
 @media (--bs) {
   nav ul {
-    white-space: nowrap;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
-    padding: 0 20px;
+    position: absolute;
+    background: #04111d;
+    top: 100%; left: 0; right: 0;
+    padding: 10px 0;
   }
-  nav .nav__docs,
+  nav .cnt {
+    margin: 0;
+  }
   nav .nav__social,
   nav .nav__logo a:after {
     display: none;
+  }
+  nav .nav__docs {
+    display: block;
+    float: none;
   }
   nav .nav__logo,
   nav .nav__logo a {
@@ -166,12 +181,7 @@ nav .nav__docs a:hover:after {
     border-bottom: 1px solid rgba(255,255,255,0.1);
   }
   nav li a {
-    font-size: 12px;
-    padding: 15px 10px;
-  }
-  nav .cnt {
-    margin: 0;
-    text-align: center;
+    padding: 10px 5%;
   }
 }
 
@@ -187,4 +197,18 @@ nav .nav__docs a:hover:after {
 }
 #web-services li:first-of-type a {
   padding-left: 0;
+}
+
+#homeMain #nav {
+  position: absolute;
+}
+.nav-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  padding: 35px 20px;
+  line-height: 0;
+  font-size: 30px;
+  color: #fff;
 }

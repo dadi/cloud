@@ -117,6 +117,15 @@ function toggleContextual(e) {
   e.preventDefault();
   document.getElementById(this.href.split('#')[1]).classList.toggle('hide');
 }
+
+var navLink = document.getElementById('nav-link');
+var navList = document.getElementById('nav-list');
+
+navLink.addEventListener('click', function(e) {
+  e.preventDefault();
+  navList.classList.toggle('bs-hide');
+})
+
 </script>
 
 </body>

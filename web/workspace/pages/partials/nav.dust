@@ -1,10 +1,10 @@
+<a href="#nav" class="nav-link bl-hide" id="nav-link">☰</a>
+
 <nav class="color-white fm" {?stick}id="nav"{/stick}>
   <div class="cnt bg-dark bds">
-    {@ne key=page.key value="index"}
-      <div class="nav__logo"><a href="/">Home</a></div>
-    {/ne}
+    <div class="nav__logo {@eq key=page.key value="index"}bl-hide{/eq}"><a href="/">Home</a></div>
     
-    <ul>
+    <ul class="bs-hide" id="nav-list">
       {@eq key=page.key value="index"}
         <li>
           <a 
