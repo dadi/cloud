@@ -188,7 +188,6 @@ nav .nav__docs a:hover:after {
   }
   nav .nav__logo a {
     background-image: url(/assets/img/dadi-logo-white.svg);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
   nav li a {
     padding: 10px 5%;
