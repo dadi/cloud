@@ -6,7 +6,7 @@
   </div>
   
   <div class="intro__about animation fade-in fm">
-    <h1><img src="/assets/img/dadi-logo-dark.svg" alt="DADI"></h1>
+    <h1 class="bs-hide"><img src="/assets/img/dadi-logo-dark.svg" alt="DADI"></h1>
     <h2 style="color:#8a939d">Fast, scalable, secure and inexpensive web services.</h2>
     <p>This is the cloud, decentralized.</p>
 
