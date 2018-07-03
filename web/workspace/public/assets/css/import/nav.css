@@ -152,19 +152,22 @@ nav .nav__docs a:hover:after {
 }
 
 @media (--bs) {
-  #nav ul {
+  #nav-list {
     background: #04111d;
     max-height: 0px;
     overflow: hidden;
     transition: max-height 0.3s linear;
   }
-  #nav ul li:first-of-type {
+  #nav-list li:first-of-type {
     padding-top: 10px;
   }
-  #nav ul.expanded {
+  #nav-list li:last-of-type {
+    padding-top: 10px;
+  }
+  #nav-list.expanded {
     max-height: 100vh;
   }
-  #nav .cnt {
+  nav .cnt {
     margin: 0;
   }
   nav .nav__social,
