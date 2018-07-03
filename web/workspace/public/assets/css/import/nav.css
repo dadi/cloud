@@ -152,13 +152,19 @@ nav .nav__docs a:hover:after {
 }
 
 @media (--bs) {
-  nav ul {
-    position: absolute;
+  #nav ul {
     background: #04111d;
-    top: 100%; left: 0; right: 0;
-    padding: 10px 0;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.3s linear;
   }
-  nav .cnt {
+  #nav ul li:first-of-type {
+    padding-top: 10px;
+  }
+  #nav ul.expanded {
+    max-height: 100vh;
+  }
+  #nav .cnt {
     margin: 0;
   }
   nav .nav__social,
@@ -168,6 +174,7 @@ nav .nav__docs a:hover:after {
   nav .nav__docs {
     display: block;
     float: none;
+    padding-bottom: 10px;
   }
   nav .nav__logo,
   nav .nav__logo a {
@@ -185,30 +192,18 @@ nav .nav__docs a:hover:after {
   }
 }
 
-#web-services {
-  background: var(--dark);
-  box-shadow: 0 1px 0 0 rgba(255,255,255,0.1) inset;
-}
-#web-services a:after {
-  display: none;
-}
-#web-services a {
-  padding: 20px;
-}
-#web-services li:first-of-type a {
-  padding-left: 0;
-}
-
-#homeMain #nav {
-  position: absolute;
-}
-.nav-link {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 100;
-  padding: 35px 20px;
-  line-height: 0;
-  font-size: 30px;
-  color: #fff;
+@media (--bs) {
+  #homeMain #nav {
+    position: absolute;
+  }
+  .nav-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    padding: 35px 20px;
+    line-height: 0;
+    font-size: 30px;
+    color: #fff;
+  }
 }

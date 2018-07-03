@@ -4,7 +4,7 @@
   <div class="cnt bg-dark bds">
     <div class="nav__logo {@eq key=page.key value="index"}bl-hide{/eq}"><a href="/">Home</a></div>
     
-    <ul class="bs-hide" id="nav-list">
+    <ul id="nav-list">
       {@eq key=page.key value="index"}
         <li>
           <a 

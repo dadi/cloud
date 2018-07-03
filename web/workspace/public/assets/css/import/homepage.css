@@ -81,7 +81,7 @@
   }
   .intro__about {
     margin: 0;
-    bottom: 30px;
+    bottom: 0;
     transform: scale(0.85);
     transform-origin: 0 100%;
   }
@@ -192,9 +192,11 @@
   border-bottom: 5px solid transparent;
   border-left: 5px solid #0ecc5f;
 }
-.intro__about {
-  bottom: 8%;
-  width: 24%;
+@media (--bl) {
+  .intro__about {
+    bottom: 8%;
+    width: 24%;
+  }
 }
 .intro__about h2:before {
   border-top: 1px solid rgba(0,0,0,.1);
@@ -206,8 +208,8 @@
 
 .intro__about h2,
 .intro__about p {
-  font-size: 1rem;
-  line-height: 1.3rem;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
   font-weight: normal;
   margin-bottom: 20px;
 }
