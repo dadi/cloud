@@ -79,7 +79,7 @@
       <div class="grid bdb bd-grey">
         <div class="col col--right w-1-2 pt--x2">
           <p class="large fwb" style="margin-top:20%;margin-bottom:10px">Deliver at scale</p>
-          <p class="normal colour-tint">DADI's network comprises hundreds of edge nodes covering every content and pretty much every country and major city on Earth.</p>
+          <p class="normal colour-tint">DADI's network comprises hundreds of edge nodes covering every continent and pretty much every country and major city on Earth.</p>
         </div>
         <div class="col w-1-2">
           <img src="/assets/img/cdn-illo-scale.svg" class="fill">
