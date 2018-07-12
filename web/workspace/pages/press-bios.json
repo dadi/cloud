@@ -1,0 +1,16 @@
+{
+  "page": {
+    "key": "press-bios"
+  },
+  "events": [
+    "pdfPressBios"
+  ],
+  "datasources": [
+    "team"
+  ],
+  "routes": [
+    {
+      "path": "/press/bios"
+    }
+  ]
+}
