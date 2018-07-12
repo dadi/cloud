@@ -1,6 +1,6 @@
 {#category}
   <div class="badge fm small color-blue">
-    <div class="badge__primary bg-blue color-white">
+    <div class="badge__primary bg-blue {?dark}color-dark{:else}color-white{/dark}">
       <a href="/{lang}/{slug}" itemprop="about">
         {name}
       </a>
