@@ -1,0 +1,103 @@
+{>"partials/header"/}
+
+{>"partials/nav"/}
+
+<header class="bg-tint mb pt--x2 pb--x2 cf ovfh">
+  <div class="cnt cf">
+    <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
+    <h1>{pages.results[0].title}</h1>
+    <p class="normal">{pages.results[0].excerpt}</p>
+  </div>
+</header>
+
+<main class="mb">
+  <div class="pt--x2 pb--x2 bdb bd-grey">
+    <div class="cnt">
+      <h2 class="normal mb color-tint fwn fm">Logos</h2>
+
+      <div class="cols cols--3 read">
+        <div class="col">
+          <img src="/assets/press/dadi-logo-colour.png" class="fill" style="margin:0 0 10px">
+          Logo (colour) 
+          <span class="fm" style="margin-left:10px"><a href="/assets/press/dadi-logo-colour-full.svg">SVG</a> <a href="/assets/press/dadi-logo-colour-full.png">PNG</a></span>
+        </div>
+        <div class="col">
+          <img src="/assets/press/dadi-logo-black.png" class="fill" style="margin:0 0 10px">
+          Logo (black)
+          <span class="fm" style="margin-left:10px"><a href="/assets/press/dadi-logo-black-full.svg">SVG</a> <a href="/assets/press/dadi-logo-black-full.png">PNG</a></span>
+        </div>
+        <div class="col">
+          <img src="/assets/press/dadi-logo-white.png" class="fill" style="margin:0 0 10px">
+          Logo (white)
+          <span class="fm" style="margin-left:10px"><a href="/assets/press/dadi-logo-white-full.svg">SVG</a> <a href="/assets/press/dadi-logo-white-full.png">PNG</a></span>
+        </div>
+        <div class="col">
+          <img src="/assets/press/dadi-mark-colour.png" class="fill" style="margin:0 0 10px">
+          Mark (colour)
+          <span class="fm" style="margin-left:10px"><a href="/assets/press/dadi-mark-colour-full.svg">SVG</a> <a href="/assets/press/dadi-mark-colour-full.png">PNG</a></span>
+        </div>
+        <div class="col">
+          <img src="/assets/press/dadi-mark-black.png" class="fill" style="margin:0 0 10px">
+          Mark (black)
+          <span class="fm" style="margin-left:10px"><a href="/assets/press/dadi-mark-black-full.svg">SVG</a> <a href="/assets/press/dadi-mark-black-full.png">PNG</a></span>
+        </div>
+        <div class="col">
+          <img src="/assets/press/dadi-mark-white.png" class="fill" style="margin:0 0 10px">
+          Mark (white)
+          <span class="fm" style="margin-left:10px"><a href="/assets/press/dadi-mark-white-full.svg">SVG</a> <a href="/assets/press/dadi-mark-white-full.png">PNG</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pt--x2 pb--x2 bdb bd-grey">
+    <div class="cnt">
+      <h2 class="normal mb color-tint fwn fm">Photos</h2>
+
+      <div class="cols cols--3 read">
+        <div class="col">
+          <img src="/assets/press/dadi-founding-node-1.jpg" class="fill" style="margin:0 0 10px">
+          Founding Node
+          <span class="fm" style="margin-left:10px"><a href="/assets/press/dadi-founding-node-1-full.jpg">JPG</a></span>
+        </div>
+        <div class="col">
+          <img src="/assets/press/dadi-founding-node-2.jpg" class="fill" style="margin:0 0 10px">
+          Founding Node
+          <span class="fm" style="margin-left:10px"><a href="/assets/press/dadi-founding-node-2-full.jpg">JPG</a></span>
+        </div>
+        <div class="col">
+          <img src="/assets/press/dadi-founding-node-3.jpg" class="fill" style="margin:0 0 10px">
+          Founding Node
+          <span class="fm" style="margin-left:10px"><a href="/assets/press/dadi-founding-node-3-full.jpg">JPG</a></span>
+        </div>
+        <div class="col">
+          <img src="/assets/press/dadi-founding-node-4.jpg" class="fill" style="margin:0 0 10px">
+          Founding Node
+          <span class="fm" style="margin-left:10px"><a href="/assets/press/dadi-founding-node-4-full.jpg">JPG</a></span>
+        </div>
+        <div class="col">
+          <img src="/assets/press/dadi-founding-node-5.jpg" class="fill" style="margin:0 0 10px">
+          Founding Node
+          <span class="fm" style="margin-left:10px"><a href="/assets/press/dadi-founding-node-5-full.jpg">JPG</a></span>
+        </div>
+        <div class="col">
+          <img src="/assets/press/dadi-founding-node-6.jpg" class="fill" style="margin:0 0 10px">
+          Founding Node
+          <span class="fm" style="margin-left:10px"><a href="/assets/press/dadi-founding-node-6-full.jpg">JPG</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pt--x2 pb">
+    <div class="cnt">
+      <div class="cols cols--3 read">
+        <div class="col">
+          <h2 class="normal mb color-tint fwn fm">Downloads</h2>
+          <img src="/assets/press/pdf.png" class="fill" style="margin:0 0 10px">
+          Team bios <span class="fm" style="margin-left:10px"><a href="/press/bios">PDF</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{>"partials/footer"/}
