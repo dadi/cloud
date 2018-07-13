@@ -32,7 +32,7 @@
 
   <main class="pb--x2 cf cnt">
     <div class="grid" id="stickContainer">
-      <aside id="stick" class="mb col col--nopad col--right w-1-4">
+      <aside style="z-index:100" id="stick" class="mb col col--nopad col--right w-1-4">
         <div class="block read pb">
           {?publishedAt}
             <meta itemprop="dateModified" content="{@formatDate unix=_lastModifiedAt /}"></meta>
