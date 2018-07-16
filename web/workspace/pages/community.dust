@@ -107,6 +107,11 @@
             <img width="90" class="vam" src="/assets/logos/blond.png" alt="Blond">
           </a>
         </div>
+        <div class="col w-1-3">
+          <a style="height: 100px;line-height:99px" href="https://lbx.com/" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
+            <img width="50" class="vam" src="/assets/logos/lbx.png" alt="London Block Exchange">
+          </a>
+        </div>
       </div>
     </div>
   </div>
