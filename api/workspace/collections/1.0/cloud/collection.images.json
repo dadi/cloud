@@ -18,7 +18,7 @@
         }
       }
     },
-    "filename": {
+    "fileName": {
       "type": "String",
       "required": false,
       "label": "Filename",
@@ -28,6 +28,19 @@
         "display": {
           "edit": true,
           "list": true
+        }
+      }
+    },
+    "mimetype": {
+      "type": "String",
+      "required": false,
+      "label": "Mime Type",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": false,
+          "list": false
         }
       }
     },
@@ -43,6 +56,19 @@
           "list": true
         }
       }
+    },
+    "contentLength": {
+      "type": "Number",
+      "required": false,
+      "label": "Content Length",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": false,
+          "list": false
+        }
+      }
     }
   },
   "settings": {
@@ -52,7 +78,7 @@
     "index": [
       {
         "keys": {
-          "filename": 1
+          "fileName": 1
         }
       }
     ],
