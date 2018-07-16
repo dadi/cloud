@@ -1,0 +1,18 @@
+{
+  "page": {
+    "key": "start"
+  },
+  "datasources": [
+    "pages",
+    "web-services"
+  ],
+  "events": [
+    "i18n",
+    "metatags"
+  ],
+  "routes": [
+    {
+      "path": "/:lang/start"
+    }
+  ]
+}

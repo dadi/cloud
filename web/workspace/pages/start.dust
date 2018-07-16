@@ -1,0 +1,55 @@
+{>"partials/header"/}
+
+{<head}
+<style>
+.founding {
+  background-image: url(/assets/img/dadi-founding-node.jpg);
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 70px);
+  position: relative;
+}
+.founding__subtitle {
+  margin-bottom: 15px;
+  display: block;
+}
+.founding__subtitle:after {
+  width: 40px;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  display: block;
+  content: ' ';
+  margin-top: 15px
+}
+.founding__intro {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+}
+.founding__logo {
+  position: absolute;
+  right: 0; bottom: 47px;
+  min-width: 250px;
+  width: 20%;
+  display: block
+}
+</style>
+{/head}
+
+{>"partials/nav"/}
+
+
+<header class="founding bg-dark mb cf ovfh">
+  <div class="cnt cf founding__intro pb--x2">
+    <img src="/assets/img/dadi-host-mark.svg" class="bs-hide founding__logo" alt="DADI Host logo">
+    <p class="fm founding__subtitle">The Founding Node</p>
+    <h1>Get started with your new host.</h1>
+  </div>
+</header>
+
+<main class="mb">
+  <div class="cnt">
+    hello
+  </div>
+</main>
+
+{>"partials/footer"/}
