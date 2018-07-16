@@ -18,6 +18,13 @@
   "cors": true,
   "datastore": "@dadi/api-mongodb",
   "env": "development",
+  "logging": {
+    "level": "debug",
+    "accessLog": {
+      "enabled": true
+    },
+    "stream": "stdout"
+  },
   "media": {
     "basePath": "../web/workspace/public",
     "storage": "disk"
