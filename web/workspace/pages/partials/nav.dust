@@ -44,7 +44,7 @@
       </li>
 
       <li class="nav--right">
-        <a href="https://my.dadi.cloud">Dashboard</a>
+        <a href="https://my.dadi.cloud" class="external">Dashboard</a>
       </li>
     </ul>
   </div>
