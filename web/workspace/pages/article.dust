@@ -18,16 +18,14 @@
     </div>
   </div>
 
-  <header class="ovfh bg-dark color-white bdt bd-tint mb--x2 pt--x2 pb cf">
+  <header class="ovfh bg-tint bdb bd-grey mb--x2 pt--x2 pb cf">
     <div class="cnt cf ll" style="z-index:1">
-      {>"partials/articles/taxonomy" dark="true" /}
+      {>"partials/articles/taxonomy" /}
 
       <h1 itemprop="headline">{title}</h1>
       
       <p class="normal mb color-tint" itemprop="description">{@soberMarkdown}{excerpt|s}{/soberMarkdown}</p>
     </div>
-
-    {! {?page.meta.image}<img style="z-index: 0; position: absolute; top: 0; width: 100%; left: 0; right: 0; height: auto; opacity: 0.1" class="bg-fill" src="{page.meta.image}&blur=5" alt="Article image">{/page.meta.image} !}
   </header>
 
   <main class="pb--x2 cf cnt">
