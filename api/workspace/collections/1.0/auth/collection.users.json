@@ -214,6 +214,40 @@
         },
         "readonly": true
       }
+    },
+    "clientId": {
+      "type": "String",
+      "label": "Client ID",
+      "comments": "Your client ID",
+      "example": "myClientId",
+      "validation": {},
+      "required": true,
+      "message": "can't be empty",
+      "publish": {
+        "section": "Account",
+        "placement": "main",
+        "display": {
+          "list": true,
+          "edit": true
+        }
+      }
+    },
+    "secret": {
+      "type": "String",
+      "label": "Client Secret",
+      "comments": "Your client secret",
+      "example": "myClientSecret",
+      "validation": {},
+      "required": true,
+      "message": "can't be empty",
+      "publish": {
+        "section": "Account",
+        "placement": "main",
+        "display": {
+          "list": true,
+          "edit": true
+        }
+      }
     }
   },
   "settings": {
