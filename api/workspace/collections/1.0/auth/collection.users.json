@@ -77,7 +77,7 @@
       "message": "JPEG or PNG",
       "required": false,
       "settings": {
-        "collection": "images"
+        "collection": "mediaStore"
       },
       "publish": {
         "subType": "Image",
