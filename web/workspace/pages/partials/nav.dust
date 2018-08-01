@@ -44,7 +44,7 @@
       </li>
 
       <li class="nav--right">
-        <a href="https://my.dadi.cloud" class="external" id="mydadicloud">Sign in or register</a>
+        <a href="{global.mydadicloud.publicUrl}" target="_blank" class="external" id="mydadicloud">Sign in or register</a>
       </li>
     </ul>
   </div>
