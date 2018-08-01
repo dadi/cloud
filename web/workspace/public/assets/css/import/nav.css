@@ -219,3 +219,11 @@ nav .external {
   background-position: 100% 50%;
   background-size: auto 17px;
 }
+
+#mydadicloud {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+#mydadicloud.js-active {
+  opacity: 1;
+}
