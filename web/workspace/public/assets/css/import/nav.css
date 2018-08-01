@@ -30,8 +30,10 @@ nav.stick {
   position: fixed;
 }
 
-.nav--right {
-  float: right;
+@media (--bl) {
+  .nav--right {
+    float: right;
+  }
 }
 nav li {
   display: inline-block;
@@ -161,7 +163,7 @@ nav .nav__docs a:hover:after {
     padding-top: 10px;
   }
   #nav-list li:last-of-type {
-    padding-top: 10px;
+    padding-bottom: 10px;
   }
   #nav-list.expanded {
     max-height: 100vh;
