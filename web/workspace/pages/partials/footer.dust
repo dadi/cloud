@@ -139,10 +139,10 @@ function myLoginStatus(data) {
   } else {
     mydadi.innerHTML = 'Sign in or register';
   }
- }
+}
 </script>
 
-<script src="https://localhost:3000/api/isauthenticated"></script>
+<script src="{global.mydadicloud.publicUrl}/api/isauthenticated"></script>
 
 </body>
 </html>
