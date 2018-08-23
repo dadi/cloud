@@ -30,8 +30,10 @@ nav.stick {
   position: fixed;
 }
 
-.nav--right {
-  float: right;
+@media (--bl) {
+  .nav--right {
+    float: right;
+  }
 }
 nav li {
   display: inline-block;
@@ -77,7 +79,7 @@ nav a:hover {
 }
 
 nav .nav__logo {
-  margin-right: 33px;
+  margin-right: 15px;
   float: left;
   display: block;
 }
@@ -88,7 +90,6 @@ nav .nav__logo a {
   background-position: 50% 50%;
   background-size: auto 25px;
   padding: 35px 37px !important;
-  border-right: 1px solid rgba(255,255,255,0.1);
   vertical-align: middle;
   display: block;
 }
@@ -162,7 +163,7 @@ nav .nav__docs a:hover:after {
     padding-top: 10px;
   }
   #nav-list li:last-of-type {
-    padding-top: 10px;
+    padding-bottom: 10px;
   }
   #nav-list.expanded {
     max-height: 100vh;
@@ -208,4 +209,21 @@ nav .nav__docs a:hover:after {
     font-size: 30px;
     color: #fff;
   }
+}
+
+
+nav .external {
+  padding-right: 23px; 
+  background: url(/assets/img/icon-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  background-size: auto 17px;
+}
+
+#mydadicloud {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+#mydadicloud.js-active {
+  opacity: 1;
 }

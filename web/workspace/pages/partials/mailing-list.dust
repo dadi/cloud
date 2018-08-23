@@ -5,9 +5,9 @@
         <div class="col w-1-2 read normal">
           <img src="/assets/img/mailing.svg" width="280" alt="Mail icon">
 
-          <p><strong>Like what you are reading?</strong> Want to earn tokens by becoming a DADI Node? Save money on cloud computing services? Build amazing digital product with DADI Web Services? Register with DADI now.</p>
+          <p><strong>Like what you are reading?</strong> Want to earn tokens by becoming a DADI Node? Save money on cloud computing services? Build amazing digital product with DADI Web Services? Join out mailing list.</p>
 
-          <p style="margin-bottom:0">To hear about our news, events and products or services register now. You can also indicate which services you are interested in, which we use for research and to inform the content that we send generally. </p>
+          <p style="margin-bottom:0">To hear about our news, events and products or services subscribe now. You can also indicate which services you are interested in, which we use for research and to inform the content that we send generally. </p>
         </div>
         <div class="col w-1-2 mt">
           <div class="grid">
@@ -75,7 +75,7 @@
 
           <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_95970b2518f8f361909d213f0_654b920cfb" tabindex="-1" value=""></div>
       
-          <button value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn">Register now</button>
+          <button value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn">Subscribe now</button>
 
           <div class="fm small color-tint pt cf" style="padding-bottom:20px">*  You can unsubscribe at any time by emailing us at <strong>data@dadi.cloud</strong> or by clicking on the unsubscribe link which can be found in our emails to you. Read our <a href="/privacy/">Privacy Policy</a>.</div>
         </div>
