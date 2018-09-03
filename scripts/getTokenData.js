@@ -17,7 +17,14 @@ const apiCredentials = {
   secret: webConfig.api.main.auth.secret
 }
 
+let protocol = webConfig.api.main.protocol
+
+if (protocol.indexOf(':') < 0) {
+  protocol = protocol + ':'
+}
+
 let apiOptions = {
+  protocol: protocol,
   hostname: webConfig.api.main.host,
   port: webConfig.api.main.port,
   method: 'POST',
