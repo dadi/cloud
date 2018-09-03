@@ -2,8 +2,8 @@
   "name": "dadicloud-api",
   "main": "server.js",
   "dependencies": {
-    "@dadi/api": "^4.0.4",
-    "@dadi/api-mongodb": "^4.2.0",
+    "@dadi/api": "^4.2.1",
+    "@dadi/api-mongodb": "^4.2.1",
     "bcrypt-as-promised": "^1.1.0",
     "nodemailer": "^4.6.4",
     "slugify": "^1.2.9"

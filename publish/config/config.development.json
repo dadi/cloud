@@ -40,7 +40,7 @@
     }
   ],
   "auth": {
-    "enabled": true,
+    "enabled": false,
     "host": "http://127.0.0.1",
     "port": 8081,
     "version": "1.0",

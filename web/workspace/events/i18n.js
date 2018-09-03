@@ -5,7 +5,7 @@ const path = require('path')
 const primaryLang = 'en'
 
 // Set what we support
-const supportedLangs = [primaryLang]
+const supportedLangs = [primaryLang, 'pt']
 const bypassUrls = []
 
 const Event = function (req, res, data, callback) {
