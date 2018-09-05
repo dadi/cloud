@@ -3,7 +3,7 @@
   "main": "server.js",
   "dependencies": {
     "@dadi/api": "~4.2.0",
-    "@dadi/api-mongodb": "^4.2.0",
+    "@dadi/api-mongodb": "~4.2.0",
     "slugify": "^1.2.9"
   }
 }
