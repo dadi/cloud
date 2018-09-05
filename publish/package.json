@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@dadi/publish": "^1.0.4-beta"
+    "@dadi/publish": "^1.0.8-beta"
   }
 }
