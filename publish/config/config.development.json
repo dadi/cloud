@@ -40,16 +40,7 @@
     }
   ],
   "auth": {
-    "enabled": true,
-    "host": "http://127.0.0.1",
-    "port": 8081,
-    "version": "1.0",
-    "database": "auth",
-    "collection": "users",
-    "credentials": {
-      "clientId": "cloud-client",
-      "secret": "nrq5d6jl0b"
-    }
+    "enabled": false
   },
   "publicUrl": {
     "host": "127.0.0.1",
@@ -57,10 +48,9 @@
     "protocol": "http"
   },
   "cdn": {
-    "publicUrl": {
-      "host": "127.0.0.1",
-      "port": 3003,
-      "protocol": "http:"
-    }
+    "publicUrl": "http://127.0.0.1:3003",
+    "host": "127.0.0.1",
+    "port": 3003,
+    "protocol": "http:"
   }
 }

@@ -1,12 +1,10 @@
 {
   "name": "dadicloud-api",
+  "version": "1.0.1",
   "main": "server.js",
   "dependencies": {
-    "@dadi/api": "^3.1.1",
-    "@dadi/api-mongodb": "^4.1.0",
-    "@dadi/apidoc": "1.5.2",
-    "bcrypt-as-promised": "^1.1.0",
-    "nodemailer": "^4.6.4",
+    "@dadi/api": "~4.2.0",
+    "@dadi/api-mongodb": "~4.2.0",
     "slugify": "^1.2.9"
   }
 }
