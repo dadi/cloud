@@ -40,16 +40,7 @@
     }
   ],
   "auth": {
-    "enabled": false,
-    "host": "http://127.0.0.1",
-    "port": 8081,
-    "version": "1.0",
-    "database": "auth",
-    "collection": "users",
-    "credentials": {
-      "clientId": "cloud-client",
-      "secret": "nrq5d6jl0b"
-    }
+    "enabled": false
   },
   "publicUrl": {
     "host": "127.0.0.1",
