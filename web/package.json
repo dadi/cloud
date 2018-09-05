@@ -9,7 +9,7 @@
   "author": "David Longworth <dl@dadi.co>",
   "license": "ISC",
   "dependencies": {
-    "@dadi/web": "github:dadi/web#feature/api-4.2-lang",
+    "@dadi/web": "github:dadi/web#develop",
     "@dadi/web-dustjs": "^1.1.3",
     "dustjs-linkedin": "^2.7.5",
     "highlight.js": "^9.12.0",
