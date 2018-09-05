@@ -1,0 +1,12 @@
+{
+  "datasource": {
+    "key": "languages",
+    "source": {
+      "type": "dadiapi",
+      "endpoint": "1.0/cloud/languages"
+    },
+    "filter": {
+      "enabled": true
+    }
+  }
+}

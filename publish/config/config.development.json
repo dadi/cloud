@@ -32,7 +32,8 @@
           "collections": [
             "categories",
             "sub-categories",
-            "milestones"
+            "milestones",
+            "languages"
           ],
           "title": "Taxonomy"
         }
