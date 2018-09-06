@@ -6,7 +6,11 @@ const Event = function (req, res, data, callback) {
 
   // article.json
   if (data.params.title) {
-    filter = { slug: data.params.title }
+    filter = { 
+      slug: data.params.title,
+      'category.slug': data.params.category,
+      'sub-category.slug': data.params.subcategory
+    }
   }
 
   // network.json
