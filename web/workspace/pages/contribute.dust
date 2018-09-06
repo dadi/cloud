@@ -37,6 +37,13 @@
   nav.subnav a:after {
     background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, #000 100%);
   } 
+  .btn--register {
+    font-size: 17px;
+    padding: 20px !important;
+  }
+  .btn--register:hover {
+    background-color: #07A54C;
+  }
   </style>
 {/head}
 
@@ -74,7 +81,7 @@
 
         <p class="normal mb--x2">Proof of stake amount: <span style="display:inline-block;margin:-3px 10px 0 15px;font-size:40px" class="color-green fwb vam inline-block">5,000</span> <span class="color-tint">$DADI</span> per Host</p>
 
-        <p><a href="https://my.dadi.cloud/register" target="_blank" class="btn btn--large">Register now</a></p>  
+        <p class="mb"><a href="https://my.dadi.cloud/register" target="_blank" class="btn--register btn btn--large">Register now</a></p>  
       </div>
     </div>
   </div>
