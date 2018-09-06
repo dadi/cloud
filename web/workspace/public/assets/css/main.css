@@ -379,3 +379,20 @@ h1, h2 {
 .dot.blink {
   animation: blink 1s linear infinite;
 }
+
+
+.article__header {
+  background-size: cover;
+}
+.article__header--pos-bl.article__header--size-m {
+  padding-top: 160px;
+}
+.article__header--pos-tl.article__header--size-m {
+  padding-bottom: 160px;
+}
+.article__header--pos-bl.article__header--size-l {
+  padding-top: 260px;
+}
+.article__header--pos-tl.article__header--size-l {
+  padding-bottom: 260px;
+}

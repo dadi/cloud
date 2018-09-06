@@ -4,8 +4,8 @@
     "enabled": false
   },
   "server": {
-    "host": "0.0.0.0",
-    "port": 3003
+    "host": "127.0.0.1",
+    "port": 3004
   },
   "logging": {
     "enabled": true,
@@ -39,23 +39,6 @@
     "remote": {
       "enabled": false,
       "allowFullURL": true,
-      "path": ""
-    }
-  },
-  "assets": {
-    "directory": {
-      "enabled": true,
-      "path": "./public"
-    },
-    "s3": {
-      "enabled": false,
-      "accessKey": "",
-      "secretKey": "",
-      "bucketName": "",
-      "region": ""
-    },
-    "remote": {
-      "enabled": false,
       "path": ""
     }
   },

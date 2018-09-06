@@ -13,46 +13,118 @@
         }
       }
     },
-    "slug": {
-      "type": "String",
+    "leadImage": {
+      "type": "Reference",
+      "settings": {
+        "collection": "mediaStore"
+      },
       "required": false,
-      "label": "Slug",
+      "label": "Lead image",
       "publish": {
-        "section": "Details",
-        "placement": "sidebar",
+        "section": "Display",
+        "placement": "main",
+        "subType": "Image",
         "display": {
           "edit": true,
           "list": false
         }
       }
     },
-    "author": {
-      "type": "Reference",
-      "required": false,
-      "label": "Author",
+    "leadImageHeader": {
+      "type": "Boolean",
+      "label": "Lead image in header?",
       "publish": {
-        "section": "Details",
+        "section": "Display",
         "placement": "main",
         "display": {
           "edit": true,
           "list": false
         }
-      },
-      "settings": {
-        "collection": "team"
       }
     },
-    "publishedAt": {
-      "type": "DateTime",
-      "format": "unix",
-      "required": false,
-      "label": "Date & Time",
+    "leadImageSize": {
+      "type": "String",
+      "label": "Lead image size",
       "publish": {
-        "section": "Details",
-        "placement": "sidebar",
+        "section": "Display",
+        "placement": "main",
         "display": {
           "edit": true,
-          "list": true
+          "list": false
+        },
+        "options": [
+          {
+            "value": "s",
+            "label": "Small"
+          },
+          {
+            "value": "m",
+            "label": "Medium"
+          },
+          {
+            "value": "l",
+            "label": "Large"
+          }
+        ]
+      }
+    },
+    "leadImagePosition": {
+      "type": "String",
+      "label": "Image position",
+      "publish": {
+        "section": "Display",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": false
+        },
+        "options": [
+          {
+            "value": "0",
+            "label": "Top"
+          },
+          {
+            "value": "50",
+            "label": "Centre"
+          },
+          {
+            "value": "100",
+            "label": "Bottom"
+          }
+        ]
+      }
+    },
+    "headlinePosition": {
+      "type": "String",
+      "label": "Headline position",
+      "publish": {
+        "section": "Display",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": false
+        },
+        "options": [
+          {
+            "value": "tl",
+            "label": "Top left"
+          },
+          {
+            "value": "bl",
+            "label": "Bottom left"
+          }
+        ]
+      }
+    },
+    "headlineLight": {
+      "type": "Boolean",
+      "label": "Light headline text?",
+      "publish": {
+        "section": "Display",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": false
         }
       }
     },
@@ -69,6 +141,20 @@
         }
       }
     },
+    "publishedAt": {
+      "type": "DateTime",
+      "format": "unix",
+      "required": false,
+      "label": "Date & Time",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },   
     "excerpt": {
       "type": "String",
       "required": false,
@@ -95,6 +181,35 @@
           "edit": true,
           "list": false
         }
+      }
+    },
+    "slug": {
+      "type": "String",
+      "required": false,
+      "label": "Slug",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
+    "author": {
+      "type": "Reference",
+      "required": false,
+      "label": "Author",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      },
+      "settings": {
+        "collection": "team"
       }
     },
     "category": {
