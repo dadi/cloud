@@ -23,7 +23,7 @@
       display: none;
     }
   }
-  @media (min-width: 800px) {
+  @media (--bs) {
     .header__logo {
       margin: 0 60px;
     }

@@ -160,11 +160,6 @@
         </a>
       </div>
       <div class="col w-1-4">
-        <a style="height: 100px;line-height:97px" href="https://coinfalcon.com/advanced-view/DADI-BTC" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
-          <img width="190" class="vam" src="/assets/logos/coinfalcon.png" alt="Coin Falcon">
-        </a>
-      </div>
-      <div class="col w-1-4">
         <a style="height: 100px;line-height:97px" href="https://gate.io/trade/DADI_ETH" target="_blank" rel="noopener" class="box box--natural tac bd bd-grey mb">
           <img width="130" class="vam" src="/assets/logos/gateio.png" alt="Gate.io">
         </a>

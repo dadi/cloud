@@ -12,12 +12,12 @@
     position: absolute;
     bottom: 0; left: 0; right: 0;
   }
-  @media (min-width: 800px) {
+  @media (--bl) {
      header {
       padding-bottom: 160px;
     }
   }
-  @media (max-width: 800px) {
+  @media (--bs)  {
     header {
       background-size: auto 248px;
       background-position: 180% 10%;
