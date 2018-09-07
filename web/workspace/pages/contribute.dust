@@ -5,8 +5,9 @@
   header {
     background: url(/assets/network/dadi-network_host-colour.svg) no-repeat 95% 20px;
     background-size: auto 480px;
+    height: calc(100vh - 72px);
     min-height: auto;
-    min-height: calc(100vh - 230px);
+    min-height: 720px;
   }
   .token-partners {
     position: absolute;

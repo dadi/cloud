@@ -80,7 +80,8 @@
         "display": {
           "edit": true,
           "list": true
-        }
+        },
+        "heightType": "content"
       }
     },
     "body": {
@@ -94,7 +95,9 @@
         "display": {
           "edit": true,
           "list": false
-        }
+        },
+        "heightType": "full",
+        "resizable": true
       }
     },
     "category": {
