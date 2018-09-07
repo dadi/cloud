@@ -59,7 +59,7 @@
         </ul>
       </div>
       <div class="col w-1-5 mb--x2">
-        <div class="hdr fm ttu mb"><h3><span>Community</span></h3></div>
+        <div class="hdr fm ttu mb"><h3><span>{i18n.nav_community}</span></h3></div>
         <ul class="grid bs-grid">
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/community/">Overview</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/updates/">Updates</a></li>
@@ -146,9 +146,9 @@ function myLoginStatus(data) {
   mydadi.classList.add('js-active');
 
   if (data.result) {
-    mydadi.innerHTML = 'My dashboard';
+    mydadi.innerHTML = '{i18n.nav_dashboard}';
   } else {
-    mydadi.innerHTML = 'Sign in or register';
+    mydadi.innerHTML = '{i18n.nav_signinreg}';
   }
 }
 </script>

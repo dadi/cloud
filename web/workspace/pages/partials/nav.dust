@@ -9,21 +9,21 @@
         <a 
           {@eq key="{page.key}" value="marketplace"}class="active"{/eq}
           href="/marketplace">
-          dApp Marketplace
+          {i18n.nav_marketplace}
         </a>
       </li>
       <li>
         <a 
           {@eq key="{page.key}" value="community"}class="active"{/eq}
           href="/{lang}/community">
-          Community
+          {i18n.nav_community}
         </a>
       </li>
       <li>
         <a 
           {@eq key="{page.key}" value="contribute"}class="active"{/eq}
           href="/{lang}/contribute">
-          Contribute to the network
+          {i18n.nav_contribute}
         </a>
       </li>
       <li id="nav--docs">
@@ -31,12 +31,12 @@
           href="https://docs.dadi.cloud/"
           target="_blank"
           rel="noopener">
-          Documentation
+          {i18n.documentation}
         </a>
       </li>
 
       <li class="nav--right">
-        <a href="{global.mydadicloud.publicUrl}" target="_blank" class="external" id="mydadicloud">Sign in or register</a>
+        <a href="{global.mydadicloud.publicUrl}" target="_blank" class="external" id="mydadicloud">{i18n.nav_signinreg}</a>
       </li>
     </ul>
   </div>
