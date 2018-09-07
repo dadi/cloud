@@ -1,8 +1,8 @@
 {
   "datasource": {
-    "key": "languages",
+    "key": "langs",
     "source": {
-      "endpoint": "1.0/cloud/languages"
+      "endpoint": "1.0/cloud/langs"
     },
     "filter": {
       "enabled": true

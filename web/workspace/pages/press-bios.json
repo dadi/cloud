@@ -9,6 +9,8 @@
     "pdfPressBios"
   ],
   "datasources": [
+    "langs",
+    "translations",
     "team"
   ],
   "routes": [

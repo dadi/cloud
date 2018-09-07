@@ -1,13 +1,11 @@
-<div id="join" class="pt pb--x2 bds">
+<div id="join" class="pt pb bds">
   <div class="cnt">
     <form action="https://cloud.us17.list-manage.com/subscribe/post?u=95970b2518f8f361909d213f0&amp;id=654b920cfb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
       <div class="grid">
         <div class="col w-1-2 read normal">
           <img src="/assets/img/mailing.svg" width="280" alt="Mail icon">
 
-          <p><strong>Like what you are reading?</strong> Want to earn tokens by becoming a DADI Node? Save money on cloud computing services? Build amazing digital product with DADI Web Services? Join our mailing list.</p>
-
-          <p style="margin-bottom:0">To hear about our news, events and products or services subscribe now. You can also indicate which services you are interested in, which we use for research and to inform the content that we send generally. </p>
+          {@markdown}{i18n.promo_mailing}{/markdown}
         </div>
         <div class="col w-1-2 mt">
           <div class="grid">

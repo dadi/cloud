@@ -3,6 +3,8 @@
     "key": "team"
   },
   "datasources": [
+    "langs",
+    "translations",
     "web-services",
     "articles",
     "team",

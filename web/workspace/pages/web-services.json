@@ -3,6 +3,8 @@
     "key": "web-services"
   },
   "datasources": [
+    "langs",
+    "translations",
     "pages",
     "web-services",
     "web-service",

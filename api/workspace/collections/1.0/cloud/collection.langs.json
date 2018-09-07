@@ -22,7 +22,7 @@
         "placement": "main",
         "display": {
           "edit": true,
-          "list": false
+          "list": true
         }
       }
     },

@@ -20,22 +20,28 @@
       },
       "menu": [
         {
+          "title": "Content",
           "collections": [
             "images",
             "pages",
             "team",
             "partners"
-          ],
-          "title": "Content"
+          ]
         },
         {
+          "title": "Taxonomy",
           "collections": [
             "categories",
             "sub-categories",
-            "milestones",
-            "languages"
-          ],
-          "title": "Taxonomy"
+            "milestones"
+          ]
+        },
+        {
+          "title": "Internationalisation",
+          "collections": [
+            "langs",
+            "translations"
+          ]
         }
       ]
     }

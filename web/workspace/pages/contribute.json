@@ -3,6 +3,8 @@
     "key": "contribute"
   },
   "datasources": [
+    "langs",
+    "translations",
     "pages",
     "web-services",
     "countries"
