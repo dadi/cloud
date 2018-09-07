@@ -78,9 +78,9 @@
         </div>
 
         <div class="col w-2-3 normal">
-          <p class="mb"><strong>A proud supporter of the DADI Foundation.</strong> The foundation's mission is to harness technologies to empower the most marginalised, ensuring fair access to technology and supporting robust and inclusive democracies.</p>
+          <p class="mb">{@soberMarkdown}{i18n.dadi_foundation}{/soberMarkdown}</p>
 
-          <p><a class="btn" href="https://dadi.foundation" target="_blank">More about the foundation</a></p>
+          <p><a class="btn" href="https://dadi.foundation" target="_blank">{i18n.dadi_foundation_more}</a></p>
         </div>
       </div>
     </div>

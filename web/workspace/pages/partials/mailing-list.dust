@@ -11,17 +11,17 @@
           <div class="grid">
             <div class="col w-1-2">
               <div class="mc-field-group">
-                <input placeholder="First name" type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                <input placeholder="{i18n.form_fname}" type="text" value="" name="FNAME" class="" id="mce-FNAME">
               </div>
             </div>
             <div class="col w-1-2">
               <div class="mc-field-group">
-                <input placeholder="Last name" type="text" value="" name="LNAME" class="" id="mce-LNAME">
+                <input placeholder="{i18n.form_lname}" type="text" value="" name="LNAME" class="" id="mce-LNAME">
               </div>
             </div>
             <div class="col w-1-1">
               <div class="mc-field-group">
-                <input placeholder="Your email address" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                <input placeholder="{i18n.form_email}" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
               </div>
             </div>
           </div>
@@ -29,13 +29,13 @@
           <div class="grid">
             <div class="col w-1-2">
               <div class="mc-field-group">
-                <input placeholder="City" type="text" value="" name="CITY" class="" id="mce-CITY">
+                <input placeholder="{i18n.form_city}" type="text" value="" name="CITY" class="" id="mce-CITY">
               </div>
             </div>
             <div class="col w-1-2">
               <div class="mc-field-group">
                 <select name="COUNTRY">
-                  <option value="null" hidden selected disabled>Country</option>
+                  <option value="null" hidden selected disabled>{i18n.form_country}</option>
 
                   <optgroup label="Popular">
                     <option value="United Kingdom">United Kingdom</option>
@@ -57,7 +57,7 @@
 
           <div class="mc-field-group">
             <select name="INTEREST">
-              <option value="null" hidden selected disabled>Select interest</option>
+              <option value="null" hidden selected disabled>{i18n.form_interest}</option>
 
               <option value="contributing">Contributing to the network</option>
               <option value="cloudservices">Cloud computing services</option>
@@ -73,7 +73,7 @@
 
           <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_95970b2518f8f361909d213f0_654b920cfb" tabindex="-1" value=""></div>
       
-          <button value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn">Subscribe now</button>
+          <button value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn">{i18n.form_subscribe}</button>
 
           <div class="fm small color-tint pt cf" style="padding-bottom:20px">*  You can unsubscribe at any time by emailing us at <strong>data@dadi.cloud</strong> or by clicking on the unsubscribe link which can be found in our emails to you. Read our <a href="/privacy/">Privacy Policy</a>.</div>
         </div>
