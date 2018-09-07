@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <header class="ovfh bdb bd-grey mb--x2 pt--x2 pb cf article__header {?headlineLight}bg-dark color-white{:else}bg-tint{/headlineLight} {?leadImageHeader}{?headlinePosition}article__header--pos-{headlinePosition}{/headlinePosition} {?leadImageSize}article__header--size-{leadImageSize}{/leadImageSize}{/leadImageHeader}" style="{?leadImageHeader}background-image:url({global.cdn.publicUrl}{leadImage[0].path});{/leadImageHeader}background-position: 50% {leadImagePosition}%;">
+  <header class="ovfh bdb bd-grey mb--x2 pt--x2 pb cf article__header {?headlineLight}bg-dark color-white{:else}bg-tint{/headlineLight} {?leadImageHeader}{?headlinePosition}article__header--pos-{headlinePosition}{/headlinePosition} {?leadImageSize}article__header--size-{leadImageSize}{/leadImageSize}{/leadImageHeader}" style="{?leadImageHeader}background-image:url({global.cdn.publicUrl}{leadImage[0].path}?w=1140&amp;q=80);{/leadImageHeader}background-position: 50% {leadImagePosition}%;">
     <div class="cnt cf ll" style="z-index:1;">
       {>"partials/articles/taxonomy" dark=headlineLight /}
 
