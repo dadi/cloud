@@ -65,20 +65,20 @@
             <img src="/assets/img/explainer-part1.svg" alt="Traditional services">
             
             <h2 style="margin-bottom:5px" class="mt medium">
-              {i18.home_illo_cloud}
+              {i18n.home_illo_cloud}
             </h2>
             <p class="color-tint fm small">
-              {i18.home_oldway}
+              {i18n.home_oldway}
             </p>
           </div>
           <div class="col w-1-3 mb tac pt">
             <img src="/assets/img/explainer-part2.svg" alt="The DADI Network">
 
             <h2 style="margin-bottom:5px" class="medium color-blue">
-              {i18.home_illo_decentralized}
+              {i18n.home_illo_decentralized}
             </h2>
             <p class="color-tint fm small">
-              {i18.home_newway}
+              {i18n.home_newway}
             </p>
           </div>
         </div>        
