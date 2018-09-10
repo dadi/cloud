@@ -120,13 +120,20 @@ nav .nav__social a {
   padding: 8px 4px;
 }
 
-@media (--bs) {
+@media (max-width: 1300px) {
   nav .nav__social {
     display: none;
   }
 }
 
-nav .nav__docs a {
+@media (--bs) {
+  nav .nav__social {
+    display: block;
+    margin-left: 4%;
+  }
+}
+
+/*nav .nav__docs a {
   color: #316FF4;
 }
 nav .nav__docs a:hover {
@@ -138,16 +145,22 @@ nav .nav__docs a:after {
 }
 nav .nav__docs a:hover:after {
   background: #fff;
-}
+}*/
 
-@media handheld, only screen and (max-width: 1110px) {
+@media (max-width: 1060px) {
   nav .nav__docs {
     display: none;
   }
 }
 
-@media handheld, only screen and (max-width: 930px) {
-  nav .nav__social {
+@media (--bs) {
+  nav .nav__docs {
+    display: block;
+  }
+}
+
+@media (max-width: 900px) {
+  nav .nav__dash {
     display: none;
   }
 }
@@ -171,11 +184,10 @@ nav .nav__docs a:hover:after {
   nav .cnt {
     margin: 0;
   }
-  nav .nav__social,
   nav .nav__logo a:after {
     display: none;
   }
-  nav .nav__docs {
+  nav .nav__dash {
     display: block;
     float: none;
     padding-bottom: 10px;
