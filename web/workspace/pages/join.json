@@ -3,6 +3,8 @@
     "key": "join"
   },
   "datasources": [
+    "langs",
+    "translations",
     "articles",
     "pages",
     "web-services",

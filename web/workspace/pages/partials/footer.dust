@@ -1,19 +1,28 @@
 <footer class="bg-tint bdt bd-grey">
   <div class="cnt fm small">
-    <div class="grid mb--x2">
-      <div class="col">
-        <div class="badge fm small">
-          <div class="bg-dark badge__primary color-white">Last deployment</div>
-          <div class="badge__secondary">06.09.18</div>
-        </div>
-      </div>
-      <div class="col">       
-        <p class="badge__primary read" s>This site is built with our own technology and is <a href="https://github.com/dadi/cloud" title="GitHub" target="_blank" rel="noopener">open source</a>. <strong>© DADI+ Ltd</strong>. Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors.</p>      
-      </div>      
-    </div>
-
     <div class="grid mb">
-      <div class="col w-1-4 mb--x2">
+      <div class="col w-1-5">
+        <a href="#lang" style="margin-top:5px" class="pl block mb trigger-contextual btn--icon fwb">
+          <img src="/assets/icons/chat.svg" width="18" style="right:auto;left:0"> {currentLang}
+        </a>
+
+        {?langs.results}
+          <div id="lang" class="hide mb box box--arrow bg-white box--natural bd bd-grey list">
+            <div class="box__inner" style="padding:10px 20px 5px">
+              <ul class="grid">
+                {#langs.results}
+                 <li class="col w-1-1"><a href="/{code}{pathNoLang}">{name}</a></li>
+                {/langs.results}
+              </ul>
+            </div>
+          </div>
+        {/langs.results}
+
+        <p class="read mb">This site is built with our own technology and is <a href="https://github.com/dadi/cloud" title="GitHub" target="_blank" rel="noopener">open source</a>. <strong>© DADI+ Ltd</strong>.</p>
+
+        <p class="mb">Last deployment:<br><span class="color-tint">12.07.18</span></p>
+      </div>
+      <div class="col w-1-5 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Elsewhere</span></h3></div>
         <ul class="grid bs-grid">
           <li class="col bs-w-1-2 w-1-1"><a href="https://github.com/dadi" rel="noopener" title="GitHub" target="_blank">GitHub</a></li>
@@ -24,7 +33,7 @@
           <li class="col bs-w-1-2 w-1-1"><a href="https://t.me/dadichat" rel="noopener" title="Telegram" target="_blank">Telegram</a></li>
         </ul>
       </div>
-      <div class="col w-1-4 mb--x2">
+      <div class="col w-1-5 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Sitemap</span></h3></div>
         <ul class="grid bs-grid">
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/marketplace/">Marketplace</a></li>
@@ -40,17 +49,17 @@
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/rss/">RSS Feed</a></li>
         </ul>
       </div>
-      <div class="col w-1-4 mb--x2">
+      <div class="col w-1-5 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Web services</span></h3></div>
         <ul>
           {#web-services.results}
             {?github}<li><a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}" class="fwb"><img src="{global.cdn.publicUrl}{icon[0].path}?h=36" alt="Icon for DADI {name}" height="18">{name}</a></li>{/github}
           {/web-services.results}
-          <li><a href="https://docs.dadi.cloud" onclick="ga('send','event','Documentation','Click','Footer');" rel="noopener"><img src="/assets/icons/pop-out.svg" width="15" alt="External link">Documentation</a></li>
+          <li><a href="https://docs.dadi.cloud" onclick="ga('send','event','Documentation','Click','Footer');" rel="noopener"><img src="/assets/icons/pop-out.svg" width="15" alt="External link">{i18n.documentation}</a></li>
         </ul>
       </div>
-      <div class="col w-1-4 mb--x2">
-        <div class="hdr fm ttu mb"><h3><span>Community</span></h3></div>
+      <div class="col w-1-5 mb--x2">
+        <div class="hdr fm ttu mb"><h3><span>{i18n.nav_community}</span></h3></div>
         <ul class="grid bs-grid">
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/community/">Overview</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/updates/">Updates</a></li>
@@ -59,17 +68,19 @@
         </ul>
       </div>
     </div>
+  </div>
 
-    <div class="bdt bd-grey pt--x2">
+  <div class="bdt bd-grey pt--x2">
+    <div class="cnt">
       <div class="grid">
         <div class="col col--right w-1-3 mb tac"> 
           <a href="https://dadi.foundation" target="_blank"><img src="/assets/img/dadi-foundation.svg" height="110" class="mb" alt="DADI Foundation logo"></a>
         </div>
 
         <div class="col w-2-3 normal">
-          <p class="mb"><strong>A proud supporter of the DADI Foundation.</strong> The foundation's mission is to harness technologies to empower the most marginalised, ensuring fair access to technology and supporting robust and inclusive democracies.</p>
+          <p class="mb">{@soberMarkdown}{i18n.dadi_foundation}{/soberMarkdown}</p>
 
-          <p><a class="btn" href="https://dadi.foundation" target="_blank">More about the foundation</a></p>
+          <p><a class="btn" href="https://dadi.foundation" target="_blank">{i18n.dadi_foundation_more}</a></p>
         </div>
       </div>
     </div>
@@ -135,9 +146,9 @@ function myLoginStatus(data) {
   mydadi.classList.add('js-active');
 
   if (data.result) {
-    mydadi.innerHTML = 'My dashboard';
+    mydadi.innerHTML = '{i18n.nav_dashboard}';
   } else {
-    mydadi.innerHTML = 'Sign in or register';
+    mydadi.innerHTML = '{i18n.nav_signinreg}';
   }
 }
 </script>
