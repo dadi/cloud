@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@dadi/cdn": "^3.0.0-rc3"
+    "@dadi/cdn": "^3.2.1"
   }
 }
