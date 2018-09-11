@@ -7,6 +7,8 @@
   },
   "contentType": "application/rss+xml",
   "datasources": [
+    "langs",
+    "translations",
     "rss-articles"
   ],
   "requiredDatasources": [
