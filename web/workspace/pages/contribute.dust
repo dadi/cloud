@@ -13,15 +13,14 @@
     position: absolute;
     bottom: 0; left: 0; right: 0;
   }
-  @media (--bl) {
-     header {
-      padding-bottom: 160px;
-    }
-  }
-  @media (--bs)  {
+  @media (max-width: 800px)  {
     header {
+      height: auto;
       background-size: auto 248px;
-      background-position: 180% 10%;
+      background-position: 50% 20%;
+    }
+    header .cnt {
+      background: rgba(4, 17, 29, 0.8);
     }
     .token-partners {
       position: relative;
