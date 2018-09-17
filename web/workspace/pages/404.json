@@ -3,6 +3,8 @@
     "key": "404"
   },
   "datasources": [
+    "langs",
+    "translations",
   	"pages",
     "web-services"
   ],

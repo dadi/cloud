@@ -5,12 +5,12 @@
 <header class="bg-tint pt--x2 bdb bd-grey pb cf ovfh">
   <div class="cnt">
     {#categories.results}
-      <img src="/assets/icons/{icon}.svg" width="60" class="mb bg-icon">
+      {?icon}<img src="/assets/icons/{icon}.svg" width="60" class="mb bg-icon">{/icon}
       <h1>{name}</h1>
       <p class="normal mb">{desc}</p>
     {/categories.results}
     {#sub-categories.results}
-      <img src="/assets/icons/{icon}.svg" width="60" class="mb bg-icon">
+      {?icon}<img src="/assets/icons/{icon}.svg" width="60" class="mb bg-icon">{/icon}
       <h1>{name}</h1>
       <p class="normal mb">{desc}</p>
     {/sub-categories.results}

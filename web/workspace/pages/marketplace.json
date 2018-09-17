@@ -3,6 +3,8 @@
     "key": "marketplace"
   },
   "datasources": [
+    "langs",
+    "translations",
     "articles",
     "pages",
     "web-services",

@@ -1,7 +1,7 @@
 <div class="box box--small col bd bd-grey mb" style="border-top: 1px solid #{color}">
   <{?github}a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}"{:else}div{/github} class="box__inner">
     <div class="badge badge--dapp fm small bg-tint color-tint">
-      <div class="badge__secondary">{?launch}{launch}{:else}Network ready{/launch}</div>
+      <div class="badge__secondary">{?launch}{launch}{:else}{i18n.network_ready}{/launch}</div>
     </div>
     <div class="mb">
       <img src="{global.cdn.publicUrl}{icon[0].path}?h=80" alt="Icon for DADI {name}" height="40">
@@ -11,10 +11,10 @@
   </{?github}a{:else}div{/github}>
   <div class="box__footer">
     {?github}
-      <a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}" class="box__cta small fm color-tint">About {name}</a>
+      <a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}" class="box__cta small fm color-tint">{i18n.about} {name}</a>
     {:else}
-      <span class="box__cta small fm color-tint">Coming soon…</span>
+      <span class="box__cta small fm color-tint">{i18n.coming_soon}</span>
     {/github}
-    {?install}<a href="{install}" class="box__cta small fm color-tint">Documentation</a>{/install}
+    {?install}<a href="{install}" class="box__cta small fm color-tint">{i18n.documentation}</a>{/install}
   </div>
 </div>

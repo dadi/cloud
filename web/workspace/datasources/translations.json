@@ -1,0 +1,8 @@
+{
+  "datasource": {
+    "key": "translations",
+    "source": {
+      "endpoint": "1.0/cloud/translations"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "datasource": {
+    "key": "langs",
+    "source": {
+      "endpoint": "1.0/cloud/langs"
+    },
+    "filter": {
+      "enabled": true
+    }
+  }
+}

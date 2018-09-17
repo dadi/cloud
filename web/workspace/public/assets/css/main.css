@@ -44,6 +44,18 @@ header {
 .header__intro {
   max-width: 590px;
 }
+header .social {
+  position: absolute;
+  top: 30px;
+  left: 5%;
+  z-index: 100;
+}
+header .social img {
+  display: block;
+}
+header .social a {
+  display: inline-block;
+}
 
 .bg-icon {
   opacity: 0.04;
