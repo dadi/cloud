@@ -19,7 +19,7 @@
       background-size: auto 248px;
       background-position: 50% 20%;
     }
-    header .cnt {
+    header > .cnt {
       background: rgba(4, 17, 29, 0.8);
     }
     .token-partners {
