@@ -391,3 +391,37 @@ h1, h2 {
 .dot.blink {
   animation: blink 1s linear infinite;
 }
+
+
+.list--line li {
+  padding: 10px 0;
+  list-style: none;
+  border-top: 1px solid var(--grey);
+}
+.list--line li:first-of-type {
+  padding-top: 0;
+  border-top: none;
+}
+
+
+
+.cdn-promo {
+  background-image: url(https://cdn.dadi.cloud/media/2018/05/17/dadi-cdn.png?h=900);
+  background-repeat: no-repeat;
+  background-position: 92% 30px;
+  background-size: auto 390px;
+}
+
+@media (--bs) {
+  .cdn-promo {
+    padding-bottom: 170px;
+    background-position: 50% 420px;
+  }
+}
+
+.partners-promo {
+  background-image: url(/assets/img/partners.png);
+  background-repeat: no-repeat;
+  background-size: auto 120%;
+  background-position: 110% 50%
+}

@@ -1,7 +1,7 @@
 <a href="#nav" class="nav-link bl-hide" id="nav-link">☰</a>
 
 <nav class="color-white fm" {?stick}id="nav"{/stick}>
-  <div class="cnt bg-dark bds">
+  <div class="cnt bds">
     <div class="nav__logo {@eq key=page.key value="index"}bl-hide{/eq}"><a href="/">Home</a></div>
     
     <ul id="nav-list">
