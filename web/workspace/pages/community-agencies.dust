@@ -3,8 +3,8 @@
 {>"partials/nav"/}
 
 </main>
-  <div class="cnt">
-    <div class="grid cf pt--x2 pb--x2">
+  <div class="cnt partners-promo" style="background-size:500px auto;background-position:100% 100%">
+    <div class="grid cf pt--x2 mb--x2">
       <div class="col w-1-2">
         <h2 class="large color-blue under">Join our Technology Partner programme</h2>
         <p class="medium mb">If you are interested in working with DADI decentralized applications you can register now as a DADI Technology Partner.</p>

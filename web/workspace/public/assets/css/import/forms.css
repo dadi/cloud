@@ -98,6 +98,7 @@ form label.text .text__btn:hover {
 form fieldset {
   border: none;
   background: #f9f9f9;
+  background: rgba(0,0,0,0.03);
   padding: 10px 25px 25px 25px;
   margin-top: 20px;
   border-radius: 3px;
