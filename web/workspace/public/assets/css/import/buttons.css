@@ -29,6 +29,11 @@
   width: 100%;
 }
 
+.btn--blue {
+  background: #3585f9;
+  border-color: #3585f9;
+}
+
 /* Full width more button */
 
 .btn-more {

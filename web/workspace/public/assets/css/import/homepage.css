@@ -247,18 +247,3 @@
     display: none;
   }
 }
-
-
-.cdn-promo {
-  background-image: url(https://cdn.dadi.cloud/media/2018/05/17/dadi-cdn.png?h=900);
-  background-repeat: no-repeat;
-  background-position: 92% 50px;
-  background-size: auto 450px;
-}
-
-@media (--bs) {
-  .cdn-promo {
-    padding-bottom: 170px;
-    background-position: 50% 420px;
-  }
-}
