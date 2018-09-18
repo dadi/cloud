@@ -40,7 +40,7 @@
           <input id="phone" name="phone" placeholder="Contact telephone number" type="text">
           
           <label class="text fm" for="message">Message</label>
-          <textarea style="min-height:199px" rows="5" id="message" name="message" required="" placeholder="Tell us about your project…" type="email"></textarea>
+          <textarea style="min-height:199px" rows="5" id="message" name="message" required="" placeholder="Tell us about how we could work together…" type="email"></textarea>
 
           <button type="submit" class="btn">Send message</button>
         </fieldset> 
