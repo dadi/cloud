@@ -168,26 +168,6 @@ h1, h2 {
   overflow: auto;
 }
 
-.list--feat ul li {
-  border-bottom: none;
-  position: relative;
-  list-style: none;
-  padding: 0 0 10px 35px;
-  background-image: url(/assets/img/icon-tick.svg);
-  background-repeat: no-repeat;
-  background-position: 0 5px;
-  background-size: 17px auto;
-}
-.list--feat-dark ul li {
-  background-image: url(/assets/img/icon-tick-dark.svg);
-}
-.list--feat a {
-  padding-bottom: 8px;
-}
-.list--feat a:hover {
-  text-decoration: underline;
-}
-
 @media (--bl) {
   aside {
     float: right;
@@ -393,16 +373,36 @@ h1, h2 {
 }
 
 
-.list--line li {
-  padding: 10px 0;
+.list--feat ul li {
+  border-bottom: none;
+  position: relative;
   list-style: none;
-  border-top: 1px solid var(--grey);
+  padding: 0 0 10px 35px;
+  background-image: url(/assets/img/icon-tick.svg);
+  background-repeat: no-repeat;
+  background-position: 0 5px;
+  background-size: 17px auto;
 }
-.list--line li:first-of-type {
-  padding-top: 0;
-  border-top: none;
+.list--feat-dark ul li {
+  background-image: url(/assets/img/icon-tick-dark.svg);
+}
+.list--feat a {
+  padding-bottom: 8px;
+}
+.list--feat a:hover {
+  text-decoration: underline;
 }
 
+
+.list--feat.list--line li {
+  border-top: 1px solid var(--grey);
+  padding-top: 10px;
+  background-position: 0 15px;
+}
+.list--line li:first-of-type {
+  border-top: none;
+  margin-top: -10px;
+}
 
 
 .cdn-promo {
@@ -423,5 +423,5 @@ h1, h2 {
   background-image: url(/assets/img/partners.png);
   background-repeat: no-repeat;
   background-size: auto 120%;
-  background-position: 110% 50%
+  background-position: -10% 50%
 }
