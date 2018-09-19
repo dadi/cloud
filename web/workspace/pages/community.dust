@@ -39,7 +39,7 @@
         </div>
         <div class="col w-1-3">
           <p class="normal mb">Technology partners include creative design agencies, digital agencies, software development companies, systems integrators, web designers and independent software vendors.</p>
-          <p><a href="/community/agencies" class="btn btn--blue btn--large">Learn more</a></p>
+          <p class="mb"><a href="/community/agencies" class="btn btn--blue btn--large">Learn more</a></p>
         </div>
         <div class="col w-1-3 list--line list--feat list--feat-dark">
           <ul class="normal mb">
