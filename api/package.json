@@ -1,6 +1,6 @@
 {
   "name": "dadicloud-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "server.js",
   "dependencies": {
     "@dadi/api": "~4.2.0",
