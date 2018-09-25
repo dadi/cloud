@@ -3,6 +3,8 @@
     "key": "roadmap"
   },
   "datasources": [
+    "langs",
+    "translations",
     "pages",
     "web-services",
     "milestones"

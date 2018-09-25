@@ -1,7 +1,7 @@
 <a href="#nav" class="nav-link bl-hide" id="nav-link">☰</a>
 
 <nav class="color-white fm" {?stick}id="nav"{/stick}>
-  <div class="cnt bg-dark bds">
+  <div class="cnt bds">
     <div class="nav__logo {@eq key=page.key value="index"}bl-hide{/eq}"><a href="/">Home</a></div>
     
     <ul id="nav-list">
@@ -9,34 +9,43 @@
         <a 
           {@eq key="{page.key}" value="marketplace"}class="active"{/eq}
           href="/marketplace">
-          dApp Marketplace
+          {i18n.nav_marketplace}
         </a>
       </li>
       <li>
         <a 
           {@eq key="{page.key}" value="community"}class="active"{/eq}
           href="/{lang}/community">
-          Community
+          {i18n.nav_community}
         </a>
       </li>
       <li>
         <a 
           {@eq key="{page.key}" value="contribute"}class="active"{/eq}
           href="/{lang}/contribute">
-          Contribute to the network
+          {i18n.nav_contribute}
         </a>
       </li>
-      <li id="nav--docs">
+      <li class="nav__docs">
         <a 
           href="https://docs.dadi.cloud/"
           target="_blank"
           rel="noopener">
-          Documentation
+          {i18n.documentation}
         </a>
       </li>
 
-      <li class="nav--right">
-        <a href="{global.mydadicloud.publicUrl}" target="_blank" class="external" id="mydadicloud">Sign in or register</a>
+      <li class="nav__dash nav--right">
+        <a href="{global.mydadicloud.publicUrl}" target="_blank" class="external" id="mydadicloud">{i18n.nav_signinreg}</a>
+      </li>
+
+      <li class="nav__social nav--right">
+        <a href="https://github.com/dadi" title="GitHub" target="_blank" rel="noopener"><img alt="GitHub logo" src="/assets/social/github.svg" height="24"></a>
+        <a href="https://medium.com/dadi" title="Medium" target="_blank" rel="noopener"><img alt="Medium logo" src="/assets/social/medium.svg" height="24"></a>
+        <a href="https://twitter.com/dadi" title="Twitter" target="_blank" rel="noopener"><img alt="Twitter logo" src="/assets/social/twitter.svg" height="24"></a>
+        <a href="https://reddit.com/r/dadi" title="Reddit" target="_blank" rel="noopener"><img alt="Reddit lofo" src="/assets/social/reddit.svg" height="24"></a>
+        <a href="https://discord.gg/3sEvuYJ" title="Discord" target="_blank" rel="noopener"><img alt="Discord logo" src="/assets/social/discord.svg" height="24"></a>
+        <a href="https://t.me/dadichat" title="Telegram" target="_blank" rel="noopener"><img alt="Telegram logo" src="/assets/social/telegram.svg" height="24"></a>
       </li>
     </ul>
   </div>

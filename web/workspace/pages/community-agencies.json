@@ -1,6 +1,6 @@
 {
   "page": {
-    "key": "press"
+    "key": "agencies"
   },
   "datasources": [
     "langs",
@@ -14,7 +14,7 @@
   ],
   "routes": [
     {
-      "path": "/:lang/press"
+      "path": "/:lang/community/agencies"
     }
   ]
 }

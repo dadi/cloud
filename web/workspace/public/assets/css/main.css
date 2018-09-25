@@ -44,6 +44,18 @@ header {
 .header__intro {
   max-width: 590px;
 }
+header .social {
+  position: absolute;
+  top: 30px;
+  left: 5%;
+  z-index: 100;
+}
+header .social img {
+  display: block;
+}
+header .social a {
+  display: inline-block;
+}
 
 .bg-icon {
   opacity: 0.04;
@@ -154,26 +166,6 @@ h1, h2 {
   -webkit-transform: translate3d(0, 0, 0);
   background: none;
   overflow: auto;
-}
-
-.list--feat ul li {
-  border-bottom: none;
-  position: relative;
-  list-style: none;
-  padding: 0 0 10px 35px;
-  background-image: url(/assets/img/icon-tick.svg);
-  background-repeat: no-repeat;
-  background-position: 0 5px;
-  background-size: 17px auto;
-}
-.list--feat-dark ul li {
-  background-image: url(/assets/img/icon-tick-dark.svg);
-}
-.list--feat a {
-  padding-bottom: 8px;
-}
-.list--feat a:hover {
-  text-decoration: underline;
 }
 
 @media (--bl) {
@@ -378,4 +370,58 @@ h1, h2 {
 }
 .dot.blink {
   animation: blink 1s linear infinite;
+}
+
+
+.list--feat ul li {
+  border-bottom: none;
+  position: relative;
+  list-style: none;
+  padding: 0 0 10px 35px;
+  background-image: url(/assets/img/icon-tick.svg);
+  background-repeat: no-repeat;
+  background-position: 0 5px;
+  background-size: 17px auto;
+}
+.list--feat-dark ul li {
+  background-image: url(/assets/img/icon-tick-dark.svg);
+}
+.list--feat a {
+  padding-bottom: 8px;
+}
+.list--feat a:hover {
+  text-decoration: underline;
+}
+
+
+.list--feat.list--line li {
+  border-top: 1px solid var(--grey);
+  padding-top: 10px;
+  background-position: 0 15px;
+}
+.list--line li:first-of-type {
+  border-top: none;
+  margin-top: -10px;
+}
+
+
+.cdn-promo {
+  background-image: url(https://cdn.dadi.cloud/media/2018/05/17/dadi-cdn.png?h=900);
+  background-repeat: no-repeat;
+  background-position: 92% 30px;
+  background-size: auto 390px;
+}
+
+@media (--bs) {
+  .cdn-promo {
+    padding-bottom: 170px;
+    background-position: 50% 420px;
+  }
+}
+
+.partners-promo {
+  background-image: url(/assets/img/partners.png);
+  background-repeat: no-repeat;
+  background-size: auto 120%;
+  background-position: -10% 50%
 }

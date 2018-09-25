@@ -6,6 +6,8 @@
     "passFilters": true
   },
   "datasources": [
+    "langs",
+    "translations",
     "pages",
     "web-services",
     "category-articles",

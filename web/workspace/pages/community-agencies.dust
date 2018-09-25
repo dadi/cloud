@@ -1,0 +1,53 @@
+{>"partials/header"/}
+
+{>"partials/nav"/}
+
+</main>
+  <div class="cnt partners-promo" style="background-size:500px auto;background-position:100% 100%">
+    <div class="grid cf pt--x2 mb--x2">
+      <div class="col w-1-2">
+        <h2 class="large color-blue under">Join our Technology Partner programme</h2>
+        <p class="medium mb">If you are interested in working with DADI decentralized applications you can register now as a DADI Technology Partner.</p>
+
+        <p class="normal mb">DADI Technology Partners provide software solutions using applications hosted on the DADI Network. Technology partners include creative design agencies, digital agencies, software development companies, systems integrators, web designers and independent software vendors.</p>
+
+        <p class="normal mb">As a DADI Technology Partner you can gain access to tools, training, support and other benefits such as:</p>
+
+        <div class="list--feat list--feat-dark normal mb">
+          <ul>
+            <li>Marketing support</li>
+            <li>New business support and leads</li>
+            <li>Product support and training</li>
+            <li>Network support, including VPC in the DADI network</li>
+            <li>Exclusive invitation to DADI Events</li>
+            <li>Free usage of DADI applications for qualified proof of concepts and trials</li>
+            <li>Referral fees on deployment of all DADI applications</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col w-1-2" style="margin-top:-10px">   
+        <form action="/{lang}/contact/" method="post">
+          <input type="hidden" name="_csrf" value="{csrfToken}">
+          
+          <fieldset> 
+          <label class="text fm" for="name">Name</label>
+          <input id="name" name="name" placeholder="Your full name" type="text">
+
+          <label class="text fm" for="email">Email</label>
+          <input id="email" name="email" required="" placeholder="Your email address" type="email">
+
+          <label class="text fm" for="phone">Phone</label>
+          <input id="phone" name="phone" placeholder="Contact telephone number" type="text">
+          
+          <label class="text fm" for="message">Message</label>
+          <textarea style="min-height:199px" rows="5" id="message" name="message" required="" placeholder="Tell us about how we could work together…" type="email"></textarea>
+
+          <button type="submit" class="btn">Send message</button>
+        </fieldset> 
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+{>"partials/footer"/}

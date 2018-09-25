@@ -2,13 +2,11 @@
 
 {>"partials/nav"/}
 
-<header class="pt--x2 bg-dark color-white pb cf ovfh bdt bd-tint">
-  <div class="cnt">
-    <img src="/assets/icons/white/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
-     
+<header class="bg-dark color-white pb pt--x2 cf ovfh bdt bd-tint">
+  <div class="cnt">     
     <h1 class="color-green">{pages.results[0].title}</h1>
     <p class="normal header__intro mb">{pages.results[0].excerpt}</p>
-    
+
     <div class="cols cols--3 ">
       <a href="https://twitter.com/dadi" target="_blank" class="box col bd bd-tint mb">
         <div class="box__inner" style="padding-bottom:23px">
@@ -32,7 +30,29 @@
   </div>
 </header>
 
-<main class="mb">
+<main>
+  <div class="bdb bd-grey pt--x2 pb partners-promo">
+    <div class="cnt cf">
+      <div class="grid ">
+        <div class="col w-1-3">
+          <h2 class="large color-blue under">Join our Technology Partner programme</h2>
+        </div>
+        <div class="col w-1-3">
+          <p class="normal mb">Technology partners include creative design agencies, digital agencies, software development companies, systems integrators, web designers and independent software vendors.</p>
+          <p class="mb"><a href="/community/agencies" class="btn btn--blue btn--large">Learn more</a></p>
+        </div>
+        <div class="col w-1-3 list--line list--feat list--feat-dark">
+          <ul class="normal mb">
+            <li>Marketing support</li>
+            <li>New business support and leads</li>
+            <li>Product support and training</li>
+            <li>And more…</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="pt--x2 pb--x2 bdb bd-grey">
     <div class="cnt">
       <h2 class="normal mb color-tint fwn fm">Tutorials</h2>
@@ -72,7 +92,7 @@
       <a href="/{lang}/knowledge" class="btn-more tac fm small">All knowledge</a>
     </div>
   </div>
-  <div class="pt--x2 pb">
+  <div class="pt--x2 pb mb">
     <div class="cnt">
       <h2 class="normal mb color-tint fwn fm">Our partners</h2>
 

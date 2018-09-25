@@ -23,7 +23,7 @@
       display: none;
     }
   }
-  @media (--bs) {
+  @media (min-width: 800px) {
     .header__logo {
       margin: 0 60px;
     }
@@ -192,7 +192,7 @@
 
   <div class="cnt">
     <div class="hdr fm ttu mb">
-      <h3><span>All dapps</span></h3>
+      <h3><span>All Apps</span></h3>
     </div>
               
     <div class="cols cols--4">
@@ -204,7 +204,7 @@
         <a href="/{lang}/contact" class="box__inner">
           <h2 class="fm fwn normal mb">Want to build a dApp for the DADI network?</h2>
 
-          <p class="mb">We're building out our marketplace with many more DADI dApps but will open up to applications from other organisations. If you have an idea for a dApp, get in touch.</p>
+          <p class="mb">We're building out our marketplace with many more DADI Apps but will open up to applications from other organisations. If you have an idea for a dApp, get in touch.</p>
         </a>
 
         <div class="box__footer">
