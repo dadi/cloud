@@ -37,6 +37,6 @@
     "protocol": "http"
   },
   "i18n": {
-    "languages": ["fr", "pt"]
+    "languages": ["de", "es", "fr", "ja", "ko", "pt", "ru", "zh"]
   }
 }
