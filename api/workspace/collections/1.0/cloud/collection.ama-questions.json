@@ -1,0 +1,73 @@
+{
+  "fields": {
+    "question": {
+      "type": "String",
+      "required": true,
+      "label": "Question",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },
+    "answer": {
+      "type": "String",
+      "required": false,
+      "label": "Answer",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "multiline": true,
+        "display": {
+          "edit": true,
+          "list": true
+        },
+        "heightType": "content"
+      }
+    },
+    "author": {
+      "type": "Reference",
+      "required": false,
+      "label": "Author",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      },
+      "settings": {
+        "collection": "team"
+      }
+    },
+    "ama": {
+      "type": "Reference",
+      "required": false,
+      "label": "AMA",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      },
+      "settings": {
+        "collection": "ama"
+      }
+    }
+  },
+  "settings": {
+    "displayName": "Questions",
+    "cache": false,
+    "count": 40,
+    "sort": "name",
+    "sortOrder": 1,
+    "storeRevisions": false,
+    "compose": true
+  }
+}

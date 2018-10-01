@@ -1,0 +1,56 @@
+{
+  "fields": {
+    "title": {
+      "type": "String",
+      "required": true,
+      "label": "Subject",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },
+    "date": {
+      "type": "DateTime",
+      "format": "unix",
+      "required": false,
+      "label": "Date & Time",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },
+    "participants": {
+      "type": "Reference",
+      "required": false,
+      "label": "Participants",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      },
+      "settings": {
+        "collection": "team"
+      }
+    }
+  },
+  "settings": {
+    "displayName": "Events",
+    "cache": false,
+    "count": 40,
+    "sort": "name",
+    "sortOrder": 1,
+    "storeRevisions": false,
+    "compose": true
+  }
+}
