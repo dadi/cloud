@@ -217,6 +217,7 @@ div.mce_inline_error {
   border: 1px solid rgba(0,0,0,.1);
   background: url(/assets/icons/search.svg) no-repeat 20px 50%;
   background-size: auto 55%;
+  appearance: none;
 }
 .search:focus {
   border-color: var(--green);
