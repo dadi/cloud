@@ -35,7 +35,7 @@
       "label": "Author",
       "publish": {
         "section": "Details",
-        "placement": "main",
+        "placement": "sidebar",
         "display": {
           "edit": true,
           "list": false
