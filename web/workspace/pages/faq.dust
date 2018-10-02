@@ -1,0 +1,36 @@
+{>"partials/header"/}
+
+{<head}
+  <meta name="robots" content="noindex">
+{/head}
+
+{>"partials/nav"/}
+
+<header class="pt--x2 bg-tint pb--x2 cf ovfh bdt bd-tint mb--x2">
+  <div class="cnt">
+    <h1 class="hide">FAQ</h1>
+    {>"partials/search" path="/faq" placeholder="Search our FAQs…" /}
+  </div>
+</header>
+
+<main class="mb">
+  <div class="cnt pb">
+    <div class="ll ma mb">
+      {#faq.results}
+        <div class="bdb bd-grey read pb mb">
+          <h2 class="medium">{question}</h2>
+          {@markdown}{answer}{/markdown}
+        </div>
+      {:else}
+        <div class="ll tac">
+          <h1 class="medium">No results found.</h1>
+          <p class="color-tint ">Try searching for something else e.g., <a href="/faq/founding+node">Founding Node</a></p>
+        </div>
+      {/faq.results}
+    </div>
+
+    {>"partials/pagination" ds=faq /}
+  </div>
+</main>
+
+{>"partials/footer"/}

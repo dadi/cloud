@@ -3,17 +3,17 @@
     "ama": {
       "type": "Reference",
       "required": false,
-      "label": "AMA",
+      "label": "AMA article",
       "publish": {
         "section": "Details",
         "placement": "sidebar",
         "display": {
           "edit": true,
-          "list": false
+          "list": true
         }
       },
       "settings": {
-        "collection": "ama"
+        "collection": "articles"
       }
     },
     "number": {
@@ -25,7 +25,7 @@
         "placement": "sidebar",
         "display": {
           "edit": true,
-          "list": true
+          "list": false
         }
       }
     },
@@ -42,6 +42,9 @@
         },
         "multiline": true,
         "heightType": "content"
+      },
+      "search": {
+        "weight": 1
       }
     },
     "answer": {
@@ -57,11 +60,14 @@
           "list": true
         },
         "heightType": "content"
+      },
+      "search": {
+        "weight": 2
       }
     }
   },
   "settings": {
-    "displayName": "Questions",
+    "displayName": "FAQs",
     "cache": false,
     "count": 40,
     "sort": "name",

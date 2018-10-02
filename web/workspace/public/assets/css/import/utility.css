@@ -1,5 +1,6 @@
 /* Margin */
 
+.ma                         { margin-left: auto; margin-right: auto }
 .mb                         { margin-bottom: var(--space) }
 .mt                         { margin-top: var(--space) }
 .mb--x2                     { margin-bottom: calc(var(--space) * 2) }

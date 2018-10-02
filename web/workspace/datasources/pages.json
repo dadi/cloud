@@ -2,7 +2,6 @@
   "datasource": {
     "key": "pages",
     "source": {
-      "type": "dadiapi",
       "endpoint": "1.0/cloud/pages"
     },
     "count": 1,

@@ -42,13 +42,6 @@
             "langs",
             "translations"
           ]
-        },
-        {
-          "title": "AMAs",
-          "collections": [
-            "ama",
-            "ama-questions"
-          ]
         }
       ]
     }
