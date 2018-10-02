@@ -53,6 +53,13 @@
     </div>
   </div>
 
+  <div class="pt--x2 bg-tint pb--x2 cf ovfh bdt bd-tint">
+    <div class="cnt">
+      <h1 class="hide">FAQ</h1>
+      {>"partials/search" path="/faq" placeholder="Search our FAQs…" /}
+    </div>
+  </div>
+
   <div class="pt--x2 pb--x2 bdb bd-grey">
     <div class="cnt">
       <h2 class="normal mb color-tint fwn fm">Tutorials</h2>

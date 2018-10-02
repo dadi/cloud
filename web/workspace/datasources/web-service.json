@@ -2,7 +2,6 @@
   "datasource": {
     "key": "web-service",
     "source": {
-      "type": "dadiapi",
       "endpoint": "1.0/cloud/web-services"
     },
     "paginate": false,

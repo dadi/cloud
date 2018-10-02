@@ -65,6 +65,7 @@
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/updates/">Updates</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/tutorials/">Tutorials</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/knowledge/">Knowledge</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/faq/">FAQs</a></li>
         </ul>
       </div>
     </div>
