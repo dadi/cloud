@@ -8,7 +8,13 @@
 
 <header class="pt--x2 bg-tint pb--x2 cf ovfh bdt bd-tint mb--x2">
   <div class="cnt">
-    <h1 class="hide">FAQ</h1>
+    <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
+    
+    <div class="col w-1-2 mb">
+      <h1>{pages.results[0].title}</h1>
+      <p class="normal">{pages.results[0].excerpt}</p>
+    </div>
+
     {>"partials/search" path="/faq" placeholder="Search our FAQs…" /}
   </div>
 </header>
