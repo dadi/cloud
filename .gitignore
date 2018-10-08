@@ -2,6 +2,7 @@
 node_modules
 log
 cache
+package-lock.json
 /web/npm-debug.log
 /npm-debug.log
 /web/workspace/public/robots.txt

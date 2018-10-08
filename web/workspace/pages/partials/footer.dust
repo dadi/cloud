@@ -20,7 +20,7 @@
 
         <p class="read mb">This site is built with our own technology and is <a href="https://github.com/dadi/cloud" title="GitHub" target="_blank" rel="noopener">open source</a>. <strong>© DADI+ Ltd</strong>.</p>
 
-        <p class="mb">Last deployment:<br><span class="color-tint">01.10.18</span></p>
+        <p class="mb">Last deployment:<br><span class="color-tint">08.10.18</span></p>
       </div>
       <div class="col w-1-5 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Elsewhere</span></h3></div>
@@ -65,6 +65,7 @@
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/updates/">Updates</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/tutorials/">Tutorials</a></li>
           <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/knowledge/">Knowledge</a></li>
+          <li class="col bs-w-1-2 w-1-1"><a href="/{lang}/faq/">FAQs</a></li>
         </ul>
       </div>
     </div>

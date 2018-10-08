@@ -2,7 +2,6 @@
   "datasource": {
     "key": "sub-categories",
     "source": {
-      "type": "dadiapi",
       "endpoint": "1.0/cloud/sub-categories"
     },
     "requestParams": [{

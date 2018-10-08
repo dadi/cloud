@@ -1,0 +1,11 @@
+<form id="search-form" action="{path}" method="get">
+  <input type="hidden" name="_csrf" value="{csrfToken}">
+  <input class="search" id="search" type="search" name="query" placeholder="{placeholder}" value="{params.query|d}" onfocus="this.value = this.value">
+</form>
+<script>
+  document.getElementById('search-form')
+    .addEventListener("submit", function(e) {
+      e.preventDefault();
+      window.location.href = '{path}/' + document.getElementById('search').value.trim().replace(' ', '+')
+    });
+</script>

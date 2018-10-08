@@ -1,0 +1,21 @@
+{
+  "datasource": {
+    "key": "faq",
+    "source": {
+      "endpoint": "1.0/cloud/faq/search?q={q}"
+    },
+    "count": 24,
+    "paginate": true,
+    "sort": {
+      "_createdAt": -1
+    },
+    "requestParams": [
+      {
+        "source": "request",
+        "param": "query",
+        "field": "q",
+        "target": "endpoint"
+      }
+    ]
+  }
+} 
