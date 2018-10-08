@@ -1,0 +1,24 @@
+{
+  "page": {
+    "key": "faq"
+  },
+  "settings": {
+    "cache": false
+  },
+  "datasources": [
+    "langs",
+    "translations",
+    "pages",
+    "web-services",
+    "faq"
+  ],
+  "events": [
+    "i18n",
+    "metatags"
+  ],
+  "routes": [
+    {
+      "path": "/:lang/faq/:query?"
+    }
+  ]
+}
