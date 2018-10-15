@@ -1,5 +1,6 @@
 // Modules
 const config = require('@dadi/web').Config
+
 const mailgun = require('mailgun-js')(config.get('global.mailgun'))
 const reCAPTCHA = require('recaptcha2')
 const recaptcha = new reCAPTCHA(config.get('global.recaptcha'))
@@ -21,8 +22,8 @@ const Event = function (req, res, data, callback) {
 
   // Validate out inputs
   if (
-    !req.body['g-recaptcha-response'] && 
-    !req.body.name && 
+    !req.body['g-recaptcha-response'] &&
+    !req.body.name &&
     sanitize(req.body.name) !== '' &&
     !req.body.email &&
     !isEmail(req.body.email) &&
@@ -33,7 +34,7 @@ const Event = function (req, res, data, callback) {
   }
 
   // Construct api call
-  const payload = { 
+  const payload = {
     from: fromEmail,
     to,
     subject,
@@ -51,7 +52,11 @@ ${sanitize(req.body.message)}`
     .then(function () {
       // Validate email
       mailgun.validate(req.body.email, (err, body) => {
-        if (body && body.is_valid){
+        if (err) {
+          data.mailResult = mgError
+          
+          return callback()
+        } else if (body && body.is_valid){
           mailgun.messages().send(payload, (err, body) => {
             if (err) {
               data.mailResult = mgError
