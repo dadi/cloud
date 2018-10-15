@@ -27,7 +27,8 @@ const Event = function (req, res, data, callback) {
     sanitize(req.body.name) !== '' &&
     !req.body.email &&
     !isEmail(req.body.email) &&
-    !req.body.message
+    !req.body.message && 
+    sanitize(req.body.message) !== '' &&
   ) {
     data.mailResult = errRequired
     return callback()
@@ -50,33 +51,21 @@ ${sanitize(req.body.message)}`
   // Captcha
   recaptcha.validate(req.body['g-recaptcha-response'])
     .then(function () {
-      // Validate email
-      mailgun.validate(req.body.email, (err, body) => {
+      mailgun.messages().send(payload, (err, body) => {
         if (err) {
           data.mailResult = mgError
-          
-          return callback()
-        } else if (body && body.is_valid){
-          mailgun.messages().send(payload, (err, body) => {
-            if (err) {
-              data.mailResult = mgError
-            } else {
-              data.mailResult = mgSuccess
-            }
-
-            return callback()
-          })
         } else {
-          data.mailResult = errEmail
-
-          return callback()
+          data.mailResult = mgSuccess
         }
+
+        return callback()
       })
     })
 }
 
 // Taken from: http://stackoverflow.com/a/46181/306059
 function isEmail (email) {
+  email = sanitize(email)
   const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   return re.test(email)
 }
