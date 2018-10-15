@@ -1,5 +1,23 @@
 {
   "fields": {
+    "image": {
+      "type": "Reference",
+      "label": "Image",
+      "message": "jpg or png",
+      "required": false,
+      "settings": {
+        "collection": "mediaStore"
+      },
+      "publish": {
+        "section": "Details",
+        "subType": "Image",
+        "placement": "sidebar",
+        "display": {
+          "list": false,
+          "edit": true
+        }
+      }
+    },
     "name": {
       "type": "String",
       "required": true,
@@ -26,6 +44,19 @@
         }
       }
     },
+    "role": {
+      "type": "String",
+      "required": false,
+      "label": "Role",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },
     "body": {
       "type": "String",
       "required": true,
@@ -37,20 +68,8 @@
         "display": {
           "edit": true,
           "list": false
-        }
-      }
-    },
-    "role": {
-      "type": "String",
-      "required": false,
-      "label": "Role",
-      "publish": {
-        "section": "Details",
-        "placement": "sidebar",
-        "display": {
-          "edit": true,
-          "list": true
-        }
+        },
+        "heightType": "content"
       }
     },
     "twitter": {
@@ -103,24 +122,6 @@
         "display": {
           "edit": true,
           "list": true
-        }
-      }
-    },
-    "image": {
-      "type": "Reference",
-      "label": "Image",
-      "message": "jpg or png",
-      "required": false,
-      "settings": {
-        "collection": "mediaStore"
-      },
-      "publish": {
-        "section": "Details",
-        "subType": "Image",
-        "placement": "sidebar",
-        "display": {
-          "list": false,
-          "edit": true
         }
       }
     },

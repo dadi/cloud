@@ -1,21 +1,5 @@
 {
   "fields": {
-    "ama": {
-      "type": "Reference",
-      "required": false,
-      "label": "AMA article",
-      "publish": {
-        "section": "Details",
-        "placement": "sidebar",
-        "display": {
-          "edit": true,
-          "list": true
-        }
-      },
-      "settings": {
-        "collection": "articles"
-      }
-    },
     "number": {
       "type": "Number",
       "required": true,
@@ -79,6 +63,22 @@
       },
       "search": {
         "weight": 2
+      }
+    },
+    "ama": {
+      "type": "Reference",
+      "required": false,
+      "label": "AMA article",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      },
+      "settings": {
+        "collection": "articles"
       }
     }
   },
