@@ -28,7 +28,7 @@ const Event = function (req, res, data, callback) {
     !req.body.email &&
     !isEmail(req.body.email) &&
     !req.body.message && 
-    sanitize(req.body.message) !== '' &&
+    sanitize(req.body.message) !== ''
   ) {
     data.mailResult = errRequired
     return callback()
@@ -50,16 +50,16 @@ ${sanitize(req.body.message)}`
 
   // Captcha
   recaptcha.validate(req.body['g-recaptcha-response'])
-    .then(function () {
-      mailgun.messages().send(payload, (err, body) => {
-        if (err) {
-          data.mailResult = mgError
-        } else {
-          data.mailResult = mgSuccess
-        }
-
-        return callback()
-      })
+    .then(() => {
+      return mailgun.messages().send(payload)
+    })
+    .then(body => {
+      data.mailResult = mgSuccess
+      return callback()
+    })
+    .catch(err => {
+      data.mailResult = mgError
+      return callback()
     })
 }
 
