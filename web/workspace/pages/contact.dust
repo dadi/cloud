@@ -2,6 +2,10 @@
 
 {>"partials/nav"/}
 
+{<head}
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+{/head}
+
 <header class="bg-tint mb pt--x2 pb--x2 cf ovfh">
   <div class="cnt cf">
     <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
@@ -13,7 +17,9 @@
 
 <main class="mb">
   <div class="cnt">
-    {?mailResult}<p class="info pa bg-light-green fwb">{mailResult}</p>{/mailResult}
+    {?mailResult}
+      <p class="info pa bg-light-green fwb">{mailResult}</p>
+    {/mailResult}
 
     <form action="/{lang}/contact/" method="post">
       <input type="hidden" name="_csrf" value="{csrfToken}">
@@ -30,6 +36,8 @@
       
         <label class="text fm" for="message">Message</label>
         <textarea style="min-height:199px" rows="5" id="message" name="message" required="" placeholder="What do you want to talk about?" type="email"></textarea>
+
+        <div class="mt g-recaptcha" data-sitekey="{global.recaptcha.siteKey}"></div>
      
         <button type="submit" class="btn">Send message</button></form>
       </fieldset>
