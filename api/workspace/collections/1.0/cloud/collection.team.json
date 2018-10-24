@@ -10,10 +10,10 @@
       },
       "publish": {
         "section": "Details",
-        "subType": "Image",
+        "subType": "Media",
         "placement": "sidebar",
         "display": {
-          "list": false,
+          "list": true,
           "edit": true
         }
       }
