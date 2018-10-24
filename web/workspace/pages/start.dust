@@ -36,7 +36,6 @@
 
 {>"partials/nav"/}
 
-
 <header class="founding bg-dark mb cf ovfh">
   <div class="cnt cf founding__intro pb--x2">
     <img src="/assets/img/dadi-host-mark.svg" class="bs-hide founding__logo" alt="DADI Host logo">
@@ -49,9 +48,8 @@
   <div class="cnt pt">
     <p class="ll mb--x2 normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis.</p>
 
-
     <div class="hdr fm ttu mb">
-      <h3><span>1. Connect the device</span></h3>
+      <h3><span>Connect the device</span></h3>
     </div>
 
     <div class="grid pt pb cf">
@@ -82,21 +80,11 @@
     </div>
 
     <div class="hdr fm ttu mb">
-      <h3><span>2. Download our on-boarding software</span></h3>
-    </div>
-
-    <div class="pt--x2 pb--x2 bg-tint tac">
-      Windows
-      MacOS
-      Linux
-    </div>
-
-    <div class="hdr fm ttu mb">
-      <h3><span>3. Create an account or sign-in</span></h3>
+      <h3><span>See the status of the node</span></h3>
     </div>
 
     <div class="pt--x2 pb--x2 bg-tint tac mb--x2">
-      <a href="https://my.dadi.cloud" class="btn">Sign in</a> <span style="margin: 0 20px">or</span> <a href="https://my.dadi.cloud/register" class="btn">Register</a>
+      <a href="https://my.dadi.cloud" class="btn">Go to my.dadi.cloud</a>
     </div>
   </div>
 </main>
