@@ -84,6 +84,7 @@
     </div>
 
     <div class="pt--x2 pb--x2 bg-tint tac mb--x2">
+      <p class="mb">If you're a <strong>lottery winner</strong> we've already set it up in your account so you should see the status of your node:</p>
       <a href="https://my.dadi.cloud" class="btn">Go to my.dadi.cloud</a>
     </div>
   </div>
