@@ -35,7 +35,8 @@
         "display": {
           "edit": true,
           "list": true
-        }
+        },
+        "heightType": "content"
       }
     },
     "description": {
@@ -49,7 +50,8 @@
         "display": {
           "edit": true,
           "list": false
-        }
+        },
+        "heightType": "content"
       }
     },
     "headlineFeatures": {
@@ -63,7 +65,8 @@
         "display": {
           "edit": true,
           "list": false
-        }
+        },
+        "heightType": "content"
       }
     },
     "features": {
@@ -77,7 +80,8 @@
         "display": {
           "edit": true,
           "list": false
-        }
+        },
+        "heightType": "content"
       }
     },
     "icon": {

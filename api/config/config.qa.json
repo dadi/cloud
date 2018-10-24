@@ -36,5 +36,14 @@
     "host": "0.0.0.0",
     "port": 3001,
     "protocol": "http"
+  },
+  "i18n": {
+    "languages": ["de", "es", "fr", "ja", "ko", "pt", "ru", "zh"]
+  },
+  "search": {
+    "enabled": true,
+    "minQueryLength": 3,
+    "datastore": "@dadi/api-mongodb",
+    "database": "search"
   }
 }

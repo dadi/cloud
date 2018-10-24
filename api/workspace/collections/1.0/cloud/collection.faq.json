@@ -1,0 +1,94 @@
+{
+  "fields": {
+    "number": {
+      "type": "Number",
+      "required": true,
+      "label": "Question number",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
+    "author": {
+      "type": "Reference",
+      "required": false,
+      "label": "Author",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      },
+      "settings": {
+        "collection": "team"
+      }
+    },
+    "question": {
+      "type": "String",
+      "required": true,
+      "label": "Question",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "display": {
+          "edit": true,
+          "list": true
+        },
+        "multiline": true,
+        "heightType": "content"
+      },
+      "search": {
+        "weight": 1
+      }
+    },
+    "answer": {
+      "type": "String",
+      "required": false,
+      "label": "Answer",
+      "publish": {
+        "section": "Details",
+        "placement": "main",
+        "multiline": true,
+        "display": {
+          "edit": true,
+          "list": true
+        },
+        "heightType": "content"
+      },
+      "search": {
+        "weight": 2
+      }
+    },
+    "ama": {
+      "type": "Reference",
+      "required": false,
+      "label": "AMA article",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      },
+      "settings": {
+        "collection": "articles"
+      }
+    }
+  },
+  "settings": {
+    "displayName": "FAQs",
+    "cache": false,
+    "count": 40,
+    "sort": "name",
+    "sortOrder": 1,
+    "storeRevisions": false,
+    "compose": true
+  }
+}

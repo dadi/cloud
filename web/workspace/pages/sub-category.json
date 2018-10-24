@@ -7,6 +7,8 @@
   },
   "template": "category.dust",
   "datasources": [
+    "langs",
+    "translations",
     "pages",
     "web-services",
     "sub-categories",
@@ -21,13 +23,7 @@
   ],
   "routes": [
     {
-      "path": "/:lang/:category/:subCategory",
-      "params": [
-        {
-          "param": "subCategory",
-          "fetch": "sub-categories"
-        }
-      ]
+      "path": "/:lang/:category/:subCategory"
     }
   ]
 }

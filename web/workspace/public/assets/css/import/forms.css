@@ -98,6 +98,7 @@ form label.text .text__btn:hover {
 form fieldset {
   border: none;
   background: #f9f9f9;
+  background: rgba(0,0,0,0.03);
   padding: 10px 25px 25px 25px;
   margin-top: 20px;
   border-radius: 3px;
@@ -206,4 +207,18 @@ div.mce_inline_error {
   margin-top: 10px;
   margin-bottom: -10px;
   background: #f0fcf5;
+}
+
+/* search */
+
+.search {
+  padding: 17px 20px;
+  padding-left: 65px;
+  border: 1px solid rgba(0,0,0,.1);
+  background: url(/assets/icons/search.svg) no-repeat 20px 50%;
+  background-size: auto 55%;
+  appearance: none;
+}
+.search:focus {
+  border-color: var(--green);
 }

@@ -6,12 +6,19 @@
   </div>
   
   <div class="intro__about animation fade-in fm">
-    <h1 class="bs-hide"><img src="/assets/img/dadi-logo-dark.svg" alt="DADI"></h1>
-    <h2 style="color:#8a939d">Fast, scalable, secure and inexpensive web services.</h2>
-    <p>This is the cloud, decentralized.</p>
+    <h1 class="bs-hide">
+      <img src="/assets/img/dadi-logo-dark.svg" alt="DADI">
+    </h1>
+
+    <h2 style="color:#8a939d">
+      {@soberMarkdown}{pages.results[0].excerpt}{/soberMarkdown}
+    </h2>
+    <p>
+      {@soberMarkdown}{pages.results[0].body}{/soberMarkdown}
+    </p>
 
     <a href="#video" class="btn intro__video">
-      ► Watch the introduction
+      ► {i18n.watch_intro}
     </a>
   </div>
   
@@ -26,44 +33,53 @@
       <div class="grid cf pb">
         <div class="col w-1-4 pb">
           <img src="/assets/img/fair.png" height="60" class="mb" alt="Favoutite icon">
-          <h2 class="medium">A fairer internet</h2>
-          <p class="normal">DADI is a peer-to-peer network owned by the people, shifting the balance of computational power away from large corporations</p>
+          <h2 class="medium">{i18n.home_fair_title}</h2>
+          <p class="normal">{i18n.home_fair_body}</p>
         </div> 
         <div class="col w-1-4 pb">
           <img src="/assets/img/fast.png" height="60" class="mb" alt="Bolt icon">
-          <h2 class="medium">Faster and cheaper</h2>
-          <p class="normal">The DADI network offers improved efficiency and performance, saving up to 90% compared with traditional cloud services</p>
+          <h2 class="medium">{i18n.home_faster_title}</h2>
+          <p class="normal">{i18n.home_faster_body}</p>
         </div>
         <div class="col w-1-4 pb">
           <img src="/assets/img/green.png" height="60" class="mb" alt="Environment icon">
-          <h2 class="medium">Environment friendly</h2>
-          <p class="normal">Makes use of spare capacity from devices already in the home &amp; office and is better for the environment than large server farms</p>
+          <h2 class="medium">{i18n.home_enviro_title}</h2>
+          <p class="normal">{i18n.home_enviro_body}</p>
         </div>
         <div class="col w-1-4 pb">
           <img src="/assets/img/earn.png" height="60" class="mb" alt="Token icon">
-          <h2 class="medium">Earn DADI tokens</h2>
-          <p class="normal">Anyone with a laptop, games console or any connected device can earn income by providing spare computation capacity for rent</p>
+          <h2 class="medium">{i18n.home_tokens_title}</h2>
+          <p class="normal">{i18n.home_tokens_body}</p>
         </div>
       </div>
 
       <div class="ptpb bdt bd-grey pb">
         <div class="grid">
           <div class="col w-1-3 pt--x2">
-            <h2 class="medium mb">What makes DADI different?</h2>
-            <p class="normal mb">74% of the cloud computing market is now controlled by just four tech companies: Microsoft, Amazon, IBM and Google.</p>
-            <p class="normal">DADI is owned and run by <strong>everyone</strong>, sharing its revenue to help build a fairer internet</p>
+            <h2 class="medium mb">{i18n.home_different_title}</h2>
+            <div class="normal mb read">
+              {@markdown}{i18n.home_different_body}{/markdown}
+            </div>
           </div>
           <div class="col w-1-3 mb tac">
             <img src="/assets/img/explainer-part1.svg" alt="Traditional services">
             
-            <h2 style="margin-bottom:5px" class="mt medium">Centralized Cloud Services</h2>
-            <p class="color-tint fm small">The old way</p>
+            <h2 style="margin-bottom:5px" class="mt medium">
+              {i18n.home_illo_cloud}
+            </h2>
+            <p class="color-tint fm small">
+              {i18n.home_oldway}
+            </p>
           </div>
           <div class="col w-1-3 mb tac pt">
             <img src="/assets/img/explainer-part2.svg" alt="The DADI Network">
 
-            <h2 style="margin-bottom:5px" class="medium color-blue">Decentralized Cloud</h2>
-            <p class="color-tint fm small">The new way</p>
+            <h2 style="margin-bottom:5px" class="medium color-blue">
+              {i18n.home_illo_decentralized}
+            </h2>
+            <p class="color-tint fm small">
+              {i18n.home_newway}
+            </p>
           </div>
         </div>        
       </div>
@@ -74,13 +90,13 @@
     <div class="cnt">
       <div class="cf">
         <div class="col w-1-6 bs-w-1-1">
-          <h3 class="mb fm fwn vam color-tint" style="padding-top: 18px">Our technology is used by…</h3>
+          <h3 class="mb fm fwn vam color-tint" style="padding-top: 18px">{i18n.home_usedby}</h3>
         </div>
         <div class="col w-1-6 bs-w-1-5">
-          <img class="fill" src="/assets/clients/logo-whatcar.png" alt="WhatCar?">
+          <img class="fill" src="/assets/clients/logo-haymarket.png" alt="Haymarket Media">
         </div>
         <div class="col w-1-6 bs-w-1-5">
-          <img class="fill" src="/assets/clients/logo-vle.png" alt="Virgin Limited Edition">
+          <img class="fill" src="/assets/clients/logo-grazia.png" alt="Grazia">
         </div>
         <div class="col w-1-6 bs-w-1-5">
           <img class="fill" src="/assets/clients/logo-empire.png" alt="Empire Magazine">
@@ -99,7 +115,7 @@
 
   <div class="cnt pt">
     <div class="hdr fm ttu mb">
-      <h3><span>Latest from DADI</span></h3>
+      <h3><span>{i18n.latest_dadi}</span></h3>
     </div>
 
     <div class="cols cols--4">
@@ -111,12 +127,12 @@
       {/articles.results}
     </div>  
 
-    <a href="/{lang}/community" class="btn-more tac fm small">More articles</a>
+    <a href="/{lang}/community" class="btn-more tac fm small">{i18n.more_articles}</a>
   </div>
 
   <div class="cnt pt">
     <div class="hdr fm ttu mb">
-      <h3><span>dApp Marketplace</span></h3>
+      <h3><span>{i18n.dapp_market}</span></h3>
     </div>
               
     <div class="cols cols--4 bs-cols--2">
@@ -126,19 +142,19 @@
 
       <div class="box box--small col bd bd-white bg-tint mb">
         <a href="/{lang}/contact" class="box__inner">
-          <h2 class="fm fwn normal mb">Want to build a dApp for the DADI network?</h2>
+          <h2 class="fm fwn normal mb">{i18n.promo_dapps_title}</h2>
 
-          <p class="mb">We're building out our marketplace with many more DADI dApps but will open up to applications from other organisations. If you have an idea for a dApp, get in touch.</p>
+          <p class="mb">{i18n.promo_dapps_body}</p>
         </a>
 
         <div class="box__footer">
-          <a href="/{lang}/contact" class="box__cta small fm color-tint">Contact us</a>
+          <a href="/{lang}/contact" class="box__cta small fm color-tint">{i18n.contact}</a>
         </div>
       </div>
     </div>
 
     <div class="hdr fm ttu mb">
-      <h3><span><a href="https://twitter.com/dadi" target="_blank">Follow us on Twitter @DADI</a></span></h3>
+      <h3><span><a href="https://twitter.com/dadi" target="_blank">{i18n.follow_twitter} @DADI</a></span></h3>
     </div>
 
     <div class="cols cols--4 mb">

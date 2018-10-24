@@ -35,5 +35,14 @@
     "host": "127.0.0.1",
     "port": 8081,
     "protocol": "http"
+  },
+  "i18n": {
+    "languages": ["de", "es", "fr", "ja", "ko", "pt", "ru", "zh"]
+  },
+  "search": {
+    "enabled": true,
+    "minQueryLength": 3,
+    "datastore": "@dadi/api-mongodb",
+    "database": "search"
   }
 }

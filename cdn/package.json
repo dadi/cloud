@@ -1,6 +1,6 @@
 {
   "name": "dadicloud-cdn",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@dadi/cdn": "^3.0.0-rc3"
+    "@dadi/cdn": "3.2.1"
   }
 }

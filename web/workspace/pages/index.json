@@ -3,6 +3,8 @@
     "key": "index"
   },
   "datasources": [
+    "langs",
+    "translations",
     "articles",
     "pages",
     "web-services",

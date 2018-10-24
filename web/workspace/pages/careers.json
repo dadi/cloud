@@ -3,6 +3,8 @@
     "key": "careers"
   },
   "datasources": [
+    "langs",
+    "translations",
     "pages",
     "web-services"
   ],

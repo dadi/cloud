@@ -1,14 +1,15 @@
-<div class="cdn-promo bg-tint bds pb pt--x2 {^isHeader}bdt{/isHeader} bdb bd-grey">
+<div class="cdn-promo bg-tint  pb pt--x2 bd-grey bdb {^isHeader}bdt{/isHeader}">
   <div class="cnt cf">
-    <div class="col w-2-3">
-      <div class="bdb bd-grey mb pb">
-        <img src="/assets/products/dadi-cdn-full.png" width="180">
+    <div class="grid ">
+      <div class="col w-1-3">
+        <h2 class="large color-cdn under">{i18n.promo_cdn_title}</h2>
       </div>
-     
-      <h2 class="medium">Introducing our first network-ready app</h2>
-      <p class="medium mb">A decentralized application that makes websites, APIs, ecommerce stores, mobile applications and SaaS platforms faster and more secure</p>
+      <div class="col w-1-3">
+       
+        <p class="medium mb">{i18n.promo_cdn_body}</p>
 
-      <a href="/{lang}/cdn" class="btn btn--cdn mb">More about CDN</a>
+        <a href="/{lang}/cdn" class="btn btn--cdn mb">{i18n.promo_cdn_more}</a>
+      </div>
     </div>
   </div>
 </div>

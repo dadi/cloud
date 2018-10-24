@@ -25,9 +25,9 @@
 
       <div class="box box--small col bd bd-white bg-tint mb">
         <a href="/{lang}/contact" class="box__inner">
-          <h2 class="fm fwn normal mb">Want to build a dApp for the DADI network?</h2>
+          <h2 class="fm fwn normal mb">Want to build a App for the DADI network?</h2>
 
-          <p class="mb">We're building out our marketplace with many more DADI dApps but will open up to applications from other organisations. If you have an idea for a dApp, get in touch.</p>
+          <p class="mb">We're building out our marketplace with many more DADI Apps but will open up to applications from other organisations. If you have an idea for a App, get in touch.</p>
         </a>
 
         <div class="box__footer">

@@ -6,6 +6,8 @@
     "cache": false
   },
   "datasources": [
+    "langs",
+    "translations",
     "pages",
     "web-services"
   ],

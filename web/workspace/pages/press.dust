@@ -2,11 +2,32 @@
 
 {>"partials/nav"/}
 
-<header class="bg-tint mb pt--x2 pb--x2 cf ovfh">
+<header class="bg-tint pt--x2 pb cf ovfh">
   <div class="cnt cf">
     <img src="/assets/icons/{pages.results[0].icon}.svg" width="60" class="mb bg-icon">
     <h1>{pages.results[0].title}</h1>
     <p class="normal">{pages.results[0].excerpt}</p>
+
+    <div class="cols cols--3 mt">
+      <a href="mailto:press@dadi.cloud" target="_blank" class="box col bd bd-grey mb">
+        <div class="box__inner" style="padding-bottom:23px">
+          <img src="/assets/icons/mail.svg" width="55" class="box__aside">
+          <p class="normal">Get in touch<br><strong>press@dadi.cloud</strong></p>
+        </div>
+      </a>
+      <a href="/{lang}/team" target="_blank" class="box col bd bd-grey mb">
+        <div class="box__inner" style="padding-bottom:23px">
+          <img src="/assets/icons/group.svg" width="55" class="box__aside">
+          <p class="normal">Learn more about<br><strong>The Team</strong></p>
+        </div>
+      </a>
+      <a href="/{lang}/culture" target="_blank" class="box col bd bd-grey mb">
+        <div class="box__inner" style="padding-bottom:23px">
+          <img src="/assets/icons/favorite.svg" width="55" class="box__aside">
+          <p class="normal">Culture<br><strong>How We Work</strong></p>
+        </div>
+      </a>
+    </div>
   </div>
 </header>
 
