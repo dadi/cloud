@@ -3,7 +3,7 @@
 {<head}
 <style>
 .founding {
-  background-image: url(/assets/img/dadi-founding-node.jpg);
+  background-image: url(/assets/img/dadi-founding-node-lid.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: calc(100vh - 70px);
@@ -22,11 +22,11 @@
 }
 .founding__intro {
   position: absolute;
-  bottom: 0; left: 0; right: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
 }
 .founding__logo {
   position: absolute;
-  right: 0; bottom: 47px;
+  right: 0; top: 57px;
   min-width: 250px;
   width: 20%;
   display: block
@@ -37,7 +37,7 @@
 {>"partials/nav"/}
 
 <header class="founding bg-dark mb cf ovfh">
-  <div class="cnt cf founding__intro pb--x2">
+  <div class="cnt cf founding__intro pb--x2 pt--x2">
     <img src="/assets/img/dadi-host-mark.svg" class="bs-hide founding__logo" alt="DADI Host logo">
     <p class="fm founding__subtitle">The Founding Node</p>
     <h1>Get started with your new host.</h1>
