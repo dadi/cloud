@@ -6,6 +6,7 @@
   background-image: url(/assets/img/dadi-founding-node-lid.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50%;
   height: calc(100vh - 70px);
   position: relative;
 }
@@ -31,6 +32,18 @@
   width: 20%;
   display: block
 }
+@media (max-width: 800px) {
+  .founding__intro {
+    position: static;
+    text-align: center;
+  }
+  .founding__subtitle:after {
+    margin: 15px auto;
+  }
+  .founding__logo {
+    display: none;
+  }
+}
 </style>
 {/head}
 
@@ -53,28 +66,28 @@
     </div>
 
     <div class="grid pt pb cf">
-      <div class="col w-1-8">
+      <div class="col w-1-8 mb">
         <img src="/assets/img/dadi-onboard-founding-1.svg" class="block fll">
       </div>
-      <div class="col w-1-8">
+      <div class="col w-1-8 mb">
         <p class="fm">Carefully remove the lid</p>
       </div>
-      <div class="col w-1-8">
+      <div class="col w-1-8 mb">
         <img src="/assets/img/dadi-onboard-founding-2.svg" class="block fll">
       </div>
-      <div class="col w-1-8">
+      <div class="col w-1-8 mb">
         <p class="fm">Thread the cables through the glass tube</p>
       </div>
-      <div class="col w-1-8">
+      <div class="col w-1-8 mb">
         <img src="/assets/img/dadi-onboard-founding-3.svg" class="block fll">
       </div>
-      <div class="col w-1-8">
+      <div class="col w-1-8 mb">
         <p class="fm">Connect the ethernet cable to the bottom of the board</p>
       </div>
-      <div class="col w-1-8">
+      <div class="col w-1-8 mb">
         <img src="/assets/img/dadi-onboard-founding-4.svg" class="block fll">
       </div>
-      <div class="col w-1-8">
+      <div class="col w-1-8 mb">
         <p class="fm">Connect the micro USB power cable to the top left of the board</p>
       </div>
     </div>
