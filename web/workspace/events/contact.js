@@ -1,48 +1,71 @@
-// You need a Mailgun API key for this to work
-// For this script to work DADI Web should be started with an ENV variable for the Mailgun API key
-const mailgun = require('mailgun-js')({
-  apiKey: process.env['MAILGUN_API'], 
-  domain: 'mg.dadi.cloud'
-})
+// Modules
+const config = require('@dadi/web').Config
+
+const mailgun = require('mailgun-js')(config.get('global.mailgun'))
+const reCAPTCHA = require('recaptcha2')
+const recaptcha = new reCAPTCHA(config.get('global.recaptcha'))
+
+// Settings to edit
+const fromEmail = 'DADI <hello@dadi.cloud>'
+const to = 'hello@dadi.cloud'
+const subject = '[dadi.cloud] Contact form message'
+
+// Messages
+const errRequired = 'All fields are required.'
+const errEmail = 'Your email address does not look correct.'
+const mgError = 'There was a problem sending the email.'
+const mgSuccess = 'Thank you for your message, you will hear back from us soon.'
 
 const Event = function (req, res, data, callback) {
   // On form post
-  if (req.method.toLowerCase() === 'post') {
+  if (req.method.toLowerCase() !== 'post') return callback()
 
-    // Validate out inputs
-    if (!req.body.email && !isEmail(req.body.email) && !req.body.message) {
-      data.mailResult = 'All fields are required.'
-      return callback()
-    }
+  // Validate out inputs
+  if (
+    !req.body['g-recaptcha-response'] &&
+    !req.body.name &&
+    sanitize(req.body.name) !== '' &&
+    !req.body.email &&
+    !isEmail(req.body.email) &&
+    !req.body.message && 
+    sanitize(req.body.message) !== ''
+  ) {
+    data.mailResult = errRequired
+    return callback()
+  }
 
-    mailgun.messages().send({
-      from: 'DADI <hello@dadi.cloud>',
-      to: 'hello@dadi.cloud',
-      subject: '[dadi.cloud] Contact form message',
-      text: `
+  // Construct api call
+  const payload = {
+    from: fromEmail,
+    to,
+    subject,
+    text: `
 Name: ${sanitize(req.body.name)}
 Email: ${req.body.email}
 Phone: ${sanitize(req.body.phone)}
 Message:
 
 ${sanitize(req.body.message)}`
-    }, (err, body) => {
-      if (err) {
-        data.mailResult = 'There was a problem sending the email.'
-      } else {
-        data.mailResult = 'Thank you for your message, you will hear back from us soon.'
-      }
+  }
 
+  // Captcha
+  recaptcha.validate(req.body['g-recaptcha-response'])
+    .then(() => {
+      return mailgun.messages().send(payload)
+    })
+    .then(body => {
+      data.mailResult = mgSuccess
       return callback()
     })
-
-  } else {
-    return callback()
-  }
+    .catch(err => {
+      data.mailResult = mgError
+      return callback()
+    })
 }
 
 // Taken from: http://stackoverflow.com/a/46181/306059
 function isEmail (email) {
+  email = sanitize(email)
   const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   return re.test(email)
 }

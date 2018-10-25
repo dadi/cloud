@@ -32,10 +32,10 @@
       "label": "Author",
       "publish": {
         "section": "Details",
-        "placement": "main",
+        "placement": "sidebar",
         "display": {
           "edit": true,
-          "list": false
+          "list": true
         }
       },
       "settings": {
@@ -88,6 +88,7 @@
       "type": "String",
       "required": true,
       "label": "Body",
+      "format": "markdown",
       "publish": {
         "section": "Details",
         "placement": "main",
@@ -96,7 +97,7 @@
           "edit": true,
           "list": false
         },
-        "heightType": "full",
+        "heightType": "content",
         "resizable": true
       }
     },

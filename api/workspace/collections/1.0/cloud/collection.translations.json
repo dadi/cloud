@@ -1,5 +1,18 @@
 {
   "fields": {
+    "key": {
+      "type": "String",
+      "required": true,
+      "label": "Key",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "display": {
+          "edit": true,
+          "list": true
+        }
+      }
+    },
     "value": {
       "type": "String",
       "required": true,
@@ -14,19 +27,6 @@
         },
         "heightType": "content",
         "rows": 3
-      }
-    },
-    "key": {
-      "type": "String",
-      "required": true,
-      "label": "Key",
-      "publish": {
-        "section": "Details",
-        "placement": "sidebar",
-        "display": {
-          "edit": true,
-          "list": true
-        }
       }
     }
   },
