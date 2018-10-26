@@ -19,29 +19,29 @@
   <div class="cnt">
     {?mailResult}
       <p class="info pa bg-light-green fwb">{mailResult}</p>
+    {:else}
+      <form action="/{lang}/contact/" method="post">
+        <input type="hidden" name="_csrf" value="{csrfToken}">
+        
+        <fieldset>        
+          <label class="text fm" for="name">Name</label>
+          <input id="name" name="name" placeholder="Your full name" type="text">
+
+          <label class="text fm" for="email">Email</label>
+          <input id="email" name="email" required="" placeholder="Your email address" type="email">
+
+          <label class="text fm" for="phone">Phone</label>
+          <input id="phone" name="phone" placeholder="Contact telephone number" type="text">
+        
+          <label class="text fm" for="message">Message</label>
+          <textarea style="min-height:199px" rows="5" id="message" name="message" required="" placeholder="What do you want to talk about?" type="email"></textarea>
+
+          <div class="mt g-recaptcha" data-sitekey="{global.recaptcha.siteKey}"></div>
+      
+          <button type="submit" class="btn">Send message</button></form>
+        </fieldset>
+      </form>
     {/mailResult}
-
-    <form action="/{lang}/contact/" method="post">
-      <input type="hidden" name="_csrf" value="{csrfToken}">
-      
-      <fieldset>        
-        <label class="text fm" for="name">Name</label>
-        <input id="name" name="name" placeholder="Your full name" type="text">
-
-        <label class="text fm" for="email">Email</label>
-        <input id="email" name="email" required="" placeholder="Your email address" type="email">
-
-        <label class="text fm" for="phone">Phone</label>
-        <input id="phone" name="phone" placeholder="Contact telephone number" type="text">
-      
-        <label class="text fm" for="message">Message</label>
-        <textarea style="min-height:199px" rows="5" id="message" name="message" required="" placeholder="What do you want to talk about?" type="email"></textarea>
-
-        <div class="mt g-recaptcha" data-sitekey="{global.recaptcha.siteKey}"></div>
-     
-        <button type="submit" class="btn">Send message</button></form>
-      </fieldset>
-    </form>
   </div>
 </main>
 
