@@ -17,7 +17,8 @@
   "events": [
     "i18n",
     "metatags",
-    "articleReadingTime"
+    "articleReadingTime",
+    "relatedArticles"
   ],
   "routes": [
     {
