@@ -2,6 +2,10 @@
 
 {>"partials/nav"/}
 
+{<head}
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+{/head}
+
 </main>
   <div class="cnt partners-promo" style="background-size:500px auto;background-position:100% 100%">
     <div class="grid cf pt--x2 mb--x2">
