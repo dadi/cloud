@@ -42,6 +42,8 @@
           <label class="text fm" for="message">Message</label>
           <textarea style="min-height:199px" rows="5" id="message" name="message" required="" placeholder="Tell us about how we could work together…" type="email"></textarea>
 
+          <div class="mt g-recaptcha" data-sitekey="{global.recaptcha.siteKey}"></div>
+
           <button type="submit" class="btn">Send message</button>
         </fieldset> 
         </form>
