@@ -81,7 +81,8 @@
         "placement": "sidebar",
         "display": {
           "edit": true,
-          "list": true
+          "list": true,
+          "link": "https://twitter.com/{value}"
         }
       }
     },
@@ -94,7 +95,8 @@
         "placement": "sidebar",
         "display": {
           "edit": true,
-          "list": true
+          "list": true,
+          "link": "https://linkedin.com/in/{value}"
         }
       }
     },
@@ -107,7 +109,8 @@
         "placement": "sidebar",
         "display": {
           "edit": true,
-          "list": true
+          "list": true,
+          "link": true
         }
       }
     },

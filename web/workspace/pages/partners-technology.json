@@ -14,7 +14,7 @@
   ],
   "routes": [
     {
-      "path": "/:lang/community/agencies"
+      "path": "/:lang/community/technology-partners"
     }
   ]
 }

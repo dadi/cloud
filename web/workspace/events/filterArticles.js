@@ -1,12 +1,9 @@
-const path = require('path')
-const url = require('url')
-
 const Event = function (req, res, data, callback) {
   let filter = {}
 
   // article.json
   if (data.params.title) {
-    filter = { 
+    filter = {
       slug: data.params.title,
       'category.slug': data.params.category,
       'sub-category.slug': data.params.subcategory

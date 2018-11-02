@@ -2,6 +2,10 @@
 
 {>"partials/nav"/}
 
+{<head}
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+{/head}
+
 </main>
   <div class="cnt partners-promo" style="background-size:500px auto;background-position:100% 100%">
     <div class="grid cf pt--x2 mb--x2">
@@ -41,6 +45,8 @@
           
           <label class="text fm" for="message">Message</label>
           <textarea style="min-height:199px" rows="5" id="message" name="message" required="" placeholder="Tell us about how we could work together…" type="email"></textarea>
+
+          <div class="mt g-recaptcha" data-sitekey="{global.recaptcha.siteKey}"></div>
 
           <button type="submit" class="btn">Send message</button>
         </fieldset> 

@@ -13,7 +13,7 @@
         "subType": "Image",
         "placement": "main",
         "display": {
-          "list": false,
+          "list": true,
           "edit": true
         }
       }
@@ -27,7 +27,7 @@
         "placement": "main",
         "display": {
           "edit": true,
-          "list": true
+          "list": false
         }
       }
     },
