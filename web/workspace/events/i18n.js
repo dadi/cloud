@@ -1,5 +1,4 @@
 const url = require('url')
-const path = require('path')
 
 // Urls in which this event will not fire
 const bypassUrls = []
@@ -23,7 +22,9 @@ const Event = function (req, res, data, callback) {
   if (data.hasResults(langDs)) {
     supportedLangs = data[langDs].results.map(lang => lang.code)
     primaryLang = data[langDs].results.filter(lang => lang.primary)[0].code
-    currentLang = data[langDs].results.filter(lang => lang.code === data.params.lang || primaryLang)[0].name
+
+    let matchingRequestLang = data[langDs].results.filter(lang => lang.code === data.params.lang)
+    currentLang = matchingRequestLang[0] ? matchingRequestLang[0].name : currentLang
   }
 
   // Add key-value translations to the page
