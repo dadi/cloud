@@ -50,7 +50,7 @@
         </ul>
       </div>
       <div class="col w-1-5 mb--x2">
-        <div class="hdr fm ttu mb"><h3><span>Web services</span></h3></div>
+        <div class="hdr fm ttu mb"><h3><span>Apps</span></h3></div>
         <ul>
           {#web-services.results}
             {?github}<li><a href="{?published}/{lang}/{slug}/{:else}https://github.com/{github}{/published}" class="fwb"><img src="{global.cdn.publicUrl}{icon[0].path}?h=36" alt="Icon for DADI {name}" height="18">{name}</a></li>{/github}
