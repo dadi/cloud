@@ -1,5 +1,22 @@
 {
   "fields": {
+    "metaImage": {
+      "type": "Reference",
+      "settings": {
+        "collection": "mediaStore"
+      },
+      "required": false,
+      "label": "Image",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "subType": "Image",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
     "title": {
       "type": "String",
       "required": true,
@@ -241,23 +258,6 @@
         "section": "Meta",
         "placement": "main",
         "multiline": true,
-        "display": {
-          "edit": true,
-          "list": false
-        }
-      }
-    },
-    "metaImage": {
-      "type": "Reference",
-      "settings": {
-        "collection": "mediaStore"
-      },
-      "required": false,
-      "label": "Image",
-      "publish": {
-        "section": "Meta",
-        "placement": "sidebar",
-        "subType": "Image",
         "display": {
           "edit": true,
           "list": false
