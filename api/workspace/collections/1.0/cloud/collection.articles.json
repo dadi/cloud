@@ -13,7 +13,7 @@
         "subType": "Image",
         "display": {
           "edit": true,
-          "list": false
+          "list": true
         }
       }
     },
