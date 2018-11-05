@@ -1,0 +1,106 @@
+{>"partials/header"/}
+
+{<head}
+<style>
+.founding {
+  background-image: url(/assets/img/dadi-founding-node-lid.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  height: calc(100vh - 70px);
+  position: relative;
+}
+.founding__subtitle {
+  margin-bottom: 15px;
+  display: block;
+}
+.founding__subtitle:after {
+  width: 40px;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  display: block;
+  content: ' ';
+  margin-top: 15px
+}
+.founding__intro {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+.founding__logo {
+  position: absolute;
+  right: 0; top: 57px;
+  min-width: 250px;
+  width: 20%;
+  display: block
+}
+@media (max-width: 800px) {
+  .founding__intro {
+    position: static;
+    text-align: center;
+  }
+  .founding__subtitle:after {
+    margin: 15px auto;
+  }
+  .founding__logo {
+    display: none;
+  }
+}
+</style>
+{/head}
+
+{>"partials/nav"/}
+
+<header class="founding bg-dark mb cf ovfh">
+  <div class="cnt cf founding__intro pb--x2 pt--x2">
+    <img src="/assets/img/dadi-host-mark.svg" class="bs-hide founding__logo" alt="DADI Host logo">
+    <p class="fm founding__subtitle">The Founding Node</p>
+    <h1>Get started with your new host.</h1>
+  </div>
+</header>
+
+<main class="mb">
+  <div class="cnt pt">
+    <p class="ll mb--x2 normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis.</p>
+
+    <div class="hdr fm ttu mb">
+      <h3><span>Connect the device</span></h3>
+    </div>
+
+    <div class="grid pt pb cf">
+      <div class="col w-1-8 mb">
+        <img src="/assets/img/dadi-onboard-founding-1.svg" class="block fll">
+      </div>
+      <div class="col w-1-8 mb">
+        <p class="fm">Carefully remove the lid</p>
+      </div>
+      <div class="col w-1-8 mb">
+        <img src="/assets/img/dadi-onboard-founding-2.svg" class="block fll">
+      </div>
+      <div class="col w-1-8 mb">
+        <p class="fm">Thread the cables through the glass tube</p>
+      </div>
+      <div class="col w-1-8 mb">
+        <img src="/assets/img/dadi-onboard-founding-3.svg" class="block fll">
+      </div>
+      <div class="col w-1-8 mb">
+        <p class="fm">Connect the ethernet cable to the bottom of the board</p>
+      </div>
+      <div class="col w-1-8 mb">
+        <img src="/assets/img/dadi-onboard-founding-4.svg" class="block fll">
+      </div>
+      <div class="col w-1-8 mb">
+        <p class="fm">Connect the micro USB power cable to the top left of the board</p>
+      </div>
+    </div>
+
+    <div class="hdr fm ttu mb">
+      <h3><span>See the status of the node</span></h3>
+    </div>
+
+    <div class="pt--x2 pb--x2 bg-tint tac mb--x2">
+      <p class="mb">If you're a <strong>lottery winner</strong> we've already set it up in your account so you should see the status of your node:</p>
+      <a href="https://my.dadi.cloud" class="btn">Go to my.dadi.cloud</a>
+    </div>
+  </div>
+</main>
+
+{>"partials/footer"/}
