@@ -245,7 +245,7 @@
       "required": false,
       "label": "Image",
       "publish": {
-        "section": "Details",
+        "section": "Meta",
         "placement": "sidebar",
         "subType": "Image",
         "display": {
