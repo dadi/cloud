@@ -70,7 +70,7 @@
         <img src="/assets/img/dadi-onboard-founding-1.svg" class="block fll">
       </div>
       <div class="col w-1-8 mb">
-        <p class="fm">Open the box and remove the device &amp; carefully remove the lid</p>
+        <p class="fm">Open the box, remove the device &amp; carefully remove the lid</p>
       </div>
       <div class="col w-1-8 mb">
         <img src="/assets/img/dadi-onboard-founding-2.svg" class="block fll">
@@ -97,9 +97,9 @@
     </div>
 
     <div class="pt--x2 pb--x2 bg-tint tac mb--x2">
-      <p class="mb">We have already set it up in your account so you should see the status of your node under the <strong>devices</strong> section:</p>
+      <p class="mb">We have already set it up in your account so you should see the status under the <strong>devices</strong> section:</p>
       <p class="mb"><a href="{global.mydadicloud.publicUrl}" class="btn">Go to my.dadi.cloud</a></p>
-      <p>Contact us if you need any assistance: <a href="mailto:support@dadi.co">support@dadi.co</a></p>
+      <p>Contact us if you need any assistance: <a href="mailto:support@dadi.co" class="color-blue">support@dadi.co</a></p>
     </div>
   </div>
 </main>
