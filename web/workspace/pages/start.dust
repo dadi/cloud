@@ -45,10 +45,24 @@
   }
 }
 #assembled {
-  background-image: url(/assets/img/dadi-founding-node-assembled.jpg.jpg);
+  background-image: url(/assets/img/dadi-founding-node-assembled.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50%;
+  background-size: auto 100%;
+  background-position: 100% 50%;
+  position: relative;
+}
+#assembled:after {
+  background: linear-gradient(to right, #f9f9f9 50%, rgba(255,255,255,0) 60%);
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  content: ' ';
+  z-index: 0;
+}
+#assembled .grid {
+  position: relative;
+  z-index: 1;
 }
 </style>
 {/head}
@@ -102,7 +116,7 @@
       <h3><span>See the status of the node</span></h3>
     </div>
 
-    <div class="pt--x2 pr--x2 pb--x2 pl--x2 bg-tint mb--x2" id="assembled">
+    <div class="pt--x2 pr--x2 pb--x2 pl--x2 bg-tint mb--x2 normal" id="assembled">
       <div class="grid pt--x2 pb--x2 cf">
         <div class="col w-1-2">
           <p class="mb">We have already set it up in your account so you should see the status under the <strong>devices</strong> section:</p>

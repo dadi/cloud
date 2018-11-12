@@ -1,0 +1,20 @@
+{
+  "page": {
+    "key": "agencies"
+  },
+  "datasources": [
+    "langs",
+    "translations",
+    "pages",
+    "web-services"
+  ],
+  "events": [
+    "i18n",
+    "metatags"
+  ],
+  "routes": [
+    {
+      "path": "/:lang/community/agencies"
+    }
+  ]
+}
