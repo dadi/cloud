@@ -32,18 +32,6 @@
   width: 20%;
   display: block
 }
-@media (max-width: 800px) {
-  .founding__intro {
-    position: static;
-    text-align: center;
-  }
-  .founding__subtitle:after {
-    margin: 15px auto;
-  }
-  .founding__logo {
-    display: none;
-  }
-}
 #assembled {
   background-image: url(/assets/img/dadi-founding-node-assembled.jpg);
   background-repeat: no-repeat;
@@ -63,6 +51,30 @@
 #assembled .grid {
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 800px) {
+  .founding__intro {
+    position: static;
+    text-align: center;
+  }
+  .founding__subtitle:after {
+    margin: 15px auto;
+  }
+  .founding__logo {
+    display: none;
+  }
+  #assembled {
+    font-size: 0.95rem;
+    padding: 20px;
+    padding-top: 72%;
+    padding-bottom: 0;
+    background-position: 100% 0;
+    background-size: 150% auto;
+  }
+  #assembled:after {
+    display: none;
+  }
 }
 </style>
 {/head}
