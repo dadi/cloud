@@ -97,7 +97,7 @@
       </div>
 
       <div class="grid bdb bd-grey">
-        <div class="col w-1-2 pt--x2">
+        <div class="col col--right w-1-2 pt--x2">
           <p class="large fwb" style="margin-top:20%;margin-bottom:10px">Enhance performance</p>
           <p class="normal colour-tint">Closer delivery means faster delivery, improving user experience, retention and conversion.</p>
         </div>
@@ -107,7 +107,7 @@
       </div>
 
       <div class="grid">
-        <div class="col col--right w-1-2 pt--x2">
+        <div class="col w-1-2 pt--x2">
           <p class="large fwb" style="margin-top:20%;margin-bottom:10px">Lower costs</p>
           <p class="normal colour-tint">DADI's decentralized architecture reduces prices by removing many of the costs associated with traditional cloud environments. These savings are passed on to you.</p>
         </div>
