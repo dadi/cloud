@@ -73,6 +73,10 @@
       </aside>
       <div class="col w-2-3">
         <div class="read normal" itemprop="articleBody">
+          {?leadImage}
+            <p><img class="article__lead" src="{global.cdn.publicUrl}{leadImage[0].path}?w=1600&q=70" alt="Lead article image"></p>
+          {/leadImage}
+
           {@markdown highlight="true" anchors="true"}{body|s}{/markdown}
         </div>
       </div>

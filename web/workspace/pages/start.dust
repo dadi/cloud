@@ -1,0 +1,143 @@
+{>"partials/header"/}
+
+{<head}
+<style>
+.founding {
+  background-image: url(/assets/img/dadi-founding-node-lid.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  height: calc(100vh - 70px);
+  position: relative;
+}
+.founding__subtitle {
+  margin-bottom: 15px;
+  display: block;
+}
+.founding__subtitle:after {
+  width: 40px;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  display: block;
+  content: ' ';
+  margin-top: 15px
+}
+.founding__intro {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+.founding__logo {
+  position: absolute;
+  right: 0; top: 57px;
+  min-width: 250px;
+  width: 20%;
+  display: block
+}
+#assembled {
+  background-image: url(/assets/img/dadi-founding-node-assembled.jpg);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: 100% 50%;
+  position: relative;
+}
+#assembled:after {
+  background: linear-gradient(to right, #f9f9f9 50%, rgba(255,255,255,0) 60%);
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  content: ' ';
+  z-index: 0;
+}
+#assembled .grid {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 800px) {
+  .founding__intro {
+    position: static;
+    text-align: center;
+  }
+  .founding__subtitle:after {
+    margin: 15px auto;
+  }
+  .founding__logo {
+    display: none;
+  }
+  #assembled {
+    font-size: 0.95rem;
+    padding: 20px;
+    padding-top: 72%;
+    padding-bottom: 0;
+    background-position: 100% 0;
+    background-size: 150% auto;
+  }
+  #assembled:after {
+    display: none;
+  }
+}
+</style>
+{/head}
+
+{>"partials/nav"/}
+
+<header class="founding bg-dark mb cf ovfh">
+  <div class="cnt cf founding__intro pb--x2 pt--x2">
+    <img src="/assets/img/dadi-host-mark.svg" class="bs-hide founding__logo" alt="DADI Host logo">
+    <p class="fm founding__subtitle">The Founding Node</p>
+    <h1>Get started with your new host.</h1>
+  </div>
+</header>
+
+<main class="mb">
+  <div class="cnt pt">
+    <p class="ll mb--x2 normal">We created the Founding Nodes as something special to mark the first wave of contributions from the community. Thank you for being among the first to use your spare bandwidth to contribute to our Edge network.</p>
+
+    <div class="hdr fm ttu mb">
+      <h3><span>Connect the device</span></h3>
+    </div>
+
+    <div class="grid pt pb cf">
+      <div class="col w-1-8 mb">
+        <img src="/assets/img/dadi-onboard-founding-1.svg" class="block fll">
+      </div>
+      <div class="col w-1-8 mb">
+        <p class="fm">Open the box, remove the device &amp; carefully remove the lid</p>
+      </div>
+      <div class="col w-1-8 mb">
+        <img src="/assets/img/dadi-onboard-founding-2.svg" class="block fll">
+      </div>
+      <div class="col w-1-8 mb">
+        <p class="fm">Remove the cables from the bottom of the box and thread them through the glass tube</p>
+      </div>
+      <div class="col w-1-8 mb">
+        <img src="/assets/img/dadi-onboard-founding-3.svg" class="block fll">
+      </div>
+      <div class="col w-1-8 mb">
+        <p class="fm">Assemble the plug &amp; connect the micro USB power cable to the top left of the board</p>
+      </div>
+      <div class="col w-1-8 mb">
+        <img src="/assets/img/dadi-onboard-founding-4.svg" class="block fll">
+      </div>
+      <div class="col w-1-8 mb">
+        <p class="fm">Connect the ethernet cable to the bottom of the board &amp; place lid back into the glass</p>
+      </div>
+    </div>
+
+    <div class="hdr fm ttu mb">
+      <h3><span>See the status of the node</span></h3>
+    </div>
+
+    <div class="pt--x2 pr--x2 pb--x2 pl--x2 bg-tint mb--x2 normal" id="assembled">
+      <div class="grid pt--x2 pb--x2 cf">
+        <div class="col w-1-2">
+          <p class="mb">We have already set it up in your account so you should see the status under the <strong>devices</strong> section:</p>
+          <p class="mb"><a href="{global.mydadicloud.publicUrl}" class="btn">Go to my.dadi.cloud</a></p>
+          <p>Contact us if you need any assistance: <a href="mailto:support@dadi.co" class="color-blue">support@dadi.co</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{>"partials/footer"/}

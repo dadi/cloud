@@ -1,5 +1,22 @@
 {
   "fields": {
+    "leadImage": {
+      "type": "Reference",
+      "settings": {
+        "collection": "mediaStore"
+      },
+      "required": false,
+      "label": "Lead image",
+      "publish": {
+        "section": "Details",
+        "placement": "sidebar",
+        "subType": "Image",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
     "title": {
       "type": "String",
       "required": true,
@@ -220,6 +237,23 @@
         }
       }
     },
+    "metaImage": {
+      "type": "Reference",
+      "settings": {
+        "collection": "mediaStore"
+      },
+      "required": false,
+      "label": "Image",
+      "publish": {
+        "section": "Meta",
+        "placement": "sidebar",
+        "subType": "Image",
+        "display": {
+          "edit": true,
+          "list": false
+        }
+      }
+    },
     "metaTitle": {
       "type": "String",
       "required": false,
@@ -241,23 +275,6 @@
         "section": "Meta",
         "placement": "main",
         "multiline": true,
-        "display": {
-          "edit": true,
-          "list": false
-        }
-      }
-    },
-    "metaImage": {
-      "type": "Reference",
-      "settings": {
-        "collection": "mediaStore"
-      },
-      "required": false,
-      "label": "Image",
-      "publish": {
-        "section": "Meta",
-        "placement": "sidebar",
-        "subType": "Image",
         "display": {
           "edit": true,
           "list": false

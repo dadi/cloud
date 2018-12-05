@@ -1,6 +1,6 @@
 {
   "name": "dadicloud-publish",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@dadi/publish": "1.0.13-beta"
+    "@dadi/publish": "^2.0.0"
   }
 }

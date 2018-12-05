@@ -21,7 +21,7 @@
             Token value
           </div>
           <div class="stat__figure">
-            $<strong>{token.priceUSDNow}</strong>
+            $<strong>{token.priceUSDNow|n}</strong>
           </div>
           <div class="stat__metric color-tint fm">
             {token.priceBTCNow} BTC<br>
