@@ -1,0 +1,57 @@
+{
+  "app": {
+    "name": "DADI Cloud CMS",
+    "publisher": "DADI"
+  },
+  "server": {
+    "host": "0.0.0.0",
+    "port": 3002,
+  },
+  "apis": [
+    {
+      "name": "DADI Cloud API",
+      "host": "http://52.214.26.93",
+      "port": 3001,
+      "version": "1.0",
+      "database": "cloud",
+      "credentials": {
+        "clientId": "cloudtest",
+        "secret": "brjcbGLkRAn9XHxa"
+      },
+      "menu": [
+        {
+          "collections": [
+            "images",
+            "pages",
+            "team",
+            "partners"
+          ],
+          "title": "Content"
+        },
+        {
+          "collections": [
+            "categories",
+            "sub-categories",
+            "milestones"
+          ],
+          "title": "Taxonomy"
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "enabled": false
+  },
+  "publicUrl": {
+    "host": "52.214.26.93",
+    "port": 3002,
+    "protocol": "http:"
+  },
+  "cdn": {
+    "publicUrl": {
+      "host": "52.214.26.93",
+      "port": 3003,
+      "protocol": "http:"
+    }
+  }
+}
