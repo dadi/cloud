@@ -21,7 +21,7 @@
     {/author}
     
     {?publishedAt}
-      <time itemprop="datePublished" datetime="{@formatDate unix=publishedAt /}" class="color-tint truncate block">     
+      <time itemprop="datePublished" datetime="{@formatDate unix=publishedAt /}" class="color-tint truncate block">
         {@eq key=dateFormat value="short"}
           {@formatDate unix=publishedAt format="DD.MM.YY" /}
         {:else}
