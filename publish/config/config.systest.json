@@ -14,10 +14,6 @@
       "port": 3001,
       "version": "1.0",
       "database": "cloud",
-      "credentials": {
-        "clientId": "cloudtest",
-        "secret": "brjcbGLkRAn9XHxa"
-      },
       "menu": [
         {
           "collections": [
