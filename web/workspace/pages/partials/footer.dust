@@ -88,10 +88,6 @@
   </div>
 </footer>
 
-{@eq key=page.key value="article"}
-<script src="https://cdn.rawgit.com/scottjehl/picturefill/3.0.2/dist/picturefill.min.js"></script>
-{/eq}
-
 <script src="/assets/js/lazy-load.js"></script>
 <script src="/assets/js/sticky-sidebar.min.js"></script>
 
