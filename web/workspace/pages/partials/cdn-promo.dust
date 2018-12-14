@@ -2,13 +2,22 @@
   <div class="cnt cf">
     <div class="grid ">
       <div class="col w-1-3">
-        <h2 class="large color-cdn under">{i18n.promo_cdn_title}</h2>
+        <h2 class="large color-cdn under">
+          {i18n.promo_cdn_title}
+        </h2>
       </div>
       <div class="col w-1-3">
-       
-        <p class="medium mb">{i18n.promo_cdn_body}</p>
+        <p class="medium mb">
+          {i18n.promo_cdn_body}
+        </p>
 
-        <a href="/{lang}/cdn" class="btn btn--cdn mb">{i18n.promo_cdn_more}</a>
+        <a href="{global.mydadicloud.publicUrl}/app/cdn" class="btn--fill btn btn--cdn mydadicloud" data-auth="{i18n.cdn_waitlist_signedin}">
+          {i18n.cdn_waitlist_signedout}
+        </a><br>
+
+        <a style="margin-top:5px" href="/{lang}/cdn" class="mb btn btn--cdn">
+          {i18n.promo_cdn_more}
+        </a>
       </div>
     </div>
   </div>

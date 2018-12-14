@@ -143,17 +143,20 @@ navLink.addEventListener('click', function(e) {
 
 /* my.dadi.cloud auth */
 function myLoginStatus(data) {
-  var mydadi = document.getElementById('mydadicloud');
-  mydadi.classList.add('js-active');
-
-  if (data.result) {
-    mydadi.innerHTML = '{i18n.nav_dashboard}';
-  } else {
-    mydadi.innerHTML = '{i18n.nav_signinreg}';
-  }
+  var showstatus = document.querySelectorAll('.mydadicloud')
+ 
+  for (i = 0; i < showstatus.length; ++i) {
+    showstatus[i].classList.add('js-active');
+    
+    // If they are signed in
+    if (data.result) {
+      showstatus[i].innerHTML = showstatus[i].getAttribute('data-auth');
+    }
+  }  
 }
 </script>
 
+{! Check my.dadi.cloud for signed in status, JSONP callback above myLoginStatus() !}
 <script src="{global.mydadicloud.publicUrl}/api/isauthenticated"></script>
 
 </body>
