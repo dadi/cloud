@@ -27,13 +27,7 @@
           {#ama}
             <time itemprop="datePublished" datetime="{@formatDate unix=publishedAt /}" class="color-tint truncate block">
               <a href="/{lang}/{?category}{category[0].slug}/{/category}{?sub-category}{sub-category[0].slug}/{/sub-category}{slug}">
-
-              {@eq key=dateFormat value="short"}
-                {@formatDate unix=publishedAt format="DD.MM.YY" /}
-              {:else}
                 {@formatDate unix=publishedAt format="DD MMM YYYY" /}
-              {/eq}
-
               </a>
             </time>
           {/ama}
