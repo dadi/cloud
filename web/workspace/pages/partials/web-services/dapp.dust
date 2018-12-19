@@ -156,7 +156,7 @@
             {@markdown}{i18n.cdn_waitlist_copy}{/markdown}
           </div>
 
-          <a href="{global.mydadicloud.publicUrl}/app/cdn" class="btn--fill btn btn--cdn mydadicloud" data-auth="{i18n.cdn_waitlist_signedin}">
+          <a href="{global.mydadicloud.publicUrl}" class="btn--fill btn btn--cdn mydadicloud" data-auth="{i18n.cdn_waitlist_signedin}">
             {i18n.cdn_waitlist_signedout}
           </a>
         </div>
