@@ -4,40 +4,33 @@
     "publisher": "DADI"
   },
   "server": {
-    "host": "127.0.0.1",
-    "port": 3001
+    "host": "0.0.0.0",
+    "port": 3002,
   },
   "apis": [
     {
       "name": "DADI Cloud API",
-      "host": "http://127.0.0.1",
-      "port": 8081,
+      "host": "http://52.214.26.93",
+      "port": 3001,
       "version": "1.0",
       "database": "cloud",
       "menu": [
         {
-          "title": "Content",
           "collections": [
             "images",
             "pages",
             "team",
             "partners"
-          ]
+          ],
+          "title": "Content"
         },
         {
-          "title": "Taxonomy",
           "collections": [
             "categories",
             "sub-categories",
             "milestones"
-          ]
-        },
-        {
-          "title": "Internationalisation",
-          "collections": [
-            "langs",
-            "translations"
-          ]
+          ],
+          "title": "Taxonomy"
         }
       ]
     }
@@ -46,14 +39,15 @@
     "enabled": false
   },
   "publicUrl": {
-    "host": "127.0.0.1",
-    "port": 3001,
-    "protocol": "http"
+    "host": "52.214.26.93",
+    "port": 3002,
+    "protocol": "http:"
   },
   "cdn": {
-    "publicUrl": "http://127.0.0.1:3003",
-    "host": "127.0.0.1",
-    "port": 3003,
-    "protocol": "http:"
+    "publicUrl": {
+      "host": "52.214.26.93",
+      "port": 3003,
+      "protocol": "http:"
+    }
   }
 }

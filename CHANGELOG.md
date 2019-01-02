@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+# [1.0.6] - 2019-01-02
+
+* addition of promotion links for CDN waitlist
+
 # [1.0.5] - 2018-12-05
 
 * upgrade to API 4.4.3 and Publish 2.0

@@ -232,10 +232,10 @@ nav .external {
   background-size: auto 17px;
 }
 
-#mydadicloud {
+.mydadicloud {
   opacity: 0;
   transition: opacity 0.3s;
 }
-#mydadicloud.js-active {
+.mydadicloud.js-active {
   opacity: 1;
 }

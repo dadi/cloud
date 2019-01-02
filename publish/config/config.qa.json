@@ -14,10 +14,6 @@
       "port": 3001,
       "version": "1.0",
       "database": "cloud",
-      "credentials": {
-        "clientId": "cloud-client",
-        "secret": "nrq5d6jl0b"
-      },
       "menu": [
         {
           "collections": [

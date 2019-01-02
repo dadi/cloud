@@ -1,0 +1,88 @@
+{
+  "cluster": false,
+  "multiDomain": {
+    "enabled": false
+  },
+  "server": {
+    "host": "0.0.0.0",
+    "port": 3003
+  },
+  "logging": {
+    "enabled": true,
+    "level": "debug",
+    "path": "./log",
+    "filename": "cdn",
+    "extension": "log",
+    "accessLog": {
+      "enabled": true
+    }
+  },
+  "notFound": {
+    "statusCode": 410,
+    "images": {
+      "enabled": false,
+      "path": "./images/missing.png"
+    }
+  },
+  "images": {
+    "directory": {
+      "enabled": true,
+      "path": "/dadi/uploads"
+    },
+    "s3": {
+      "enabled": false,
+      "accessKey": "",
+      "secretKey": "",
+      "bucketName": "",
+      "region": ""
+    },
+    "remote": {
+      "enabled": false,
+      "allowFullURL": true,
+      "path": ""
+    }
+  },
+  "caching": {
+    "ttl": 3600,
+    "directory": {
+      "enabled": true,
+      "path": "./cache/",
+      "directoryChunkSize": 10,
+      "autoFlush": true,
+      "autoFlushInterval": 120
+    },
+    "redis": {
+      "enabled": false,
+      "host": "127.0.0.1",
+      "port": 6379
+    }
+  },
+  "security": {
+    "maxWidth": 2048,
+    "maxHeight": 1024
+  },
+  "auth": {
+    "clientId": "",
+    "secret": ""
+  },
+  "cloudfront": {
+    "accessKey": "",
+    "secretKey": "",
+    "distribution": ""
+  },
+  "headers": {
+    "useGzipCompression": true,
+    "cacheControl": {
+      "default": "public, max-age=3600",
+      "paths": [
+
+      ],
+      "mimetypes": [
+        { "image/jpeg": "public, max-age=86400" },
+        { "text/css": "public, max-age=86400" },
+        { "text/javascript": "public, max-age=86400" },
+        { "application/javascript": "public, max-age=86400" }
+      ]
+    }
+  }
+}

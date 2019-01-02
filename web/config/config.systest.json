@@ -1,0 +1,71 @@
+{
+  "cluster": false,
+  "debug": true,
+  "allowDebugView": true,
+  "globalPostProcessors": [
+    "minify-html"
+  ],
+  "headers": {
+    "cacheControl": {
+      "text/html": "no-cache"
+    },
+    "useCompression": true
+  },
+  "rewrites": {
+    "path": "./workspace/routes/rewrites.txt",
+    "forceTrailingSlash": true
+  },
+  "security": {
+    "csrf": true
+  },
+  "server": {
+    "host": "0.0.0.0",
+    "port": 3000
+  },
+  "api": {
+    "main": {
+      "host": "0.0.0.0",
+      "port": 3001,
+      "auth": {
+        "clientId": "cloudtest",
+        "secret": "brjcbGLkRAn9XHxa"
+      }
+    },
+    "twitter": {
+      "type": "restapi",
+      "provider": "twitter",
+      "auth": {
+        "oauth": {
+          "consumer_key": "zhYEBKIhcFpk1P6GWwzgqtK33",
+          "consumer_secret": "0xr8oZXCc44wKZwtUTzU3FLtnvQ0Y4OscQWOK5Cyv4Y0A4z7Xs",
+          "token": "2444229696-uY7ht1loOsiHcmjGmaRBtOUdyI8Q4jmuIl4iCGW",
+          "token_secret": "DlEVjmTCD1GCTSicgswRCpEDGMsv6fhHcQONdXvt0JMa4"
+        }
+      }
+    }
+  },
+  "global": {
+    "sentry": "http://c4746cd8a4014cdbbb0cb0dc1769063d@18.130.246.54:9000/3",
+    "mydadicloud": {
+      "publicUrl": "https://integration-my.dadi.cloud"
+    },
+    "publicUrl": "https://integration.dadi.cloud",
+    "networkMonitor": {
+      "publicUrl": "ws://185.17.172.170:8001/ws"
+    },
+    "cdn": {
+      "publicUrl": "http://52.214.26.93:3003"
+    },
+    "tileserver": {
+      "publicUrl": "http://52.214.26.93:3004"
+    },
+    "mailgun": {
+      "domain": "mg.dadi.cloud",
+      "apiKey": "key-e888e0ebc7e770f8a563adf4728e147b"
+    },
+    "recaptcha": {
+      "siteKey": "6LeT2TwUAAAAABcIZ1icwd_R2CLMWzDroG9XUkMn",
+      "secretKey": "6LeT2TwUAAAAAHkyQa8p9MLRQPi2HZCreSV2bj1z"
+    }
+  }
+}

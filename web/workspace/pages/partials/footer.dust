@@ -20,7 +20,7 @@
 
         <p class="read mb">This site is built with our own technology and is <a href="https://github.com/dadi/cloud" title="GitHub" target="_blank" rel="noopener">open source</a>. <strong>© DADI+ Ltd</strong>.</p>
 
-        <p class="mb">Last deployment:<br><span class="color-tint">08.10.18</span></p>
+        <p class="mb">Last deployment:<br><span class="color-tint">05.12.18</span></p>
       </div>
       <div class="col w-1-5 mb--x2">
         <div class="hdr fm ttu mb"><h3><span>Elsewhere</span></h3></div>
@@ -88,10 +88,6 @@
   </div>
 </footer>
 
-{@eq key=page.key value="article"}
-<script src="https://cdn.rawgit.com/scottjehl/picturefill/3.0.2/dist/picturefill.min.js"></script>
-{/eq}
-
 <script src="/assets/js/lazy-load.js"></script>
 <script src="/assets/js/sticky-sidebar.min.js"></script>
 
@@ -143,17 +139,20 @@ navLink.addEventListener('click', function(e) {
 
 /* my.dadi.cloud auth */
 function myLoginStatus(data) {
-  var mydadi = document.getElementById('mydadicloud');
-  mydadi.classList.add('js-active');
-
-  if (data.result) {
-    mydadi.innerHTML = '{i18n.nav_dashboard}';
-  } else {
-    mydadi.innerHTML = '{i18n.nav_signinreg}';
-  }
+  var showstatus = document.querySelectorAll('.mydadicloud')
+ 
+  for (i = 0; i < showstatus.length; ++i) {
+    showstatus[i].classList.add('js-active');
+    
+    // If they are signed in
+    if (data.result) {
+      showstatus[i].innerHTML = showstatus[i].getAttribute('data-auth');
+    }
+  }  
 }
 </script>
 
+{! Check my.dadi.cloud for signed in status, JSONP callback above myLoginStatus() !}
 <script src="{global.mydadicloud.publicUrl}/api/isauthenticated"></script>
 
 </body>

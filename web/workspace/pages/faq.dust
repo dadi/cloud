@@ -23,10 +23,17 @@
   <div class="cnt pb">
     <div class="ll ma mb">
       {#faq.results}
-        <div class="bdb bd-grey read pb mb">
-          <h2 class="medium">{question}</h2>
+        <article class="bdb bd-grey read pb mb">
+          {#ama}
+            <time itemprop="datePublished" datetime="{@formatDate unix=publishedAt /}" class="color-tint truncate block">
+              <a href="/{lang}/{?category}{category[0].slug}/{/category}{?sub-category}{sub-category[0].slug}/{/sub-category}{slug}">
+                {@formatDate unix=publishedAt format="DD MMM YYYY" /}
+              </a>
+            </time>
+          {/ama}
+          <h2 class="medium" style="margin-top:15px">{question}</h2>
           {@markdown}{answer}{/markdown}
-        </div>
+        </article>
       {:else}
         <div class="ll tac">
           <h1 class="medium">No results found.</h1>
