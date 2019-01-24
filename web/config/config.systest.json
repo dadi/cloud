@@ -54,10 +54,10 @@
       "publicUrl": "ws://185.17.172.170:8001/ws"
     },
     "cdn": {
-      "publicUrl": "http://52.214.26.93:3003"
+      "publicUrl": "http://52.212.131.252:3003"
     },
     "tileserver": {
-      "publicUrl": "http://52.214.26.93:3004"
+      "publicUrl": "http://52.212.131.252:3004"
     },
     "mailgun": {
       "domain": "mg.dadi.cloud",

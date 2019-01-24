@@ -28,7 +28,7 @@
     "hooks": "workspace/hooks"
   },
   "publicUrl": {
-    "host": "52.214.26.93",
+    "host": "52.212.131.252",
     "port": 3001,
     "protocol": "http"
   },
