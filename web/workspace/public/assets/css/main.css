@@ -121,6 +121,40 @@ h1, h2 {
     background: #EBF4FF;
     border-color:#3585fa; 
   }
+
+  & table {
+    display: block;
+    width: 100%;
+    word-break: normal;
+    word-break: keep-all;
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin: 40px 0;
+
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  & table tbody {
+    box-shadow: 7px 7px 4px 0 rgba(0,0,0,0.02);
+  }
+  & table th {
+    font-weight: bold;
+  }
+  & table th,
+  & table td {
+    padding: 6px 13px;
+    border: 1px solid #ddd;
+  }
+  & table tr {
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+  }
+  & table tr:nth-child(2n) {
+    background-color: #f8f8f8;
+  }
+  & table tr:hover {
+    background-color: #EDEDED;
+  }
 }
 
 
