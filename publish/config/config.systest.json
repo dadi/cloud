@@ -10,7 +10,7 @@
   "apis": [
     {
       "name": "DADI Cloud API",
-      "host": "http://52.214.26.93",
+      "host": "http://52.212.131.252",
       "port": 3001,
       "version": "1.0",
       "database": "cloud",
@@ -39,13 +39,13 @@
     "enabled": false
   },
   "publicUrl": {
-    "host": "52.214.26.93",
+    "host": "52.212.131.252",
     "port": 3002,
     "protocol": "http:"
   },
   "cdn": {
     "publicUrl": {
-      "host": "52.214.26.93",
+      "host": "52.212.131.252",
       "port": 3003,
       "protocol": "http:"
     }
